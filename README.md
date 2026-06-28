@@ -15,6 +15,45 @@ It provides two entry points:
 1. `AGENTS.md` at the repository root, so Codex can automatically read project-level instructions.
 2. `skills/ocean/SKILL.md`, so the same workflow can be used as a portable skill folder if your Codex interface supports Skills.
 
+## 中文说明
+
+OCEAN 是一个轻量级、兼容 Codex 的 skill，用于科学 claim 审核、生物医学证据评估、AI-for-Science manuscript 评价、期刊定位和合作边界分析。
+
+这个仓库提供两个入口：
+
+1. 仓库根目录的 `AGENTS.md`，用于让 Codex 自动读取项目级说明。
+2. `skills/ocean/SKILL.md`，用于把同一套工作流作为可移植的 Codex skill 使用。
+
+OCEAN 适合用来检查 manuscript、preprint、AI-agent / AI-for-Science 项目、生物医学 AI 研究、知识图谱或数据库证据系统、临床预测模型、合作贡献边界、投稿定位，以及 reviewer-style 的预审稿压力测试。
+
+快速安装：
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo nslbotnslbot/ocean-skill \
+  --path skills/ocean \
+  --ref main
+```
+
+安装后重启 Codex 或开启新的 Codex 会话，并测试 `$ocean` 是否能被识别：
+
+```text
+Use $ocean to audit this abstract-only claim.
+State inspected / not inspected / cannot conclude / needed next.
+```
+
+如果只是临时测试，可以在测试后删除：
+
+```bash
+rm -rf ~/.codex/skills/ocean
+```
+
+默认输出语言是中文。OCEAN 的核心原则是保持证据边界清晰：必须区分假说与证据、相关性与因果、数据库共现与机制、内部验证与外部验证、系统展示与科学发现、轻量建议与可构成署名贡献的实质性参与。
+
+公开验证摘要位于 `docs/evaluation/`，简版结果在 `docs/evaluation/round-1-5-results.md`，发布记录在 `CHANGELOG.md`，内部 release validation log 位于 `skills/ocean/evals/release-validation-log.md`。
+
+这些验证记录测试的是 OCEAN 的工作流行为：它是否能保持“已检查 / 未检查 / 不能判断 / 还需要什么”的边界，并避免 unsupported claims。它们不证明任何论文、preprint、benchmark、dataset、peer review report 或生物医学结论本身的科学正确性。
+
 ## Best use cases
 
 Use this when you ask Codex to review:
