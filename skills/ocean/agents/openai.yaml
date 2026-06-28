@@ -1,4 +1,4 @@
 interface:
   display_name: "OCEAN"
-  short_description: "Navigate scientific claims, evidence, and reviewer risks"
-  default_prompt: "Use $ocean to evaluate this manuscript or project in Chinese with the standard OCEAN output format, focusing on claim support, validation risks, reviewer concerns, contribution boundary, and journal positioning."
+  short_description: "Navigate scientific claims, evidence, reviewer risks, and review-derived ideas"
+  default_prompt: "Use $ocean to evaluate this manuscript, project, or reviewer feedback in Chinese with the standard OCEAN output format, focusing on claim support, validation risks, reviewer concerns, review-derived idea opportunities, contribution boundary, and journal positioning."
