@@ -125,6 +125,28 @@ Use for full manuscript review, reviewer-style critique, public peer review extr
 - What would justify stronger claims:
 ```
 
+## Review-To-Idea Add-On
+
+When the main request is idea extraction from peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories, use Standard or Deep Mode and add:
+
+```markdown
+十、从reviewer意见反推的idea池
+| ID | Review signal | Evidence anchor | Underlying gap | Idea seed | Idea type | Needed evidence | Feasibility | Main risk | Contribution boundary |
+|---|---|---|---|---|---|---|---|---|---|
+
+十一、优先级排序
+| Priority | Idea | Why now | First concrete step | Stop condition |
+|---|---|---|---|---|
+
+十二、不能过度声称的地方
+- 不能说已经证明:
+- 不能说有创新性，除非:
+- 不能说可发表，除非:
+- 下一步必须检索/补充:
+```
+
+If this add-on is used together with Deep Mode, keep the section titles stable and continue numbering after the Deep Mode sections instead of duplicating section numbers.
+
 ## Scoring Table Rows
 
 Use these rows in this order unless the user asks for a different rubric:
@@ -148,4 +170,5 @@ Use these rows in this order unless the user asks for a different rubric:
 - Never fill blank table cells with imagined data.
 - Use low scores when evidence is missing.
 - Do not convert database, KG, text-mining, model prediction, or abstract-only evidence into causality, mechanism, clinical deployment, or therapy guidance.
-- If only a title, abstract, DOI, or memory fragment is available, say so in the Evidence state and downgrade the output.
+- Do not treat reviewer comments as facts, novelty proof, or publication guarantees; treat them as pressure signals unless verified against manuscript and external evidence.
+- If only a title, abstract, DOI, reviewer comment, or memory fragment is available, say so in the Evidence state and downgrade the output.
