@@ -4,7 +4,7 @@
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
 
-OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, collaboration boundary analysis, and evidence-bound idea extraction from peer review.
+OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, literature and evidence discovery, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, collaboration boundary analysis, and evidence-bound idea extraction from peer review.
 
 ## What this is
 
@@ -17,12 +17,22 @@ It provides two entry points:
 
 ## 中文说明
 
-OCEAN 是一个轻量级、兼容 Codex 的 skill，用于科学 claim 审核、生物医学证据评估、AI-for-Science manuscript 评价、期刊定位、合作边界分析，以及从 peer review / 审稿意见中反推可验证的研究 idea。
+OCEAN 是一个轻量级、兼容 Codex 的 skill，用于科学 claim 审核、文献与证据扫描、生物医学证据评估、AI-for-Science manuscript 评价、期刊定位、合作边界分析，以及从 peer review / 审稿意见中反推可验证的研究 idea。
 
 这个仓库提供两个入口：
 
 1. 仓库根目录的 `AGENTS.md`，用于让 Codex 自动读取项目级说明。
 2. `skills/ocean/SKILL.md`，用于把同一套工作流作为可移植的 Codex skill 使用。
+
+OCEAN 的模块顺序是：
+
+1. **Sonar**：先扫描文献、证据、DOI/preprint/public review 来源，并建立可追踪 source packet。
+2. **Current**：看领域趋势和方向流动。
+3. **Reef**：把知识图谱、数据库、benchmark、cohort 和资源证据组织起来。
+4. **Iceberg**：审 claim 下面的证据支撑和隐藏风险。
+5. **Anchor**：做验证、复现、benchmark、leakage 和 reproducibility 检查。
+6. **Compass**：基于证据决定研究计划、实验设计、idea 优先级和投稿策略。
+7. **Harbor**：沉淀成报告、工作区记忆和协作记录。
 
 OCEAN 适合用来检查 manuscript、preprint、AI-agent / AI-for-Science 项目、生物医学 AI 研究、知识图谱或数据库证据系统、临床预测模型、合作贡献边界、投稿定位、reviewer-style 的预审稿压力测试，以及从真实或公开 peer review report 中抽取可做的补充实验、修稿路径和新项目 idea。
 
@@ -50,6 +60,8 @@ rm -rf ~/.codex/skills/ocean
 
 默认输出语言是中文。OCEAN 的核心原则是保持证据边界清晰：必须区分假说与证据、相关性与因果、数据库共现与机制、内部验证与外部验证、系统展示与科学发现、轻量建议与可构成署名贡献的实质性参与。
 
+Sonar 的检索结果只作为 discovery evidence，不等于全文证据。OCEAN 必须区分已检索、已检查、未检查、不能判断和下一步需要什么，然后才能进入 claim、novelty、publication、mechanism 或 clinical utility 判断。
+
 当从审稿意见中反推 idea 时，OCEAN 会把 reviewer comments 当作 pressure signals，而不是论文事实、创新性证明或发表保证。真正的 idea 判断仍需要 manuscript/full text、相关文献、数据、方法和验证资源支持。
 
 公开验证摘要位于 `docs/evaluation/`，简版结果在 `docs/evaluation/round-1-5-results.md`，发布记录在 `CHANGELOG.md`，内部 release validation log 位于 `skills/ocean/evals/release-validation-log.md`。
@@ -62,6 +74,8 @@ Use this when you ask Codex to review:
 
 - manuscripts
 - preprints
+- literature and evidence around a specific claim
+- DOI/preprint/public review source packets
 - system papers
 - AI-agent / AI-for-Science projects
 - biomedical AI studies
@@ -117,6 +131,14 @@ Focus on scientific value, reliability, key risks, missing validation, collabora
 Use the standard OCEAN output format unless I ask for a quick or deep report.
 ```
 
+For Sonar evidence discovery:
+
+```text
+Use $ocean Sonar to scan literature and evidence for this claim.
+Build a traceable source packet with DOI/URL, source tier, inspected content, main evidence, main limitation, and downstream handoff.
+Do not treat search-result snippets as full-paper evidence.
+```
+
 For reviewer-to-idea extraction:
 
 ```text
@@ -160,10 +182,13 @@ The analysis must be direct, critical, and evidence-bound. Do not overstate nove
 - database co-occurrence vs mechanism
 - internal validation vs external validation
 - system demonstration vs scientific discovery
+- literature search result vs inspected source evidence
 - light advice vs authorship-level contribution
 - reviewer pressure signal vs verified manuscript fact
 
 By default, OCEAN uses a fixed output contract: audit card, evidence boundary, claim-evidence matrix, risk register, missing evidence/analysis, collaboration boundary, journal positioning, next actions, and scores. Use quick mode only for narrow questions and deep mode for full manuscript or reviewer-style reports.
+
+For Sonar tasks, OCEAN adds a search-task definition, search log, candidate source table, evidence coverage/gap table, and Sonar evidence boundary before downstream audit.
 
 For review-to-idea tasks, OCEAN adds an idea pool, priority ranking, and overclaim boundary section so reviewer comments become testable next steps rather than unsupported conclusions.
 
@@ -193,7 +218,8 @@ skills/ocean/
 │   ├── output-contract.md
 │   ├── reviewer-lens.md
 │   ├── reviewer-to-idea.md
-│   └── review-report.md
+│   ├── review-report.md
+│   └── sonar.md
 └── scripts/
     ├── make_claim_table.py
     ├── check_claim_table.py
