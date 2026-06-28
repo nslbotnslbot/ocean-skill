@@ -379,3 +379,29 @@ Purpose: Record the current GitHub packaging readiness state after adding a lice
 ### Packaging Gate Conclusion
 
 This snapshot is a packaging readiness record. The package structure, scripts, frontmatter, UI metadata, license, output ignore rules, public evaluation docs, and official skill validator are ready for an initial GitHub release candidate. After publication, verify the GitHub repository contains only the intended tracked files and excludes generated `outputs/` artifacts.
+
+## Post-Release GitHub Install Recognition Test
+
+Date: 2026-06-28  
+Thread: `019f0df9-58ef-7910-8d96-a06f2ae78101` (`OCEAN Post-release Install Recognition Test`)  
+Purpose: Verify that the published GitHub repository can be installed as a Codex skill and recognized in a fresh Codex session.
+
+### 中文上下文
+
+本轮测试从 GitHub 仓库 `nslbotnslbot/ocean-skill` 的 `skills/ocean` 路径临时安装 OCEAN 到 `~/.codex/skills/ocean`，随后开启新的 Codex 会话检查 `$ocean` / `ocean` 是否能被识别。测试完成后删除临时安装目录，避免影响日常 skill 列表。
+
+### English context
+
+This post-release test temporarily installed OCEAN from the GitHub repository path `nslbotnslbot/ocean-skill:skills/ocean` into `~/.codex/skills/ocean`, then opened a fresh Codex session to check whether `$ocean` / `ocean` was recognized. The temporary install directory was removed after the test to avoid changing the user's normal skill set.
+
+### Result
+
+| Check | Result | Evidence |
+|---|---|---|
+| GitHub install | Pass | `install-skill-from-github.py --repo nslbotnslbot/ocean-skill --path skills/ocean --ref main` installed `ocean` to `~/.codex/skills/ocean`. |
+| Fresh-session recognition | Pass | New thread reported that `ocean` / `$ocean` was visible, `name` was `ocean`, and the description matched the claim-evidence audit purpose. |
+| Cleanup | Pass | `~/.codex/skills/ocean` was removed after testing; subsequent `ls` returned no such file or directory. |
+
+### Evidence boundary / 证据边界
+
+This test verifies installation and recognition behavior only. It does not add a new scientific-evaluation result, and it does not prove runtime behavior beyond fresh-session skill discovery.
