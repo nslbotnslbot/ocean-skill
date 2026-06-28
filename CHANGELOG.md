@@ -4,10 +4,15 @@
 
 ### Added
 
+- Added `skills/ocean/references/sonar.md`, a Sonar evidence-discovery workflow for scanning literature, DOI/preprint pages, public peer review sources, database/KG records, and other traceable sources before downstream OCEAN audit.
+- Added Sonar output sections to `references/output-contract.md`, including search-task definition, search log, candidate source table, evidence coverage/gap table, and Sonar evidence boundary.
+- Wired Sonar into `skills/ocean/SKILL.md` as the first module in the OCEAN sequence: Sonar -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor.
 - Added `skills/ocean/references/reviewer-to-idea.md`, a workflow for turning peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories into evidence-bound repair ideas, extension ideas, independent project ideas, and collaboration opportunities.
 - Wired the reviewer-to-idea workflow into `skills/ocean/SKILL.md`, `references/output-contract.md`, and `agents/openai.yaml`.
 
 ### Evidence Boundary
+
+Sonar search results are treated as discovery evidence, not full-paper proof. OCEAN must distinguish searched, inspected, not inspected, cannot conclude, and needed-next evidence before making claim, novelty, publication, mechanism, or clinical-utility judgments.
 
 Reviewer comments are treated as pressure signals, not facts, novelty proof, publication guarantees, or scientific validation. OCEAN must still check manuscript evidence and external literature before calling an idea supported, novel, or publishable.
 
