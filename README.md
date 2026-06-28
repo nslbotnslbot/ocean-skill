@@ -4,7 +4,7 @@
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
 
-OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
+OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, collaboration boundary analysis, and evidence-bound idea extraction from peer review.
 
 ## What this is
 
@@ -17,14 +17,14 @@ It provides two entry points:
 
 ## 中文说明
 
-OCEAN 是一个轻量级、兼容 Codex 的 skill，用于科学 claim 审核、生物医学证据评估、AI-for-Science manuscript 评价、期刊定位和合作边界分析。
+OCEAN 是一个轻量级、兼容 Codex 的 skill，用于科学 claim 审核、生物医学证据评估、AI-for-Science manuscript 评价、期刊定位、合作边界分析，以及从 peer review / 审稿意见中反推可验证的研究 idea。
 
 这个仓库提供两个入口：
 
 1. 仓库根目录的 `AGENTS.md`，用于让 Codex 自动读取项目级说明。
 2. `skills/ocean/SKILL.md`，用于把同一套工作流作为可移植的 Codex skill 使用。
 
-OCEAN 适合用来检查 manuscript、preprint、AI-agent / AI-for-Science 项目、生物医学 AI 研究、知识图谱或数据库证据系统、临床预测模型、合作贡献边界、投稿定位，以及 reviewer-style 的预审稿压力测试。
+OCEAN 适合用来检查 manuscript、preprint、AI-agent / AI-for-Science 项目、生物医学 AI 研究、知识图谱或数据库证据系统、临床预测模型、合作贡献边界、投稿定位、reviewer-style 的预审稿压力测试，以及从真实或公开 peer review report 中抽取可做的补充实验、修稿路径和新项目 idea。
 
 快速安装：
 
@@ -50,6 +50,8 @@ rm -rf ~/.codex/skills/ocean
 
 默认输出语言是中文。OCEAN 的核心原则是保持证据边界清晰：必须区分假说与证据、相关性与因果、数据库共现与机制、内部验证与外部验证、系统展示与科学发现、轻量建议与可构成署名贡献的实质性参与。
 
+当从审稿意见中反推 idea 时，OCEAN 会把 reviewer comments 当作 pressure signals，而不是论文事实、创新性证明或发表保证。真正的 idea 判断仍需要 manuscript/full text、相关文献、数据、方法和验证资源支持。
+
 公开验证摘要位于 `docs/evaluation/`，简版结果在 `docs/evaluation/round-1-5-results.md`，发布记录在 `CHANGELOG.md`，内部 release validation log 位于 `skills/ocean/evals/release-validation-log.md`。
 
 这些验证记录测试的是 OCEAN 的工作流行为：它是否能保持“已检查 / 未检查 / 不能判断 / 还需要什么”的边界，并避免 unsupported claims。它们不证明任何论文、preprint、benchmark、dataset、peer review report 或生物医学结论本身的科学正确性。
@@ -69,6 +71,8 @@ Use this when you ask Codex to review:
 - collaboration contribution boundaries
 - paper positioning and journal strategy
 - reviewer-style critique and pre-submission stress testing
+- peer review reports, reviewer comments, editor letters, and rebuttal exchanges
+- review-to-idea extraction for repair ideas, extension ideas, new project ideas, and collaboration opportunities
 
 ## Quick start
 
@@ -113,6 +117,14 @@ Focus on scientific value, reliability, key risks, missing validation, collabora
 Use the standard OCEAN output format unless I ask for a quick or deep report.
 ```
 
+For reviewer-to-idea extraction:
+
+```text
+Use $ocean on these reviewer comments.
+Extract repair ideas, extension ideas, possible new project ideas, and my realistic contribution boundary.
+Do not treat reviewer comments as facts; state inspected / not inspected / cannot conclude / needed next.
+```
+
 For an empty review report skeleton:
 
 ```bash
@@ -149,8 +161,11 @@ The analysis must be direct, critical, and evidence-bound. Do not overstate nove
 - internal validation vs external validation
 - system demonstration vs scientific discovery
 - light advice vs authorship-level contribution
+- reviewer pressure signal vs verified manuscript fact
 
 By default, OCEAN uses a fixed output contract: audit card, evidence boundary, claim-evidence matrix, risk register, missing evidence/analysis, collaboration boundary, journal positioning, next actions, and scores. Use quick mode only for narrow questions and deep mode for full manuscript or reviewer-style reports.
+
+For review-to-idea tasks, OCEAN adds an idea pool, priority ranking, and overclaim boundary section so reviewer comments become testable next steps rather than unsupported conclusions.
 
 ## Repository layout
 
@@ -177,6 +192,7 @@ skills/ocean/
 │   ├── claim-evidence-table.md
 │   ├── output-contract.md
 │   ├── reviewer-lens.md
+│   ├── reviewer-to-idea.md
 │   └── review-report.md
 └── scripts/
     ├── make_claim_table.py
