@@ -8,10 +8,10 @@ Before answering, classify the request and evidence state.
 
 | Field | Options / content |
 |---|---|
-| Request mode | claim audit; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Request mode | Sonar evidence scan; claim audit; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
 | Evidence state | sufficient; partial; minimal; non-traceable; contradictory |
 | Output depth | quick; standard; deep |
-| Source type | manuscript; abstract; DOI/preprint page; figures/tables; peer review report; database/KG/text-mining output; user notes only |
+| Source type | manuscript; abstract; DOI/preprint page; figures/tables; literature search results; peer review report; database/KG/text-mining output; user notes only |
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
@@ -125,6 +125,40 @@ Use for full manuscript review, reviewer-style critique, public peer review extr
 - What would justify stronger claims:
 ```
 
+## Sonar Evidence Scan Add-On
+
+When the main request is literature/evidence discovery, source finding, DOI/preprint/public review collection, or source-packet preparation, use the Sonar add-on before downstream OCEAN audit sections:
+
+```markdown
+一、Sonar检索任务定义
+- 目标问题/claim:
+- 检索范围:
+- 需要的证据类型:
+- 是否包含peer review/public review:
+- 当前证据状态:
+
+二、检索记录
+| Query | Source/database | Filters | Date | Results inspected | Notes |
+|---|---|---|---|---:|---|
+
+三、候选来源表
+| ID | Source | Identifier/URL | Tier | Why included | Inspected content | Main evidence | Main limitation | Downstream handoff |
+|---|---|---|---|---|---|---|---|---|
+
+四、证据覆盖与缺口
+| Claim/question | Evidence found | Evidence tier | Coverage | Missing evidence | Next module |
+|---|---|---|---|---|---|
+
+五、Sonar边界
+- 已检索:
+- 已检查:
+- 未检索/未检查:
+- 不能判断:
+- 下一步需要:
+```
+
+If Sonar is only a preparatory step inside a larger OCEAN answer, condense the search log and candidate table, then continue with the standard output sections.
+
 ## Review-To-Idea Add-On
 
 When the main request is idea extraction from peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories, use Standard or Deep Mode and add:
@@ -170,5 +204,6 @@ Use these rows in this order unless the user asks for a different rubric:
 - Never fill blank table cells with imagined data.
 - Use low scores when evidence is missing.
 - Do not convert database, KG, text-mining, model prediction, or abstract-only evidence into causality, mechanism, clinical deployment, or therapy guidance.
+- Do not treat search-result snippets as full-paper evidence.
 - Do not treat reviewer comments as facts, novelty proof, or publication guarantees; treat them as pressure signals unless verified against manuscript and external evidence.
 - If only a title, abstract, DOI, reviewer comment, or memory fragment is available, say so in the Evidence state and downgrade the output.
