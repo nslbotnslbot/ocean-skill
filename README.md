@@ -1,8 +1,6 @@
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
 
-Until the project name becomes widely recognizable, public-facing references should use the full form: **OCEAN: Orchestrated Claim-Evidence Analysis Navigator**.
-
-A lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
+OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
 
 ## What this is
 
@@ -31,7 +29,33 @@ Use this when you ask Codex to review:
 
 ## Quick start
 
-Put this folder at the root of a Codex workspace or copy the skill folder into your Codex skills directory:
+### Install From GitHub
+
+Install the skill from this repository:
+
+```bash
+python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
+  --repo nslbotnslbot/ocean-skill \
+  --path skills/ocean \
+  --ref main
+```
+
+Then restart Codex or open a new Codex session and test recognition:
+
+```text
+Use $ocean to audit this abstract-only claim.
+State inspected / not inspected / cannot conclude / needed next.
+```
+
+If you only wanted a temporary test install, remove it after testing:
+
+```bash
+rm -rf ~/.codex/skills/ocean
+```
+
+### Local Copy
+
+If you already cloned this repository, copy the skill folder into your Codex skills directory:
 
 ```bash
 cp -R skills/ocean ~/.codex/skills/
