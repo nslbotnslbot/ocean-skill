@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Added `skills/ocean/references/reviewer-to-idea.md`, a workflow for turning peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories into evidence-bound repair ideas, extension ideas, independent project ideas, and collaboration opportunities.
+- Wired the reviewer-to-idea workflow into `skills/ocean/SKILL.md`, `references/output-contract.md`, and `agents/openai.yaml`.
+
+### Evidence Boundary
+
+Reviewer comments are treated as pressure signals, not facts, novelty proof, publication guarantees, or scientific validation. OCEAN must still check manuscript evidence and external literature before calling an idea supported, novel, or publishable.
+
 ## v0.1.0 - 2026-06-28
 
 Initial public release candidate for **OCEAN: Orchestrated Claim-Evidence Analysis Navigator**, a Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
