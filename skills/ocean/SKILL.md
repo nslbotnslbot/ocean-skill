@@ -1,7 +1,7 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for evidence-bound scientific claim auditing for manuscripts, AI-for-Science systems, biomedical AI, bioinformatics studies, databases, knowledge graphs, clinical prediction models, collaboration opportunities, reviewer-style critique, and journal positioning. Use when the user asks to evaluate a research project or manuscript, inspect claim support, check leakage, validation, benchmark fairness, reproducibility, causal overstatement, database or text-mining evidence, publication tier, reviewer risks, or light/medium/deep/authorship-level contribution. Do not use for summary-only paper reading, general literature search, or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for evidence-bound scientific claim auditing for manuscripts, AI-for-Science systems, biomedical AI, bioinformatics studies, databases, knowledge graphs, clinical prediction models, collaboration opportunities, peer review reports, reviewer comments, reviewer-style critique, review-to-idea extraction, and journal positioning. Use when the user asks to evaluate a research project or manuscript, inspect claim support, check leakage, validation, benchmark fairness, reproducibility, causal overstatement, database or text-mining evidence, publication tier, reviewer risks, research ideas from reviews, or light/medium/deep/authorship-level contribution. Do not use for summary-only paper reading, general literature search, or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
@@ -22,6 +22,7 @@ Use OCEAN to judge whether scientific claims are supported by available evidence
 - Read `references/audit-lenses.md` when evaluating manuscripts, AI-agent systems, biomedical AI, knowledge graphs, databases, clinical prediction studies, or publication readiness.
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.
 - Read `references/reviewer-lens.md` when the user asks for reviewer-style critique, pre-submission risk prediction, likely objections, response preparation, or journal-tier stress testing.
+- Read `references/reviewer-to-idea.md` when the user provides peer review reports, reviewer comments, editor letters, rebuttal exchanges, public review histories, or asks to extract research ideas, repair paths, collaboration opportunities, or next experiments from reviews.
 - Read `references/review-report.md` when the user needs a structured long-form review report or collaboration/journal-positioning memo.
 - Use `evals/forward-test-cases.md` only for manual pre-release testing of this skill. Do not treat eval prompts as scientific evidence.
 - Use `scripts/make_claim_table.py` to create a claim-audit CSV template when a file-based claim inventory would help.
@@ -37,9 +38,10 @@ Use OCEAN to judge whether scientific claims are supported by available evidence
 5. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
 6. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
 7. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
-8. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
-9. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
-10. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
+8. When using peer review material to generate ideas, treat reviewer comments as pressure signals rather than facts. Use `references/reviewer-to-idea.md` to convert pressure points into repair ideas, extension ideas, independent project ideas, or collaboration opportunities, and state what literature search or evidence would be needed before calling an idea novel or publishable.
+9. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
+10. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
+11. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
 
 ## Default Output Contract
 
