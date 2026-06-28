@@ -151,6 +151,8 @@ Public-facing validation notes are in `docs/evaluation/`. The concise summary is
 
 These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
 
+Release notes are tracked in `CHANGELOG.md`.
+
 ## Development checks
 
 Run the sample scripts before publishing:
