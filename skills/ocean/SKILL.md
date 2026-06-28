@@ -1,7 +1,7 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for evidence-bound scientific claim auditing for manuscripts, AI-for-Science systems, biomedical AI, bioinformatics studies, databases, knowledge graphs, clinical prediction models, collaboration opportunities, peer review reports, reviewer comments, reviewer-style critique, review-to-idea extraction, and journal positioning. Use when the user asks to evaluate a research project or manuscript, inspect claim support, check leakage, validation, benchmark fairness, reproducibility, causal overstatement, database or text-mining evidence, publication tier, reviewer risks, research ideas from reviews, or light/medium/deep/authorship-level contribution. Do not use for summary-only paper reading, general literature search, or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for evidence-bound scientific claim auditing, literature and evidence discovery, source-packet creation, DOI/preprint/public peer review scanning, manuscripts, AI-for-Science systems, biomedical AI, bioinformatics studies, databases, knowledge graphs, clinical prediction models, collaboration opportunities, peer review reports, reviewer comments, reviewer-style critique, review-to-idea extraction, and journal positioning. Use when the user asks to evaluate a research project or manuscript, scan literature and evidence, find sources for a claim, inspect claim support, check leakage, validation, benchmark fairness, reproducibility, causal overstatement, database or text-mining evidence, publication tier, reviewer risks, research ideas from reviews, or light/medium/deep/authorship-level contribution. Do not use for summary-only paper reading, general literature search without an evidence or claim-audit goal, or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
@@ -16,9 +16,22 @@ Use OCEAN to judge whether scientific claims are supported by available evidence
 - Separate hypothesis, association, database annotation, text-mining co-occurrence, model prediction, and causal mechanism.
 - Prefer direct, critical wording over vague encouragement.
 
+## Module Order
+
+Use the OCEAN module order when the task spans multiple steps:
+
+1. **Sonar**: scan literature, evidence, DOI/preprint/public review sources, and build traceable source packets.
+2. **Current**: analyze field trends and direction flow.
+3. **Reef**: organize knowledge graph, database, benchmark, cohort, and resource evidence.
+4. **Iceberg**: audit claim support beneath surface-level conclusions.
+5. **Anchor**: design validation, replication, benchmark, leakage, and reproducibility checks.
+6. **Compass**: turn evidence into research plans, experiment design, idea prioritization, and journal strategy.
+7. **Harbor**: preserve reports, workspace memory, and collaboration records.
+
 ## Resource Routing
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
+- Read `references/sonar.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
 - Read `references/audit-lenses.md` when evaluating manuscripts, AI-agent systems, biomedical AI, knowledge graphs, databases, clinical prediction studies, or publication readiness.
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.
 - Read `references/reviewer-lens.md` when the user asks for reviewer-style critique, pre-submission risk prediction, likely objections, response preparation, or journal-tier stress testing.
@@ -32,16 +45,17 @@ Use OCEAN to judge whether scientific claims are supported by available evidence
 ## Workflow
 
 1. Select the output mode from `references/output-contract.md`: quick for narrow questions, standard by default, deep for full manuscript/reviewer-style reports.
-2. Establish the evidence boundary: list the files, passages, figures, tables, results, or notes inspected; mark missing or unreadable evidence.
-3. Classify the request mode and evidence state: claim audit, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
-4. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
-5. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
-6. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
-7. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
-8. When using peer review material to generate ideas, treat reviewer comments as pressure signals rather than facts. Use `references/reviewer-to-idea.md` to convert pressure points into repair ideas, extension ideas, independent project ideas, or collaboration opportunities, and state what literature search or evidence would be needed before calling an idea novel or publishable.
-9. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
-10. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
-11. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
+2. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
+3. If the task requires discovery, use Sonar first. Read `references/sonar.md`, define the search question, record search/source boundaries, triage source tiers, and build source packets before making downstream claims.
+4. Classify the request mode and evidence state: Sonar evidence scan, claim audit, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
+5. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
+6. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
+7. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
+8. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
+9. When using peer review material to generate ideas, treat reviewer comments as pressure signals rather than facts. Use `references/reviewer-to-idea.md` to convert pressure points into repair ideas, extension ideas, independent project ideas, or collaboration opportunities, and state what literature search or evidence would be needed before calling an idea novel or publishable.
+10. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
+11. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
+12. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
 
 ## Default Output Contract
 
