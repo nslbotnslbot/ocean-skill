@@ -5,10 +5,16 @@
 ### Added
 
 - Added `skills/ocean/references/sonar.md`, a Sonar evidence-discovery workflow for scanning literature, DOI/preprint pages, public peer review sources, database/KG records, and other traceable sources before downstream OCEAN audit.
-- Added Sonar output sections to `references/output-contract.md`, including search-task definition, search log, candidate source table, evidence coverage/gap table, and Sonar evidence boundary.
+- Added Sonar v0.2 output sections to `references/output-contract.md`, including search-task definition, search log, candidate source table, Evidence Radar Map, Negative Space, Sonar Boundary, and Handoff Ticket.
+- Added strict Sonar gate labels in `skills/ocean/references/sonar.md`: Pass, Partial, Reject/Downgrade, Cannot judge, and Boundary fail.
 - Wired Sonar into `skills/ocean/SKILL.md` as the first module in the OCEAN sequence: Sonar -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor.
 - Added `skills/ocean/references/reviewer-to-idea.md`, a workflow for turning peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories into evidence-bound repair ideas, extension ideas, independent project ideas, and collaboration opportunities.
 - Wired the reviewer-to-idea workflow into `skills/ocean/SKILL.md`, `references/output-contract.md`, and `agents/openai.yaml`.
+
+### Validation
+
+- Sonar strict eval R2 passed locally in three isolated fresh Codex threads: R2A source-seed strict test, R2B field-stability test, and R2C boundary-stop test.
+- `quick_validate.py` passed locally for `skills/ocean` after the Sonar reference and output-contract update.
 
 ### Evidence Boundary
 
