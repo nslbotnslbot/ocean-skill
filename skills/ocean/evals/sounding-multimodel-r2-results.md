@@ -45,13 +45,12 @@ This run evaluates OCEAN Sounding on the original three article seeds plus five 
 | MiniMax MiniMax-M1 fixed base | open-weight reproducibility | 48/48 | 100.0% | 48 | 0 | Original base returned HTTP 401; fixed base https://api.minimax.chat/v1 reached 47/48 plus 1 successful rerun. |
 | Claude claude-opus-4-8 | frontier ceiling | 48/48 | 100.0% | 48 | 0 | 48/48 main run; no API errors recorded. |
 | Perplexity retrieval control sonar-pro | retrieval control | 48/48 | 100.0% | 48 | 48 | 48/48 main run; source_packet.json saved for all 48 cases. |
-| Gemini gemini-2.5-flash | frontier ceiling | 21/48 | 43.8% | 21 | 0 | 21/48 usable outputs; remaining attempts blocked by HTTP 429 Too Many Requests, including after cooldown probe. |
+| Gemini gemini-2.5-flash | frontier ceiling | 48/48 | 100.0% | 48 | 0 | 48/48 complete after Gemini-only availability test and rerun; previous HTTP 429 free-tier quota blocker cleared. |
 
 ## API And Configuration Notes
 
 - Qwen, DeepSeek, Kimi fallback, MiniMax fixed-base, Claude, and Perplexity retrieval control reached 48/48 usable outputs after targeted reruns where needed.
-- Gemini reached 21/48 usable outputs. Remaining attempts returned HTTP 429 Too Many Requests, including after a cooldown probe. Treat this as API quota/rate blocking, not a Sounding behavior failure.
-- Gemini-only retry was attempted after adding same-case HTTP 429 retry support to the runner. The API still returned HTTP 429 with quotaId `GenerateRequestsPerDayPerProjectPerModel-FreeTier` and quotaValue `20` for `gemini-2.5-flash`; remaining Gemini cases therefore stay blocked until quota resets or billing/quota is raised.
+- Gemini initially reached 21/48 usable outputs and was temporarily blocked by HTTP 429 free-tier quota. A later Gemini-only availability test succeeded, and the remaining 27 cases were completed, bringing Gemini to 48/48.
 - Kimi K2 preview smoke returned HTTP 404, so this R2 used the Moonshot stable fallback for behavior testing.
 - MiniMax original base URL returned HTTP 401. The temporary OpenAI-compatible base URL `https://api.minimax.chat/v1` passed smoke and full-run testing.
 - Perplexity retrieval control saved `source_packet.json` for all 48 successful cases; this is useful as a retrieval/source-packet control group, not an OCEAN dependency.
@@ -64,7 +63,7 @@ This run evaluates OCEAN Sounding on the original three article seeds plus five 
 - MiniMax MiniMax-M1 fixed base: outputs/sounding-article-error-matrix-r2-full-minimax-fixed/20260629-200804/minimax-open-weight-fixed-base; outputs/sounding-article-error-matrix-r2-rerun-minimax/20260629-202628/minimax-open-weight-fixed-base
 - Claude claude-opus-4-8: outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/claude-frontier
 - Perplexity retrieval control sonar-pro: outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/perplexity-retrieval-control
-- Gemini gemini-2.5-flash: outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-slow/20260629-203631/gemini-frontier
+- Gemini gemini-2.5-flash: outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-slow/20260629-203631/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-availability-test/20260629-231754/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-complete/20260629-231912/gemini-frontier
 
 ## Interpretation
 

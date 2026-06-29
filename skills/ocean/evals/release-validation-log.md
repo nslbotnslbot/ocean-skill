@@ -737,9 +737,11 @@ Purpose: Run Sounding across the original three article seeds plus five addition
 | MiniMax `MiniMax-M1` fixed base | 48/48 | Complete after one timeout rerun |
 | Claude `claude-opus-4-8` | 48/48 | Complete |
 | Perplexity retrieval control `sonar-pro` | 48/48 | Complete; source packet saved for every case |
-| Gemini `gemini-2.5-flash` | 21/48 | Blocked by HTTP 429 quota/rate limit after partial completion |
+| Gemini `gemini-2.5-flash` | 48/48 | Complete after Gemini-only availability test and rerun |
 
-Follow-up retry note: a Gemini-only retry was attempted after adding same-case HTTP 429 retry handling to `run_sounding_multimodel_eval.py`. The retry still returned HTTP 429 with quotaId `GenerateRequestsPerDayPerProjectPerModel-FreeTier` and quotaValue `20` for `gemini-2.5-flash`, so the remaining 27 Gemini cases remain blocked until quota resets or billing/quota is raised.
+Follow-up retry note: a Gemini-only retry was attempted after adding same-case HTTP 429 retry handling to `run_sounding_multimodel_eval.py`. At that time, the retry still returned HTTP 429 with quotaId `GenerateRequestsPerDayPerProjectPerModel-FreeTier` and quotaValue `20` for `gemini-2.5-flash`, so the remaining 27 Gemini cases were temporarily blocked until quota reset or billing/quota increased.
+
+Follow-up completion note: after the quota window cleared, a Gemini-only availability test succeeded on `R2-A04-E03`, and the remaining 26 cases completed in `outputs/sounding-article-error-matrix-r2-rerun-gemini-complete/20260629-231912`, bringing Gemini to 48/48 usable outputs.
 
 ### Artifacts
 

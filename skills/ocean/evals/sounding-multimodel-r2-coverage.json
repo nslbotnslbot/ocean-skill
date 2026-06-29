@@ -77,14 +77,14 @@
     {
       "model": "Gemini gemini-2.5-flash",
       "lane": "frontier ceiling",
-      "usable_outputs": 21,
+      "usable_outputs": 48,
       "total_cases": 48,
-      "coverage_pct": 43.8,
-      "error_artifacts": 27,
-      "auto_check_files": 21,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
       "source_packet_files": 0,
-      "notes": "21/48 usable outputs; remaining attempts blocked by HTTP 429 Too Many Requests, including after cooldown probe. Gemini-only retry with same-case HTTP 429 handling still returned quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier, quotaValue 20; remaining cases require quota reset or raised billing/quota.",
-      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-slow/20260629-203631/gemini-frontier"
+      "notes": "48/48 complete after Gemini-only availability test and rerun; previous HTTP 429 free-tier quota blocker cleared.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-slow/20260629-203631/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-availability-test/20260629-231754/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-complete/20260629-231912/gemini-frontier"
     }
   ]
 }
