@@ -1,6 +1,5 @@
 
-<img width="1672" height="941" alt="OCEAN" src="https://github.com/user-attachments/assets/942d67fb-5bce-46e1-8450-9dc8c4e01f23" />
-
+<img width="1672" height="941" alt="OCEAN workflow" src="https://github.com/user-attachments/assets/512d5234-72b6-4a77-a937-c879fa440113" />
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
 
