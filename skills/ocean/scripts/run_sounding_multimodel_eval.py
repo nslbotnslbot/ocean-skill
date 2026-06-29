@@ -13,6 +13,7 @@ import datetime as dt
 import json
 import os
 from pathlib import Path
+import re
 import socket
 import sys
 import textwrap
@@ -307,6 +308,31 @@ def write_text(path: Path, text: str) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
 
+
+def exception_report(exc: Exception) -> str:
+    lines = [repr(exc)]
+    if isinstance(exc, urllib.error.HTTPError):
+        try:
+            body = exc.read().decode("utf-8", errors="replace")
+        except Exception as body_exc:  # pragma: no cover - diagnostic fallback
+            body = f"<failed to read HTTPError body: {body_exc!r}>"
+        if body:
+            lines.extend(["", body])
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def retry_delay_from_report(report: str, fallback: float) -> float:
+    patterns = [
+        r'"retryDelay"\s*:\s*"([0-9.]+)s"',
+        r"Please retry in ([0-9.]+)s",
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, report)
+        if match:
+            return float(match.group(1)) + 5.0
+    return fallback
+
+
 def extract_source_packet(raw_response: dict) -> dict:
     packet = {}
     for key in ["citations", "search_results", "images", "videos", "related_questions"]:
@@ -428,20 +454,43 @@ def run(args: argparse.Namespace) -> int:
                 write_text(case_dir / "blocked.txt", "dry run only; no API call made\n")
                 continue
 
-            try:
-                output, raw_response = complete_model(model, prompt=prompt, timeout=args.timeout)
-            except (
-                urllib.error.URLError,
-                urllib.error.HTTPError,
-                TimeoutError,
-                socket.timeout,
-                OSError,
-                KeyError,
-                json.JSONDecodeError,
-            ) as exc:
-                write_text(case_dir / "error.txt", repr(exc) + "\n")
-                if args.request_sleep:
-                    time.sleep(args.request_sleep)
+            output = None
+            raw_response = None
+            for attempt in range(args.retry_429 + 1):
+                try:
+                    output, raw_response = complete_model(model, prompt=prompt, timeout=args.timeout)
+                    break
+                except (
+                    urllib.error.URLError,
+                    urllib.error.HTTPError,
+                    TimeoutError,
+                    socket.timeout,
+                    OSError,
+                    KeyError,
+                    json.JSONDecodeError,
+                ) as exc:
+                    report = exception_report(exc)
+                    write_text(case_dir / "error.txt", report)
+                    is_retryable_429 = (
+                        isinstance(exc, urllib.error.HTTPError)
+                        and exc.code == 429
+                        and attempt < args.retry_429
+                    )
+                    if is_retryable_429:
+                        fallback = args.retry_429_sleep or args.request_sleep or 60.0
+                        delay = retry_delay_from_report(report, fallback=fallback)
+                        print(
+                            f"{model['id']} {case['id']} got HTTP 429; retry "
+                            f"{attempt + 1}/{args.retry_429} after {delay:.1f}s",
+                            flush=True,
+                        )
+                        time.sleep(delay)
+                        continue
+                    if args.request_sleep:
+                        time.sleep(args.request_sleep)
+                    break
+
+            if output is None or raw_response is None:
                 continue
 
             write_text(case_dir / "output.md", output)
@@ -505,6 +554,13 @@ def _parse_args(argv: list[str], repo_root: Path) -> argparse.Namespace:
     parser.add_argument("--case-id", action="append", help="Run only a case id from the case config. Can be repeated.")
     parser.add_argument("--case-limit", type=int, help="Run only the first N selected cases.")
     parser.add_argument("--request-sleep", type=float, default=0.0, help="Seconds to sleep after each API attempt.")
+    parser.add_argument("--retry-429", type=int, default=0, help="Retry an HTTP 429 response this many times per case.")
+    parser.add_argument(
+        "--retry-429-sleep",
+        type=float,
+        default=0.0,
+        help="Fallback seconds to sleep before retrying HTTP 429 if the response has no RetryInfo.",
+    )
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args(argv)
 

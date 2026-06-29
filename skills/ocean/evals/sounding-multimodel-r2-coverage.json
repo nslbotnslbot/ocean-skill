@@ -83,7 +83,7 @@
       "error_artifacts": 27,
       "auto_check_files": 21,
       "source_packet_files": 0,
-      "notes": "21/48 usable outputs; remaining attempts blocked by HTTP 429 Too Many Requests, including after cooldown probe.",
+      "notes": "21/48 usable outputs; remaining attempts blocked by HTTP 429 Too Many Requests, including after cooldown probe. Gemini-only retry with same-case HTTP 429 handling still returned quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier, quotaValue 20; remaining cases require quota reset or raised billing/quota.",
       "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-slow/20260629-203631/gemini-frontier"
     }
   ]

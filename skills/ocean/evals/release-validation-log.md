@@ -739,6 +739,8 @@ Purpose: Run Sounding across the original three article seeds plus five addition
 | Perplexity retrieval control `sonar-pro` | 48/48 | Complete; source packet saved for every case |
 | Gemini `gemini-2.5-flash` | 21/48 | Blocked by HTTP 429 quota/rate limit after partial completion |
 
+Follow-up retry note: a Gemini-only retry was attempted after adding same-case HTTP 429 retry handling to `run_sounding_multimodel_eval.py`. The retry still returned HTTP 429 with quotaId `GenerateRequestsPerDayPerProjectPerModel-FreeTier` and quotaValue `20` for `gemini-2.5-flash`, so the remaining 27 Gemini cases remain blocked until quota resets or billing/quota is raised.
+
 ### Artifacts
 
 - Matrix: `skills/ocean/evals/sounding-article-error-matrix-r2.json`

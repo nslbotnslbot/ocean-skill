@@ -51,6 +51,7 @@ This run evaluates OCEAN Sounding on the original three article seeds plus five 
 
 - Qwen, DeepSeek, Kimi fallback, MiniMax fixed-base, Claude, and Perplexity retrieval control reached 48/48 usable outputs after targeted reruns where needed.
 - Gemini reached 21/48 usable outputs. Remaining attempts returned HTTP 429 Too Many Requests, including after a cooldown probe. Treat this as API quota/rate blocking, not a Sounding behavior failure.
+- Gemini-only retry was attempted after adding same-case HTTP 429 retry support to the runner. The API still returned HTTP 429 with quotaId `GenerateRequestsPerDayPerProjectPerModel-FreeTier` and quotaValue `20` for `gemini-2.5-flash`; remaining Gemini cases therefore stay blocked until quota resets or billing/quota is raised.
 - Kimi K2 preview smoke returned HTTP 404, so this R2 used the Moonshot stable fallback for behavior testing.
 - MiniMax original base URL returned HTTP 401. The temporary OpenAI-compatible base URL `https://api.minimax.chat/v1` passed smoke and full-run testing.
 - Perplexity retrieval control saved `source_packet.json` for all 48 successful cases; this is useful as a retrieval/source-packet control group, not an OCEAN dependency.
