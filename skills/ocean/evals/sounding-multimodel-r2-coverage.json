@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-06-29T21:32:29",
+  "cases_file": "skills/ocean/evals/sounding-article-error-matrix-r2.json",
+  "rows": [
+    {
+      "model": "Qwen qwen3.7-max",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 48,
+      "total_cases": 48,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
+      "source_packet_files": 0,
+      "notes": "48/48 main run; no API errors recorded.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-qwen/20260629-195833/qwen-open-weight"
+    },
+    {
+      "model": "DeepSeek deepseek-v4-pro",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 48,
+      "total_cases": 48,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
+      "source_packet_files": 0,
+      "notes": "47/48 main run plus 1 successful timeout rerun.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/deepseek-open-weight; outputs/sounding-article-error-matrix-r2-rerun-deepseek/20260629-202944/deepseek-open-weight"
+    },
+    {
+      "model": "Kimi moonshot-v1-128k fallback",
+      "lane": "open-weight/accessible API fallback",
+      "usable_outputs": 48,
+      "total_cases": 48,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
+      "source_packet_files": 0,
+      "notes": "K2 preview smoke returned HTTP 404; fallback reached 47/48 plus 1 successful rerun.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-kimi-fallback/20260629-200543/kimi-moonshot-stable-fallback; outputs/sounding-article-error-matrix-r2-rerun-kimi/20260629-202628/kimi-moonshot-stable-fallback"
+    },
+    {
+      "model": "MiniMax MiniMax-M1 fixed base",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 48,
+      "total_cases": 48,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
+      "source_packet_files": 0,
+      "notes": "Original base returned HTTP 401; fixed base https://api.minimax.chat/v1 reached 47/48 plus 1 successful rerun.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-minimax-fixed/20260629-200804/minimax-open-weight-fixed-base; outputs/sounding-article-error-matrix-r2-rerun-minimax/20260629-202628/minimax-open-weight-fixed-base"
+    },
+    {
+      "model": "Claude claude-opus-4-8",
+      "lane": "frontier ceiling",
+      "usable_outputs": 48,
+      "total_cases": 48,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
+      "source_packet_files": 0,
+      "notes": "48/48 main run; no API errors recorded.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/claude-frontier"
+    },
+    {
+      "model": "Perplexity retrieval control sonar-pro",
+      "lane": "retrieval control",
+      "usable_outputs": 48,
+      "total_cases": 48,
+      "coverage_pct": 100.0,
+      "error_artifacts": 0,
+      "auto_check_files": 48,
+      "source_packet_files": 48,
+      "notes": "48/48 main run; source_packet.json saved for all 48 cases.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/perplexity-retrieval-control"
+    },
+    {
+      "model": "Gemini gemini-2.5-flash",
+      "lane": "frontier ceiling",
+      "usable_outputs": 21,
+      "total_cases": 48,
+      "coverage_pct": 43.8,
+      "error_artifacts": 27,
+      "auto_check_files": 21,
+      "source_packet_files": 0,
+      "notes": "21/48 usable outputs; remaining attempts blocked by HTTP 429 Too Many Requests, including after cooldown probe.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r2-full-stable/20260629-195237/gemini-frontier; outputs/sounding-article-error-matrix-r2-rerun-gemini-slow/20260629-203631/gemini-frontier"
+    }
+  ]
+}

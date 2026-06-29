@@ -2,55 +2,13 @@
 
 ## Unreleased
 
-### Added
+- Clarified the Sounding model-comparison set: Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group.
+- Added Perplexity retrieval-control smoke support with raw response and source-packet capture.
+- Added DeepSeek and Gemini live API slice results for Sounding Multi-Model Strict Eval R1.
+- Renamed the OCEAN literature/evidence discovery module to **Sounding** across public docs, skill routing, references, eval protocols, runner names, and README artwork.
+- Kept public OCEAN module naming centered on **Sounding** while treating Perplexity only as a retrieval control group.
+- Updated Sounding multi-model strict eval filenames and runner paths to use the `sounding-multimodel-*` naming pattern.
 
-- Added `skills/ocean/references/sonar.md`, a Sonar evidence-discovery workflow for scanning literature, DOI/preprint pages, public peer review sources, database/KG records, and other traceable sources before downstream OCEAN audit.
-- Added Sonar v0.2 output sections to `references/output-contract.md`, including search-task definition, search log, candidate source table, Evidence Radar Map, Negative Space, Sonar Boundary, and Handoff Ticket.
-- Added strict Sonar gate labels in `skills/ocean/references/sonar.md`: Pass, Partial, Reject/Downgrade, Cannot judge, and Boundary fail.
-- Wired Sonar into `skills/ocean/SKILL.md` as the first module in the OCEAN sequence: Sonar -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor.
-- Added `skills/ocean/references/reviewer-to-idea.md`, a workflow for turning peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories into evidence-bound repair ideas, extension ideas, independent project ideas, and collaboration opportunities.
-- Wired the reviewer-to-idea workflow into `skills/ocean/SKILL.md`, `references/output-contract.md`, and `agents/openai.yaml`.
+## v0.1.0
 
-### Validation
-
-- Sonar strict eval R2 passed locally in three isolated fresh Codex threads: R2A source-seed strict test, R2B field-stability test, and R2C boundary-stop test.
-- `quick_validate.py` passed locally for `skills/ocean` after the Sonar reference and output-contract update.
-
-### Evidence Boundary
-
-Sonar search results are treated as discovery evidence, not full-paper proof. OCEAN must distinguish searched, inspected, not inspected, cannot conclude, and needed-next evidence before making claim, novelty, publication, mechanism, or clinical-utility judgments.
-
-Reviewer comments are treated as pressure signals, not facts, novelty proof, publication guarantees, or scientific validation. OCEAN must still check manuscript evidence and external literature before calling an idea supported, novel, or publishable.
-
-## v0.1.0 - 2026-06-28
-
-Initial public release candidate for **OCEAN: Orchestrated Claim-Evidence Analysis Navigator**, a Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
-
-### Added
-
-- Codex skill entry point at `skills/ocean/SKILL.md`.
-- Repository-level `AGENTS.md` for project instructions.
-- OCEAN module map: Sonar, Current, Reef, Iceberg, Anchor, Compass, Harbor.
-- Standard OCEAN output contract for evidence-bound reports.
-- Helper scripts for claim-table generation/checking and review skeleton generation.
-- Public evaluation materials and release-validation log under `skills/ocean/evals/`.
-- MIT `LICENSE`.
-
-### Validation Summary
-
-- Strict Forward Eval Round 1 passed for Cases 1, 2, 3, 5, and implicit-trigger Case 7 using source-traceable AlphaFold and KDGene packets.
-- Anti-Hallucination Gate Rounds 2-3 passed six insufficient/unsafe-material scenarios: text missing, data missing, method missing, evidence-type mismatch, source not traceable, and logical contradiction.
-- Strict Forward Eval Round 4 passed a real-article adversarial matrix: three public article packets paired with six unsafe user claims each.
-- Strict Forward Eval Round 5 passed contamination-resistance replay plus 10 new public-study packets, with 19 counted checks rejecting or downgrading 19 unsafe claims.
-- Packaging gate passed script execution, manual frontmatter validation, `agents/openai.yaml` parsing, `.gitignore` output protection, MIT license presence, and official `quick_validate.py` in a temporary PyYAML environment.
-- Post-release GitHub install recognition test passed: `skills/ocean` installed from `nslbotnslbot/ocean-skill` and `$ocean` was recognized in a fresh Codex session, then the temporary install was removed.
-
-### Evidence Boundary
-
-These validation records test OCEAN's workflow behavior: whether it preserves inspected / not inspected / cannot conclude / needed-next boundaries and avoids unsupported claims. They do not prove the scientific correctness of any cited paper, preprint, benchmark, dataset, peer review report, or biomedical conclusion.
-
-### Known Limits
-
-- Many evaluation packets are abstract-level or source-packet-level rather than full-paper audits.
-- OCEAN should continue to request full text, figures, methods, supplementary materials, code, datasets, external validation, peer review reports, and provenance records when those materials are needed for stronger conclusions.
-- The release-validation log is a workflow validation record, not a scientific evidence database.
+- Initial public OCEAN skill release with claim-evidence auditing, fixed output contract, evidence-boundary rules, validation logs, sample scripts, and installation instructions.

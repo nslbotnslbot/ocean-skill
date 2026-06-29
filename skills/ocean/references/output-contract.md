@@ -8,10 +8,10 @@ Before answering, classify the request and evidence state.
 
 | Field | Options / content |
 |---|---|
-| Request mode | Sonar evidence scan; claim audit; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Request mode | Sounding evidence scan; claim audit; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
 | Evidence state | sufficient; partial; minimal; non-traceable; contradictory |
 | Output depth | quick; standard; deep |
-| Source type | manuscript; abstract; DOI/preprint page; figures/tables; literature search results; peer review report; database/KG/text-mining output; user notes only |
+| Source type | manuscript; abstract; DOI/preprint page; literature search results; figures/tables; peer review report; database/KG/text-mining output; user notes only |
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
@@ -125,12 +125,12 @@ Use for full manuscript review, reviewer-style critique, public peer review extr
 - What would justify stronger claims:
 ```
 
-## Sonar Evidence Scan Add-On
+## Sounding Evidence Scan Add-On
 
-When the main request is literature/evidence discovery, source finding, DOI/preprint/public review collection, or source-packet preparation, use the Sonar add-on before downstream OCEAN audit sections:
+When the main request is literature/evidence discovery, source finding, DOI/preprint/public review collection, or source-packet preparation, use the Sounding add-on before downstream OCEAN audit sections:
 
 ```markdown
-一、Sonar检索任务定义
+一、Sounding检索任务定义
 - 目标问题/claim:
 - 检索范围:
 - 需要的证据类型:
@@ -156,7 +156,7 @@ When the main request is literature/evidence discovery, source finding, DOI/prep
 - 矛盾或过度外推:
 - 需要补充:
 
-六、Sonar边界
+六、Sounding边界
 - 已检索:
 - 已检查:
 - 未检索/未检查:
@@ -168,29 +168,7 @@ When the main request is literature/evidence discovery, source finding, DOI/prep
 |---|---|---|---|
 ```
 
-If Sonar is only a preparatory step inside a larger OCEAN answer, condense the search log and candidate table, then continue with the standard output sections.
-
-## Review-To-Idea Add-On
-
-When the main request is idea extraction from peer review reports, reviewer comments, editor letters, rebuttal exchanges, or public review histories, use Standard or Deep Mode and add:
-
-```markdown
-十、从reviewer意见反推的idea池
-| ID | Review signal | Evidence anchor | Underlying gap | Idea seed | Idea type | Needed evidence | Feasibility | Main risk | Contribution boundary |
-|---|---|---|---|---|---|---|---|---|---|
-
-十一、优先级排序
-| Priority | Idea | Why now | First concrete step | Stop condition |
-|---|---|---|---|---|
-
-十二、不能过度声称的地方
-- 不能说已经证明:
-- 不能说有创新性，除非:
-- 不能说可发表，除非:
-- 下一步必须检索/补充:
-```
-
-If this add-on is used together with Deep Mode, keep the section titles stable and continue numbering after the Deep Mode sections instead of duplicating section numbers.
+If Sounding is only a preparatory step inside a larger OCEAN answer, condense the search log and candidate table, then continue with the standard output sections.
 
 ## Scoring Table Rows
 
@@ -216,5 +194,5 @@ Use these rows in this order unless the user asks for a different rubric:
 - Use low scores when evidence is missing.
 - Do not convert database, KG, text-mining, model prediction, or abstract-only evidence into causality, mechanism, clinical deployment, or therapy guidance.
 - Do not treat search-result snippets as full-paper evidence.
-- Do not treat reviewer comments as facts, novelty proof, or publication guarantees; treat them as pressure signals unless verified against manuscript and external evidence.
-- If only a title, abstract, DOI, reviewer comment, or memory fragment is available, say so in the Evidence state and downgrade the output.
+- Do not treat peer review reports, assessments, or reviewer comments as facts, novelty proof, mechanism proof, publication guarantees, or clinical validation.
+- If only a title, abstract, DOI, or memory fragment is available, say so in the Evidence state and downgrade the output.

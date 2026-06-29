@@ -9,6 +9,9 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `round-1-5-results.md`: concise public summary of strict validation rounds 1-5.
 - `reference-materials/public-sources.md`: public DOI, arXiv, bioRxiv, and public-review source identifiers used or prepared for evals.
 - `reference-materials/boundary-cases.md`: synthetic boundary-case categories used to test anti-hallucination behavior.
+- `skills/ocean/evals/sounding-multimodel-strict-eval.md`: protocol for model-robustness testing of the Sounding source-packet workflow.
+- `skills/ocean/evals/sounding-multimodel-r1-codex-slice-results.md`: first executed Codex/OpenAI slice of the Sounding multi-model strict eval.
+- `skills/ocean/evals/sounding-multimodel-r1-deepseek-gemini-results.md`: live API slice for DeepSeek and Gemini after local keys were configured.
 
 ## What Is Not Included
 
@@ -17,6 +20,12 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - No private peer-review text.
 - No large copyrighted paper excerpts.
 - No raw hidden-answer logs or contamination decoys from `outputs/`.
+
+## Sounding Model Comparison
+
+The current public comparison set is Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. The comparison is not a leaderboard for general intelligence. It asks whether each model can follow the same Sounding source-packet workflow, preserve evidence boundaries, avoid invented sources, and produce reusable handoff objects.
+
+Perplexity is listed as a retrieval control group rather than a normal model lane. It helps test whether retrieval-oriented outputs with citations/search results can be converted into OCEAN source packets, but retrieved sources still require quality checks and manual evidence review.
 
 ## Evaluation Boundary
 
