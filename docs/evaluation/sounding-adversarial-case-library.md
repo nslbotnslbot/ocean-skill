@@ -15,6 +15,8 @@ The useful artifact is not that a provider API returned a response. The useful a
 
 This makes the matrices useful as a personal benchmark library for claim-evidence discipline, manuscript review preparation, and future agent behavior comparisons.
 
+The library should not be framed as an internal research trajectory ledger or a discovery outcome spectrum. Its scope is public-source boundary testing: given a traceable source packet and a synthetic unsafe user claim, does OCEAN preserve the evidence boundary and request the missing evidence?
+
 ## Current Matrix Set
 
 | Matrix | Date | Article seeds | Error types | Total cases | Best use |

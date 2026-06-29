@@ -4,6 +4,8 @@ This folder contains public-facing evaluation notes for **OCEAN: Orchestrated Cl
 
 These files are for GitHub transparency. They are not runtime instructions for the skill and should not be treated as scientific evidence.
 
+For the broader public positioning boundary, see [`../project-boundary.md`](../project-boundary.md). In short, OCEAN evaluation files are source-boundary and behavior-regression materials, not internal research trajectory ledgers, discovery endpoint spectra, or publication-release records.
+
 ## What Is Included
 
 - `round-1-5-results.md`: concise public summary of strict validation rounds 1-5.

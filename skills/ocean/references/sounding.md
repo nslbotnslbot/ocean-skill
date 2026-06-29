@@ -4,6 +4,8 @@ Use Sounding when the user asks OCEAN to scan literature, find evidence, gather 
 
 Sounding is not a paper-summary mode or a citation manager. Its job is to produce traceable evidence coordinates: what was searched, what was inspected, what each source can and cannot support, what remains missing, and which OCEAN module should handle the next step.
 
+Sounding is also not an internal research-execution ledger. It does not manage experiment execution, human-supervised routing, project release status, or discovery endpoint progression. A Sounding source packet is an external audit object for inspected sources, not a record of a single research program moving from execution to publication.
+
 ## Core Questions
 
 - What exact claim, object, method, dataset, disease, mechanism, or review signal is being searched?

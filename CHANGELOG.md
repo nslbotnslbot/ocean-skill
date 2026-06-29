@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a public project-boundary memo and README non-goals that position OCEAN as a source-packet-based external claim-evidence audit layer, not an autonomous AI scientist, experiment-execution system, internal evidence ledger, or publication-release workflow.
 - Clarified the Sounding model-comparison set: Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group.
 - Added Perplexity retrieval-control smoke support with raw response and source-packet capture.
 - Added DeepSeek and Gemini live API slice results for Sounding Multi-Model Strict Eval R1.

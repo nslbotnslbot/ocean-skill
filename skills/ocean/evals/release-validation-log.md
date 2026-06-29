@@ -109,14 +109,14 @@ This entry records naming and packaging migration only. It does not change the s
 ## Status Legend
 
 - **Strict pass**: A fresh Codex thread read the local skill/eval/reference files, used real source-traceable material, completed the requested case output, and preserved evidence boundaries.
-- **Smoke pass**: The run showed the desired trigger or audit behavior, but did not satisfy every strict release-gate requirement.
-- **Partial**: Useful signal, but at least one release-gate requirement was missing or incomplete.
+- **Smoke pass**: The run showed the desired trigger or audit behavior, but did not satisfy every strict validation-check requirement.
+- **Partial**: Useful signal, but at least one validation-check requirement was missing or incomplete.
 - **Fail**: The run did not trigger the intended behavior or produced unsafe/invented claims.
 
 ## Smoke Test Round 0
 
 Date: 2026-06-28
-Purpose: Check whether the skill shows the expected trigger behavior, evidence-bound caution, claim downgrading, and reviewer-risk style before running a stricter release gate.
+Purpose: Check whether the skill shows the expected trigger behavior, evidence-bound caution, claim downgrading, and reviewer-risk style before running a stricter validation gate.
 
 ### Source Materials
 
@@ -175,8 +175,8 @@ Purpose: First strict validation round after smoke testing. This round checks wh
 | Thread | Prompt type | Outcome | Strict interpretation |
 |---|---|---|---|
 | `019f09f7-559e-7f82-aa00-3023cd6363ad` | Combined explicit Case 1/2/3/5 strict eval. | The thread began reading the correct local workflow but did not complete promptly. | Not counted. Renamed to `Strict R1A Long Eval-卡住暂不计入`. |
-| `019f09f9-9dd3-72e2-abc9-891850fa663b` | Split explicit Case 1/2 eval using AlphaFold Source packet A. | Completed the requested output with separate Case 1 and Case 2 sections, evidence-boundary fields, scoring sheet, and release-gate interpretation. | Strict pass for Case 1 and Case 2. |
-| `019f09f9-9ee1-78f3-8bb1-f0c84da7d25b` | Split explicit Case 3/5 eval using KDGene Source packet B. | Completed the requested output with separate Case 3 and Case 5 sections, reviewer-risk table, scoring sheet, and release-gate interpretation. | Strict pass for Case 3 and Case 5. |
+| `019f09f9-9dd3-72e2-abc9-891850fa663b` | Split explicit Case 1/2 eval using AlphaFold Source packet A. | Completed the requested output with separate Case 1 and Case 2 sections, evidence-boundary fields, scoring sheet, and validation-check interpretation. | Strict pass for Case 1 and Case 2. |
+| `019f09f9-9ee1-78f3-8bb1-f0c84da7d25b` | Split explicit Case 3/5 eval using KDGene Source packet B. | Completed the requested output with separate Case 3 and Case 5 sections, reviewer-risk table, scoring sheet, and validation-check interpretation. | Strict pass for Case 3 and Case 5. |
 | `019f09f7-90fc-73e1-85be-deda71a22e8d` | Implicit trigger prompt using AlphaFold Source packet A; prompt did not name `$scientific-claim-audit`. | The thread entered the scientific claim audit workflow, avoided a generic summary, separated checked/unchecked/cannot-judge/needed evidence, and assessed claim strength, leakage, database-cooccurrence risk, journal positioning, reviewer risk, and score. | Pass for implicit trigger behavior, with the caveat that this was still a source-packet test rather than a full article audit. |
 
 ### Case Results

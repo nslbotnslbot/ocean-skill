@@ -31,6 +31,13 @@ Module naming:
 - **Compass**: 研究计划、实验设计、投稿策略模块; research planning, experimental design, and journal strategy module.
 - **Harbor**: 项目工作区、报告沉淀、协作记录; project workspace, report archive, and collaboration record module.
 
+Public positioning boundary:
+
+- Present OCEAN as a source-packet-based external claim-evidence audit layer.
+- Do not frame OCEAN as an autonomous AI scientist, experiment-execution system, internal evidence ledger, human-supervised release workflow, or discovery endpoint spectrum.
+- Prefer terms such as source packet, evidence gate, claim audit card, safe rewrite, Negative Space, Handoff Ticket, reviewer-risk ticket, and validation plan.
+- Keep public evaluation materials benchmark-like and source-boundary-oriented, not private trajectory records or discovery claims.
+
 When writing or updating any log, include bilingual context blocks:
 
 - **中文上下文**: 说明这条日志在中文项目语境中的意义。
