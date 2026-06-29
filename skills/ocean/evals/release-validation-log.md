@@ -755,3 +755,38 @@ Follow-up completion note: after the quota window cleared, a Gemini-only availab
 ### Evidence Boundary / 证据边界
 
 This entry records API execution coverage and artifact generation. It does not yet claim full content-level pass/fail scoring for every output. Fine-grained auto-check aggregation was left pending because local reads of some generated `auto_check.json` files were intermittently slow/hanging; the raw artifacts are preserved for follow-up manual or programmatic scoring.
+
+
+## Sounding Multi-Model Strict Eval R3: New 10-Article Matrix
+
+Date: 2026-06-30
+Purpose: Run a new 10-article x 6-error Sounding matrix after R2, using the same adversarial error categories on a fresh public-source set.
+
+### 中文上下文
+
+本轮 R3 使用 10 篇新的公开可追踪文章/预印本，每篇构造 6 类 adversarial user claims：text missing、data missing、method missing、evidence-type mismatch、untraceable source、logical contradiction。Gemini 按要求先测试，但首次 R3 请求返回 HTTP 429；为避免继续浪费请求，本轮主结果改为记录 Gemini blocked，并继续运行其他可用模型。
+
+### Execution summary
+
+| Model slice | Usable outputs | Status |
+|---|---:|---|
+| Qwen `qwen3.7-max` | 60/60 | Complete after 3 timeout reruns |
+| DeepSeek `deepseek-v4-pro` | 60/60 | Complete |
+| Kimi `moonshot-v1-128k` fallback | 60/60 | Complete after 6 connection-reset/timeout reruns |
+| MiniMax `MiniMax-M1` | 60/60 | Complete |
+| Claude `claude-opus-4-8` | 60/60 | Complete |
+| Perplexity retrieval control `sonar-pro` | 60/60 | Complete; source packet saved for every case |
+| Gemini `gemini-2.5-flash` | 0/60 | Initial Gemini-first attempt returned HTTP 429 RESOURCE_EXHAUSTED because prepayment credits are depleted and was stopped |
+
+### Artifacts
+
+- Matrix: `skills/ocean/evals/sounding-article-error-matrix-r3.json`
+- Human-readable matrix: `skills/ocean/evals/sounding-article-error-matrix-r3.md`
+- Coverage results: `skills/ocean/evals/sounding-multimodel-r3-results.md`
+- Coverage JSON: `skills/ocean/evals/sounding-multimodel-r3-coverage.json`
+- Coverage CSV: `skills/ocean/evals/sounding-multimodel-r3-coverage.csv`
+- Raw runtime artifacts: `outputs/sounding-article-error-matrix-r3-*`
+
+### Evidence Boundary / 证据边界
+
+This entry records API execution coverage and artifact generation only. It does not claim content-level scientific correctness or final model ranking. Manual or programmatic scoring of saved outputs is still required before drawing quality conclusions.

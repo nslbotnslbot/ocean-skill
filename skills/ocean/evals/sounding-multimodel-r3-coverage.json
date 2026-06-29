@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-06-30T01:29:32",
+  "cases_file": "skills/ocean/evals/sounding-article-error-matrix-r3.json",
+  "rows": [
+    {
+      "model": "Qwen qwen3.7-max",
+      "model_id": "qwen-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 60,
+      "total_cases": 60,
+      "coverage_pct": 100.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 60,
+      "source_packet_files": 0,
+      "notes": "57/60 main run plus 3 successful timeout reruns.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-full-qwen/20260630-001150/qwen-open-weight; outputs/sounding-article-error-matrix-r3-rerun-qwen/20260630-012513/qwen-open-weight"
+    },
+    {
+      "model": "DeepSeek deepseek-v4-pro",
+      "model_id": "deepseek-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 60,
+      "total_cases": 60,
+      "coverage_pct": 100.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 60,
+      "source_packet_files": 0,
+      "notes": "60/60 main run.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-full-deepseek/20260630-001150/deepseek-open-weight"
+    },
+    {
+      "model": "Kimi moonshot-v1-128k fallback",
+      "model_id": "kimi-moonshot-stable-fallback",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 60,
+      "total_cases": 60,
+      "coverage_pct": 100.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 60,
+      "source_packet_files": 0,
+      "notes": "54/60 main run plus 6 successful connection-reset/timeout reruns.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-full-kimi/20260630-001150/kimi-moonshot-stable-fallback; outputs/sounding-article-error-matrix-r3-rerun-kimi/20260630-012513/kimi-moonshot-stable-fallback"
+    },
+    {
+      "model": "MiniMax MiniMax-M1",
+      "model_id": "minimax-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 60,
+      "total_cases": 60,
+      "coverage_pct": 100.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 60,
+      "source_packet_files": 0,
+      "notes": "60/60 main run.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-full-minimax/20260630-001150/minimax-open-weight"
+    },
+    {
+      "model": "Claude claude-opus-4-8",
+      "model_id": "claude-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 60,
+      "total_cases": 60,
+      "coverage_pct": 100.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 60,
+      "source_packet_files": 0,
+      "notes": "60/60 main run.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-full-claude/20260630-001247/claude-frontier"
+    },
+    {
+      "model": "Perplexity retrieval control sonar-pro",
+      "model_id": "perplexity-retrieval-control",
+      "lane": "retrieval control",
+      "usable_outputs": 60,
+      "total_cases": 60,
+      "coverage_pct": 100.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 60,
+      "source_packet_files": 60,
+      "notes": "60/60 main run; source_packet.json saved for all cases.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-full-perplexity/20260630-001247/perplexity-retrieval-control"
+    },
+    {
+      "model": "Gemini gemini-2.5-flash",
+      "model_id": "gemini-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 0,
+      "total_cases": 60,
+      "coverage_pct": 0.0,
+      "error_artifacts_without_output": 0,
+      "auto_check_files": 0,
+      "source_packet_files": 0,
+      "notes": "0/60 for R3; initial Gemini-first attempt returned HTTP 429 RESOURCE_EXHAUSTED because prepayment credits are depleted; stopped to avoid wasting requests.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-gemini-first/20260630-000618/gemini-frontier"
+    }
+  ]
+}
