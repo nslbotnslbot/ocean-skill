@@ -4,9 +4,9 @@
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
-OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
+OCEAN is a lightweight Codex-compatible external audit layer for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
 
-OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials.
+OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials. OCEAN audits what existing sources can and cannot support; it does not manage the internal execution or release workflow of a research program.
 
 ## What this is
 
@@ -16,6 +16,22 @@ It provides two entry points:
 
 1. `AGENTS.md` at the repository root, so Codex can automatically read project-level instructions.
 2. `skills/ocean/SKILL.md`, so the same workflow can be used as a portable skill folder if your Codex interface supports Skills.
+
+## Boundary and non-goals
+
+OCEAN should be described as a **source-packet-based claim-evidence audit layer**. Its main objects are source packets, evidence gates, claim audit cards, safe rewrites, negative space, reviewer-risk tickets, and validation plans.
+
+See [`docs/project-boundary.md`](docs/project-boundary.md) for the longer public positioning memo.
+
+OCEAN is not:
+
+- an autonomous AI scientist;
+- a system for executing experiments or generating discoveries;
+- an internal evidence-ledger or project release workflow;
+- a human-supervised execution-package-to-release-gate system;
+- a discovery endpoint spectrum for one research program.
+
+When presenting OCEAN publicly, prefer wording such as **external claim-evidence auditing**, **evidence-type gating**, **source-packet construction**, **safe claim rewriting**, and **public adversarial case matrices**. Avoid making evidence ledgers, paired non-claims, endpoint ladders, or release gates the central contribution.
 
 ## Best use cases
 
@@ -35,7 +51,7 @@ Use this when you ask Codex to review:
 
 ## Module flow
 
-OCEAN uses seven modules in order:
+OCEAN uses seven modules as an external audit sequence, not as an experiment-execution loop:
 
 1. **Sounding**: scan literature, evidence, DOI/preprint/public review sources, and build traceable source packets.
 2. **Current**: analyze field trends and direction flow.
@@ -134,12 +150,14 @@ By default, OCEAN uses a fixed output contract: audit card, evidence boundary, c
 README.zh-CN.md
 assets/
 └── ocean-polar-workflow.jpg
-docs/evaluation/
-├── README.md
-├── round-1-5-results.md
-└── reference-materials/
-    ├── boundary-cases.md
-    └── public-sources.md
+docs/
+├── project-boundary.md
+└── evaluation/
+    ├── README.md
+    ├── round-1-5-results.md
+    └── reference-materials/
+        ├── boundary-cases.md
+        └── public-sources.md
 skills/ocean/
 ├── SKILL.md
 ├── agents/openai.yaml
@@ -173,9 +191,9 @@ skills/ocean/
 
 Public-facing validation notes are in `docs/evaluation/`. The concise summary is `docs/evaluation/round-1-5-results.md`, and public source identifiers are in `docs/evaluation/reference-materials/public-sources.md`.
 
-The current Sounding model-comparison plan includes Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency. The goal is to compare how consistently different models execute the same Sounding workflow, output contract, evidence boundary, and source-packet handoff.
+The current Sounding model-comparison plan includes Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency. The goal is to compare how consistently different models follow the same Sounding workflow, output contract, evidence boundary, and source-packet handoff.
 
-These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
+These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The public evaluation materials are designed as reusable source-boundary checks, not as internal research trajectory records or discovery claims. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
 
 ## Development checks
 
@@ -189,7 +207,7 @@ python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv 
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
 ```
 
-Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, and summarize release-gate outcomes in `skills/ocean/evals/release-validation-log.md`.
+Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, and summarize validation-check outcomes in `skills/ocean/evals/release-validation-log.md`.
 
 ## License
 
