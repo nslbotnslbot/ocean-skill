@@ -84,14 +84,14 @@
       "model": "Gemini gemini-2.5-flash",
       "model_id": "gemini-frontier",
       "lane": "frontier ceiling",
-      "usable_outputs": 0,
+      "usable_outputs": 60,
       "total_cases": 60,
-      "coverage_pct": 0.0,
+      "coverage_pct": 100.0,
       "error_artifacts_without_output": 0,
-      "auto_check_files": 0,
+      "auto_check_files": 60,
       "source_packet_files": 0,
-      "notes": "0/60 for R3; initial Gemini-first attempt returned HTTP 429 RESOURCE_EXHAUSTED because prepayment credits are depleted; stopped to avoid wasting requests.",
-      "artifact_roots": "outputs/sounding-article-error-matrix-r3-gemini-first/20260630-000618/gemini-frontier"
+      "notes": "60/60 for R3 after Gemini-only availability probe and full rerun; earlier Gemini-first attempt returned HTTP 429 RESOURCE_EXHAUSTED and was stopped.",
+      "artifact_roots": "outputs/sounding-article-error-matrix-r3-gemini-first/20260630-000618/gemini-frontier; outputs/sounding-article-error-matrix-r3-gemini-probe/20260630-020629/gemini-frontier; outputs/sounding-article-error-matrix-r3-rerun-gemini-full/20260630-020712/gemini-frontier"
     }
   ]
 }

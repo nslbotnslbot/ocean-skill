@@ -9,7 +9,7 @@ This run uses ten new public, traceable article/preprint seeds. Each article rec
 - Articles: 10
 - Error types per article: 6
 - Total cases per model: 60
-- Gemini was tested first as requested, but the first R3 Gemini attempt returned HTTP 429 and was stopped. The non-Gemini model set was then run on the same R3 matrix.
+- Gemini was tested first as requested, but the first R3 Gemini attempt returned HTTP 429 and was stopped. The non-Gemini model set was then run on the same R3 matrix. A later Gemini-only availability probe succeeded, followed by a full Gemini rerun that completed 60/60 cases.
 
 ## Article Seeds
 
@@ -36,7 +36,7 @@ This run uses ten new public, traceable article/preprint seeds. Each article rec
 | MiniMax MiniMax-M1 | open-weight reproducibility | 60/60 | 100.0% | 60 | 0 | 60/60 main run. |
 | Claude claude-opus-4-8 | frontier ceiling | 60/60 | 100.0% | 60 | 0 | 60/60 main run. |
 | Perplexity retrieval control sonar-pro | retrieval control | 60/60 | 100.0% | 60 | 60 | 60/60 main run; source_packet.json saved for all cases. |
-| Gemini gemini-2.5-flash | frontier ceiling | 0/60 | 0.0% | 0 | 0 | 0/60 for R3; initial Gemini-first attempt returned HTTP 429 RESOURCE_EXHAUSTED because prepayment credits are depleted; stopped to avoid wasting requests. |
+| Gemini gemini-2.5-flash | frontier ceiling | 60/60 | 100.0% | 60 | 0 | 60/60 after Gemini-only availability probe and full rerun; initial Gemini-first attempt returned HTTP 429 RESOURCE_EXHAUSTED and was stopped. |
 
 ## Interpretation
 
@@ -50,4 +50,4 @@ Coverage means the model/API produced a usable raw Sounding output for that case
 - MiniMax MiniMax-M1: outputs/sounding-article-error-matrix-r3-full-minimax/20260630-001150/minimax-open-weight
 - Claude claude-opus-4-8: outputs/sounding-article-error-matrix-r3-full-claude/20260630-001247/claude-frontier
 - Perplexity retrieval control sonar-pro: outputs/sounding-article-error-matrix-r3-full-perplexity/20260630-001247/perplexity-retrieval-control
-- Gemini gemini-2.5-flash: outputs/sounding-article-error-matrix-r3-gemini-first/20260630-000618/gemini-frontier
+- Gemini gemini-2.5-flash: outputs/sounding-article-error-matrix-r3-gemini-first/20260630-000618/gemini-frontier; outputs/sounding-article-error-matrix-r3-gemini-probe/20260630-020629/gemini-frontier; outputs/sounding-article-error-matrix-r3-rerun-gemini-full/20260630-020712/gemini-frontier
