@@ -1,5 +1,7 @@
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
 
+[中文版本](README.zh-CN.md)
+
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
 OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
@@ -129,6 +131,7 @@ By default, OCEAN uses a fixed output contract: audit card, evidence boundary, c
 
 ```text
 .env.ocean.example
+README.zh-CN.md
 assets/
 └── ocean-polar-workflow.jpg
 docs/evaluation/
