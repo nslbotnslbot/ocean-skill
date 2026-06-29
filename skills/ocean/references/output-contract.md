@@ -138,23 +138,34 @@ When the main request is literature/evidence discovery, source finding, DOI/prep
 - 当前证据状态:
 
 二、检索记录
-| Query | Source/database | Filters | Date | Results inspected | Notes |
+| Query/source seed | Source/database | Filters | Date | Results inspected | Notes |
 |---|---|---|---|---:|---|
 
 三、候选来源表
 | ID | Source | Identifier/URL | Tier | Why included | Inspected content | Main evidence | Main limitation | Downstream handoff |
 |---|---|---|---|---|---|---|---|---|
 
-四、证据覆盖与缺口
-| Claim/question | Evidence found | Evidence tier | Coverage | Missing evidence | Next module |
-|---|---|---|---|---|---|
+四、Evidence Radar Map
+| Claim/question | Landing/abstract | Full text | Methods/supplement | Data/code | Review/assessment | Independent validation | Wet/clinical validation |
+|---|---|---|---|---|---|---|---|
 
-五、Sonar边界
+五、Negative Space
+- 未检查:
+- 未找到:
+- 不可推出:
+- 矛盾或过度外推:
+- 需要补充:
+
+六、Sonar边界
 - 已检索:
 - 已检查:
 - 未检索/未检查:
 - 不能判断:
 - 下一步需要:
+
+七、Handoff Ticket
+| Next module | Reason | Input packet | Stop condition |
+|---|---|---|---|
 ```
 
 If Sonar is only a preparatory step inside a larger OCEAN answer, condense the search log and candidate table, then continue with the standard output sections.
