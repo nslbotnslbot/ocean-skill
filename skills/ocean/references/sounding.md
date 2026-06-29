@@ -1,8 +1,8 @@
-# Sonar Evidence Discovery
+# Sounding Evidence Discovery
 
-Use Sonar when the user asks OCEAN to scan literature, find evidence, gather DOI/preprint/public review sources, map evidence around a claim, or prepare source packets before downstream claim audit, trend analysis, knowledge graph organization, validation planning, journal positioning, or idea generation.
+Use Sounding when the user asks OCEAN to scan literature, find evidence, gather DOI/preprint/public review sources, map evidence around a claim, or prepare source packets before downstream claim audit, trend analysis, knowledge graph organization, validation planning, journal positioning, or idea generation.
 
-Sonar is not a paper-summary mode or a citation manager. Its job is to produce traceable evidence coordinates: what was searched, what was inspected, what each source can and cannot support, what remains missing, and which OCEAN module should handle the next step.
+Sounding is not a paper-summary mode or a citation manager. Its job is to produce traceable evidence coordinates: what was searched, what was inspected, what each source can and cannot support, what remains missing, and which OCEAN module should handle the next step.
 
 ## Core Questions
 
@@ -22,7 +22,7 @@ Sonar is not a paper-summary mode or a citation manager. Its job is to produce t
 - Do not treat a DOI, title, abstract, landing page, preprint page, or public review summary as proof of methods/results not inspected.
 - Do not convert KG/database/text-mining/model-prediction evidence into mechanism, causality, clinical utility, or therapy guidance by itself.
 - Do not treat peer review reports, eLife assessments, OpenReview comments, PubPeer comments, or reviewer opinions as experimental facts, novelty proof, publication guarantees, or clinical validation.
-- If live search tools, web access, or source databases are unavailable, state that Sonar can only work from provided local materials.
+- If live search tools, web access, or source databases are unavailable, state that Sounding can only work from provided local materials.
 - Keep a search log whenever discovery is performed: query or source seed, source/database, filters, date, inspected result count, and notes.
 - Prefer primary sources for evidence claims: paper, preprint, protocol, dataset, code repository, registry, public peer review record, or official database entry.
 - Use reviews and perspectives for context, not as direct evidence for a specific empirical claim unless the review itself is the object being audited.
@@ -37,7 +37,7 @@ Sonar is not a paper-summary mode or a citation manager. Its job is to produce t
 | S4 | Database, KG, text-mining, ontology, pathway, or association record | Association, annotation, candidate evidence | Not mechanism, causality, or clinical utility by itself |
 | S5 | News, blog, social media, non-traceable notes | Background only | Needs primary-source confirmation |
 
-## Sonar Workflow
+## Sounding Workflow
 
 1. **Mission framing**: Parse the request into searchable units:
    - target claim;
@@ -76,10 +76,10 @@ Sonar is not a paper-summary mode or a citation manager. Its job is to produce t
 
 ## Output Format
 
-Use this add-on when Sonar is the main task or a necessary preparation step:
+Use this add-on when Sounding is the main task or a necessary preparation step:
 
 ```markdown
-一、Sonar检索任务定义
+一、Sounding检索任务定义
 - 目标问题/claim:
 - 检索范围:
 - 需要的证据类型:
@@ -105,7 +105,7 @@ Use this add-on when Sonar is the main task or a necessary preparation step:
 - 矛盾或过度外推:
 - 需要补充:
 
-六、Sonar边界
+六、Sounding边界
 - 已检索:
 - 已检查:
 - 未检索/未检查:
@@ -117,7 +117,7 @@ Use this add-on when Sonar is the main task or a necessary preparation step:
 |---|---|---|---|
 ```
 
-If Sonar is only a brief preparatory step, condense the tables but preserve the same logic: search/source boundary, candidate sources, negative space, and handoff.
+If Sounding is only a brief preparatory step, condense the tables but preserve the same logic: search/source boundary, candidate sources, negative space, and handoff.
 
 ## Strict Gate Labels
 
@@ -127,9 +127,9 @@ Use these labels when evaluating a source packet or a user claim:
 - **Partial**: evidence supports a weaker or narrower version.
 - **Reject/Downgrade**: the claim overstates what the inspected evidence supports.
 - **Cannot judge**: key source material is missing or inaccessible.
-- **Boundary fail**: Sonar could not establish a traceable source/evidence boundary.
+- **Boundary fail**: Sounding could not establish a traceable source/evidence boundary.
 
-Passing Sonar means the evidence boundary and source packet are usable. It does not mean the underlying science is true or publication-ready.
+Passing Sounding means the evidence boundary and source packet are usable. It does not mean the underlying science is true or publication-ready.
 
 ## Peer Review Discovery
 

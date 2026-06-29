@@ -1,0 +1,143 @@
+{
+  "notes": [
+    "This is a template. Do not put API keys in this file.",
+    "Use environment variables for keys. Update model IDs against each provider's current docs before running.",
+    "Set enabled=true only for providers that are actually available in the current environment."
+  ],
+  "models": [
+    {
+      "id": "qwen-open-weight",
+      "family": "Qwen",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "qwen3.7-max",
+      "base_url": "https://llm-yguh44714c24uitw.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "QWEN_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "qwen-aliyun-anthropic-compatible",
+      "family": "Qwen",
+      "lane": "open-weight reproducibility",
+      "provider": "anthropic-messages",
+      "model": "qwen3.7-max",
+      "base_url": "https://llm-yguh44714c24uitw.cn-beijing.maas.aliyuncs.com/apps/anthropic",
+      "api_key_env": "QWEN_API_KEY",
+      "enabled": false,
+      "notes": "Alternative Aliyun MaaS Anthropic-compatible route; keep disabled unless the OpenAI-compatible route fails."
+    },
+    {
+      "id": "deepseek-open-weight",
+      "family": "DeepSeek",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "REPLACE_WITH_CURRENT_DEEPSEEK_MODEL_ID",
+      "base_url": "REPLACE_WITH_PROVIDER_BASE_URL",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "kimi-open-weight",
+      "family": "Kimi",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "kimi-k2-0905-preview",
+      "base_url": "https://api.moonshot.cn/v1",
+      "api_key_env": "KIMI_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "kimi-moonshot-stable-fallback",
+      "family": "Kimi",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "moonshot-v1-128k",
+      "base_url": "https://api.moonshot.cn/v1",
+      "api_key_env": "KIMI_API_KEY",
+      "enabled": false,
+      "notes": "Stable Moonshot fallback if the Kimi K2 preview model is unavailable for the key."
+    },
+    {
+      "id": "minimax-open-weight",
+      "family": "MiniMax",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "REPLACE_WITH_CURRENT_MINIMAX_MODEL_ID",
+      "base_url": "REPLACE_WITH_PROVIDER_BASE_URL",
+      "api_key_env": "MINIMAX_API_KEY",
+      "enabled": false,
+      "notes": "Set model/base_url from your MiniMax account docs before enabling; keep API keys in MINIMAX_API_KEY, not in this file."
+    },
+    {
+      "id": "mistral-open",
+      "family": "Mistral",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "REPLACE_WITH_CURRENT_MISTRAL_MODEL_ID",
+      "base_url": "REPLACE_WITH_PROVIDER_BASE_URL",
+      "api_key_env": "MISTRAL_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "llama-open",
+      "family": "Llama",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "REPLACE_WITH_CURRENT_LLAMA_MODEL_ID",
+      "base_url": "REPLACE_WITH_PROVIDER_BASE_URL",
+      "api_key_env": "LLAMA_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "openai-frontier",
+      "family": "OpenAI",
+      "lane": "frontier ceiling",
+      "provider": "openai-compatible",
+      "model": "REPLACE_WITH_CURRENT_OPENAI_MODEL_ID",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "gemini-frontier",
+      "family": "Google Gemini",
+      "lane": "frontier ceiling",
+      "provider": "google-gemini-generatecontent",
+      "model": "gemini-2.5-flash",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "api_key_env": "GEMINI_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "claude-frontier",
+      "family": "Anthropic Claude",
+      "lane": "frontier ceiling",
+      "provider": "anthropic-messages",
+      "model": "claude-opus-4-8",
+      "base_url": "https://api.anthropic.com/v1/messages",
+      "api_key_env": "CLAUDE_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "claude-sonnet",
+      "family": "Anthropic Claude",
+      "lane": "frontier ceiling",
+      "provider": "anthropic-messages",
+      "model": "claude-sonnet-4-6",
+      "base_url": "https://api.anthropic.com/v1/messages",
+      "api_key_env": "CLAUDE_API_KEY",
+      "enabled": false
+    },
+    {
+      "id": "perplexity-retrieval-control",
+      "family": "Perplexity Retrieval API",
+      "lane": "retrieval control",
+      "provider": "openai-compatible",
+      "model": "sonar-pro",
+      "base_url": "https://api.perplexity.ai",
+      "api_key_env": "PERPLEXITY_API_KEY",
+      "enabled": false,
+      "notes": "Retrieval-control example only. Enable after setting PERPLEXITY_API_KEY; keep secrets out of this file."
+    }
+  ]
+}

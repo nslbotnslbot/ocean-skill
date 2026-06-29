@@ -14,7 +14,7 @@ Use professional, direct, critical language. Avoid vague praise.
 
 ## Project naming and logs
 
-Use **OCEAN: Orchestrated Claim-Evidence Analysis Navigator** as the project/system name in public-facing or first-mention contexts. Before the project name becomes widely recognizable, do not rely on the bare abbreviation **OCEAN** in standalone titles, release notes, manuscript text, or external descriptions. After the full name has been established in the same context, **OCEAN** may be used as a shorthand.
+Use **OCEAN: Orchestrated Claim-Evidence Analysis Navigator** as the project/system name in public-facing or first-mention contexts. After the full name has been established in the same context, **OCEAN** may be used as a shorthand.
 
 Current full form:
 
@@ -23,10 +23,10 @@ Current full form:
 Module naming:
 
 - **Ocean / OCEAN**: 总系统 / 总 agent; overall scientific agent system.
-- **Iceberg**: claim-evidence audit 模块，专门看“表面结论下面有没有证据支撑”; claim-evidence audit module for inspecting support beneath surface-level claims.
-- **Sonar**: 文献检索与证据发现模块; literature retrieval and evidence discovery module.
+- **Sounding**: 文献检索、证据发现、source packet 构建模块; literature, evidence discovery, and source-packet module.
 - **Current**: 领域趋势、近期进展、研究方向流动分析; field trend, recent advance, and research-direction flow analysis module.
 - **Reef**: 知识图谱 / 数据库资源整合模块; knowledge graph and database resource integration module.
+- **Iceberg**: claim-evidence audit 模块，专门看“表面结论下面有没有证据支撑”; claim-evidence audit module for inspecting support beneath surface-level claims.
 - **Anchor**: 验证、复现、benchmark、外部验证模块; validation, reproducibility, benchmark, and external validation module.
 - **Compass**: 研究计划、实验设计、投稿策略模块; research planning, experimental design, and journal strategy module.
 - **Harbor**: 项目工作区、报告沉淀、协作记录; project workspace, report archive, and collaboration record module.
@@ -105,15 +105,15 @@ Always clarify which tasks are only advisory and which could support co-authorsh
 
 Use this structure unless the user asks otherwise:
 
-一、总体判断  
-二、目前最有价值的地方  
-三、最大风险  
-四、需要核验的关键问题  
-五、建议补充的分析  
-六、我的合作切入点和贡献边界  
-七、投稿定位  
-八、下一步怎么做  
-九、0-10分评价  
+一、总体判断
+二、目前最有价值的地方
+三、最大风险
+四、需要核验的关键问题
+五、建议补充的分析
+六、我的合作切入点和贡献边界
+七、投稿定位
+八、下一步怎么做
+九、0-10分评价
 
 ## Practical commands
 
