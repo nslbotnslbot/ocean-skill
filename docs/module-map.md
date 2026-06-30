@@ -29,14 +29,14 @@ OCEAN should be especially careful with these biomedical claim transitions:
 
 | Module | Current status | Evidence in repository | Next recommended eval |
 |---|---|---|---|
-| Sounding | Tested most heavily | R1 API slice, R2/R3 article-error matrices, and M1 all-module coverage eval | Add content-level scoring beyond coverage |
-| Iceberg | Initial standalone coverage tested | Anti-hallucination rounds plus M1 Iceberg cases across enabled models | Full-paper/figure-level claim-evidence audit eval |
-| Current | Initial standalone coverage tested | M1 Current cases across enabled models using bounded source sets | Time-bounded trend eval with live/public search protocol |
-| Reef | Initial standalone coverage tested | M1 Reef cases across enabled models using resource/provenance traps | KG/database provenance eval with real resource records |
-| Anchor | Initial standalone coverage tested | M1 Anchor cases across enabled models using validation-plan prompts | Deeper validation-plan scoring for clinical and wet-lab follow-up |
-| Compass | Initial standalone coverage tested | M1 Compass cases across enabled models using review-to-idea and evidence-gap prompts | Review-to-idea scoring with real public review text |
-| Harbor | Initial standalone coverage tested | M1 Harbor cases across enabled models using report/memory and collaboration-boundary prompts | Report persistence and collaboration-boundary scoring |
+| Sounding | Tested most heavily; M2 screened | R1 API slice, R2/R3 article-error matrices, M1 all-module coverage, and M2 heuristic scoring | Manual source-grounded review of flagged M2 rows |
+| Iceberg | Initial standalone coverage plus M2 screen | Anti-hallucination rounds, M1 Iceberg cases, and M2 heuristic scoring | Full-paper/figure-level claim-evidence audit eval |
+| Current | Initial standalone coverage plus M2 screen | M1 Current cases and M2 heuristic scoring using bounded source sets | Time-bounded trend eval with live/public search protocol |
+| Reef | Initial standalone coverage plus M2 screen | M1 Reef cases and M2 heuristic scoring using resource/provenance traps | KG/database provenance eval with real resource records |
+| Anchor | Initial standalone coverage plus M2 screen | M1 Anchor cases and M2 heuristic scoring using validation-plan prompts | Deeper validation-plan scoring for clinical and wet-lab follow-up |
+| Compass | Initial standalone coverage plus M2 screen | M1 Compass cases and M2 heuristic scoring using review-to-idea and evidence-gap prompts | Review-to-idea scoring with real public review text |
+| Harbor | Initial standalone coverage plus M2 screen | M1 Harbor cases and M2 heuristic scoring using report/memory and collaboration-boundary prompts | Report persistence and collaboration-boundary scoring |
 
 ## Practical Interpretation
 
-At the current release stage, OCEAN should be presented as a biomedical claim-evidence workflow whose most heavily tested component remains Sounding. M1 adds initial coverage testing for all seven modules, but it is still coverage/format validation rather than final content-level scoring.
+At the current release stage, OCEAN should be presented as a biomedical claim-evidence workflow whose most heavily tested component remains Sounding. M1 adds initial coverage testing for all seven modules, and M2 adds a first-pass heuristic scoring screen over those outputs. This is still not final scientific correctness validation or a model leaderboard.

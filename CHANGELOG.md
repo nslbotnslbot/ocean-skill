@@ -2,10 +2,11 @@
 
 ## Unreleased
 
+- Added OCEAN Module Strict Eval M2 scoring: a 12-point heuristic rubric, scorecard CSV, summary JSON, results note, and scorer script for 98 M1 all-module outputs.
 - Added OCEAN Module Strict Eval M1 covering all seven modules with 14 cases across enabled model lanes; merged coverage reached 98/98 usable outputs after targeted timeout reruns.
 - Clarified OCEAN's public scope as biomedical research across medical and biological research, with medical AI and biological AI as priority use cases.
 - Added a public module responsibility and validation-status map in `docs/module-map.md`.
-- Clarified in README and evaluation docs that current strict module-specific testing is concentrated on Sounding; other modules are designed but still need standalone evals.
+- Clarified in README and evaluation docs that Sounding remains the most heavily tested module while M1/M2 now add first all-module coverage and heuristic scoring; final source-grounded content review is still needed.
 - Updated public evaluation notes for Sounding R3, including Gemini's completed 60/60 rerun after the initial HTTP 429 stop.
 - Clarified the Sounding model-comparison set: Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group.
 - Added Perplexity retrieval-control smoke support with raw response and source-packet capture.

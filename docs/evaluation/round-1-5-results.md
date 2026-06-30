@@ -62,3 +62,10 @@ Current interpretation: the strongest module-specific evidence is for Sounding. 
 ## OCEAN Module M1
 
 OCEAN Module Strict Eval M1 is the first all-module coverage eval. It uses 14 cases, 2 per module, across the enabled model lanes. After targeted reruns for provider timeouts, the merged coverage record reaches 98/98 usable outputs. This validates that all seven modules can produce structured artifacts under a shared evidence-boundary contract, but content-level scoring is still required before claiming module quality rankings.
+
+
+## OCEAN Module M2
+
+OCEAN Module Strict Eval M2 adds a 12-point heuristic scoring screen over the 98 M1 outputs. The dimensions are evidence boundary correctness, unsupported-claim downgrade, no invented source/details, module-specific artifact quality, handoff correctness, and biomedical/biological research usefulness.
+
+M2 scored 98/98 outputs with a mean score of 10.07/12: 64 strong, 23 developing, and 11 needs_review under the deterministic screen. This is a first-pass quality screen and a triage tool for manual review, not final scientific correctness validation or a model leaderboard.

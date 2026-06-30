@@ -19,6 +19,8 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/sounding-multimodel-r3-results.md`: coverage summary for the R3 10-article x 6-error multi-model execution, including the completed Gemini rerun after the initial HTTP 429 stop.
 - `docs/module-map.md`: public module responsibility and validation-status map.
 - `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
+- `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
+- `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
 
 ## What Is Not Included
 
@@ -30,7 +32,7 @@ These files are for GitHub transparency. They are not runtime instructions for t
 
 ## Module Coverage Boundary
 
-The strongest strict module-specific validation is still concentrated on **Sounding**. M1 now adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor, but this should be read as usable-output and format/evidence-boundary coverage, not final content-quality scoring.
+The strongest strict module-specific validation is still concentrated on **Sounding**. M1 adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor. M2 adds a deterministic heuristic scoring screen over those 98 outputs. This should be read as coverage plus first-pass scoring, not final source-grounded content-quality judgment.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

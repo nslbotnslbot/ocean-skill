@@ -848,3 +848,58 @@ Before the full run, a Gemini smoke case showed that if the packet says abstract
 ### Evidence Boundary / 证据边界
 
 This entry records module coverage, output-contract adherence, and artifact generation. It does not prove final scientific correctness or final model/module quality ranking. Manual or programmatic content-level scoring remains required.
+
+## OCEAN Module Strict Eval M2: Heuristic Content-Quality Screen
+
+Date: 2026-07-01
+Purpose: Add first-pass scoring over the 98 M1 all-module outputs so OCEAN can distinguish "usable output exists" from "output appears mature enough for deeper review."
+
+### Rubric
+
+M2 scores each output on six 0-2 dimensions, for a maximum of 12:
+
+| Dimension | Purpose |
+|---|---|
+| Evidence boundary correctness | Checks inspected / not inspected / cannot conclude / needed-next separation |
+| Unsupported claim downgrade | Checks whether unsafe clinical, causal, validation, authorship, or trend claims are refused or downgraded |
+| No invented source/details | Flags unexpected identifiers, metrics, datasets, reviewer text, validation results, or clinical conclusions |
+| Module-specific artifact quality | Checks whether the active module produced the expected artifact type |
+| Handoff correctness | Checks whether handoff uses OCEAN module names or a clear stop condition |
+| Biomedical/biological research usefulness | Checks whether the output gives concrete bounded next steps for medical or biological research |
+
+### Execution summary
+
+The deterministic scorer was run on the merged M1 artifact roots recorded in `skills/ocean/evals/ocean-module-m1-coverage.json`.
+
+| Metric | Result |
+|---|---:|
+| Outputs scored | 98/98 |
+| Mean score | 10.07/12 |
+| Strong | 64 |
+| Developing | 23 |
+| Needs review | 11 |
+| Critical-flag rows | 10 |
+
+### Module summary
+
+| Module | Mean score | Strong | Developing | Needs review |
+|---|---:|---:|---:|---:|
+| Anchor | 9.79 | 7 | 4 | 3 |
+| Compass | 10.50 | 11 | 3 | 0 |
+| Current | 10.29 | 11 | 3 | 0 |
+| Harbor | 10.43 | 9 | 2 | 3 |
+| Iceberg | 9.93 | 10 | 4 | 0 |
+| Reef | 10.00 | 10 | 4 | 0 |
+| Sounding | 9.57 | 6 | 3 | 5 |
+
+### Artifacts
+
+- Rubric: `skills/ocean/evals/ocean-module-m2-rubric.md`
+- Results: `skills/ocean/evals/ocean-module-m2-results.md`
+- Scorecard CSV: `skills/ocean/evals/ocean-module-m2-scorecard.csv`
+- Summary JSON: `skills/ocean/evals/ocean-module-m2-summary.json`
+- Scoring script: `skills/ocean/scripts/score_ocean_module_m2.py`
+
+### Evidence Boundary / 证据边界
+
+M2 is a deterministic heuristic screen, not a final scientific correctness judgment and not a model leaderboard. Critical flags and low scores identify rows for manual source-grounded review; they do not by themselves prove that an output is scientifically wrong.
