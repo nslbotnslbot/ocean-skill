@@ -18,6 +18,7 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/sounding-multimodel-r2-results.md`: coverage summary for the R2 multi-model execution, including the completed Gemini rerun after quota reset.
 - `skills/ocean/evals/sounding-multimodel-r3-results.md`: coverage summary for the R3 10-article x 6-error multi-model execution, including the completed Gemini rerun after the initial HTTP 429 stop.
 - `docs/module-map.md`: public module responsibility and validation-status map.
+- `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
 
 ## What Is Not Included
 
@@ -29,7 +30,7 @@ These files are for GitHub transparency. They are not runtime instructions for t
 
 ## Module Coverage Boundary
 
-Current strict module-specific validation is concentrated on **Sounding**. Earlier rounds also test OCEAN's evidence-boundary and claim-downgrade behavior, which overlaps with Iceberg-style claim audit behavior, but the repository should not claim completed standalone strict evals for Current, Reef, Anchor, Compass, or Harbor yet.
+The strongest strict module-specific validation is still concentrated on **Sounding**. M1 now adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor, but this should be read as usable-output and format/evidence-boundary coverage, not final content-quality scoring.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

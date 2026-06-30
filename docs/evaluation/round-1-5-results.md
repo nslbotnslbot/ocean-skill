@@ -56,4 +56,9 @@ After rounds 1-5, OCEAN added module-specific Sounding evals. These are separate
 | Sounding R2 | 8 public article/preprint seeds x 6 adversarial error types = 48 cases per model | Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and Perplexity retrieval control completed coverage | Coverage only; not a content-quality leaderboard |
 | Sounding R3 | 10 public article/preprint seeds x 6 adversarial error types = 60 cases per model | Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and Perplexity retrieval control completed coverage after Gemini's later rerun | Coverage only; content-level scoring still needed |
 
-Current interpretation: the strongest module-specific evidence is for Sounding. Iceberg behavior has partial indirect support from claim-downgrade and anti-hallucination tests. Current, Reef, Anchor, Compass, and Harbor still need standalone module evals.
+Current interpretation: the strongest module-specific evidence is for Sounding. OCEAN Module M1 adds first-pass standalone coverage for Current, Reef, Iceberg, Anchor, Compass, and Harbor, but those modules still need content-level scoring before quality comparisons.
+
+
+## OCEAN Module M1
+
+OCEAN Module Strict Eval M1 is the first all-module coverage eval. It uses 14 cases, 2 per module, across the enabled model lanes. After targeted reruns for provider timeouts, the merged coverage record reaches 98/98 usable outputs. This validates that all seven modules can produce structured artifacts under a shared evidence-boundary contract, but content-level scoring is still required before claiming module quality rankings.

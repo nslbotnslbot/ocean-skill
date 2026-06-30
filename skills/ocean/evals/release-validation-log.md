@@ -792,3 +792,44 @@ Follow-up completion note: a Gemini-only availability probe succeeded in `output
 ### Evidence Boundary / 证据边界
 
 This entry records API execution coverage and artifact generation only. It does not claim content-level scientific correctness or final model ranking. Manual or programmatic scoring of saved outputs is still required before drawing quality conclusions.
+
+## OCEAN Module Strict Eval M1: Seven-Module Coverage
+
+Date: 2026-06-30 to 2026-07-01
+Purpose: Run the first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
+
+### 中文上下文
+
+本轮 M1 不再只测试 Sounding，而是为 7 个 OCEAN module 各设计 2 个 case，共 14 个 case。材料使用公开可追踪 source seeds 和明确标注的 adversarial user requests；这些 adversarial requests 是测试输入，不是来源作者的科学结论。
+
+### Execution summary
+
+| Model slice | Initial run | Targeted rerun | Final usable outputs |
+|---|---:|---:|---:|
+| Qwen `qwen3.7-max` | 12/14 | 2/2 recovered | 14/14 |
+| DeepSeek `deepseek-v4-pro` | 13/14 | 1/1 recovered | 14/14 |
+| Kimi `moonshot-v1-128k` fallback | 12/14 | 2/2 recovered | 14/14 |
+| MiniMax `MiniMax-M1` | 14/14 | Not needed | 14/14 |
+| Gemini `gemini-2.5-flash` | 14/14 | Not needed | 14/14 |
+| Claude `claude-opus-4-8` | 14/14 | Not needed | 14/14 |
+| Perplexity retrieval control `sonar-pro` | 14/14 | Not needed | 14/14; source packets 14/14 |
+
+Merged coverage: 98/98 usable outputs, 98/98 auto-check files. Perplexity source packets: 14/14.
+
+### Important smoke finding
+
+Before the full run, a Gemini smoke case showed that if the packet says abstract-level evidence but does not include exact abstract text, the model may reconstruct abstract-like details from memory. The M1 runner and cases were tightened before the full run: absent abstract/method/metric details must be marked `未提供`, not reconstructed.
+
+### Artifacts
+
+- Protocol: `skills/ocean/evals/ocean-module-strict-eval.md`
+- Cases: `skills/ocean/evals/ocean-module-eval-cases.json`
+- Results: `skills/ocean/evals/ocean-module-m1-results.md`
+- Coverage JSON: `skills/ocean/evals/ocean-module-m1-coverage.json`
+- Coverage CSV: `skills/ocean/evals/ocean-module-m1-coverage.csv`
+- Runner: `skills/ocean/scripts/run_ocean_module_eval.py`
+- Raw runtime artifacts: `outputs/ocean-module-eval-m1-*`
+
+### Evidence Boundary / 证据边界
+
+This entry records module coverage, output-contract adherence, and artifact generation. It does not prove final scientific correctness or final model/module quality ranking. Manual or programmatic content-level scoring remains required.

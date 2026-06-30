@@ -29,14 +29,14 @@ OCEAN should be especially careful with these biomedical claim transitions:
 
 | Module | Current status | Evidence in repository | Next recommended eval |
 |---|---|---|---|
-| Sounding | Tested most heavily | R1 API slice, R2 8-article x 6-error matrix, R3 10-article x 6-error matrix, multi-model coverage files | Add content-level scoring beyond coverage |
-| Iceberg | Partially and indirectly tested | Anti-hallucination, claim downgrade, contamination-resistance rounds | Standalone claim-evidence audit eval with full papers/figures |
-| Current | Designed only | Module routing in `SKILL.md`; no standalone eval yet | Trend-analysis eval using a time-bounded biomedical topic |
-| Reef | Designed only | Module routing in `SKILL.md`; KG/database cautions in eval prompts | KG/database provenance eval with known circularity traps |
-| Anchor | Designed only | Module routing in `SKILL.md`; validation/leakage language in output contract | Validation-plan eval for clinical prediction and wet-lab follow-up |
-| Compass | Designed only | Module routing in `SKILL.md`; planning/journal strategy output contract | Review-to-idea and experiment-planning eval |
-| Harbor | Designed only | Module routing in `SKILL.md`; report skeleton scripts | Report persistence and collaboration-boundary eval |
+| Sounding | Tested most heavily | R1 API slice, R2/R3 article-error matrices, and M1 all-module coverage eval | Add content-level scoring beyond coverage |
+| Iceberg | Initial standalone coverage tested | Anti-hallucination rounds plus M1 Iceberg cases across enabled models | Full-paper/figure-level claim-evidence audit eval |
+| Current | Initial standalone coverage tested | M1 Current cases across enabled models using bounded source sets | Time-bounded trend eval with live/public search protocol |
+| Reef | Initial standalone coverage tested | M1 Reef cases across enabled models using resource/provenance traps | KG/database provenance eval with real resource records |
+| Anchor | Initial standalone coverage tested | M1 Anchor cases across enabled models using validation-plan prompts | Deeper validation-plan scoring for clinical and wet-lab follow-up |
+| Compass | Initial standalone coverage tested | M1 Compass cases across enabled models using review-to-idea and evidence-gap prompts | Review-to-idea scoring with real public review text |
+| Harbor | Initial standalone coverage tested | M1 Harbor cases across enabled models using report/memory and collaboration-boundary prompts | Report persistence and collaboration-boundary scoring |
 
 ## Practical Interpretation
 
-At the current release stage, OCEAN should be presented as a biomedical claim-evidence workflow whose strongest tested component is Sounding. The rest of the module sequence is intentional product structure and should be expanded with module-specific evals before making strong claims about those modules.
+At the current release stage, OCEAN should be presented as a biomedical claim-evidence workflow whose most heavily tested component remains Sounding. M1 adds initial coverage testing for all seven modules, but it is still coverage/format validation rather than final content-level scoring.

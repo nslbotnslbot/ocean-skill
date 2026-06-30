@@ -1,0 +1,8 @@
+model,model_id,lane,usable_outputs,total_cases,coverage_pct,error_artifacts_before_rerun,auto_check_files,heading_pass_files,source_packet_files,notes,artifact_roots
+Qwen qwen3.7-max,qwen-open-weight,open-weight reproducibility,14,14,100.0,2,14,14,0,14/14 after targeted rerun.,outputs/ocean-module-eval-m1-full/20260630-225724/qwen-open-weight; outputs/ocean-module-eval-m1-rerun-qwen/20260701-000444/qwen-open-weight
+DeepSeek deepseek-v4-pro,deepseek-open-weight,open-weight reproducibility,14,14,100.0,1,14,14,0,14/14 after targeted rerun.,outputs/ocean-module-eval-m1-full/20260630-225724/deepseek-open-weight; outputs/ocean-module-eval-m1-rerun-deepseek/20260701-000734/deepseek-open-weight
+Kimi moonshot-v1-128k,kimi-moonshot-stable-fallback,open-weight reproducibility,14,14,100.0,2,14,14,0,14/14 after targeted rerun.,outputs/ocean-module-eval-m1-full/20260630-225724/kimi-moonshot-stable-fallback; outputs/ocean-module-eval-m1-rerun-kimi/20260701-000922/kimi-moonshot-stable-fallback
+MiniMax MiniMax-M1,minimax-open-weight,open-weight reproducibility,14,14,100.0,0,14,13,0,14/14 main run.,outputs/ocean-module-eval-m1-full/20260630-225724/minimax-open-weight
+Google Gemini gemini-2.5-flash,gemini-frontier,frontier ceiling,14,14,100.0,0,14,14,0,14/14 main run.,outputs/ocean-module-eval-m1-full/20260630-225724/gemini-frontier
+Anthropic Claude claude-opus-4-8,claude-frontier,frontier ceiling,14,14,100.0,0,14,14,0,14/14 main run.,outputs/ocean-module-eval-m1-full/20260630-225724/claude-frontier
+Perplexity Retrieval API sonar-pro,perplexity-retrieval-control,retrieval control,14,14,100.0,0,14,11,14,14/14 main run. Source packet saved for all cases.,outputs/ocean-module-eval-m1-full/20260630-225724/perplexity-retrieval-control

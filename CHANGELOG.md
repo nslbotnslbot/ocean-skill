@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added OCEAN Module Strict Eval M1 covering all seven modules with 14 cases across enabled model lanes; merged coverage reached 98/98 usable outputs after targeted timeout reruns.
 - Clarified OCEAN's public scope as biomedical research across medical and biological research, with medical AI and biological AI as priority use cases.
 - Added a public module responsibility and validation-status map in `docs/module-map.md`.
 - Clarified in README and evaluation docs that current strict module-specific testing is concentrated on Sounding; other modules are designed but still need standalone evals.
