@@ -44,3 +44,16 @@ The detailed internal record is in:
 ```text
 skills/ocean/evals/release-validation-log.md
 ```
+
+
+## Later Sounding Multi-Model Evals
+
+After rounds 1-5, OCEAN added module-specific Sounding evals. These are separate from the earlier counted strict rounds.
+
+| Eval | Scope | Model coverage result | Boundary |
+|---|---|---|---|
+| Sounding R1 API slices | Small live API checks for Codex/OpenAI, DeepSeek, and Gemini behavior | Completed slices recorded in `skills/ocean/evals/` | Workflow/format and evidence-boundary behavior only |
+| Sounding R2 | 8 public article/preprint seeds x 6 adversarial error types = 48 cases per model | Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and Perplexity retrieval control completed coverage | Coverage only; not a content-quality leaderboard |
+| Sounding R3 | 10 public article/preprint seeds x 6 adversarial error types = 60 cases per model | Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and Perplexity retrieval control completed coverage after Gemini's later rerun | Coverage only; content-level scoring still needed |
+
+Current interpretation: the strongest module-specific evidence is for Sounding. Iceberg behavior has partial indirect support from claim-downgrade and anti-hallucination tests. Current, Reef, Anchor, Compass, and Harbor still need standalone module evals.

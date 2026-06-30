@@ -4,7 +4,7 @@
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
-OCEAN is a lightweight Codex-compatible skill for scientific claim auditing, biomedical evidence review, AI-for-Science manuscript evaluation, journal positioning, and collaboration boundary analysis.
+OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evidence navigation across medical and biological research. It is AI-aware, but not AI-only: it can support biomedical AI studies, biological AI studies, manuscripts, databases, knowledge graphs, clinical prediction work, journal positioning, and collaboration boundary analysis.
 
 OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials.
 
@@ -16,6 +16,15 @@ It provides two entry points:
 
 1. `AGENTS.md` at the repository root, so Codex can automatically read project-level instructions.
 2. `skills/ocean/SKILL.md`, so the same workflow can be used as a portable skill folder if your Codex interface supports Skills.
+
+## Scope
+
+OCEAN is **biomedical first, AI-aware, and evidence-boundary centered**.
+
+- Core scope: biomedical research.
+- Main domains: medical research and biological research.
+- Priority use cases today: medical AI research, biological AI research, bioinformatics, clinical prediction, knowledge graphs, databases, public review signals, manuscripts, and research planning.
+- Out of scope: summary-only paper reading, unsupported clinical advice, invented data, or broad general-science claims without a biomedical evidence question.
 
 ## Best use cases
 
@@ -35,15 +44,17 @@ Use this when you ask Codex to review:
 
 ## Module flow
 
-OCEAN uses seven modules in order:
+OCEAN uses seven modules in order. Each module is meant to complete a different event and hand off a concrete artifact to the next step. See `docs/module-map.md` for the fuller public map.
 
-1. **Sounding**: scan literature, evidence, DOI/preprint/public review sources, and build traceable source packets.
-2. **Current**: analyze field trends and direction flow.
-3. **Reef**: organize knowledge graph, database, benchmark, cohort, and resource evidence.
-4. **Iceberg**: audit claim support beneath surface-level conclusions.
-5. **Anchor**: design validation, replication, benchmark, leakage, and reproducibility checks.
-6. **Compass**: turn evidence into research plans, experiment design, idea prioritization, and journal strategy.
-7. **Harbor**: preserve reports, workspace memory, and collaboration records.
+| Order | Module | Event it completes | Typical output | Current validation status |
+|---:|---|---|---|---|
+| 1 | **Sounding** | Evidence discovery and source-boundary setup | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket | Strict multi-model evals completed |
+| 2 | **Current** | Field trend and direction-flow reading | Trend map, recent movement, opportunity/risk notes | Designed, not yet standalone-tested |
+| 3 | **Reef** | Biomedical resource and KG/database organization | Resource provenance map, database/KG evidence table | Designed, not yet standalone-tested |
+| 4 | **Iceberg** | Claim-evidence audit under the surface claim | Claim-evidence matrix, downgrade/rewrite notes | Indirectly exercised by anti-hallucination tests; standalone module eval pending |
+| 5 | **Anchor** | Validation, replication, leakage, benchmark, and reproducibility planning | Validation checklist, benchmark/leakage plan, reproducibility risks | Designed, not yet standalone-tested |
+| 6 | **Compass** | Research planning and strategic decision-making | Idea card, experiment plan, journal/collaboration strategy | Designed, not yet standalone-tested |
+| 7 | **Harbor** | Report preservation and collaboration memory | Final report, workspace log, contribution boundary record | Designed, not yet standalone-tested |
 
 ## Quick start
 
@@ -134,12 +145,15 @@ By default, OCEAN uses a fixed output contract: audit card, evidence boundary, c
 README.zh-CN.md
 assets/
 └── ocean-polar-workflow.jpg
-docs/evaluation/
-├── README.md
-├── round-1-5-results.md
-└── reference-materials/
-    ├── boundary-cases.md
-    └── public-sources.md
+docs/
+├── module-map.md
+└── evaluation/
+    ├── README.md
+    ├── round-1-5-results.md
+    ├── sounding-adversarial-case-library.md
+    └── reference-materials/
+        ├── boundary-cases.md
+        └── public-sources.md
 skills/ocean/
 ├── SKILL.md
 ├── agents/openai.yaml
@@ -173,7 +187,9 @@ skills/ocean/
 
 Public-facing validation notes are in `docs/evaluation/`. The concise summary is `docs/evaluation/round-1-5-results.md`, and public source identifiers are in `docs/evaluation/reference-materials/public-sources.md`.
 
-The current Sounding model-comparison plan includes Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency. The goal is to compare how consistently different models execute the same Sounding workflow, output contract, evidence boundary, and source-packet handoff.
+Current module-specific strict testing is concentrated on **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
+
+The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline, which overlaps with Iceberg-style claim audit behavior. They should not be described as complete standalone evals for Current, Reef, Anchor, Compass, or Harbor.
 
 These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
 

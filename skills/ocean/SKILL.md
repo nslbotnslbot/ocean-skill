@@ -1,12 +1,12 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for evidence-bound scientific claim auditing, literature and evidence discovery, source-packet creation, DOI/preprint/public peer review scanning, manuscripts, AI-for-Science systems, biomedical AI, bioinformatics studies, databases, knowledge graphs, clinical prediction models, collaboration opportunities, reviewer-style critique, and journal positioning. Use when the user asks to evaluate a research project or manuscript, scan literature and evidence, find sources for a claim, inspect claim support, check leakage, validation, benchmark fairness, reproducibility, causal overstatement, database or text-mining evidence, publication tier, reviewer risks, or light/medium/deep/authorship-level contribution. Do not use for summary-only paper reading, general literature search without an evidence or claim-audit goal, or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to scan evidence, build source packets, audit claims, check leakage/validation/benchmark fairness/reproducibility, review manuscripts, inspect biomedical AI or biological AI studies, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for summary-only reading or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
 
-Use OCEAN to judge whether scientific claims are supported by available evidence. The goal is not to praise or summarize the work. The goal is to identify the real contribution, evidence gaps, overclaims, publication positioning, and the user's realistic contribution boundary.
+Use OCEAN to judge whether biomedical research claims are supported by available evidence across medical and biological research. The goal is not to praise or summarize the work. The goal is to identify the real contribution, evidence gaps, overclaims, publication positioning, and the user's realistic contribution boundary.
 
 ## Operating Rules
 

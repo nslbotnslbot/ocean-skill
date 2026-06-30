@@ -16,6 +16,8 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/sounding-article-error-matrix-r2.md`: eight-article adversarial matrix with six error types per article.
 - `skills/ocean/evals/sounding-article-error-matrix-r3.md`: ten-article adversarial matrix focused on foundation-model and biomedical AI preprints.
 - `skills/ocean/evals/sounding-multimodel-r2-results.md`: coverage summary for the R2 multi-model execution, including the completed Gemini rerun after quota reset.
+- `skills/ocean/evals/sounding-multimodel-r3-results.md`: coverage summary for the R3 10-article x 6-error multi-model execution, including the completed Gemini rerun after the initial HTTP 429 stop.
+- `docs/module-map.md`: public module responsibility and validation-status map.
 
 ## What Is Not Included
 
@@ -25,6 +27,12 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - No large copyrighted paper excerpts.
 - No raw hidden-answer logs or contamination decoys from `outputs/`.
 
+## Module Coverage Boundary
+
+Current strict module-specific validation is concentrated on **Sounding**. Earlier rounds also test OCEAN's evidence-boundary and claim-downgrade behavior, which overlaps with Iceberg-style claim audit behavior, but the repository should not claim completed standalone strict evals for Current, Reef, Anchor, Compass, or Harbor yet.
+
+See `docs/module-map.md` for the current module responsibility and validation-status map.
+
 ## Sounding Model Comparison
 
 The current public comparison set is Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. The comparison is not a leaderboard for general intelligence. It asks whether each model can follow the same Sounding source-packet workflow, preserve evidence boundaries, avoid invented sources, and produce reusable handoff objects.
@@ -32,6 +40,8 @@ The current public comparison set is Qwen, DeepSeek, Kimi, MiniMax, Gemini, Clau
 Perplexity is listed as a retrieval control group rather than a normal model lane. It helps test whether retrieval-oriented outputs with citations/search results can be converted into OCEAN source packets, but retrieved sources still require quality checks and manual evidence review.
 
 The R2 and R3 article/error matrices are best read as a reusable case library. They preserve concrete article seeds, inspected-source boundaries, adversarial user-claim types, and expected safe behavior so future OCEAN runs can be checked for evidence discipline without reusing private manuscripts or hidden answer keys.
+
+As of 2026-06-30, R2 and R3 coverage records show Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and the Perplexity retrieval control all reached complete usable-output coverage for their respective matrices. Coverage means the model/API produced usable Sounding artifacts; it is not a final content-quality ranking.
 
 ## Evaluation Boundary
 
