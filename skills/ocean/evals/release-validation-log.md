@@ -816,6 +816,20 @@ Purpose: Run the first all-module coverage eval across Sounding, Current, Reef, 
 
 Merged coverage: 98/98 usable outputs, 98/98 auto-check files. Perplexity source packets: 14/14.
 
+### Timeout / error recovery
+
+The initial full run used `--timeout 240`. Five provider-level runtime errors were found, then recovered with targeted reruns using `--timeout 420`.
+
+| Model | Case | Initial error | Targeted rerun result |
+|---|---|---|---|
+| Qwen `qwen3.7-max` | M1-REEF-02 | `timeout('The read operation timed out')` | Recovered |
+| Qwen `qwen3.7-max` | M1-HARBOR-02 | `ConnectionResetError(54, 'Connection reset by peer')` | Recovered |
+| DeepSeek `deepseek-v4-pro` | M1-SOUNDING-01 | `timeout('The read operation timed out')` | Recovered |
+| Kimi `moonshot-v1-128k` fallback | M1-REEF-01 | `timeout('The read operation timed out')` | Recovered |
+| Kimi `moonshot-v1-128k` fallback | M1-COMPASS-02 | `timeout('The read operation timed out')` | Recovered |
+
+Interpretation: these were transport/provider runtime failures, not content-level module failures. The cases were rerun without changing their prompts or evidence packets. Detailed table: `skills/ocean/evals/ocean-module-m1-error-recovery.csv`.
+
 ### Important smoke finding
 
 Before the full run, a Gemini smoke case showed that if the packet says abstract-level evidence but does not include exact abstract text, the model may reconstruct abstract-like details from memory. The M1 runner and cases were tightened before the full run: absent abstract/method/metric details must be marked `未提供`, not reconstructed.
@@ -827,6 +841,7 @@ Before the full run, a Gemini smoke case showed that if the packet says abstract
 - Results: `skills/ocean/evals/ocean-module-m1-results.md`
 - Coverage JSON: `skills/ocean/evals/ocean-module-m1-coverage.json`
 - Coverage CSV: `skills/ocean/evals/ocean-module-m1-coverage.csv`
+- Error recovery CSV: `skills/ocean/evals/ocean-module-m1-error-recovery.csv`
 - Runner: `skills/ocean/scripts/run_ocean_module_eval.py`
 - Raw runtime artifacts: `outputs/ocean-module-eval-m1-*`
 

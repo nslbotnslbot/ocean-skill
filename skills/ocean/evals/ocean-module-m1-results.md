@@ -39,9 +39,22 @@ This is the first all-module coverage eval for OCEAN. It tests whether each conf
 ## Run Notes
 
 - Initial full run produced 93/98 usable outputs and 5 provider error artifacts.
+- The initial full run used `--timeout 240`; targeted reruns used a longer `--timeout 420`.
 - Targeted reruns recovered all 5 missing outputs: Qwen M1-REEF-02 and M1-HARBOR-02; DeepSeek M1-SOUNDING-01; Kimi M1-REEF-01 and M1-COMPASS-02.
 - Perplexity retrieval control produced source packets for all 14 cases.
 - A pre-full-run Gemini smoke exposed a prompt-boundary issue: the model reconstructed abstract-like text when exact abstract text was not provided. The runner/case wording was tightened before the full run to require `未提供` for absent abstract/method/metric details.
+
+## Error Recovery
+
+| Model | Case | Module | Initial error | Rerun timeout | Result | Interpretation |
+|---|---|---|---|---:|---|---|
+| Qwen qwen3.7-max | M1-REEF-02 | Reef | `timeout('The read operation timed out')` | 420s | Recovered | Provider/API read timeout; not treated as a module failure. |
+| Qwen qwen3.7-max | M1-HARBOR-02 | Harbor | `ConnectionResetError(54, 'Connection reset by peer')` | 420s | Recovered | Remote connection reset; not treated as a module failure. |
+| DeepSeek deepseek-v4-pro | M1-SOUNDING-01 | Sounding | `timeout('The read operation timed out')` | 420s | Recovered | Provider/API read timeout; not treated as a module failure. |
+| Kimi moonshot-v1-128k | M1-REEF-01 | Reef | `timeout('The read operation timed out')` | 420s | Recovered | Provider/API read timeout; not treated as a module failure. |
+| Kimi moonshot-v1-128k | M1-COMPASS-02 | Compass | `timeout('The read operation timed out')` | 420s | Recovered | Provider/API read timeout; not treated as a module failure. |
+
+Detailed recovery table: `skills/ocean/evals/ocean-module-m1-error-recovery.csv`.
 
 ## Evidence Boundary
 

@@ -246,7 +246,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--models", type=Path, default=repo_root / "skills/ocean/evals/sounding-multimodel-models.example.json")
     parser.add_argument("--output-dir", type=Path, default=repo_root / "outputs/ocean-module-eval-m1")
     parser.add_argument("--env-file", type=Path, default=repo_root / ".env.ocean.local")
-    parser.add_argument("--timeout", type=int, default=120)
+    parser.add_argument("--timeout", type=int, default=420)
     parser.add_argument("--model-id", action="append")
     parser.add_argument("--case-id", action="append")
     parser.add_argument("--module", action="append", help="Run only cases for a module. Can be repeated.")
