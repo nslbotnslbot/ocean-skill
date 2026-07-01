@@ -5,6 +5,7 @@ __pycache__/
 .env.*
 !.env.example
 !.env.ocean.example
+.private/
 skills/ocean/evals/sounding-multimodel-models.local.json
 outputs/*
 !outputs/.gitkeep
