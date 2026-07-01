@@ -956,3 +956,50 @@ Purpose: Make OCEAN easier to test as a full seven-module workflow and give Reef
 ### Evidence Boundary / 证据边界
 
 No live API calls were executed for this update. The Reef adapter registry is an execution plan and evidence-boundary contract, not proof that those APIs were queried in a validation run. Full-workflow case seeds are eval scaffolding, not scientific claims or hidden-answer benchmarks.
+
+## Reef Strict Eval R1
+
+Date: 2026-07-01
+Purpose: Run the first Reef-focused strict eval after adding the Reef API adapter registry and module handoff scaffolding.
+
+### Scope
+
+| Item | Value |
+|---|---|
+| Cases | 5 |
+| Enabled model lanes | 7 |
+| Expected outputs | 35 |
+| Usable outputs | 35 |
+| Runtime errors | 0 |
+| Mean M2-style score | 9.37/12 |
+| Strong | 12 |
+| Developing | 20 |
+| Needs review | 3 |
+
+### Case focus
+
+- Drug-response benchmark provenance and leakage/circularity boundary.
+- Reporting guideline misuse boundary.
+- KG association to mechanism/therapy overclaim.
+- Cell atlas API planning without live query.
+- Clinical registry metadata boundary.
+
+### Manual triage
+
+| Row | Interpretation |
+|---|---|
+| Qwen REEF-R1-01 | Conservative false positive. The output rejected the unsafe "no leakage/circularity" conclusion; the flag was triggered by "保证" in a negative boundary context. |
+| MiniMax REEF-R1-04 | True needs-review. The output refused the unsafe conclusion but invented or assumed an uninspected CELLxGENE-style endpoint. MiniMax also emitted `<think>` blocks in 5/5 outputs. |
+| Claude REEF-R1-01 | Conservative false positive from URL punctuation; the provided arXiv URL was preserved with adjacent Chinese parenthetical text. |
+
+### Artifacts
+
+- Cases: `skills/ocean/evals/reef-strict-eval-r1-cases.json`
+- Coverage: `skills/ocean/evals/reef-strict-eval-r1-coverage.json`
+- Results: `skills/ocean/evals/reef-strict-eval-r1-results.md`
+- Scorecard: `skills/ocean/evals/reef-strict-eval-r1-scorecard.csv`
+- Summary: `skills/ocean/evals/reef-strict-eval-r1-summary.json`
+
+### Evidence Boundary / 证据边界
+
+Reef-R1 did not execute live biomedical database/API queries. It tested whether model outputs keep API/database/KG/registry evidence at the correct evidence level. The M2-style score is heuristic; manual source-grounded review remains required before treating any model lane as mature.

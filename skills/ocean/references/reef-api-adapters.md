@@ -26,6 +26,7 @@ Reef API adapters are optional. OCEAN must remain a workflow and output contract
 - Treat every adapter as optional unless the user explicitly asks for live API/database work.
 - Prefer official APIs, official bulk downloads, official data portals, or documented public endpoints.
 - Record the exact source URL, endpoint family, query date, inspected fields, filters, and any failures.
+- Do not name endpoint URLs, query paths, schema fields, release versions, or API result fields unless they were provided by the user or inspected from official documentation in the current run.
 - Never write API keys, credentials, paid account details, private manuscript text, patient data, or raw sensitive outputs into public logs.
 - If an API call costs money, uses a private key, accesses private data, or may submit unpublished material to a third party, ask the user before calling it.
 - Treat API records as resource evidence. They can support provenance, annotation, association, or registry status; they do not alone prove mechanism, causality, treatment efficacy, clinical utility, or publication readiness.

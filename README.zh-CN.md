@@ -168,6 +168,9 @@ skills/ocean/
 │   ├── forward-test-cases.md
 │   ├── public-source-protocol.md
 │   ├── real-article-adversarial-cases.md
+│   ├── reef-strict-eval-r1-cases.json
+│   ├── reef-strict-eval-r1-coverage.json
+│   ├── reef-strict-eval-r1-results.md
 │   ├── release-validation-log.md
 │   ├── sounding-multimodel-cases.json
 │   ├── sounding-multimodel-models.example.json
@@ -201,6 +204,8 @@ skills/ocean/
 面向公开发布的 validation notes 位于 `docs/evaluation/`。简洁总结在 `docs/evaluation/round-1-5-results.md`，公开来源标识符在 `docs/evaluation/reference-materials/public-sources.md`。
 
 目前最深入的 module-specific strict testing 仍然集中在 **Sounding**。R2 和 R3 测试的是 Sounding source-packet workflow，模型包括 Qwen、DeepSeek、Kimi、MiniMax、Gemini、Claude，以及一个 Perplexity retrieval control group。M1 增加了七个 module 的全覆盖测试，M2 对 98 个 M1 输出做了第一轮 heuristic scoring。Perplexity 被作为 retrieval-oriented control 处理，因为它的产品定位强调 answer/search grounding；它不是 OCEAN 的依赖。
+
+Reef-R1 增加了第一轮专门的 Reef strict eval，重点测试 resource provenance、API/database 证据边界、KG association overclaim、cell atlas planning boundary 和 clinical registry metadata boundary。
 
 仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。
 

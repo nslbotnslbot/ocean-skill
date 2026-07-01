@@ -1,0 +1,132 @@
+{
+  "generated_at": "2026-07-01T17:50:00",
+  "cases_file": "skills/ocean/evals/reef-strict-eval-r1-cases.json",
+  "protocol_file": "skills/ocean/evals/ocean-module-strict-eval.md",
+  "run_root": "outputs/reef-strict-eval-r1/20260701-172946",
+  "enabled_model_count": 7,
+  "case_count": 5,
+  "module_count": 1,
+  "total_expected_outputs": 35,
+  "total_usable_outputs": 35,
+  "total_auto_check_files": 35,
+  "rows": [
+    {
+      "model": "Qwen qwen3.7-max",
+      "model_id": "qwen-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 0,
+      "notes": "5/5 main run.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/qwen-open-weight"
+    },
+    {
+      "model": "DeepSeek deepseek-v4-pro",
+      "model_id": "deepseek-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 0,
+      "notes": "5/5 main run.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/deepseek-open-weight"
+    },
+    {
+      "model": "Kimi moonshot-v1-128k",
+      "model_id": "kimi-moonshot-stable-fallback",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 0,
+      "notes": "5/5 main run.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/kimi-moonshot-stable-fallback"
+    },
+    {
+      "model": "MiniMax MiniMax-M1",
+      "model_id": "minimax-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 0,
+      "notes": "5/5 main run.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/minimax-open-weight"
+    },
+    {
+      "model": "Google Gemini gemini-2.5-flash",
+      "model_id": "gemini-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 0,
+      "notes": "5/5 main run.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/gemini-frontier"
+    },
+    {
+      "model": "Anthropic Claude claude-opus-4-8",
+      "model_id": "claude-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 0,
+      "notes": "5/5 main run.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/claude-frontier"
+    },
+    {
+      "model": "Perplexity Retrieval API sonar-pro",
+      "model_id": "perplexity-retrieval-control",
+      "lane": "retrieval control",
+      "usable_outputs": 5,
+      "total_cases": 5,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 5,
+      "heading_pass_files": 5,
+      "source_packet_files": 5,
+      "notes": "5/5 main run. Source packet saved for all cases.",
+      "artifact_roots": "outputs/reef-strict-eval-r1/20260701-172946/perplexity-retrieval-control"
+    }
+  ],
+  "module_rows": [
+    {
+      "module": "Reef",
+      "usable_outputs": 35,
+      "total_cases": 35,
+      "coverage_pct": 100.0,
+      "auto_check_files": 35,
+      "heading_pass_files": 35,
+      "source_packet_files": 5
+    }
+  ],
+  "disabled_model_lanes": [
+    "qwen-aliyun-anthropic-compatible",
+    "kimi-open-weight",
+    "mistral-open",
+    "llama-open",
+    "openai-frontier",
+    "claude-sonnet"
+  ],
+  "boundary": "Coverage records usable outputs only. Outputs live in ignored outputs/ and are not intended for Git."
+}

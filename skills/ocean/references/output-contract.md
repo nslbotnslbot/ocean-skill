@@ -207,6 +207,7 @@ Use these rows in this order unless the user asks for a different rubric:
 ## Anti-Hallucination Rules
 
 - Put evidence boundary before strong judgments.
+- Do not include private reasoning, chain-of-thought, hidden scratchpad text, or `<think>` blocks in user-facing OCEAN outputs.
 - Never fill blank table cells with imagined data.
 - Use low scores when evidence is missing.
 - Do not convert database, KG, text-mining, model prediction, or abstract-only evidence into causality, mechanism, clinical deployment, or therapy guidance.

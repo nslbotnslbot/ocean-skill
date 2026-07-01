@@ -6,6 +6,8 @@
 - Added module handoff rules so multi-module runs preserve explicit evidence packets, unresolved risks, and stop conditions.
 - Added optional Reef API adapter registry for official biomedical databases, registries, and resource tools without making OCEAN dependent on any API.
 - Added manual triage notes for the 11 M2 `needs_review` rows.
+- Added Reef Strict Eval R1 with 35/35 usable outputs across seven enabled model lanes and manual triage of three needs-review rows.
+- Tightened Reef/API and eval-output instructions to avoid uninspected endpoint invention and `<think>`/private-reasoning blocks.
 - Added standalone module reference files for Current, Reef, Iceberg, Anchor, Compass, and Harbor, and wired them into OCEAN resource routing.
 - Added OCEAN Module Strict Eval M2 scoring: a 12-point heuristic rubric, scorecard CSV, summary JSON, results note, and scorer script for 98 M1 all-module outputs.
 - Added OCEAN Module Strict Eval M1 covering all seven modules with 14 cases across enabled model lanes; merged coverage reached 98/98 usable outputs after targeted timeout reruns.

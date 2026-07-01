@@ -168,6 +168,9 @@ skills/ocean/
 │   ├── forward-test-cases.md
 │   ├── public-source-protocol.md
 │   ├── real-article-adversarial-cases.md
+│   ├── reef-strict-eval-r1-cases.json
+│   ├── reef-strict-eval-r1-coverage.json
+│   ├── reef-strict-eval-r1-results.md
 │   ├── release-validation-log.md
 │   ├── sounding-multimodel-cases.json
 │   ├── sounding-multimodel-models.example.json
@@ -201,6 +204,8 @@ skills/ocean/
 Public-facing validation notes are in `docs/evaluation/`. The concise summary is `docs/evaluation/round-1-5-results.md`, and public source identifiers are in `docs/evaluation/reference-materials/public-sources.md`.
 
 Current module-specific strict testing is still deepest for **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. M1 adds all-module coverage, and M2 adds first-pass heuristic scoring over the 98 M1 outputs. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
+
+Reef-R1 adds the first dedicated Reef strict eval, focused on resource provenance, API/database evidence boundaries, KG association overclaims, cell atlas planning boundaries, and clinical registry metadata boundaries.
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
 
