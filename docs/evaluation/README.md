@@ -25,6 +25,7 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
 - `skills/ocean/evals/ocean-module-m2-needs-review-triage.md`: manual triage guide for the 11 M2 `needs_review` rows.
 - `skills/ocean/evals/reef-strict-eval-r1-results.md`: first Reef-focused strict eval over resource provenance, API/database boundaries, KG association, cell atlas planning, and clinical registry metadata cases.
+- `skills/ocean/evals/collaborative-workflow-r1-results.md`: cross-module workflow eval covering proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 
 ## What Is Not Included
 
@@ -39,6 +40,8 @@ These files are for GitHub transparency. They are not runtime instructions for t
 The strongest strict module-specific validation is still concentrated on **Sounding**. M1 adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor. M2 adds a deterministic heuristic scoring screen over those 98 outputs. These should be read as coverage and first-pass scoring, not final source-grounded content-quality judgment.
 
 Reef-R1 adds the first dedicated Reef strict eval. It focuses on resource provenance, API/database boundary control, KG association overclaim prevention, and clinical registry metadata boundaries.
+
+Collaborative Workflow R1 adds a broader cross-module workflow stress test. It checks whether OCEAN can preserve evidence boundaries while moving from proposal/source packet setup to resource mapping, claim downgrade, validation planning, idea planning, and Harbor records.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

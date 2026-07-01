@@ -159,6 +159,7 @@ skills/ocean/
 ├── agents/openai.yaml
 ├── evals/
 │   ├── anti-hallucination-cases.md
+│   ├── collaborative-workflow-r1-results.md
 │   ├── contamination-resistance-round5.md
 │   ├── full-ocean-workflow-cases.md
 │   ├── full-ocean-workflow-protocol.md
@@ -206,6 +207,8 @@ Public-facing validation notes are in `docs/evaluation/`. The concise summary is
 Current module-specific strict testing is still deepest for **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. M1 adds all-module coverage, and M2 adds first-pass heuristic scoring over the 98 M1 outputs. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
 
 Reef-R1 adds the first dedicated Reef strict eval, focused on resource provenance, API/database evidence boundaries, KG association overclaims, cell atlas planning boundaries, and clinical registry metadata boundaries.
+
+Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
 

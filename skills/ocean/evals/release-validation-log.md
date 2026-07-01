@@ -1046,3 +1046,61 @@ Purpose: Keep a single public-facing record of engineering/runtime/eval issues e
 ### Evidence Boundary / 证据边界
 
 This section records observed engineering/runtime/eval issues only. It does not include API keys, private manuscripts, raw provider secrets, or unrelated private repository details. It should not be read as a scientific quality judgment of the source papers or biomedical claims.
+
+## Collaborative Workflow R1
+
+Date: 2026-07-02
+Purpose: Run a broader cross-module workflow stress test after Reef-R1, using proposal-to-validation-to-Harbor cases inspired by collaborative scientific workflows, reviewer-style critique, validation-first design, and biomedical evidence-boundary skills.
+
+### Scope
+
+| Item | Value |
+|---|---:|
+| Cases | 10 |
+| Enabled model lanes | 7 |
+| Expected outputs | 70 |
+| Usable outputs | 70 |
+| Runtime error artifacts | 1 |
+| Auto-check files | 70 |
+| Reasoning leak files | 10 |
+| Mean M2-style score | 9.8/12 |
+| Strong | 41 |
+| Developing | 22 |
+| Needs review | 7 |
+
+### Runtime notes
+
+- Kimi `moonshot-v1-128k` hit HTTP 429 on `CW-R1-CURRENT-01`, then recovered on the configured automatic retry.
+- MiniMax `MiniMax-M1` emitted `<think>` blocks in 10/10 outputs despite prompt-level prohibition.
+- Perplexity retrieval control saved source packets for 10/10 outputs, but in non-retrieval modules it introduced external citations and source context beyond the packet, so it should be treated as retrieval-control behavior rather than a normal model lane.
+
+### Module summary
+
+| Module | Mean score | Strong | Developing | Needs review |
+|---|---:|---:|---:|---:|
+| Current | 11.14 | 7 | 0 | 0 |
+| Compass | 10.43 | 5 | 0 | 2 |
+| Iceberg | 10.29 | 5 | 2 | 0 |
+| Anchor | 9.71 | 9 | 4 | 1 |
+| Sounding | 9.43 | 2 | 5 | 0 |
+| Reef | 9.36 | 6 | 7 | 1 |
+| Harbor | 9.29 | 7 | 4 | 3 |
+
+### Key interpretation
+
+- OCEAN's cross-module behavior is usable: all enabled lanes completed all cases.
+- Harbor is the weakest workflow-stage module and needs a stronger artifact contract for decision memos, collaboration boundaries, and next-day handoff records.
+- Prompt-only reasoning suppression is not enough for MiniMax-M1; future runners need clean-output postprocessing or provider-level reasoning split/disable support.
+- Perplexity should stay as a retrieval-specialist control. It is useful, but not directly comparable to normal packet-only module behavior in Anchor/Compass/Harbor.
+
+### Artifacts
+
+- Cases: `skills/ocean/evals/collaborative-workflow-r1-cases.json`
+- Coverage: `skills/ocean/evals/collaborative-workflow-r1-coverage.json`
+- Results: `skills/ocean/evals/collaborative-workflow-r1-results.md`
+- Scorecard: `skills/ocean/evals/collaborative-workflow-r1-scorecard.csv`
+- Summary: `skills/ocean/evals/collaborative-workflow-r1-summary.json`
+
+### Evidence Boundary / 证据边界
+
+This eval used synthetic/public-style workflow prompts and did not inspect private manuscripts or execute live biomedical database queries. The scores are heuristic screening only; manual source-grounded review remains required.
