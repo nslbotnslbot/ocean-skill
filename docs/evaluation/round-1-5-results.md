@@ -69,3 +69,10 @@ OCEAN Module Strict Eval M1 is the first all-module coverage eval. It uses 14 ca
 OCEAN Module Strict Eval M2 adds a 12-point heuristic scoring screen over the 98 M1 outputs. The dimensions are evidence boundary correctness, unsupported-claim downgrade, no invented source/details, module-specific artifact quality, handoff correctness, and biomedical/biological research usefulness.
 
 M2 scored 98/98 outputs with a mean score of 10.07/12: 64 strong, 23 developing, and 11 needs_review under the deterministic screen. This is a first-pass quality screen and a triage tool for manual review, not final scientific correctness validation or a model leaderboard.
+
+
+## OCEAN Differentiation M3
+
+After reviewing adjacent AI-for-science workflow framing, OCEAN was re-positioned more explicitly as external biomedical evidence navigation and claim-risk triage. The public guardrail is that OCEAN should not be described as an execution-ledger, release-gate, endpoint-calibration, or proof-object publishing workflow.
+
+M3 scanned 50 public repository files and 98 saved M1 outputs. Result: 0 unqualified high-risk mentions; status pass. This is a positioning/similarity guardrail only, not legal clearance or scientific originality proof.

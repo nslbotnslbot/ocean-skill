@@ -21,6 +21,8 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
 - `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
 - `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
+- `docs/differentiation.md`: public positioning note that defines OCEAN as external biomedical evidence navigation rather than an execution/release/proof-object framework.
+- `skills/ocean/evals/ocean-differentiation-m3-results.md`: differentiation scan over public docs and M1 outputs.
 
 ## What Is Not Included
 
@@ -32,7 +34,7 @@ These files are for GitHub transparency. They are not runtime instructions for t
 
 ## Module Coverage Boundary
 
-The strongest strict module-specific validation is still concentrated on **Sounding**. M1 adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor. M2 adds a deterministic heuristic scoring screen over those 98 outputs. This should be read as coverage plus first-pass scoring, not final source-grounded content-quality judgment.
+The strongest strict module-specific validation is still concentrated on **Sounding**. M1 adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor. M2 adds a deterministic heuristic scoring screen over those 98 outputs. M3 adds a differentiation scan to keep OCEAN framed as external evidence navigation and claim-risk triage. These should be read as coverage, first-pass scoring, and positioning guardrails, not final source-grounded content-quality judgment.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

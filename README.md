@@ -8,6 +8,8 @@ OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evid
 
 OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials.
 
+OCEAN is not an execution framework, manuscript release authority, endpoint-calibration system, or proof-object publishing workflow. Its public direction is external evidence navigation and claim-risk triage for biomedical research.
+
 ## What this is
 
 This package is designed for personal use inside Codex and for publishing as a small GitHub repository.
@@ -49,12 +51,12 @@ OCEAN uses seven modules in order. Each module is meant to complete a different 
 | Order | Module | Event it completes | Typical output | Current validation status |
 |---:|---|---|---|---|
 | 1 | **Sounding** | Evidence discovery and source-boundary setup | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket | Strict multi-model evals completed |
-| 2 | **Current** | Field trend and direction-flow reading | Trend map, recent movement, opportunity/risk notes | Designed, not yet standalone-tested |
-| 3 | **Reef** | Biomedical resource and KG/database organization | Resource provenance map, database/KG evidence table | Designed, not yet standalone-tested |
-| 4 | **Iceberg** | Claim-evidence audit under the surface claim | Claim-evidence matrix, downgrade/rewrite notes | Indirectly exercised by anti-hallucination tests; standalone module eval pending |
-| 5 | **Anchor** | Validation, replication, leakage, benchmark, and reproducibility planning | Validation checklist, benchmark/leakage plan, reproducibility risks | Designed, not yet standalone-tested |
-| 6 | **Compass** | Research planning and strategic decision-making | Idea card, experiment plan, journal/collaboration strategy | Designed, not yet standalone-tested |
-| 7 | **Harbor** | Report preservation and collaboration memory | Final report, workspace log, contribution boundary record | Designed, not yet standalone-tested |
+| 2 | **Current** | Field trend and direction-flow reading | Trend map, recent movement, opportunity/risk notes | M1 covered; M2 screened |
+| 3 | **Reef** | Biomedical resource and KG/database organization | Resource provenance map, database/KG evidence table | M1 covered; M2 screened |
+| 4 | **Iceberg** | Claim-evidence audit under the surface claim | Claim-evidence matrix, downgrade/rewrite notes | M1 covered; M2 screened |
+| 5 | **Anchor** | Validation, replication, leakage, benchmark, and reproducibility planning | Validation checklist, benchmark/leakage plan, reproducibility risks | M1 covered; M2 screened |
+| 6 | **Compass** | Research planning and strategic decision-making | Idea card, experiment plan, journal/collaboration strategy | M1 covered; M2 screened |
+| 7 | **Harbor** | Review report preservation and collaboration boundary memory | Final audit report, decision note, contribution boundary record | M1 covered; M2 screened |
 
 ## Quick start
 
@@ -146,6 +148,7 @@ README.zh-CN.md
 assets/
 └── ocean-polar-workflow.jpg
 docs/
+├── differentiation.md
 ├── module-map.md
 └── evaluation/
     ├── README.md
@@ -160,6 +163,10 @@ skills/ocean/
 ├── evals/
 │   ├── anti-hallucination-cases.md
 │   ├── contamination-resistance-round5.md
+│   ├── ocean-differentiation-m3-results.md
+│   ├── ocean-differentiation-m3-protocol.md
+│   ├── ocean-module-m1-results.md
+│   ├── ocean-module-m2-results.md
 │   ├── forward-test-cases.md
 │   ├── public-source-protocol.md
 │   ├── real-article-adversarial-cases.md
@@ -172,6 +179,7 @@ skills/ocean/
 ├── references/
 │   ├── audit-lenses.md
 │   ├── claim-evidence-table.md
+│   ├── differentiation.md
 │   ├── output-contract.md
 │   ├── reviewer-lens.md
 │   ├── review-report.md
@@ -187,9 +195,9 @@ skills/ocean/
 
 Public-facing validation notes are in `docs/evaluation/`. The concise summary is `docs/evaluation/round-1-5-results.md`, and public source identifiers are in `docs/evaluation/reference-materials/public-sources.md`.
 
-Current module-specific strict testing is concentrated on **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
+Current module-specific strict testing is still deepest for **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. M1 adds all-module coverage, and M2 adds first-pass heuristic scoring over the 98 M1 outputs. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
 
-The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline, which overlaps with Iceberg-style claim audit behavior. They should not be described as complete standalone evals for Current, Reef, Anchor, Compass, or Harbor.
+The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline. M1/M2 should still be read as coverage plus heuristic screening, not final scientific correctness validation or a model leaderboard.
 
 These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
 
@@ -205,7 +213,7 @@ python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv 
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
 ```
 
-Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, and summarize release-gate outcomes in `skills/ocean/evals/release-validation-log.md`.
+Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, run `skills/ocean/scripts/check_ocean_differentiation.py` for the M3 differentiation guardrail, and summarize release validation outcomes in `skills/ocean/evals/release-validation-log.md`.
 
 ## License
 

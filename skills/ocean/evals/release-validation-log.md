@@ -116,7 +116,7 @@ This entry records naming and packaging migration only. It does not change the s
 ## Smoke Test Round 0
 
 Date: 2026-06-28
-Purpose: Check whether the skill shows the expected trigger behavior, evidence-bound caution, claim downgrading, and reviewer-risk style before running a stricter release gate.
+Purpose: Check whether the skill shows the expected trigger behavior, evidence-bound caution, claim downgrading, and reviewer-risk style before running a stricter release validation check.
 
 ### Source Materials
 
@@ -903,3 +903,41 @@ The deterministic scorer was run on the merged M1 artifact roots recorded in `sk
 ### Evidence Boundary / 证据边界
 
 M2 is a deterministic heuristic screen, not a final scientific correctness judgment and not a model leaderboard. Critical flags and low scores identify rows for manual source-grounded review; they do not by themselves prove that an output is scientifically wrong.
+
+## OCEAN Differentiation Eval M3: Adjacent-Framework Drift Guardrail
+
+Date: 2026-07-01
+Purpose: After reviewing adjacent AI-for-science workflow framing, keep OCEAN differentiated as external biomedical evidence navigation and claim-risk triage rather than an execution-ledger, release-gate, endpoint-calibration, or proof-object publishing workflow.
+
+### Directional update
+
+OCEAN's public positioning was tightened:
+
+- Positive direction: source-boundary navigation, claim-risk triage, validation planning, reviewer-risk mapping, and collaboration-boundary review for medical and biological research.
+- Avoided framing: execution-layer systems, evidence-ledger workflows, manuscript release authority, endpoint-calibration systems, outcome-spectrum labels, proof-object publishing, and claim-after / paired-non-claim ledgers.
+- Harbor wording was adjusted toward audit reports, decision notes, and contribution-boundary records rather than release authority.
+
+### Execution summary
+
+M3 used `skills/ocean/scripts/check_ocean_differentiation.py` to scan public docs/references/evals plus the 98 saved M1 outputs.
+
+| Metric | Result |
+|---|---:|
+| Public files scanned | 50 |
+| M1 outputs scanned | 98 |
+| Guardrail mentions | 25 |
+| Unqualified high-risk mentions | 0 |
+| Status | pass |
+
+### Artifacts
+
+- Public note: `docs/differentiation.md`
+- Runtime reference: `skills/ocean/references/differentiation.md`
+- Protocol: `skills/ocean/evals/ocean-differentiation-m3-protocol.md`
+- Results: `skills/ocean/evals/ocean-differentiation-m3-results.md`
+- Summary JSON: `skills/ocean/evals/ocean-differentiation-m3-summary.json`
+- Script: `skills/ocean/scripts/check_ocean_differentiation.py`
+
+### Evidence Boundary / 证据边界
+
+M3 is a positioning and similarity-avoidance scan. It is not legal clearance, trademark clearance, scientific superiority, or proof of originality. It records that current public wording and saved M1 outputs do not contain unqualified high-risk adjacent-framework phrases.
