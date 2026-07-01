@@ -8,8 +8,6 @@ OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evid
 
 OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials.
 
-OCEAN is not an execution framework, manuscript release authority, endpoint-calibration system, or proof-object publishing workflow. Its public direction is external evidence navigation and claim-risk triage for biomedical research.
-
 ## What this is
 
 This package is designed for personal use inside Codex and for publishing as a small GitHub repository.
@@ -148,7 +146,6 @@ README.zh-CN.md
 assets/
 └── ocean-polar-workflow.jpg
 docs/
-├── differentiation.md
 ├── module-map.md
 └── evaluation/
     ├── README.md
@@ -163,8 +160,6 @@ skills/ocean/
 ├── evals/
 │   ├── anti-hallucination-cases.md
 │   ├── contamination-resistance-round5.md
-│   ├── ocean-differentiation-m3-results.md
-│   ├── ocean-differentiation-m3-protocol.md
 │   ├── ocean-module-m1-results.md
 │   ├── ocean-module-m2-results.md
 │   ├── forward-test-cases.md
@@ -179,7 +174,6 @@ skills/ocean/
 ├── references/
 │   ├── audit-lenses.md
 │   ├── claim-evidence-table.md
-│   ├── differentiation.md
 │   ├── output-contract.md
 │   ├── reviewer-lens.md
 │   ├── review-report.md
@@ -213,7 +207,7 @@ python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv 
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
 ```
 
-Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, run `skills/ocean/scripts/check_ocean_differentiation.py` for the M3 differentiation guardrail, and summarize release validation outcomes in `skills/ocean/evals/release-validation-log.md`.
+Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, and summarize release validation outcomes in `skills/ocean/evals/release-validation-log.md`.
 
 ## License
 

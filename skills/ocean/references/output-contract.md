@@ -15,8 +15,6 @@ Before answering, classify the request and evidence state.
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
-Do not use the default output contract to create execution-ledger, release-gate, endpoint-calibration, or proof-object records. OCEAN outputs are review artifacts: source packets, audit cards, claim-evidence matrices, validation plans, risk registers, strategy memos, and contribution-boundary notes.
-
 ## Verdict Labels
 
 Use one primary label for each major claim:

@@ -15,7 +15,6 @@ Use OCEAN to judge whether biomedical research claims are supported by available
 - State what was inspected, what was not inspected, and what cannot be concluded when evidence is incomplete.
 - Separate hypothesis, association, database annotation, text-mining co-occurrence, model prediction, and causal mechanism.
 - Prefer direct, critical wording over vague encouragement.
-- Do not frame OCEAN as an execution system, evidence-ledger workflow, release authority, endpoint-calibration system, or autonomous discovery engine. OCEAN is an external evidence navigation and claim-risk triage workflow.
 
 ## Module Order
 
@@ -27,12 +26,11 @@ Use the OCEAN module order when the task spans multiple steps:
 4. **Iceberg**: audit claim support beneath surface-level conclusions.
 5. **Anchor**: design validation, replication, benchmark, leakage, and reproducibility checks.
 6. **Compass**: turn evidence into research plans, experiment design, idea prioritization, and journal strategy.
-7. **Harbor**: preserve audit reports, decision notes, and collaboration boundary records without claiming release authority.
+7. **Harbor**: preserve audit reports, decision notes, and collaboration boundary records.
 
 ## Resource Routing
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
-- Read `references/differentiation.md` when the task involves AI-for-science systems, project workflows, manuscript readiness, or comparison with other research-agent frameworks.
 - Read `references/sounding.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
 - Read `references/audit-lenses.md` when evaluating manuscripts, AI-agent systems, biomedical AI, knowledge graphs, databases, clinical prediction studies, or publication readiness.
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.

@@ -1,6 +1,6 @@
 # OCEAN Module Map
 
-OCEAN is scoped to biomedical research: medical research and biological research, with special attention to medical AI and biological AI workflows. The modules are ordered so that each one completes a distinct evidence-review event and produces a handoff artifact. OCEAN is not an execution framework, release authority, endpoint-calibration system, or proof-object publishing workflow.
+OCEAN is scoped to biomedical research: medical research and biological research, with special attention to medical AI and biological AI workflows. The modules are ordered so that each one completes a distinct evidence-review event and produces a handoff artifact.
 
 ## Module Responsibilities
 
@@ -40,5 +40,3 @@ OCEAN should be especially careful with these biomedical claim transitions:
 ## Practical Interpretation
 
 At the current release stage, OCEAN should be presented as a biomedical claim-evidence workflow whose most heavily tested component remains Sounding. M1 adds initial coverage testing for all seven modules, and M2 adds a first-pass heuristic scoring screen over those outputs. This is still not final scientific correctness validation or a model leaderboard.
-
-For public positioning, OCEAN should be described as external evidence navigation and claim-risk triage. Avoid describing it as an execution-ledger, release-gate, endpoint-calibration, or proof-object system.

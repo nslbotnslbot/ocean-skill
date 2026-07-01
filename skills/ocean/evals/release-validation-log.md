@@ -109,8 +109,8 @@ This entry records naming and packaging migration only. It does not change the s
 ## Status Legend
 
 - **Strict pass**: A fresh Codex thread read the local skill/eval/reference files, used real source-traceable material, completed the requested case output, and preserved evidence boundaries.
-- **Smoke pass**: The run showed the desired trigger or audit behavior, but did not satisfy every strict release-gate requirement.
-- **Partial**: Useful signal, but at least one release-gate requirement was missing or incomplete.
+- **Smoke pass**: The run showed the desired trigger or audit behavior, but did not satisfy every strict validation requirement.
+- **Partial**: Useful signal, but at least one strict validation requirement was missing or incomplete.
 - **Fail**: The run did not trigger the intended behavior or produced unsafe/invented claims.
 
 ## Smoke Test Round 0
@@ -175,8 +175,8 @@ Purpose: First strict validation round after smoke testing. This round checks wh
 | Thread | Prompt type | Outcome | Strict interpretation |
 |---|---|---|---|
 | `019f09f7-559e-7f82-aa00-3023cd6363ad` | Combined explicit Case 1/2/3/5 strict eval. | The thread began reading the correct local workflow but did not complete promptly. | Not counted. Renamed to `Strict R1A Long Eval-卡住暂不计入`. |
-| `019f09f9-9dd3-72e2-abc9-891850fa663b` | Split explicit Case 1/2 eval using AlphaFold Source packet A. | Completed the requested output with separate Case 1 and Case 2 sections, evidence-boundary fields, scoring sheet, and release-gate interpretation. | Strict pass for Case 1 and Case 2. |
-| `019f09f9-9ee1-78f3-8bb1-f0c84da7d25b` | Split explicit Case 3/5 eval using KDGene Source packet B. | Completed the requested output with separate Case 3 and Case 5 sections, reviewer-risk table, scoring sheet, and release-gate interpretation. | Strict pass for Case 3 and Case 5. |
+| `019f09f9-9dd3-72e2-abc9-891850fa663b` | Split explicit Case 1/2 eval using AlphaFold Source packet A. | Completed the requested output with separate Case 1 and Case 2 sections, evidence-boundary fields, scoring sheet, and strict-validation interpretation. | Strict pass for Case 1 and Case 2. |
+| `019f09f9-9ee1-78f3-8bb1-f0c84da7d25b` | Split explicit Case 3/5 eval using KDGene Source packet B. | Completed the requested output with separate Case 3 and Case 5 sections, reviewer-risk table, scoring sheet, and strict-validation interpretation. | Strict pass for Case 3 and Case 5. |
 | `019f09f7-90fc-73e1-85be-deda71a22e8d` | Implicit trigger prompt using AlphaFold Source packet A; prompt did not name `$scientific-claim-audit`. | The thread entered the scientific claim audit workflow, avoided a generic summary, separated checked/unchecked/cannot-judge/needed evidence, and assessed claim strength, leakage, database-cooccurrence risk, journal positioning, reviewer risk, and score. | Pass for implicit trigger behavior, with the caveat that this was still a source-packet test rather than a full article audit. |
 
 ### Case Results
@@ -903,41 +903,3 @@ The deterministic scorer was run on the merged M1 artifact roots recorded in `sk
 ### Evidence Boundary / 证据边界
 
 M2 is a deterministic heuristic screen, not a final scientific correctness judgment and not a model leaderboard. Critical flags and low scores identify rows for manual source-grounded review; they do not by themselves prove that an output is scientifically wrong.
-
-## OCEAN Differentiation Eval M3: Adjacent-Framework Drift Guardrail
-
-Date: 2026-07-01
-Purpose: After reviewing adjacent AI-for-science workflow framing, keep OCEAN differentiated as external biomedical evidence navigation and claim-risk triage rather than an execution-ledger, release-gate, endpoint-calibration, or proof-object publishing workflow.
-
-### Directional update
-
-OCEAN's public positioning was tightened:
-
-- Positive direction: source-boundary navigation, claim-risk triage, validation planning, reviewer-risk mapping, and collaboration-boundary review for medical and biological research.
-- Avoided framing: execution-layer systems, evidence-ledger workflows, manuscript release authority, endpoint-calibration systems, outcome-spectrum labels, proof-object publishing, and claim-after / paired-non-claim ledgers.
-- Harbor wording was adjusted toward audit reports, decision notes, and contribution-boundary records rather than release authority.
-
-### Execution summary
-
-M3 used `skills/ocean/scripts/check_ocean_differentiation.py` to scan public docs/references/evals plus the 98 saved M1 outputs.
-
-| Metric | Result |
-|---|---:|
-| Public files scanned | 50 |
-| M1 outputs scanned | 98 |
-| Guardrail mentions | 25 |
-| Unqualified high-risk mentions | 0 |
-| Status | pass |
-
-### Artifacts
-
-- Public note: `docs/differentiation.md`
-- Runtime reference: `skills/ocean/references/differentiation.md`
-- Protocol: `skills/ocean/evals/ocean-differentiation-m3-protocol.md`
-- Results: `skills/ocean/evals/ocean-differentiation-m3-results.md`
-- Summary JSON: `skills/ocean/evals/ocean-differentiation-m3-summary.json`
-- Script: `skills/ocean/scripts/check_ocean_differentiation.py`
-
-### Evidence Boundary / 证据边界
-
-M3 is a positioning and similarity-avoidance scan. It is not legal clearance, trademark clearance, scientific superiority, or proof of originality. It records that current public wording and saved M1 outputs do not contain unqualified high-risk adjacent-framework phrases.
