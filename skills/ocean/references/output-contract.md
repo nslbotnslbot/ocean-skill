@@ -15,6 +15,8 @@ Before answering, classify the request and evidence state.
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
+For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
+
 ## Verdict Labels
 
 Use one primary label for each major claim:
@@ -179,6 +181,7 @@ When a single module is the main task, read that module reference and use its ar
 | Sounding | `references/sounding.md` | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket |
 | Current | `references/current.md` | Trend map, direction-flow notes, opportunity/risk map |
 | Reef | `references/reef.md` | Resource provenance map, evidence hierarchy, circularity risks |
+| Reef API adapters | `references/reef-api-adapters.md` | API query plan, query log, resource provenance map, evidence hierarchy |
 | Iceberg | `references/iceberg.md` | Claim-evidence matrix, support verdict, safe rewrites |
 | Anchor | `references/anchor.md` | Validation checklist, leakage/benchmark/reproducibility plan |
 | Compass | `references/compass.md` | Evidence-based idea card, experiment plan, strategy route |

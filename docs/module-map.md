@@ -19,8 +19,10 @@ OCEAN is scoped to biomedical research: medical research and biological research
 Detailed execution rules live in `skills/ocean/references/`:
 
 - `sounding.md`: evidence discovery and source packets.
+- `module-handoff.md`: explicit handoff tickets for full OCEAN workflows and multi-module routes.
 - `current.md`: field movement and trend-boundary scans.
 - `reef.md`: resource, database, KG, benchmark, and provenance maps.
+- `reef-api-adapters.md`: optional API adapter planning for official biomedical databases, registries, and resource tools.
 - `iceberg.md`: claim-evidence audit and safe rewrites.
 - `anchor.md`: validation, leakage, benchmark, and reproducibility planning.
 - `compass.md`: research planning, idea cards, and strategy routes.

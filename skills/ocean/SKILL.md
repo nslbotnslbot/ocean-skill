@@ -31,9 +31,11 @@ Use the OCEAN module order when the task spans multiple steps:
 ## Resource Routing
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
+- Read `references/module-handoff.md` when the task spans multiple OCEAN modules, starts from a paper/idea/proposal/sentence, or needs explicit handoff artifacts between modules.
 - Read `references/sounding.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
 - Read `references/current.md` when the user asks about field trends, recent progress, direction flow, related work movement, or whether a paper/idea is timely, crowded, incremental, or novel.
 - Read `references/reef.md` when the task involves knowledge graphs, databases, benchmarks, cohorts, ontologies, registries, resource provenance, circularity, or evidence hierarchy.
+- Read `references/reef-api-adapters.md` when Reef needs live/public API or database-tool planning, official biomedical resource adapters, endpoint/source provenance, or API-derived resource evidence.
 - Read `references/iceberg.md` when auditing whether claims are supported, downgrading overclaims, rewriting claims, or checking manuscript/proposal/reviewer-risk evidence.
 - Read `references/anchor.md` when designing or auditing validation, external validation, replication, benchmark fairness, leakage, reproducibility, calibration, clinical utility, or wet-lab follow-up.
 - Read `references/compass.md` when turning evidence gaps into research ideas, proposal aims, experiment plans, journal strategy, or collaboration routes.
@@ -52,14 +54,15 @@ Use the OCEAN module order when the task spans multiple steps:
 1. Select the output mode from `references/output-contract.md`: quick for narrow questions, standard by default, deep for full manuscript/reviewer-style reports.
 2. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
 3. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
-4. Classify the request mode and evidence state: full OCEAN workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
-5. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
-6. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
-7. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
-8. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
-9. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
-10. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
-11. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
+4. If the task spans modules, read `references/module-handoff.md` and preserve a Handoff Ticket whenever moving from one module to another.
+5. Classify the request mode and evidence state: full OCEAN workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
+6. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
+7. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
+8. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
+9. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
+10. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
+11. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
+12. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
 
 ## Default Output Contract
 

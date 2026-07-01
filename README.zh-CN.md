@@ -160,8 +160,11 @@ skills/ocean/
 ├── evals/
 │   ├── anti-hallucination-cases.md
 │   ├── contamination-resistance-round5.md
+│   ├── full-ocean-workflow-cases.md
+│   ├── full-ocean-workflow-protocol.md
 │   ├── ocean-module-m1-results.md
 │   ├── ocean-module-m2-results.md
+│   ├── ocean-module-m2-needs-review-triage.md
 │   ├── forward-test-cases.md
 │   ├── public-source-protocol.md
 │   ├── real-article-adversarial-cases.md
@@ -179,8 +182,10 @@ skills/ocean/
 │   ├── current.md
 │   ├── harbor.md
 │   ├── iceberg.md
+│   ├── module-handoff.md
 │   ├── output-contract.md
 │   ├── reef.md
+│   ├── reef-api-adapters.md
 │   ├── reviewer-lens.md
 │   ├── review-report.md
 │   └── sounding.md
@@ -196,6 +201,8 @@ skills/ocean/
 面向公开发布的 validation notes 位于 `docs/evaluation/`。简洁总结在 `docs/evaluation/round-1-5-results.md`，公开来源标识符在 `docs/evaluation/reference-materials/public-sources.md`。
 
 目前最深入的 module-specific strict testing 仍然集中在 **Sounding**。R2 和 R3 测试的是 Sounding source-packet workflow，模型包括 Qwen、DeepSeek、Kimi、MiniMax、Gemini、Claude，以及一个 Perplexity retrieval control group。M1 增加了七个 module 的全覆盖测试，M2 对 98 个 M1 输出做了第一轮 heuristic scoring。Perplexity 被作为 retrieval-oriented control 处理，因为它的产品定位强调 answer/search grounding；它不是 OCEAN 的依赖。
+
+仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。
 
 更早的 anti-hallucination 和 contamination-resistance 测试覆盖了 OCEAN 的 evidence-boundary 行为和 claim downgrade 纪律。M1/M2 仍然应被理解为 coverage + heuristic screening，而不是最终科学正确性验证或模型排行榜。
 
@@ -213,7 +220,7 @@ python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv 
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
 ```
 
-发布前，请使用真实用户提供的、或公开且 source-traceable 的材料，运行 `skills/ocean/evals/forward-test-cases.md` 中的 manual forward tests。使用 `skills/ocean/evals/anti-hallucination-cases.md` 测试 incomplete、missing、contradictory 或 non-traceable evidence。使用 `skills/ocean/evals/public-source-protocol.md` 选择 DOI papers、bioRxiv/medRxiv preprints 和 public peer review reports；在 `skills/ocean/evals/source-candidates.md` 中追踪具体候选；使用 `skills/ocean/evals/sounding-multimodel-strict-eval.md` 进行 model-robustness checks；并在 `skills/ocean/evals/release-validation-log.md` 中总结 release validation outcomes。
+发布前，请使用真实用户提供的、或公开且 source-traceable 的材料，运行 `skills/ocean/evals/forward-test-cases.md` 中的 manual forward tests。使用 `skills/ocean/evals/anti-hallucination-cases.md` 测试 incomplete、missing、contradictory 或 non-traceable evidence。使用 `skills/ocean/evals/public-source-protocol.md` 选择 DOI papers、bioRxiv/medRxiv preprints 和 public peer review reports；在 `skills/ocean/evals/source-candidates.md` 中追踪具体候选；使用 `skills/ocean/evals/sounding-multimodel-strict-eval.md` 进行 model-robustness checks；使用 `skills/ocean/evals/full-ocean-workflow-protocol.md` 进行七模块 workflow 检查；并在 `skills/ocean/evals/release-validation-log.md` 中总结 release validation outcomes。
 
 ## License
 

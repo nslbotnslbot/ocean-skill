@@ -160,8 +160,11 @@ skills/ocean/
 ├── evals/
 │   ├── anti-hallucination-cases.md
 │   ├── contamination-resistance-round5.md
+│   ├── full-ocean-workflow-cases.md
+│   ├── full-ocean-workflow-protocol.md
 │   ├── ocean-module-m1-results.md
 │   ├── ocean-module-m2-results.md
+│   ├── ocean-module-m2-needs-review-triage.md
 │   ├── forward-test-cases.md
 │   ├── public-source-protocol.md
 │   ├── real-article-adversarial-cases.md
@@ -179,8 +182,10 @@ skills/ocean/
 │   ├── current.md
 │   ├── harbor.md
 │   ├── iceberg.md
+│   ├── module-handoff.md
 │   ├── output-contract.md
 │   ├── reef.md
+│   ├── reef-api-adapters.md
 │   ├── reviewer-lens.md
 │   ├── review-report.md
 │   └── sounding.md
@@ -196,6 +201,8 @@ skills/ocean/
 Public-facing validation notes are in `docs/evaluation/`. The concise summary is `docs/evaluation/round-1-5-results.md`, and public source identifiers are in `docs/evaluation/reference-materials/public-sources.md`.
 
 Current module-specific strict testing is still deepest for **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. M1 adds all-module coverage, and M2 adds first-pass heuristic scoring over the 98 M1 outputs. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
+
+Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
 
 The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline. M1/M2 should still be read as coverage plus heuristic screening, not final scientific correctness validation or a model leaderboard.
 
@@ -213,7 +220,7 @@ python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv 
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
 ```
 
-Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, and summarize release validation outcomes in `skills/ocean/evals/release-validation-log.md`.
+Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, use `skills/ocean/evals/full-ocean-workflow-protocol.md` for seven-module workflow checks, and summarize release validation outcomes in `skills/ocean/evals/release-validation-log.md`.
 
 ## License
 

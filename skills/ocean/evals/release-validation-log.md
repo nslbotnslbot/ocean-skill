@@ -930,3 +930,29 @@ Purpose: Convert the six non-Sounding OCEAN modules from high-level module-map e
 ### Evidence Boundary / 证据边界
 
 This update adds execution structure and output artifacts for the six modules. It does not by itself prove module maturity. M1/M2 remain coverage plus first-pass screening; module-specific strict tests and manual source-grounded review are still needed before claiming release-level quality for every module.
+
+## Full Workflow and Reef API Adapter Planning
+
+Date: 2026-07-01
+Purpose: Make OCEAN easier to test as a full seven-module workflow and give Reef an API-aware resource planning layer without binding OCEAN to any specific API, key, model, or paid service.
+
+### Added artifacts
+
+| Artifact | Purpose |
+|---|---|
+| `skills/ocean/references/module-handoff.md` | Defines explicit handoff tickets across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor. |
+| `skills/ocean/references/reef-api-adapters.md` | Defines optional Reef API adapter principles, candidate biomedical resource adapters, query logs, and evidence boundaries. |
+| `skills/ocean/evals/full-ocean-workflow-protocol.md` | Defines how to test one paper, idea, proposal, review comment, or resource seed through the seven-module route. |
+| `skills/ocean/evals/full-ocean-workflow-cases.md` | Adds reusable full-workflow case seeds for paper, idea, proposal, and KG/resource inputs. |
+| `skills/ocean/evals/ocean-module-m2-needs-review-triage.md` | Records the manual interpretation rules for the 11 M2 `needs_review` rows. |
+
+### Integration
+
+- `skills/ocean/SKILL.md` now routes multi-module work to `module-handoff.md`.
+- Reef tasks that need public API/database-tool planning now route to `reef-api-adapters.md`.
+- `skills/ocean/references/output-contract.md`, `docs/module-map.md`, README files, and evaluation docs now point to the new artifacts.
+- CHANGELOG records the full-workflow and Reef adapter planning additions.
+
+### Evidence Boundary / 证据边界
+
+No live API calls were executed for this update. The Reef adapter registry is an execution plan and evidence-boundary contract, not proof that those APIs were queried in a validation run. Full-workflow case seeds are eval scaffolding, not scientific claims or hidden-answer benchmarks.
