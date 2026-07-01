@@ -32,6 +32,12 @@ Use the OCEAN module order when the task spans multiple steps:
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
 - Read `references/sounding.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
+- Read `references/current.md` when the user asks about field trends, recent progress, direction flow, related work movement, or whether a paper/idea is timely, crowded, incremental, or novel.
+- Read `references/reef.md` when the task involves knowledge graphs, databases, benchmarks, cohorts, ontologies, registries, resource provenance, circularity, or evidence hierarchy.
+- Read `references/iceberg.md` when auditing whether claims are supported, downgrading overclaims, rewriting claims, or checking manuscript/proposal/reviewer-risk evidence.
+- Read `references/anchor.md` when designing or auditing validation, external validation, replication, benchmark fairness, leakage, reproducibility, calibration, clinical utility, or wet-lab follow-up.
+- Read `references/compass.md` when turning evidence gaps into research ideas, proposal aims, experiment plans, journal strategy, or collaboration routes.
+- Read `references/harbor.md` when preserving final reports, decision memos, collaboration boundaries, contribution records, handoff notes, or reusable project memory.
 - Read `references/audit-lenses.md` when evaluating manuscripts, AI-agent systems, biomedical AI, knowledge graphs, databases, clinical prediction studies, or publication readiness.
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.
 - Read `references/reviewer-lens.md` when the user asks for reviewer-style critique, pre-submission risk prediction, likely objections, response preparation, or journal-tier stress testing.
@@ -46,7 +52,7 @@ Use the OCEAN module order when the task spans multiple steps:
 1. Select the output mode from `references/output-contract.md`: quick for narrow questions, standard by default, deep for full manuscript/reviewer-style reports.
 2. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
 3. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
-4. Classify the request mode and evidence state: Sounding evidence scan, claim audit, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
+4. Classify the request mode and evidence state: full OCEAN workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
 5. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
 6. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
 7. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.

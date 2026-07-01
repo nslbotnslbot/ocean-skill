@@ -173,8 +173,14 @@ skills/ocean/
 │   └── source-candidates.md
 ├── references/
 │   ├── audit-lenses.md
+│   ├── anchor.md
 │   ├── claim-evidence-table.md
+│   ├── compass.md
+│   ├── current.md
+│   ├── harbor.md
+│   ├── iceberg.md
 │   ├── output-contract.md
+│   ├── reef.md
 │   ├── reviewer-lens.md
 │   ├── review-report.md
 │   └── sounding.md

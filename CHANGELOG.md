@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added standalone module reference files for Current, Reef, Iceberg, Anchor, Compass, and Harbor, and wired them into OCEAN resource routing.
 - Added OCEAN Module Strict Eval M2 scoring: a 12-point heuristic rubric, scorecard CSV, summary JSON, results note, and scorer script for 98 M1 all-module outputs.
 - Added OCEAN Module Strict Eval M1 covering all seven modules with 14 cases across enabled model lanes; merged coverage reached 98/98 usable outputs after targeted timeout reruns.
 - Clarified OCEAN's public scope as biomedical research across medical and biological research, with medical AI and biological AI as priority use cases.

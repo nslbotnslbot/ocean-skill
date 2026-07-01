@@ -8,7 +8,7 @@ Before answering, classify the request and evidence state.
 
 | Field | Options / content |
 |---|---|
-| Request mode | Sounding evidence scan; claim audit; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Request mode | full OCEAN workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
 | Evidence state | sufficient; partial; minimal; non-traceable; contradictory |
 | Output depth | quick; standard; deep |
 | Source type | manuscript; abstract; DOI/preprint page; literature search results; figures/tables; peer review report; database/KG/text-mining output; user notes only |
@@ -169,6 +169,20 @@ When the main request is literature/evidence discovery, source finding, DOI/prep
 ```
 
 If Sounding is only a preparatory step inside a larger OCEAN answer, condense the search log and candidate table, then continue with the standard output sections.
+
+## Module Add-On Selection
+
+When a single module is the main task, read that module reference and use its artifact format:
+
+| Module | Reference | Main artifact |
+|---|---|---|
+| Sounding | `references/sounding.md` | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket |
+| Current | `references/current.md` | Trend map, direction-flow notes, opportunity/risk map |
+| Reef | `references/reef.md` | Resource provenance map, evidence hierarchy, circularity risks |
+| Iceberg | `references/iceberg.md` | Claim-evidence matrix, support verdict, safe rewrites |
+| Anchor | `references/anchor.md` | Validation checklist, leakage/benchmark/reproducibility plan |
+| Compass | `references/compass.md` | Evidence-based idea card, experiment plan, strategy route |
+| Harbor | `references/harbor.md` | Final audit report, decision memo, contribution boundary record |
 
 ## Scoring Table Rows
 

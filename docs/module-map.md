@@ -14,6 +14,18 @@ OCEAN is scoped to biomedical research: medical research and biological research
 | 6 | Compass | Research planning and strategic decision-making | Evidence gaps, reviewer concerns, trend map, validation plan | Idea card, experiment plan, journal strategy, collaboration route | Evidence is too thin for strategy beyond next-source collection |
 | 7 | Harbor | Review report preservation and collaboration boundary memory | Module outputs, decisions, contribution notes, final review notes | Final audit report, decision note, contribution boundary record | User does not want persistent reporting or collaboration record |
 
+## Module Reference Files
+
+Detailed execution rules live in `skills/ocean/references/`:
+
+- `sounding.md`: evidence discovery and source packets.
+- `current.md`: field movement and trend-boundary scans.
+- `reef.md`: resource, database, KG, benchmark, and provenance maps.
+- `iceberg.md`: claim-evidence audit and safe rewrites.
+- `anchor.md`: validation, leakage, benchmark, and reproducibility planning.
+- `compass.md`: research planning, idea cards, and strategy routes.
+- `harbor.md`: final reports, decision memos, and collaboration-boundary memory.
+
 ## Biomedical Claim Types
 
 OCEAN should be especially careful with these biomedical claim transitions:

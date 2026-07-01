@@ -903,3 +903,30 @@ The deterministic scorer was run on the merged M1 artifact roots recorded in `sk
 ### Evidence Boundary / 证据边界
 
 M2 is a deterministic heuristic screen, not a final scientific correctness judgment and not a model leaderboard. Critical flags and low scores identify rows for manual source-grounded review; they do not by themselves prove that an output is scientifically wrong.
+
+## OCEAN Module Reference Expansion
+
+Date: 2026-07-01
+Purpose: Convert the six non-Sounding OCEAN modules from high-level module-map entries into standalone reference files that Codex can load only when the relevant module is active.
+
+### Added references
+
+| Module | Reference | Primary artifact |
+|---|---|---|
+| Current | `skills/ocean/references/current.md` | Trend map, direction-flow notes, opportunity/risk map |
+| Reef | `skills/ocean/references/reef.md` | Resource provenance map, evidence hierarchy, circularity risks |
+| Iceberg | `skills/ocean/references/iceberg.md` | Claim-evidence matrix, support verdict, safe rewrites |
+| Anchor | `skills/ocean/references/anchor.md` | Validation checklist, leakage/benchmark/reproducibility plan |
+| Compass | `skills/ocean/references/compass.md` | Evidence-based idea card, experiment plan, strategy route |
+| Harbor | `skills/ocean/references/harbor.md` | Final audit report, decision memo, contribution boundary record |
+
+### Integration
+
+- `skills/ocean/SKILL.md` now routes module-specific tasks to the relevant reference files.
+- `skills/ocean/references/output-contract.md` now lists full OCEAN workflow and the six module-specific request modes.
+- `docs/module-map.md` now points to the detailed module reference files.
+- README file trees now include the six new reference files.
+
+### Evidence Boundary / 证据边界
+
+This update adds execution structure and output artifacts for the six modules. It does not by itself prove module maturity. M1/M2 remain coverage plus first-pass screening; module-specific strict tests and manual source-grounded review are still needed before claiming release-level quality for every module.
