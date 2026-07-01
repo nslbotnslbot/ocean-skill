@@ -1003,3 +1003,46 @@ Purpose: Run the first Reef-focused strict eval after adding the Reef API adapte
 ### Evidence Boundary / 证据边界
 
 Reef-R1 did not execute live biomedical database/API queries. It tested whether model outputs keep API/database/KG/registry evidence at the correct evidence level. The M2-style score is heuristic; manual source-grounded review remains required before treating any model lane as mature.
+
+## Known Errors, Blockers, and False Positives
+
+Date: 2026-07-01
+Purpose: Keep a single public-facing record of engineering/runtime/eval issues encountered during OCEAN pre-release validation.
+
+### Summary Table
+
+| Category | Issue | Where observed | Status | Handling |
+|---|---|---|---|---|
+| Local validation environment | `quick_validate.py` failed with `ModuleNotFoundError: No module named 'yaml'` | Repeated packaging checks | Blocked by local missing PyYAML | Manual frontmatter/file checks were used; official quick validate still needs rerun in an environment with PyYAML before release. |
+| GitHub release UI | Release creation failed because tag was blank / not well-formed | Manual GitHub release attempt | Resolved by user action | Use an explicit tag such as `v0.1.0`; do not put tag metadata only in release notes. |
+| GitHub push | Initial `git push` appeared to hang without output | PR branch pushes | Resolved | Retried with `GIT_TERMINAL_PROMPT=0 git push --porcelain`; push completed. |
+| GitHub connector | Connector/login state was uncertain during push preparation | GitHub app setup | Resolved | User reconnected GitHub; subsequent PR comments and pushes succeeded. |
+| Gemini quota/rate limiting | Gemini runs hit HTTP 429 during earlier Sounding evals | Sounding R2/R3 multi-model runs | Recovered | Gemini was rerun separately after quota reset; final R2/R3 coverage recorded complete usable outputs. |
+| Provider runtime errors | Timeouts and connection reset during all-module M1 initial run | Qwen, DeepSeek, Kimi M1 runs | Recovered | Targeted reruns with longer timeout recovered all affected cases without changing prompts/evidence packets. |
+| M2 heuristic scorer | Some `needs_review` rows were conservative false positives | M2 all-module scoring | Triaged | Manual triage recorded in `ocean-module-m2-needs-review-triage.md`; flags do not equal scientific failure. |
+| Reef-R1 heuristic scorer | Qwen/Claude rows flagged as critical due wording/URL punctuation | Reef-R1 scoring | Triaged as false positives | Manual triage recorded in `reef-strict-eval-r1-results.md`. |
+| Reef-R1 true issue | MiniMax invented or assumed an uninspected CELLxGENE-style endpoint | MiniMax REEF-R1-04 | Needs improvement | Reef adapter rules were tightened: do not name endpoints/schema fields unless provided or inspected from official docs. |
+| Reef-R1 format issue | MiniMax emitted `<think>` blocks in 5/5 outputs | MiniMax Reef-R1 outputs | Needs monitoring | Output contract and eval prompt were tightened to forbid private reasoning / `<think>` blocks. |
+| Git diff latency | Some `git diff --stat` / log commands were slow or appeared stuck | Local repository checks | Managed | Interrupted long-running diff/log checks and used targeted `git status`, `git diff --check`, and file-specific checks. |
+
+### M1 Runtime Recovery Details
+
+| Model | Case | Initial error | Recovery |
+|---|---|---|---|
+| Qwen `qwen3.7-max` | M1-REEF-02 | `timeout('The read operation timed out')` | Targeted rerun passed |
+| Qwen `qwen3.7-max` | M1-HARBOR-02 | `ConnectionResetError(54, 'Connection reset by peer')` | Targeted rerun passed |
+| DeepSeek `deepseek-v4-pro` | M1-SOUNDING-01 | `timeout('The read operation timed out')` | Targeted rerun passed |
+| Kimi `moonshot-v1-128k` fallback | M1-REEF-01 | `timeout('The read operation timed out')` | Targeted rerun passed |
+| Kimi `moonshot-v1-128k` fallback | M1-COMPASS-02 | `timeout('The read operation timed out')` | Targeted rerun passed |
+
+### Current Open Blockers
+
+| Blocker | Impact | Next action |
+|---|---|---|
+| Missing PyYAML in the local validation environment | Official `quick_validate.py` cannot complete in this environment | Rerun quick validate in an environment with PyYAML before final release. |
+| Reef API adapters are planned but not live-query validated | Reef can plan API/database boundaries, but adapter behavior is not proven against real API responses yet | Run Reef-R2 with small official-doc source packets before writing any API connector script. |
+| MiniMax output format includes private reasoning blocks | Fixed prompt/output rules may need rerun confirmation | Include MiniMax in a future rerun to verify `<think>` suppression. |
+
+### Evidence Boundary / 证据边界
+
+This section records observed engineering/runtime/eval issues only. It does not include API keys, private manuscripts, raw provider secrets, or unrelated private repository details. It should not be read as a scientific quality judgment of the source papers or biomedical claims.
