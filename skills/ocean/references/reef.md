@@ -34,6 +34,7 @@ Read this file when the user asks about:
 - biomedical AI work using external databases or annotation resources;
 - live/public API or official database-tool planning. For API-specific boundaries and adapter planning, also read `reef-api-adapters.md`.
 - biological or clinical data-source selection. For gene/protein/variant/omics/cell-atlas/drug/clinical-trial/EHR/cohort/regulatory resource routing, also read `reef-biological-data-sources.md`.
+- public data-source classes, official API selection, access/privacy/licensing boundary, or source routing. For cross-module routing, also read `data-tool-router.md`.
 
 ## Inputs
 
@@ -68,6 +69,7 @@ Reef can start from:
 
 1. **Resource inventory**
    - Extract every dataset, benchmark, KG, ontology, registry, cohort, database, annotation source, and code/resource URL mentioned or needed.
+   - If the resource class is unclear, use `data-tool-router.md` to create a data/tool packet before interpreting the resource.
 2. **Provenance check**
    - Record official source, identifier/version, primary paper, curation method, update status if inspected, and access boundary.
    - If live/public API or database-tool work is needed, use `reef-api-adapters.md` to plan adapters, endpoint/source boundaries, query logs, and API-derived resource evidence.

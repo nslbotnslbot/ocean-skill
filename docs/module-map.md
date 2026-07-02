@@ -2,7 +2,7 @@
 
 OCEAN is scoped to biomedical research: medical research and biological research, with special attention to medical AI and biological AI workflows. The modules are ordered so that each one completes a distinct evidence-review event and produces a handoff artifact.
 
-For research design tasks, the seven modules form a design loop: question frame -> evidence boundary -> source/resource packet -> claim calibration -> validation gate -> research route -> decision memory.
+For research design tasks, the seven modules form a design loop: domain lens -> evidence boundary -> source/resource packet -> claim calibration -> validation gate -> research route -> decision memory.
 
 ## Module Responsibilities
 
@@ -21,6 +21,9 @@ For research design tasks, the seven modules form a design loop: question frame 
 Detailed execution rules live in `skills/ocean/references/`:
 
 - `sounding.md`: evidence discovery and source packets.
+- `domain-lens.md`: biomedical domain fingerprint, evidence standards, highest safe claim level, and module routing.
+- `data-tool-router.md`: public data/resource/API source-class routing, data/tool packets, and access/privacy/licensing boundaries.
+- `module-artifact-contract.md`: required artifacts and quality gates for each OCEAN module.
 - `module-handoff.md`: explicit handoff tickets for full OCEAN workflows and multi-module routes.
 - `research-design-workflow.md`: design gates and research-route selection for idea, proposal, reviewer-pressure, resource, and collaboration workflow cases.
 - `current.md`: field movement and trend-boundary scans.

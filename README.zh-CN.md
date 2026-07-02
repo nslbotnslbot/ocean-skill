@@ -4,7 +4,7 @@
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
-OCEAN 是一个轻量级、兼容 Codex 的技能工作流，用于医学研究与生物学研究中的 claim-evidence 导航和 research design workflow。它关注 biomedical research，理解 AI 研究场景，但不只服务于 AI 论文：也可以支持生物医学 AI、生物学 AI、manuscript、数据库、知识图谱、临床预测、验证规划、期刊定位和协作边界分析。
+OCEAN 是一个轻量级、兼容 Codex 的技能工作流，用于医学研究与生物学研究中的 claim-evidence 导航和 research design workflow。它关注 biomedical research，理解 AI 研究场景，但不只服务于 AI 论文：也可以支持生物医学 AI、生物学 AI、manuscript、数据库、知识图谱、临床预测、验证规划、期刊定位和协作边界分析。现在它加入了一个中心化的 Domain Lens 和 Data/Tool Router，让 medical、biological、omics、clinical、drug、KG/database、proposal 和 collaboration 任务走不同证据标准，而不是套用同一个泛用 checklist。
 
 OCEAN 是一个独立的开源工作流项目。它的证据发现模块命名为 **Sounding**：这是一个 source-packet 工作流，用于扫描文献、证据边界和可追踪的 review 材料。
 
@@ -172,6 +172,9 @@ skills/ocean/
 │   ├── reef-strict-eval-r1-cases.json
 │   ├── reef-strict-eval-r1-coverage.json
 │   ├── reef-strict-eval-r1-results.md
+│   ├── domain-router-big-experiment-r1-cases.json
+│   ├── domain-router-model-r1-cases.json
+│   ├── domain-router-model-r1-results.md
 │   ├── release-validation-log.md
 │   ├── sounding-multimodel-cases.json
 │   ├── sounding-multimodel-models.example.json
@@ -184,9 +187,12 @@ skills/ocean/
 │   ├── claim-evidence-table.md
 │   ├── compass.md
 │   ├── current.md
+│   ├── data-tool-router.md
+│   ├── domain-lens.md
 │   ├── harbor.md
 │   ├── iceberg.md
 │   ├── module-handoff.md
+│   ├── module-artifact-contract.md
 │   ├── output-contract.md
 │   ├── reef-biological-data-sources.md
 │   ├── reef.md
@@ -199,6 +205,7 @@ skills/ocean/
     ├── make_claim_table.py
     ├── check_claim_table.py
     ├── make_review_skeleton.py
+    ├── check_ocean_contracts.py
     ├── run_reef_api_adapter.py
     └── run_sounding_multimodel_eval.py
 ```
@@ -217,6 +224,10 @@ Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 prop
 
 Research Design Workflow R1 测试 OCEAN 是否能把不确定的 idea、proposal、resource request、reviewer pressure 和 workflow decision 转成 design gates、validation gates、research routes 和 Harbor decision memory，同时不声称未经验证的成熟度。第一轮计分覆盖 6 条完成模型线、42 个 usable outputs；一条 Kimi lane 因 runtime blocked 单独记录。
 
+Domain Router Big Experiment R1 离线测试新的中心路由层。它检查 Domain Lens、Data/Tool Router 和 Module Artifact Contract 是否已经接入 skill 入口，并覆盖 medical AI、biological AI、omics、clinical research、drug/target hypothesis、KG/database resource、public-review pressure、collaboration boundary 和 stale Harbor reuse 等代表性生物医学输入。
+
+Domain Router Model R1 进一步用 Qwen、DeepSeek、Kimi fallback、MiniMax-M1、Gemini、Claude 和 Perplexity retrieval control 测试同一个中心层。该轮完成 49/49 usable outputs，M3 均分 17.86/20。最重要的 flagged issue 是 Reef/Open Targets case 中出现 endpoint invention trap，目前记录为 data-router 安全问题。
+
 更早的 anti-hallucination 和 contamination-resistance 测试覆盖了 OCEAN 的 evidence-boundary 行为和 claim downgrade 纪律。M1/M2 仍然应被理解为 coverage + heuristic screening，而不是最终科学正确性验证或模型排行榜。
 
 这些文件说明测试了什么、哪些通过了，同时不会复制 private materials、长篇论文段落或 hidden-answer logs。内部 release log 保留在 `skills/ocean/evals/release-validation-log.md`。
@@ -232,6 +243,7 @@ python3 skills/ocean/scripts/make_claim_table.py --empty --out outputs/empty_cla
 python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv --out outputs/empty_claim_table_summary.md
 python3 skills/ocean/scripts/run_reef_api_adapter.py --adapter ncbi-eutils --database pubmed --query "BRCA1 breast cancer" --retmax 5 --out outputs/reef_api_packet.json
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
+python3 skills/ocean/scripts/check_ocean_contracts.py
 ```
 
 发布前，请使用真实用户提供的、或公开且 source-traceable 的材料，运行 `skills/ocean/evals/forward-test-cases.md` 中的 manual forward tests。使用 `skills/ocean/evals/anti-hallucination-cases.md` 测试 incomplete、missing、contradictory 或 non-traceable evidence。使用 `skills/ocean/evals/public-source-protocol.md` 选择 DOI papers、bioRxiv/medRxiv preprints 和 public peer review reports；在 `skills/ocean/evals/source-candidates.md` 中追踪具体候选；使用 `skills/ocean/evals/sounding-multimodel-strict-eval.md` 进行 model-robustness checks；使用 `skills/ocean/evals/full-ocean-workflow-protocol.md` 进行七模块 workflow 检查；并在 `skills/ocean/evals/release-validation-log.md` 中总结 release validation outcomes。

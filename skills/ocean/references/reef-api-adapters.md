@@ -4,7 +4,7 @@ Use this reference when Reef needs to plan or inspect live biomedical resources 
 
 Reef API adapters are optional. OCEAN must remain a workflow and output contract, not a dependency on any specific API, model, paid service, key, or network condition.
 
-For broader biological or clinical data-source selection before live API planning, read `reef-biological-data-sources.md` first.
+For broader biological or clinical data-source selection before live API planning, read `data-tool-router.md` and `reef-biological-data-sources.md` first.
 
 ## Contents
 

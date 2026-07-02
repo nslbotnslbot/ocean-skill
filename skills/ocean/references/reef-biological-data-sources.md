@@ -1,6 +1,6 @@
 # Reef Biological and Clinical Data Sources
 
-Use this reference when Reef needs to choose, compare, or route biological and clinical data resources for biomedical research evidence review.
+Use this reference when Reef needs to choose, compare, or route biological and clinical data resources for biomedical research evidence review. For cross-module source-class routing before Reef, read `data-tool-router.md` first.
 
 This file is a data-source navigation catalog. It is not proof that any resource was queried. Before naming live endpoints, schema fields, counts, release versions, or API results, inspect the official documentation in the current run and record the evidence boundary.
 

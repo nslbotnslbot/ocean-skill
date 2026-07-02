@@ -4,7 +4,7 @@
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
-OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evidence navigation and research design workflow across medical and biological research. It is AI-aware, but not AI-only: it can support biomedical AI studies, biological AI studies, manuscripts, databases, knowledge graphs, clinical prediction work, journal positioning, validation planning, and collaboration boundary analysis.
+OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evidence navigation and research design workflow across medical and biological research. It is AI-aware, but not AI-only: it can support biomedical AI studies, biological AI studies, manuscripts, databases, knowledge graphs, clinical prediction work, journal positioning, validation planning, and collaboration boundary analysis. It now includes a central Domain Lens and Data/Tool Router so medical, biological, omics, clinical, drug, KG/database, proposal, and collaboration tasks use different evidence standards instead of one generic checklist.
 
 OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials.
 
@@ -172,6 +172,9 @@ skills/ocean/
 │   ├── reef-strict-eval-r1-cases.json
 │   ├── reef-strict-eval-r1-coverage.json
 │   ├── reef-strict-eval-r1-results.md
+│   ├── domain-router-big-experiment-r1-cases.json
+│   ├── domain-router-model-r1-cases.json
+│   ├── domain-router-model-r1-results.md
 │   ├── release-validation-log.md
 │   ├── sounding-multimodel-cases.json
 │   ├── sounding-multimodel-models.example.json
@@ -184,9 +187,12 @@ skills/ocean/
 │   ├── claim-evidence-table.md
 │   ├── compass.md
 │   ├── current.md
+│   ├── data-tool-router.md
+│   ├── domain-lens.md
 │   ├── harbor.md
 │   ├── iceberg.md
 │   ├── module-handoff.md
+│   ├── module-artifact-contract.md
 │   ├── output-contract.md
 │   ├── reef-biological-data-sources.md
 │   ├── reef.md
@@ -199,6 +205,7 @@ skills/ocean/
     ├── make_claim_table.py
     ├── check_claim_table.py
     ├── make_review_skeleton.py
+    ├── check_ocean_contracts.py
     ├── run_reef_api_adapter.py
     └── run_sounding_multimodel_eval.py
 ```
@@ -217,6 +224,10 @@ Full-workflow protocol and case seeds are included to test whether one paper, on
 
 Research Design Workflow R1 tests whether OCEAN can turn uncertain ideas, proposals, resource requests, reviewer pressure, and workflow decisions into design gates, validation gates, research routes, and Harbor decision memory without claiming unsupported maturity. The first scored pass covered 42 usable outputs across six completed model lanes; one Kimi lane was runtime-blocked and is tracked separately.
 
+Domain Router Big Experiment R1 tests the new central routing layer offline. It checks that the Domain Lens, Data/Tool Router, and Module Artifact Contract are connected to the skill entrypoint and cover representative biomedical inputs across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, and stale Harbor reuse.
+
+Domain Router Model R1 then tests the same central layer across Qwen, DeepSeek, Kimi fallback, MiniMax-M1, Gemini, Claude, and Perplexity retrieval control. The run completed 49/49 usable outputs with a 17.86/20 mean M3 score. The most important flagged issue was an endpoint-invention trap in a Reef/Open Targets case, which is now tracked as a data-router safety concern.
+
 The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline. M1/M2 should still be read as coverage plus heuristic screening, not final scientific correctness validation or a model leaderboard.
 
 These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
@@ -232,6 +243,7 @@ python3 skills/ocean/scripts/make_claim_table.py --empty --out outputs/empty_cla
 python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv --out outputs/empty_claim_table_summary.md
 python3 skills/ocean/scripts/run_reef_api_adapter.py --adapter ncbi-eutils --database pubmed --query "BRCA1 breast cancer" --retmax 5 --out outputs/reef_api_packet.json
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
+python3 skills/ocean/scripts/check_ocean_contracts.py
 ```
 
 Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, use `skills/ocean/evals/full-ocean-workflow-protocol.md` for seven-module workflow checks, and summarize release validation outcomes in `skills/ocean/evals/release-validation-log.md`.

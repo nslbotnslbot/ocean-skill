@@ -1,12 +1,13 @@
 # OCEAN Module Handoff
 
-Use this reference when more than one OCEAN module is active or when a task should move from evidence discovery to trend analysis, resource organization, claim audit, validation, planning, or report preservation.
+Use this reference when more than one OCEAN module is active or when a task should move from domain classification to evidence discovery, trend analysis, resource organization, claim audit, validation, planning, or report preservation.
 
 The goal is to make each module produce a concrete artifact instead of a loose paragraph.
 
 ## Contents
 
 - Handoff Object
+- Domain and Data Router Placement
 - Standard Route
 - Module-by-Module Handoffs
 - Input Shapes
@@ -23,6 +24,8 @@ Every module handoff should contain:
 | Source module |  |
 | Next module |  |
 | Evidence packet |  |
+| Domain lens |  |
+| Data/tool packet |  |
 | What was inspected |  |
 | What was not inspected |  |
 | Claim/resource boundary |  |
@@ -36,6 +39,7 @@ If the next module should not run, set `Next module` to `Stop` and explain why.
 
 Use this order for full OCEAN cases:
 
+0. Domain Lens and Data/Tool Router: identify the biomedical domain, evidence standard, source classes, and stop conditions.
 1. Sounding: find and bound sources.
 2. Current: place the source in field movement.
 3. Reef: organize resource/KG/database/cohort/benchmark evidence.
@@ -48,10 +52,16 @@ Skipping is allowed only when the evidence boundary makes a module irrelevant or
 
 For research design workflows, use `research-design-workflow.md` to add design gates before selecting a Compass route. The handoff should preserve which gates passed, which need work, and which require a stop condition.
 
+## Domain and Data Router Placement
+
+Use `domain-lens.md` before module execution when the domain standard affects the answer. Use `data-tool-router.md` before Reef or any API/database/resource work. Use `module-artifact-contract.md` whenever the output is intended to be compared, scored, reused, or passed downstream.
+
 ## Module-by-Module Handoffs
 
 | From | To | Pass forward | Main boundary |
 |---|---|---|---|
+| Domain Lens | Sounding/Reef/Iceberg/Anchor/Compass | Primary domain, research object, highest safe claim level, evidence standard | Domain routing is not scientific proof |
+| Data/Tool Router | Reef | Source class, candidate resources, identifiers needed, access/privacy/licensing boundary | Candidate resources are not inspected evidence unless queried or provided |
 | Sounding | Current | Source packet, inspected search boundary, candidate sources, Negative Space | Search coverage may be too narrow for trend claims |
 | Sounding | Reef | Source packet, database/KG/resource names, identifiers, resource URLs | Source finding does not verify resource provenance |
 | Current | Reef | Direction-flow nodes, benchmark/resource signals, recurring entities | Trend signals do not prove resource quality |
@@ -73,6 +83,8 @@ OCEAN can start from different input sizes:
 | One paper/preprint | Sounding | Inspect source boundary, then route through Current/Reef/Iceberg as needed |
 | One review comment | Iceberg or Compass | Convert critique into claim/evidence gap and testable next action |
 | One database/KG seed | Reef | Establish provenance before any claim audit |
+| One clinical/therapeutic request | Domain Lens, Sounding, Reef | Establish clinical evidence standard before any utility or therapy statement |
+| One data/API/tool request | Data/Tool Router, Reef | Plan official source class, identifier, access, privacy, and stop boundary before live access |
 
 ## Stop Conditions
 
@@ -80,6 +92,7 @@ Stop the full route when:
 
 - only a title, abstract, DOI page, or search snippet is available for a strong claim;
 - the source cannot be traced;
+- the Domain Lens cannot identify a safe evidence standard for the requested conclusion;
 - a database/KG/resource claim lacks official provenance;
 - the next module would require private data, paid API calls, or unpublished material without user approval;
 - the user requested a narrow module-only answer.

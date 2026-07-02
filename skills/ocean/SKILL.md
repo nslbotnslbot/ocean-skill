@@ -1,7 +1,7 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to scan evidence, build source packets, audit claims, check leakage/validation/benchmark fairness/reproducibility, review manuscripts, inspect biomedical AI or biological AI studies, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for summary-only reading or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to classify domain-specific evidence standards, scan evidence, build source packets, route biomedical data/tools, audit claims, check leakage/validation/benchmark fairness/reproducibility, review manuscripts, inspect biomedical AI or biological AI studies, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for summary-only reading or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
@@ -31,6 +31,9 @@ Use the OCEAN module order when the task spans multiple steps:
 ## Resource Routing
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
+- Read `references/domain-lens.md` when the task needs medical, biological, biomedical AI, omics, clinical, drug, KG/database, manuscript, proposal, or collaboration-specific evidence standards, or when the input domain is unclear.
+- Read `references/data-tool-router.md` when the task needs public data-source selection, official database/API routing, source classes, access/privacy/licensing boundaries, or a data/tool packet before Reef, Iceberg, Anchor, or Compass.
+- Read `references/module-artifact-contract.md` when a module output should be stable, comparable, or carried downstream as a concrete artifact.
 - Read `references/module-handoff.md` when the task spans multiple OCEAN modules, starts from a paper/idea/proposal/sentence, or needs explicit handoff artifacts between modules.
 - Read `references/research-design-workflow.md` when the user wants to turn an idea, proposal, reviewer concern, dataset/resource seed, or collaboration question into a structured biomedical research workflow with design gates, validation gates, research routes, and decision memory.
 - Read `references/sounding.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
@@ -55,17 +58,19 @@ Use the OCEAN module order when the task spans multiple steps:
 ## Workflow
 
 1. Select the output mode from `references/output-contract.md`: quick for narrow questions, standard by default, deep for full manuscript/reviewer-style reports.
-2. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
-3. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
-4. If the task spans modules, read `references/module-handoff.md` and preserve a Handoff Ticket whenever moving from one module to another.
-5. Classify the request mode and evidence state: full OCEAN workflow, research design workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
-6. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
-7. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
-8. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
-9. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
-10. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
-11. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
-12. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
+2. Classify the domain with `references/domain-lens.md` when domain-specific evidence standards matter. Record the primary domain, research object, evidence needed, highest safe claim level, active module, and stop condition.
+3. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
+4. Route data and tools with `references/data-tool-router.md` when the task involves public resources, official APIs, registries, benchmarks, cohorts, omics repositories, KGs, or sensitive access boundaries.
+5. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
+6. If the task spans modules, read `references/module-handoff.md` and preserve a Handoff Ticket whenever moving from one module to another. Use `references/module-artifact-contract.md` to keep module artifacts stable.
+7. Classify the request mode and evidence state: full OCEAN workflow, research design workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
+8. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
+9. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
+10. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
+11. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
+12. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
+13. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
+14. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
 
 ## Default Output Contract
 

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+- Added a central Domain Lens reference for medical AI, biological AI, clinical research, molecular/cellular biology, omics/single-cell/spatial, drug/target hypotheses, KG/database/resource, manuscript/proposal, and collaboration/authorship evidence standards.
+- Added a Data/Tool Router reference for source classes, official resource routing, data/tool packets, API boundaries, privacy/access/licensing rules, and cross-module handoffs.
+- Added a Module Artifact Contract so Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor each produce stable artifacts with boundary, traceability, calibration, artifact, and handoff gates.
+- Added Domain Router Big Experiment R1 case seeds and an offline `check_ocean_contracts.py` structural check for new central-routing coverage.
+- Updated the all-module eval prompt to explicitly test Domain Lens, Data/Tool Router, and Module Artifact Contract behavior.
+- Added Domain Router Model R1 with 49/49 usable outputs across seven enabled model/control lanes, 17.86/20 mean M3 score, and a recorded Reef endpoint-invention trap.
 - Added a Research Design Workflow reference with OCEAN design-loop gates, module responsibilities, research-route output, and stop conditions for idea/proposal/reviewer/resource/collaboration workflow cases.
 - Added Research Design Workflow R1 case seeds to test whether OCEAN behaves as a biomedical research process workflow rather than a summary or database aggregation tool.
 - Ran Research Design Workflow R1 over six completed model lanes with 42 usable outputs, 18.38/20 mean OCEAN-10 score, 0 critical rows, 0 public reasoning leaks, and Kimi recorded as runtime blocked.

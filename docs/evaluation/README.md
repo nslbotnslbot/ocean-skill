@@ -22,6 +22,11 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/full-ocean-workflow-cases.md`: reusable full-workflow case seeds.
 - `skills/ocean/evals/research-design-workflow-r1-cases.json`: workflow-design case seeds for testing design gates, validation gates, research routes, and Harbor decision memory from uncertain biomedical research inputs.
 - `skills/ocean/evals/research-design-workflow-r1-results.md`: first Research Design Workflow R1 model run over six completed model lanes, with Kimi recorded as runtime blocked.
+- `skills/ocean/evals/domain-router-big-experiment-r1-cases.json`: offline routing case seeds for Domain Lens, Data/Tool Router, and Module Artifact Contract coverage.
+- `skills/ocean/evals/domain-router-big-experiment-r1-results.md`: deterministic 33-check result file for the Domain Router Big Experiment R1 structural run.
+- `skills/ocean/evals/domain-router-model-r1-cases.json`: model-eval case seeds for the central routing layer across seven modules.
+- `skills/ocean/evals/domain-router-model-r1-results.md`: M3-scored model run over the Domain Lens / Data Tool Router / Module Artifact Contract prompt.
+- `skills/ocean/scripts/check_ocean_contracts.py`: deterministic structural check for required references, module artifact terms, and domain-router case coverage.
 - `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
 - `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
 - `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
@@ -54,6 +59,10 @@ Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decisio
 Idea Scout M3 R1 tests whether Current and Compass can turn trend/reviewer-pressure/idea seeds into bounded research directions without claiming proven novelty, field dominance, or publication readiness.
 
 Research Design Workflow R1 tests whether OCEAN behaves as a research process workflow: source boundary first, resource routing second, claim calibration before validation planning, and decision memory at the end. The first completed scoring pass covered 42 usable outputs across six model lanes; Kimi was runtime-blocked and should be retried separately before content-quality comparison.
+
+Domain Router Big Experiment R1 is an offline structural experiment. It does not call external model APIs. It checks whether OCEAN's new central routing layer covers representative biomedical inputs across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, and stale Harbor reuse.
+
+Domain Router Model R1 is the first model-based run focused on the new central routing layer. It completed 49/49 usable outputs across seven enabled model/control lanes and surfaced one substantive data-router issue: an uninspected Open Targets endpoint/query invented in a Reef case.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

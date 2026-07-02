@@ -1491,3 +1491,113 @@ Purpose: Test whether the new research-design workflow can make models preserve 
 ### Evidence Boundary / 证据边界
 
 This run used public-safe synthetic workflow-design prompts only. It did not use private manuscripts, patient data, private peer-review reports, live biomedical database/API calls, or unpublished materials. The M3 score is a deterministic behavioral screen, not a scientific correctness judgment or final model leaderboard.
+
+## Domain Router Big Experiment R1
+
+Date: 2026-07-03
+Purpose: Test whether the new central routing layer connects OCEAN's domain-specific evidence standards, data/tool routing, and stable module artifacts before running a larger model-based eval.
+
+### Scope
+
+| Item | Value |
+|---|---:|
+| Required reference checks | 14 |
+| Module artifact contract checks | 7 |
+| Domain router cases | 12 |
+| Total checks | 33 |
+| Pass | 33 |
+| Review | 0 |
+| Fail | 0 |
+
+### What Was Added
+
+- `references/domain-lens.md`: domain fingerprint, evidence standards, highest safe claim level, and module routing.
+- `references/data-tool-router.md`: source classes, public resource routing, data/tool packet, API/privacy/access/licensing boundaries.
+- `references/module-artifact-contract.md`: required artifacts and five quality gates for Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
+- `evals/domain-router-big-experiment-r1-cases.json`: 12 representative biomedical routing cases.
+- `scripts/check_ocean_contracts.py`: offline structural contract checker.
+
+### Checks Run
+
+| Check | Status |
+|---|---|
+| `python3 skills/ocean/scripts/check_ocean_contracts.py --out skills/ocean/evals/domain-router-big-experiment-r1-results.md` | Pass; 33/33 |
+| Manual `SKILL.md` frontmatter check | Pass |
+| `python3 -m py_compile ...` with `PYTHONPYCACHEPREFIX=/private/tmp/ocean_pycache` | Pass |
+| `run_reef_api_adapter.py` dry-run to `/private/tmp/ocean_reef_dryrun.json` | Pass |
+| `run_sounding_multimodel_eval.py --dry-run --case-limit 1` to `/private/tmp/ocean_sounding_dryrun/...` | Pass |
+| Official `quick_validate.py` | Blocked by local missing PyYAML (`ModuleNotFoundError: No module named 'yaml'`) |
+
+### Interpretation
+
+- The new central routing layer is structurally connected to OCEAN's runtime entrypoint and public docs.
+- The offline experiment confirms coverage for representative cases across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, benchmark readiness, variant interpretation, and stale Harbor reuse.
+- This is a scaffold and contract validation, not a live model quality eval and not a scientific correctness judgment.
+
+### Evidence Boundary / 证据边界
+
+This run used synthetic public-safe routing cases and offline structural checks only. It did not use live model calls, private manuscripts, patient data, private peer-review reports, paid APIs, key-protected resources, or live biomedical database/API calls.
+
+## Domain Router Model R1
+
+Date: 2026-07-03
+Purpose: Test whether the new central routing layer is followed by enabled model/control lanes when prompts explicitly require Domain Lens, Data/Tool Router, and Module Artifact Contract behavior.
+
+### Scope
+
+| Item | Value |
+|---|---:|
+| Cases | 7 |
+| Enabled model/control lanes | 7 |
+| Expected outputs | 49 |
+| Usable outputs | 49 |
+| Mean M3 score | 17.86/20 |
+| Strong | 37 |
+| Developing | 7 |
+| Needs review | 5 |
+| Critical-flag rows | 5 |
+
+### Model summary
+
+| Model lane | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Perplexity retrieval control | 19.00 | 7 | 0 | 0 | 0 |
+| Qwen | 19.00 | 6 | 0 | 1 | 1 |
+| Gemini | 18.43 | 6 | 1 | 0 | 0 |
+| Claude | 18.29 | 6 | 1 | 0 | 0 |
+| MiniMax-M1 reasoning control | 17.86 | 6 | 1 | 0 | 0 |
+| DeepSeek | 16.71 | 4 | 2 | 1 | 1 |
+| Kimi fallback | 15.71 | 2 | 2 | 3 | 3 |
+
+### Module summary
+
+| Module | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Compass | 18.86 | 7 | 0 | 0 | 0 |
+| Harbor | 18.57 | 7 | 0 | 0 | 0 |
+| Current | 18.00 | 6 | 0 | 1 | 1 |
+| Reef | 17.86 | 5 | 1 | 1 | 1 |
+| Iceberg | 17.43 | 5 | 1 | 1 | 1 |
+| Sounding | 17.29 | 4 | 2 | 1 | 1 |
+| Anchor | 17.00 | 3 | 3 | 1 | 1 |
+
+### Key interpretation
+
+- Coverage was complete: all seven enabled lanes returned usable outputs for all seven cases.
+- The central routing prompt improved artifact stability compared with early all-module tests, especially for Compass and Harbor.
+- The most substantive issue was a Reef endpoint-invention trap: DeepSeek named an uninspected Open Targets GraphQL endpoint and wrote an example query even though the packet said no official endpoint response, identifiers, or record had been inspected.
+- Kimi fallback needs module-contract tightening. Its needs_review rows mainly came from missing explicit active-module framing and thinner artifacts, not from accepting unsafe clinical conclusions.
+- Perplexity retrieval control scored highest, but this should be interpreted cautiously because the case set rewards source-boundary/routing behavior and does not test scientific correctness.
+
+### Artifacts
+
+- Cases: `skills/ocean/evals/domain-router-model-r1-cases.json`
+- Coverage: `skills/ocean/evals/domain-router-model-r1-coverage.json`
+- Coverage CSV: `skills/ocean/evals/domain-router-model-r1-coverage.csv`
+- Results: `skills/ocean/evals/domain-router-model-r1-results.md`
+- Scorecard: `skills/ocean/evals/domain-router-model-r1-scorecard.csv`
+- Summary: `skills/ocean/evals/domain-router-model-r1-summary.json`
+
+### Evidence Boundary / 证据边界
+
+This run used public-safe synthetic routing prompts only. It did not inspect real papers, private manuscripts, patient data, private peer-review reports, paid/key-protected resources, or live biomedical database/API calls. The M3 score is a deterministic behavioral screen, not scientific correctness validation or a final model leaderboard.

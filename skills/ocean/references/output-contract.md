@@ -9,13 +9,15 @@ Before answering, classify the request and evidence state.
 | Field | Options / content |
 |---|---|
 | Request mode | full OCEAN workflow; research design workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Domain lens | medical AI / clinical prediction; biological AI / AI-for-biology; clinical research; molecular/cellular biology; omics/single-cell/spatial; drug/target/therapeutic hypothesis; KG/database/resource; manuscript/review/proposal; collaboration/authorship boundary; unknown |
+| Data/tool route | none needed; literature identity; public review/assessment; biological annotation; omics/atlas; variant/genetics; cancer/cohort; drug/chemical; clinical registry/regulatory; EHR/cohort/imaging/signal; local files |
 | Evidence state | sufficient; partial; minimal; non-traceable; contradictory |
 | Output depth | quick; standard; deep |
 | Source type | manuscript; abstract; DOI/preprint page; literature search results; figures/tables; peer review report; database/KG/text-mining output; user notes only |
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
-For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
+For domain-specific biomedical evidence standards, use `references/domain-lens.md`. For public data, official resources, registries, source classes, API planning, privacy, access, or licensing boundaries, use `references/data-tool-router.md`. For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets and `references/module-artifact-contract.md` to preserve stable artifacts. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
 
 ## Verdict Labels
 
@@ -64,6 +66,8 @@ Use by default for project, manuscript, claim-audit, collaboration, and journal-
 - Request mode:
 - Evidence state:
 - Work type:
+- Domain lens:
+- Data/tool route:
 - Main verdict:
 - Recommended action:
 
@@ -178,6 +182,9 @@ When a single module is the main task, read that module reference and use its ar
 
 | Module | Reference | Main artifact |
 |---|---|---|
+| Domain Lens | `references/domain-lens.md` | Domain fingerprint, evidence standard, highest safe claim level, module route |
+| Data/Tool Router | `references/data-tool-router.md` | Data/tool packet, source class routing, access/privacy/licensing boundary |
+| Module Artifact Contract | `references/module-artifact-contract.md` | Required artifact fields, quality gates, cross-module handoff |
 | Sounding | `references/sounding.md` | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket |
 | Current | `references/current.md` | Trend map, direction-flow notes, opportunity/risk map |
 | Reef | `references/reef.md` | Resource provenance map, evidence hierarchy, circularity risks |
@@ -203,7 +210,7 @@ Use this rubric when comparing module outputs or model lanes. It is a behavioral
 | Negative space | Names missing evidence, non-inspected areas, contradictions, alternatives, or overextension. |
 | Module artifact quality | Produces the artifact expected from the active module. |
 | Handoff correctness | Uses OCEAN module names or a clear stop condition with bounded input packet. |
-| Biomedical/biological usefulness | Gives concrete, evidence-bounded next steps for medical or biological research. |
+| Biomedical/biological usefulness | Gives concrete, domain-appropriate, evidence-bounded next steps for medical or biological research. |
 | Output consistency | Keeps stable headings/sections and contains no user-facing `<think>` or private reasoning. |
 
 For eval details, use `evals/ocean-module-m3-rubric.md`. Preserve M2 results as historical 12-point screening records.
@@ -232,6 +239,7 @@ Use these rows in this order unless the user asks for a different rubric:
 - Never fill blank table cells with imagined data.
 - Use low scores when evidence is missing.
 - Do not convert database, KG, text-mining, model prediction, or abstract-only evidence into causality, mechanism, clinical deployment, or therapy guidance.
+- Do not use a generic evidence standard when the Domain Lens indicates medical AI, biological AI, omics, clinical, drug, KG/database, manuscript/proposal, or collaboration-specific rules.
 - Do not treat search-result snippets as full-paper evidence.
 - Do not treat peer review reports, assessments, or reviewer comments as facts, novelty proof, mechanism proof, publication guarantees, or clinical validation.
 - If only a title, abstract, DOI, or memory fragment is available, say so in the Evidence state and downgrade the output.
