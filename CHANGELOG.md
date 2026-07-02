@@ -4,6 +4,7 @@
 
 - Added a Research Design Workflow reference with OCEAN design-loop gates, module responsibilities, research-route output, and stop conditions for idea/proposal/reviewer/resource/collaboration workflow cases.
 - Added Research Design Workflow R1 case seeds to test whether OCEAN behaves as a biomedical research process workflow rather than a summary or database aggregation tool.
+- Ran Research Design Workflow R1 over six completed model lanes with 42 usable outputs, 18.38/20 mean OCEAN-10 score, 0 critical rows, 0 public reasoning leaks, and Kimi recorded as runtime blocked.
 - Added a bounded Reef public API packet runner with dry-run defaults and starter adapters for NCBI E-utilities, ClinicalTrials.gov, and Open Targets.
 - Added a Reef biological/clinical data-source catalog covering literature IDs, gene/protein/variant resources, omics repositories, single-cell/spatial atlases, cancer genomics portals, drug resources, clinical registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organisms, and microbiome/pathogen resources.
 - Updated Reef routing so biological/clinical source selection is separated from optional live API adapter planning and remains bounded by identifier, access, privacy, licensing, and evidence-level rules.

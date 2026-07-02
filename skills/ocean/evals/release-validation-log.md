@@ -1420,3 +1420,74 @@ Purpose: Re-center OCEAN as a biomedical research design and process workflow: e
 ### Evidence Boundary / 证据边界
 
 This is a scaffold validation, not a completed model eval. No live model calls, live API calls, private manuscripts, patient data, private peer-review reports, or unpublished materials were used. The next step is a true Research Design Workflow R1 model run using the seven case seeds and OCEAN-10 scoring.
+
+## Research Design Workflow R1 Model Run
+
+Date: 2026-07-03
+Purpose: Test whether the new research-design workflow can make models preserve source boundaries, resource routing boundaries, claim calibration, validation gates, research-route selection, and Harbor decision memory across uncertain biomedical research inputs.
+
+### Scope
+
+| Item | Value |
+|---|---:|
+| Cases | 7 |
+| Completed model lanes | 6 |
+| Usable outputs | 42 |
+| Runtime-blocked lanes | 1 |
+| Positive reasoning-leak reports | 0 |
+| Mean M3 score | 18.38/20 |
+| Strong | 42 |
+| Developing | 0 |
+| Needs review | 0 |
+| Critical-flag rows | 0 |
+
+### Runtime notes
+
+- Initial run: `outputs/research-design-workflow-r1/20260703-000216`
+- Follow-up run: `outputs/research-design-workflow-r1-followup/20260703-002139`
+- Completed in the initial run: Qwen and DeepSeek, 14/14 outputs.
+- Kimi was runtime blocked: the first Kimi request did not return during the long-timeout run, and the run was manually interrupted to prevent one provider from blocking the full experiment.
+- Completed in follow-up: MiniMax, Gemini, Claude, and Perplexity, 28/28 outputs.
+
+### Module summary
+
+| Module | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Current | 19.17 | 6 | 0 | 0 | 0 |
+| Iceberg | 19.00 | 6 | 0 | 0 | 0 |
+| Compass | 18.83 | 6 | 0 | 0 | 0 |
+| Sounding | 18.33 | 6 | 0 | 0 | 0 |
+| Harbor | 18.00 | 6 | 0 | 0 | 0 |
+| Reef | 17.83 | 6 | 0 | 0 | 0 |
+| Anchor | 17.50 | 6 | 0 | 0 | 0 |
+
+### Model summary
+
+| Model lane | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Perplexity retrieval control | 18.71 | 7 | 0 | 0 | 0 |
+| Claude | 18.57 | 7 | 0 | 0 | 0 |
+| MiniMax reasoning-control | 18.57 | 7 | 0 | 0 | 0 |
+| DeepSeek | 18.43 | 7 | 0 | 0 | 0 |
+| Qwen | 18.29 | 7 | 0 | 0 | 0 |
+| Gemini | 17.71 | 7 | 0 | 0 | 0 |
+
+### Key interpretation
+
+- Research Design Workflow R1 is the strongest workflow-level result so far: all scored outputs reached the strong band and no critical flags were raised.
+- The run supports the current positioning of OCEAN as a research design and process workflow, not only a literature summary or database aggregation layer.
+- Current and Iceberg were the strongest modules in this scenario, suggesting models consistently resisted sparse trend claims and proposal-as-completed-evidence traps.
+- Anchor and Reef were still strong but lower. Manual review suggests most flags were conservative: terms such as sample size, accuracy, specificity, sensitivity, and external validation were usually future validation criteria, not invented completed results.
+- The main improvement target is Anchor threshold discipline: when users provide no domain constraints, future prompts should discourage arbitrary hard pass thresholds unless explicitly labeled as illustrative.
+
+### Artifacts
+
+- Cases: `skills/ocean/evals/research-design-workflow-r1-cases.json`
+- Coverage: `skills/ocean/evals/research-design-workflow-r1-coverage.json`
+- Results: `skills/ocean/evals/research-design-workflow-r1-results.md`
+- Scorecard: `skills/ocean/evals/research-design-workflow-r1-scorecard.csv`
+- Summary: `skills/ocean/evals/research-design-workflow-r1-summary.json`
+
+### Evidence Boundary / 证据边界
+
+This run used public-safe synthetic workflow-design prompts only. It did not use private manuscripts, patient data, private peer-review reports, live biomedical database/API calls, or unpublished materials. The M3 score is a deterministic behavioral screen, not a scientific correctness judgment or final model leaderboard.

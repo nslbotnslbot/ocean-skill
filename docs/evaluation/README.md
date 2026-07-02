@@ -21,6 +21,7 @@ These files are for GitHub transparency. They are not runtime instructions for t
 - `skills/ocean/evals/full-ocean-workflow-protocol.md`: protocol for testing whether one paper, idea, proposal, review comment, or resource seed can move through the seven-module workflow.
 - `skills/ocean/evals/full-ocean-workflow-cases.md`: reusable full-workflow case seeds.
 - `skills/ocean/evals/research-design-workflow-r1-cases.json`: workflow-design case seeds for testing design gates, validation gates, research routes, and Harbor decision memory from uncertain biomedical research inputs.
+- `skills/ocean/evals/research-design-workflow-r1-results.md`: first Research Design Workflow R1 model run over six completed model lanes, with Kimi recorded as runtime blocked.
 - `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
 - `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
 - `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
@@ -52,7 +53,7 @@ Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decisio
 
 Idea Scout M3 R1 tests whether Current and Compass can turn trend/reviewer-pressure/idea seeds into bounded research directions without claiming proven novelty, field dominance, or publication readiness.
 
-Research Design Workflow R1 is a case-seed layer, not a completed model run. It is meant to test whether OCEAN behaves as a research process workflow: source boundary first, resource routing second, claim calibration before validation planning, and decision memory at the end.
+Research Design Workflow R1 tests whether OCEAN behaves as a research process workflow: source boundary first, resource routing second, claim calibration before validation planning, and decision memory at the end. The first completed scoring pass covered 42 usable outputs across six model lanes; Kimi was runtime-blocked and should be retried separately before content-quality comparison.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

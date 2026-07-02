@@ -215,7 +215,7 @@ Collaborative Workflow R1 adds a cross-module workflow stress test over proposal
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
 
-Research Design Workflow R1 adds public case seeds for testing whether OCEAN can turn uncertain ideas, proposals, resource requests, reviewer pressure, and workflow decisions into design gates, validation gates, research routes, and Harbor decision memory without claiming unsupported maturity.
+Research Design Workflow R1 tests whether OCEAN can turn uncertain ideas, proposals, resource requests, reviewer pressure, and workflow decisions into design gates, validation gates, research routes, and Harbor decision memory without claiming unsupported maturity. The first scored pass covered 42 usable outputs across six completed model lanes; one Kimi lane was runtime-blocked and is tracked separately.
 
 The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline. M1/M2 should still be read as coverage plus heuristic screening, not final scientific correctness validation or a model leaderboard.
 

@@ -215,7 +215,7 @@ Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 prop
 
 仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。
 
-Research Design Workflow R1 增加了公开 case seeds，用于测试 OCEAN 是否能把不确定的 idea、proposal、resource request、reviewer pressure 和 workflow decision 转成 design gates、validation gates、research routes 和 Harbor decision memory，同时不声称未经验证的成熟度。
+Research Design Workflow R1 测试 OCEAN 是否能把不确定的 idea、proposal、resource request、reviewer pressure 和 workflow decision 转成 design gates、validation gates、research routes 和 Harbor decision memory，同时不声称未经验证的成熟度。第一轮计分覆盖 6 条完成模型线、42 个 usable outputs；一条 Kimi lane 因 runtime blocked 单独记录。
 
 更早的 anti-hallucination 和 contamination-resistance 测试覆盖了 OCEAN 的 evidence-boundary 行为和 claim downgrade 纪律。M1/M2 仍然应被理解为 coverage + heuristic screening，而不是最终科学正确性验证或模型排行榜。
 
