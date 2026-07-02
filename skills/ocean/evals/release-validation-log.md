@@ -1104,3 +1104,319 @@ Purpose: Run a broader cross-module workflow stress test after Reef-R1, using pr
 ### Evidence Boundary / 证据边界
 
 This eval used synthetic/public-style workflow prompts and did not inspect private manuscripts or execute live biomedical database queries. The scores are heuristic screening only; manual source-grounded review remains required.
+
+## M3 OCEAN-10 Scoring Scaffold
+
+Date: 2026-07-02
+Purpose: Upgrade module/model comparison from the M2 12-point screen to a stricter OCEAN-10 rubric and add clean-output handling for future all-module evals.
+
+### Changes
+
+| Area | Change |
+|---|---|
+| Rubric | Added `skills/ocean/evals/ocean-module-m3-rubric.md` with 10 dimensions, 0-2 each, max 20. |
+| Scorer | Added `skills/ocean/scripts/score_ocean_module_m3.py`; it prefers `output.clean.md` when available and preserves M2 as a legacy scorer. |
+| Runner | Updated `run_ocean_module_eval.py` to save raw `output.md`, public `output.clean.md`, and `reasoning_leak.json`. |
+| Harbor | Hardened Harbor artifact expectations around decision memo, evidence boundary ledger, contribution boundary record, next-action register, and reuse note. |
+| Output contract | Added OCEAN-10 evaluation rubric to the public output contract. |
+
+### First M3 screen over existing M1 outputs
+
+| Item | Value |
+|---|---:|
+| Scored outputs | 98 |
+| Mean score | 16.19/20 |
+| Strong | 37 |
+| Developing | 30 |
+| Needs review | 31 |
+| Critical-flag rows | 31 |
+
+### Module summary
+
+| Module | Mean score | Strong | Developing | Needs review |
+|---|---:|---:|---:|---:|
+| Compass | 16.79 | 6 | 5 | 3 |
+| Anchor | 16.43 | 6 | 2 | 6 |
+| Current | 16.29 | 5 | 5 | 4 |
+| Reef | 16.29 | 6 | 6 | 2 |
+| Iceberg | 16.07 | 5 | 5 | 4 |
+| Harbor | 16.00 | 5 | 4 | 5 |
+| Sounding | 15.50 | 4 | 3 | 7 |
+
+### Interpretation
+
+- M3 is intentionally stricter than M2 because it adds task framing, source traceability, negative space, and output consistency.
+- MiniMax old M1 outputs are all `needs_review` under M3 because those artifacts still contain public `<think>` blocks. This is expected for historical outputs and is the reason future runs now save `output.clean.md` separately from raw provider output.
+- Harbor remains a priority module for hardening because its usefulness depends on stable decision memo and collaboration-boundary artifacts, not just generic summaries.
+- The M3 score is a behavioral screen only. It should not be read as scientific correctness or a final model leaderboard.
+
+### Artifacts
+
+- Rubric: `skills/ocean/evals/ocean-module-m3-rubric.md`
+- Results: `skills/ocean/evals/ocean-module-m3-results.md`
+- Scorecard: `skills/ocean/evals/ocean-module-m3-scorecard.csv`
+- Summary: `skills/ocean/evals/ocean-module-m3-summary.json`
+- Scorer: `skills/ocean/scripts/score_ocean_module_m3.py`
+
+### Validation
+
+- `score_ocean_module_m3.py`: pass, generated results/scorecard/summary.
+- `run_ocean_module_eval.py` and `score_ocean_module_m3.py` syntax check: pass with `PYTHONPYCACHEPREFIX=/private/tmp/ocean_pycache`.
+- `git diff --check`: pass.
+
+### Evidence Boundary / 证据边界
+
+This step did not call provider APIs or inspect new biomedical papers. It rescored existing M1 outputs with a stricter behavioral rubric and prepared the runner for future clean-output evals.
+
+## MiniMax Reasoning-Output Handling
+
+Date: 2026-07-02
+Purpose: Move MiniMax reasoning leakage handling from prompt-only suppression toward provider-level configuration plus runner-level audit artifacts.
+
+### Changes
+
+| Area | Change |
+|---|---|
+| OpenAI-compatible adapter | Added `extra_body` support so provider-specific request fields can be passed from model JSON without hard-coding MiniMax into OCEAN. |
+| MiniMax clean lane | Added `minimax-m3-clean` with `thinking: {"type": "disabled"}` and kept it disabled until MiniMax-M3 access is confirmed. |
+| MiniMax reasoning control | Replaced the old generic MiniMax lane with `minimax-reasoning-control` using MiniMax-M1 and `reasoning_split: true`. |
+| Sounding runner | Added `output.clean.md` and `reasoning_leak.json`, matching the all-module runner's public-output handling. |
+| Public boundary | Raw provider output remains preserved as `output.md`; cleaned output is for public review/scoring only. |
+
+### Next experiment implication
+
+The next MiniMax check should not rerun a huge matrix first. Use a small provider smoke run:
+
+1. `minimax-m3-clean`, 2 Harbor cases, 2 Sounding cases, verify whether MiniMax-M3 is accessible and whether `reasoning_leak.json` is clean.
+2. `minimax-reasoning-control`, the same 4 cases, verify whether `reasoning_split` prevents public `<think>` leakage or whether cleanup is still required.
+3. If both pass transport, run a Harbor-focused M3 eval before any full 7-module rerun.
+
+### Evidence Boundary / 证据边界
+
+This section records configuration and runner behavior only. It does not claim MiniMax-M3 access has been confirmed, and it does not claim reasoning suppression has passed until live output artifacts are generated.
+
+## Harbor-Focused M3 R1
+
+Date: 2026-07-02
+Purpose: Test whether Harbor can function as project memory, decision memo, collaboration boundary, handoff record, and reuse-warning module after the Harbor contract and OCEAN-10 rubric were added.
+
+### Scope
+
+| Item | Value |
+|---|---:|
+| Cases | 5 |
+| Enabled model lanes | 7 |
+| Expected outputs | 35 |
+| Usable outputs | 35 |
+| Auto-check files | 35 |
+| Positive reasoning-leak reports | 0 |
+| Mean M3 score | 15.94/20 |
+| Strong | 14 |
+| Developing | 17 |
+| Needs review | 4 |
+| Critical-flag rows | 2 |
+
+### Model summary
+
+| Model lane | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Qwen | 16.8 | 3 | 2 | 0 | 0 |
+| DeepSeek | 16.6 | 3 | 2 | 0 | 0 |
+| MiniMax-M3 clean | 16.4 | 2 | 3 | 0 | 0 |
+| Claude | 16.2 | 3 | 2 | 0 | 0 |
+| MiniMax-M1 reasoning-control | 15.6 | 1 | 2 | 2 | 1 |
+| Gemini | 15.2 | 1 | 3 | 1 | 1 |
+| Kimi | 14.8 | 1 | 3 | 1 | 0 |
+
+### Key interpretation
+
+- Harbor-focused M3 R1 completed cleanly across all enabled lanes: 35/35 usable outputs and no positive reasoning-leak reports.
+- MiniMax-M3 clean with `thinking.disabled` completed 5/5 and produced no public `<think>` leakage.
+- MiniMax-M1 reasoning-control with `reasoning_split` completed 5/5 and also produced no public `<think>` leakage in this run.
+- The two remaining critical flags are conservative false positives on HARBOR-M3R1-02. Gemini and MiniMax-M1 rejected authorship guarantees; the heuristic scorer was triggered by `保证` in negative/authorship-boundary contexts.
+- The true improvement target is Harbor artifact specificity. HARBOR-M3R1-05 exposed that several outputs still become generic development summaries instead of stable Harbor records with decision memo, evidence boundary ledger, contribution/public-private boundary, next-action register, and reuse note.
+- After this run, the all-module eval prompt was tightened to include active-module artifact requirements for future runs.
+
+### Artifacts
+
+- Cases: `skills/ocean/evals/harbor-focused-m3-r1-cases.json`
+- Model set: `skills/ocean/evals/harbor-focused-m3-r1-models.example.json`
+- Coverage: `skills/ocean/evals/harbor-focused-m3-r1-coverage.json`
+- Results: `skills/ocean/evals/harbor-focused-m3-r1-results.md`
+- Scorecard: `skills/ocean/evals/harbor-focused-m3-r1-scorecard.csv`
+- Summary: `skills/ocean/evals/harbor-focused-m3-r1-summary.json`
+- Run artifacts: `outputs/harbor-focused-m3-r1-full/20260702-210527`
+
+### Next Step
+
+Run Harbor-focused M3 R2 with the tightened module-artifact prompt. If HARBOR-M3R1-05-style development-memory cases improve and reasoning leak remains at 0, proceed to a full OCEAN workflow M3 R2.
+
+### Evidence Boundary / 证据边界
+
+This eval used synthetic/public-style Harbor prompts only. It did not inspect private manuscripts, patient data, private peer-review text, live biomedical databases, or new source papers. The M3 score is a deterministic behavioral screen, not a scientific correctness judgment or final model leaderboard.
+
+## Idea Scout M3 R1
+
+Date: 2026-07-02
+Purpose: Test whether Current and Compass can support evidence-bounded idea generation from trend seeds, reviewer-style pressure, public-review metadata, and one-sentence idea seeds without claiming proven novelty, field dominance, or publication readiness.
+
+### Scope
+
+| Item | Value |
+|---|---:|
+| Cases | 4 |
+| Modules | Current, Compass |
+| Enabled model lanes | 7 |
+| Expected outputs | 28 |
+| Usable outputs | 28 |
+| Auto-check files | 28 |
+| Positive reasoning-leak reports | 0 |
+| Mean M3 score | 17.89/20 |
+| Strong | 22 |
+| Developing | 1 |
+| Needs review | 5 |
+| Critical-flag rows | 5 |
+
+### Module summary
+
+| Module | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Compass | 18.00 | 10 | 1 | 3 | 3 |
+| Current | 17.79 | 12 | 0 | 2 | 2 |
+
+### Model summary
+
+| Model lane | Mean M3 score | Strong | Developing | Needs review | Critical flags |
+|---|---:|---:|---:|---:|---:|
+| Qwen | 19.00 | 4 | 0 | 0 | 0 |
+| MiniMax-M1 reasoning-control | 19.00 | 4 | 0 | 0 | 0 |
+| Claude | 18.75 | 4 | 0 | 0 | 0 |
+| MiniMax-M3 clean | 18.50 | 4 | 0 | 0 | 0 |
+| Gemini | 18.25 | 4 | 0 | 0 | 0 |
+| DeepSeek | 17.00 | 2 | 1 | 1 | 1 |
+| Kimi | 14.75 | 0 | 0 | 4 | 4 |
+
+### Key interpretation
+
+- Current and Compass behaved better than Harbor under the OCEAN-10 screen, suggesting OCEAN's idea-generation layer is promising when evidence boundaries are explicit.
+- Qwen, MiniMax-M1 reasoning-control, Claude, Gemini, and MiniMax-M3 clean were stable in this run.
+- Kimi was the weak lane: outputs generally preserved evidence boundaries but often failed to explicitly frame the active module and produced weaker module artifacts.
+- The remaining DeepSeek critical flag on IDEA-M3R1-COMPASS-02 is a conservative false positive: the output rejected guaranteed impact/publication readiness, but the scorer was triggered by `保证` in a rejection context.
+- No public reasoning leaks were detected across the 28 outputs.
+
+### Artifacts
+
+- Cases: `skills/ocean/evals/idea-scout-m3-r1-cases.json`
+- Coverage: `skills/ocean/evals/idea-scout-m3-r1-coverage.json`
+- Results: `skills/ocean/evals/idea-scout-m3-r1-results.md`
+- Scorecard: `skills/ocean/evals/idea-scout-m3-r1-scorecard.csv`
+- Summary: `skills/ocean/evals/idea-scout-m3-r1-summary.json`
+- Run artifacts: `outputs/idea-scout-m3-r1-full/20260702-220808`
+
+### Next Step
+
+Run a chained mini-workflow: Sounding source packet -> Current trend boundary -> Compass idea card -> Anchor validation plan. This would test whether idea generation remains bounded after cross-module handoff, not just in isolated Current/Compass prompts.
+
+### Evidence Boundary / 证据边界
+
+This eval used synthetic/public-style prompts only. It did not inspect private manuscripts, patient data, private peer-review text, live biomedical databases, or new source papers. The M3 score is a deterministic behavioral screen, not a scientific correctness judgment or final model leaderboard.
+
+## Reef Biological / Clinical Data Source Catalog
+
+Date: 2026-07-02
+Purpose: Expand Reef from a general KG/database provenance layer into a more explicit biological and clinical data-source routing layer.
+
+### Added artifacts
+
+| Artifact | Purpose |
+|---|---|
+| `skills/ocean/references/reef-biological-data-sources.md` | Adds biological/clinical data-source categories, candidate resources, identifiers, access/privacy/licensing boundaries, and evidence-level rules. |
+| `skills/ocean/references/reef.md` | Routes biological or clinical data-source selection to the new Reef catalog. |
+| `skills/ocean/references/reef-api-adapters.md` | Separates broad data-source selection from optional live API adapter planning and adds clinical/cancer/regulatory/cohort adapter categories. |
+| `skills/ocean/references/output-contract.md` | Adds a Reef biological/clinical source add-on artifact. |
+| `docs/module-map.md`, `README.md`, `README.zh-CN.md`, `CHANGELOG.md` | Publicly describe Reef as resource, clinical data, KG, and database provenance/routing rather than only KG/database organization. |
+
+### Scope
+
+The catalog covers literature identifiers, gene/genome resources, protein resources, variant/population genetics, pathways/ontologies, single-cell and spatial atlases, bulk omics, cancer genomics, drug/chemical resources, clinical trial registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organism resources, and microbiome/pathogen resources.
+
+### Evidence Boundary / 证据边界
+
+No live API calls or database queries were executed for this update. Representative official documentation anchors were inspected for routing purposes, but the catalog is not proof that any endpoint, schema field, release version, dataset count, or record was queried. Future Reef-R2 should use small official-doc source packets and real resource identifiers before scoring API/database behavior.
+
+## Reef Public API Adapter Scaffold
+
+Date: 2026-07-02
+Purpose: Add the first optional Reef API runner while keeping OCEAN model-neutral and evidence-boundary-first.
+
+### Added artifacts
+
+| Artifact | Purpose |
+|---|---|
+| `skills/ocean/scripts/run_reef_api_adapter.py` | Creates bounded Reef API resource packets. Defaults to dry-run and only performs live public API calls when `--execute` is passed. |
+| `skills/ocean/references/reef-api-adapters.md` | Documents the starter runner, supported adapter flags, and the rule that runner outputs are resource packets rather than scientific conclusions. |
+| `skills/ocean/SKILL.md` | Routes explicit public Reef API packet requests to the runner while requiring dry-run by default unless live public access is approved. |
+| `README.md`, `README.zh-CN.md`, `CHANGELOG.md` | Adds the runner to public script/check documentation and changelog. |
+
+### Starter adapters
+
+| Adapter | Current behavior | Boundary |
+|---|---|---|
+| `ncbi-eutils` | Builds dry-run or executable Entrez search packet for a bounded query/database. | Metadata/identifier search does not equal full-paper evidence, mechanism, causality, clinical efficacy, or absence-of-evidence. |
+| `clinicaltrials` | Builds dry-run or executable ClinicalTrials.gov study-search packet. | Registry metadata does not prove treatment efficacy or clinical guidance. |
+| `opentargets` | Builds dry-run or executable Open Targets target lookup packet by Ensembl ID. | Target annotation or association context does not prove mechanism, therapeutic efficacy, or clinical readiness. |
+
+### Local validation
+
+| Check | Status |
+|---|---|
+| `python3 -m py_compile skills/ocean/scripts/run_reef_api_adapter.py` with tmp pycache | Pass |
+| Dry-run NCBI packet: `BRCA1 breast cancer`, `pubmed`, `retmax=3` | Pass; `Executed: False`; records inspected = 0 |
+| Dry-run ClinicalTrials.gov packet: `glioblastoma vaccine`, `retmax=3` | Pass; `Executed: False`; records inspected = 0 |
+| Dry-run Open Targets packet: `ENSG00000012048` | Pass; `Executed: False`; records inspected = 0 |
+
+### Evidence Boundary / 证据边界
+
+No live API calls were executed during this scaffold validation. The runner was tested in dry-run mode only. The first live Reef-R2 should use public, non-sensitive identifiers and should record raw response packets separately from scientific claim interpretation.
+
+## Research Design Workflow R1 Scaffold
+
+Date: 2026-07-02
+Purpose: Re-center OCEAN as a biomedical research design and process workflow: evidence boundary -> source/resource packet -> claim calibration -> validation gate -> research route -> decision memory.
+
+### Added artifacts
+
+| Artifact | Purpose |
+|---|---|
+| `skills/ocean/references/research-design-workflow.md` | Defines the OCEAN design loop, design gates, module responsibilities, research-route artifact, and stop conditions. |
+| `skills/ocean/evals/research-design-workflow-r1-cases.json` | Adds seven public-safe workflow-design case seeds across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor. |
+| `skills/ocean/SKILL.md` | Routes idea/proposal/reviewer/resource/collaboration workflow-design requests to the new reference. |
+| `skills/ocean/references/output-contract.md` | Adds `research design workflow` as a request mode and lists the workflow artifact. |
+| `skills/ocean/references/module-handoff.md` | Adds design-gate preservation to multi-module handoffs. |
+| `skills/ocean/references/compass.md` | Requires gate logic when Compass is part of a larger research-design workflow. |
+| `README.md`, `README.zh-CN.md`, `docs/module-map.md`, `docs/evaluation/README.md`, `CHANGELOG.md` | Publicly describe OCEAN as claim-evidence navigation plus research design workflow without competitor comparison language. |
+
+### Case seeds
+
+| Case | Module | Main trap |
+|---|---|---|
+| RDW-R1-SOUNDING-01 | Sounding | Idea-only novelty/feasibility overclaim. |
+| RDW-R1-CURRENT-01 | Current | Trend claim without search coverage. |
+| RDW-R1-REEF-01 | Reef | Resource/API routing used as mechanism proof. |
+| RDW-R1-ICEBERG-01 | Iceberg | Proposal claims treated as completed evidence. |
+| RDW-R1-ANCHOR-01 | Anchor | Minimal validation used to claim clinical usefulness. |
+| RDW-R1-COMPASS-01 | Compass | Reviewer pressure converted into guaranteed manuscript success. |
+| RDW-R1-HARBOR-01 | Harbor | Public roadmap overstates module maturity. |
+
+### Local validation
+
+| Check | Status |
+|---|---|
+| `python3 -m json.tool skills/ocean/evals/research-design-workflow-r1-cases.json` | Pass |
+| `python3 -m py_compile skills/ocean/scripts/run_ocean_module_eval.py skills/ocean/scripts/run_reef_api_adapter.py` with tmp pycache | Pass |
+| `git diff --check` | Pass |
+| `run_ocean_module_eval.py --cases research-design-workflow-r1-cases.json --dry-run` | Pass; generated 7 prompt-bank files under `/private/tmp/ocean_rdw_dryrun/20260702-235644` |
+
+### Evidence Boundary / 证据边界
+
+This is a scaffold validation, not a completed model eval. No live model calls, live API calls, private manuscripts, patient data, private peer-review reports, or unpublished materials were used. The next step is a true Research Design Workflow R1 model run using the seven case seeds and OCEAN-10 scoring.

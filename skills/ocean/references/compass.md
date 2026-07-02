@@ -21,6 +21,7 @@ Compass is not free-form brainstorming. Its ideas must be anchored to inspected 
 - Prioritize ideas by evidence need, risk, novelty, feasibility, and publication or collaboration value.
 - Design experiments, analyses, proposal aims, or manuscript revision strategies.
 - Clarify what the user can contribute.
+- Use `research-design-workflow.md` when Compass is part of a larger workflow-design case and must select among staged research routes after source, resource, claim, and validation gates.
 
 ## Trigger
 
@@ -68,6 +69,7 @@ Compass can start from:
    - Score each option for evidence fit, novelty risk, data need, validation burden, execution effort, and publication or collaboration value.
 5. **Select route**
    - Recommend one route, one backup route, and what evidence would change the decision.
+   - Preserve gate logic: source gate, resource gate, claim gate, validation gate, feasibility gate, and decision gate when the task is a research design workflow.
 6. **Handoff**
    - To Harbor for decision memo and collaboration boundary.
    - Back to Sounding/Current/Reef/Anchor if evidence is too thin.

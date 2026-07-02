@@ -46,6 +46,8 @@ Use this order for full OCEAN cases:
 
 Skipping is allowed only when the evidence boundary makes a module irrelevant or impossible. Record skipped modules and the reason.
 
+For research design workflows, use `research-design-workflow.md` to add design gates before selecting a Compass route. The handoff should preserve which gates passed, which need work, and which require a stop condition.
+
 ## Module-by-Module Handoffs
 
 | From | To | Pass forward | Main boundary |

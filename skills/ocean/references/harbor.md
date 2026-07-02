@@ -52,6 +52,8 @@ Harbor can start from:
 - Do not infer authorship, acceptance, review outcome, or PI agreement.
 - Preserve uncertainty and stop conditions.
 - If prior outputs are stale, mark them as historical rather than current evidence.
+- Keep decisions separate from evidence. A decision can be recorded as a user/project choice, but it must not be treated as new scientific support.
+- For collaboration or authorship questions, record contribution evidence and boundary warnings; do not decide authorship from incomplete notes.
 
 ## Workflow
 
@@ -67,6 +69,23 @@ Harbor can start from:
    - Convert gaps into owners, priority, effort, and evidence required.
 6. **Reuse warning**
    - State what must be rechecked before future reuse.
+
+## Required Harbor Artifacts
+
+Harbor outputs are considered complete only when they include these five artifacts:
+
+1. **Decision memo**
+   - What is decided now, what remains unresolved, and what cannot be claimed.
+2. **Evidence boundary ledger**
+   - A durable record of checked, unchecked, cannot-judge, and next-needed items.
+3. **Contribution boundary record**
+   - What contribution evidence exists, what is only planned, and what cannot justify authorship or role claims yet.
+4. **Next-action register**
+   - Concrete next steps tied to evidence gaps, with owner/role, priority, and required evidence.
+5. **Reuse note**
+   - What the memo can be reused for, what must be rechecked, and what it must not be used as evidence for.
+
+If one artifact cannot be filled because evidence is missing, keep the heading and write the missing boundary rather than deleting it.
 
 ## Output Artifact
 
@@ -100,7 +119,7 @@ Harbor can start from:
 - 已检查:
 - 未检查:
 - 不能判断:
-- 需要补充:
+- 下一步需要:
 
 七、Reuse note
 - This memo can be reused for:
@@ -124,3 +143,4 @@ Stop or mark incomplete when:
 - Forgetting uncertainty and missing evidence.
 - Treating old outputs as current evidence without checking.
 - Promising authorship, acceptance, or collaboration outcomes.
+- Producing a generic summary without a decision memo, evidence ledger, contribution boundary, next-action register, and reuse note.

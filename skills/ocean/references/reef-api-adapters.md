@@ -4,6 +4,8 @@ Use this reference when Reef needs to plan or inspect live biomedical resources 
 
 Reef API adapters are optional. OCEAN must remain a workflow and output contract, not a dependency on any specific API, model, paid service, key, or network condition.
 
+For broader biological or clinical data-source selection before live API planning, read `reef-biological-data-sources.md` first.
+
 ## Contents
 
 - Purpose
@@ -24,12 +26,46 @@ Reef API adapters are optional. OCEAN must remain a workflow and output contract
 ## Adapter Principles
 
 - Treat every adapter as optional unless the user explicitly asks for live API/database work.
+- Use `scripts/run_reef_api_adapter.py` for supported public starter adapters when a bounded query packet would help. The script defaults to dry-run and only performs live public API calls with `--execute`.
 - Prefer official APIs, official bulk downloads, official data portals, or documented public endpoints.
 - Record the exact source URL, endpoint family, query date, inspected fields, filters, and any failures.
 - Do not name endpoint URLs, query paths, schema fields, release versions, or API result fields unless they were provided by the user or inspected from official documentation in the current run.
 - Never write API keys, credentials, paid account details, private manuscript text, patient data, or raw sensitive outputs into public logs.
 - If an API call costs money, uses a private key, accesses private data, or may submit unpublished material to a third party, ask the user before calling it.
 - Treat API records as resource evidence. They can support provenance, annotation, association, or registry status; they do not alone prove mechanism, causality, treatment efficacy, clinical utility, or publication readiness.
+
+## Starter Runner
+
+Use the runner only after the Reef query plan is bounded:
+
+```bash
+python3 skills/ocean/scripts/run_reef_api_adapter.py \
+  --adapter ncbi-eutils \
+  --database pubmed \
+  --query "BRCA1 breast cancer" \
+  --retmax 5 \
+  --out outputs/reef_ncbi_packet.json
+```
+
+Default mode is dry-run. Add `--execute` only for public, non-sensitive, no-key requests:
+
+```bash
+python3 skills/ocean/scripts/run_reef_api_adapter.py \
+  --adapter opentargets \
+  --ensembl-id ENSG00000012048 \
+  --execute \
+  --out outputs/reef_opentargets_packet.json
+```
+
+Supported starter adapters:
+
+| Adapter flag | Live behavior | Required input |
+|---|---|---|
+| `ncbi-eutils` | Entrez search packet over a selected database | `--query`, optional `--database` |
+| `clinicaltrials` | ClinicalTrials.gov study search packet | `--query` |
+| `opentargets` | Open Targets target lookup packet | `--ensembl-id` |
+
+The runner output is a Reef resource packet, not a scientific conclusion. Hand it to Iceberg or Anchor before making claim-support or validation statements.
 
 ## Candidate Adapter Registry
 
@@ -45,6 +81,10 @@ These adapters are starting points, not mandatory dependencies.
 | UniProt | Protein sequence/function annotation and cross-references | REST/web programmatic access | Checking reviewed/unreviewed protein records, function notes, domains, isoforms, and cross-references | Separate curated evidence, inferred annotation, and unreviewed records |
 | ClinicalTrials.gov | Clinical study registry and results metadata | Official data API / registry records | Checking whether a clinical study exists, its status, arms, outcomes, and reported results availability | Registry status is not efficacy proof; absence of a trial is not absence of evidence |
 | BioThings / federated KG tools | Federated gene/drug/disease API discovery | REST/federated query tools | Exploring candidate multi-hop resource links before formal evidence audit | Multi-hop links are hypotheses until original sources are checked |
+| NCI GDC / cBioPortal | Cancer genomics and oncology cohort records | Official APIs, portals, and downloads | Checking tumor genomics study provenance, alteration context, and cancer cohort resource boundaries | Cohort/resource records are not treatment guidance or prospective clinical utility |
+| openFDA / FDA labels / DailyMed | Regulatory labels, adverse events, recalls, and product metadata | Official public APIs and label portals | Checking label/regulatory/safety context and public adverse-event signal boundaries | Spontaneous reports and labels do not prove new causality, efficacy, or indication expansion |
+| PhysioNet / MIMIC-IV-style clinical datasets | Credentialed EHR, ICU, waveform, imaging, and clinical datasets | Official dataset portals, credentialed access, and documented data-use rules | Planning retrospective clinical data provenance, access boundaries, and cohort feasibility checks | EHR data alone does not prove causal treatment effect or deployment readiness |
+| SEER / NHANES / All of Us | Population, cancer registry, survey, and controlled cohort resources | Official data portals and workbench access routes | Checking epidemiology/cohort feasibility, phenotype/outcome definitions, and access restrictions | Cohort availability is not causal evidence; controlled-access data must respect data-use/privacy rules |
 
 ## Official Documentation Anchors
 
@@ -59,6 +99,16 @@ Use official documentation or data portals before writing an adapter:
 | MyGene.info | `https://docs.mygene.info/en/latest/` |
 | UniProt | `https://www.uniprot.org/help/api` |
 | ClinicalTrials.gov | `https://clinicaltrials.gov/data-api/api` |
+| NCI GDC API | `https://docs.gdc.cancer.gov/API/Users_Guide/Getting_Started/` |
+| cBioPortal API | `https://docs.cbioportal.org/web-api-and-clients/` |
+| ChEMBL API | `https://www.ebi.ac.uk/chembl/api/data/docs` |
+| PubChem PUG-REST | `https://pubchem.ncbi.nlm.nih.gov/docs/pug-rest` |
+| openFDA API | `https://open.fda.gov/apis/` |
+| MIMIC-IV on PhysioNet | `https://physionet.org/content/mimiciv/` |
+| PhysioNet databases | `https://physionet.org/about/database/` |
+| SEER data | `https://seer.cancer.gov/data/` |
+| NHANES datasets | `https://wwwn.cdc.gov/nchs/nhanes/` |
+| All of Us Researcher Workbench | `https://www.researchallofus.org/data-tools/workbench/` |
 
 ## Query Planning
 

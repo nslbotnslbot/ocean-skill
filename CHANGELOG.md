@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+- Added a Research Design Workflow reference with OCEAN design-loop gates, module responsibilities, research-route output, and stop conditions for idea/proposal/reviewer/resource/collaboration workflow cases.
+- Added Research Design Workflow R1 case seeds to test whether OCEAN behaves as a biomedical research process workflow rather than a summary or database aggregation tool.
+- Added a bounded Reef public API packet runner with dry-run defaults and starter adapters for NCBI E-utilities, ClinicalTrials.gov, and Open Targets.
+- Added a Reef biological/clinical data-source catalog covering literature IDs, gene/protein/variant resources, omics repositories, single-cell/spatial atlases, cancer genomics portals, drug resources, clinical registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organisms, and microbiome/pathogen resources.
+- Updated Reef routing so biological/clinical source selection is separated from optional live API adapter planning and remains bounded by identifier, access, privacy, licensing, and evidence-level rules.
+- Added OCEAN Module Strict Eval M3 with the 20-point OCEAN-10 rubric for task framing, evidence boundary, source traceability, claim calibration, no invention, negative space, artifact quality, handoff, research usefulness, and output consistency.
+- Added the first M3 scorecard/results over the existing 98 all-module M1 outputs.
+- Added clean-output handling to the all-module eval runner: raw provider output remains preserved, while `output.clean.md` and `reasoning_leak.json` support public-format scoring and MiniMax-style `<think>` monitoring.
+- Added provider-specific `extra_body` support for OpenAI-compatible eval requests and split MiniMax into a `minimax-m3-clean` lane with `thinking.disabled` plus a `minimax-reasoning-control` lane with `reasoning_split`.
+- Added Sounding runner clean-output artifacts so Sounding and all-module evals both preserve raw output while scoring public cleaned output.
+- Hardened Harbor's artifact contract around decision memos, evidence boundary ledgers, contribution boundary records, next-action registers, and reuse notes.
+- Added Harbor-focused M3 R1 with 35/35 usable outputs across seven model lanes, 0 public reasoning leaks, and a follow-up finding that Harbor artifact requirements need to be more explicit.
+- Tightened all-module eval prompts so future runs include active-module artifact requirements, including Harbor's decision memo, evidence boundary ledger, contribution boundary record, next-action register, and reuse note.
+- Added Idea Scout M3 R1 for Current/Compass evidence-bounded idea generation, with 28/28 usable outputs across seven model lanes and 0 public reasoning leaks.
 - Added full OCEAN workflow protocol/case seeds for paper, idea, proposal, review-comment, and resource/KG inputs.
 - Added module handoff rules so multi-module runs preserve explicit evidence packets, unresolved risks, and stop conditions.
 - Added optional Reef API adapter registry for official biomedical databases, registries, and resource tools without making OCEAN dependent on any API.

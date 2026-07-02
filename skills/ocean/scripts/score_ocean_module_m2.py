@@ -60,7 +60,29 @@ UNSAFE_ACCEPT_TERMS = [
     "确定可以",
 ]
 
-NEGATION_TERMS = ["不", "不能", "无法", "未", "没有", "不可", "不足以", "不应", "不应该"]
+NEGATION_TERMS = [
+    "不",
+    "不能",
+    "无法",
+    "未",
+    "没有",
+    "不可",
+    "不足以",
+    "不应",
+    "不应该",
+    "不构成",
+    "不等于",
+    "不自动",
+    "拒绝",
+    "严禁",
+    "不得",
+    "不承诺",
+    "不背书",
+    "不可支持",
+    "不可主张",
+    "被拒绝",
+    "不接受",
+]
 
 DETAIL_RISK_TERMS = [
     "AUROC",
@@ -138,7 +160,7 @@ def contains(text: str, terms: list[str]) -> list[str]:
     return [term for term in terms if term.lower() in lowered]
 
 
-def unnegated_phrase_hits(text: str, terms: list[str], window: int = 20) -> list[str]:
+def unnegated_phrase_hits(text: str, terms: list[str], window: int = 60) -> list[str]:
     hits = []
     lowered = text.lower()
     for term in terms:
@@ -148,8 +170,8 @@ def unnegated_phrase_hits(text: str, terms: list[str], window: int = 20) -> list
             idx = lowered.find(term_lower, start)
             if idx == -1:
                 break
-            prefix = text[max(0, idx - window):idx]
-            if not any(neg in prefix for neg in NEGATION_TERMS):
+            context = text[max(0, idx - window):idx + len(term) + window]
+            if not any(neg in context for neg in NEGATION_TERMS):
                 hits.append(term)
                 break
             start = idx + len(term_lower)

@@ -4,7 +4,7 @@
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
-OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evidence navigation across medical and biological research. It is AI-aware, but not AI-only: it can support biomedical AI studies, biological AI studies, manuscripts, databases, knowledge graphs, clinical prediction work, journal positioning, and collaboration boundary analysis.
+OCEAN is a lightweight Codex-compatible skill for biomedical research claim-evidence navigation and research design workflow across medical and biological research. It is AI-aware, but not AI-only: it can support biomedical AI studies, biological AI studies, manuscripts, databases, knowledge graphs, clinical prediction work, journal positioning, validation planning, and collaboration boundary analysis.
 
 OCEAN is an independent open-source workflow project. Its evidence-discovery module is named **Sounding**: a source-packet workflow for scanning literature, evidence boundaries, and traceable review materials.
 
@@ -50,7 +50,7 @@ OCEAN uses seven modules in order. Each module is meant to complete a different 
 |---:|---|---|---|---|
 | 1 | **Sounding** | Evidence discovery and source-boundary setup | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket | Strict multi-model evals completed |
 | 2 | **Current** | Field trend and direction-flow reading | Trend map, recent movement, opportunity/risk notes | M1 covered; M2 screened |
-| 3 | **Reef** | Biomedical resource and KG/database organization | Resource provenance map, database/KG evidence table | M1 covered; M2 screened |
+| 3 | **Reef** | Biomedical resource, clinical data, KG, and database organization | Resource provenance map, data-source routing, database/KG evidence table | M1 covered; M2 screened |
 | 4 | **Iceberg** | Claim-evidence audit under the surface claim | Claim-evidence matrix, downgrade/rewrite notes | M1 covered; M2 screened |
 | 5 | **Anchor** | Validation, replication, leakage, benchmark, and reproducibility planning | Validation checklist, benchmark/leakage plan, reproducibility risks | M1 covered; M2 screened |
 | 6 | **Compass** | Research planning and strategic decision-making | Idea card, experiment plan, journal/collaboration strategy | M1 covered; M2 screened |
@@ -188,8 +188,10 @@ skills/ocean/
 │   ├── iceberg.md
 │   ├── module-handoff.md
 │   ├── output-contract.md
+│   ├── reef-biological-data-sources.md
 │   ├── reef.md
 │   ├── reef-api-adapters.md
+│   ├── research-design-workflow.md
 │   ├── reviewer-lens.md
 │   ├── review-report.md
 │   └── sounding.md
@@ -197,6 +199,7 @@ skills/ocean/
     ├── make_claim_table.py
     ├── check_claim_table.py
     ├── make_review_skeleton.py
+    ├── run_reef_api_adapter.py
     └── run_sounding_multimodel_eval.py
 ```
 
@@ -206,11 +209,13 @@ Public-facing validation notes are in `docs/evaluation/`. The concise summary is
 
 Current module-specific strict testing is still deepest for **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. M1 adds all-module coverage, and M2 adds first-pass heuristic scoring over the 98 M1 outputs. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
 
-Reef-R1 adds the first dedicated Reef strict eval, focused on resource provenance, API/database evidence boundaries, KG association overclaims, cell atlas planning boundaries, and clinical registry metadata boundaries.
+Reef now includes a biological/clinical data-source routing catalog for genes, proteins, variants, omics repositories, cell atlases, cancer genomics portals, drug resources, clinical registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organisms, and microbiome/pathogen resources. Reef-R1 adds the first dedicated Reef strict eval, focused on resource provenance, API/database evidence boundaries, KG association overclaims, cell atlas planning boundaries, and clinical registry metadata boundaries.
 
 Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
+
+Research Design Workflow R1 adds public case seeds for testing whether OCEAN can turn uncertain ideas, proposals, resource requests, reviewer pressure, and workflow decisions into design gates, validation gates, research routes, and Harbor decision memory without claiming unsupported maturity.
 
 The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline. M1/M2 should still be read as coverage plus heuristic screening, not final scientific correctness validation or a model leaderboard.
 
@@ -225,6 +230,7 @@ python3 skills/ocean/scripts/make_claim_table.py --out outputs/claim_table.csv
 python3 skills/ocean/scripts/check_claim_table.py examples/sample_claim_table.csv --out outputs/claim_table_summary.md
 python3 skills/ocean/scripts/make_claim_table.py --empty --out outputs/empty_claim_table.csv
 python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv --out outputs/empty_claim_table_summary.md
+python3 skills/ocean/scripts/run_reef_api_adapter.py --adapter ncbi-eutils --database pubmed --query "BRCA1 breast cancer" --retmax 5 --out outputs/reef_api_packet.json
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
 ```
 

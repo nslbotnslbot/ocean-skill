@@ -8,14 +8,14 @@ Before answering, classify the request and evidence state.
 
 | Field | Options / content |
 |---|---|
-| Request mode | full OCEAN workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Request mode | full OCEAN workflow; research design workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
 | Evidence state | sufficient; partial; minimal; non-traceable; contradictory |
 | Output depth | quick; standard; deep |
 | Source type | manuscript; abstract; DOI/preprint page; literature search results; figures/tables; peer review report; database/KG/text-mining output; user notes only |
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
-For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
+For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
 
 ## Verdict Labels
 
@@ -181,11 +181,32 @@ When a single module is the main task, read that module reference and use its ar
 | Sounding | `references/sounding.md` | Source packet, Evidence Radar Map, Negative Space, Handoff Ticket |
 | Current | `references/current.md` | Trend map, direction-flow notes, opportunity/risk map |
 | Reef | `references/reef.md` | Resource provenance map, evidence hierarchy, circularity risks |
+| Reef biological/clinical sources | `references/reef-biological-data-sources.md` | Biological/clinical data-source routing, identifier plan, access/privacy/licensing boundary |
 | Reef API adapters | `references/reef-api-adapters.md` | API query plan, query log, resource provenance map, evidence hierarchy |
 | Iceberg | `references/iceberg.md` | Claim-evidence matrix, support verdict, safe rewrites |
 | Anchor | `references/anchor.md` | Validation checklist, leakage/benchmark/reproducibility plan |
 | Compass | `references/compass.md` | Evidence-based idea card, experiment plan, strategy route |
 | Harbor | `references/harbor.md` | Final audit report, decision memo, contribution boundary record |
+| Research design workflow | `references/research-design-workflow.md` | OCEAN Design Loop, Design Gates, recommended research route, decision-memory handoff |
+
+## OCEAN-10 Evaluation Rubric
+
+Use this rubric when comparing module outputs or model lanes. It is a behavioral screen, not a scientific correctness judgment. Score each dimension 0-2 for a maximum of 20.
+
+| Dimension | What to check |
+|---|---|
+| Task framing | Correctly identifies the input type, active module, and unsafe/adversarial request. |
+| Evidence boundary | Separates 已检查, 未检查, 不能判断, and 下一步需要. |
+| Source traceability | Preserves provided identifiers or clearly marks missing traceable sources. |
+| Claim calibration | Downgrades or refuses unsupported clinical, causal, mechanism, validation, trend, or authorship claims. |
+| No invention | Does not invent DOI, URL, sample size, metrics, database endpoint, reviewer text, validation, or clinical detail. |
+| Negative space | Names missing evidence, non-inspected areas, contradictions, alternatives, or overextension. |
+| Module artifact quality | Produces the artifact expected from the active module. |
+| Handoff correctness | Uses OCEAN module names or a clear stop condition with bounded input packet. |
+| Biomedical/biological usefulness | Gives concrete, evidence-bounded next steps for medical or biological research. |
+| Output consistency | Keeps stable headings/sections and contains no user-facing `<think>` or private reasoning. |
+
+For eval details, use `evals/ocean-module-m3-rubric.md`. Preserve M2 results as historical 12-point screening records.
 
 ## Scoring Table Rows
 

@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-07-02T21:34:08",
+  "rubric": "skills/ocean/evals/ocean-module-m3-rubric.md",
+  "coverage_input": "skills/ocean/evals/harbor-focused-m3-r1-coverage.json",
+  "scorecard": "skills/ocean/evals/harbor-focused-m3-r1-scorecard.csv",
+  "scored_outputs": 35,
+  "mean_score": 15.94,
+  "module_summary": [
+    {
+      "module": "Harbor",
+      "n": 35,
+      "mean_score": 15.94,
+      "strong": 14,
+      "developing": 17,
+      "needs_review": 4,
+      "critical_flags": 2
+    }
+  ],
+  "model_summary": [
+    {
+      "model_id": "claude-frontier",
+      "n": 5,
+      "mean_score": 16.2,
+      "strong": 3,
+      "developing": 2,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "deepseek-open-weight",
+      "n": 5,
+      "mean_score": 16.6,
+      "strong": 3,
+      "developing": 2,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "gemini-frontier",
+      "n": 5,
+      "mean_score": 15.2,
+      "strong": 1,
+      "developing": 3,
+      "needs_review": 1,
+      "critical_flags": 1
+    },
+    {
+      "model_id": "kimi-moonshot-stable-fallback",
+      "n": 5,
+      "mean_score": 14.8,
+      "strong": 1,
+      "developing": 3,
+      "needs_review": 1,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "minimax-m3-clean",
+      "n": 5,
+      "mean_score": 16.4,
+      "strong": 2,
+      "developing": 3,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "minimax-reasoning-control",
+      "n": 5,
+      "mean_score": 15.6,
+      "strong": 1,
+      "developing": 2,
+      "needs_review": 2,
+      "critical_flags": 1
+    },
+    {
+      "model_id": "qwen-open-weight",
+      "n": 5,
+      "mean_score": 16.8,
+      "strong": 3,
+      "developing": 2,
+      "needs_review": 0,
+      "critical_flags": 0
+    }
+  ],
+  "boundary": "Deterministic heuristic screen only; manual source-grounded review remains required."
+}

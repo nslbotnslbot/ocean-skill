@@ -33,6 +33,7 @@ Read this file when the user asks about:
 - resource/database article evaluation;
 - biomedical AI work using external databases or annotation resources;
 - live/public API or official database-tool planning. For API-specific boundaries and adapter planning, also read `reef-api-adapters.md`.
+- biological or clinical data-source selection. For gene/protein/variant/omics/cell-atlas/drug/clinical-trial/EHR/cohort/regulatory resource routing, also read `reef-biological-data-sources.md`.
 
 ## Inputs
 
@@ -70,6 +71,7 @@ Reef can start from:
 2. **Provenance check**
    - Record official source, identifier/version, primary paper, curation method, update status if inspected, and access boundary.
    - If live/public API or database-tool work is needed, use `reef-api-adapters.md` to plan adapters, endpoint/source boundaries, query logs, and API-derived resource evidence.
+   - If biological or clinical source selection is needed, use `reef-biological-data-sources.md` to choose candidate resources and state what each resource can and cannot support.
 3. **Evidence classification**
    - Classify each resource as primary data, curated annotation, text-mined relation, KG prediction, benchmark, ontology, registry, or review context.
 4. **Circularity and leakage audit**

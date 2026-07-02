@@ -32,9 +32,11 @@ Use the OCEAN module order when the task spans multiple steps:
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
 - Read `references/module-handoff.md` when the task spans multiple OCEAN modules, starts from a paper/idea/proposal/sentence, or needs explicit handoff artifacts between modules.
+- Read `references/research-design-workflow.md` when the user wants to turn an idea, proposal, reviewer concern, dataset/resource seed, or collaboration question into a structured biomedical research workflow with design gates, validation gates, research routes, and decision memory.
 - Read `references/sounding.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
 - Read `references/current.md` when the user asks about field trends, recent progress, direction flow, related work movement, or whether a paper/idea is timely, crowded, incremental, or novel.
 - Read `references/reef.md` when the task involves knowledge graphs, databases, benchmarks, cohorts, ontologies, registries, resource provenance, circularity, or evidence hierarchy.
+- Read `references/reef-biological-data-sources.md` when Reef needs to choose or compare biological/clinical data resources, such as gene/protein/variant databases, omics repositories, cell atlases, cancer genomics portals, drug resources, clinical trial registries, regulatory datasets, EHR datasets, cohorts, imaging/signal datasets, or model-organism resources.
 - Read `references/reef-api-adapters.md` when Reef needs live/public API or database-tool planning, official biomedical resource adapters, endpoint/source provenance, or API-derived resource evidence.
 - Read `references/iceberg.md` when auditing whether claims are supported, downgrading overclaims, rewriting claims, or checking manuscript/proposal/reviewer-risk evidence.
 - Read `references/anchor.md` when designing or auditing validation, external validation, replication, benchmark fairness, leakage, reproducibility, calibration, clinical utility, or wet-lab follow-up.
@@ -48,6 +50,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/make_claim_table.py` to create a claim-audit CSV template when a file-based claim inventory would help.
 - Use `scripts/check_claim_table.py` after the claim CSV is filled to summarize weak or high-risk claims.
 - Use `scripts/make_review_skeleton.py` when the user wants a reusable markdown review skeleton.
+- Use `scripts/run_reef_api_adapter.py` only when the user explicitly wants a bounded public Reef API packet. Default to dry-run unless the user has approved live public API access and no private, sensitive, paid, or key-protected data will be submitted.
 
 ## Workflow
 
@@ -55,7 +58,7 @@ Use the OCEAN module order when the task spans multiple steps:
 2. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
 3. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
 4. If the task spans modules, read `references/module-handoff.md` and preserve a Handoff Ticket whenever moving from one module to another.
-5. Classify the request mode and evidence state: full OCEAN workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
+5. Classify the request mode and evidence state: full OCEAN workflow, research design workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
 6. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
 7. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
 8. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
