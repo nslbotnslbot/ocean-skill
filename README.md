@@ -42,6 +42,10 @@ Use this when you ask Codex to review:
 - paper positioning and journal strategy
 - reviewer-style critique and pre-submission stress testing
 
+## Real workflow tracker
+
+OCEAN is also being tracked in real manuscript and submission workflows. See `docs/application-submission-tracker.md` for the public-safe application and submission tracker.
+
 ## Module flow
 
 OCEAN uses seven modules in order. Each module is meant to complete a different event and hand off a concrete artifact to the next step. See `docs/module-map.md` for the fuller public map.
@@ -146,6 +150,7 @@ README.zh-CN.md
 assets/
 └── ocean-polar-workflow.jpg
 docs/
+├── application-submission-tracker.md
 ├── module-map.md
 └── evaluation/
     ├── README.md
