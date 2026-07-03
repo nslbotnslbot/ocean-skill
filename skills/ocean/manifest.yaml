@@ -51,4 +51,5 @@ scripts:
 
 evals:
   reef_bioinformatics_router_r2: evals/reef-bioinformatics-router-r2-cases.json
+  reef_bioinformatics_router_r3: evals/reef-bioinformatics-router-r3-cases.json
   source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json

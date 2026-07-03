@@ -30,7 +30,7 @@
 | R2-REEF-018 | 12/12 | pass | benchmark | benchmark, clinical | None |
 | R2-REEF-019 | 12/12 | pass | bioinformatics_software | bioinformatics_software | None |
 | R2-REEF-020 | 12/12 | pass | clinical, literature | clinical, literature | None |
-| R2-REEF-021 | 12/12 | pass | clinical | artifact, clinical | None |
+| R2-REEF-021 | 12/12 | pass | clinical | artifact, clinical, clinical_imaging_signal | None |
 
 ## Interpretation
 

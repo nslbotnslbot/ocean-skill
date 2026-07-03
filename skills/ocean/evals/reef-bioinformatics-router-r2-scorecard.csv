@@ -19,4 +19,4 @@ R2-REEF-017,12,12,pass,model_organism,model_organism,,,True,True,model organism 
 R2-REEF-018,12,12,pass,benchmark,benchmark;clinical,,,True,True,leaderboard proves clinical readiness
 R2-REEF-019,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,workflow existence proves reproducibility
 R2-REEF-020,12,12,pass,clinical;literature,clinical;literature,,,True,True,title-only source proves efficacy
-R2-REEF-021,12,12,pass,clinical,artifact;clinical,,,True,True,controlled-access cohort mention proves result
+R2-REEF-021,12,12,pass,clinical,artifact;clinical;clinical_imaging_signal,,,True,True,controlled-access cohort mention proves result

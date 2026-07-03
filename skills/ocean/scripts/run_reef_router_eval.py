@@ -72,7 +72,7 @@ def score_case(case: dict) -> dict:
 
 def make_markdown(results: list[dict], summary: dict) -> str:
     lines = [
-        "# OCEAN Reef Bioinformatics Router R2 Results",
+        f"# OCEAN {summary['label']} Results",
         "",
         f"- Run date: {summary['run_date']}",
         f"- Cases: {summary['cases']}",
@@ -122,6 +122,7 @@ def main(argv: list[str]) -> int:
     cases = read_json(args.cases)
     results = [score_case(case) for case in cases]
     summary = {
+        "label": args.cases.stem.removesuffix("-cases").replace("-", " ").title(),
         "run_date": dt.date.today().isoformat(),
         "cases": len(results),
         "pass": sum(1 for row in results if row["verdict"] == "pass"),
@@ -130,9 +131,10 @@ def main(argv: list[str]) -> int:
     }
 
     args.outdir.mkdir(parents=True, exist_ok=True)
-    write_json(args.outdir / "reef-bioinformatics-router-r2-results.json", results)
-    write_json(args.outdir / "reef-bioinformatics-router-r2-summary.json", summary)
-    with (args.outdir / "reef-bioinformatics-router-r2-scorecard.csv").open("w", encoding="utf-8", newline="") as handle:
+    prefix = args.cases.stem.removesuffix("-cases")
+    write_json(args.outdir / f"{prefix}-results.json", results)
+    write_json(args.outdir / f"{prefix}-summary.json", summary)
+    with (args.outdir / f"{prefix}-scorecard.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(
             handle,
             fieldnames=[
@@ -166,7 +168,7 @@ def main(argv: list[str]) -> int:
                     "unsafe_claim": row["unsafe_claim"],
                 }
             )
-    (args.outdir / "reef-bioinformatics-router-r2-results.md").write_text(
+    (args.outdir / f"{prefix}-results.md").write_text(
         make_markdown(results, summary),
         encoding="utf-8",
     )

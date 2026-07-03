@@ -1694,3 +1694,46 @@ Boundary checks confirmed:
 ### Evidence Boundary / 证据边界
 
 This run was deterministic and offline. It did not query PubMed, GEO, TCGA/GDC, ClinVar, ChEMBL, ClinicalTrials.gov, OpenFDA, TCIA, PhysioNet, or any other external database/API. It did not run LAST, STAR, SAMtools, DESeq2, Seurat, Snakemake, Nextflow, or any other bioinformatics tool. It only tested OCEAN's local route selection, source-packet requirements, and boundary-stop behavior.
+
+## 2026-07-04 - Reef bioinformatics router R3 expanded software coverage
+
+Purpose: Extend the software/resource router toward common bioinformatics and computational biology workflow gaps, then test whether the expanded vocabulary remains evidence-bound.
+
+Implemented on the PR branch:
+
+- Expanded `bioinformatics_software` routing with QC/preprocessing tools:
+  - FastQC, MultiQC, cutadapt, fastp, Trimmomatic, Trim Galore, Picard, Qualimap.
+- Expanded genome assembly and annotation routing:
+  - Flye, Canu, Raven, Polypolish, Pilon, QUAST, BUSCO, CheckM, Prokka, Bakta, eggNOG-mapper, InterProScan.
+- Expanded spatial transcriptomics routing:
+  - Space Ranger, Squidpy, Giotto, cell2location, Tangram, Stereoscope, stLearn.
+- Expanded multi-omics integration routing:
+  - WGCNA, MOFA/MOFA+, mixOmics/DIABLO.
+- Expanded biomedical imaging/signal tooling:
+  - nnU-Net, MONAI, TorchIO, SimpleITK, ITK-SNAP, 3D Slicer, MNE.
+- Added `evals/reef-bioinformatics-router-r3-cases.json`.
+- Fixed `scripts/run_reef_router_eval.py` so R2/R3 output filenames and Markdown titles are generated from the case filename instead of being hardcoded to R2.
+
+### Reef router R3
+
+| Item | Result |
+|---|---:|
+| Cases | 12 |
+| Pass | 12 |
+| Needs review | 0 |
+| Mean score | 12.00/12 |
+
+R3 pressure-tested traps around QC-as-no-bias, preprocessing-as-validity, assembly metrics-as-mechanism, annotation-as-experimental-function, spatial deconvolution-as-causality, multi-omics integration-as-causal pathway, imaging benchmark-as-deployment readiness, held-out-test-as-clinical utility, workflow tooling-as-full reproducibility, and dataset names-as-cross-hospital generalization.
+
+Regression checks after R3:
+
+| Check | Result |
+|---|---:|
+| Reef router R2 | 21/21 pass |
+| Reef router R3 | 12/12 pass |
+| Source-packet boundary R2 | 6/6 pass |
+| Python compile | pass |
+
+### Evidence Boundary / 证据边界
+
+This run was deterministic and offline. It did not inspect real FASTQ/BAM/VCF/count matrices, spatial objects, imaging datasets, workflow logs, external databases, private data, manuscripts, or patient records. It did not execute FastQC, MultiQC, LAST, STAR, DESeq2, Seurat, Space Ranger, WGCNA, nnU-Net, Snakemake, Nextflow, or any other software. It only tests routing coverage, minimum packet requirements, and refusal to treat tool names or workflow existence as scientific evidence.

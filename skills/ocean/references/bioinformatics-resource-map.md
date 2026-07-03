@@ -92,6 +92,7 @@ Stop or downgrade if:
 
 | Family | Common tools | OCEAN route use | Boundary warning |
 |---|---|---|---|
+| QC and preprocessing | FastQC, MultiQC, cutadapt, fastp, Trimmomatic, Trim Galore, Picard, Qualimap | raw/read-level QC, trimming, duplication, mapping-quality and batch-warning route | clean-looking QC is not biological validity or absence of bias |
 | General sequence search/alignment | BLAST, LAST, minimap2, BWA, Bowtie2 | read/sequence alignment route, homology search, mapping provenance | alignment output depends on reference, index, scoring, thresholds, and filtering |
 | Spliced RNA-seq alignment | STAR, HISAT2, minimap2 splice modes | RNA-seq mapping route and BAM/SJ artifact provenance | mapping rate or splice junction output is not differential expression or mechanism proof |
 | Alignment/file operations | SAMtools, bcftools, BEDTools, HTSlib | BAM/CRAM/VCF/BED manipulation, interval overlap, indexing, QC route | file manipulation output is not biological interpretation without upstream/downstream context |
@@ -99,12 +100,15 @@ Stop or downgrade if:
 | RNA-seq quantification | Salmon, kallisto, RSEM, featureCounts, StringTie | gene/transcript count matrix provenance | counts require normalization, design matrix, batch/confounder handling |
 | Differential expression | DESeq2, edgeR, limma-voom, sleuth | statistical comparison route | differential expression is association, not causal mechanism |
 | Single-cell analysis | Cell Ranger, STARsolo, Alevin-fry, Seurat, Scanpy, scVI, CellTypist, Azimuth | cell-level matrix, clustering, annotation, integration route | cluster labels and marker genes need validation and annotation boundary |
+| Spatial transcriptomics | Space Ranger, Squidpy, Giotto, cell2location, Tangram, Stereoscope, stLearn | spatial preprocessing, neighborhood analysis, deconvolution, mapping route | spatial proximity or cell-type deconvolution is not causal interaction proof |
 | Epigenomics / peak calling | BWA/Bowtie2, MACS2/MACS3, deepTools, HOMER, MEME/FIMO | ChIP/ATAC peak and motif workflow route | peak/motif enrichment is candidate regulatory evidence, not direct binding proof |
+| Genome assembly / annotation | Flye, Canu, Raven, SPAdes, MEGAHIT, QUAST, BUSCO, CheckM, Prokka, Bakta, eggNOG-mapper, InterProScan | assembly quality, completeness, contamination, genome/protein annotation route | assembly completeness or annotation similarity is not function, pathogenicity, or mechanism proof |
 | Metagenomics / microbiome | QIIME2, DADA2, MetaPhlAn, HUMAnN, Kraken2, Bracken, MEGAHIT, SPAdes | taxonomic/functional profiling and assembly route | compositional profiles and taxa associations are not treatment mechanisms |
 | Proteomics / metabolomics software | MaxQuant, FragPipe, DIA-NN, Skyline, MS-DIAL, XCMS, MZmine | peptide/protein/metabolite identification and quantification route | identification/quantification depends on library, FDR, calibration, and preprocessing |
 | Structural / protein modeling | AlphaFold, ColabFold, RoseTTAFold, HH-suite, HMMER, MODELLER, PyMOL, ChimeraX | structure prediction, domain search, visualization route | predicted structure or visualization does not prove binding, function, or mechanism |
 | Biomedical imaging / signal ML | nnU-Net, MONAI, TorchIO, SimpleITK, ITK-SNAP, 3D Slicer, Neuroimaging tools when source-linked | segmentation, preprocessing, annotation, model-evaluation route | image/signal model performance is not clinical utility without external/prospective validation |
 | Phylogenetics / comparative genomics | MAFFT, MUSCLE, Clustal Omega, IQ-TREE, RAxML, FastTree, OrthoFinder | multiple alignment, tree, orthology route | tree topology depends on model, alignment quality, sampling, and support |
+| Multi-omics integration | WGCNA, MOFA/MOFA+, mixOmics/DIABLO, network enrichment workflows | correlation modules, latent factors, feature integration, hypothesis prioritization route | integration patterns are not causality and require modality-specific validation |
 | Workflow and reproducibility | Snakemake, Nextflow, CWL, WDL/Cromwell, Galaxy, Docker, Singularity/Apptainer, Conda, nf-core | pipeline provenance and reproducibility route | workflow existence is not successful execution or valid analysis |
 
 ## LAST-specific note

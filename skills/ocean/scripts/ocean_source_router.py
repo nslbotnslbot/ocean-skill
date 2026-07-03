@@ -24,7 +24,7 @@ ROUTE_CLASSES = {
         "resources": ["PubMed", "EuropePMC", "OpenAlex", "CrossRef", "arXiv", "bioRxiv", "medRxiv"],
     },
     "omics": {
-        "keywords": ["rna", "single-cell", "scrna", "snrna", "transcriptomics", "expression", "spatial", "proteogenomic", "multi-omics", "multiomics", "gtex", "geo", "sra", "encode", "cellxgene", "hubmap"],
+        "keywords": ["rna", "single-cell", "scrna", "snrna", "transcriptomics", "expression", "spatial", "proteogenomic", "multi-omics", "multiomics", "multiome", "gtex", "geo", "sra", "encode", "cellxgene", "hubmap"],
         "resources": ["GEO", "SRA", "ENA", "ArrayExpress", "Expression Atlas", "GTEx", "ENCODE", "Human Cell Atlas", "Single Cell Portal", "CELLxGENE", "HuBMAP", "CZ CELLxGENE"],
     },
     "epigenomics_regulatory": {
@@ -48,7 +48,7 @@ ROUTE_CLASSES = {
         "resources": ["MGnify", "Qiita", "Human Microbiome Project", "SRA", "ENA"],
     },
     "protein_structure": {
-        "keywords": ["protein", "structure", "alphafold", "pdb", "domain", "binding", "msa", "uniprot"],
+        "keywords": ["protein", "proteins", "structure", "alphafold", "pdb", "domain", "domains", "binding", "msa", "uniprot", "interpro", "interproscan", "pfam", "virulence factor"],
         "resources": ["UniProt", "PDB", "AlphaFold DB", "InterPro", "STRING"],
     },
     "variant_genetics": {
@@ -60,11 +60,11 @@ ROUTE_CLASSES = {
         "resources": ["ChEMBL", "OpenTargets", "PubChem", "BindingDB", "DrugBank", "DGIdb", "PharmGKB", "OpenFDA", "UniProt"],
     },
     "clinical": {
-        "keywords": ["clinical", "clinically", "trial", "trials", "clinicaltrials.gov", "registry", "patient", "cohort", "mimic", "eicu", "endpoint", "calibration", "diagnostic", "deployment", "clinical utility", "actionable", "therapy", "treatment"],
+        "keywords": ["clinical", "clinically", "trial", "trials", "clinicaltrials.gov", "registry", "patient", "cohort", "mimic", "eicu", "endpoint", "calibration", "diagnostic", "diagnosis", "deployment", "readiness", "clinical utility", "actionable", "therapy", "treatment"],
         "resources": ["ClinicalTrials.gov", "WHO ICTRP", "EU Clinical Trials Register", "OpenFDA", "clinical registries", "MIMIC/eICU when lawfully provided"],
     },
     "clinical_imaging_signal": {
-        "keywords": ["image", "images", "imaging", "radiology", "ct", "mri", "x-ray", "xray", "pathology slide", "whole-slide", "wsi", "ecg", "eeg", "physionet", "tcia"],
+        "keywords": ["image", "images", "imaging", "radiology", "ct", "mri", "x-ray", "xray", "pathology slide", "whole-slide", "wsi", "ecg", "eeg", "physionet", "tcia", "openneuro", "uk biobank"],
         "resources": ["TCIA", "PhysioNet", "MIMIC-CXR when lawfully provided", "OpenNeuro", "UK Biobank when authorized"],
     },
     "regulatory_safety": {
@@ -81,27 +81,39 @@ ROUTE_CLASSES = {
     },
     "bioinformatics_software": {
         "keywords": [
+            "fastqc", "multiqc", "cutadapt", "fastp", "trimmomatic", "trim galore", "picard", "qualimap",
             "blast", "last", "lastal", "bwa", "bowtie", "bowtie2", "hisat2", "star", "minimap2",
             "samtools", "bedtools", "gatk", "bcftools", "freebayes", "deepvariant", "strelka", "mutect2",
             "salmon", "kallisto", "rsem", "stringtie", "featurecounts", "deseq2", "edger", "limma", "sleuth",
             "seurat", "scanpy", "scvi", "celltypist", "azimuth", "cell ranger", "starsolo", "alevin",
+            "space ranger", "squidpy", "giotto", "cell2location", "tangram", "stereoscope", "stlearn",
             "macs2", "macs3", "deeptools", "homer", "meme", "fimo",
+            "prokka", "bakta", "busco", "quast", "checkm", "eggnog", "eggnog-mapper", "interproscan",
             "qiime2", "dada2", "metaphlan", "humann", "kraken2", "bracken", "megahit", "spades",
+            "flye", "canu", "raven", "polypolish", "pilon",
             "maxquant", "fragpipe", "dia-nn", "skyline", "ms-dial", "xcms", "mzmine",
             "alphafold", "colabfold", "rosettafold", "hh-suite", "hmmer", "modeller", "pymol", "chimerax",
             "mafft", "muscle", "clustal omega", "iq-tree", "raxml", "fasttree", "orthofinder",
+            "wgcna", "mofa", "mofa+", "mixomics", "diablo",
+            "nnunet", "nnunetv2", "nn-u-net", "nnU-Net", "monai", "torchio", "simpleitk", "itk-snap", "3d slicer", "mne",
             "snakemake", "nextflow", "cwl", "cromwell", "wdl", "galaxy", "docker", "singularity", "apptainer", "conda", "nf-core"
         ],
         "resources": [
+            "FastQC", "MultiQC", "cutadapt", "fastp", "Trimmomatic", "Trim Galore", "Picard", "Qualimap",
             "BLAST", "LAST", "BWA", "Bowtie2", "HISAT2", "STAR", "minimap2", "SAMtools",
             "BEDTools", "GATK", "bcftools", "FreeBayes", "DeepVariant", "Strelka2", "Mutect2",
             "Salmon", "kallisto", "RSEM", "StringTie", "featureCounts", "DESeq2", "edgeR", "limma-voom", "sleuth",
             "Cell Ranger", "STARsolo", "Alevin-fry", "Seurat", "Scanpy", "scVI", "CellTypist", "Azimuth",
+            "Space Ranger", "Squidpy", "Giotto", "cell2location", "Tangram", "Stereoscope", "stLearn",
             "MACS2/MACS3", "deepTools", "HOMER", "MEME/FIMO",
+            "Prokka", "Bakta", "BUSCO", "QUAST", "CheckM", "eggNOG-mapper", "InterProScan",
             "QIIME2", "DADA2", "MetaPhlAn", "HUMAnN", "Kraken2", "Bracken", "MEGAHIT", "SPAdes",
+            "Flye", "Canu", "Raven", "Polypolish", "Pilon",
             "MaxQuant", "FragPipe", "DIA-NN", "Skyline", "MS-DIAL", "XCMS", "MZmine",
             "AlphaFold", "ColabFold", "RoseTTAFold", "HH-suite", "HMMER", "MODELLER", "PyMOL", "ChimeraX",
             "MAFFT", "MUSCLE", "Clustal Omega", "IQ-TREE", "RAxML", "FastTree", "OrthoFinder",
+            "WGCNA", "MOFA/MOFA+", "mixOmics/DIABLO",
+            "nnU-Net", "MONAI", "TorchIO", "SimpleITK", "ITK-SNAP", "3D Slicer", "MNE",
             "Snakemake", "Nextflow", "CWL", "WDL/Cromwell", "Galaxy", "Docker", "Singularity/Apptainer", "Conda", "nf-core"
         ],
     },
