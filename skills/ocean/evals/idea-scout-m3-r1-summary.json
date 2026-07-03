@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-07-02T22:26:54",
+  "rubric": "skills/ocean/evals/ocean-module-m3-rubric.md",
+  "coverage_input": "skills/ocean/evals/idea-scout-m3-r1-coverage.json",
+  "scorecard": "skills/ocean/evals/idea-scout-m3-r1-scorecard.csv",
+  "scored_outputs": 28,
+  "mean_score": 17.89,
+  "module_summary": [
+    {
+      "module": "Compass",
+      "n": 14,
+      "mean_score": 18,
+      "strong": 10,
+      "developing": 1,
+      "needs_review": 3,
+      "critical_flags": 3
+    },
+    {
+      "module": "Current",
+      "n": 14,
+      "mean_score": 17.79,
+      "strong": 12,
+      "developing": 0,
+      "needs_review": 2,
+      "critical_flags": 2
+    }
+  ],
+  "model_summary": [
+    {
+      "model_id": "claude-frontier",
+      "n": 4,
+      "mean_score": 18.75,
+      "strong": 4,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "deepseek-open-weight",
+      "n": 4,
+      "mean_score": 17,
+      "strong": 2,
+      "developing": 1,
+      "needs_review": 1,
+      "critical_flags": 1
+    },
+    {
+      "model_id": "gemini-frontier",
+      "n": 4,
+      "mean_score": 18.25,
+      "strong": 4,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "kimi-moonshot-stable-fallback",
+      "n": 4,
+      "mean_score": 14.75,
+      "strong": 0,
+      "developing": 0,
+      "needs_review": 4,
+      "critical_flags": 4
+    },
+    {
+      "model_id": "minimax-m3-clean",
+      "n": 4,
+      "mean_score": 18.5,
+      "strong": 4,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "minimax-reasoning-control",
+      "n": 4,
+      "mean_score": 19,
+      "strong": 4,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "qwen-open-weight",
+      "n": 4,
+      "mean_score": 19,
+      "strong": 4,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    }
+  ],
+  "boundary": "Deterministic heuristic screen only; manual source-grounded review remains required."
+}

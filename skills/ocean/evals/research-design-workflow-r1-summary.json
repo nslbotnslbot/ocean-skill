@@ -1,0 +1,130 @@
+{
+  "generated_at": "2026-07-03T00:34:01",
+  "rubric": "skills/ocean/evals/ocean-module-m3-rubric.md",
+  "coverage_input": "skills/ocean/evals/research-design-workflow-r1-coverage.json",
+  "scorecard": "skills/ocean/evals/research-design-workflow-r1-scorecard.csv",
+  "scored_outputs": 42,
+  "mean_score": 18.38,
+  "module_summary": [
+    {
+      "module": "Anchor",
+      "n": 6,
+      "mean_score": 17.5,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "module": "Compass",
+      "n": 6,
+      "mean_score": 18.83,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "module": "Current",
+      "n": 6,
+      "mean_score": 19.17,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "module": "Harbor",
+      "n": 6,
+      "mean_score": 18,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "module": "Iceberg",
+      "n": 6,
+      "mean_score": 19,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "module": "Reef",
+      "n": 6,
+      "mean_score": 17.83,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "module": "Sounding",
+      "n": 6,
+      "mean_score": 18.33,
+      "strong": 6,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    }
+  ],
+  "model_summary": [
+    {
+      "model_id": "claude-frontier",
+      "n": 7,
+      "mean_score": 18.57,
+      "strong": 7,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "deepseek-open-weight",
+      "n": 7,
+      "mean_score": 18.43,
+      "strong": 7,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "gemini-frontier",
+      "n": 7,
+      "mean_score": 17.71,
+      "strong": 7,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "minimax-reasoning-control",
+      "n": 7,
+      "mean_score": 18.57,
+      "strong": 7,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "perplexity-retrieval-control",
+      "n": 7,
+      "mean_score": 18.71,
+      "strong": 7,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    },
+    {
+      "model_id": "qwen-open-weight",
+      "n": 7,
+      "mean_score": 18.29,
+      "strong": 7,
+      "developing": 0,
+      "needs_review": 0,
+      "critical_flags": 0
+    }
+  ],
+  "boundary": "Deterministic heuristic screen only; manual source-grounded review remains required."
+}

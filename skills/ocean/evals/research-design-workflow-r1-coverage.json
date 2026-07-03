@@ -1,0 +1,54 @@
+{
+  "name": "research-design-workflow-r1-coverage",
+  "generated_at": "2026-07-03T00:36:00+09:00",
+  "cases": "skills/ocean/evals/research-design-workflow-r1-cases.json",
+  "expected_cases_per_completed_model": 7,
+  "completed_model_lanes": 6,
+  "usable_outputs": 42,
+  "runtime_blocked": [
+    {
+      "model_id": "kimi-moonshot-stable-fallback",
+      "family": "Kimi",
+      "reason": "First request did not return during the initial long-timeout run and the run was manually interrupted to avoid one provider blocking the full experiment."
+    }
+  ],
+  "rows": [
+    {
+      "model_id": "qwen-open-weight",
+      "model": "qwen3.7-max",
+      "lane": "open-weight reproducibility",
+      "artifact_roots": "outputs/research-design-workflow-r1/20260703-000216/qwen-open-weight"
+    },
+    {
+      "model_id": "deepseek-open-weight",
+      "model": "deepseek-v4-pro",
+      "lane": "open-weight reproducibility",
+      "artifact_roots": "outputs/research-design-workflow-r1/20260703-000216/deepseek-open-weight"
+    },
+    {
+      "model_id": "minimax-reasoning-control",
+      "model": "MiniMax-M1",
+      "lane": "reasoning control",
+      "artifact_roots": "outputs/research-design-workflow-r1-followup/20260703-002139/minimax-reasoning-control"
+    },
+    {
+      "model_id": "gemini-frontier",
+      "model": "gemini-2.5-flash",
+      "lane": "frontier ceiling",
+      "artifact_roots": "outputs/research-design-workflow-r1-followup/20260703-002139/gemini-frontier"
+    },
+    {
+      "model_id": "claude-frontier",
+      "model": "claude-opus-4-8",
+      "lane": "frontier ceiling",
+      "artifact_roots": "outputs/research-design-workflow-r1-followup/20260703-002139/claude-frontier"
+    },
+    {
+      "model_id": "perplexity-retrieval-control",
+      "model": "sonar-pro",
+      "lane": "retrieval control",
+      "artifact_roots": "outputs/research-design-workflow-r1-followup/20260703-002139/perplexity-retrieval-control"
+    }
+  ],
+  "boundary": "Coverage records successful public-output artifacts only. Runtime-blocked provider behavior is recorded separately and is not scored as OCEAN content quality."
+}

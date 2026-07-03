@@ -1,0 +1,168 @@
+{
+  "generated_at": "2026-07-02T02:00:00",
+  "cases_file": "skills/ocean/evals/collaborative-workflow-r1-cases.json",
+  "protocol_file": "skills/ocean/evals/ocean-module-strict-eval.md",
+  "run_root": "outputs/collaborative-workflow-r1/20260702-011442",
+  "enabled_model_count": 7,
+  "case_count": 10,
+  "module_count": 7,
+  "total_expected_outputs": 70,
+  "total_usable_outputs": 70,
+  "total_auto_check_files": 70,
+  "runtime_error_artifacts": 1,
+  "reasoning_leak_files": 10,
+  "rows": [
+    {
+      "model": "Qwen qwen3.7-max",
+      "model_id": "qwen-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 10,
+      "heading_pass_files": 10,
+      "source_packet_files": 0,
+      "notes": "10/10 main run.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/qwen-open-weight"
+    },
+    {
+      "model": "DeepSeek deepseek-v4-pro",
+      "model_id": "deepseek-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 10,
+      "heading_pass_files": 10,
+      "source_packet_files": 0,
+      "notes": "10/10 main run.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/deepseek-open-weight"
+    },
+    {
+      "model": "Kimi moonshot-v1-128k",
+      "model_id": "kimi-moonshot-stable-fallback",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 1,
+      "auto_check_files": 10,
+      "heading_pass_files": 10,
+      "source_packet_files": 0,
+      "notes": "10/10 after one automatic HTTP 429 retry recovered CW-R1-CURRENT-01.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/kimi-moonshot-stable-fallback"
+    },
+    {
+      "model": "MiniMax MiniMax-M1",
+      "model_id": "minimax-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 10,
+      "heading_pass_files": 10,
+      "source_packet_files": 0,
+      "reasoning_leak_files": 10,
+      "notes": "10/10 main run; all outputs contained <think> blocks despite prompt-level prohibition.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/minimax-open-weight"
+    },
+    {
+      "model": "Google Gemini gemini-2.5-flash",
+      "model_id": "gemini-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 10,
+      "heading_pass_files": 9,
+      "source_packet_files": 0,
+      "notes": "10/10 main run; one heading auto-check miss.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/gemini-frontier"
+    },
+    {
+      "model": "Anthropic Claude claude-opus-4-8",
+      "model_id": "claude-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 10,
+      "heading_pass_files": 10,
+      "source_packet_files": 0,
+      "notes": "10/10 main run.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/claude-frontier"
+    },
+    {
+      "model": "Perplexity Retrieval API sonar-pro",
+      "model_id": "perplexity-retrieval-control",
+      "lane": "retrieval control",
+      "usable_outputs": 10,
+      "total_cases": 10,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 10,
+      "heading_pass_files": 9,
+      "source_packet_files": 10,
+      "notes": "10/10 main run; source packet saved for all cases; one heading auto-check miss.",
+      "artifact_roots": "outputs/collaborative-workflow-r1/20260702-011442/perplexity-retrieval-control"
+    }
+  ],
+  "module_rows": [
+    {
+      "module": "Sounding",
+      "usable_outputs": 7,
+      "total_cases": 7,
+      "coverage_pct": 100.0
+    },
+    {
+      "module": "Current",
+      "usable_outputs": 7,
+      "total_cases": 7,
+      "coverage_pct": 100.0
+    },
+    {
+      "module": "Reef",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0
+    },
+    {
+      "module": "Iceberg",
+      "usable_outputs": 7,
+      "total_cases": 7,
+      "coverage_pct": 100.0
+    },
+    {
+      "module": "Anchor",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0
+    },
+    {
+      "module": "Compass",
+      "usable_outputs": 7,
+      "total_cases": 7,
+      "coverage_pct": 100.0
+    },
+    {
+      "module": "Harbor",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0
+    }
+  ],
+  "disabled_model_lanes": [
+    "qwen-aliyun-anthropic-compatible",
+    "kimi-open-weight",
+    "mistral-open",
+    "llama-open",
+    "openai-frontier",
+    "claude-sonnet"
+  ],
+  "boundary": "Coverage records usable outputs only. Outputs live in ignored outputs/ and are not intended for Git."
+}

@@ -3,6 +3,42 @@
 ## Unreleased
 
 - Added a public project-boundary memo and README non-goals that position OCEAN as a source-packet-based external claim-evidence audit layer, not an autonomous AI scientist, experiment-execution system, internal evidence ledger, or publication-release workflow.
+- Added a central Domain Lens reference for medical AI, biological AI, clinical research, molecular/cellular biology, omics/single-cell/spatial, drug/target hypotheses, KG/database/resource, manuscript/proposal, and collaboration/authorship evidence standards.
+- Added a Data/Tool Router reference for source classes, official resource routing, data/tool packets, API boundaries, privacy/access/licensing rules, and cross-module handoffs.
+- Added a Module Artifact Contract so Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor each produce stable artifacts with boundary, traceability, calibration, artifact, and handoff gates.
+- Added Domain Router Big Experiment R1 case seeds and an offline `check_ocean_contracts.py` structural check for new central-routing coverage.
+- Updated the all-module eval prompt to explicitly test Domain Lens, Data/Tool Router, and Module Artifact Contract behavior.
+- Added Domain Router Model R1 with 49/49 usable outputs across seven enabled model/control lanes, 17.86/20 mean M3 score, and a recorded Reef endpoint-invention trap.
+- Added a Research Design Workflow reference with OCEAN design-loop gates, module responsibilities, research-route output, and stop conditions for idea/proposal/reviewer/resource/collaboration workflow cases.
+- Added Research Design Workflow R1 case seeds to test whether OCEAN behaves as a biomedical research process workflow rather than a summary or database aggregation tool.
+- Ran Research Design Workflow R1 over six completed model lanes with 42 usable outputs, 18.38/20 mean OCEAN-10 score, 0 critical rows, 0 public reasoning leaks, and Kimi recorded as runtime blocked.
+- Added a bounded Reef public API packet runner with dry-run defaults and starter adapters for NCBI E-utilities, ClinicalTrials.gov, and Open Targets.
+- Added a Reef biological/clinical data-source catalog covering literature IDs, gene/protein/variant resources, omics repositories, single-cell/spatial atlases, cancer genomics portals, drug resources, clinical registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organisms, and microbiome/pathogen resources.
+- Updated Reef routing so biological/clinical source selection is separated from optional live API adapter planning and remains bounded by identifier, access, privacy, licensing, and evidence-level rules.
+- Added OCEAN Module Strict Eval M3 with the 20-point OCEAN-10 rubric for task framing, evidence boundary, source traceability, claim calibration, no invention, negative space, artifact quality, handoff, research usefulness, and output consistency.
+- Added the first M3 scorecard/results over the existing 98 all-module M1 outputs.
+- Added clean-output handling to the all-module eval runner: raw provider output remains preserved, while `output.clean.md` and `reasoning_leak.json` support public-format scoring and MiniMax-style `<think>` monitoring.
+- Added provider-specific `extra_body` support for OpenAI-compatible eval requests and split MiniMax into a `minimax-m3-clean` lane with `thinking.disabled` plus a `minimax-reasoning-control` lane with `reasoning_split`.
+- Added Sounding runner clean-output artifacts so Sounding and all-module evals both preserve raw output while scoring public cleaned output.
+- Hardened Harbor's artifact contract around decision memos, evidence boundary ledgers, contribution boundary records, next-action registers, and reuse notes.
+- Added Harbor-focused M3 R1 with 35/35 usable outputs across seven model lanes, 0 public reasoning leaks, and a follow-up finding that Harbor artifact requirements need to be more explicit.
+- Tightened all-module eval prompts so future runs include active-module artifact requirements, including Harbor's decision memo, evidence boundary ledger, contribution boundary record, next-action register, and reuse note.
+- Added Idea Scout M3 R1 for Current/Compass evidence-bounded idea generation, with 28/28 usable outputs across seven model lanes and 0 public reasoning leaks.
+- Added full OCEAN workflow protocol/case seeds for paper, idea, proposal, review-comment, and resource/KG inputs.
+- Added module handoff rules so multi-module runs preserve explicit evidence packets, unresolved risks, and stop conditions.
+- Added optional Reef API adapter registry for official biomedical databases, registries, and resource tools without making OCEAN dependent on any API.
+- Added manual triage notes for the 11 M2 `needs_review` rows.
+- Added Reef Strict Eval R1 with 35/35 usable outputs across seven enabled model lanes and manual triage of three needs-review rows.
+- Tightened Reef/API and eval-output instructions to avoid uninspected endpoint invention and `<think>`/private-reasoning blocks.
+- Added Collaborative Workflow R1 with 70/70 usable outputs across seven enabled model lanes, covering cross-module proposal-to-validation-to-Harbor behavior.
+- Identified that prompt-level `<think>` suppression is insufficient for MiniMax-M1 and that Perplexity retrieval control should be separated from packet-only non-retrieval module scoring.
+- Added standalone module reference files for Current, Reef, Iceberg, Anchor, Compass, and Harbor, and wired them into OCEAN resource routing.
+- Added OCEAN Module Strict Eval M2 scoring: a 12-point heuristic rubric, scorecard CSV, summary JSON, results note, and scorer script for 98 M1 all-module outputs.
+- Added OCEAN Module Strict Eval M1 covering all seven modules with 14 cases across enabled model lanes; merged coverage reached 98/98 usable outputs after targeted timeout reruns.
+- Clarified OCEAN's public scope as biomedical research across medical and biological research, with medical AI and biological AI as priority use cases.
+- Added a public module responsibility and validation-status map in `docs/module-map.md`.
+- Clarified in README and evaluation docs that Sounding remains the most heavily tested module while M1/M2 now add first all-module coverage and heuristic scoring; final source-grounded content review is still needed.
+- Updated public evaluation notes for Sounding R3, including Gemini's completed 60/60 rerun after the initial HTTP 429 stop.
 - Clarified the Sounding model-comparison set: Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group.
 - Added Perplexity retrieval-control smoke support with raw response and source-packet capture.
 - Added DeepSeek and Gemini live API slice results for Sounding Multi-Model Strict Eval R1.

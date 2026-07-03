@@ -1,0 +1,87 @@
+{
+  "notes": [
+    "Harbor-focused M3 R1 model set. Do not put API keys in this file.",
+    "Perplexity is intentionally excluded from normal Harbor scoring because it is a retrieval-control lane.",
+    "MiniMax-M3 is a clean-output gate; keep enabled only if the account has model access."
+  ],
+  "models": [
+    {
+      "id": "qwen-open-weight",
+      "family": "Qwen",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "qwen3.7-max",
+      "base_url": "https://llm-yguh44714c24uitw.cn-beijing.maas.aliyuncs.com/compatible-mode/v1",
+      "api_key_env": "QWEN_API_KEY",
+      "enabled": true
+    },
+    {
+      "id": "deepseek-open-weight",
+      "family": "DeepSeek",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "deepseek-v4-pro",
+      "base_url": "https://api.deepseek.com",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "enabled": true
+    },
+    {
+      "id": "kimi-moonshot-stable-fallback",
+      "family": "Kimi",
+      "lane": "open-weight reproducibility",
+      "provider": "openai-compatible",
+      "model": "moonshot-v1-128k",
+      "base_url": "https://api.moonshot.cn/v1",
+      "api_key_env": "KIMI_API_KEY",
+      "enabled": true
+    },
+    {
+      "id": "gemini-frontier",
+      "family": "Google Gemini",
+      "lane": "frontier ceiling",
+      "provider": "google-gemini-generatecontent",
+      "model": "gemini-2.5-flash",
+      "base_url": "https://generativelanguage.googleapis.com/v1beta",
+      "api_key_env": "GEMINI_API_KEY",
+      "enabled": true
+    },
+    {
+      "id": "claude-frontier",
+      "family": "Anthropic Claude",
+      "lane": "frontier ceiling",
+      "provider": "anthropic-messages",
+      "model": "claude-opus-4-8",
+      "base_url": "https://api.anthropic.com/v1/messages",
+      "api_key_env": "CLAUDE_API_KEY",
+      "enabled": true
+    },
+    {
+      "id": "minimax-m3-clean",
+      "family": "MiniMax",
+      "lane": "open-weight clean-output",
+      "provider": "openai-compatible",
+      "model": "MiniMax-M3",
+      "base_url": "https://api.minimax.chat/v1",
+      "api_key_env": "MINIMAX_API_KEY",
+      "enabled": true,
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      }
+    },
+    {
+      "id": "minimax-reasoning-control",
+      "family": "MiniMax",
+      "lane": "reasoning control",
+      "provider": "openai-compatible",
+      "model": "MiniMax-M1",
+      "base_url": "https://api.minimax.chat/v1",
+      "api_key_env": "MINIMAX_API_KEY",
+      "enabled": true,
+      "extra_body": {
+        "reasoning_split": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "generated_at": "2026-07-01T00:13:17",
+  "cases_file": "skills/ocean/evals/ocean-module-eval-cases.json",
+  "protocol_file": "skills/ocean/evals/ocean-module-strict-eval.md",
+  "main_run_root": "outputs/ocean-module-eval-m1-full/20260630-225724",
+  "rerun_roots": {
+    "qwen-open-weight": "outputs/ocean-module-eval-m1-rerun-qwen/20260701-000444",
+    "deepseek-open-weight": "outputs/ocean-module-eval-m1-rerun-deepseek/20260701-000734",
+    "kimi-moonshot-stable-fallback": "outputs/ocean-module-eval-m1-rerun-kimi/20260701-000922"
+  },
+  "enabled_model_count": 7,
+  "case_count": 14,
+  "module_count": 7,
+  "total_expected_outputs": 98,
+  "total_usable_outputs": 98,
+  "total_auto_check_files": 98,
+  "rows": [
+    {
+      "model": "Qwen qwen3.7-max",
+      "model_id": "qwen-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 2,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 0,
+      "notes": "14/14 after targeted rerun.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/qwen-open-weight; outputs/ocean-module-eval-m1-rerun-qwen/20260701-000444/qwen-open-weight"
+    },
+    {
+      "model": "DeepSeek deepseek-v4-pro",
+      "model_id": "deepseek-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 1,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 0,
+      "notes": "14/14 after targeted rerun.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/deepseek-open-weight; outputs/ocean-module-eval-m1-rerun-deepseek/20260701-000734/deepseek-open-weight"
+    },
+    {
+      "model": "Kimi moonshot-v1-128k",
+      "model_id": "kimi-moonshot-stable-fallback",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 2,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 0,
+      "notes": "14/14 after targeted rerun.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/kimi-moonshot-stable-fallback; outputs/ocean-module-eval-m1-rerun-kimi/20260701-000922/kimi-moonshot-stable-fallback"
+    },
+    {
+      "model": "MiniMax MiniMax-M1",
+      "model_id": "minimax-open-weight",
+      "lane": "open-weight reproducibility",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 14,
+      "heading_pass_files": 13,
+      "source_packet_files": 0,
+      "notes": "14/14 main run.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/minimax-open-weight"
+    },
+    {
+      "model": "Google Gemini gemini-2.5-flash",
+      "model_id": "gemini-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 0,
+      "notes": "14/14 main run.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/gemini-frontier"
+    },
+    {
+      "model": "Anthropic Claude claude-opus-4-8",
+      "model_id": "claude-frontier",
+      "lane": "frontier ceiling",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 0,
+      "notes": "14/14 main run.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/claude-frontier"
+    },
+    {
+      "model": "Perplexity Retrieval API sonar-pro",
+      "model_id": "perplexity-retrieval-control",
+      "lane": "retrieval control",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "error_artifacts_before_rerun": 0,
+      "auto_check_files": 14,
+      "heading_pass_files": 11,
+      "source_packet_files": 14,
+      "notes": "14/14 main run. Source packet saved for all cases.",
+      "artifact_roots": "outputs/ocean-module-eval-m1-full/20260630-225724/perplexity-retrieval-control"
+    }
+  ],
+  "module_rows": [
+    {
+      "module": "Anchor",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 13,
+      "source_packet_files": 2
+    },
+    {
+      "module": "Compass",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 2
+    },
+    {
+      "module": "Current",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 13,
+      "source_packet_files": 2
+    },
+    {
+      "module": "Harbor",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 2
+    },
+    {
+      "module": "Iceberg",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 13,
+      "source_packet_files": 2
+    },
+    {
+      "module": "Reef",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 13,
+      "source_packet_files": 2
+    },
+    {
+      "module": "Sounding",
+      "usable_outputs": 14,
+      "total_cases": 14,
+      "coverage_pct": 100.0,
+      "auto_check_files": 14,
+      "heading_pass_files": 14,
+      "source_packet_files": 2
+    }
+  ]
+}
