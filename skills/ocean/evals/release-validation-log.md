@@ -1633,3 +1633,64 @@ Purpose: Add and smoke-test a public-safe OCEAN routing layer for common bioinfo
 ### Evidence Boundary / 证据边界
 
 This smoke check only tested offline candidate routing. It did not run LAST, STAR, SAMtools, DESeq2, Seurat, Snakemake, TCGA/GDC, ClinVar, or ClinicalTrials.gov queries. It does not prove source existence, command correctness, biological validity, clinical relevance, benchmark superiority, or reproducibility. It only confirms that OCEAN can route these resource/tool requests into a bounded Reef/Anchor-style evidence workflow without treating the route as proof.
+
+## 2026-07-04 - Reef bioinformatics router R2 and source-packet boundary eval
+
+Purpose: Extend Reef beyond a database list into a biomedical resource/software routing layer with explicit source-packet requirements, then test whether OCEAN keeps resource routes and software outputs inside evidence boundaries.
+
+Implemented locally:
+
+- Expanded `scripts/ocean_source_router.py` with stricter keyword matching, route-specific minimum packet fields, and new route classes:
+  - `epigenomics_regulatory`
+  - `clinical_imaging_signal`
+  - `regulatory_safety`
+- Expanded the bioinformatics software vocabulary to include alignment, RNA-seq, variant calling, single-cell, epigenomics, microbiome, proteomics, metabolomics, structure, phylogenetics, and workflow/reproducibility tools.
+- Added software-specific source-packet gates: evidence-level software packets now require tool version, command line, parameters, reference/index, input files, output files, logs/QC, and environment.
+- Added a hard safety gate: `candidate_route` packets must not include `supports_claims`.
+- Added `scripts/run_reef_router_eval.py`.
+- Added `scripts/run_source_packet_boundary_eval.py`.
+- Added `evals/reef-bioinformatics-router-r2-cases.json`.
+- Added `evals/source-packet-boundary-r2-cases.json`.
+- Updated `manifest.yaml` to expose the new resource/software routing and eval scripts.
+
+### Reef router R2
+
+| Item | Result |
+|---|---:|
+| Cases | 21 |
+| Pass | 21 |
+| Needs review | 0 |
+| Mean score | 11.95/12 |
+
+Coverage included LAST, STAR, SAMtools, featureCounts, DESeq2, Seurat, Scanpy, HuBMAP, CELLxGENE, ENCODE, JASPAR, ClinVar, gnomAD, TCGA/GDC, cBioPortal, COSMIC, ChEMBL, BindingDB, PubChem, DGIdb, PharmGKB, ClinicalTrials.gov, OpenFDA, DailyMed, FAERS, TCIA, PhysioNet, QIIME2, DADA2, MetaPhlAn, HUMAnN, Kraken2, PRIDE, ProteomeXchange, MaxQuant, FragPipe, DIA-NN, MetaboLights, HMDB, XCMS, MZmine, AlphaFold, ColabFold, RoseTTAFold, HMMER, PyMOL, ChimeraX, MAFFT, IQ-TREE, RAxML, OrthoFinder, model-organism databases, DREAM/OpenML/Kaggle-style benchmarks, Snakemake, Nextflow, WDL/Cromwell, Docker, Singularity/Apptainer, Conda, and nf-core.
+
+### Source-packet boundary R2
+
+| Item | Result |
+|---|---:|
+| Cases | 6 |
+| Pass | 6 |
+| Needs review | 0 |
+
+Boundary checks confirmed:
+
+- Complete LAST software packet: pass.
+- Incomplete LAST packet: fail.
+- Incomplete DESeq2 packet: fail.
+- ClinVar queried-evidence packet with inspected fields and limitations: pass.
+- Candidate-only TCGA route with `supports_claims`: fail.
+- ClinicalTrials packet without inspected content: fail.
+
+### Artifacts
+
+- `evals/reef-bioinformatics-router-r2-results.md`
+- `evals/reef-bioinformatics-router-r2-results.json`
+- `evals/reef-bioinformatics-router-r2-summary.json`
+- `evals/reef-bioinformatics-router-r2-scorecard.csv`
+- `evals/source-packet-boundary-r2-results.md`
+- `evals/source-packet-boundary-r2-results.json`
+- `evals/source-packet-boundary-r2-summary.json`
+
+### Evidence Boundary / 证据边界
+
+This run was deterministic and offline. It did not query PubMed, GEO, TCGA/GDC, ClinVar, ChEMBL, ClinicalTrials.gov, OpenFDA, TCIA, PhysioNet, or any other external database/API. It did not run LAST, STAR, SAMtools, DESeq2, Seurat, Snakemake, Nextflow, or any other bioinformatics tool. It only tested OCEAN's local route selection, source-packet requirements, and boundary-stop behavior.

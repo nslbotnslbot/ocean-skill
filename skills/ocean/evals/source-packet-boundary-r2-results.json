@@ -1,0 +1,78 @@
+[
+  {
+    "id": "R2-PACKET-001",
+    "expected": "pass",
+    "actual": "pass",
+    "verdict": "pass",
+    "missing": [],
+    "warnings": [],
+    "audit_markdown": "# OCEAN Source Packet Audit\n\n- Status: Pass\n\n| Field | Value |\n|---|---|\n| Packet ID | osp-test-last-complete |\n| Resource | LAST |\n| Source type | bioinformatics_software |\n| Boundary status | packet_evidence |\n| Query | LAST alignment provenance packet |\n| Identifiers | lastal-run-001 |\n| Inspected content | command; alignment summary; QC log |\n| Can support | sequence alignment was run under the recorded settings |\n| Cannot support | homology function; mechanism; clinical relevance |\n| Handoff | Anchor |\n\n## Missing fields\n\n- None\n\n## Boundary warnings\n\n- None\n\n## OCEAN use\n\n- Use this as bounded packet evidence and hand off to the selected OCEAN module.\n"
+  },
+  {
+    "id": "R2-PACKET-002",
+    "expected": "fail",
+    "actual": "fail",
+    "verdict": "pass",
+    "missing": [
+      "software field: tool_version",
+      "software field: command_line",
+      "software field: parameters",
+      "software field: reference_or_index",
+      "software field: input_files",
+      "software field: output_files",
+      "software field: logs_or_qc",
+      "software field: environment"
+    ],
+    "warnings": [],
+    "audit_markdown": "# OCEAN Source Packet Audit\n\n- Status: Incomplete\n\n| Field | Value |\n|---|---|\n| Packet ID | osp-test-last-incomplete |\n| Resource | LAST |\n| Source type | bioinformatics_software |\n| Boundary status | packet_evidence |\n| Query | LAST alignment provenance packet |\n| Identifiers | lastal-run-002 |\n| Inspected content | alignment summary |\n| Can support | sequence alignment supports mechanism |\n| Cannot support | clinical relevance |\n| Handoff | Iceberg |\n\n## Missing fields\n\n- software field: tool_version\n- software field: command_line\n- software field: parameters\n- software field: reference_or_index\n- software field: input_files\n- software field: output_files\n- software field: logs_or_qc\n- software field: environment\n\n## Boundary warnings\n\n- None\n\n## OCEAN use\n\n- Do not use this packet as evidence until missing fields are fixed.\n"
+  },
+  {
+    "id": "R2-PACKET-003",
+    "expected": "fail",
+    "actual": "fail",
+    "verdict": "pass",
+    "missing": [
+      "software field: parameters",
+      "software field: reference_or_index",
+      "software field: input_files",
+      "software field: output_files",
+      "software field: logs_or_qc",
+      "software field: environment"
+    ],
+    "warnings": [],
+    "audit_markdown": "# OCEAN Source Packet Audit\n\n- Status: Incomplete\n\n| Field | Value |\n|---|---|\n| Packet ID | osp-test-deseq2-no-design |\n| Resource | DESeq2 |\n| Source type | bioinformatics_software |\n| Boundary status | queried_evidence |\n| Query | DESeq2 output only |\n| Identifiers | deseq2-run-001 |\n| Inspected content | top genes table |\n| Can support |  |\n| Cannot support | causal mechanism |\n| Handoff | Iceberg |\n\n## Missing fields\n\n- software field: parameters\n- software field: reference_or_index\n- software field: input_files\n- software field: output_files\n- software field: logs_or_qc\n- software field: environment\n\n## Boundary warnings\n\n- None\n\n## OCEAN use\n\n- Do not use this packet as evidence until missing fields are fixed.\n"
+  },
+  {
+    "id": "R2-PACKET-004",
+    "expected": "pass",
+    "actual": "pass",
+    "verdict": "pass",
+    "missing": [],
+    "warnings": [],
+    "audit_markdown": "# OCEAN Source Packet Audit\n\n- Status: Pass\n\n| Field | Value |\n|---|---|\n| Packet ID | osp-test-clinvar-context |\n| Resource | ClinVar |\n| Source type | database_record |\n| Boundary status | queried_evidence |\n| Query | variant accession lookup |\n| Identifiers | variant-id-recorded |\n| Inspected content | clinical significance field; review status field; condition field |\n| Can support | ClinVar contains a recorded assertion for this variant |\n| Cannot support | treatment actionability; penetrance; mechanism |\n| Handoff | Iceberg |\n\n## Missing fields\n\n- None\n\n## Boundary warnings\n\n- None\n\n## OCEAN use\n\n- Use this as bounded packet evidence and hand off to the selected OCEAN module.\n"
+  },
+  {
+    "id": "R2-PACKET-005",
+    "expected": "fail",
+    "actual": "fail",
+    "verdict": "pass",
+    "missing": [
+      "candidate_route must not include supports_claims"
+    ],
+    "warnings": [
+      "candidate_route cannot support claims until a query/source is inspected"
+    ],
+    "audit_markdown": "# OCEAN Source Packet Audit\n\n- Status: Incomplete\n\n| Field | Value |\n|---|---|\n| Packet ID | osp-test-candidate-only |\n| Resource | TCGA/GDC |\n| Source type | database_route |\n| Boundary status | candidate_route |\n| Query | candidate route only |\n| Identifiers |  |\n| Inspected content |  |\n| Can support | TCGA confirms survival association |\n| Cannot support |  |\n| Handoff | Reef |\n\n## Missing fields\n\n- candidate_route must not include supports_claims\n\n## Boundary warnings\n\n- candidate_route cannot support claims until a query/source is inspected\n\n## OCEAN use\n\n- Do not use this packet as evidence until missing fields are fixed.\n"
+  },
+  {
+    "id": "R2-PACKET-006",
+    "expected": "fail",
+    "actual": "fail",
+    "verdict": "pass",
+    "missing": [
+      "inspected_content for evidence-level packet"
+    ],
+    "warnings": [],
+    "audit_markdown": "# OCEAN Source Packet Audit\n\n- Status: Incomplete\n\n| Field | Value |\n|---|---|\n| Packet ID | osp-test-evidence-no-inspection |\n| Resource | ClinicalTrials.gov |\n| Source type | clinical_registry |\n| Boundary status | queried_evidence |\n| Query | trial registry lookup |\n| Identifiers | NCT-placeholder |\n| Inspected content |  |\n| Can support | registry proves clinical efficacy |\n| Cannot support | trial result |\n| Handoff | Iceberg |\n\n## Missing fields\n\n- inspected_content for evidence-level packet\n\n## Boundary warnings\n\n- None\n\n## OCEAN use\n\n- Do not use this packet as evidence until missing fields are fixed.\n"
+  }
+]

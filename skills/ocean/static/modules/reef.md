@@ -18,10 +18,14 @@ Purpose: route biomedical resources, databases, KGs, registries, cohorts, benchm
 |---|---|
 | Literature | PubMed, OpenAlex, CrossRef, arXiv, bioRxiv, medRxiv |
 | Omics | GEO, SRA, ENA, ArrayExpress, GTEx, ENCODE, MetaboLights |
+| Spatial / multimodal atlases | HuBMAP, HCA, CZ CELLxGENE, Single Cell Portal |
+| Epigenomics / regulatory | ENCODE, Cistrome DB, ReMap, JASPAR, UCSC Genome Browser |
 | Protein/structure | UniProt, PDB, AlphaFold DB, InterPro, STRING |
 | Variant/genetics | ClinVar, dbSNP, gnomAD, Ensembl/VEP |
 | Drug/target | ChEMBL, OpenTargets, PubChem, OpenFDA |
 | Clinical | ClinicalTrials, registries, MIMIC/eICU only when lawful and explicitly provided |
+| Clinical imaging/signal | TCIA, PhysioNet, MIMIC-CXR only when lawful and explicitly provided, OpenNeuro |
+| Regulatory/safety | OpenFDA, DailyMed, FDA labels, EMA public assessment reports, FAERS with caveats |
 | Cancer genomics | TCGA/GDC, cBioPortal, ICGC, COSMIC |
 | Pathways/gene sets | GO, Reactome, KEGG, WikiPathways, MSigDB |
 | Proteomics/metabolomics | PRIDE, ProteomeXchange, MetaboLights, HMDB, MassIVE |
@@ -40,6 +44,8 @@ Purpose: route biomedical resources, databases, KGs, registries, cohorts, benchm
 - Enrichment/pathway hit != mechanism proof.
 - Registry entry != clinical outcome.
 - Software output != valid analysis without version, parameters, reference/index, inputs, logs, and provenance.
+- Imaging/signal benchmark != clinical utility without label definition, split provenance, external validation, and deployment boundary.
+- Safety/adverse-event signal != causal safety conclusion without reporting-bias handling and denominator/context.
 
 ## Tool layer
 

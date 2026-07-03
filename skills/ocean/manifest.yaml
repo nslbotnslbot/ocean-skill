@@ -43,3 +43,12 @@ modules:
   Harbor:
     file: static/modules/harbor.md
     artifact: Decision Memo, Evidence Boundary Ledger, Contribution Boundary Record
+
+scripts:
+  source_router: scripts/ocean_source_router.py
+  reef_router_eval: scripts/run_reef_router_eval.py
+  source_packet_boundary_eval: scripts/run_source_packet_boundary_eval.py
+
+evals:
+  reef_bioinformatics_router_r2: evals/reef-bioinformatics-router-r2-cases.json
+  source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json

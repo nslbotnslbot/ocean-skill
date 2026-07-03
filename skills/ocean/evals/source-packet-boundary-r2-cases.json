@@ -1,0 +1,109 @@
+[
+  {
+    "id": "R2-PACKET-001",
+    "expect": "pass",
+    "packet": {
+      "packet_id": "osp-test-last-complete",
+      "source_type": "bioinformatics_software",
+      "resource": "LAST",
+      "date_accessed": "2026-07-04",
+      "boundary_status": "packet_evidence",
+      "handoff": "Anchor",
+      "query": "LAST alignment provenance packet",
+      "identifiers": ["lastal-run-001"],
+      "inspected_content": ["command", "alignment summary", "QC log"],
+      "supports_claims": ["sequence alignment was run under the recorded settings"],
+      "cannot_support": ["homology function", "mechanism", "clinical relevance"],
+      "tool_version": "recorded",
+      "command_line": "recorded",
+      "parameters": "recorded",
+      "reference_or_index": "recorded",
+      "input_files": "recorded",
+      "output_files": "recorded",
+      "logs_or_qc": "recorded",
+      "environment": "recorded"
+    }
+  },
+  {
+    "id": "R2-PACKET-002",
+    "expect": "fail",
+    "packet": {
+      "packet_id": "osp-test-last-incomplete",
+      "source_type": "bioinformatics_software",
+      "resource": "LAST",
+      "date_accessed": "2026-07-04",
+      "boundary_status": "packet_evidence",
+      "handoff": "Iceberg",
+      "query": "LAST alignment provenance packet",
+      "identifiers": ["lastal-run-002"],
+      "inspected_content": ["alignment summary"],
+      "supports_claims": ["sequence alignment supports mechanism"],
+      "cannot_support": ["clinical relevance"]
+    }
+  },
+  {
+    "id": "R2-PACKET-003",
+    "expect": "fail",
+    "packet": {
+      "packet_id": "osp-test-deseq2-no-design",
+      "source_type": "bioinformatics_software",
+      "resource": "DESeq2",
+      "date_accessed": "2026-07-04",
+      "boundary_status": "queried_evidence",
+      "handoff": "Iceberg",
+      "query": "DESeq2 output only",
+      "identifiers": ["deseq2-run-001"],
+      "inspected_content": ["top genes table"],
+      "cannot_support": ["causal mechanism"],
+      "tool_version": "recorded",
+      "command_line": "recorded"
+    }
+  },
+  {
+    "id": "R2-PACKET-004",
+    "expect": "pass",
+    "packet": {
+      "packet_id": "osp-test-clinvar-context",
+      "source_type": "database_record",
+      "resource": "ClinVar",
+      "date_accessed": "2026-07-04",
+      "boundary_status": "queried_evidence",
+      "handoff": "Iceberg",
+      "query": "variant accession lookup",
+      "identifiers": ["variant-id-recorded"],
+      "inspected_content": ["clinical significance field", "review status field", "condition field"],
+      "supports_claims": ["ClinVar contains a recorded assertion for this variant"],
+      "cannot_support": ["treatment actionability", "penetrance", "mechanism"]
+    }
+  },
+  {
+    "id": "R2-PACKET-005",
+    "expect": "fail",
+    "packet": {
+      "packet_id": "osp-test-candidate-only",
+      "source_type": "database_route",
+      "resource": "TCGA/GDC",
+      "date_accessed": "2026-07-04",
+      "boundary_status": "candidate_route",
+      "handoff": "Reef",
+      "query": "candidate route only",
+      "supports_claims": ["TCGA confirms survival association"]
+    }
+  },
+  {
+    "id": "R2-PACKET-006",
+    "expect": "fail",
+    "packet": {
+      "packet_id": "osp-test-evidence-no-inspection",
+      "source_type": "clinical_registry",
+      "resource": "ClinicalTrials.gov",
+      "date_accessed": "2026-07-04",
+      "boundary_status": "queried_evidence",
+      "handoff": "Iceberg",
+      "query": "trial registry lookup",
+      "identifiers": ["NCT-placeholder"],
+      "supports_claims": ["registry proves clinical efficacy"],
+      "cannot_support": ["trial result"]
+    }
+  }
+]

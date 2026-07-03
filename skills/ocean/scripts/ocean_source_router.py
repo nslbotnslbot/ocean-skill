@@ -13,6 +13,7 @@ import datetime as dt
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -23,8 +24,12 @@ ROUTE_CLASSES = {
         "resources": ["PubMed", "EuropePMC", "OpenAlex", "CrossRef", "arXiv", "bioRxiv", "medRxiv"],
     },
     "omics": {
-        "keywords": ["rna", "single-cell", "scrna", "transcriptomics", "expression", "spatial", "gtex", "geo", "sra", "encode", "cellxgene"],
-        "resources": ["GEO", "SRA", "ENA", "ArrayExpress", "Expression Atlas", "GTEx", "ENCODE", "Human Cell Atlas", "Single Cell Portal", "CELLxGENE"],
+        "keywords": ["rna", "single-cell", "scrna", "snrna", "transcriptomics", "expression", "spatial", "proteogenomic", "multi-omics", "multiomics", "gtex", "geo", "sra", "encode", "cellxgene", "hubmap"],
+        "resources": ["GEO", "SRA", "ENA", "ArrayExpress", "Expression Atlas", "GTEx", "ENCODE", "Human Cell Atlas", "Single Cell Portal", "CELLxGENE", "HuBMAP", "CZ CELLxGENE"],
+    },
+    "epigenomics_regulatory": {
+        "keywords": ["chip-seq", "chipseq", "atac", "atac-seq", "cut&run", "cuttag", "cut&tag", "methylation", "motif", "motifs", "peak", "enhancer", "tf binding", "regulatory", "jaspar"],
+        "resources": ["ENCODE", "Cistrome DB", "ReMap", "JASPAR", "UCSC Genome Browser", "Roadmap Epigenomics"],
     },
     "cancer_genomics": {
         "keywords": ["cancer", "tumor", "tumour", "tcga", "gdc", "cbioportal", "icgc", "cosmic", "survival", "copy number"],
@@ -51,36 +56,53 @@ ROUTE_CLASSES = {
         "resources": ["ClinVar", "dbSNP", "gnomAD", "Ensembl/VEP"],
     },
     "drug_target": {
-        "keywords": ["drug", "compound", "target", "inhibitor", "agonist", "antagonist", "chembl", "pubchem", "opentargets", "ic50", "ki", "mechanism"],
-        "resources": ["ChEMBL", "OpenTargets", "PubChem", "OpenFDA", "UniProt"],
+        "keywords": ["drug", "drugs", "compound", "compounds", "target", "targets", "inhibitor", "agonist", "antagonist", "chembl", "pubchem", "opentargets", "bindingdb", "drugbank", "dgidb", "pharmgkb", "ic50", "ki"],
+        "resources": ["ChEMBL", "OpenTargets", "PubChem", "BindingDB", "DrugBank", "DGIdb", "PharmGKB", "OpenFDA", "UniProt"],
     },
     "clinical": {
-        "keywords": ["clinical", "trial", "registry", "patient", "cohort", "mimic", "eicu", "endpoint", "calibration"],
+        "keywords": ["clinical", "clinically", "trial", "trials", "clinicaltrials.gov", "registry", "patient", "cohort", "mimic", "eicu", "endpoint", "calibration", "diagnostic", "deployment", "clinical utility", "actionable", "therapy", "treatment"],
         "resources": ["ClinicalTrials.gov", "WHO ICTRP", "EU Clinical Trials Register", "OpenFDA", "clinical registries", "MIMIC/eICU when lawfully provided"],
+    },
+    "clinical_imaging_signal": {
+        "keywords": ["image", "images", "imaging", "radiology", "ct", "mri", "x-ray", "xray", "pathology slide", "whole-slide", "wsi", "ecg", "eeg", "physionet", "tcia"],
+        "resources": ["TCIA", "PhysioNet", "MIMIC-CXR when lawfully provided", "OpenNeuro", "UK Biobank when authorized"],
+    },
+    "regulatory_safety": {
+        "keywords": ["adverse event", "adverse events", "faers", "label", "labels", "dailymed", "fda", "ema", "safety", "contraindication", "postmarket", "pharmacovigilance"],
+        "resources": ["OpenFDA", "DailyMed", "FDA labels", "EMA public assessment reports", "FAERS with caveats"],
     },
     "model_organism": {
         "keywords": ["mouse", "murine", "drosophila", "fly", "worm", "yeast", "zebrafish", "arabidopsis", "mgi", "flybase", "wormbase", "sgd", "zfin", "tair"],
         "resources": ["MGI", "FlyBase", "WormBase", "SGD", "ZFIN", "TAIR"],
     },
     "benchmark": {
-        "keywords": ["benchmark", "leaderboard", "challenge", "dream challenge", "baseline", "split", "test set", "external validation"],
-        "resources": ["DREAM Challenges", "task-specific benchmark repositories", "OpenML where relevant", "Kaggle only with caution"],
+        "keywords": ["benchmark", "leaderboard", "challenge", "dream challenge", "baseline", "split", "test set", "external validation", "mlperf", "openml", "kaggle", "biomarker benchmark"],
+        "resources": ["DREAM Challenges", "task-specific benchmark repositories", "OpenML where relevant", "Kaggle only with caution", "MLPerf where relevant"],
     },
     "bioinformatics_software": {
         "keywords": [
             "blast", "last", "lastal", "bwa", "bowtie", "bowtie2", "hisat2", "star", "minimap2",
-            "samtools", "bedtools", "gatk", "bcftools", "freebayes", "deepvariant", "mutect2",
-            "salmon", "kallisto", "featurecounts", "deseq2", "edger", "limma", "seurat", "scanpy",
-            "cell ranger", "qiime2", "dada2", "metaphlan", "humann", "kraken2", "bracken",
-            "maxquant", "fragpipe", "dia-nn", "skyline", "alphafold", "colabfold", "hmmer",
-            "mafft", "muscle", "iq-tree", "raxml", "snakemake", "nextflow", "galaxy"
+            "samtools", "bedtools", "gatk", "bcftools", "freebayes", "deepvariant", "strelka", "mutect2",
+            "salmon", "kallisto", "rsem", "stringtie", "featurecounts", "deseq2", "edger", "limma", "sleuth",
+            "seurat", "scanpy", "scvi", "celltypist", "azimuth", "cell ranger", "starsolo", "alevin",
+            "macs2", "macs3", "deeptools", "homer", "meme", "fimo",
+            "qiime2", "dada2", "metaphlan", "humann", "kraken2", "bracken", "megahit", "spades",
+            "maxquant", "fragpipe", "dia-nn", "skyline", "ms-dial", "xcms", "mzmine",
+            "alphafold", "colabfold", "rosettafold", "hh-suite", "hmmer", "modeller", "pymol", "chimerax",
+            "mafft", "muscle", "clustal omega", "iq-tree", "raxml", "fasttree", "orthofinder",
+            "snakemake", "nextflow", "cwl", "cromwell", "wdl", "galaxy", "docker", "singularity", "apptainer", "conda", "nf-core"
         ],
         "resources": [
             "BLAST", "LAST", "BWA", "Bowtie2", "HISAT2", "STAR", "minimap2", "SAMtools",
-            "BEDTools", "GATK", "bcftools", "Salmon", "kallisto", "featureCounts",
-            "DESeq2", "edgeR", "Seurat", "Scanpy", "Cell Ranger", "QIIME2", "DADA2",
-            "MetaPhlAn", "HUMAnN", "Kraken2", "MaxQuant", "FragPipe", "AlphaFold",
-            "ColabFold", "HMMER", "MAFFT", "IQ-TREE", "Snakemake", "Nextflow", "Galaxy"
+            "BEDTools", "GATK", "bcftools", "FreeBayes", "DeepVariant", "Strelka2", "Mutect2",
+            "Salmon", "kallisto", "RSEM", "StringTie", "featureCounts", "DESeq2", "edgeR", "limma-voom", "sleuth",
+            "Cell Ranger", "STARsolo", "Alevin-fry", "Seurat", "Scanpy", "scVI", "CellTypist", "Azimuth",
+            "MACS2/MACS3", "deepTools", "HOMER", "MEME/FIMO",
+            "QIIME2", "DADA2", "MetaPhlAn", "HUMAnN", "Kraken2", "Bracken", "MEGAHIT", "SPAdes",
+            "MaxQuant", "FragPipe", "DIA-NN", "Skyline", "MS-DIAL", "XCMS", "MZmine",
+            "AlphaFold", "ColabFold", "RoseTTAFold", "HH-suite", "HMMER", "MODELLER", "PyMOL", "ChimeraX",
+            "MAFFT", "MUSCLE", "Clustal Omega", "IQ-TREE", "RAxML", "FastTree", "OrthoFinder",
+            "Snakemake", "Nextflow", "CWL", "WDL/Cromwell", "Galaxy", "Docker", "Singularity/Apptainer", "Conda", "nf-core"
         ],
     },
     "artifact": {
@@ -88,6 +110,34 @@ ROUTE_CLASSES = {
         "resources": ["local files", "notebooks", "scripts", "figures", "tables", "logs"],
     },
 }
+
+ROUTE_PACKET_FIELDS = {
+    "literature": ["query", "date", "source", "PMID/DOI/preprint ID", "inspected title/abstract/full-text boundary"],
+    "omics": ["accession", "organism", "assay/platform", "sample table", "condition labels", "inspected metadata fields"],
+    "epigenomics_regulatory": ["assay type", "genome build", "peak/region set", "control/input", "motif database/version", "inspected fields"],
+    "cancer_genomics": ["cohort", "data type", "endpoint definition", "filters", "version/access date", "analysis boundary"],
+    "variant_genetics": ["variant ID", "genome build/transcript", "phenotype context", "submitter/evidence status", "date"],
+    "drug_target": ["compound/target ID", "assay type", "endpoint", "organism/cell line", "concentration/unit", "date"],
+    "clinical": ["registry/cohort ID", "status/date", "endpoint", "population", "access/ethics boundary"],
+    "clinical_imaging_signal": ["dataset ID", "modality", "label definition", "split/provenance", "privacy/access boundary", "inspection date"],
+    "regulatory_safety": ["resource", "drug/product ID", "label/adverse-event field", "date", "reporting-bias caveat"],
+    "bioinformatics_software": ["tool name", "version", "command line", "parameters", "reference/index", "input files", "output files", "logs", "environment", "date"],
+}
+
+BIOINFORMATICS_SOFTWARE_NAMES = {
+    name.lower()
+    for name in ROUTE_CLASSES["bioinformatics_software"]["resources"]
+}
+BIOINFORMATICS_SOFTWARE_REQUIRED_FIELDS = [
+    "tool_version",
+    "command_line",
+    "parameters",
+    "reference_or_index",
+    "input_files",
+    "output_files",
+    "logs_or_qc",
+    "environment",
+]
 
 VALID_BOUNDARY = {"candidate_route", "retrieved_external_context", "queried_evidence", "packet_evidence"}
 VALID_HANDOFF = {"Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor", "stop"}
@@ -121,11 +171,20 @@ def split_list(value: str | None) -> list[str]:
     return [item.strip() for item in value.replace(";", ",").split(",") if item.strip()]
 
 
+def keyword_matches(text: str, keyword: str) -> bool:
+    keyword = keyword.lower()
+    if len(keyword) <= 3 and keyword.replace("-", "").isalnum():
+        return re.search(rf"(?<![a-z0-9]){re.escape(keyword)}(?![a-z0-9])", text) is not None
+    if " " in keyword or "-" in keyword or "/" in keyword or "&" in keyword:
+        return keyword in text
+    return re.search(rf"(?<![a-z0-9]){re.escape(keyword)}(?![a-z0-9])", text) is not None
+
+
 def infer_routes(question: str) -> list[dict[str, Any]]:
     text = question.lower()
     routes = []
     for route_class, spec in ROUTE_CLASSES.items():
-        hits = [kw for kw in spec["keywords"] if kw.lower() in text]
+        hits = [kw for kw in spec["keywords"] if keyword_matches(text, kw)]
         if hits:
             routes.append(
                 {
@@ -133,6 +192,7 @@ def infer_routes(question: str) -> list[dict[str, Any]]:
                     "candidate_resources": spec["resources"],
                     "matched_terms": hits,
                     "evidence_status": "candidate_route",
+                    "minimum_packet_fields": ROUTE_PACKET_FIELDS.get(route_class, []),
                     "limit": "Route suggestion only; no query has been executed.",
                 }
             )
@@ -143,6 +203,7 @@ def infer_routes(question: str) -> list[dict[str, Any]]:
                 "candidate_resources": ROUTE_CLASSES["literature"]["resources"],
                 "matched_terms": [],
                 "evidence_status": "candidate_route",
+                "minimum_packet_fields": ROUTE_PACKET_FIELDS.get("literature", []),
                 "limit": "Default route; no domain-specific terms were detected.",
             }
         )
@@ -272,8 +333,20 @@ def audit_packet(packet: dict[str, Any]) -> tuple[list[str], list[str]]:
         missing.append("query or identifiers for queried_evidence")
     if boundary == "packet_evidence" and not packet.get("cannot_support"):
         warnings.append("packet_evidence should record cannot_support limitations")
+    source_type = str(packet.get("source_type") or "").lower()
+    resource = str(packet.get("resource") or "").lower()
+    is_software_packet = (
+        source_type in {"bioinformatics_software", "software", "workflow"}
+        or resource in BIOINFORMATICS_SOFTWARE_NAMES
+    )
+    if is_software_packet and boundary in {"queried_evidence", "packet_evidence"}:
+        for field in BIOINFORMATICS_SOFTWARE_REQUIRED_FIELDS:
+            if not packet.get(field):
+                missing.append(f"software field: {field}")
     if boundary == "candidate_route":
         warnings.append("candidate_route cannot support claims until a query/source is inspected")
+        if packet.get("supports_claims"):
+            missing.append("candidate_route must not include supports_claims")
     if boundary == "retrieved_external_context":
         warnings.append("retrieved_external_context is context only, not packet evidence")
     return missing, warnings

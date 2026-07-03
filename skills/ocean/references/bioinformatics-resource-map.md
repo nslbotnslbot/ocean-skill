@@ -13,14 +13,18 @@ Resource presence is not evidence. A named database is only a candidate route un
 | Literature and metadata | PubMed, EuropePMC, CrossRef, OpenAlex, Semantic Scholar, arXiv, bioRxiv, medRxiv | source discovery, citation graph, source corpus | title/abstract metadata is not full-text evidence |
 | Sequence and raw reads | GenBank, RefSeq, ENA, DDBJ, SRA | sequence existence, raw read archives, accession routing | accession existence does not prove sample quality or analysis validity |
 | Expression and functional genomics | GEO, ArrayExpress, Expression Atlas, GTEx, ENCODE, Human Cell Atlas, Single Cell Portal, CELLxGENE | transcriptomics, single-cell, tissue expression, regulatory assays | dataset availability does not prove cohort suitability or biological mechanism |
+| Spatial / multimodal atlases | HuBMAP, Human Cell Atlas, CZ CELLxGENE, Single Cell Portal, Xenium/Visium-associated public portals when source-linked | spatial/multimodal tissue context, atlas comparison, cell-state hypotheses | atlas similarity or spatial proximity is not causal mechanism or clinical validation |
+| Epigenomics and regulatory evidence | ENCODE, Cistrome DB, ReMap, JASPAR, UCSC Genome Browser, Roadmap Epigenomics | ChIP/ATAC peaks, motif scans, regulatory annotations | peak/motif evidence is candidate regulation, not direct binding or functional causality |
 | Cancer genomics | TCGA/GDC, cBioPortal, ICGC, COSMIC | cancer mutations, copy number, expression, survival associations | retrospective association does not prove mechanism or treatment guidance |
 | Variants and genetics | ClinVar, dbSNP, gnomAD, Ensembl/VEP, UCSC Genome Browser, GWAS Catalog, OMIM | variant annotation, population frequency, phenotype association, genome build checks | pathogenicity labels and GWAS hits are not causal proof without context |
 | Protein and structure | UniProt, RCSB PDB, AlphaFold DB, InterPro, Pfam, STRING, BioGRID, IntAct | protein function, domains, structures, interactions | predicted structure or interaction annotation is not binding/functional proof |
 | Pathways and gene sets | Gene Ontology, Reactome, KEGG, WikiPathways, MSigDB, GSEA resources | pathway enrichment, function categories, gene-set interpretation | enrichment is hypothesis-generating and sensitive to background/gene-set choice |
 | Drug and target | ChEMBL, OpenTargets, PubChem, BindingDB, DrugBank, PharmGKB, DGIdb, OpenFDA | compounds, targets, assays, adverse events, target-disease links | bioactivity or target association is not therapeutic efficacy |
+| Regulatory and safety | OpenFDA, DailyMed, FDA labels, EMA public assessment reports, FAERS with caveats | label context, adverse-event signal triage, safety annotation | spontaneous reports and label metadata do not prove causality or comparative safety |
 | Proteomics and metabolomics | PRIDE, ProteomeXchange, PeptideAtlas, MetaboLights, HMDB, MassIVE | proteomics/metabolomics datasets and identifiers | detected molecule or protein is not necessarily causal or clinically actionable |
 | Microbiome | MGnify, Qiita, Human Microbiome Project, SRA/ENA microbiome studies | microbiome datasets, taxonomic/functional profiles | compositional association is not mechanism or treatment response proof |
-| Clinical and cohorts | ClinicalTrials.gov, WHO ICTRP, EU Clinical Trials Register, MIMIC/eICU when lawful, UK Biobank when authorized | trial registration, cohort context, clinical endpoints | registry existence is not trial result; controlled cohorts require access/ethics boundary |
+| Clinical and cohorts | ClinicalTrials.gov, WHO ICTRP, EU Clinical Trials Register, MIMIC/eICU when lawful, UK Biobank when authorized, SEER, NHANES, All of Us when authorized | trial registration, cohort context, clinical endpoints | registry existence is not trial result; controlled cohorts require access/ethics boundary |
+| Clinical imaging and physiological signals | TCIA, PhysioNet, MIMIC-CXR when lawful, OpenNeuro, UK Biobank imaging when authorized | imaging/signal benchmark provenance, modality and label routing | dataset existence is not deployability, clinical utility, or prospective validation |
 | Model organism databases | MGI, FlyBase, WormBase, SGD, ZFIN, TAIR | gene function and phenotype evidence in model organisms | organism evidence must be translated cautiously to human biology |
 | Benchmarks and challenges | DREAM Challenges, OpenML where relevant, Kaggle only with caution, task-specific benchmark repositories | benchmark context, challenge tasks, baseline comparison | leaderboard performance is not biological validity or clinical deployment readiness |
 | Bioinformatics software / workflows | BLAST, LAST, BWA, Bowtie2, HISAT2, STAR, minimap2, SAMtools, BEDTools, GATK, bcftools, Salmon, kallisto, featureCounts, DESeq2, edgeR, Seurat, Scanpy, Cell Ranger, Snakemake, Nextflow, Galaxy | workflow provenance, method routing, reproducibility checks, software-generated artifacts | software use does not prove correct parameters, data quality, reproducibility, or biological interpretation |
@@ -39,6 +43,8 @@ Resource presence is not evidence. A named database is only a candidate route un
 | Clinical | registry/cohort ID, status/date, endpoint, population, access/ethics boundary |
 | Artifact/benchmark | code/data version, inputs, parameters, environment, outputs, benchmark split |
 | Software/workflow | tool name, version, command line, parameters, reference/index, input files, output files, logs, environment, date |
+| Imaging/signal | dataset ID, modality, label definition, acquisition/preprocessing boundary, train/test split, privacy/access boundary |
+| Regulatory/safety | product/drug ID, label/adverse-event field, date, reporter/source caveat, known reporting-bias limitations |
 
 ## Safe route language
 
@@ -97,6 +103,7 @@ Stop or downgrade if:
 | Metagenomics / microbiome | QIIME2, DADA2, MetaPhlAn, HUMAnN, Kraken2, Bracken, MEGAHIT, SPAdes | taxonomic/functional profiling and assembly route | compositional profiles and taxa associations are not treatment mechanisms |
 | Proteomics / metabolomics software | MaxQuant, FragPipe, DIA-NN, Skyline, MS-DIAL, XCMS, MZmine | peptide/protein/metabolite identification and quantification route | identification/quantification depends on library, FDR, calibration, and preprocessing |
 | Structural / protein modeling | AlphaFold, ColabFold, RoseTTAFold, HH-suite, HMMER, MODELLER, PyMOL, ChimeraX | structure prediction, domain search, visualization route | predicted structure or visualization does not prove binding, function, or mechanism |
+| Biomedical imaging / signal ML | nnU-Net, MONAI, TorchIO, SimpleITK, ITK-SNAP, 3D Slicer, Neuroimaging tools when source-linked | segmentation, preprocessing, annotation, model-evaluation route | image/signal model performance is not clinical utility without external/prospective validation |
 | Phylogenetics / comparative genomics | MAFFT, MUSCLE, Clustal Omega, IQ-TREE, RAxML, FastTree, OrthoFinder | multiple alignment, tree, orthology route | tree topology depends on model, alignment quality, sampling, and support |
 | Workflow and reproducibility | Snakemake, Nextflow, CWL, WDL/Cromwell, Galaxy, Docker, Singularity/Apptainer, Conda, nf-core | pipeline provenance and reproducibility route | workflow existence is not successful execution or valid analysis |
 
