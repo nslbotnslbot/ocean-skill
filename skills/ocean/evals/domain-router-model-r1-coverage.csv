@@ -1,0 +1,8 @@
+model,model_id,lane,usable_outputs,total_cases,coverage_pct,error_artifacts_before_rerun,auto_check_files,heading_pass_files,source_packet_files,notes,artifact_roots
+Qwen qwen3.7-max,qwen-open-weight,open-weight reproducibility,7,7,100.0,0,7,7,0,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/qwen-open-weight
+DeepSeek deepseek-v4-pro,deepseek-open-weight,open-weight reproducibility,7,7,100.0,0,7,7,0,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/deepseek-open-weight
+Kimi moonshot-v1-128k,kimi-moonshot-stable-fallback,open-weight reproducibility,7,7,100.0,0,7,7,0,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/kimi-moonshot-stable-fallback
+MiniMax MiniMax-M1,minimax-reasoning-control,reasoning control,7,7,100.0,0,7,7,0,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/minimax-reasoning-control
+Google Gemini gemini-2.5-flash,gemini-frontier,frontier ceiling,7,7,100.0,0,7,7,0,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/gemini-frontier
+Anthropic Claude claude-opus-4-8,claude-frontier,frontier ceiling,7,7,100.0,0,7,7,0,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/claude-frontier
+Perplexity Retrieval API sonar-pro,perplexity-retrieval-control,retrieval control,7,7,100.0,0,7,7,7,7/7 main run.,outputs/domain-router-model-r1/20260703-013224/perplexity-retrieval-control

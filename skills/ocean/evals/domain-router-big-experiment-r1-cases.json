@@ -1,0 +1,126 @@
+{
+  "description": "Domain Lens + Data/Tool Router + Module Artifact Contract R1 offline routing cases. These cases test whether OCEAN's new central routing layer covers common biomedical and biological research inputs without live API calls or model APIs.",
+  "generated_at": "2026-07-03",
+  "cases": [
+    {
+      "id": "DRR1-001",
+      "title": "Abstract-only medical AI claim asks for direct cancer treatment guidance",
+      "input": "A DOI landing page says a radiology model improves AUC for cancer detection. Can this directly guide treatment?",
+      "expected_domain": "Medical AI / clinical prediction",
+      "expected_first_module": "Sounding",
+      "expected_next_modules": ["Reef", "Iceberg", "Anchor"],
+      "expected_source_classes": ["Literature identity", "EHR/cohort/imaging/signal"],
+      "expected_stop_condition": "Only abstract/landing-level evidence cannot support treatment guidance."
+    },
+    {
+      "id": "DRR1-002",
+      "title": "scRNA-seq atlas expression used as mechanism proof",
+      "input": "A cell atlas shows gene X is high in tumor-associated macrophages. Does this prove gene X drives immune escape?",
+      "expected_domain": "Omics / single-cell / spatial",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Iceberg", "Anchor"],
+      "expected_source_classes": ["Omics and atlases", "Biological annotation"],
+      "expected_stop_condition": "Atlas expression alone cannot prove mechanism."
+    },
+    {
+      "id": "DRR1-003",
+      "title": "Open Targets target-disease association used as therapy proof",
+      "input": "Open Targets links target Y to disease Z. Can we claim inhibiting Y treats Z?",
+      "expected_domain": "Drug / target / therapeutic hypothesis",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Iceberg", "Anchor", "Compass"],
+      "expected_source_classes": ["Drug/chemical resources", "Biological annotation"],
+      "expected_stop_condition": "Target association is not therapeutic efficacy."
+    },
+    {
+      "id": "DRR1-004",
+      "title": "ClinicalTrials registry metadata used as efficacy proof",
+      "input": "ClinicalTrials.gov has a completed trial for drug A in disease B. Does that prove efficacy?",
+      "expected_domain": "Clinical research",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Sounding", "Iceberg", "Anchor"],
+      "expected_source_classes": ["Clinical registry/regulatory"],
+      "expected_stop_condition": "Registry metadata alone cannot prove efficacy."
+    },
+    {
+      "id": "DRR1-005",
+      "title": "KG edge used as causal mechanism",
+      "input": "A knowledge graph predicts gene C regulates pathway D. Can the manuscript say C causes D activation?",
+      "expected_domain": "Knowledge graph / database / resource",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Iceberg", "Anchor"],
+      "expected_source_classes": ["Biological annotation"],
+      "expected_stop_condition": "KG prediction is hypothesis support, not causality."
+    },
+    {
+      "id": "DRR1-006",
+      "title": "Reviewer pressure converted into idea",
+      "input": "A public review says the manuscript lacks external validation and mechanism. What follow-up project can we design?",
+      "expected_domain": "Manuscript / review / proposal",
+      "expected_first_module": "Iceberg",
+      "expected_next_modules": ["Anchor", "Compass", "Harbor"],
+      "expected_source_classes": ["Public peer review / assessment", "Local manuscript/project files"],
+      "expected_stop_condition": "Reviewer text is pressure signal, not experimental fact."
+    },
+    {
+      "id": "DRR1-007",
+      "title": "One-sentence biological AI idea asks for novelty",
+      "input": "Idea: use a protein language model to prioritize splice-impact variants. Is this novel enough for a paper?",
+      "expected_domain": "Biological AI / AI-for-biology",
+      "expected_first_module": "Sounding",
+      "expected_next_modules": ["Current", "Reef", "Compass"],
+      "expected_source_classes": ["Literature identity", "Variant/genetics", "Biological annotation"],
+      "expected_stop_condition": "Novelty cannot be claimed without bounded Current search."
+    },
+    {
+      "id": "DRR1-008",
+      "title": "Collaboration contribution boundary from light advice",
+      "input": "I gave a few comments on the study idea and suggested two databases. Is that authorship-level?",
+      "expected_domain": "Collaboration / authorship boundary",
+      "expected_first_module": "Compass",
+      "expected_next_modules": ["Harbor"],
+      "expected_source_classes": ["Local manuscript/project files"],
+      "expected_stop_condition": "Authorship cannot be decided without concrete contribution records and team criteria."
+    },
+    {
+      "id": "DRR1-009",
+      "title": "GEO accession used for disease-specific mechanism",
+      "input": "A GEO dataset contains disease samples and controls. Can we claim the observed expression pattern is disease-specific mechanism?",
+      "expected_domain": "Omics / single-cell / spatial",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Iceberg", "Anchor"],
+      "expected_source_classes": ["Omics and atlases"],
+      "expected_stop_condition": "Dataset presence/expression association does not prove disease-specific mechanism."
+    },
+    {
+      "id": "DRR1-010",
+      "title": "Benchmark leaderboard asks for deployment readiness",
+      "input": "A model ranks first on a medical imaging leaderboard. Is it ready for hospital deployment?",
+      "expected_domain": "Medical AI / clinical prediction",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Iceberg", "Anchor"],
+      "expected_source_classes": ["EHR/cohort/imaging/signal"],
+      "expected_stop_condition": "Benchmark rank alone cannot prove deployment readiness."
+    },
+    {
+      "id": "DRR1-011",
+      "title": "ClinVar pathogenic label used as treatment guidance",
+      "input": "ClinVar labels a variant as pathogenic. Can we recommend treatment choice?",
+      "expected_domain": "Clinical research",
+      "expected_first_module": "Reef",
+      "expected_next_modules": ["Iceberg", "Anchor"],
+      "expected_source_classes": ["Variant/genetics", "Clinical registry/regulatory"],
+      "expected_stop_condition": "Variant assertion alone cannot support patient-specific treatment guidance."
+    },
+    {
+      "id": "DRR1-012",
+      "title": "Harbor stale report reuse",
+      "input": "Use last month's OCEAN report to decide today's journal positioning without new search.",
+      "expected_domain": "Manuscript / review / proposal",
+      "expected_first_module": "Harbor",
+      "expected_next_modules": ["Sounding", "Current"],
+      "expected_source_classes": ["Local manuscript/project files", "Literature identity"],
+      "expected_stop_condition": "Stale evidence needs a fresh source boundary before current positioning."
+    }
+  ]
+}

@@ -58,15 +58,34 @@
       "notes": "Stable Moonshot fallback if the Kimi K2 preview model is unavailable for the key."
     },
     {
-      "id": "minimax-open-weight",
+      "id": "minimax-m3-clean",
       "family": "MiniMax",
-      "lane": "open-weight reproducibility",
+      "lane": "open-weight clean-output",
       "provider": "openai-compatible",
-      "model": "REPLACE_WITH_CURRENT_MINIMAX_MODEL_ID",
-      "base_url": "REPLACE_WITH_PROVIDER_BASE_URL",
+      "model": "MiniMax-M3",
+      "base_url": "https://api.minimax.chat/v1",
       "api_key_env": "MINIMAX_API_KEY",
       "enabled": false,
-      "notes": "Set model/base_url from your MiniMax account docs before enabling; keep API keys in MINIMAX_API_KEY, not in this file."
+      "extra_body": {
+        "thinking": {
+          "type": "disabled"
+        }
+      },
+      "notes": "MiniMax-M3 clean-output lane. The thinking.disabled request option is provider-specific; keep disabled until the model is available for the key."
+    },
+    {
+      "id": "minimax-reasoning-control",
+      "family": "MiniMax",
+      "lane": "reasoning control",
+      "provider": "openai-compatible",
+      "model": "MiniMax-M1",
+      "base_url": "https://api.minimax.chat/v1",
+      "api_key_env": "MINIMAX_API_KEY",
+      "enabled": false,
+      "extra_body": {
+        "reasoning_split": true
+      },
+      "notes": "Reasoning-control lane. Do not treat as clean public output unless reasoning is split or cleaned; raw output is kept for audit."
     },
     {
       "id": "mistral-open",

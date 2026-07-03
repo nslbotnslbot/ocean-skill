@@ -44,3 +44,28 @@ The detailed internal record is in:
 ```text
 skills/ocean/evals/release-validation-log.md
 ```
+
+
+## Later Sounding Multi-Model Evals
+
+After rounds 1-5, OCEAN added module-specific Sounding evals. These are separate from the earlier counted strict rounds.
+
+| Eval | Scope | Model coverage result | Boundary |
+|---|---|---|---|
+| Sounding R1 API slices | Small live API checks for Codex/OpenAI, DeepSeek, and Gemini behavior | Completed slices recorded in `skills/ocean/evals/` | Workflow/format and evidence-boundary behavior only |
+| Sounding R2 | 8 public article/preprint seeds x 6 adversarial error types = 48 cases per model | Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and Perplexity retrieval control completed coverage | Coverage only; not a content-quality leaderboard |
+| Sounding R3 | 10 public article/preprint seeds x 6 adversarial error types = 60 cases per model | Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and Perplexity retrieval control completed coverage after Gemini's later rerun | Coverage only; content-level scoring still needed |
+
+Current interpretation: the strongest module-specific evidence is for Sounding. OCEAN Module M1 adds first-pass standalone coverage for Current, Reef, Iceberg, Anchor, Compass, and Harbor, but those modules still need content-level scoring before quality comparisons.
+
+
+## OCEAN Module M1
+
+OCEAN Module Strict Eval M1 is the first all-module coverage eval. It uses 14 cases, 2 per module, across the enabled model lanes. After targeted reruns for provider timeouts, the merged coverage record reaches 98/98 usable outputs. This validates that all seven modules can produce structured artifacts under a shared evidence-boundary contract, but content-level scoring is still required before claiming module quality rankings.
+
+
+## OCEAN Module M2
+
+OCEAN Module Strict Eval M2 adds a 12-point heuristic scoring screen over the 98 M1 outputs. The dimensions are evidence boundary correctness, unsupported-claim downgrade, no invented source/details, module-specific artifact quality, handoff correctness, and biomedical/biological research usefulness.
+
+M2 scored 98/98 outputs with a mean score of 10.07/12: 64 strong, 23 developing, and 11 needs_review under the deterministic screen. This is a first-pass quality screen and a triage tool for manual review, not final scientific correctness validation or a model leaderboard.

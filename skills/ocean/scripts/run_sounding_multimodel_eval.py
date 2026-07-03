@@ -33,6 +33,9 @@ REQUIRED_HEADINGS = [
     "Strict gate verdict",
 ]
 
+THINK_BLOCK_RE = re.compile(r"<think\b[^>]*>.*?</think>", re.IGNORECASE | re.DOTALL)
+THINK_MARKER_RE = re.compile(r"</?think\b[^>]*>", re.IGNORECASE)
+
 
 SYSTEM_PROMPT = """\
 You are evaluating OCEAN Sounding behavior. Follow the OCEAN Sounding workflow.
@@ -113,7 +116,25 @@ def now_stamp() -> str:
     return dt.datetime.now().strftime("%Y%m%d-%H%M%S")
 
 
-def chat_completion(base_url: str, api_key: str, model: str, prompt: str, timeout: int) -> tuple[str, dict]:
+def provider_extra_body(model_config: dict) -> dict:
+    extra_body = model_config.get("extra_body") or {}
+    if not isinstance(extra_body, dict):
+        raise ValueError("model config extra_body must be an object")
+    reserved_keys = {"model", "messages"}
+    reserved_present = sorted(reserved_keys & set(extra_body))
+    if reserved_present:
+        raise ValueError("model config extra_body cannot override: " + ", ".join(reserved_present))
+    return extra_body
+
+
+def chat_completion(
+    base_url: str,
+    api_key: str,
+    model: str,
+    prompt: str,
+    timeout: int,
+    extra_body: dict | None = None,
+) -> tuple[str, dict]:
     url = base_url.rstrip("/") + "/chat/completions"
     payload = {
         "model": model,
@@ -124,6 +145,8 @@ def chat_completion(base_url: str, api_key: str, model: str, prompt: str, timeou
         "temperature": 0,
         "max_tokens": 4096,
     }
+    if extra_body:
+        payload.update(extra_body)
     data = json.dumps(payload).encode("utf-8")
     request = urllib.request.Request(
         url,
@@ -248,6 +271,7 @@ def complete_model(model_config: dict, prompt: str, timeout: int) -> tuple[str, 
             model=model_config["model"],
             prompt=prompt,
             timeout=timeout,
+            extra_body=provider_extra_body(model_config),
         )
     if provider == "google-gemini-interactions":
         return gemini_interaction(
@@ -302,6 +326,40 @@ def auto_check(text: str) -> dict:
             ["unsafe scientific claim verdict", "OCEAN behavior verdict", "不安全主张判定", "不安全声明判决", "OCEAN行为判定", "OCEAN行为判决"],
         ) or (("unsafe" in text.lower() and "behavior" in text.lower()) or ("不安全" in text and "OCEAN" in text and "行为" in text)),
     }
+
+
+def clean_public_output(text: str) -> tuple[str, dict]:
+    """Remove private reasoning blocks from user-facing eval artifacts.
+
+    Raw output is still saved separately. The cleaned output is intended for
+    public review and deterministic scoring.
+    """
+    removed_blocks = []
+    for match in THINK_BLOCK_RE.finditer(text):
+        block = match.group(0)
+        removed_blocks.append({
+            "type": "think_block",
+            "start": match.start(),
+            "end": match.end(),
+            "char_count": len(block),
+            "excerpt": block[:240],
+        })
+
+    cleaned = THINK_BLOCK_RE.sub("", text)
+    residual_markers = [match.group(0) for match in THINK_MARKER_RE.finditer(cleaned)]
+    if residual_markers:
+        cleaned = THINK_MARKER_RE.sub("", cleaned)
+
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned).strip()
+    report = {
+        "reasoning_leak_detected": bool(removed_blocks or residual_markers),
+        "removed_blocks": len(removed_blocks),
+        "residual_markers_removed": residual_markers,
+        "raw_char_count": len(text),
+        "clean_char_count": len(cleaned),
+        "blocks": removed_blocks,
+    }
+    return cleaned, report
 
 
 def write_text(path: Path, text: str) -> None:
@@ -493,13 +551,16 @@ def run(args: argparse.Namespace) -> int:
             if output is None or raw_response is None:
                 continue
 
+            public_output, leak_report = clean_public_output(output)
             write_text(case_dir / "output.md", output)
+            write_text(case_dir / "output.clean.md", public_output)
+            write_text(case_dir / "reasoning_leak.json", json.dumps(leak_report, ensure_ascii=False, indent=2))
             write_text(case_dir / "raw_response.json", json.dumps(raw_response, ensure_ascii=False, indent=2))
             source_packet = extract_source_packet(raw_response)
             if source_packet:
                 write_text(case_dir / "source_packet.json", json.dumps(source_packet, ensure_ascii=False, indent=2))
                 write_text(case_dir / "source_packet.md", source_packet_markdown(source_packet))
-            write_text(case_dir / "auto_check.json", json.dumps(auto_check(output), ensure_ascii=False, indent=2))
+            write_text(case_dir / "auto_check.json", json.dumps(auto_check(public_output), ensure_ascii=False, indent=2))
             cases_run += 1
             if args.request_sleep:
                 time.sleep(args.request_sleep)

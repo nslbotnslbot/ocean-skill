@@ -18,6 +18,27 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/sounding-article-error-matrix-r2.md`: eight-article adversarial matrix with six error types per article.
 - `skills/ocean/evals/sounding-article-error-matrix-r3.md`: ten-article adversarial matrix focused on foundation-model and biomedical AI preprints.
 - `skills/ocean/evals/sounding-multimodel-r2-results.md`: coverage summary for the R2 multi-model execution, including the completed Gemini rerun after quota reset.
+- `skills/ocean/evals/sounding-multimodel-r3-results.md`: coverage summary for the R3 10-article x 6-error multi-model execution, including the completed Gemini rerun after the initial HTTP 429 stop.
+- `docs/module-map.md`: public module responsibility and validation-status map.
+- `skills/ocean/evals/full-ocean-workflow-protocol.md`: protocol for testing whether one paper, idea, proposal, review comment, or resource seed can move through the seven-module workflow.
+- `skills/ocean/evals/full-ocean-workflow-cases.md`: reusable full-workflow case seeds.
+- `skills/ocean/evals/research-design-workflow-r1-cases.json`: workflow-design case seeds for testing design gates, validation gates, research routes, and Harbor decision memory from uncertain biomedical research inputs.
+- `skills/ocean/evals/research-design-workflow-r1-results.md`: first Research Design Workflow R1 model run over six completed model lanes, with Kimi recorded as runtime blocked.
+- `skills/ocean/evals/domain-router-big-experiment-r1-cases.json`: offline routing case seeds for Domain Lens, Data/Tool Router, and Module Artifact Contract coverage.
+- `skills/ocean/evals/domain-router-big-experiment-r1-results.md`: deterministic 33-check result file for the Domain Router Big Experiment R1 structural run.
+- `skills/ocean/evals/domain-router-model-r1-cases.json`: model-eval case seeds for the central routing layer across seven modules.
+- `skills/ocean/evals/domain-router-model-r1-results.md`: M3-scored model run over the Domain Lens / Data Tool Router / Module Artifact Contract prompt.
+- `skills/ocean/scripts/check_ocean_contracts.py`: deterministic structural check for required references, module artifact terms, and domain-router case coverage.
+- `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
+- `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
+- `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
+- `skills/ocean/evals/ocean-module-m2-needs-review-triage.md`: manual triage guide for the 11 M2 `needs_review` rows.
+- `skills/ocean/evals/ocean-module-m3-rubric.md`: 20-point OCEAN-10 rubric for module/model comparison, including task framing, source traceability, negative space, and output consistency.
+- `skills/ocean/evals/ocean-module-m3-results.md`: first M3 screen over the existing 98 M1 all-module outputs.
+- `skills/ocean/evals/harbor-focused-m3-r1-results.md`: Harbor-focused M3 run over five project-memory/collaboration-boundary cases across seven model lanes.
+- `skills/ocean/evals/idea-scout-m3-r1-results.md`: Current/Compass M3 run for evidence-bounded idea generation from trends, reviewer pressure, and one-sentence idea seeds.
+- `skills/ocean/evals/reef-strict-eval-r1-results.md`: first Reef-focused strict eval over resource provenance, API/database boundaries, KG association, cell atlas planning, and clinical registry metadata cases.
+- `skills/ocean/evals/collaborative-workflow-r1-results.md`: cross-module workflow eval covering proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 
 ## What Is Not Included
 
@@ -27,6 +48,26 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - No large copyrighted paper excerpts.
 - No raw hidden-answer logs or contamination decoys from `outputs/`.
 
+## Module Coverage Boundary
+
+The strongest strict module-specific validation is still concentrated on **Sounding**. M1 adds initial all-module coverage testing for Current, Reef, Iceberg, Anchor, Compass, and Harbor. M2 adds a deterministic 12-point heuristic scoring screen over those 98 outputs. M3 introduces the 20-point OCEAN-10 rubric for future module/model comparison. These should be read as coverage and first-pass behavioral scoring, not final source-grounded content-quality judgment.
+
+Reef-R1 adds the first dedicated Reef strict eval. It focuses on resource provenance, API/database boundary control, KG association overclaim prevention, and clinical registry metadata boundaries.
+
+Collaborative Workflow R1 adds a broader cross-module workflow stress test. It checks whether OCEAN can preserve evidence boundaries while moving from proposal/source packet setup to resource mapping, claim downgrade, validation planning, idea planning, and Harbor records.
+
+Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decision memos, contribution boundaries, stale evidence reuse, stop-condition handoffs, public/private development memory, and MiniMax clean-output handling.
+
+Idea Scout M3 R1 tests whether Current and Compass can turn trend/reviewer-pressure/idea seeds into bounded research directions without claiming proven novelty, field dominance, or publication readiness.
+
+Research Design Workflow R1 tests whether OCEAN behaves as a research process workflow: source boundary first, resource routing second, claim calibration before validation planning, and decision memory at the end. The first completed scoring pass covered 42 usable outputs across six model lanes; Kimi was runtime-blocked and should be retried separately before content-quality comparison.
+
+Domain Router Big Experiment R1 is an offline structural experiment. It does not call external model APIs. It checks whether OCEAN's new central routing layer covers representative biomedical inputs across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, and stale Harbor reuse.
+
+Domain Router Model R1 is the first model-based run focused on the new central routing layer. It completed 49/49 usable outputs across seven enabled model/control lanes and surfaced one substantive data-router issue: an uninspected Open Targets endpoint/query invented in a Reef case.
+
+See `docs/module-map.md` for the current module responsibility and validation-status map.
+
 ## Sounding Model Comparison
 
 The current public comparison set is Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. The comparison is not a leaderboard for general intelligence. It asks whether each model can follow the same Sounding source-packet workflow, preserve evidence boundaries, avoid invented sources, and produce reusable handoff objects.
@@ -34,6 +75,8 @@ The current public comparison set is Qwen, DeepSeek, Kimi, MiniMax, Gemini, Clau
 Perplexity is listed as a retrieval control group rather than a normal model lane. It helps test whether retrieval-oriented outputs with citations/search results can be converted into OCEAN source packets, but retrieved sources still require quality checks and manual evidence review.
 
 The R2 and R3 article/error matrices are best read as a reusable case library. They preserve concrete article seeds, inspected-source boundaries, adversarial user-claim types, and expected safe behavior so future OCEAN runs can be checked for evidence discipline without reusing private manuscripts or hidden answer keys.
+
+As of 2026-06-30, R2 and R3 coverage records show Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and the Perplexity retrieval control all reached complete usable-output coverage for their respective matrices. Coverage means the model/API produced usable Sounding artifacts; it is not a final content-quality ranking.
 
 ## Evaluation Boundary
 
