@@ -1601,3 +1601,35 @@ Purpose: Test whether the new central routing layer is followed by enabled model
 ### Evidence Boundary / 证据边界
 
 This run used public-safe synthetic routing prompts only. It did not inspect real papers, private manuscripts, patient data, private peer-review reports, paid/key-protected resources, or live biomedical database/API calls. The M3 score is a deterministic behavioral screen, not scientific correctness validation or a final model leaderboard.
+
+## 2026-07-04 - Bioinformatics Resource and Software Router Smoke Check
+
+Purpose: Add and smoke-test a public-safe OCEAN routing layer for common bioinformatics, computational biology, omics, clinical-data, benchmark, and workflow/software resources.
+
+### Scope
+
+| Item | Status |
+|---|---|
+| `references/bioinformatics-resource-map.md` | added |
+| `references/source-packet-schema.md` | added |
+| `references/tool-adapter-contract.md` | added |
+| `scripts/ocean_source_router.py` | added |
+| `SKILL.md` entry points | updated |
+| `data-tool-router.md` bioinformatics software source class | updated |
+
+### Smoke Prompt
+
+`Use Martin Frith LAST for sequence alignment, then STAR, SAMtools, DESeq2, Seurat, Snakemake, TCGA survival, ClinVar variant interpretation, and ClinicalTrials.gov context`
+
+### Result
+
+| Route class | Matched examples | Status |
+|---|---|---|
+| cancer_genomics | TCGA, survival | candidate_route |
+| variant_genetics | ClinVar, variant | candidate_route |
+| clinical | ClinicalTrials.gov / trial language | candidate_route |
+| bioinformatics_software | LAST, STAR, SAMtools, DESeq2, Seurat, Snakemake | candidate_route |
+
+### Evidence Boundary / 证据边界
+
+This smoke check only tested offline candidate routing. It did not run LAST, STAR, SAMtools, DESeq2, Seurat, Snakemake, TCGA/GDC, ClinVar, or ClinicalTrials.gov queries. It does not prove source existence, command correctness, biological validity, clinical relevance, benchmark superiority, or reproducibility. It only confirms that OCEAN can route these resource/tool requests into a bounded Reef/Anchor-style evidence workflow without treating the route as proof.

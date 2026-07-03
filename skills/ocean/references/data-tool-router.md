@@ -49,6 +49,7 @@ The router is not a live-search guarantee. It defines what should be routed, wha
 | Drug/chemical resources | ChEMBL, PubChem, BindingDB, Open Targets, DrugCentral, PharmGKB | compound/target/bioactivity context, prioritization | efficacy, safety, clinical readiness |
 | Clinical registry/regulatory | ClinicalTrials.gov, WHO ICTRP, FDA label/openFDA, DailyMed | study existence/status, label context, regulatory metadata | efficacy from registry metadata; causality from spontaneous reports |
 | EHR/cohort/imaging/signal | MIMIC, PhysioNet, SEER, NHANES, All of Us, TCIA | cohort feasibility, phenotype/outcome planning, benchmark provenance | causal effect or deployment readiness |
+| Bioinformatics workflow/software | LAST, BLAST, minimap2, BWA, STAR, SAMtools, bcftools, GATK, Salmon, DESeq2, Seurat, Scanpy, QIIME2, AlphaFold, Snakemake, Nextflow, nf-core | tool identity, workflow routing, reproducibility requirements, software provenance | biological validity, mechanism, clinical utility, or benchmark superiority without inspected run details |
 | Local manuscript/project files | uploaded manuscript, figures, tables, code, notes | inspected source-bound evidence | anything missing from provided material |
 
 ## Route Matrix
@@ -59,6 +60,7 @@ The router is not a live-search guarantee. It defines what should be routed, wha
 | "Is this direction hot/new?" | Sounding for source set | Current for trend boundary | search coverage too narrow |
 | "Can this KG/database prove mechanism?" | Reef for provenance and evidence hierarchy | Iceberg/Anchor for downgrade and validation plan | resource provenance missing or KG evidence used as mechanism |
 | "Which database/API should we use?" | Domain Lens + Data Router | Reef biological/API references | private, paid, key-protected, or endpoint details unverified |
+| "Which bioinformatics tool/workflow should we use?" | Data Router + bioinformatics resource map | Reef/Anchor for provenance, run requirements, and reproducibility | version, command, inputs, database/index, parameters, or validation target are missing |
 | "Can this guide treatment?" | Domain Lens + Sounding/Reef | Iceberg/Anchor | no clinical design/outcome evidence inspected |
 | "What experiment should we do?" | Iceberg/Anchor if claim gaps exist | Compass for plan | evidence is too thin to choose beyond source collection |
 | "How do I join this collaboration?" | Compass for contribution route | Harbor for boundary record | contribution facts are missing |
@@ -90,6 +92,7 @@ Data/Tool Router Packet
 - Do not send patient data, private manuscripts, unpublished data, private peer review, credentials, or paid-account materials to external services without explicit user approval.
 - If an adapter needs a key, costs money, changes remote state, or accesses controlled data, ask before running it.
 - Treat failed/no-hit API calls as boundary information, not biological conclusions.
+- Treat software routing as a reproducibility plan, not as proof that a tool ran correctly or that its output supports a biological or clinical claim.
 
 ## Handoff Rules
 
