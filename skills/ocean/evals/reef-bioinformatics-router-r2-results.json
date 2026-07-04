@@ -1,0 +1,2712 @@
+[
+  {
+    "id": "R2-REEF-001",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software"
+    ],
+    "route_classes": [
+      "bioinformatics_software"
+    ],
+    "route_hits": [
+      "bioinformatics_software"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "last"
+    ],
+    "term_hits": [
+      "last"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "alignment output proves mechanism",
+    "routes": [
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "last"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-002",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software"
+    ],
+    "route_classes": [
+      "bioinformatics_software"
+    ],
+    "route_hits": [
+      "bioinformatics_software"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "deseq2",
+      "featurecounts",
+      "samtools",
+      "star"
+    ],
+    "term_hits": [
+      "deseq2",
+      "featurecounts",
+      "samtools",
+      "star"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "differential expression proves mechanism",
+    "routes": [
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "star",
+          "samtools",
+          "featurecounts",
+          "deseq2"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-003",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software",
+      "omics"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "omics"
+    ],
+    "route_hits": [
+      "bioinformatics_software",
+      "omics"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "scanpy",
+      "seurat"
+    ],
+    "term_hits": [
+      "scanpy",
+      "seurat"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "cluster label proves causal response",
+    "routes": [
+      {
+        "route_class": "omics",
+        "candidate_resources": [
+          "GEO",
+          "SRA",
+          "ENA",
+          "ArrayExpress",
+          "Expression Atlas",
+          "GTEx",
+          "ENCODE",
+          "Human Cell Atlas",
+          "Single Cell Portal",
+          "CELLxGENE",
+          "HuBMAP",
+          "CZ CELLxGENE"
+        ],
+        "matched_terms": [
+          "single-cell"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "accession",
+          "organism",
+          "assay/platform",
+          "sample table",
+          "condition labels",
+          "inspected metadata fields"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "seurat",
+          "scanpy"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-004",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "omics"
+    ],
+    "route_classes": [
+      "cancer_genomics",
+      "omics"
+    ],
+    "route_hits": [
+      "omics"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "cellxgene",
+      "hubmap",
+      "spatial"
+    ],
+    "term_hits": [
+      "cellxgene",
+      "hubmap",
+      "spatial"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "atlas similarity proves mechanism",
+    "routes": [
+      {
+        "route_class": "omics",
+        "candidate_resources": [
+          "GEO",
+          "SRA",
+          "ENA",
+          "ArrayExpress",
+          "Expression Atlas",
+          "GTEx",
+          "ENCODE",
+          "Human Cell Atlas",
+          "Single Cell Portal",
+          "CELLxGENE",
+          "HuBMAP",
+          "CZ CELLxGENE"
+        ],
+        "matched_terms": [
+          "transcriptomics",
+          "spatial",
+          "cellxgene",
+          "hubmap"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "accession",
+          "organism",
+          "assay/platform",
+          "sample table",
+          "condition labels",
+          "inspected metadata fields"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "cancer_genomics",
+        "candidate_resources": [
+          "TCGA/GDC",
+          "cBioPortal",
+          "ICGC",
+          "COSMIC"
+        ],
+        "matched_terms": [
+          "tumor"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "cohort",
+          "data type",
+          "endpoint definition",
+          "filters",
+          "version/access date",
+          "analysis boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-005",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "epigenomics_regulatory"
+    ],
+    "route_classes": [
+      "epigenomics_regulatory",
+      "omics"
+    ],
+    "route_hits": [
+      "epigenomics_regulatory"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "atac",
+      "encode",
+      "jaspar",
+      "motif"
+    ],
+    "term_hits": [
+      "atac",
+      "encode",
+      "jaspar",
+      "motif"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "motif/peak proves direct regulation",
+    "routes": [
+      {
+        "route_class": "omics",
+        "candidate_resources": [
+          "GEO",
+          "SRA",
+          "ENA",
+          "ArrayExpress",
+          "Expression Atlas",
+          "GTEx",
+          "ENCODE",
+          "Human Cell Atlas",
+          "Single Cell Portal",
+          "CELLxGENE",
+          "HuBMAP",
+          "CZ CELLxGENE"
+        ],
+        "matched_terms": [
+          "encode"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "accession",
+          "organism",
+          "assay/platform",
+          "sample table",
+          "condition labels",
+          "inspected metadata fields"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "epigenomics_regulatory",
+        "candidate_resources": [
+          "ENCODE",
+          "Cistrome DB",
+          "ReMap",
+          "JASPAR",
+          "UCSC Genome Browser",
+          "Roadmap Epigenomics"
+        ],
+        "matched_terms": [
+          "atac",
+          "atac-seq",
+          "motifs",
+          "enhancer",
+          "jaspar"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "assay type",
+          "genome build",
+          "peak/region set",
+          "control/input",
+          "motif database/version",
+          "inspected fields"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-006",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "clinical",
+      "variant_genetics"
+    ],
+    "route_classes": [
+      "cancer_genomics",
+      "clinical",
+      "variant_genetics"
+    ],
+    "route_hits": [
+      "clinical",
+      "variant_genetics"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "clinvar",
+      "gnomad",
+      "variant"
+    ],
+    "term_hits": [
+      "clinvar",
+      "gnomad",
+      "variant"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "variant annotation proves treatment actionability",
+    "routes": [
+      {
+        "route_class": "cancer_genomics",
+        "candidate_resources": [
+          "TCGA/GDC",
+          "cBioPortal",
+          "ICGC",
+          "COSMIC"
+        ],
+        "matched_terms": [
+          "cancer"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "cohort",
+          "data type",
+          "endpoint definition",
+          "filters",
+          "version/access date",
+          "analysis boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "variant_genetics",
+        "candidate_resources": [
+          "ClinVar",
+          "dbSNP",
+          "gnomAD",
+          "Ensembl/VEP"
+        ],
+        "matched_terms": [
+          "variant",
+          "clinvar",
+          "gnomad"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "variant ID",
+          "genome build/transcript",
+          "phenotype context",
+          "submitter/evidence status",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "clinically",
+          "actionable",
+          "therapy"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-007",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "cancer_genomics",
+      "pathway_gene_set"
+    ],
+    "route_classes": [
+      "cancer_genomics",
+      "clinical",
+      "pathway_gene_set"
+    ],
+    "route_hits": [
+      "cancer_genomics",
+      "pathway_gene_set"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "cbioportal",
+      "cosmic",
+      "survival",
+      "tcga"
+    ],
+    "term_hits": [
+      "cbioportal",
+      "cosmic",
+      "survival",
+      "tcga"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "retrospective association proves treatment guidance",
+    "routes": [
+      {
+        "route_class": "cancer_genomics",
+        "candidate_resources": [
+          "TCGA/GDC",
+          "cBioPortal",
+          "ICGC",
+          "COSMIC"
+        ],
+        "matched_terms": [
+          "tcga",
+          "gdc",
+          "cbioportal",
+          "cosmic",
+          "survival"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "cohort",
+          "data type",
+          "endpoint definition",
+          "filters",
+          "version/access date",
+          "analysis boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "pathway_gene_set",
+        "candidate_resources": [
+          "Gene Ontology",
+          "Reactome",
+          "KEGG",
+          "WikiPathways",
+          "MSigDB",
+          "GSEA resources"
+        ],
+        "matched_terms": [
+          "pathway",
+          "enrichment"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "treatment"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-008",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "drug_target"
+    ],
+    "route_classes": [
+      "drug_target"
+    ],
+    "route_hits": [
+      "drug_target"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "bindingdb",
+      "chembl",
+      "dgidb",
+      "pharmgkb",
+      "pubchem"
+    ],
+    "term_hits": [
+      "bindingdb",
+      "chembl",
+      "dgidb",
+      "pharmgkb",
+      "pubchem"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "bioactivity/target link proves efficacy",
+    "routes": [
+      {
+        "route_class": "drug_target",
+        "candidate_resources": [
+          "ChEMBL",
+          "OpenTargets",
+          "PubChem",
+          "BindingDB",
+          "DrugBank",
+          "DGIdb",
+          "PharmGKB",
+          "OpenFDA",
+          "UniProt"
+        ],
+        "matched_terms": [
+          "drug",
+          "target",
+          "chembl",
+          "pubchem",
+          "bindingdb",
+          "dgidb",
+          "pharmgkb"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "compound/target ID",
+          "assay type",
+          "endpoint",
+          "organism/cell line",
+          "concentration/unit",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-009",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "clinical"
+    ],
+    "route_classes": [
+      "clinical"
+    ],
+    "route_hits": [
+      "clinical"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "clinical",
+      "registry",
+      "trial"
+    ],
+    "term_hits": [
+      "clinical",
+      "registry",
+      "trial"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "registry existence proves clinical benefit",
+    "routes": [
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "clinical",
+          "clinicaltrials.gov",
+          "registry",
+          "therapy"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-010",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "drug_target",
+      "regulatory_safety"
+    ],
+    "route_classes": [
+      "drug_target",
+      "regulatory_safety"
+    ],
+    "route_hits": [
+      "drug_target",
+      "regulatory_safety"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "dailymed",
+      "faers",
+      "label",
+      "openfda"
+    ],
+    "term_hits": [
+      "dailymed",
+      "faers",
+      "label",
+      "openfda"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "spontaneous adverse events prove comparative safety",
+    "routes": [
+      {
+        "route_class": "drug_target",
+        "candidate_resources": [
+          "ChEMBL",
+          "OpenTargets",
+          "PubChem",
+          "BindingDB",
+          "DrugBank",
+          "DGIdb",
+          "PharmGKB",
+          "OpenFDA",
+          "UniProt"
+        ],
+        "matched_terms": [
+          "drugs"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "compound/target ID",
+          "assay type",
+          "endpoint",
+          "organism/cell line",
+          "concentration/unit",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "regulatory_safety",
+        "candidate_resources": [
+          "OpenFDA",
+          "DailyMed",
+          "FDA labels",
+          "EMA public assessment reports",
+          "FAERS with caveats"
+        ],
+        "matched_terms": [
+          "adverse event",
+          "faers",
+          "labels",
+          "dailymed",
+          "fda",
+          "safety"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "resource",
+          "drug/product ID",
+          "label/adverse-event field",
+          "date",
+          "reporting-bias caveat"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-011",
+    "score": 11,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "clinical",
+      "clinical_imaging_signal"
+    ],
+    "route_classes": [
+      "clinical",
+      "clinical_imaging_signal"
+    ],
+    "route_hits": [
+      "clinical",
+      "clinical_imaging_signal"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "ecg",
+      "imaging",
+      "physionet",
+      "tcia"
+    ],
+    "term_hits": [
+      "ecg",
+      "physionet",
+      "tcia"
+    ],
+    "term_misses": [
+      "imaging"
+    ],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "benchmark dataset proves deployment readiness",
+    "routes": [
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "diagnostic",
+          "deployment"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical_imaging_signal",
+        "candidate_resources": [
+          "TCIA",
+          "PhysioNet",
+          "MIMIC-CXR when lawfully provided",
+          "OpenNeuro",
+          "UK Biobank when authorized"
+        ],
+        "matched_terms": [
+          "images",
+          "ct",
+          "ecg",
+          "physionet",
+          "tcia"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "dataset ID",
+          "modality",
+          "label definition",
+          "split/provenance",
+          "privacy/access boundary",
+          "inspection date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-012",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software",
+      "microbiome"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "clinical",
+      "microbiome"
+    ],
+    "route_hits": [
+      "bioinformatics_software",
+      "microbiome"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "bracken",
+      "dada2",
+      "humann",
+      "kraken2",
+      "metaphlan",
+      "qiime2"
+    ],
+    "term_hits": [
+      "bracken",
+      "dada2",
+      "humann",
+      "kraken2",
+      "metaphlan",
+      "qiime2"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "taxonomic association proves treatment mechanism",
+    "routes": [
+      {
+        "route_class": "microbiome",
+        "candidate_resources": [
+          "MGnify",
+          "Qiita",
+          "Human Microbiome Project",
+          "SRA",
+          "ENA"
+        ],
+        "matched_terms": [
+          "microbiome"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "treatment"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "qiime2",
+          "dada2",
+          "metaphlan",
+          "humann",
+          "kraken2",
+          "bracken"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-013",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software",
+      "proteomics_metabolomics"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "proteomics_metabolomics"
+    ],
+    "route_hits": [
+      "bioinformatics_software",
+      "proteomics_metabolomics"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "dia-nn",
+      "fragpipe",
+      "maxquant",
+      "pride",
+      "skyline"
+    ],
+    "term_hits": [
+      "dia-nn",
+      "fragpipe",
+      "maxquant",
+      "pride",
+      "skyline"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "detected peptide proves clinical biomarker",
+    "routes": [
+      {
+        "route_class": "proteomics_metabolomics",
+        "candidate_resources": [
+          "PRIDE",
+          "ProteomeXchange",
+          "PeptideAtlas",
+          "MetaboLights",
+          "HMDB",
+          "MassIVE"
+        ],
+        "matched_terms": [
+          "pride"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "maxquant",
+          "fragpipe",
+          "dia-nn",
+          "skyline"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-014",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software",
+      "proteomics_metabolomics"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "proteomics_metabolomics"
+    ],
+    "route_hits": [
+      "bioinformatics_software",
+      "proteomics_metabolomics"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "hmdb",
+      "metabolights",
+      "ms-dial",
+      "mzmine",
+      "xcms"
+    ],
+    "term_hits": [
+      "hmdb",
+      "metabolights",
+      "ms-dial",
+      "mzmine",
+      "xcms"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "metabolite association proves causality",
+    "routes": [
+      {
+        "route_class": "proteomics_metabolomics",
+        "candidate_resources": [
+          "PRIDE",
+          "ProteomeXchange",
+          "PeptideAtlas",
+          "MetaboLights",
+          "HMDB",
+          "MassIVE"
+        ],
+        "matched_terms": [
+          "metabolite",
+          "metabolights",
+          "hmdb"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "ms-dial",
+          "xcms",
+          "mzmine"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-015",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software",
+      "protein_structure"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "protein_structure"
+    ],
+    "route_hits": [
+      "bioinformatics_software",
+      "protein_structure"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "alphafold",
+      "chimerax",
+      "colabfold",
+      "hmmer",
+      "pymol"
+    ],
+    "term_hits": [
+      "alphafold",
+      "chimerax",
+      "colabfold",
+      "hmmer",
+      "pymol"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "predicted structure proves binding",
+    "routes": [
+      {
+        "route_class": "protein_structure",
+        "candidate_resources": [
+          "UniProt",
+          "PDB",
+          "AlphaFold DB",
+          "InterPro",
+          "STRING"
+        ],
+        "matched_terms": [
+          "alphafold",
+          "binding"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "alphafold",
+          "colabfold",
+          "rosettafold",
+          "hh-suite",
+          "hmmer",
+          "pymol",
+          "chimerax"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-016",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software"
+    ],
+    "route_classes": [
+      "bioinformatics_software"
+    ],
+    "route_hits": [
+      "bioinformatics_software"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "fasttree",
+      "iq-tree",
+      "mafft",
+      "muscle",
+      "orthofinder",
+      "raxml"
+    ],
+    "term_hits": [
+      "fasttree",
+      "iq-tree",
+      "mafft",
+      "muscle",
+      "orthofinder",
+      "raxml"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "tree topology proves evolutionary conclusion",
+    "routes": [
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "mafft",
+          "muscle",
+          "clustal omega",
+          "iq-tree",
+          "raxml",
+          "fasttree",
+          "orthofinder"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-017",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "model_organism"
+    ],
+    "route_classes": [
+      "model_organism"
+    ],
+    "route_hits": [
+      "model_organism"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "flybase",
+      "mgi",
+      "tair",
+      "wormbase",
+      "zfin"
+    ],
+    "term_hits": [
+      "flybase",
+      "mgi",
+      "tair",
+      "wormbase",
+      "zfin"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "model organism annotation directly proves human mechanism",
+    "routes": [
+      {
+        "route_class": "model_organism",
+        "candidate_resources": [
+          "MGI",
+          "FlyBase",
+          "WormBase",
+          "SGD",
+          "ZFIN",
+          "TAIR"
+        ],
+        "matched_terms": [
+          "mgi",
+          "flybase",
+          "wormbase",
+          "zfin",
+          "tair"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-018",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "benchmark"
+    ],
+    "route_classes": [
+      "benchmark",
+      "clinical"
+    ],
+    "route_hits": [
+      "benchmark"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "dream challenge",
+      "kaggle",
+      "mlperf",
+      "openml"
+    ],
+    "term_hits": [
+      "dream challenge",
+      "kaggle",
+      "mlperf",
+      "openml"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "leaderboard proves clinical readiness",
+    "routes": [
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "clinical",
+          "readiness"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "benchmark",
+        "candidate_resources": [
+          "DREAM Challenges",
+          "task-specific benchmark repositories",
+          "OpenML where relevant",
+          "Kaggle only with caution",
+          "MLPerf where relevant"
+        ],
+        "matched_terms": [
+          "benchmark",
+          "leaderboard",
+          "challenge",
+          "dream challenge",
+          "mlperf",
+          "openml",
+          "kaggle"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-019",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "bioinformatics_software"
+    ],
+    "route_classes": [
+      "bioinformatics_software"
+    ],
+    "route_hits": [
+      "bioinformatics_software"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "conda",
+      "cromwell",
+      "docker",
+      "nextflow",
+      "nf-core",
+      "singularity",
+      "snakemake"
+    ],
+    "term_hits": [
+      "conda",
+      "cromwell",
+      "docker",
+      "nextflow",
+      "nf-core",
+      "singularity",
+      "snakemake"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "workflow existence proves reproducibility",
+    "routes": [
+      {
+        "route_class": "bioinformatics_software",
+        "candidate_resources": [
+          "FastQC",
+          "MultiQC",
+          "cutadapt",
+          "fastp",
+          "Trimmomatic",
+          "Trim Galore",
+          "Picard",
+          "Qualimap",
+          "BLAST",
+          "LAST",
+          "BWA",
+          "Bowtie2",
+          "HISAT2",
+          "STAR",
+          "minimap2",
+          "SAMtools",
+          "BEDTools",
+          "GATK",
+          "bcftools",
+          "FreeBayes",
+          "DeepVariant",
+          "Strelka2",
+          "Mutect2",
+          "Salmon",
+          "kallisto",
+          "RSEM",
+          "StringTie",
+          "featureCounts",
+          "DESeq2",
+          "edgeR",
+          "limma-voom",
+          "sleuth",
+          "Cell Ranger",
+          "STARsolo",
+          "Alevin-fry",
+          "Seurat",
+          "Scanpy",
+          "scVI",
+          "CellTypist",
+          "Azimuth",
+          "Space Ranger",
+          "Squidpy",
+          "Giotto",
+          "cell2location",
+          "Tangram",
+          "Stereoscope",
+          "stLearn",
+          "MACS2/MACS3",
+          "deepTools",
+          "HOMER",
+          "MEME/FIMO",
+          "Prokka",
+          "Bakta",
+          "BUSCO",
+          "QUAST",
+          "CheckM",
+          "eggNOG-mapper",
+          "InterProScan",
+          "QIIME2",
+          "DADA2",
+          "MetaPhlAn",
+          "HUMAnN",
+          "Kraken2",
+          "Bracken",
+          "MEGAHIT",
+          "SPAdes",
+          "Flye",
+          "Canu",
+          "Raven",
+          "Polypolish",
+          "Pilon",
+          "MaxQuant",
+          "FragPipe",
+          "DIA-NN",
+          "Skyline",
+          "MS-DIAL",
+          "XCMS",
+          "MZmine",
+          "AlphaFold",
+          "ColabFold",
+          "RoseTTAFold",
+          "HH-suite",
+          "HMMER",
+          "MODELLER",
+          "PyMOL",
+          "ChimeraX",
+          "MAFFT",
+          "MUSCLE",
+          "Clustal Omega",
+          "IQ-TREE",
+          "RAxML",
+          "FastTree",
+          "OrthoFinder",
+          "WGCNA",
+          "MOFA/MOFA+",
+          "mixOmics/DIABLO",
+          "nnU-Net",
+          "MONAI",
+          "TorchIO",
+          "SimpleITK",
+          "ITK-SNAP",
+          "3D Slicer",
+          "MNE",
+          "Snakemake",
+          "Nextflow",
+          "CWL",
+          "WDL/Cromwell",
+          "Galaxy",
+          "Docker",
+          "Singularity/Apptainer",
+          "Conda",
+          "nf-core"
+        ],
+        "matched_terms": [
+          "snakemake",
+          "nextflow",
+          "cromwell",
+          "wdl",
+          "docker",
+          "singularity",
+          "apptainer",
+          "conda",
+          "nf-core"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "tool name",
+          "version",
+          "command line",
+          "parameters",
+          "reference/index",
+          "input files",
+          "output files",
+          "logs",
+          "environment",
+          "date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-020",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "clinical",
+      "literature"
+    ],
+    "route_classes": [
+      "clinical",
+      "literature"
+    ],
+    "route_hits": [
+      "clinical",
+      "literature"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "paper"
+    ],
+    "term_hits": [
+      "paper"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "title-only source proves efficacy",
+    "routes": [
+      {
+        "route_class": "literature",
+        "candidate_resources": [
+          "PubMed",
+          "EuropePMC",
+          "OpenAlex",
+          "CrossRef",
+          "arXiv",
+          "bioRxiv",
+          "medRxiv"
+        ],
+        "matched_terms": [
+          "paper"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "query",
+          "date",
+          "source",
+          "PMID/DOI/preprint ID",
+          "inspected title/abstract/full-text boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "clinical",
+          "treatment"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  },
+  {
+    "id": "R2-REEF-021",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_routes": [
+      "clinical"
+    ],
+    "route_classes": [
+      "artifact",
+      "clinical",
+      "clinical_imaging_signal"
+    ],
+    "route_hits": [
+      "clinical"
+    ],
+    "route_misses": [],
+    "must_terms": [
+      "cohort",
+      "endpoint",
+      "mimic"
+    ],
+    "term_hits": [
+      "cohort",
+      "endpoint",
+      "mimic"
+    ],
+    "term_misses": [],
+    "all_candidate": true,
+    "has_packet_fields": true,
+    "unsafe_claim": "controlled-access cohort mention proves result",
+    "routes": [
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "cohort",
+          "mimic",
+          "endpoint"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical_imaging_signal",
+        "candidate_resources": [
+          "TCIA",
+          "PhysioNet",
+          "MIMIC-CXR when lawfully provided",
+          "OpenNeuro",
+          "UK Biobank when authorized"
+        ],
+        "matched_terms": [
+          "uk biobank"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "dataset ID",
+          "modality",
+          "label definition",
+          "split/provenance",
+          "privacy/access boundary",
+          "inspection date"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "artifact",
+        "candidate_resources": [
+          "local files",
+          "notebooks",
+          "scripts",
+          "figures",
+          "tables",
+          "logs"
+        ],
+        "matched_terms": [
+          "code",
+          "table"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [],
+        "limit": "Route suggestion only; no query has been executed."
+      }
+    ]
+  }
+]

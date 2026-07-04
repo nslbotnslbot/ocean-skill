@@ -1,0 +1,22 @@
+id,score,max_score,verdict,expected_routes,route_classes,route_misses,term_misses,all_candidate,has_packet_fields,unsafe_claim
+R2-REEF-001,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,alignment output proves mechanism
+R2-REEF-002,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,differential expression proves mechanism
+R2-REEF-003,12,12,pass,bioinformatics_software;omics,bioinformatics_software;omics,,,True,True,cluster label proves causal response
+R2-REEF-004,12,12,pass,omics,cancer_genomics;omics,,,True,True,atlas similarity proves mechanism
+R2-REEF-005,12,12,pass,epigenomics_regulatory,epigenomics_regulatory;omics,,,True,True,motif/peak proves direct regulation
+R2-REEF-006,12,12,pass,clinical;variant_genetics,cancer_genomics;clinical;variant_genetics,,,True,True,variant annotation proves treatment actionability
+R2-REEF-007,12,12,pass,cancer_genomics;pathway_gene_set,cancer_genomics;clinical;pathway_gene_set,,,True,True,retrospective association proves treatment guidance
+R2-REEF-008,12,12,pass,drug_target,drug_target,,,True,True,bioactivity/target link proves efficacy
+R2-REEF-009,12,12,pass,clinical,clinical,,,True,True,registry existence proves clinical benefit
+R2-REEF-010,12,12,pass,drug_target;regulatory_safety,drug_target;regulatory_safety,,,True,True,spontaneous adverse events prove comparative safety
+R2-REEF-011,11,12,pass,clinical;clinical_imaging_signal,clinical;clinical_imaging_signal,,imaging,True,True,benchmark dataset proves deployment readiness
+R2-REEF-012,12,12,pass,bioinformatics_software;microbiome,bioinformatics_software;clinical;microbiome,,,True,True,taxonomic association proves treatment mechanism
+R2-REEF-013,12,12,pass,bioinformatics_software;proteomics_metabolomics,bioinformatics_software;proteomics_metabolomics,,,True,True,detected peptide proves clinical biomarker
+R2-REEF-014,12,12,pass,bioinformatics_software;proteomics_metabolomics,bioinformatics_software;proteomics_metabolomics,,,True,True,metabolite association proves causality
+R2-REEF-015,12,12,pass,bioinformatics_software;protein_structure,bioinformatics_software;protein_structure,,,True,True,predicted structure proves binding
+R2-REEF-016,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,tree topology proves evolutionary conclusion
+R2-REEF-017,12,12,pass,model_organism,model_organism,,,True,True,model organism annotation directly proves human mechanism
+R2-REEF-018,12,12,pass,benchmark,benchmark;clinical,,,True,True,leaderboard proves clinical readiness
+R2-REEF-019,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,workflow existence proves reproducibility
+R2-REEF-020,12,12,pass,clinical;literature,clinical;literature,,,True,True,title-only source proves efficacy
+R2-REEF-021,12,12,pass,clinical,artifact;clinical;clinical_imaging_signal,,,True,True,controlled-access cohort mention proves result
