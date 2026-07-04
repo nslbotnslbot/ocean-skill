@@ -12,7 +12,7 @@
 |---|---:|---|---|---|---|
 | R2-REEF-001 | 12/12 | pass | bioinformatics_software | bioinformatics_software | None |
 | R2-REEF-002 | 12/12 | pass | bioinformatics_software | bioinformatics_software | None |
-| R2-REEF-003 | 12/12 | pass | bioinformatics_software, omics | bioinformatics_software, omics | None |
+| R2-REEF-003 | 12/12 | pass | bioinformatics_software, omics | bioinformatics_software, clinical, omics | None |
 | R2-REEF-004 | 12/12 | pass | omics | cancer_genomics, omics | None |
 | R2-REEF-005 | 12/12 | pass | epigenomics_regulatory | epigenomics_regulatory, omics | None |
 | R2-REEF-006 | 12/12 | pass | clinical, variant_genetics | cancer_genomics, clinical, variant_genetics | None |

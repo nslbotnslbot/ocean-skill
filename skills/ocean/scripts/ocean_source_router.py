@@ -60,7 +60,7 @@ ROUTE_CLASSES = {
         "resources": ["ChEMBL", "OpenTargets", "PubChem", "BindingDB", "DrugBank", "DGIdb", "PharmGKB", "OpenFDA", "UniProt"],
     },
     "clinical": {
-        "keywords": ["clinical", "clinically", "trial", "trials", "clinicaltrials.gov", "registry", "patient", "cohort", "mimic", "eicu", "endpoint", "calibration", "diagnostic", "diagnosis", "deployment", "readiness", "clinical utility", "actionable", "therapy", "treatment"],
+        "keywords": ["clinical", "clinically", "trial", "trials", "clinicaltrials.gov", "registry", "patient", "cohort", "mimic", "eicu", "endpoint", "calibration", "diagnostic", "diagnosis", "deployment", "readiness", "clinical utility", "actionable", "therapy", "treatment", "immunotherapy"],
         "resources": ["ClinicalTrials.gov", "WHO ICTRP", "EU Clinical Trials Register", "OpenFDA", "clinical registries", "MIMIC/eICU when lawfully provided"],
     },
     "clinical_imaging_signal": {

@@ -1737,3 +1737,51 @@ Regression checks after R3:
 ### Evidence Boundary / 证据边界
 
 This run was deterministic and offline. It did not inspect real FASTQ/BAM/VCF/count matrices, spatial objects, imaging datasets, workflow logs, external databases, private data, manuscripts, or patient records. It did not execute FastQC, MultiQC, LAST, STAR, DESeq2, Seurat, Space Ranger, WGCNA, nnU-Net, Snakemake, Nextflow, or any other software. It only tests routing coverage, minimum packet requirements, and refusal to treat tool names or workflow existence as scientific evidence.
+
+## 2026-07-04 - OCEAN E2E module router R1
+
+Purpose: Test whether complete biomedical research scenarios can trigger the expected OCEAN module chain, route classes, required artifacts, and stop conditions after the Reef resource/software layer was merged into `main`.
+
+Implemented:
+
+- Added `scripts/run_ocean_e2e_eval.py`.
+- Added `evals/ocean-e2e-module-router-r1-cases.json`.
+- Added generated artifacts:
+  - `evals/ocean-e2e-module-router-r1-results.md`
+  - `evals/ocean-e2e-module-router-r1-results.json`
+  - `evals/ocean-e2e-module-router-r1-scorecard.csv`
+  - `evals/ocean-e2e-module-router-r1-summary.json`
+- Updated `manifest.yaml` to expose the E2E module eval.
+
+### E2E R1 results
+
+| Item | Result |
+|---|---:|
+| Cases | 7 |
+| Pass | 7 |
+| Needs review | 0 |
+| Mean score | 12.00/12 |
+
+Case families:
+
+- Spatial transcriptomics and immunotherapy mechanism planning.
+- LAST/pathogen-contig virulence manuscript audit.
+- ICU delirium clinical prediction and deployment readiness.
+- Probiotic fermentation microbiome/metabolomics mechanism claim.
+- ClinVar/gnomAD/VEP variant-to-drug actionability idea.
+- Radiology AI with TCIA/MIMIC-CXR and MONAI/nnU-Net tooling.
+- Multi-omics biomarker planning with WGCNA/MOFA/mixOmics.
+
+Regression checks after E2E R1:
+
+| Check | Result |
+|---|---:|
+| OCEAN E2E module router R1 | 7/7 pass |
+| Reef router R2 | 21/21 pass |
+| Reef router R3 | 12/12 pass |
+| Source-packet boundary R2 | 6/6 pass |
+| Python compile | pass |
+
+### Evidence Boundary / 证据边界
+
+This run was deterministic and offline. It did not inspect real papers, manuscripts, private data, patient records, public APIs, external databases, model outputs, or bioinformatics software runs. Passing means OCEAN produced the expected module chain, route classes, artifact plan, and stop conditions. It does not mean the scientific claims are true.

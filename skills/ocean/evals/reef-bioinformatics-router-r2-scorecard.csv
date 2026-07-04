@@ -1,7 +1,7 @@
 id,score,max_score,verdict,expected_routes,route_classes,route_misses,term_misses,all_candidate,has_packet_fields,unsafe_claim
 R2-REEF-001,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,alignment output proves mechanism
 R2-REEF-002,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,differential expression proves mechanism
-R2-REEF-003,12,12,pass,bioinformatics_software;omics,bioinformatics_software;omics,,,True,True,cluster label proves causal response
+R2-REEF-003,12,12,pass,bioinformatics_software;omics,bioinformatics_software;clinical;omics,,,True,True,cluster label proves causal response
 R2-REEF-004,12,12,pass,omics,cancer_genomics;omics,,,True,True,atlas similarity proves mechanism
 R2-REEF-005,12,12,pass,epigenomics_regulatory,epigenomics_regulatory;omics,,,True,True,motif/peak proves direct regulation
 R2-REEF-006,12,12,pass,clinical;variant_genetics,cancer_genomics;clinical;variant_genetics,,,True,True,variant annotation proves treatment actionability

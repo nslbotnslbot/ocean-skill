@@ -343,6 +343,7 @@
     ],
     "route_classes": [
       "bioinformatics_software",
+      "clinical",
       "omics"
     ],
     "route_hits": [
@@ -390,6 +391,29 @@
           "sample table",
           "condition labels",
           "inspected metadata fields"
+        ],
+        "limit": "Route suggestion only; no query has been executed."
+      },
+      {
+        "route_class": "clinical",
+        "candidate_resources": [
+          "ClinicalTrials.gov",
+          "WHO ICTRP",
+          "EU Clinical Trials Register",
+          "OpenFDA",
+          "clinical registries",
+          "MIMIC/eICU when lawfully provided"
+        ],
+        "matched_terms": [
+          "immunotherapy"
+        ],
+        "evidence_status": "candidate_route",
+        "minimum_packet_fields": [
+          "registry/cohort ID",
+          "status/date",
+          "endpoint",
+          "population",
+          "access/ethics boundary"
         ],
         "limit": "Route suggestion only; no query has been executed."
       },
