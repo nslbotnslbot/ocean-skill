@@ -240,6 +240,8 @@ Reef 现在包含 biological/clinical data-source routing catalog，覆盖基因
 
 Bioinformatics Real-Tool Smoke R1 检查 115 个 scaffolded bioinformatics tools 在当前本地执行环境中是否真的可调用。这轮本地运行中，3 个工具/adapter 达到 smoke 级执行，112 个在当前 PATH、Python 或 R 环境中不可用。这个结果是 availability check，不是 end-to-end biological analysis。
 
+每个 bioinformatics tool 文件夹现在也包含一个 science-skills 风格的 `references/tool_usage.md` guide。它们写清 use/avoid rules、真实本地运行前必须检查的证据、stop conditions 和 OCEAN handoff 路径，但不声称外部工具已经安装。
+
 Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 proposal、trend、resource/API、claim downgrade、validation、reviewer-pressure-to-idea、benchmark fairness 和 Harbor handoff cases。
 
 仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。

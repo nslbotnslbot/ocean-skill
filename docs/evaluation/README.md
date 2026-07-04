@@ -62,6 +62,8 @@ Seven-Module Coordination R1 adds a deterministic full-chain structural check ov
 
 Bioinformatics Real-Tool Smoke R1 checks whether the 115 scaffolded bioinformatics tools are actually callable in the current local environment. It is an availability/version/import smoke test, not an end-to-end biological analysis.
 
+Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
+
 Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decision memos, contribution boundaries, stale evidence reuse, stop-condition handoffs, public/private development memory, and MiniMax clean-output handling.
 
 Idea Scout M3 R1 tests whether Current and Compass can turn trend/reviewer-pressure/idea seeds into bounded research directions without claiming proven novelty, field dominance, or publication readiness.

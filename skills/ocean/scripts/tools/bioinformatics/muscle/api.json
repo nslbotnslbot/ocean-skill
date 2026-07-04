@@ -50,5 +50,12 @@
       "publication readiness",
       "reproducibility without rerun/log/environment checks"
     ]
+  },
+  "usage_reference": "references/tool_usage.md",
+  "execution_contract": {
+    "availability_smoke_required_before_execution_claim": true,
+    "real_run_record_required_before_evidence_packet": true,
+    "install_or_container_plan_required_if_unavailable": true,
+    "license_or_terms_check_required_when_applicable": true
   }
 }

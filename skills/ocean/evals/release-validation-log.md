@@ -2201,3 +2201,32 @@ Executed smoke entries:
 ### Evidence Boundary / 证据边界
 
 This is a local availability/version/import smoke eval only. It does not install missing tools, download reference databases, build indices, run omics workflows, process raw biological/clinical data, benchmark methods, or validate scientific claims. The 112 unavailable tools are environment/install gaps in this machine, not scientific failures of those tools.
+
+## 2026-07-05 - Bioinformatics science-skills-style usage guide R1
+
+Purpose: Make OCEAN's 115 bioinformatics tool folders more like science-skills-style tool wrappers without turning them into 115 nested Codex skills or pretending the external tools are installed.
+
+Implemented:
+
+- Added `references/tool_usage.md` to every bioinformatics tool folder.
+- Added family-aware use/avoid rules, required local execution evidence, OCEAN packet workflow, stop conditions, and evidence boundaries.
+- Updated `api.json` contracts with `usage_reference` and `execution_contract`.
+- Updated per-tool README files to point to the usage guide.
+- Updated the scaffold generator so future tools receive the same structure.
+- Updated the scaffold eval so usage guide completeness is now validated.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Tool usage guides present | 115/115 |
+| Bioinformatics scaffold/API/wrapper/usage eval | 115/115 pass |
+| Generator/eval compile | pass |
+
+### Error Notes
+
+The official `quick_validate.py` check remains blocked in this local environment because the Python interpreter used by the validator cannot import `yaml` / PyYAML. This is the same packaging-environment blocker seen earlier and is not caused by the bioinformatics usage-guide changes.
+
+### Evidence Boundary / 证据边界
+
+These guides define tool-use instructions and evidence boundaries only. They do not install, execute, benchmark, validate, or endorse the external bioinformatics software. A tool output still requires inspected version, command, parameters, reference/index, inputs, outputs, logs/QC, environment, and date before it can become an OCEAN source packet.

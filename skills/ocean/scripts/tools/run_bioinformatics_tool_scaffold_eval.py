@@ -54,7 +54,18 @@ REQUIRED_API_FIELDS = {
     "commands",
     "required_input_fields",
     "output_contract",
+    "usage_reference",
+    "execution_contract",
     "evidence_boundary",
+}
+
+REQUIRED_USAGE_MARKERS = {
+    "## Use When",
+    "## Do Not Use When",
+    "## Before Running Or Trusting Output",
+    "## OCEAN Packet Workflow",
+    "## Stop Conditions",
+    "## Evidence Boundary",
 }
 
 
@@ -84,12 +95,15 @@ def main(argv: list[str]) -> int:
         example = folder / "examples" / "run-record.example.json"
         api = folder / "api.json"
         wrapper = folder / "scripts" / "create_source_packet.py"
+        usage = folder / "references" / "tool_usage.md"
         data = read_json(tool_json) if tool_json.exists() else {}
         example_data = read_json(example) if example.exists() else {}
         api_data = read_json(api) if api.exists() else {}
+        usage_text = usage.read_text(encoding="utf-8") if usage.exists() else ""
         missing_fields = sorted(REQUIRED_FIELDS - set(data))
         missing_example_fields = sorted(REQUIRED_EXAMPLE_FIELDS - set(example_data))
         missing_api_fields = sorted(REQUIRED_API_FIELDS - set(api_data))
+        missing_usage_markers = sorted(marker for marker in REQUIRED_USAGE_MARKERS if marker not in usage_text)
         verdict = (
             "pass"
             if folder.exists()
@@ -98,9 +112,11 @@ def main(argv: list[str]) -> int:
             and example.exists()
             and api.exists()
             and wrapper.exists()
+            and usage.exists()
             and not missing_fields
             and not missing_example_fields
             and not missing_api_fields
+            and not missing_usage_markers
             else "needs_review"
         )
         rows.append(
@@ -113,9 +129,11 @@ def main(argv: list[str]) -> int:
                 "example_exists": example.exists(),
                 "api_exists": api.exists(),
                 "python_wrapper_exists": wrapper.exists(),
+                "usage_reference_exists": usage.exists(),
                 "missing_fields": missing_fields,
                 "missing_example_fields": missing_example_fields,
                 "missing_api_fields": missing_api_fields,
+                "missing_usage_markers": missing_usage_markers,
                 "shared_helper": data.get("shared_helper"),
                 "verdict": verdict,
             }
@@ -139,16 +157,16 @@ def main(argv: list[str]) -> int:
                 f"- Pass: {summary['pass']}",
                 f"- Needs review: {summary['needs_review']}",
                 "",
-                "| Tool | Folder | tool.json | README | Example | API | Python | Verdict |",
-                "|---|---|---|---|---|---|---|---|",
+                "| Tool | Folder | tool.json | README | Example | API | Python | Usage guide | Verdict |",
+                "|---|---|---|---|---|---|---|---|---|",
                 *[
-                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['api_exists']} | {row['python_wrapper_exists']} | {row['verdict']} |"
+                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['api_exists']} | {row['python_wrapper_exists']} | {row['usage_reference_exists']} | {row['verdict']} |"
                     for row in rows
                 ],
                 "",
                 "## Evidence Boundary / 证据边界",
                 "",
-                "This eval checks scaffold, example-record, API-contract, and Python-wrapper completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
+                "This eval checks scaffold, example-record, API-contract, Python-wrapper, and tool-usage reference completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
             ]
         )
         + "\n",

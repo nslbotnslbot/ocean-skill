@@ -240,6 +240,8 @@ Reef now includes a biological/clinical data-source routing catalog for genes, p
 
 Bioinformatics Real-Tool Smoke R1 checks all 115 scaffolded bioinformatics tools against the current local execution environment. In this local run, 3 tools/adapters executed at smoke level and 112 were not available on PATH, Python, or R in the current environment. This is an availability check, not an end-to-end biological analysis.
 
+Each bioinformatics tool folder now also includes a science-skills-style `references/tool_usage.md` guide. These guides define use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff paths without claiming the external tool is installed.
+
 Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.

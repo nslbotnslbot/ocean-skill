@@ -8,4 +8,6 @@ Each tool folder includes `examples/run-record.example.json`, a template for rec
 
 Each tool folder also includes `api.json` and `scripts/create_source_packet.py`. These define a stable local wrapper contract for turning inspected run metadata into source packets; they do not install or execute external tools.
 
+Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff guidance.
+
 Tool folders: 115
