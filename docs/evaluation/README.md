@@ -40,6 +40,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/idea-scout-m3-r1-results.md`: Current/Compass M3 run for evidence-bounded idea generation from trends, reviewer pressure, and one-sentence idea seeds.
 - `skills/ocean/evals/reef-strict-eval-r1-results.md`: first Reef-focused strict eval over resource provenance, API/database boundaries, KG association, cell atlas planning, and clinical registry metadata cases.
 - `skills/ocean/evals/collaborative-workflow-r1-results.md`: cross-module workflow eval covering proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
+- `skills/ocean/evals/bioinformatics-real-tool-smoke-r1-results.md`: local availability/version smoke check for all 115 bioinformatics tool scaffolds in the current execution environment.
 
 ## What Is Not Included
 
@@ -58,6 +59,8 @@ Reef-R1 adds the first dedicated Reef strict eval. It focuses on resource proven
 Collaborative Workflow R1 adds a broader cross-module workflow stress test. It checks whether OCEAN can preserve evidence boundaries while moving from proposal/source packet setup to resource mapping, claim downgrade, validation planning, idea planning, and Harbor records.
 
 Seven-Module Coordination R1 adds a deterministic full-chain structural check over paper-source-packet, proposal, and one-sentence-idea seeds. It tests whether the seven modules remain connected through concrete artifacts and Handoff Tickets before any model-based content evaluation.
+
+Bioinformatics Real-Tool Smoke R1 checks whether the 115 scaffolded bioinformatics tools are actually callable in the current local environment. It is an availability/version/import smoke test, not an end-to-end biological analysis.
 
 Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decision memos, contribution boundaries, stale evidence reuse, stop-condition handoffs, public/private development memory, and MiniMax clean-output handling.
 

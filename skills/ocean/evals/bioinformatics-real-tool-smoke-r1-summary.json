@@ -1,0 +1,8 @@
+{
+  "run_date": "2026-07-05",
+  "tools_checked": 115,
+  "executed": 3,
+  "found_but_probe_failed": 0,
+  "not_available_current_environment": 112,
+  "boundary": "Local smoke execution only; not end-to-end analysis."
+}

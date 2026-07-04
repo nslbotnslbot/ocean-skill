@@ -1,0 +1,2026 @@
+[
+  {
+    "slug": "alevin_fry",
+    "name": "Alevin-fry",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "alphafold",
+    "name": "AlphaFold",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "alphafold_db",
+    "name": "AlphaFold DB",
+    "family": "structure_modeling",
+    "maturity": "L2/L3 source-packet adapter",
+    "verdict": "executed",
+    "best_interface": "ocean_local_adapter",
+    "attempts": [
+      {
+        "interface": "ocean_local_adapter",
+        "status": "executed",
+        "entrypoint": "skills/ocean/scripts/tools/bioinformatics/alphafold_db/run_eval.py",
+        "command": [
+          "/Library/Developer/CommandLineTools/usr/bin/python3",
+          "skills/ocean/scripts/tools/bioinformatics/alphafold_db/run_eval.py",
+          "--skill-dir",
+          "skills/ocean",
+          "--outdir",
+          "skills/ocean/evals/bioinformatics-real-tool-smoke-r1-adapter-artifacts"
+        ],
+        "returncode": 0,
+        "output_excerpt": "{\n  \"created_at\": \"2026-07-05T00:03:43\",\n  \"resource\": \"AlphaFold DB\",\n  \"uniprot\": \"PTEST1\",\n  \"inspected_files\": [\n    \"skills/ocean/evals/afdb-adapter-r1-mock-metadata.json\",\n    \"skills/ocean/evals/afdb-adapter-r1-mock-pae.json\"\n  ],\n  \"plddt_summary\": {\n    \"available\": true,\n    \"residue_count\": 10,\n    \"mean_plddt\": 72.8,\n    \"min_plddt\": 35.0,\n    \"max_plddt\": 95.0,\n    \"fraction_below_50\": 0.3,\n    \"fraction_above_90\": 0.3,\n    \"conclusion\": \"Mixed confidence; restrict claims to confident regions.\"\n  },\n  \"pae_summary\": {\n    \"available\": true,\n    \"matrix_size\": 5,\n    \"mean_pae\": 9.72,\n    \"fraction_pairs_above_15\": 0.48,\n    \"conclusion\": \"High inter-residue uncertainty; avoid rigid whole-protein conclusions.\"\n  },\n  \"cannot_support\": [\n    \"binding proof\",\n    \"experimental function\",\n    \"disease mechanism\",\n    \"drug efficacy\",\n    \"clinical relevance\"\n  ]\n}\n{\n  \"packet_id\": \"osp-afdb-PTEST1-2026-07-05\",\n  \"created_at\": \"2026-07-05T00:03:43\",\n  \"source_type\": \"predicted_structure_database\",\n  \"resource\": \"AlphaFold DB\",\n  \"query\": \"AlphaFold DB predicted structure analysis for PTEST1\",\n  \"filters\": {\n    \"adapter\": \"scripts/tools/bioinformatics/alphafold_db/source_packet.py\"\n  },\n  \"date_accessed\": \"2026-07-05\",\n  \"identifiers\": [\n    \"PTEST1\"\n  ],\n  \"inspected_content\": [\n    \"skills/ocean/evals/afdb-adapter-r1-mock-metadata.json\",\n    \"skills/ocean/evals/afdb-adapter-r1-mock-pae.json\",\n    \"pLDDT summary\",\n    \"PAE summary\"\n  ],\n  \"supports_claims\": [\n    \"Mixed confidence; restrict claims to confident regions.\",\n    \"High inter-residue uncertainty; avoid rigid whole-protein conclusions.\"\n  ],\n  \"cannot_support\": [\n    \"binding proof\",\n    \"experimental function\",\n    \"disease mechanism\",\n    \"drug efficacy\",\n    \"clinical relevance\"\n  ],\n  \"license_or_terms_note\": \"Check AlphaFold DB/EMBL-EBI terms before reuse.\",\n  \"boundary_status\": \"packet_evidence\",\n  \"handoff\": \"Iceberg\"\n}\n{\n  \"cases\": 1,\n  \"pass\": 1,\n  \"needs_review\": 0,\n  \"checks\": {\n    \"an"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "azimuth",
+    "name": "Azimuth",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "Azimuth",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('Azimuth')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"Azimuth\") : \n  there is no package called ‘Azimuth’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "bakta",
+    "name": "Bakta",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "bcftools",
+    "name": "bcftools",
+    "family": "alignment_file_operations",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "bedtools",
+    "name": "BEDTools",
+    "family": "alignment_file_operations",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "blast",
+    "name": "BLAST",
+    "family": "sequence_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "bowtie2",
+    "name": "Bowtie2",
+    "family": "sequence_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "bracken",
+    "name": "Bracken",
+    "family": "microbiome_metagenomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "busco",
+    "name": "BUSCO",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "bwa",
+    "name": "BWA",
+    "family": "sequence_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "canu",
+    "name": "Canu",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "cell2location",
+    "name": "cell2location",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "cell2location",
+        "output_excerpt": "No module named 'cell2location'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "cell_ranger",
+    "name": "Cell Ranger",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "celltypist",
+    "name": "CellTypist",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "celltypist",
+        "output_excerpt": "No module named 'celltypist'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "checkm",
+    "name": "CheckM",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "chimerax",
+    "name": "ChimeraX",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "clustal_omega",
+    "name": "Clustal Omega",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "colabfold",
+    "name": "ColabFold",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "conda",
+    "name": "Conda",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "cutadapt",
+    "name": "cutadapt",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "cwl",
+    "name": "CWL",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "dada2",
+    "name": "DADA2",
+    "family": "microbiome_metagenomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "dada2",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('dada2')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"dada2\") : \n  there is no package called ‘dada2’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "deeptools",
+    "name": "deepTools",
+    "family": "epigenomics_peak_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "deeptools",
+        "output_excerpt": "No module named 'deeptools'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "deepvariant",
+    "name": "DeepVariant",
+    "family": "variant_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "deseq2",
+    "name": "DESeq2",
+    "family": "differential_expression",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "executed",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "executed",
+        "entrypoint": "DESeq2",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('DESeq2')"
+        ],
+        "returncode": 0,
+        "output_excerpt": "1.50.2"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "dia_nn",
+    "name": "DIA-NN",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "diablo",
+    "name": "DIABLO",
+    "family": "multi_omics_integration",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "mixomics",
+        "output_excerpt": "No module named 'mixomics'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "docker",
+    "name": "Docker",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "edger",
+    "name": "edgeR",
+    "family": "differential_expression",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "edgeR",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('edgeR')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"edgeR\") : \n  there is no package called ‘edgeR’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "eggnog_mapper",
+    "name": "eggNOG-mapper",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "fastp",
+    "name": "fastp",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "fastqc",
+    "name": "FastQC",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "fasttree",
+    "name": "FastTree",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "featurecounts",
+    "name": "featureCounts",
+    "family": "rna_seq_quantification",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "fimo",
+    "name": "FIMO",
+    "family": "epigenomics_peak_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "flye",
+    "name": "Flye",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "fragpipe",
+    "name": "FragPipe",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "freebayes",
+    "name": "FreeBayes",
+    "family": "variant_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "galaxy",
+    "name": "Galaxy",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "gatk",
+    "name": "GATK",
+    "family": "variant_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "giotto",
+    "name": "Giotto",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "giotto",
+        "output_excerpt": "No module named 'giotto'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "hh_suite",
+    "name": "HH-suite",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "hisat2",
+    "name": "HISAT2",
+    "family": "spliced_rna_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "hmmer",
+    "name": "HMMER",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "homer",
+    "name": "HOMER",
+    "family": "epigenomics_peak_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "htslib",
+    "name": "HTSlib",
+    "family": "alignment_file_operations",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "humann",
+    "name": "HUMAnN",
+    "family": "microbiome_metagenomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "interproscan",
+    "name": "InterProScan",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "iq_tree",
+    "name": "IQ-TREE",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "itk_snap",
+    "name": "ITK-SNAP",
+    "family": "imaging_signal_ml",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "kallisto",
+    "name": "kallisto",
+    "family": "rna_seq_quantification",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "kraken2",
+    "name": "Kraken2",
+    "family": "microbiome_metagenomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "last",
+    "name": "LAST",
+    "family": "sequence_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "limma_voom",
+    "name": "limma-voom",
+    "family": "differential_expression",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "executed",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "executed",
+        "entrypoint": "limma",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('limma')"
+        ],
+        "returncode": 0,
+        "output_excerpt": "3.66.0"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "macs2",
+    "name": "MACS2",
+    "family": "epigenomics_peak_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "macs3",
+    "name": "MACS3",
+    "family": "epigenomics_peak_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "mafft",
+    "name": "MAFFT",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "maxquant",
+    "name": "MaxQuant",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "megahit",
+    "name": "MEGAHIT",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "meme",
+    "name": "MEME",
+    "family": "epigenomics_peak_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "metaphlan",
+    "name": "MetaPhlAn",
+    "family": "microbiome_metagenomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "minimap2",
+    "name": "minimap2",
+    "family": "sequence_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "mixomics",
+    "name": "mixOmics",
+    "family": "multi_omics_integration",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "mixOmics",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('mixOmics')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"mixOmics\") : \n  there is no package called ‘mixOmics’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "modeller",
+    "name": "MODELLER",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "mofa",
+    "name": "MOFA",
+    "family": "multi_omics_integration",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "mofapy2",
+        "output_excerpt": "No module named 'mofapy2'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "mofaplus",
+    "name": "MOFA+",
+    "family": "multi_omics_integration",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "mofapy2",
+        "output_excerpt": "No module named 'mofapy2'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "monai",
+    "name": "MONAI",
+    "family": "imaging_signal_ml",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "monai",
+        "output_excerpt": "No module named 'monai'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "ms_dial",
+    "name": "MS-DIAL",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "multiqc",
+    "name": "MultiQC",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "muscle",
+    "name": "MUSCLE",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "mutect2",
+    "name": "Mutect2",
+    "family": "variant_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "mzmine",
+    "name": "MZmine",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "nextflow",
+    "name": "Nextflow",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "nf_core",
+    "name": "nf-core",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "nnu_net",
+    "name": "nnU-Net",
+    "family": "imaging_signal_ml",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "orthofinder",
+    "name": "OrthoFinder",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "picard",
+    "name": "Picard",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "prokka",
+    "name": "Prokka",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "pymol",
+    "name": "PyMOL",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "qiime2",
+    "name": "QIIME2",
+    "family": "microbiome_metagenomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "qualimap",
+    "name": "Qualimap",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "quast",
+    "name": "QUAST",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "raven",
+    "name": "Raven",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "raxml",
+    "name": "RAxML",
+    "family": "phylogenetics_comparative_genomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "rosettafold",
+    "name": "RoseTTAFold",
+    "family": "structure_modeling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "rsem",
+    "name": "RSEM",
+    "family": "rna_seq_quantification",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "salmon",
+    "name": "Salmon",
+    "family": "rna_seq_quantification",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "samtools",
+    "name": "SAMtools",
+    "family": "alignment_file_operations",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "scanpy",
+    "name": "Scanpy",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "scanpy",
+        "output_excerpt": "No module named 'scanpy'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "scvi",
+    "name": "scVI",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "scvi",
+        "output_excerpt": "No module named 'scvi'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "seurat",
+    "name": "Seurat",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "Seurat",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('Seurat')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"Seurat\") : \n  there is no package called ‘Seurat’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "simpleitk",
+    "name": "SimpleITK",
+    "family": "imaging_signal_ml",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "SimpleITK",
+        "output_excerpt": "No module named 'SimpleITK'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "singularity_apptainer",
+    "name": "Singularity-Apptainer",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "skyline",
+    "name": "Skyline",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "sleuth",
+    "name": "sleuth",
+    "family": "differential_expression",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "sleuth",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('sleuth')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"sleuth\") : \n  there is no package called ‘sleuth’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "snakemake",
+    "name": "Snakemake",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "space_ranger",
+    "name": "Space Ranger",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "spades",
+    "name": "SPAdes",
+    "family": "genome_assembly_annotation",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "squidpy",
+    "name": "Squidpy",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "squidpy",
+        "output_excerpt": "No module named 'squidpy'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "star",
+    "name": "STAR",
+    "family": "spliced_rna_alignment",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "starsolo",
+    "name": "STARsolo",
+    "family": "single_cell_analysis",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "stereoscope",
+    "name": "Stereoscope",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "stereoscope",
+        "output_excerpt": "No module named 'stereoscope'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "stlearn",
+    "name": "stLearn",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "stlearn",
+        "output_excerpt": "No module named 'stlearn'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "strelka2",
+    "name": "Strelka2",
+    "family": "variant_calling",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "stringtie",
+    "name": "StringTie",
+    "family": "rna_seq_quantification",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "tangram",
+    "name": "Tangram",
+    "family": "spatial_transcriptomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "tangram",
+        "output_excerpt": "No module named 'tangram'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "three_d_slicer",
+    "name": "3D Slicer",
+    "family": "imaging_signal_ml",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "torchio",
+    "name": "TorchIO",
+    "family": "imaging_signal_ml",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "python_import",
+    "attempts": [
+      {
+        "interface": "python_import",
+        "status": "not_available_current_environment",
+        "entrypoint": "torchio",
+        "output_excerpt": "No module named 'torchio'"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "trim_galore",
+    "name": "Trim Galore",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "trimmomatic",
+    "name": "Trimmomatic",
+    "family": "qc_preprocessing",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "wdl_cromwell",
+    "name": "WDL-Cromwell",
+    "family": "workflow_reproducibility",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "none_found",
+    "attempts": [
+      {
+        "interface": "none_found",
+        "status": "not_available_current_environment",
+        "entrypoint": "",
+        "output_excerpt": "No CLI command, Python module, R package, or OCEAN local adapter found in the current environment."
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "wgcna",
+    "name": "WGCNA",
+    "family": "multi_omics_integration",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "WGCNA",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('WGCNA')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"WGCNA\") : \n  there is no package called ‘WGCNA’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  },
+  {
+    "slug": "xcms",
+    "name": "XCMS",
+    "family": "proteomics_metabolomics",
+    "maturity": "L0/L1 scaffold",
+    "verdict": "not_available_current_environment",
+    "best_interface": "r_package",
+    "attempts": [
+      {
+        "interface": "r_package",
+        "status": "not_available_current_environment",
+        "entrypoint": "xcms",
+        "command": [
+          "/usr/local/bin/Rscript",
+          "-e",
+          "packageVersion('xcms')"
+        ],
+        "returncode": 1,
+        "output_excerpt": "\nError in utils::packageVersion(\"xcms\") : \n  there is no package called ‘xcms’\nCalls: cat -> <Anonymous>\nExecution halted\n"
+      }
+    ],
+    "evidence_boundary": "Real local availability/version smoke only; not an end-to-end biological analysis or scientific validation."
+  }
+]
