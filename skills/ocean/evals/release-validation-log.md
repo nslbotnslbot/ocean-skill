@@ -2058,3 +2058,33 @@ Implemented:
 ### Evidence Boundary / 证据边界
 
 This was a repository organization change. It did not add new scientific evidence, did not query AlphaFold DB, and did not run AlphaFold or any other external bioinformatics tool. Passing means the moved AlphaFold DB adapter still creates bounded mock source packets and is now discoverable under the bioinformatics tool namespace.
+
+
+## 2026-07-04 - Bioinformatics tool example run-record templates R1
+
+Purpose: Give every bioinformatics tool folder a stable example template for recording inspected tool runs before OCEAN treats any output as evidence.
+
+Implemented:
+
+- Added `examples/run-record.example.json` under each `scripts/tools/bioinformatics/<tool_slug>/` folder.
+- Updated `scripts/tools/generate_bioinformatics_tool_scaffold.py` so future generated tool folders receive the same example template without overwriting existing tool metadata.
+- Updated `scripts/tools/run_bioinformatics_tool_scaffold_eval.py` so scaffold validation now checks example-record presence and required fields.
+- Updated `scripts/tools/bioinformatics/README.md` to document the example-record template.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Bioinformatics example templates generated | 115 files |
+| Bioinformatics scaffold/example eval R1 | 115/115 pass |
+| Missing example records | 0 |
+| Python compile for generator/eval/common helper | pass |
+| AlphaFold DB adapter R1 | 1/1 pass |
+| Literature + ClinicalTrials source adapters R1 | 2/2 pass |
+| Reef Bioinformatics Router R4 | 20/20 pass |
+| OCEAN E2E module router R1 | 7/7 pass |
+| Source-packet boundary R2 | 6/6 pass |
+
+### Evidence Boundary / 证据边界
+
+These files are templates only. They do not claim that OCEAN installed, ran, benchmarked, or validated any listed bioinformatics tool. A completed run record still requires inspected version, command line, parameters, reference/index, inputs, outputs, logs/QC, environment, date, and explicit claim boundaries before it can become an OCEAN source packet.

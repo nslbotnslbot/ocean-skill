@@ -5,7 +5,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -15,7 +17,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -25,7 +29,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -35,7 +41,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -45,7 +53,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -55,7 +65,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -65,7 +77,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -75,7 +89,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -85,7 +101,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -95,7 +113,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -105,7 +125,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -115,7 +137,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -125,7 +149,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -135,7 +161,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -145,7 +173,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -155,7 +185,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -165,7 +197,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -175,7 +209,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -185,7 +221,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -195,7 +233,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -205,7 +245,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -215,7 +257,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -225,7 +269,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -235,7 +281,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -245,7 +293,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -255,7 +305,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -265,7 +317,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -275,7 +329,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -285,7 +341,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -295,7 +353,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -305,7 +365,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -315,7 +377,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -325,7 +389,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -335,7 +401,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -345,7 +413,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -355,7 +425,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -365,7 +437,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -375,7 +449,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -385,7 +461,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -395,7 +473,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -405,7 +485,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -415,7 +497,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -425,7 +509,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -435,7 +521,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -445,7 +533,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -455,7 +545,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -465,7 +557,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -475,7 +569,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -485,7 +581,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -495,7 +593,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -505,7 +605,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -515,7 +617,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -525,7 +629,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -535,7 +641,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -545,7 +653,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -555,7 +665,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -565,7 +677,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -575,7 +689,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -585,7 +701,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -595,7 +713,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -605,7 +725,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -615,7 +737,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -625,7 +749,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -635,7 +761,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -645,7 +773,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -655,7 +785,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -665,7 +797,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -675,7 +809,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -685,7 +821,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -695,7 +833,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -705,7 +845,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -715,7 +857,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -725,7 +869,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -735,7 +881,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -745,7 +893,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -755,7 +905,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -765,7 +917,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -775,7 +929,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -785,7 +941,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -795,7 +953,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -805,7 +965,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -815,7 +977,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -825,7 +989,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -835,7 +1001,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -845,7 +1013,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -855,7 +1025,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -865,7 +1037,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -875,7 +1049,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -885,7 +1061,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -895,7 +1073,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -905,7 +1085,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -915,7 +1097,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -925,7 +1109,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -935,7 +1121,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -945,7 +1133,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -955,7 +1145,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -965,7 +1157,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -975,7 +1169,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -985,7 +1181,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -995,7 +1193,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1005,7 +1205,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1015,7 +1217,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1025,7 +1229,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1035,7 +1241,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1045,7 +1253,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1055,7 +1265,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1065,7 +1277,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1075,7 +1289,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1085,7 +1301,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1095,7 +1313,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1105,7 +1325,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1115,7 +1337,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1125,7 +1349,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1135,7 +1361,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   },
@@ -1145,7 +1373,9 @@
     "folder_exists": true,
     "tool_json_exists": true,
     "readme_exists": true,
+    "example_exists": true,
     "missing_fields": [],
+    "missing_example_fields": [],
     "shared_helper": "../../common/software_source_packet.py",
     "verdict": "pass"
   }

@@ -75,6 +75,35 @@ The output cannot by itself prove biological mechanism, causality, clinical util
 """
 
 
+def example_run_record(tool: dict) -> dict:
+    return {
+        "example_note": "Template only. Replace placeholders with inspected run metadata before using as OCEAN evidence.",
+        "tool_name": tool["name"],
+        "tool_slug": tool["slug"],
+        "tool_family": tool["family"],
+        "tool_version": "",
+        "task_intent": "",
+        "command_line": "",
+        "parameters": {},
+        "reference_or_index": "",
+        "input_files": [],
+        "output_files": [],
+        "logs_or_qc": [],
+        "environment": "",
+        "date": "",
+        "supports_claims": [],
+        "cannot_support": [
+            "biological mechanism",
+            "causal conclusion",
+            "clinical utility",
+            "publication readiness",
+            "reproducibility without rerun/log/environment checks",
+        ],
+        "boundary_status": "queried_evidence",
+        "handoff": "Anchor",
+    }
+
+
 def main() -> int:
     root = Path(__file__).resolve().parent
     bio_root = root / "bioinformatics"
@@ -126,6 +155,14 @@ def main() -> int:
                 tool_json.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             if not readme_path.exists():
                 readme_path.write_text(readme(data), encoding="utf-8")
+            examples = folder / "examples"
+            examples.mkdir(parents=True, exist_ok=True)
+            example_path = examples / "run-record.example.json"
+            if not example_path.exists():
+                example_path.write_text(
+                    json.dumps(example_run_record(data), ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
             registry.append(data)
 
     registry.sort(key=lambda item: item["slug"])
@@ -135,6 +172,8 @@ def main() -> int:
         "This directory contains one folder per bioinformatics tool listed in OCEAN's bioinformatics resource map.\n\n"
         "These folders are scaffolds, not claims that the tools are installed or executable in OCEAN. "
         "Use `../common/software_source_packet.py` for generic source-packet creation until a tool has a dedicated wrapper.\n\n"
+        "Each tool folder includes `examples/run-record.example.json`, a template for recording inspected tool runs before "
+        "they are converted into OCEAN evidence packets.\n\n"
         f"Tool folders: {len(registry)}\n",
         encoding="utf-8",
     )

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added `examples/run-record.example.json` templates to all bioinformatics tool folders and extended the scaffold eval to validate example-record completeness.
 - Moved the AlphaFold DB source-packet adapter under `skills/ocean/scripts/tools/bioinformatics/alphafold_db/` so bioinformatics-specific adapters live with the bioinformatics tool folders.
 - Added per-tool bioinformatics scaffold folders under `skills/ocean/scripts/tools/bioinformatics/` plus a generic software source-packet helper and scaffold completeness eval.
 - Reorganized tool-specific source-packet scripts under `skills/ocean/scripts/tools/` with per-resource folders for AlphaFold DB, literature, and ClinicalTrials.gov adapters.
