@@ -2230,3 +2230,41 @@ The official `quick_validate.py` check remains blocked in this local environment
 ### Evidence Boundary / 证据边界
 
 These guides define tool-use instructions and evidence boundaries only. They do not install, execute, benchmark, validate, or endorse the external bioinformatics software. A tool output still requires inspected version, command, parameters, reference/index, inputs, outputs, logs/QC, environment, and date before it can become an OCEAN source packet.
+
+## 2026-07-05 - API/database executable adapter R1
+
+Purpose: Move the API/database resource layer beyond boundary-only wrappers by adding real executable Reef adapters for public biomedical databases, while preserving OCEAN's source-packet evidence boundaries.
+
+Implemented:
+
+- Extended `scripts/run_reef_api_adapter.py` with executable adapters for:
+  - UniProt
+  - PubMed via NCBI E-utilities
+  - Europe PMC
+  - ChEMBL
+  - Open Targets
+  - STRING
+  - Reactome
+  - QuickGO
+  - ClinVar via NCBI E-utilities
+  - gnomAD
+  - AlphaFold DB
+- Added `scripts/run_api_database_adapter_eval.py` for dry-run and bounded live API validation.
+- Added `references/api-database-adapters.md`.
+- Added dry-run and live eval result packets under `evals/api-database-adapter-r1-*`.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| API/database dry-run eval | 11/11 pass |
+| API/database bounded live eval | 11/11 pass |
+| Adapter/eval compile | pass |
+
+### Error Notes
+
+The first live gnomAD case used a variant seed that returned no record. This was not a wrapper crash: the gnomAD API returned HTTP 200 with no variant. The eval seed was changed to `11-5227002-T-A`, which returned a bounded gnomAD R4 variant record and brought the live eval to 11/11 pass.
+
+### Evidence Boundary / 证据边界
+
+These adapters query public API metadata only. Passing means OCEAN can construct and, when network is allowed, execute bounded public resource requests and write Reef packets. It does not prove biological mechanism, causality, clinical utility, treatment efficacy, diagnosis, publication readiness, or reproducibility. Do not submit private manuscript text, patient data, PHI, unpublished data, or local omics files to these public API adapters.

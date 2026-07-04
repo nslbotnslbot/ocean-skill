@@ -1,0 +1,32 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "opentargets",
+  "adapter_label": "Open Targets Platform",
+  "created_utc": "2026-07-04T15:44:25+00:00",
+  "executed": false,
+  "official_doc": "https://platform-docs.opentargets.org/data-access/graphql-api",
+  "endpoint_family": "https://api.platform.opentargets.org/api/v4/graphql",
+  "resource_role": "Target, disease, drug, variant, and target-disease association context",
+  "query": {
+    "ensembl_id": "ENSG00000141510"
+  },
+  "query_url_or_endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "request_body": {
+    "query": "\n    query target($ensemblId: String!) {\n      target(ensemblId: $ensemblId) {\n        id\n        approvedSymbol\n        approvedName\n        biotype\n      }\n    }\n    ",
+    "variables": {
+      "ensemblId": "ENSG00000141510"
+    }
+  },
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Target annotation and association-resource provenance.",
+    "cannot_support": "Mechanism, therapeutic efficacy, or clinical readiness from association scores alone.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

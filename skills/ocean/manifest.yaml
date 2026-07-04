@@ -17,6 +17,7 @@ conditional_core:
     - references/alphafold-db-adapter.md
     - references/literature-source-adapter.md
     - references/clinicaltrials-adapter.md
+    - references/api-database-adapters.md
     - references/source-packet-schema.md
     - references/tool-adapter-contract.md
   artifacts_or_project_memory:
@@ -54,6 +55,8 @@ scripts:
   alphafold_db_adapter_eval: scripts/tools/bioinformatics/alphafold_db/run_eval.py
   literature_source_adapter: scripts/tools/literature/source_packet.py
   clinicaltrials_adapter: scripts/tools/clinicaltrials/source_packet.py
+  reef_api_database_adapter: scripts/run_reef_api_adapter.py
+  api_database_adapter_eval: scripts/run_api_database_adapter_eval.py
   source_adapters_eval: scripts/tools/run_source_adapter_eval.py
   generic_software_source_packet: scripts/tools/common/software_source_packet.py
   bioinformatics_tool_scaffold_generator: scripts/tools/generate_bioinformatics_tool_scaffold.py
@@ -74,5 +77,7 @@ evals:
   reef_bioinformatics_router_r4: evals/reef-bioinformatics-router-r4-cases.json
   bioinformatics_tool_scaffold_r1: evals/bioinformatics-tool-scaffold-r1-summary.json
   bioinformatics_real_tool_smoke_r1: evals/bioinformatics-real-tool-smoke-r1-summary.json
+  api_database_adapter_r1_dry_run: evals/api-database-adapter-r1-dry-run-summary.json
+  api_database_adapter_r1_live: evals/api-database-adapter-r1-live-summary.json
   source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json
   ocean_seven_module_coordination_r1: evals/ocean-seven-module-coordination-r1-cases.json

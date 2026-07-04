@@ -1,0 +1,25 @@
+# OCEAN API/Database Adapter Eval R1
+
+- Run date: 2026-07-05
+- Mode: live
+- Cases: 11
+- Pass: 11
+- Needs review: 0
+
+| Case | Adapter | Status | Records | Verdict | Notes |
+|---|---|---|---:|---|---|
+| API-R1-UNIPROT | uniprot | executed | 1 | pass |  |
+| API-R1-PUBMED | pubmed | executed | 1 | pass |  |
+| API-R1-EUROPEPMC | europepmc | executed | 1 | pass |  |
+| API-R1-CHEMBL | chembl | executed | 1 | pass |  |
+| API-R1-OPENTARGETS | opentargets | executed | 1 | pass |  |
+| API-R1-STRING | string | executed | 1 | pass |  |
+| API-R1-REACTOME | reactome | executed | 1 | pass |  |
+| API-R1-QUICKGO | quickgo | executed | 1 | pass |  |
+| API-R1-CLINVAR | clinvar | executed | 1 | pass |  |
+| API-R1-GNOMAD | gnomad | executed | 1 | pass |  |
+| API-R1-ALPHAFOLDDB | alphafold-db | executed | 1 | pass |  |
+
+## Evidence Boundary / 证据边界
+
+This eval checks that OCEAN can construct bounded Reef packets for API/database resources. Dry-run mode validates query construction and packet contracts without network calls. Live mode performs bounded public API requests, records failures as failures or needs-review, and still does not claim biological mechanism, clinical utility, or scientific validity.

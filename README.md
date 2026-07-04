@@ -242,6 +242,8 @@ Bioinformatics Real-Tool Smoke R1 checks all 115 scaffolded bioinformatics tools
 
 Each bioinformatics tool folder now also includes a science-skills-style `references/tool_usage.md` guide. These guides define use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff paths without claiming the external tool is installed.
 
+Reef now has executable API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB. These wrappers can run dry, or make bounded live public API requests with `--execute`, then write OCEAN packets with explicit evidence boundaries.
+
 Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
