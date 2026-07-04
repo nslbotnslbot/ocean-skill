@@ -41,6 +41,22 @@ REQUIRED_EXAMPLE_FIELDS = {
     "handoff",
 }
 
+REQUIRED_API_FIELDS = {
+    "schema_version",
+    "tool_name",
+    "tool_slug",
+    "tool_family",
+    "maturity",
+    "interface_type",
+    "python_wrapper",
+    "example_input",
+    "default_output",
+    "commands",
+    "required_input_fields",
+    "output_contract",
+    "evidence_boundary",
+}
+
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -66,18 +82,25 @@ def main(argv: list[str]) -> int:
         tool_json = folder / "tool.json"
         readme = folder / "README.md"
         example = folder / "examples" / "run-record.example.json"
+        api = folder / "api.json"
+        wrapper = folder / "scripts" / "create_source_packet.py"
         data = read_json(tool_json) if tool_json.exists() else {}
         example_data = read_json(example) if example.exists() else {}
+        api_data = read_json(api) if api.exists() else {}
         missing_fields = sorted(REQUIRED_FIELDS - set(data))
         missing_example_fields = sorted(REQUIRED_EXAMPLE_FIELDS - set(example_data))
+        missing_api_fields = sorted(REQUIRED_API_FIELDS - set(api_data))
         verdict = (
             "pass"
             if folder.exists()
             and tool_json.exists()
             and readme.exists()
             and example.exists()
+            and api.exists()
+            and wrapper.exists()
             and not missing_fields
             and not missing_example_fields
+            and not missing_api_fields
             else "needs_review"
         )
         rows.append(
@@ -88,8 +111,11 @@ def main(argv: list[str]) -> int:
                 "tool_json_exists": tool_json.exists(),
                 "readme_exists": readme.exists(),
                 "example_exists": example.exists(),
+                "api_exists": api.exists(),
+                "python_wrapper_exists": wrapper.exists(),
                 "missing_fields": missing_fields,
                 "missing_example_fields": missing_example_fields,
+                "missing_api_fields": missing_api_fields,
                 "shared_helper": data.get("shared_helper"),
                 "verdict": verdict,
             }
@@ -113,16 +139,16 @@ def main(argv: list[str]) -> int:
                 f"- Pass: {summary['pass']}",
                 f"- Needs review: {summary['needs_review']}",
                 "",
-                "| Tool | Folder | tool.json | README | Example | Verdict |",
-                "|---|---|---|---|---|---|",
+                "| Tool | Folder | tool.json | README | Example | API | Python | Verdict |",
+                "|---|---|---|---|---|---|---|---|",
                 *[
-                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['verdict']} |"
+                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['api_exists']} | {row['python_wrapper_exists']} | {row['verdict']} |"
                     for row in rows
                 ],
                 "",
                 "## Evidence Boundary / 证据边界",
                 "",
-                "This eval checks scaffold and example-record completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
+                "This eval checks scaffold, example-record, API-contract, and Python-wrapper completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
             ]
         )
         + "\n",

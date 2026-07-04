@@ -26,3 +26,20 @@ Before `FastTree` output can be used as evidence, provide:
 - inspected result fields.
 
 The output cannot by itself prove biological mechanism, causality, clinical utility, reproducibility, or publication readiness.
+
+## API / Python Wrapper
+
+- API contract: `api.json`
+- Python wrapper: `scripts/create_source_packet.py`
+- Example input: `examples/run-record.example.json`
+
+Use the wrapper only after you have inspected a real `FastTree` run record:
+
+```bash
+python3 scripts/create_source_packet.py \
+  --input examples/run-record.example.json \
+  --output /path/to/fasttree-source-packet.json
+```
+
+The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `FastTree`.
+

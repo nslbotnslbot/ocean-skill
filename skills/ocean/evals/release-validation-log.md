@@ -2088,3 +2088,42 @@ Implemented:
 ### Evidence Boundary / 证据边界
 
 These files are templates only. They do not claim that OCEAN installed, ran, benchmarked, or validated any listed bioinformatics tool. A completed run record still requires inspected version, command line, parameters, reference/index, inputs, outputs, logs/QC, environment, date, and explicit claim boundaries before it can become an OCEAN source packet.
+
+## 2026-07-04 - Bioinformatics tool API/Python wrapper R1
+
+Purpose: Move the bioinformatics tool folders closer to a science-skills-style executable layout by adding a stable API contract and local Python wrapper for every tool folder, while keeping OCEAN's source-packet evidence boundary.
+
+Implemented:
+
+- Added `api.json` under each `scripts/tools/bioinformatics/<tool_slug>/` folder.
+- Added `scripts/create_source_packet.py` under each `scripts/tools/bioinformatics/<tool_slug>/` folder.
+- Updated each per-tool `README.md` with the API/Python wrapper entry point.
+- Updated `scripts/tools/generate_bioinformatics_tool_scaffold.py` so future generated folders receive the same API/Python layout.
+- Updated `scripts/tools/run_bioinformatics_tool_scaffold_eval.py` so scaffold validation checks API-contract and Python-wrapper presence.
+- Added a mock LAST wrapper smoke fixture and generated source packet:
+  - `evals/bioinformatics-wrapper-smoke-r1-last-run-record.json`
+  - `evals/bioinformatics-wrapper-smoke-r1-last-packet.json`
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Bioinformatics API contracts generated | 115 files |
+| Bioinformatics Python wrappers generated | 115 files |
+| Bioinformatics scaffold/API/Python eval R1 | 115/115 pass |
+| Representative wrapper compile | pass |
+| All 115 generated wrapper scripts compile with `PYTHONPYCACHEPREFIX=/private/tmp/ocean_pycache` | pass |
+| LAST wrapper smoke packet | pass |
+| AlphaFold DB adapter R1 | 1/1 pass |
+| Literature + ClinicalTrials source adapters R1 | 2/2 pass |
+| Reef Bioinformatics Router R4 | 20/20 pass |
+| OCEAN E2E module router R1 | 7/7 pass |
+| Source-packet boundary R2 | 6/6 pass |
+
+### Error Notes
+
+An initial bulk `py_compile` attempt failed because Python tried to create bytecode cache files under `/Users/colabooooot/Library/Caches/com.apple.python/private/tmp/ocean-functional.eeIamT`, which is outside the allowed sandbox write area. Re-running the same compile check with `PYTHONPYCACHEPREFIX=/private/tmp/ocean_pycache` passed. This was an environment/cache-location issue, not a wrapper syntax failure.
+
+### Evidence Boundary / 证据边界
+
+The generated wrappers do not install, call, benchmark, or validate the external bioinformatics tools. They only convert inspected run-record metadata into OCEAN software source packets. A packet may support tool-run provenance only after a real version, command line, parameters, reference/index, inputs, outputs, logs/QC, environment, and date have been inspected.
