@@ -26,7 +26,7 @@ TOOLS = [
     ("genome_assembly_annotation", ["Flye", "Canu", "Raven", "SPAdes", "MEGAHIT", "QUAST", "BUSCO", "CheckM", "Prokka", "Bakta", "eggNOG-mapper", "InterProScan"]),
     ("microbiome_metagenomics", ["QIIME2", "DADA2", "MetaPhlAn", "HUMAnN", "Kraken2", "Bracken"]),
     ("proteomics_metabolomics", ["MaxQuant", "FragPipe", "DIA-NN", "Skyline", "MS-DIAL", "XCMS", "MZmine"]),
-    ("structure_modeling", ["AlphaFold", "ColabFold", "RoseTTAFold", "HH-suite", "HMMER", "MODELLER", "PyMOL", "ChimeraX"]),
+    ("structure_modeling", ["AlphaFold", "AlphaFold DB", "ColabFold", "RoseTTAFold", "HH-suite", "HMMER", "MODELLER", "PyMOL", "ChimeraX"]),
     ("imaging_signal_ml", ["nnU-Net", "MONAI", "TorchIO", "SimpleITK", "ITK-SNAP", "3D Slicer"]),
     ("phylogenetics_comparative_genomics", ["MAFFT", "MUSCLE", "Clustal Omega", "IQ-TREE", "RAxML", "FastTree", "OrthoFinder"]),
     ("multi_omics_integration", ["WGCNA", "MOFA", "MOFA+", "mixOmics", "DIABLO"]),
@@ -118,8 +118,14 @@ def main() -> int:
                     "reproducibility without rerun/log/environment checks",
                 ],
             }
-            (folder / "tool.json").write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-            (folder / "README.md").write_text(readme(data), encoding="utf-8")
+            tool_json = folder / "tool.json"
+            readme_path = folder / "README.md"
+            if tool_json.exists():
+                data = json.loads(tool_json.read_text(encoding="utf-8"))
+            else:
+                tool_json.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            if not readme_path.exists():
+                readme_path.write_text(readme(data), encoding="utf-8")
             registry.append(data)
 
     registry.sort(key=lambda item: item["slug"])
@@ -138,4 +144,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

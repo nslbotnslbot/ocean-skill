@@ -20,7 +20,7 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--outdir", type=Path, required=True)
     args = parser.parse_args(argv)
 
-    script = args.skill_dir / "scripts" / "tools" / "alphafold_db" / "source_packet.py"
+    script = args.skill_dir / "scripts" / "tools" / "bioinformatics" / "alphafold_db" / "source_packet.py"
     metadata = args.skill_dir / "evals" / "afdb-adapter-r1-mock-metadata.json"
     pae = args.skill_dir / "evals" / "afdb-adapter-r1-mock-pae.json"
     analysis = args.outdir / "afdb-adapter-r1-analysis.json"

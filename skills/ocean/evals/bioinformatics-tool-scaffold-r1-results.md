@@ -1,13 +1,14 @@
 # OCEAN Bioinformatics Tool Scaffold R1 Results
 
-- Cases: 114
-- Pass: 114
+- Cases: 115
+- Pass: 115
 - Needs review: 0
 
 | Tool | Folder | tool.json | README | Verdict |
 |---|---|---|---|---|
 | Alevin-fry | True | True | True | pass |
 | AlphaFold | True | True | True | pass |
+| AlphaFold DB | True | True | True | pass |
 | Azimuth | True | True | True | pass |
 | Bakta | True | True | True | pass |
 | bcftools | True | True | True | pass |

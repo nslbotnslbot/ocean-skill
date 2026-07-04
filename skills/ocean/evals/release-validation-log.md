@@ -2030,3 +2030,31 @@ Representative tool folders checked: `last`, `alphafold`, `seurat`, `gatk`, `qii
 ### Evidence Boundary / 证据边界
 
 This run created GitHub-visible scaffold folders and generic provenance-packet code only. It did not install, run, benchmark, or validate LAST, AlphaFold, Seurat, GATK, QIIME2, Snakemake, or any other listed bioinformatics tool. Folder presence means OCEAN has a stable location for future wrappers, examples, and evals; it does not mean the tool is executable or that its output supports a biological, causal, clinical, reproducibility, or publication claim.
+
+## 2026-07-04 - Move AlphaFold DB adapter under bioinformatics tools
+
+Purpose: Keep bioinformatics-specific executable adapters inside the bioinformatics tool namespace while leaving non-bioinformatics source adapters at the broader `scripts/tools/` level.
+
+Implemented:
+
+- Moved AlphaFold DB adapter:
+  - `scripts/tools/alphafold_db/source_packet.py` -> `scripts/tools/bioinformatics/alphafold_db/source_packet.py`
+  - `scripts/tools/alphafold_db/run_eval.py` -> `scripts/tools/bioinformatics/alphafold_db/run_eval.py`
+- Added `scripts/tools/bioinformatics/alphafold_db/README.md`.
+- Added `scripts/tools/bioinformatics/alphafold_db/tool.json`.
+- Updated `SKILL.md`, `manifest.yaml`, `references/alphafold-db-adapter.md`, and `scripts/tools/README.md`.
+- Kept `literature/` and `clinicaltrials/` under `scripts/tools/` because they are source/database adapters rather than bioinformatics software/tool adapters.
+- Updated the scaffold generator to preserve existing mature tool folders instead of overwriting their `README.md` and `tool.json`.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| AlphaFold DB adapter R1 after move | 1/1 pass |
+| Literature + ClinicalTrials adapters R1 | 2/2 pass |
+| Bioinformatics scaffold R1 | 115/115 pass |
+| Python compile for moved adapter and scaffold scripts | pass |
+
+### Evidence Boundary / 证据边界
+
+This was a repository organization change. It did not add new scientific evidence, did not query AlphaFold DB, and did not run AlphaFold or any other external bioinformatics tool. Passing means the moved AlphaFold DB adapter still creates bounded mock source packets and is now discoverable under the bioinformatics tool namespace.
