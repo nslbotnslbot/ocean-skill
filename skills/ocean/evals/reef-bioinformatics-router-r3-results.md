@@ -21,7 +21,7 @@
 | R3-REEF-009 | 12/12 | pass | benchmark, clinical, clinical_imaging_signal | benchmark, bioinformatics_software, clinical, clinical_imaging_signal | None |
 | R3-REEF-010 | 12/12 | pass | bioinformatics_software | bioinformatics_software | None |
 | R3-REEF-011 | 12/12 | pass | clinical, clinical_imaging_signal | clinical, clinical_imaging_signal | None |
-| R3-REEF-012 | 12/12 | pass | bioinformatics_software, omics | bioinformatics_software, omics | None |
+| R3-REEF-012 | 12/12 | pass | bioinformatics_software, omics | bioinformatics_software, epigenomics_regulatory, omics | None |
 
 ## Interpretation
 

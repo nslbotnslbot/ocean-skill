@@ -10,4 +10,4 @@ R3-REEF-008,12,12,pass,benchmark;clinical;clinical_imaging_signal,benchmark;clin
 R3-REEF-009,12,12,pass,benchmark;clinical;clinical_imaging_signal,benchmark;bioinformatics_software;clinical;clinical_imaging_signal,,,True,True,small held-out test set proves diagnosis readiness
 R3-REEF-010,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,workflow tooling proves full reproducibility
 R3-REEF-011,12,12,pass,clinical;clinical_imaging_signal,clinical;clinical_imaging_signal,,,True,True,dataset names prove cross-hospital generalization
-R3-REEF-012,12,12,pass,bioinformatics_software;omics,bioinformatics_software;omics,,,True,True,cell type annotation proves causality
+R3-REEF-012,12,12,pass,bioinformatics_software;omics,bioinformatics_software;epigenomics_regulatory;omics,,,True,True,cell type annotation proves causality

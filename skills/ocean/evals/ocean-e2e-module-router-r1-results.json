@@ -433,8 +433,10 @@
       "clinical"
     ],
     "route_classes": [
+      "bioinformatics_software",
       "clinical",
       "drug_target",
+      "protein_structure",
       "variant_genetics"
     ],
     "route_misses": [],

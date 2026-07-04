@@ -14,10 +14,10 @@
 | R2-REEF-002 | 12/12 | pass | bioinformatics_software | bioinformatics_software | None |
 | R2-REEF-003 | 12/12 | pass | bioinformatics_software, omics | bioinformatics_software, clinical, omics | None |
 | R2-REEF-004 | 12/12 | pass | omics | cancer_genomics, omics | None |
-| R2-REEF-005 | 12/12 | pass | epigenomics_regulatory | epigenomics_regulatory, omics | None |
+| R2-REEF-005 | 12/12 | pass | epigenomics_regulatory | artifact, epigenomics_regulatory, omics | None |
 | R2-REEF-006 | 12/12 | pass | clinical, variant_genetics | cancer_genomics, clinical, variant_genetics | None |
 | R2-REEF-007 | 12/12 | pass | cancer_genomics, pathway_gene_set | cancer_genomics, clinical, pathway_gene_set | None |
-| R2-REEF-008 | 12/12 | pass | drug_target | drug_target | None |
+| R2-REEF-008 | 12/12 | pass | drug_target | drug_target, protein_structure | None |
 | R2-REEF-009 | 12/12 | pass | clinical | clinical | None |
 | R2-REEF-010 | 12/12 | pass | drug_target, regulatory_safety | drug_target, regulatory_safety | None |
 | R2-REEF-011 | 11/12 | pass | clinical, clinical_imaging_signal | clinical, clinical_imaging_signal | imaging |

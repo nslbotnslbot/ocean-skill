@@ -13,6 +13,7 @@ conditional_core:
     - static/core/retrieval-separation-gate.md
     - references/data-tool-router.md
     - references/bioinformatics-resource-map.md
+    - references/bioinformatics-software-catalog.md
     - references/alphafold-db-adapter.md
     - references/literature-source-adapter.md
     - references/clinicaltrials-adapter.md
@@ -65,4 +66,5 @@ evals:
   ocean_e2e_module_router_r1: evals/ocean-e2e-module-router-r1-cases.json
   reef_bioinformatics_router_r2: evals/reef-bioinformatics-router-r2-cases.json
   reef_bioinformatics_router_r3: evals/reef-bioinformatics-router-r3-cases.json
+  reef_bioinformatics_router_r4: evals/reef-bioinformatics-router-r4-cases.json
   source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json

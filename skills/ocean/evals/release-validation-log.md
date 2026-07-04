@@ -1903,3 +1903,65 @@ Regression checks after source adapters R1:
 ### Evidence Boundary / 证据边界
 
 This run used local mock literature and ClinicalTrials.gov-style JSON only. It did not query PubMed, EuropePMC, ClinicalTrials.gov, or any external API. Passing means OCEAN can turn literature metadata and registry records into bounded source packets; it does not mean abstracts prove full-paper claims or registry records prove efficacy.
+
+## 2026-07-04 - Bioinformatics software catalog and Reef router R4
+
+Purpose: Extend OCEAN's bioinformatics tool coverage from a compact resource map into a fuller software catalog, while preserving the rule that software names and workflow routes are not biological evidence.
+
+Implemented:
+
+- Added `references/bioinformatics-software-catalog.md`.
+- Updated `SKILL.md` and `manifest.yaml` so OCEAN can load the software catalog for bioinformatics/software-routing requests.
+- Expanded `references/bioinformatics-resource-map.md` and `references/data-tool-router.md` with a broader bioinformatics workflow/software layer.
+- Expanded `scripts/ocean_source_router.py` so the offline router recognizes additional software families:
+  - raw-read QC and trimming;
+  - sequence search/alignment, including LAST/LASTAL;
+  - file operations and intervals;
+  - variant calling, SV/CNV calling, and variant annotation;
+  - RNA-seq quantification and differential expression;
+  - single-cell analysis and annotation;
+  - spatial and multimodal omics;
+  - epigenomics and regulatory analysis;
+  - genome assembly and annotation;
+  - microbiome/metagenomics;
+  - proteomics, metabolomics, and lipidomics;
+  - structure/protein modeling and docking;
+  - phylogenetics and comparative genomics;
+  - imaging and signal analysis;
+  - workflow/reproducibility tools;
+  - statistical and ML frameworks.
+- Added `evals/reef-bioinformatics-router-r4-cases.json`.
+- Generated R4 eval artifacts:
+  - `evals/reef-bioinformatics-router-r4-results.json`
+  - `evals/reef-bioinformatics-router-r4-results.md`
+  - `evals/reef-bioinformatics-router-r4-scorecard.csv`
+  - `evals/reef-bioinformatics-router-r4-summary.json`
+
+### Reef bioinformatics router R4
+
+| Item | Result |
+|---|---:|
+| Cases | 20 |
+| Pass | 20 |
+| Needs review | 0 |
+| Mean score | 11.95/12 |
+
+R4 coverage included LAST/LASTAL, BLAST, DIAMOND, MMseqs2, minimap2, seqkit, seqtk, BBTools/BBduk, FastQC, MultiQC, GATK, HaplotypeCaller, DeepVariant, FreeBayes, VarScan, VarDict, Manta, Delly, LUMPY, CNVkit, Control-FREEC, FACETS, PureCN, VEP, ANNOVAR, SnpEff, SnpSift, PLINK, BOLT-LMM, SAIGE, REGENIE, Salmon, kallisto, HTSeq-count, tximport, DESeq2, edgeR, limma-voom, sleuth, fgsea, Cell Ranger, STARsolo, Alevin-fry, kallisto bustools, Seurat, Scanpy, scVI, scANVI, scArches, Harmony, LIGER, BBKNN, SoupX, Scrublet, DoubletFinder, CellTypist, SingleR, Azimuth, scPred, Space Ranger, SPOTlight, BayesSpace, SpaGCN, SpatialDE, Squidpy, cell2location, Tangram, MACS3, deepTools, HOMER, MEME/FIMO, Bismark, methylKit, ChromHMM, DiffBind, ChIPseeker, HINT-ATAC, TOBIAS, ArchR, Signac, Flye, Canu, Raven, SPAdes, MEGAHIT, metaSPAdes, QUAST, BUSCO, CheckM2, GTDB-Tk, Prokka, Bakta, Roary, Panaroo, QIIME2, DADA2, mothur, VSEARCH, MetaPhlAn, HUMAnN, Kraken2, Bracken, Kaiju, Centrifuge, Sourmash, Mash, PICRUSt2, phyloseq, ANCOM-BC, MaAsLin2, MaxQuant, FragPipe, MSFragger, DIA-NN, Skyline, OpenMS, Proteome Discoverer, Spectronaut, Perseus, XCMS, MZmine, MS-DIAL, GNPS, MetaboAnalyst, LipidSearch, AlphaFold, AlphaFold DB, ColabFold, RoseTTAFold, ESMFold, HH-suite, HMMER, MODELLER, Rosetta, FoldX, PyMOL, ChimeraX, AutoDock Vina, HADDOCK, MAFFT, MUSCLE, Clustal Omega, IQ-TREE, RAxML, FastTree, BEAST, OrthoFinder, OrthoMCL, HyPhy, PAML, ClonalFrameML, nnU-Net, MONAI, TorchIO, SimpleITK, ITK-SNAP, 3D Slicer, QuPath, CellProfiler, Fiji/ImageJ, napari, ilastik, MNE, WFDB tools, Snakemake, Nextflow, nf-core, CWL, WDL/Cromwell, Galaxy, Docker, Singularity/Apptainer, Conda, Mamba, Bioconda, renv, workflowr, R/Bioconductor, scikit-learn, PyTorch, TensorFlow, XGBoost, LightGBM, tidymodels, mlr3, and caret.
+
+Regression checks after software catalog R4:
+
+| Check | Result |
+|---|---:|
+| Reef router R4 | 20/20 pass |
+| Reef router R2 | 21/21 pass |
+| Reef router R3 | 12/12 pass |
+| Source-packet boundary R2 | 6/6 pass |
+| Source adapters R1 | 2/2 pass |
+| AFDB adapter R1 | 1/1 pass |
+| OCEAN E2E module router R1 | 7/7 pass |
+| Python compile | pass |
+| YAML parse | blocked in this local environment by missing PyYAML |
+
+### Evidence Boundary / 证据边界
+
+This run was deterministic and offline. It did not install or run any listed bioinformatics tool, did not query external databases, and did not inspect real biological outputs. Passing means OCEAN can route tool/software requests into bounded source-packet and reproducibility requirements. It does not mean any tool output is correct, reproducible, clinically useful, mechanistically valid, or sufficient for publication claims.
