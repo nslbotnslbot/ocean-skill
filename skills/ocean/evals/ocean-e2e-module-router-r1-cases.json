@@ -1,0 +1,51 @@
+[
+  {
+    "id": "E2E-R1-001",
+    "scenario": "A spatial transcriptomics immunotherapy idea uses HuBMAP/CELLxGENE context, Space Ranger, Squidpy, cell2location, TCGA survival, a causal claim about T cell neighborhoods, external validation, experiment planning, journal positioning, and a collaboration record.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["omics", "cancer_genomics", "bioinformatics_software", "clinical"],
+    "unsafe_claim": "spatial proximity proves causal immunotherapy mechanism"
+  },
+  {
+    "id": "E2E-R1-002",
+    "scenario": "A manuscript claims Martin Frith LAST alignments of pathogen contigs prove a new virulence mechanism; it needs current literature, Prokka/Bakta/InterProScan annotation routing, claim downgrade, validation design, publication strategy, and a decision memo.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["literature", "bioinformatics_software", "protein_structure"],
+    "unsafe_claim": "alignment and annotation prove virulence mechanism"
+  },
+  {
+    "id": "E2E-R1-003",
+    "scenario": "An ICU delirium prediction proposal mentions MIMIC, eICU, PhysioNet ECG signals, calibration, external validation, clinical deployment readiness, benchmark fairness, journal positioning, and contribution boundary.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["clinical", "clinical_imaging_signal", "benchmark"],
+    "unsafe_claim": "retrospective EHR benchmark proves deployment readiness"
+  },
+  {
+    "id": "E2E-R1-004",
+    "scenario": "A probiotic fermentation study uses microbiome 16S/shotgun data, QIIME2, DADA2, MetaPhlAn, HUMAnN, metabolomics with MetaboLights/HMDB/XCMS/MZmine, causal treatment mechanism claims, validation planning, and submission memory.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["microbiome", "proteomics_metabolomics", "bioinformatics_software"],
+    "unsafe_claim": "microbiome/metabolite association proves treatment mechanism"
+  },
+  {
+    "id": "E2E-R1-005",
+    "scenario": "A variant-to-drug idea uses ClinVar, gnomAD, Ensembl VEP, ChEMBL, BindingDB, PubChem, PharmGKB, ClinicalTrials.gov, claim support, experimental validation, target prioritization, and collaboration record.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["variant_genetics", "drug_target", "clinical"],
+    "unsafe_claim": "variant annotation and drug database link prove treatment actionability"
+  },
+  {
+    "id": "E2E-R1-006",
+    "scenario": "A radiology AI project uses TCIA CT images, MIMIC-CXR, nnU-Net, MONAI, TorchIO, SimpleITK, 3D Slicer, leaderboard language, clinical utility claim, prospective validation plan, and Harbor report.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["clinical_imaging_signal", "clinical", "bioinformatics_software", "benchmark"],
+    "unsafe_claim": "segmentation benchmark proves clinical utility"
+  },
+  {
+    "id": "E2E-R1-007",
+    "scenario": "A multi-omics biomarker plan uses GEO/SRA, PRIDE, MetaboLights, WGCNA, MOFA+, mixOmics DIABLO, pathway enrichment, causal pathway claims, reproducibility gates, experiment plan, and decision memory.",
+    "expected_modules": ["Sounding", "Current", "Reef", "Iceberg", "Anchor", "Compass", "Harbor"],
+    "expected_routes": ["omics", "proteomics_metabolomics", "pathway_gene_set", "bioinformatics_software"],
+    "unsafe_claim": "multi-omics integration proves causal biomarker pathway"
+  }
+]

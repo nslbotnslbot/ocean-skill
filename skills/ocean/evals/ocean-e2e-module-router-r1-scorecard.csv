@@ -1,0 +1,8 @@
+id,score,max_score,verdict,module_misses,route_misses,unsafe_claim
+E2E-R1-001,12,12,pass,,,spatial proximity proves causal immunotherapy mechanism
+E2E-R1-002,12,12,pass,,,alignment and annotation prove virulence mechanism
+E2E-R1-003,12,12,pass,,,retrospective EHR benchmark proves deployment readiness
+E2E-R1-004,12,12,pass,,,microbiome/metabolite association proves treatment mechanism
+E2E-R1-005,12,12,pass,,,variant annotation and drug database link prove treatment actionability
+E2E-R1-006,12,12,pass,,,segmentation benchmark proves clinical utility
+E2E-R1-007,12,12,pass,,,multi-omics integration proves causal biomarker pathway

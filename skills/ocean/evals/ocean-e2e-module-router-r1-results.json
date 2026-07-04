@@ -1,0 +1,710 @@
+[
+  {
+    "id": "E2E-R1-001",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "omics",
+      "cancer_genomics",
+      "bioinformatics_software",
+      "clinical"
+    ],
+    "route_classes": [
+      "benchmark",
+      "bioinformatics_software",
+      "cancer_genomics",
+      "clinical",
+      "omics"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "spatial proximity proves causal immunotherapy mechanism",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  },
+  {
+    "id": "E2E-R1-002",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "literature",
+      "bioinformatics_software",
+      "protein_structure"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "literature",
+      "protein_structure"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "alignment and annotation prove virulence mechanism",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  },
+  {
+    "id": "E2E-R1-003",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "clinical",
+      "clinical_imaging_signal",
+      "benchmark"
+    ],
+    "route_classes": [
+      "benchmark",
+      "clinical",
+      "clinical_imaging_signal"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "retrospective EHR benchmark proves deployment readiness",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  },
+  {
+    "id": "E2E-R1-004",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "microbiome",
+      "proteomics_metabolomics",
+      "bioinformatics_software"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "clinical",
+      "microbiome",
+      "proteomics_metabolomics"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "microbiome/metabolite association proves treatment mechanism",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  },
+  {
+    "id": "E2E-R1-005",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "variant_genetics",
+      "drug_target",
+      "clinical"
+    ],
+    "route_classes": [
+      "clinical",
+      "drug_target",
+      "variant_genetics"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "variant annotation and drug database link prove treatment actionability",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  },
+  {
+    "id": "E2E-R1-006",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "clinical_imaging_signal",
+      "clinical",
+      "bioinformatics_software",
+      "benchmark"
+    ],
+    "route_classes": [
+      "benchmark",
+      "bioinformatics_software",
+      "clinical",
+      "clinical_imaging_signal"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "segmentation benchmark proves clinical utility",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  },
+  {
+    "id": "E2E-R1-007",
+    "score": 12,
+    "max_score": 12,
+    "verdict": "pass",
+    "expected_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "inferred_modules": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "module_misses": [],
+    "expected_routes": [
+      "omics",
+      "proteomics_metabolomics",
+      "pathway_gene_set",
+      "bioinformatics_software"
+    ],
+    "route_classes": [
+      "bioinformatics_software",
+      "omics",
+      "pathway_gene_set",
+      "proteomics_metabolomics"
+    ],
+    "route_misses": [],
+    "missing_artifacts": [],
+    "missing_stops": [],
+    "unsafe_claim": "multi-omics integration proves causal biomarker pathway",
+    "artifact_plan": {
+      "Sounding": {
+        "artifact": [
+          "Source packet",
+          "Evidence Radar Map",
+          "Negative Space",
+          "Handoff Ticket"
+        ],
+        "stop_condition": "Stop if no traceable source packet or only uninspected snippets exist."
+      },
+      "Current": {
+        "artifact": [
+          "Trend Map",
+          "Direction-flow Boundary",
+          "Consensus-vs-Hype Notes"
+        ],
+        "stop_condition": "Stop before trend or consensus claims without a dated inspected source corpus."
+      },
+      "Reef": {
+        "artifact": [
+          "Resource Provenance Map",
+          "Evidence Hierarchy",
+          "API/Database Boundary",
+          "Source Packet Audit"
+        ],
+        "stop_condition": "Stop before treating candidate routes, APIs, databases, or tools as evidence."
+      },
+      "Iceberg": {
+        "artifact": [
+          "Surface Claim",
+          "Support Level",
+          "Hidden Risk",
+          "Downgraded Safe Claim"
+        ],
+        "stop_condition": "Stop before causal, mechanistic, clinical, or publication-ready claims when support is only association, prediction, annotation, or route context."
+      },
+      "Anchor": {
+        "artifact": [
+          "Validation Checklist",
+          "Reproducibility Plan",
+          "External-check Boundary"
+        ],
+        "stop_condition": "Stop before validation, reproducibility, benchmark fairness, or clinical readiness if required artifacts are named but not inspected."
+      },
+      "Compass": {
+        "artifact": [
+          "Evidence-based Idea Card",
+          "Experiment Plan",
+          "Strategy Route"
+        ],
+        "stop_condition": "Stop before journal strategy or polished research claims if evidence readiness is not established."
+      },
+      "Harbor": {
+        "artifact": [
+          "Decision Memo",
+          "Evidence Boundary Ledger",
+          "Contribution Boundary Record"
+        ],
+        "stop_condition": "Stop before recording authorship, submission, reviewer, or collaboration status without explicit traceable records."
+      }
+    }
+  }
+]
