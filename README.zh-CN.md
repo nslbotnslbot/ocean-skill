@@ -242,6 +242,8 @@ Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 prop
 
 仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。
 
+Seven-Module Coordination R1 增加了第一轮确定性全链路结构检查，覆盖 paper source packet、proposal 和 one-sentence idea 三类输入，测试 artifact coverage、handoff continuity、claim downgrade gate 和 Harbor closure。
+
 Research Design Workflow R1 测试 OCEAN 是否能把不确定的 idea、proposal、resource request、reviewer pressure 和 workflow decision 转成 design gates、validation gates、research routes 和 Harbor decision memory，同时不声称未经验证的成熟度。第一轮计分覆盖 6 条完成模型线、42 个 usable outputs；一条 Kimi lane 因 runtime blocked 单独记录。
 
 Domain Router Big Experiment R1 离线测试新的中心路由层。它检查 Domain Lens、Data/Tool Router 和 Module Artifact Contract 是否已经接入 skill 入口，并覆盖 medical AI、biological AI、omics、clinical research、drug/target hypothesis、KG/database resource、public-review pressure、collaboration boundary 和 stale Harbor reuse 等代表性生物医学输入。

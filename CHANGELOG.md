@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added OCEAN Seven-Module Coordination Eval R1 to test full Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor workflow continuity, artifact coverage, handoff tickets, unsupported-claim downgrades, and Harbor closure.
 - Added per-tool `api.json` contracts and `scripts/create_source_packet.py` Python wrappers to all bioinformatics tool folders, following a science-skills-style scriptable layout while preserving OCEAN's source-packet evidence boundary.
 - Added `examples/run-record.example.json` templates to all bioinformatics tool folders and extended the scaffold eval to validate example-record completeness.
 - Moved the AlphaFold DB source-packet adapter under `skills/ocean/scripts/tools/bioinformatics/alphafold_db/` so bioinformatics-specific adapters live with the bioinformatics tool folders.

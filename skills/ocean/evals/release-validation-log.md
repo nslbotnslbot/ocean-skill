@@ -2127,3 +2127,44 @@ An initial bulk `py_compile` attempt failed because Python tried to create bytec
 ### Evidence Boundary / 证据边界
 
 The generated wrappers do not install, call, benchmark, or validate the external bioinformatics tools. They only convert inspected run-record metadata into OCEAN software source packets. A packet may support tool-run provenance only after a real version, command line, parameters, reference/index, inputs, outputs, logs/QC, environment, and date have been inspected.
+
+## 2026-07-04 - Seven-module coordination eval R1
+
+Purpose: Test whether the seven OCEAN modules can coordinate as one bounded research workflow rather than acting as seven unrelated output styles.
+
+Implemented:
+
+- Added `scripts/run_ocean_coordination_eval.py`.
+- Added `evals/ocean-seven-module-coordination-r1-cases.json`.
+- Generated:
+  - `evals/ocean-seven-module-coordination-r1-results.json`
+  - `evals/ocean-seven-module-coordination-r1-summary.json`
+  - `evals/ocean-seven-module-coordination-r1-scorecard.csv`
+  - `evals/ocean-seven-module-coordination-r1-results.md`
+
+### R1 Case Types
+
+| Case | Input type | Expected chain |
+|---|---|---|
+| O7C-R1-001 | paper source packet | Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor |
+| O7C-R1-002 | research proposal | Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor |
+| O7C-R1-003 | one-sentence idea | Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor |
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Seven-module coordination eval R1 | 3/3 pass |
+| Mean coordination score | 100/100 |
+| Coordination runner compile | pass |
+| OCEAN contract check | 33/33 pass |
+| OCEAN E2E module router R1 | 7/7 pass |
+| Source-packet boundary R2 | 6/6 pass |
+
+### Error Notes
+
+An initial contract-check command used `--outdir`, but `check_ocean_contracts.py` expects `--out`. Re-running with `--out skills/ocean/evals/domain-router-big-experiment-r1-results.md` passed with 33/33 checks.
+
+### Evidence Boundary / 证据边界
+
+This is an offline structural coordination eval. It does not inspect real papers, datasets, raw data, private records, public APIs, external databases, reviewer reports, model outputs, or bioinformatics tool runs. Passing means the module chain, artifacts, handoff tickets, downgrade gates, and Harbor closure are structurally represented for the case seeds; it does not prove the underlying scientific claims.

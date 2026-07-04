@@ -242,6 +242,8 @@ Collaborative Workflow R1 adds a cross-module workflow stress test over proposal
 
 Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
 
+Seven-Module Coordination R1 adds the first deterministic full-chain structural check over paper-source-packet, proposal, and one-sentence-idea seeds, testing artifact coverage, handoff continuity, downgrade gates, and Harbor closure.
+
 Research Design Workflow R1 tests whether OCEAN can turn uncertain ideas, proposals, resource requests, reviewer pressure, and workflow decisions into design gates, validation gates, research routes, and Harbor decision memory without claiming unsupported maturity. The first scored pass covered 42 usable outputs across six completed model lanes; one Kimi lane was runtime-blocked and is tracked separately.
 
 Domain Router Big Experiment R1 tests the new central routing layer offline. It checks that the Domain Lens, Data/Tool Router, and Module Artifact Contract are connected to the skill entrypoint and cover representative biomedical inputs across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, and stale Harbor reuse.

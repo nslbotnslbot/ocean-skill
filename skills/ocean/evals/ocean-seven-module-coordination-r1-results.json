@@ -1,0 +1,492 @@
+[
+  {
+    "id": "O7C-R1-001",
+    "input_type": "paper_source_packet",
+    "score": 100,
+    "max_score": 100,
+    "verdict": "pass",
+    "dimensions": {
+      "module_coverage": 20,
+      "artifact_coverage": 20,
+      "handoff_continuity": 20,
+      "boundary_coverage": 15,
+      "unsupported_claim_downgrade": 15,
+      "harbor_memory_closure": 10
+    },
+    "expected_chain": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "planned_handoffs": [
+      [
+        "Sounding",
+        "Current"
+      ],
+      [
+        "Current",
+        "Reef"
+      ],
+      [
+        "Reef",
+        "Iceberg"
+      ],
+      [
+        "Iceberg",
+        "Anchor"
+      ],
+      [
+        "Anchor",
+        "Compass"
+      ],
+      [
+        "Compass",
+        "Harbor"
+      ]
+    ],
+    "module_plan": [
+      {
+        "module": "Sounding",
+        "artifact": "Source Packet + Evidence Radar Map + Negative Space",
+        "boundary": "Do not treat uninspected source packets, snippets, titles, or abstracts as full evidence.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      },
+      {
+        "module": "Current",
+        "artifact": "Direction-Flow Map",
+        "boundary": "Do not claim field trends without a dated inspected source corpus.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      },
+      {
+        "module": "Reef",
+        "artifact": "Resource Provenance Map",
+        "boundary": "Do not treat candidate databases, APIs, KGs, or tools as proof.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      },
+      {
+        "module": "Iceberg",
+        "artifact": "Claim-Evidence Matrix",
+        "boundary": "Downgrade unsupported causal, mechanistic, clinical, novelty, or publication claims.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      },
+      {
+        "module": "Anchor",
+        "artifact": "Validation Plan",
+        "boundary": "Do not imply planned validation, benchmark, or reproducibility checks have succeeded.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      },
+      {
+        "module": "Compass",
+        "artifact": "Research Route Card",
+        "boundary": "Do not propose journal/publication strategy as if evidence readiness is established.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      },
+      {
+        "module": "Harbor",
+        "artifact": "Decision Memory",
+        "boundary": "Do not record authorship, submission, collaboration, or project status without traceable records.",
+        "case_specific_boundary": "abstract-level only; no full methods inspected; no external validation inspected; no clinical deployment proof"
+      }
+    ],
+    "handoff_tickets": [
+      {
+        "case_id": "O7C-R1-001",
+        "source_module": "Sounding",
+        "next_module": "Current",
+        "input_packet": "O7C-R1-001:sounding-artifact",
+        "boundary": "Do not treat uninspected source packets, snippets, titles, or abstracts as full evidence.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-001",
+        "source_module": "Current",
+        "next_module": "Reef",
+        "input_packet": "O7C-R1-001:current-artifact",
+        "boundary": "Do not claim field trends without a dated inspected source corpus.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-001",
+        "source_module": "Reef",
+        "next_module": "Iceberg",
+        "input_packet": "O7C-R1-001:reef-artifact",
+        "boundary": "Do not treat candidate databases, APIs, KGs, or tools as proof.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-001",
+        "source_module": "Iceberg",
+        "next_module": "Anchor",
+        "input_packet": "O7C-R1-001:iceberg-artifact",
+        "boundary": "Downgrade unsupported causal, mechanistic, clinical, novelty, or publication claims.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-001",
+        "source_module": "Anchor",
+        "next_module": "Compass",
+        "input_packet": "O7C-R1-001:anchor-artifact",
+        "boundary": "Do not imply planned validation, benchmark, or reproducibility checks have succeeded.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-001",
+        "source_module": "Compass",
+        "next_module": "Harbor",
+        "input_packet": "O7C-R1-001:compass-artifact",
+        "boundary": "Do not propose journal/publication strategy as if evidence readiness is established.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      }
+    ],
+    "unsafe_claim": "The source packet proves direct ICU treatment guidance.",
+    "expected_downgrade": "Title/abstract-level and source-packet evidence may frame the prediction task, but cannot prove clinical treatment guidance without full methods, cohort, calibration, external validation, implementation, and prospective safety evidence.",
+    "evidence_boundary": {
+      "checked": "Scenario text and expected coordination contract only.",
+      "not_checked": "No real papers, datasets, raw files, APIs, databases, reviewer reports, or model outputs were inspected.",
+      "cannot_conclude": "Scientific truth, novelty, clinical utility, mechanism, validation success, authorship, or publication readiness.",
+      "needed_next": [
+        "abstract-level only",
+        "no full methods inspected",
+        "no external validation inspected",
+        "no clinical deployment proof"
+      ]
+    }
+  },
+  {
+    "id": "O7C-R1-002",
+    "input_type": "research_proposal",
+    "score": 100,
+    "max_score": 100,
+    "verdict": "pass",
+    "dimensions": {
+      "module_coverage": 20,
+      "artifact_coverage": 20,
+      "handoff_continuity": 20,
+      "boundary_coverage": 15,
+      "unsupported_claim_downgrade": 15,
+      "harbor_memory_closure": 10
+    },
+    "expected_chain": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "planned_handoffs": [
+      [
+        "Sounding",
+        "Current"
+      ],
+      [
+        "Current",
+        "Reef"
+      ],
+      [
+        "Reef",
+        "Iceberg"
+      ],
+      [
+        "Iceberg",
+        "Anchor"
+      ],
+      [
+        "Anchor",
+        "Compass"
+      ],
+      [
+        "Compass",
+        "Harbor"
+      ]
+    ],
+    "module_plan": [
+      {
+        "module": "Sounding",
+        "artifact": "Source Packet + Evidence Radar Map + Negative Space",
+        "boundary": "Do not treat uninspected source packets, snippets, titles, or abstracts as full evidence.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      },
+      {
+        "module": "Current",
+        "artifact": "Direction-Flow Map",
+        "boundary": "Do not claim field trends without a dated inspected source corpus.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      },
+      {
+        "module": "Reef",
+        "artifact": "Resource Provenance Map",
+        "boundary": "Do not treat candidate databases, APIs, KGs, or tools as proof.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      },
+      {
+        "module": "Iceberg",
+        "artifact": "Claim-Evidence Matrix",
+        "boundary": "Downgrade unsupported causal, mechanistic, clinical, novelty, or publication claims.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      },
+      {
+        "module": "Anchor",
+        "artifact": "Validation Plan",
+        "boundary": "Do not imply planned validation, benchmark, or reproducibility checks have succeeded.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      },
+      {
+        "module": "Compass",
+        "artifact": "Research Route Card",
+        "boundary": "Do not propose journal/publication strategy as if evidence readiness is established.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      },
+      {
+        "module": "Harbor",
+        "artifact": "Decision Memory",
+        "boundary": "Do not record authorship, submission, collaboration, or project status without traceable records.",
+        "case_specific_boundary": "proposal-only; no raw data inspected; no protocol/QC inspected; no independent replication inspected"
+      }
+    ],
+    "handoff_tickets": [
+      {
+        "case_id": "O7C-R1-002",
+        "source_module": "Sounding",
+        "next_module": "Current",
+        "input_packet": "O7C-R1-002:sounding-artifact",
+        "boundary": "Do not treat uninspected source packets, snippets, titles, or abstracts as full evidence.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-002",
+        "source_module": "Current",
+        "next_module": "Reef",
+        "input_packet": "O7C-R1-002:current-artifact",
+        "boundary": "Do not claim field trends without a dated inspected source corpus.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-002",
+        "source_module": "Reef",
+        "next_module": "Iceberg",
+        "input_packet": "O7C-R1-002:reef-artifact",
+        "boundary": "Do not treat candidate databases, APIs, KGs, or tools as proof.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-002",
+        "source_module": "Iceberg",
+        "next_module": "Anchor",
+        "input_packet": "O7C-R1-002:iceberg-artifact",
+        "boundary": "Downgrade unsupported causal, mechanistic, clinical, novelty, or publication claims.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-002",
+        "source_module": "Anchor",
+        "next_module": "Compass",
+        "input_packet": "O7C-R1-002:anchor-artifact",
+        "boundary": "Do not imply planned validation, benchmark, or reproducibility checks have succeeded.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-002",
+        "source_module": "Compass",
+        "next_module": "Harbor",
+        "input_packet": "O7C-R1-002:compass-artifact",
+        "boundary": "Do not propose journal/publication strategy as if evidence readiness is established.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      }
+    ],
+    "unsafe_claim": "The proposal already proves microbiota restoration and metabolite mechanism.",
+    "expected_downgrade": "Proposal text can define a testable hypothesis and planned evidence route, but cannot prove restoration or mechanism until raw data, cohort/protocol details, QC, statistics, and replication are inspected.",
+    "evidence_boundary": {
+      "checked": "Scenario text and expected coordination contract only.",
+      "not_checked": "No real papers, datasets, raw files, APIs, databases, reviewer reports, or model outputs were inspected.",
+      "cannot_conclude": "Scientific truth, novelty, clinical utility, mechanism, validation success, authorship, or publication readiness.",
+      "needed_next": [
+        "proposal-only",
+        "no raw data inspected",
+        "no protocol/QC inspected",
+        "no independent replication inspected"
+      ]
+    }
+  },
+  {
+    "id": "O7C-R1-003",
+    "input_type": "one_sentence_idea",
+    "score": 100,
+    "max_score": 100,
+    "verdict": "pass",
+    "dimensions": {
+      "module_coverage": 20,
+      "artifact_coverage": 20,
+      "handoff_continuity": 20,
+      "boundary_coverage": 15,
+      "unsupported_claim_downgrade": 15,
+      "harbor_memory_closure": 10
+    },
+    "expected_chain": [
+      "Sounding",
+      "Current",
+      "Reef",
+      "Iceberg",
+      "Anchor",
+      "Compass",
+      "Harbor"
+    ],
+    "planned_handoffs": [
+      [
+        "Sounding",
+        "Current"
+      ],
+      [
+        "Current",
+        "Reef"
+      ],
+      [
+        "Reef",
+        "Iceberg"
+      ],
+      [
+        "Iceberg",
+        "Anchor"
+      ],
+      [
+        "Anchor",
+        "Compass"
+      ],
+      [
+        "Compass",
+        "Harbor"
+      ]
+    ],
+    "module_plan": [
+      {
+        "module": "Sounding",
+        "artifact": "Source Packet + Evidence Radar Map + Negative Space",
+        "boundary": "Do not treat uninspected source packets, snippets, titles, or abstracts as full evidence.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      },
+      {
+        "module": "Current",
+        "artifact": "Direction-Flow Map",
+        "boundary": "Do not claim field trends without a dated inspected source corpus.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      },
+      {
+        "module": "Reef",
+        "artifact": "Resource Provenance Map",
+        "boundary": "Do not treat candidate databases, APIs, KGs, or tools as proof.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      },
+      {
+        "module": "Iceberg",
+        "artifact": "Claim-Evidence Matrix",
+        "boundary": "Downgrade unsupported causal, mechanistic, clinical, novelty, or publication claims.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      },
+      {
+        "module": "Anchor",
+        "artifact": "Validation Plan",
+        "boundary": "Do not imply planned validation, benchmark, or reproducibility checks have succeeded.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      },
+      {
+        "module": "Compass",
+        "artifact": "Research Route Card",
+        "boundary": "Do not propose journal/publication strategy as if evidence readiness is established.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      },
+      {
+        "module": "Harbor",
+        "artifact": "Decision Memory",
+        "boundary": "Do not record authorship, submission, collaboration, or project status without traceable records.",
+        "case_specific_boundary": "idea-only; no papers inspected; no datasets inspected; no KG schema inspected; no validation inspected"
+      }
+    ],
+    "handoff_tickets": [
+      {
+        "case_id": "O7C-R1-003",
+        "source_module": "Sounding",
+        "next_module": "Current",
+        "input_packet": "O7C-R1-003:sounding-artifact",
+        "boundary": "Do not treat uninspected source packets, snippets, titles, or abstracts as full evidence.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-003",
+        "source_module": "Current",
+        "next_module": "Reef",
+        "input_packet": "O7C-R1-003:current-artifact",
+        "boundary": "Do not claim field trends without a dated inspected source corpus.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-003",
+        "source_module": "Reef",
+        "next_module": "Iceberg",
+        "input_packet": "O7C-R1-003:reef-artifact",
+        "boundary": "Do not treat candidate databases, APIs, KGs, or tools as proof.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-003",
+        "source_module": "Iceberg",
+        "next_module": "Anchor",
+        "input_packet": "O7C-R1-003:iceberg-artifact",
+        "boundary": "Downgrade unsupported causal, mechanistic, clinical, novelty, or publication claims.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-003",
+        "source_module": "Anchor",
+        "next_module": "Compass",
+        "input_packet": "O7C-R1-003:anchor-artifact",
+        "boundary": "Do not imply planned validation, benchmark, or reproducibility checks have succeeded.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      },
+      {
+        "case_id": "O7C-R1-003",
+        "source_module": "Compass",
+        "next_module": "Harbor",
+        "input_packet": "O7C-R1-003:compass-artifact",
+        "boundary": "Do not propose journal/publication strategy as if evidence readiness is established.",
+        "unresolved_risk": "Downstream module must preserve missing-evidence notes and cannot upgrade unsupported claims.",
+        "stop_condition": "Stop if the next module would need uninspected private data, live API results, raw files, reviewer text, or validation outcomes."
+      }
+    ],
+    "unsafe_claim": "The idea already identifies true immunotherapy resistance mechanisms.",
+    "expected_downgrade": "The sentence is an idea/hypothesis only. OCEAN can plan source discovery, resource routing, claim audit, validation, and project memory, but cannot assert mechanisms or novelty without traceable evidence.",
+    "evidence_boundary": {
+      "checked": "Scenario text and expected coordination contract only.",
+      "not_checked": "No real papers, datasets, raw files, APIs, databases, reviewer reports, or model outputs were inspected.",
+      "cannot_conclude": "Scientific truth, novelty, clinical utility, mechanism, validation success, authorship, or publication readiness.",
+      "needed_next": [
+        "idea-only",
+        "no papers inspected",
+        "no datasets inspected",
+        "no KG schema inspected",
+        "no validation inspected"
+      ]
+    }
+  }
+]
