@@ -34,6 +34,100 @@ TOOLS = [
 ]
 
 
+FAMILY_USAGE = {
+    "qc_preprocessing": {
+        "use": "when inspecting raw-sequence quality, trimming, adapter removal, or read-level QC before downstream analysis.",
+        "avoid": "as evidence for biological effect size, mechanism, or clinical validity.",
+        "handoff": "Anchor for QC thresholds and reproducibility; Harbor for run records.",
+    },
+    "sequence_alignment": {
+        "use": "when comparing query sequences to references or homologs with explicit database/index provenance.",
+        "avoid": "as standalone proof of function, orthology, mechanism, or pathogenicity.",
+        "handoff": "Reef for reference/database provenance; Iceberg for claims based on similarity.",
+    },
+    "spliced_rna_alignment": {
+        "use": "when mapping RNA-seq reads to a genome/transcriptome with splice-aware alignment settings.",
+        "avoid": "as standalone proof of differential expression or causal regulation.",
+        "handoff": "Anchor for alignment QC and leakage checks; Iceberg for expression claims.",
+    },
+    "alignment_file_operations": {
+        "use": "when sorting, indexing, filtering, summarizing, or intersecting alignment/interval files.",
+        "avoid": "as a source of biological interpretation without upstream and downstream context.",
+        "handoff": "Harbor for provenance; Anchor for reproducible command/environment checks.",
+    },
+    "variant_calling": {
+        "use": "when recording inspected variant-calling runs with reference genome, caller version, parameters, and QC.",
+        "avoid": "as standalone clinical interpretation, pathogenicity assignment, or treatment guidance.",
+        "handoff": "Reef for ClinVar/gnomAD/resource routing; Iceberg for pathogenicity or mechanism claims.",
+    },
+    "rna_seq_quantification": {
+        "use": "when quantifying transcript/gene abundance from RNA-seq with explicit reference and sample metadata.",
+        "avoid": "as standalone proof of differential expression, mechanism, or phenotype causality.",
+        "handoff": "Anchor for QC/replicate checks; Iceberg for expression-supported claims.",
+    },
+    "differential_expression": {
+        "use": "when inspected count/contrast/design metadata can support bounded differential-expression analysis.",
+        "avoid": "when design matrix, batch handling, replicates, or multiple-testing control are missing.",
+        "handoff": "Iceberg for claim downgrade; Anchor for design, batch, and validation checks.",
+    },
+    "single_cell_analysis": {
+        "use": "when inspecting single-cell preprocessing, clustering, annotation, integration, or reference mapping.",
+        "avoid": "as proof of new cell types, causal states, or clinical biomarkers without orthogonal validation.",
+        "handoff": "Reef for atlas/reference routing; Anchor for batch, doublet, annotation, and validation checks.",
+    },
+    "spatial_transcriptomics": {
+        "use": "when inspecting spatial transcriptomics preprocessing, cell-type mapping, deconvolution, or spatial pattern analysis.",
+        "avoid": "as standalone proof of cell-cell mechanism or spatial causality.",
+        "handoff": "Reef for atlas/database provenance; Iceberg for mechanism claims; Anchor for validation.",
+    },
+    "epigenomics_peak_calling": {
+        "use": "when inspecting peak calling, motif search, coverage, or regulatory-region evidence.",
+        "avoid": "as standalone proof of direct transcriptional regulation or causal enhancer function.",
+        "handoff": "Iceberg for regulatory claims; Anchor for controls, replicates, and blacklist/QC checks.",
+    },
+    "genome_assembly_annotation": {
+        "use": "when inspecting assembly, annotation, completeness, contamination, or functional annotation outputs.",
+        "avoid": "as standalone proof of phenotype, function, or taxonomic novelty without validation.",
+        "handoff": "Anchor for assembly/QC; Reef for database/resource provenance.",
+    },
+    "microbiome_metagenomics": {
+        "use": "when inspecting microbiome taxonomic, functional, or amplicon/metagenomic analysis runs.",
+        "avoid": "as standalone proof of causality, treatment effect, or host mechanism.",
+        "handoff": "Iceberg for association-vs-causality checks; Anchor for contamination, compositionality, and validation.",
+    },
+    "proteomics_metabolomics": {
+        "use": "when inspecting proteomics/metabolomics identification, quantification, or feature-level analysis.",
+        "avoid": "as standalone mechanistic or clinical proof without identification confidence and validation.",
+        "handoff": "Anchor for FDR, batch, standards, and QC; Iceberg for mechanism claims.",
+    },
+    "structure_modeling": {
+        "use": "when inspecting predicted/experimental structures, structural confidence, alignments, or visualization outputs.",
+        "avoid": "as standalone proof of binding, mechanism, druggability, or functional rescue.",
+        "handoff": "Reef for structure database provenance; Iceberg for structure-supported claims; Anchor for validation.",
+    },
+    "imaging_signal_ml": {
+        "use": "when inspecting biomedical imaging/signal preprocessing, segmentation, model outputs, or evaluation runs.",
+        "avoid": "as standalone clinical deployment evidence without external validation, calibration, and leakage checks.",
+        "handoff": "Anchor for leakage/benchmark/reproducibility; Iceberg for clinical claims.",
+    },
+    "phylogenetics_comparative_genomics": {
+        "use": "when inspecting multiple alignment, phylogeny, orthology, or comparative-genomics runs.",
+        "avoid": "as standalone proof of function, trait causality, or species-level conclusion without support.",
+        "handoff": "Reef for reference/database provenance; Iceberg for evolutionary/function claims.",
+    },
+    "multi_omics_integration": {
+        "use": "when inspecting multi-omics modules, factors, networks, or integrative association patterns.",
+        "avoid": "as standalone proof of causal mechanism or clinical utility.",
+        "handoff": "Iceberg for association/causality boundaries; Anchor for validation and robustness checks.",
+    },
+    "workflow_reproducibility": {
+        "use": "when inspecting workflow orchestration, environment capture, containers, dependency pinning, or run provenance.",
+        "avoid": "as biological evidence by itself.",
+        "handoff": "Harbor for reproducibility records; Anchor for rerun and benchmark planning.",
+    },
+}
+
+
 def slugify(name: str) -> str:
     slug = name.lower()
     slug = slug.replace("+", "plus")
@@ -111,6 +205,75 @@ The wrapper converts provenance fields into an OCEAN software source packet. It 
 """
 
 
+def readme_usage_section(tool: dict) -> str:
+    return f"""
+
+## Science-skills-style usage guide
+
+See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
+"""
+
+
+def usage_reference(tool: dict) -> str:
+    family = FAMILY_USAGE.get(
+        tool["family"],
+        {
+            "use": "when an inspected software run can be tied to concrete inputs, parameters, outputs, logs, and environment metadata.",
+            "avoid": "as standalone support for biological mechanism, causality, clinical utility, or publication readiness.",
+            "handoff": "Anchor for validation and Harbor for run records.",
+        },
+    )
+    return f"""# {tool['name']} Usage Guide
+
+This is an OCEAN tool-use guide inspired by science-skills-style wrappers. It is not a standalone Codex skill and it does not mean `{tool['name']}` is installed locally.
+
+## Use When
+
+Use `{tool['name']}` {family['use']}
+
+## Do Not Use When
+
+Do not use `{tool['name']}` {family['avoid']}
+
+Do not infer uninspected sample sizes, databases, parameters, versions, benchmarks, effect sizes, or validation results.
+
+## Before Running Or Trusting Output
+
+Confirm and record:
+
+- tool version and executable/package source;
+- command line or workflow step;
+- parameters and configuration files;
+- reference/index/database and version;
+- input files and sample metadata boundaries;
+- output files and inspected result fields;
+- logs, warnings, QC metrics, and failure messages;
+- environment, container, OS, hardware if relevant, and run date;
+- license/terms constraints when the tool or database requires them.
+
+## OCEAN Packet Workflow
+
+1. Run an availability smoke check before promising execution.
+2. If the tool is unavailable, report `not_available_current_environment` and create an install/environment plan rather than inventing output.
+3. If a real run exists, fill `examples/run-record.example.json` with inspected metadata.
+4. Convert the inspected run record with `scripts/create_source_packet.py`.
+5. Hand off the packet according to: {family['handoff']}
+
+## Stop Conditions
+
+Stop and ask for more evidence when:
+
+- version, command, reference/index, inputs, outputs, or logs are missing;
+- the run used private/clinical data without explicit access/privacy boundaries;
+- the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation;
+- the tool is unavailable in the current environment.
+
+## Evidence Boundary
+
+`{tool['name']}` output can support bounded software-run provenance only after the run record is inspected. It cannot by itself prove biological mechanism, causal conclusion, clinical utility, reproducibility, or publication readiness.
+"""
+
+
 def api_contract(tool: dict) -> dict:
     return {
         "schema_version": "ocean-tool-api-v1",
@@ -154,6 +317,13 @@ def api_contract(tool: dict) -> dict:
             "source_type": "bioinformatics_software_run",
             "boundary_status": "queried_evidence",
             "handoff": "Anchor",
+        },
+        "usage_reference": "references/tool_usage.md",
+        "execution_contract": {
+            "availability_smoke_required_before_execution_claim": True,
+            "real_run_record_required_before_evidence_packet": True,
+            "install_or_container_plan_required_if_unavailable": True,
+            "license_or_terms_check_required_when_applicable": True,
         },
         "evidence_boundary": {
             "does_not_run_external_tool": True,
@@ -317,7 +487,15 @@ def main() -> int:
             else:
                 current_readme = readme_path.read_text(encoding="utf-8")
                 if "## API / Python Wrapper" not in current_readme:
-                    readme_path.write_text(current_readme.rstrip() + readme_python_section(data) + "\n", encoding="utf-8")
+                    current_readme = current_readme.rstrip() + readme_python_section(data) + "\n"
+                if "## Science-skills-style usage guide" not in current_readme:
+                    current_readme = current_readme.rstrip() + readme_usage_section(data) + "\n"
+                readme_path.write_text(current_readme, encoding="utf-8")
+            references = folder / "references"
+            references.mkdir(parents=True, exist_ok=True)
+            usage_path = references / "tool_usage.md"
+            if not usage_path.exists():
+                usage_path.write_text(usage_reference(data), encoding="utf-8")
             examples = folder / "examples"
             examples.mkdir(parents=True, exist_ok=True)
             example_path = examples / "run-record.example.json"
@@ -329,6 +507,16 @@ def main() -> int:
             api_path = folder / "api.json"
             if not api_path.exists():
                 api_path.write_text(json.dumps(api_contract(data), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            else:
+                api_data = json.loads(api_path.read_text(encoding="utf-8"))
+                desired_api = api_contract(data)
+                changed = False
+                for key in ["usage_reference", "execution_contract"]:
+                    if key not in api_data:
+                        api_data[key] = desired_api[key]
+                        changed = True
+                if changed:
+                    api_path.write_text(json.dumps(api_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             scripts = folder / "scripts"
             scripts.mkdir(parents=True, exist_ok=True)
             wrapper_path = scripts / "create_source_packet.py"
@@ -347,6 +535,8 @@ def main() -> int:
         "they are converted into OCEAN evidence packets.\n\n"
         "Each tool folder also includes `api.json` and `scripts/create_source_packet.py`. These define a stable local "
         "wrapper contract for turning inspected run metadata into source packets; they do not install or execute external tools.\n\n"
+        "Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, "
+        "required local execution evidence, stop conditions, and OCEAN handoff guidance.\n\n"
         f"Tool folders: {len(registry)}\n",
         encoding="utf-8",
     )

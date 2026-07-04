@@ -43,3 +43,7 @@ python3 scripts/create_source_packet.py \
 
 The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `bcftools`.
 
+## Science-skills-style usage guide
+
+See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
+
