@@ -2168,3 +2168,36 @@ An initial contract-check command used `--outdir`, but `check_ocean_contracts.py
 ### Evidence Boundary / 证据边界
 
 This is an offline structural coordination eval. It does not inspect real papers, datasets, raw data, private records, public APIs, external databases, reviewer reports, model outputs, or bioinformatics tool runs. Passing means the module chain, artifacts, handoff tickets, downgrade gates, and Harbor closure are structurally represented for the case seeds; it does not prove the underlying scientific claims.
+
+## 2026-07-05 - Bioinformatics real-tool smoke eval R1
+
+Purpose: Attempt real local smoke execution for all 115 bioinformatics tool scaffolds without installing tools or pretending unavailable tools ran.
+
+Implemented:
+
+- Added `scripts/tools/run_bioinformatics_real_tool_smoke_eval.py`.
+- Generated `evals/bioinformatics-real-tool-smoke-r1-results.json`, `summary.json`, `scorecard.csv`, and `results.md`.
+- Stored local-adapter smoke artifacts under `evals/bioinformatics-real-tool-smoke-r1-adapter-artifacts/` so this runner does not rewrite older AlphaFold DB adapter eval outputs.
+- Corrected an initial LAST false-positive: `/usr/bin/last` is a system login-record command, not the LAST aligner. The runner now uses explicit aliases for mapped CLI tools, so LAST checks `lastal` / `lastdb` rather than the system command.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Tools checked | 115 |
+| Executed locally at smoke level | 3 |
+| Not available in current environment | 112 |
+| Found but probe failed | 0 |
+| Runner compile | pass |
+| Bioinformatics scaffold eval | 115/115 pass |
+| OCEAN contract check | 33/33 pass |
+
+Executed smoke entries:
+
+- AlphaFold DB local OCEAN adapter: pass.
+- DESeq2 R package version: 1.50.2.
+- limma R package version: 3.66.0.
+
+### Evidence Boundary / 证据边界
+
+This is a local availability/version/import smoke eval only. It does not install missing tools, download reference databases, build indices, run omics workflows, process raw biological/clinical data, benchmark methods, or validate scientific claims. The 112 unavailable tools are environment/install gaps in this machine, not scientific failures of those tools.
