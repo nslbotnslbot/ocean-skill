@@ -62,9 +62,9 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/check_claim_table.py` after the claim CSV is filled to summarize weak or high-risk claims.
 - Use `scripts/make_review_skeleton.py` when the user wants a reusable markdown review skeleton.
 - Use `scripts/ocean_source_router.py` when the user wants an offline candidate route for biomedical resources, bioinformatics software, source packets, or incomplete source-packet audits. Treat its output as routing support, not as biological evidence.
-- Use `scripts/afdb_source_packet.py` for AlphaFold DB predicted-structure source packets. Treat outputs as bounded structural-confidence evidence only; do not upgrade them into binding, function, mechanism, druggability, or clinical claims.
-- Use `scripts/literature_source_packet.py` for PubMed/EuropePMC/local literature records. Treat title/abstract packets as source identity and abstract-level context, not full-paper evidence.
-- Use `scripts/clinicaltrials_source_packet.py` for ClinicalTrials.gov registry packets. Treat registry records as trial-registration/design evidence, not efficacy or safety proof.
+- Use `scripts/tools/alphafold_db/source_packet.py` for AlphaFold DB predicted-structure source packets. Treat outputs as bounded structural-confidence evidence only; do not upgrade them into binding, function, mechanism, druggability, or clinical claims.
+- Use `scripts/tools/literature/source_packet.py` for PubMed/EuropePMC/local literature records. Treat title/abstract packets as source identity and abstract-level context, not full-paper evidence.
+- Use `scripts/tools/clinicaltrials/source_packet.py` for ClinicalTrials.gov registry packets. Treat registry records as trial-registration/design evidence, not efficacy or safety proof.
 - Use `scripts/run_reef_api_adapter.py` only when the user explicitly wants a bounded public Reef API packet. Default to dry-run unless the user has approved live public API access and no private, sensitive, paid, or key-protected data will be submitted.
 
 ## Workflow

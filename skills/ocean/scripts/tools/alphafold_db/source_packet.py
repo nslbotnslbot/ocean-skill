@@ -243,7 +243,7 @@ def command_packet(args: argparse.Namespace) -> int:
         "source_type": "predicted_structure_database",
         "resource": "AlphaFold DB",
         "query": f"AlphaFold DB predicted structure analysis for {analysis.get('uniprot') or 'unknown UniProt'}",
-        "filters": {"adapter": "afdb_source_packet.py"},
+        "filters": {"adapter": "scripts/tools/alphafold_db/source_packet.py"},
         "date_accessed": dt.date.today().isoformat(),
         "identifiers": [analysis.get("uniprot")] if analysis.get("uniprot") else [],
         "inspected_content": inspected + ["pLDDT summary", "PAE summary"],

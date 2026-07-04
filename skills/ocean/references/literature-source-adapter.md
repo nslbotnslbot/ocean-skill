@@ -33,7 +33,7 @@ Literature adapter outputs are source identity and abstract/full-text boundary p
 
 ## Workflow
 
-1. Use `scripts/literature_source_packet.py fetch-pubmed` or `fetch-europepmc` only when live public retrieval is intended.
+1. Use `scripts/tools/literature/source_packet.py fetch-pubmed` or `fetch-europepmc` only when live public retrieval is intended.
 2. Use `analyze` on local JSON records.
 3. Use `packet` to generate an OCEAN source packet.
 4. If only title/abstract was inspected, downgrade downstream claims to abstract-level only.

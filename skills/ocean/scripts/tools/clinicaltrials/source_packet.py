@@ -110,7 +110,7 @@ def command_packet(args: argparse.Namespace) -> int:
         "source_type": "clinical_registry_record",
         "resource": "ClinicalTrials.gov",
         "query": f"ClinicalTrials.gov registry record for {study.get('nct_id') or 'unknown NCT'}",
-        "filters": {"adapter": "clinicaltrials_source_packet.py"},
+        "filters": {"adapter": "scripts/tools/clinicaltrials/source_packet.py"},
         "date_accessed": dt.date.today().isoformat(),
         "identifiers": [study.get("nct_id")] if study.get("nct_id") else [],
         "inspected_content": analysis.get("inspected_content", []),
