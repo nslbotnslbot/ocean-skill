@@ -1,0 +1,1142 @@
+[
+  {
+    "slug": "alevin_fry",
+    "name": "Alevin-fry",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "alphafold",
+    "name": "AlphaFold",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "azimuth",
+    "name": "Azimuth",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "bakta",
+    "name": "Bakta",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "bcftools",
+    "name": "bcftools",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "bedtools",
+    "name": "BEDTools",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "blast",
+    "name": "BLAST",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "bowtie2",
+    "name": "Bowtie2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "bracken",
+    "name": "Bracken",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "busco",
+    "name": "BUSCO",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "bwa",
+    "name": "BWA",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "canu",
+    "name": "Canu",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "cell2location",
+    "name": "cell2location",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "cell_ranger",
+    "name": "Cell Ranger",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "celltypist",
+    "name": "CellTypist",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "checkm",
+    "name": "CheckM",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "chimerax",
+    "name": "ChimeraX",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "clustal_omega",
+    "name": "Clustal Omega",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "colabfold",
+    "name": "ColabFold",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "conda",
+    "name": "Conda",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "cutadapt",
+    "name": "cutadapt",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "cwl",
+    "name": "CWL",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "dada2",
+    "name": "DADA2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "deeptools",
+    "name": "deepTools",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "deepvariant",
+    "name": "DeepVariant",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "deseq2",
+    "name": "DESeq2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "dia_nn",
+    "name": "DIA-NN",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "diablo",
+    "name": "DIABLO",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "docker",
+    "name": "Docker",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "edger",
+    "name": "edgeR",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "eggnog_mapper",
+    "name": "eggNOG-mapper",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "fastp",
+    "name": "fastp",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "fastqc",
+    "name": "FastQC",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "fasttree",
+    "name": "FastTree",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "featurecounts",
+    "name": "featureCounts",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "fimo",
+    "name": "FIMO",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "flye",
+    "name": "Flye",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "fragpipe",
+    "name": "FragPipe",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "freebayes",
+    "name": "FreeBayes",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "galaxy",
+    "name": "Galaxy",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "gatk",
+    "name": "GATK",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "giotto",
+    "name": "Giotto",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "hh_suite",
+    "name": "HH-suite",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "hisat2",
+    "name": "HISAT2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "hmmer",
+    "name": "HMMER",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "homer",
+    "name": "HOMER",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "htslib",
+    "name": "HTSlib",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "humann",
+    "name": "HUMAnN",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "interproscan",
+    "name": "InterProScan",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "iq_tree",
+    "name": "IQ-TREE",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "itk_snap",
+    "name": "ITK-SNAP",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "kallisto",
+    "name": "kallisto",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "kraken2",
+    "name": "Kraken2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "last",
+    "name": "LAST",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "limma_voom",
+    "name": "limma-voom",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "macs2",
+    "name": "MACS2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "macs3",
+    "name": "MACS3",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "mafft",
+    "name": "MAFFT",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "maxquant",
+    "name": "MaxQuant",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "megahit",
+    "name": "MEGAHIT",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "meme",
+    "name": "MEME",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "metaphlan",
+    "name": "MetaPhlAn",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "minimap2",
+    "name": "minimap2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "mixomics",
+    "name": "mixOmics",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "modeller",
+    "name": "MODELLER",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "mofa",
+    "name": "MOFA",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "mofaplus",
+    "name": "MOFA+",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "monai",
+    "name": "MONAI",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "ms_dial",
+    "name": "MS-DIAL",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "multiqc",
+    "name": "MultiQC",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "muscle",
+    "name": "MUSCLE",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "mutect2",
+    "name": "Mutect2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "mzmine",
+    "name": "MZmine",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "nextflow",
+    "name": "Nextflow",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "nf_core",
+    "name": "nf-core",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "nnu_net",
+    "name": "nnU-Net",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "orthofinder",
+    "name": "OrthoFinder",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "picard",
+    "name": "Picard",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "prokka",
+    "name": "Prokka",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "pymol",
+    "name": "PyMOL",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "qiime2",
+    "name": "QIIME2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "qualimap",
+    "name": "Qualimap",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "quast",
+    "name": "QUAST",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "raven",
+    "name": "Raven",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "raxml",
+    "name": "RAxML",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "rosettafold",
+    "name": "RoseTTAFold",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "rsem",
+    "name": "RSEM",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "salmon",
+    "name": "Salmon",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "samtools",
+    "name": "SAMtools",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "scanpy",
+    "name": "Scanpy",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "scvi",
+    "name": "scVI",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "seurat",
+    "name": "Seurat",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "simpleitk",
+    "name": "SimpleITK",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "singularity_apptainer",
+    "name": "Singularity-Apptainer",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "skyline",
+    "name": "Skyline",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "sleuth",
+    "name": "sleuth",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "snakemake",
+    "name": "Snakemake",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "space_ranger",
+    "name": "Space Ranger",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "spades",
+    "name": "SPAdes",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "squidpy",
+    "name": "Squidpy",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "star",
+    "name": "STAR",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "starsolo",
+    "name": "STARsolo",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "stereoscope",
+    "name": "Stereoscope",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "stlearn",
+    "name": "stLearn",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "strelka2",
+    "name": "Strelka2",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "stringtie",
+    "name": "StringTie",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "tangram",
+    "name": "Tangram",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "three_d_slicer",
+    "name": "3D Slicer",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "torchio",
+    "name": "TorchIO",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "trim_galore",
+    "name": "Trim Galore",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "trimmomatic",
+    "name": "Trimmomatic",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "wdl_cromwell",
+    "name": "WDL-Cromwell",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "wgcna",
+    "name": "WGCNA",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
+    "slug": "xcms",
+    "name": "XCMS",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  }
+]

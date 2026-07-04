@@ -55,6 +55,9 @@ scripts:
   literature_source_adapter: scripts/tools/literature/source_packet.py
   clinicaltrials_adapter: scripts/tools/clinicaltrials/source_packet.py
   source_adapters_eval: scripts/tools/run_source_adapter_eval.py
+  generic_software_source_packet: scripts/tools/common/software_source_packet.py
+  bioinformatics_tool_scaffold_generator: scripts/tools/generate_bioinformatics_tool_scaffold.py
+  bioinformatics_tool_scaffold_eval: scripts/tools/run_bioinformatics_tool_scaffold_eval.py
   reef_router_eval: scripts/run_reef_router_eval.py
   source_packet_boundary_eval: scripts/run_source_packet_boundary_eval.py
   e2e_module_eval: scripts/run_ocean_e2e_eval.py
@@ -67,4 +70,5 @@ evals:
   reef_bioinformatics_router_r2: evals/reef-bioinformatics-router-r2-cases.json
   reef_bioinformatics_router_r3: evals/reef-bioinformatics-router-r3-cases.json
   reef_bioinformatics_router_r4: evals/reef-bioinformatics-router-r4-cases.json
+  bioinformatics_tool_scaffold_r1: evals/bioinformatics-tool-scaffold-r1-summary.json
   source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json

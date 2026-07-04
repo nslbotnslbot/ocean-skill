@@ -65,6 +65,8 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/tools/alphafold_db/source_packet.py` for AlphaFold DB predicted-structure source packets. Treat outputs as bounded structural-confidence evidence only; do not upgrade them into binding, function, mechanism, druggability, or clinical claims.
 - Use `scripts/tools/literature/source_packet.py` for PubMed/EuropePMC/local literature records. Treat title/abstract packets as source identity and abstract-level context, not full-paper evidence.
 - Use `scripts/tools/clinicaltrials/source_packet.py` for ClinicalTrials.gov registry packets. Treat registry records as trial-registration/design evidence, not efficacy or safety proof.
+- Use `scripts/tools/common/software_source_packet.py` for generic software-run source packets when a bioinformatics tool has inspected run metadata but no dedicated wrapper yet. Treat these packets as provenance evidence only.
+- Use `scripts/tools/bioinformatics/<tool>/` folders as scaffold locations for tool-specific wrappers, examples, and evals. A folder existing there does not mean the tool is installed or executable.
 - Use `scripts/run_reef_api_adapter.py` only when the user explicitly wants a bounded public Reef API packet. Default to dry-run unless the user has approved live public API access and no private, sensitive, paid, or key-protected data will be submitted.
 
 ## Workflow

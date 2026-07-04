@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added per-tool bioinformatics scaffold folders under `skills/ocean/scripts/tools/bioinformatics/` plus a generic software source-packet helper and scaffold completeness eval.
 - Reorganized tool-specific source-packet scripts under `skills/ocean/scripts/tools/` with per-resource folders for AlphaFold DB, literature, and ClinicalTrials.gov adapters.
 - Added a bioinformatics software catalog and expanded Reef/Data Tool routing across common QC, alignment, variant, RNA-seq, single-cell, spatial, epigenomics, assembly, microbiome, proteomics, metabolomics, structure, imaging/signal, workflow, and ML software families; added Reef router R4 with 20/20 pass.
 - Added a public project-boundary memo and README non-goals that position OCEAN as a source-packet-based external claim-evidence audit layer, not an autonomous AI scientist, experiment-execution system, internal evidence ledger, or publication-release workflow.

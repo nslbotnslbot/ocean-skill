@@ -113,6 +113,8 @@ Stop or downgrade if:
 
 For a fuller tool list and per-family packet rules, read `bioinformatics-software-catalog.md`.
 
+Each tool listed in the software families now has a scaffold folder under `scripts/tools/bioinformatics/<tool_slug>/`. These folders define where tool-specific wrappers, examples, evals, and source-packet metadata should live. Folder presence is still only a scaffold; it does not mean the tool is installed, executable, or validated.
+
 ## LAST-specific note
 
 LAST, associated with Martin Frith's `last` project, belongs to the sequence alignment/search route. In OCEAN, LAST output should be treated as alignment evidence only after recording tool version, database/index, scoring scheme, command line, input sequences, filters, and inspected alignments. It cannot by itself prove homology function, mechanism, clinical relevance, or evolutionary conclusion.

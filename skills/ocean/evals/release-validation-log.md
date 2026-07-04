@@ -1996,3 +1996,37 @@ Implemented:
 ### Evidence Boundary / 证据边界
 
 This was a repository layout refactor. It did not add new scientific evidence, did not run live APIs, and did not run external bioinformatics tools. Passing means the moved scripts still produce bounded mock source packets from local eval fixtures.
+
+## 2026-07-04 - Bioinformatics tool folder scaffold R1
+
+Purpose: Turn the bioinformatics tools listed in `bioinformatics-resource-map.md` from names in a table into explicit GitHub folders with reusable source-packet scaffolding.
+
+Implemented:
+
+- Added `scripts/tools/common/software_source_packet.py`.
+- Added `scripts/tools/common/README.md`.
+- Added `scripts/tools/generate_bioinformatics_tool_scaffold.py`.
+- Added `scripts/tools/run_bioinformatics_tool_scaffold_eval.py`.
+- Added `scripts/tools/bioinformatics/README.md`.
+- Added `scripts/tools/bioinformatics/registry.json`.
+- Generated 114 per-tool scaffold folders under `scripts/tools/bioinformatics/<tool_slug>/`.
+- Each tool folder contains:
+  - `README.md`
+  - `tool.json`
+- Updated `SKILL.md`, `manifest.yaml`, `scripts/tools/README.md`, `bioinformatics-resource-map.md`, and `CHANGELOG.md`.
+
+### Scaffold validation
+
+| Check | Result |
+|---|---:|
+| Bioinformatics tool scaffold R1 | 114/114 pass |
+| Generic software source-packet helper compile | pass |
+| Scaffold generator compile | pass |
+| Scaffold eval runner compile | pass |
+| Generic LAST template/audit/packet smoke test | pass |
+
+Representative tool folders checked: `last`, `alphafold`, `seurat`, `gatk`, `qiime2`, and `snakemake`.
+
+### Evidence Boundary / 证据边界
+
+This run created GitHub-visible scaffold folders and generic provenance-packet code only. It did not install, run, benchmark, or validate LAST, AlphaFold, Seurat, GATK, QIIME2, Snakemake, or any other listed bioinformatics tool. Folder presence means OCEAN has a stable location for future wrappers, examples, and evals; it does not mean the tool is executable or that its output supports a biological, causal, clinical, reproducibility, or publication claim.

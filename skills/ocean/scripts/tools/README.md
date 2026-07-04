@@ -18,6 +18,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `alphafold_db/` | AlphaFold DB predicted-structure confidence and PAE source packets |
 | `literature/` | PubMed, EuropePMC, or local literature metadata source packets |
 | `clinicaltrials/` | ClinicalTrials.gov registry source packets |
+| `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
+| `common/` | Shared helpers for generic software source-packet creation and auditing |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
 
@@ -32,3 +34,14 @@ scripts/tools/<tool_or_resource>/run_eval.py
 
 Use tool-specific names only when a directory contains multiple independent adapters.
 
+## Scaffold vs executable adapter
+
+Most `bioinformatics/<tool>/` folders start as L0/L1 scaffolds. They provide a stable place for:
+
+- tool metadata;
+- source-packet requirements;
+- examples;
+- future wrappers;
+- future evals.
+
+They do not mean that OCEAN installs or runs that tool. Use `common/software_source_packet.py` to packetize inspected run metadata until a dedicated wrapper exists.
