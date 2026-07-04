@@ -1,0 +1,4 @@
+id,input_type,score,max_score,verdict,module_coverage,artifact_coverage,handoff_continuity,boundary_coverage,unsupported_claim_downgrade,harbor_memory_closure
+O7C-R1-001,paper_source_packet,100,100,pass,20,20,20,15,15,10
+O7C-R1-002,research_proposal,100,100,pass,20,20,20,15,15,10
+O7C-R1-003,one_sentence_idea,100,100,pass,20,20,20,15,15,10

@@ -22,6 +22,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `docs/module-map.md`: public module responsibility and validation-status map.
 - `skills/ocean/evals/full-ocean-workflow-protocol.md`: protocol for testing whether one paper, idea, proposal, review comment, or resource seed can move through the seven-module workflow.
 - `skills/ocean/evals/full-ocean-workflow-cases.md`: reusable full-workflow case seeds.
+- `skills/ocean/evals/ocean-seven-module-coordination-r1-results.md`: deterministic structural check for Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor coordination, handoff continuity, downgrade gates, and Harbor closure.
 - `skills/ocean/evals/research-design-workflow-r1-cases.json`: workflow-design case seeds for testing design gates, validation gates, research routes, and Harbor decision memory from uncertain biomedical research inputs.
 - `skills/ocean/evals/research-design-workflow-r1-results.md`: first Research Design Workflow R1 model run over six completed model lanes, with Kimi recorded as runtime blocked.
 - `skills/ocean/evals/domain-router-big-experiment-r1-cases.json`: offline routing case seeds for Domain Lens, Data/Tool Router, and Module Artifact Contract coverage.
@@ -55,6 +56,8 @@ The strongest strict module-specific validation is still concentrated on **Sound
 Reef-R1 adds the first dedicated Reef strict eval. It focuses on resource provenance, API/database boundary control, KG association overclaim prevention, and clinical registry metadata boundaries.
 
 Collaborative Workflow R1 adds a broader cross-module workflow stress test. It checks whether OCEAN can preserve evidence boundaries while moving from proposal/source packet setup to resource mapping, claim downgrade, validation planning, idea planning, and Harbor records.
+
+Seven-Module Coordination R1 adds a deterministic full-chain structural check over paper-source-packet, proposal, and one-sentence-idea seeds. It tests whether the seven modules remain connected through concrete artifacts and Handoff Tickets before any model-based content evaluation.
 
 Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decision memos, contribution boundaries, stale evidence reuse, stop-condition handoffs, public/private development memory, and MiniMax clean-output handling.
 
