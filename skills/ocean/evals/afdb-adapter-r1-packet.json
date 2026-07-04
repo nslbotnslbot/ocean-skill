@@ -1,11 +1,11 @@
 {
   "packet_id": "osp-afdb-PTEST1-2026-07-04",
-  "created_at": "2026-07-04T13:56:57",
+  "created_at": "2026-07-04T14:05:42",
   "source_type": "predicted_structure_database",
   "resource": "AlphaFold DB",
   "query": "AlphaFold DB predicted structure analysis for PTEST1",
   "filters": {
-    "adapter": "scripts/tools/alphafold_db/source_packet.py"
+    "adapter": "scripts/tools/bioinformatics/alphafold_db/source_packet.py"
   },
   "date_accessed": "2026-07-04",
   "identifiers": [

@@ -50,8 +50,8 @@ modules:
 
 scripts:
   source_router: scripts/ocean_source_router.py
-  alphafold_db_adapter: scripts/tools/alphafold_db/source_packet.py
-  alphafold_db_adapter_eval: scripts/tools/alphafold_db/run_eval.py
+  alphafold_db_adapter: scripts/tools/bioinformatics/alphafold_db/source_packet.py
+  alphafold_db_adapter_eval: scripts/tools/bioinformatics/alphafold_db/run_eval.py
   literature_source_adapter: scripts/tools/literature/source_packet.py
   clinicaltrials_adapter: scripts/tools/clinicaltrials/source_packet.py
   source_adapters_eval: scripts/tools/run_source_adapter_eval.py

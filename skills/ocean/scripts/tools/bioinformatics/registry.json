@@ -56,6 +56,33 @@
     ]
   },
   {
+    "name": "AlphaFold DB",
+    "slug": "alphafold_db",
+    "family": "structure_modeling",
+    "maturity": "L2/L3 source-packet adapter",
+    "main_script": "source_packet.py",
+    "eval_script": "run_eval.py",
+    "evidence_level": "predicted-structure database evidence after local AFDB-style files are inspected",
+    "required_packet_fields": [
+      "UniProt accession",
+      "metadata file",
+      "PAE file when available",
+      "mmCIF file when available",
+      "pLDDT summary",
+      "PAE summary",
+      "date",
+      "inspected files",
+      "cannot_support limitations"
+    ],
+    "cannot_support_alone": [
+      "binding proof",
+      "experimental function",
+      "disease mechanism",
+      "drug efficacy",
+      "clinical relevance"
+    ]
+  },
+  {
     "name": "Azimuth",
     "slug": "azimuth",
     "family": "single_cell_analysis",

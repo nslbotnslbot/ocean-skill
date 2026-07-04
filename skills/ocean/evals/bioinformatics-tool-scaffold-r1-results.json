@@ -20,6 +20,16 @@
     "verdict": "pass"
   },
   {
+    "slug": "alphafold_db",
+    "name": "AlphaFold DB",
+    "folder_exists": true,
+    "tool_json_exists": true,
+    "readme_exists": true,
+    "missing_fields": [],
+    "shared_helper": "../../common/software_source_packet.py",
+    "verdict": "pass"
+  },
+  {
     "slug": "azimuth",
     "name": "Azimuth",
     "folder_exists": true,

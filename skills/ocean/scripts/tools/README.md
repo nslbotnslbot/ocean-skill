@@ -15,7 +15,7 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 
 | Folder | Purpose |
 |---|---|
-| `alphafold_db/` | AlphaFold DB predicted-structure confidence and PAE source packets |
+| `bioinformatics/alphafold_db/` | AlphaFold DB predicted-structure confidence and PAE source packets |
 | `literature/` | PubMed, EuropePMC, or local literature metadata source packets |
 | `clinicaltrials/` | ClinicalTrials.gov registry source packets |
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
