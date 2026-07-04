@@ -34,7 +34,7 @@ ClinicalTrials.gov adapter outputs registry source packets. Registry records can
 
 ## Workflow
 
-1. Use `scripts/clinicaltrials_source_packet.py fetch` only when live public registry retrieval is intended.
+1. Use `scripts/tools/clinicaltrials/source_packet.py fetch` only when live public registry retrieval is intended.
 2. Use `analyze` on a local ClinicalTrials.gov v2-style JSON record.
 3. Use `packet` to generate an OCEAN source packet.
 4. Hand off to Iceberg for claim downgrade or Anchor for clinical validation planning.

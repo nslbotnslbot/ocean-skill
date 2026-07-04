@@ -1965,3 +1965,34 @@ Regression checks after software catalog R4:
 ### Evidence Boundary / 证据边界
 
 This run was deterministic and offline. It did not install or run any listed bioinformatics tool, did not query external databases, and did not inspect real biological outputs. Passing means OCEAN can route tool/software requests into bounded source-packet and reproducibility requirements. It does not mean any tool output is correct, reproducible, clinically useful, mechanistically valid, or sufficient for publication claims.
+
+## 2026-07-04 - Tool adapter script layout R1
+
+Purpose: Reorganize tool-specific source-packet scripts into per-tool folders so OCEAN's executable adapter layer can grow like a tool library rather than a flat script list.
+
+Implemented:
+
+- Added `scripts/tools/README.md`.
+- Moved AlphaFold DB adapter scripts:
+  - `scripts/afdb_source_packet.py` -> `scripts/tools/alphafold_db/source_packet.py`
+  - `scripts/run_afdb_adapter_eval.py` -> `scripts/tools/alphafold_db/run_eval.py`
+- Moved literature adapter script:
+  - `scripts/literature_source_packet.py` -> `scripts/tools/literature/source_packet.py`
+- Moved ClinicalTrials.gov adapter script:
+  - `scripts/clinicaltrials_source_packet.py` -> `scripts/tools/clinicaltrials/source_packet.py`
+- Moved the cross-tool source adapter eval runner:
+  - `scripts/run_source_adapter_eval.py` -> `scripts/tools/run_source_adapter_eval.py`
+- Updated `SKILL.md`, `manifest.yaml`, and adapter reference docs to point to the new paths.
+- Updated adapter-generated source packets so the `filters.adapter` field records the new script paths.
+
+### Layout validation
+
+| Check | Result |
+|---|---:|
+| Python compile for moved adapter scripts | pass |
+| AlphaFold DB adapter R1 after move | 1/1 pass |
+| Literature + ClinicalTrials source adapters R1 after move | 2/2 pass |
+
+### Evidence Boundary / 证据边界
+
+This was a repository layout refactor. It did not add new scientific evidence, did not run live APIs, and did not run external bioinformatics tools. Passing means the moved scripts still produce bounded mock source packets from local eval fixtures.

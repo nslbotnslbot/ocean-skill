@@ -1,11 +1,11 @@
 {
   "packet_id": "osp-clinicaltrials-NCT00000000-2026-07-04",
-  "created_at": "2026-07-04T11:39:44",
+  "created_at": "2026-07-04T13:42:53",
   "source_type": "clinical_registry_record",
   "resource": "ClinicalTrials.gov",
   "query": "ClinicalTrials.gov registry record for NCT00000000",
   "filters": {
-    "adapter": "clinicaltrials_source_packet.py"
+    "adapter": "scripts/tools/clinicaltrials/source_packet.py"
   },
   "date_accessed": "2026-07-04",
   "identifiers": [

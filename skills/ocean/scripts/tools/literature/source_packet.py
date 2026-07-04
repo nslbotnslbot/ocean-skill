@@ -128,7 +128,7 @@ def command_packet(args: argparse.Namespace) -> int:
         "source_type": "literature_record",
         "resource": analysis.get("resource", "literature"),
         "query": analysis.get("query", ""),
-        "filters": {"adapter": "literature_source_packet.py"},
+        "filters": {"adapter": "scripts/tools/literature/source_packet.py"},
         "date_accessed": dt.date.today().isoformat(),
         "identifiers": record.get("identifiers", []),
         "inspected_content": analysis.get("inspected_content", []),

@@ -25,8 +25,8 @@ def main(argv: list[str]) -> int:
     args = parser.parse_args(argv)
 
     args.outdir.mkdir(parents=True, exist_ok=True)
-    lit_script = args.skill_dir / "scripts" / "literature_source_packet.py"
-    ct_script = args.skill_dir / "scripts" / "clinicaltrials_source_packet.py"
+    lit_script = args.skill_dir / "scripts" / "tools" / "literature" / "source_packet.py"
+    ct_script = args.skill_dir / "scripts" / "tools" / "clinicaltrials" / "source_packet.py"
 
     lit_analysis = args.outdir / "literature-adapter-r1-analysis.json"
     lit_packet = args.outdir / "literature-adapter-r1-packet.json"
