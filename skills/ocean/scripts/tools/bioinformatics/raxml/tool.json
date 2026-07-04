@@ -1,0 +1,28 @@
+{
+  "name": "RAxML",
+  "slug": "raxml",
+  "family": "phylogenetics_comparative_genomics",
+  "maturity": "L0/L1 scaffold",
+  "shared_helper": "../../common/software_source_packet.py",
+  "evidence_level": "candidate software route until run metadata is inspected",
+  "required_packet_fields": [
+    "tool_name",
+    "tool_version",
+    "task_intent",
+    "command_line",
+    "parameters",
+    "reference_or_index",
+    "input_files",
+    "output_files",
+    "logs_or_qc",
+    "environment",
+    "date"
+  ],
+  "cannot_support_alone": [
+    "biological mechanism",
+    "causal conclusion",
+    "clinical utility",
+    "publication readiness",
+    "reproducibility without rerun/log/environment checks"
+  ]
+}
