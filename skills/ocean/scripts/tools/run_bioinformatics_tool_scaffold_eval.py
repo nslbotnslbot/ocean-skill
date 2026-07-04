@@ -20,6 +20,27 @@ REQUIRED_FIELDS = {
     "cannot_support_alone",
 }
 
+REQUIRED_EXAMPLE_FIELDS = {
+    "example_note",
+    "tool_name",
+    "tool_slug",
+    "tool_family",
+    "tool_version",
+    "task_intent",
+    "command_line",
+    "parameters",
+    "reference_or_index",
+    "input_files",
+    "output_files",
+    "logs_or_qc",
+    "environment",
+    "date",
+    "supports_claims",
+    "cannot_support",
+    "boundary_status",
+    "handoff",
+}
+
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
@@ -44,8 +65,21 @@ def main(argv: list[str]) -> int:
         folder = bio_root / item["slug"]
         tool_json = folder / "tool.json"
         readme = folder / "README.md"
+        example = folder / "examples" / "run-record.example.json"
         data = read_json(tool_json) if tool_json.exists() else {}
+        example_data = read_json(example) if example.exists() else {}
         missing_fields = sorted(REQUIRED_FIELDS - set(data))
+        missing_example_fields = sorted(REQUIRED_EXAMPLE_FIELDS - set(example_data))
+        verdict = (
+            "pass"
+            if folder.exists()
+            and tool_json.exists()
+            and readme.exists()
+            and example.exists()
+            and not missing_fields
+            and not missing_example_fields
+            else "needs_review"
+        )
         rows.append(
             {
                 "slug": item["slug"],
@@ -53,11 +87,11 @@ def main(argv: list[str]) -> int:
                 "folder_exists": folder.exists(),
                 "tool_json_exists": tool_json.exists(),
                 "readme_exists": readme.exists(),
+                "example_exists": example.exists(),
                 "missing_fields": missing_fields,
+                "missing_example_fields": missing_example_fields,
                 "shared_helper": data.get("shared_helper"),
-                "verdict": "pass"
-                if folder.exists() and tool_json.exists() and readme.exists() and not missing_fields
-                else "needs_review",
+                "verdict": verdict,
             }
         )
 
@@ -79,16 +113,16 @@ def main(argv: list[str]) -> int:
                 f"- Pass: {summary['pass']}",
                 f"- Needs review: {summary['needs_review']}",
                 "",
-                "| Tool | Folder | tool.json | README | Verdict |",
-                "|---|---|---|---|---|",
+                "| Tool | Folder | tool.json | README | Example | Verdict |",
+                "|---|---|---|---|---|---|",
                 *[
-                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['verdict']} |"
+                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['verdict']} |"
                     for row in rows
                 ],
                 "",
                 "## Evidence Boundary / 证据边界",
                 "",
-                "This eval checks scaffold completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
+                "This eval checks scaffold and example-record completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
             ]
         )
         + "\n",
@@ -100,4 +134,3 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
-

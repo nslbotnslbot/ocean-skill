@@ -1,0 +1,26 @@
+{
+  "example_note": "Template only. Replace placeholders with inspected run metadata before using as OCEAN evidence.",
+  "tool_name": "RoseTTAFold",
+  "tool_slug": "rosettafold",
+  "tool_family": "structure_modeling",
+  "tool_version": "",
+  "task_intent": "",
+  "command_line": "",
+  "parameters": {},
+  "reference_or_index": "",
+  "input_files": [],
+  "output_files": [],
+  "logs_or_qc": [],
+  "environment": "",
+  "date": "",
+  "supports_claims": [],
+  "cannot_support": [
+    "biological mechanism",
+    "causal conclusion",
+    "clinical utility",
+    "publication readiness",
+    "reproducibility without rerun/log/environment checks"
+  ],
+  "boundary_status": "queried_evidence",
+  "handoff": "Anchor"
+}
