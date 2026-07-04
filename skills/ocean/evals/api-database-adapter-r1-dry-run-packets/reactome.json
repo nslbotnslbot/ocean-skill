@@ -1,0 +1,30 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "reactome",
+  "adapter_label": "Reactome",
+  "created_utc": "2026-07-04T15:44:25+00:00",
+  "executed": false,
+  "official_doc": "https://reactome.org/dev/content-service",
+  "endpoint_family": "https://reactome.org/ContentService/",
+  "resource_role": "Curated pathway and reaction metadata",
+  "query": {
+    "query": "TP53",
+    "pageSize": "2",
+    "page": "1",
+    "species": "Homo sapiens"
+  },
+  "query_url_or_endpoint": "https://reactome.org/ContentService/search/query?query=TP53&pageSize=2&page=1&species=Homo+sapiens",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Traceable pathway/resource discovery and pathway-context provenance.",
+    "cannot_support": "Pathway activity, causality, disease mechanism, or treatment effect without experimental support.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

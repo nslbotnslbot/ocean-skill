@@ -1,0 +1,21 @@
+{
+  "run_date": "2026-07-05",
+  "mode": "live",
+  "cases": 11,
+  "pass": 11,
+  "needs_review": 0,
+  "adapters": [
+    "uniprot",
+    "pubmed",
+    "europepmc",
+    "chembl",
+    "opentargets",
+    "string",
+    "reactome",
+    "quickgo",
+    "clinvar",
+    "gnomad",
+    "alphafold-db"
+  ],
+  "boundary": "API/database packet construction only; not scientific validation."
+}

@@ -18,6 +18,7 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `bioinformatics/alphafold_db/` | AlphaFold DB predicted-structure confidence and PAE source packets |
 | `literature/` | PubMed, EuropePMC, or local literature metadata source packets |
 | `clinicaltrials/` | ClinicalTrials.gov registry source packets |
+| `../run_reef_api_adapter.py` | Executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB |
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
 | `common/` | Shared helpers for generic software source-packet creation and auditing |
 

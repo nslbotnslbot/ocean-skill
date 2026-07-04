@@ -1,0 +1,53 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "quickgo",
+  "adapter_label": "QuickGO",
+  "created_utc": "2026-07-04T15:42:02+00:00",
+  "executed": true,
+  "official_doc": "https://www.ebi.ac.uk/QuickGO/api/index.html",
+  "endpoint_family": "https://www.ebi.ac.uk/QuickGO/services/",
+  "resource_role": "Gene Ontology term and annotation metadata",
+  "query": {
+    "query": "apoptosis",
+    "limit": "1",
+    "page": "1"
+  },
+  "query_url_or_endpoint": "https://www.ebi.ac.uk/QuickGO/services/ontology/go/search?query=apoptosis&limit=1&page=1",
+  "request_body": null,
+  "query_log": {
+    "status": "executed",
+    "records_inspected": 1,
+    "failure_or_limit": "",
+    "response": {
+      "status_code": 200,
+      "content_type": "application/json",
+      "bytes": 736
+    }
+  },
+  "result_summary": {
+    "records": [
+      {
+        "id": "GO:0097194",
+        "name": "execution phase of apoptosis",
+        "definition": {
+          "text": "A stage of the apoptotic process that starts with the controlled breakdown of the cell through the action of effector caspases or other effector molecules (e.g. cathepsins, calpains etc.). Key steps of the execution phase are rounding-up of the cell, retraction of pseudopodes, reduction of cellular volume (pyknosis), chromatin condensation, nuclear fragmentation (karyorrhexis), plasma membrane blebbing and fragmentation of the cell into apoptotic bodies. When the execution phase is completed, the cell has died."
+        },
+        "aspect": "biological_process",
+        "isObsolete": false
+      }
+    ],
+    "inspected_fields": [
+      "id",
+      "name",
+      "definition",
+      "aspect",
+      "isObsolete"
+    ]
+  },
+  "evidence_boundary": {
+    "can_support": "Traceable GO term or annotation metadata discovery.",
+    "cannot_support": "Direct molecular mechanism, causality, or phenotype proof from annotation presence alone.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

@@ -242,6 +242,8 @@ Bioinformatics Real-Tool Smoke R1 检查 115 个 scaffolded bioinformatics tools
 
 每个 bioinformatics tool 文件夹现在也包含一个 science-skills 风格的 `references/tool_usage.md` guide。它们写清 use/avoid rules、真实本地运行前必须检查的证据、stop conditions 和 OCEAN handoff 路径，但不声称外部工具已经安装。
 
+Reef 现在也有可执行的 API/database adapters，覆盖 UniProt、PubMed、EuropePMC、ChEMBL、OpenTargets、STRING、Reactome、QuickGO、ClinVar、gnomAD 和 AlphaFold DB。这些 wrapper 可以 dry-run，也可以用 `--execute` 做 bounded live public API request，并输出带明确证据边界的 OCEAN packet。
+
 Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 proposal、trend、resource/API、claim downgrade、validation、reviewer-pressure-to-idea、benchmark fairness 和 Harbor handoff cases。
 
 仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。
