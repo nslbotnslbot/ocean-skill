@@ -14,6 +14,8 @@ conditional_core:
     - references/data-tool-router.md
     - references/bioinformatics-resource-map.md
     - references/alphafold-db-adapter.md
+    - references/literature-source-adapter.md
+    - references/clinicaltrials-adapter.md
     - references/source-packet-schema.md
     - references/tool-adapter-contract.md
   artifacts_or_project_memory:
@@ -49,12 +51,17 @@ scripts:
   source_router: scripts/ocean_source_router.py
   alphafold_db_adapter: scripts/afdb_source_packet.py
   alphafold_db_adapter_eval: scripts/run_afdb_adapter_eval.py
+  literature_source_adapter: scripts/literature_source_packet.py
+  clinicaltrials_adapter: scripts/clinicaltrials_source_packet.py
+  source_adapters_eval: scripts/run_source_adapter_eval.py
   reef_router_eval: scripts/run_reef_router_eval.py
   source_packet_boundary_eval: scripts/run_source_packet_boundary_eval.py
   e2e_module_eval: scripts/run_ocean_e2e_eval.py
 
 evals:
   alphafold_db_adapter_r1: evals/afdb-adapter-r1-mock-metadata.json
+  literature_adapter_r1: evals/literature-adapter-r1-mock-record.json
+  clinicaltrials_adapter_r1: evals/clinicaltrials-adapter-r1-mock-study.json
   ocean_e2e_module_router_r1: evals/ocean-e2e-module-router-r1-cases.json
   reef_bioinformatics_router_r2: evals/reef-bioinformatics-router-r2-cases.json
   reef_bioinformatics_router_r3: evals/reef-bioinformatics-router-r3-cases.json

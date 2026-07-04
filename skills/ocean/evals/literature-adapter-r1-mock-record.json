@@ -1,0 +1,9 @@
+{
+  "pmid": "00000001",
+  "doi": "10.0000/ocean.mock",
+  "title": "Mock biomedical study for OCEAN source-packet testing",
+  "abstractText": "This mock abstract describes an association between a biomarker and outcome but does not inspect full methods, figures, tables, code, or external validation.",
+  "journalTitle": "Mock Journal",
+  "pubYear": "2026",
+  "authorString": "OCEAN Test Author"
+}

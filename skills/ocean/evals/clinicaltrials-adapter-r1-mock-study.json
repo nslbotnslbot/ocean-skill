@@ -1,0 +1,28 @@
+{
+  "protocolSection": {
+    "identificationModule": {
+      "nctId": "NCT00000000",
+      "briefTitle": "Mock Registry Trial for OCEAN Boundary Testing"
+    },
+    "statusModule": {
+      "overallStatus": "COMPLETED"
+    },
+    "designModule": {
+      "studyType": "INTERVENTIONAL",
+      "phases": ["PHASE2"]
+    },
+    "conditionsModule": {
+      "conditions": ["Mock disease"]
+    },
+    "armsInterventionsModule": {
+      "interventions": [
+        {"name": "Mock intervention", "type": "DRUG"}
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {"measure": "Mock response rate"}
+      ]
+    }
+  }
+}

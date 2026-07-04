@@ -1839,3 +1839,67 @@ Regression checks after AFDB adapter R1:
 ### Evidence Boundary / 证据边界
 
 This run used local mock AlphaFold-DB-style metadata and PAE files only. It did not query AlphaFold DB, UniProt, RCSB PDB, or any external API. It did not run AlphaFold prediction. Passing means OCEAN can turn predicted-structure files into a bounded source packet; it does not mean the protein's function, binding, mechanism, druggability, disease relevance, or clinical relevance is proven.
+
+## 2026-07-04 - Literature and ClinicalTrials source adapters R1
+
+Purpose: Extend OCEAN's executable adapter layer beyond AlphaFold DB by adding source-packet adapters for literature metadata and ClinicalTrials.gov registry records.
+
+Implemented:
+
+- Added `references/literature-source-adapter.md`.
+- Added `references/clinicaltrials-adapter.md`.
+- Added `scripts/literature_source_packet.py` with:
+  - `fetch-pubmed`
+  - `fetch-europepmc`
+  - `analyze`
+  - `packet`
+- Added `scripts/clinicaltrials_source_packet.py` with:
+  - `fetch`
+  - `analyze`
+  - `packet`
+- Added `scripts/run_source_adapter_eval.py`.
+- Added local mock eval inputs:
+  - `evals/literature-adapter-r1-mock-record.json`
+  - `evals/clinicaltrials-adapter-r1-mock-study.json`
+- Added generated eval artifacts:
+  - `evals/literature-adapter-r1-analysis.json`
+  - `evals/literature-adapter-r1-packet.json`
+  - `evals/clinicaltrials-adapter-r1-analysis.json`
+  - `evals/clinicaltrials-adapter-r1-packet.json`
+  - `evals/source-adapters-r1-results.md`
+  - `evals/source-adapters-r1-summary.json`
+- Updated `SKILL.md` and `manifest.yaml` to expose the new adapters.
+
+### Source adapters R1
+
+| Item | Result |
+|---|---:|
+| Cases | 2 |
+| Pass | 2 |
+| Needs review | 0 |
+
+Checks confirmed:
+
+- Literature adapter created a `queried_evidence` literature source packet.
+- Literature packet handed off to Sounding.
+- Literature packet explicitly refused full methods quality, full results quality, figure/table evidence, causal mechanism, clinical efficacy, and publication readiness.
+- ClinicalTrials adapter created a `queried_evidence` registry packet.
+- ClinicalTrials packet handed off to Iceberg.
+- ClinicalTrials packet explicitly refused treatment efficacy, safety superiority, clinical guideline readiness, causal treatment effect, and peer-reviewed trial interpretation.
+
+Regression checks after source adapters R1:
+
+| Check | Result |
+|---|---:|
+| Source adapters R1 | 2/2 pass |
+| AFDB adapter R1 | 1/1 pass |
+| OCEAN E2E module router R1 | 7/7 pass |
+| Reef router R2 | 21/21 pass |
+| Reef router R3 | 12/12 pass |
+| Source-packet boundary R2 | 6/6 pass |
+| Python compile | pass |
+| YAML parse | pass |
+
+### Evidence Boundary / 证据边界
+
+This run used local mock literature and ClinicalTrials.gov-style JSON only. It did not query PubMed, EuropePMC, ClinicalTrials.gov, or any external API. Passing means OCEAN can turn literature metadata and registry records into bounded source packets; it does not mean abstracts prove full-paper claims or registry records prove efficacy.
