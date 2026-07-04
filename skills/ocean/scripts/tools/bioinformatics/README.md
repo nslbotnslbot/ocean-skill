@@ -6,4 +6,6 @@ These folders are scaffolds, not claims that the tools are installed or executab
 
 Each tool folder includes `examples/run-record.example.json`, a template for recording inspected tool runs before they are converted into OCEAN evidence packets.
 
+Each tool folder also includes `api.json` and `scripts/create_source_packet.py`. These define a stable local wrapper contract for turning inspected run metadata into source packets; they do not install or execute external tools.
+
 Tool folders: 115

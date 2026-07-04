@@ -1,0 +1,36 @@
+{
+  "example_note": "Mock run record for wrapper smoke testing only; not a real LAST run.",
+  "tool_name": "LAST",
+  "tool_slug": "last",
+  "tool_family": "sequence_alignment",
+  "tool_version": "mock-version",
+  "task_intent": "mock pairwise sequence alignment provenance check",
+  "command_line": "lastal mock-index mock-query.fa > mock-output.maf",
+  "parameters": {
+    "mock": true
+  },
+  "reference_or_index": "mock-index",
+  "input_files": [
+    "mock-query.fa"
+  ],
+  "output_files": [
+    "mock-output.maf"
+  ],
+  "logs_or_qc": [
+    "mock-log.txt"
+  ],
+  "environment": "mock local environment",
+  "date": "2026-07-04",
+  "supports_claims": [
+    "mock software run provenance shape"
+  ],
+  "cannot_support": [
+    "biological mechanism",
+    "causal conclusion",
+    "clinical utility",
+    "publication readiness",
+    "reproducibility without rerun/log/environment checks"
+  ],
+  "boundary_status": "queried_evidence",
+  "handoff": "Anchor"
+}

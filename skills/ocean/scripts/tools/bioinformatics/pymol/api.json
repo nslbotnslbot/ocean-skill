@@ -1,0 +1,54 @@
+{
+  "schema_version": "ocean-tool-api-v1",
+  "tool_name": "PyMOL",
+  "tool_slug": "pymol",
+  "tool_family": "structure_modeling",
+  "maturity": "L0/L1 scaffold",
+  "interface_type": "provenance_to_source_packet",
+  "python_wrapper": "scripts/create_source_packet.py",
+  "example_input": "examples/run-record.example.json",
+  "default_output": "outputs/pymol-source-packet.json",
+  "commands": [
+    {
+      "name": "create-source-packet",
+      "description": "Convert an inspected tool run record into a bounded OCEAN software source packet.",
+      "argv": [
+        "python3",
+        "scripts/create_source_packet.py",
+        "--input",
+        "examples/run-record.example.json",
+        "--output",
+        "outputs/pymol-source-packet.json"
+      ]
+    }
+  ],
+  "required_input_fields": [
+    "tool_name",
+    "tool_slug",
+    "tool_version",
+    "task_intent",
+    "command_line",
+    "parameters",
+    "reference_or_index",
+    "input_files",
+    "output_files",
+    "logs_or_qc",
+    "environment",
+    "date"
+  ],
+  "output_contract": {
+    "source_type": "bioinformatics_software_run",
+    "boundary_status": "queried_evidence",
+    "handoff": "Anchor"
+  },
+  "evidence_boundary": {
+    "does_not_run_external_tool": true,
+    "cannot_support_alone": [
+      "biological mechanism",
+      "causal conclusion",
+      "clinical utility",
+      "publication readiness",
+      "reproducibility without rerun/log/environment checks"
+    ]
+  }
+}

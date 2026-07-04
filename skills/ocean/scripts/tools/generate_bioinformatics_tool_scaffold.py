@@ -53,6 +53,9 @@ OCEAN tool scaffold for `{tool['name']}`.
 - Family: `{tool['family']}`
 - Current maturity: `L0/L1 scaffold`
 - Shared helper: `../../common/software_source_packet.py`
+- API contract: `api.json`
+- Python wrapper: `scripts/create_source_packet.py`
+- Example run record: `examples/run-record.example.json`
 
 ## Evidence Boundary
 
@@ -72,7 +75,163 @@ Before `{tool['name']}` output can be used as evidence, provide:
 - inspected result fields.
 
 The output cannot by itself prove biological mechanism, causality, clinical utility, reproducibility, or publication readiness.
+
+## Python Wrapper
+
+Use `scripts/create_source_packet.py` only after you have inspected a real run record:
+
+```bash
+python3 scripts/create_source_packet.py \\
+  --input examples/run-record.example.json \\
+  --output /path/to/{tool['slug']}-source-packet.json
+```
+
+The wrapper creates an OCEAN software source packet from provenance fields. It does not install or execute `{tool['name']}`.
 """
+
+
+def readme_python_section(tool: dict) -> str:
+    return f"""
+
+## API / Python Wrapper
+
+- API contract: `api.json`
+- Python wrapper: `scripts/create_source_packet.py`
+- Example input: `examples/run-record.example.json`
+
+Use the wrapper only after you have inspected a real `{tool['name']}` run record:
+
+```bash
+python3 scripts/create_source_packet.py \\
+  --input examples/run-record.example.json \\
+  --output /path/to/{tool['slug']}-source-packet.json
+```
+
+The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `{tool['name']}`.
+"""
+
+
+def api_contract(tool: dict) -> dict:
+    return {
+        "schema_version": "ocean-tool-api-v1",
+        "tool_name": tool["name"],
+        "tool_slug": tool["slug"],
+        "tool_family": tool["family"],
+        "maturity": tool.get("maturity", "L0/L1 scaffold"),
+        "interface_type": "provenance_to_source_packet",
+        "python_wrapper": "scripts/create_source_packet.py",
+        "example_input": "examples/run-record.example.json",
+        "default_output": f"outputs/{tool['slug']}-source-packet.json",
+        "commands": [
+            {
+                "name": "create-source-packet",
+                "description": "Convert an inspected tool run record into a bounded OCEAN software source packet.",
+                "argv": [
+                    "python3",
+                    "scripts/create_source_packet.py",
+                    "--input",
+                    "examples/run-record.example.json",
+                    "--output",
+                    f"outputs/{tool['slug']}-source-packet.json",
+                ],
+            }
+        ],
+        "required_input_fields": [
+            "tool_name",
+            "tool_slug",
+            "tool_version",
+            "task_intent",
+            "command_line",
+            "parameters",
+            "reference_or_index",
+            "input_files",
+            "output_files",
+            "logs_or_qc",
+            "environment",
+            "date",
+        ],
+        "output_contract": {
+            "source_type": "bioinformatics_software_run",
+            "boundary_status": "queried_evidence",
+            "handoff": "Anchor",
+        },
+        "evidence_boundary": {
+            "does_not_run_external_tool": True,
+            "cannot_support_alone": tool.get(
+                "cannot_support_alone",
+                [
+                    "biological mechanism",
+                    "causal conclusion",
+                    "clinical utility",
+                    "publication readiness",
+                    "reproducibility without rerun/log/environment checks",
+                ],
+            ),
+        },
+    }
+
+
+def python_wrapper(tool: dict) -> str:
+    return f'''#!/usr/bin/env python3
+"""Create an OCEAN source packet for an inspected {tool["name"]} run.
+
+This wrapper does not install, call, or validate {tool["name"]}. It converts a
+completed run-record JSON into a bounded OCEAN software source packet.
+"""
+
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+import sys
+
+
+def _find_tools_root(start: Path) -> Path:
+    for parent in [start, *start.parents]:
+        candidate = parent / "common" / "software_source_packet.py"
+        if candidate.exists():
+            return parent
+    raise RuntimeError("Could not find scripts/tools/common/software_source_packet.py")
+
+
+TOOLS_ROOT = _find_tools_root(Path(__file__).resolve())
+sys.path.insert(0, str(TOOLS_ROOT / "common"))
+
+from software_source_packet import audit_record, make_packet, read_json, write_json  # noqa: E402
+
+
+TOOL_NAME = {tool["name"]!r}
+TOOL_SLUG = {tool["slug"]!r}
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=f"Create an OCEAN source packet for {{TOOL_NAME}}.")
+    parser.add_argument("--input", type=Path, required=True, help="Inspected run-record JSON.")
+    parser.add_argument("--output", type=Path, required=True, help="Output source-packet JSON.")
+    args = parser.parse_args(argv)
+
+    record = read_json(args.input)
+    record.setdefault("tool_name", TOOL_NAME)
+    record.setdefault("tool_slug", TOOL_SLUG)
+    missing, warnings = audit_record(record)
+    packet = make_packet(record)
+    packet["filters"]["adapter"] = f"scripts/tools/bioinformatics/{{TOOL_SLUG}}/scripts/create_source_packet.py"
+    packet["provenance_audit"] = {{
+        "missing": missing,
+        "warnings": warnings,
+        "verdict": "pass" if not missing else "needs_review",
+    }}
+    write_json(args.output, packet)
+    print(f"Wrote {{args.output}}")
+    if missing:
+        print("Missing required run-record fields: " + ", ".join(missing), file=sys.stderr)
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'''
 
 
 def example_run_record(tool: dict) -> dict:
@@ -155,6 +314,10 @@ def main() -> int:
                 tool_json.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             if not readme_path.exists():
                 readme_path.write_text(readme(data), encoding="utf-8")
+            else:
+                current_readme = readme_path.read_text(encoding="utf-8")
+                if "## API / Python Wrapper" not in current_readme:
+                    readme_path.write_text(current_readme.rstrip() + readme_python_section(data) + "\n", encoding="utf-8")
             examples = folder / "examples"
             examples.mkdir(parents=True, exist_ok=True)
             example_path = examples / "run-record.example.json"
@@ -163,6 +326,14 @@ def main() -> int:
                     json.dumps(example_run_record(data), ensure_ascii=False, indent=2) + "\n",
                     encoding="utf-8",
                 )
+            api_path = folder / "api.json"
+            if not api_path.exists():
+                api_path.write_text(json.dumps(api_contract(data), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            scripts = folder / "scripts"
+            scripts.mkdir(parents=True, exist_ok=True)
+            wrapper_path = scripts / "create_source_packet.py"
+            if not wrapper_path.exists():
+                wrapper_path.write_text(python_wrapper(data), encoding="utf-8")
             registry.append(data)
 
     registry.sort(key=lambda item: item["slug"])
@@ -174,6 +345,8 @@ def main() -> int:
         "Use `../common/software_source_packet.py` for generic source-packet creation until a tool has a dedicated wrapper.\n\n"
         "Each tool folder includes `examples/run-record.example.json`, a template for recording inspected tool runs before "
         "they are converted into OCEAN evidence packets.\n\n"
+        "Each tool folder also includes `api.json` and `scripts/create_source_packet.py`. These define a stable local "
+        "wrapper contract for turning inspected run metadata into source packets; they do not install or execute external tools.\n\n"
         f"Tool folders: {len(registry)}\n",
         encoding="utf-8",
     )
