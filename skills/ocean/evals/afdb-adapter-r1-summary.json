@@ -1,0 +1,16 @@
+{
+  "cases": 1,
+  "pass": 1,
+  "needs_review": 0,
+  "checks": {
+    "analysis_exists": true,
+    "packet_exists": true,
+    "plddt_available": true,
+    "pae_available": true,
+    "boundary_status_packet_evidence": true,
+    "cannot_support_mechanism": true,
+    "handoff_iceberg": true
+  },
+  "mean_plddt": 72.8,
+  "mean_pae": 9.72
+}

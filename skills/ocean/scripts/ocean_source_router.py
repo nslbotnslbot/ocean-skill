@@ -24,7 +24,15 @@ ROUTE_CLASSES = {
         "resources": ["PubMed", "EuropePMC", "OpenAlex", "CrossRef", "arXiv", "bioRxiv", "medRxiv"],
     },
     "omics": {
-        "keywords": ["rna", "single-cell", "scrna", "snrna", "transcriptomics", "expression", "spatial", "proteogenomic", "multi-omics", "multiomics", "multiome", "gtex", "geo", "sra", "encode", "cellxgene", "hubmap"],
+        "keywords": [
+            "rna", "rna-seq", "single-cell", "single cell", "scrna", "snrna", "transcriptomics",
+            "expression", "spatial", "proteogenomic", "multi-omics", "multiomics", "multiome",
+            "gtex", "geo", "sra", "encode", "cellxgene", "hubmap",
+            "cell ranger", "starsolo", "alevin", "alevin-fry", "kallisto bustools", "seurat",
+            "scanpy", "scvi", "scanvi", "scarches", "celltypist", "singler", "azimuth", "scpred",
+            "space ranger", "squidpy", "giotto", "cell2location", "tangram", "stereoscope",
+            "spotlight", "bayspace", "bayesspace", "spagcn", "spatialde", "stlearn"
+        ],
         "resources": ["GEO", "SRA", "ENA", "ArrayExpress", "Expression Atlas", "GTEx", "ENCODE", "Human Cell Atlas", "Single Cell Portal", "CELLxGENE", "HuBMAP", "CZ CELLxGENE"],
     },
     "epigenomics_regulatory": {
@@ -36,15 +44,26 @@ ROUTE_CLASSES = {
         "resources": ["TCGA/GDC", "cBioPortal", "ICGC", "COSMIC"],
     },
     "pathway_gene_set": {
-        "keywords": ["pathway", "enrichment", "gene set", "go term", "reactome", "kegg", "msigdb", "gsea", "wikipathways"],
+        "keywords": ["pathway", "enrichment", "gene set", "go term", "reactome", "kegg", "msigdb", "gsea", "fgsea", "wikipathways"],
         "resources": ["Gene Ontology", "Reactome", "KEGG", "WikiPathways", "MSigDB", "GSEA resources"],
     },
     "proteomics_metabolomics": {
-        "keywords": ["proteomics", "protein abundance", "peptide", "metabolomics", "metabolite", "lipidomics", "pride", "metabolights", "hmdb", "massive"],
+        "keywords": [
+            "proteomics", "protein abundance", "peptide", "metabolomics", "metabolite",
+            "lipidomics", "pride", "metabolights", "hmdb", "massive",
+            "maxquant", "fragpipe", "msfragger", "dia-nn", "skyline", "openms",
+            "proteome discoverer", "spectronaut", "perseus", "xcms", "mzmine", "ms-dial",
+            "gnps", "metaboanalyst", "lipidsearch"
+        ],
         "resources": ["PRIDE", "ProteomeXchange", "PeptideAtlas", "MetaboLights", "HMDB", "MassIVE"],
     },
     "microbiome": {
-        "keywords": ["microbiome", "metagenomics", "16s", "shotgun", "taxonomic", "mgnify", "qiita", "hmp"],
+        "keywords": [
+            "microbiome", "metagenomics", "16s", "shotgun", "taxonomic", "mgnify", "qiita", "hmp",
+            "qiime2", "dada2", "mothur", "vsearch", "metaphlan", "humann", "kraken2",
+            "bracken", "kaiju", "centrifuge", "sourmash", "mash", "picrust2",
+            "phyloseq", "ancom-bc", "maaslin2"
+        ],
         "resources": ["MGnify", "Qiita", "Human Microbiome Project", "SRA", "ENA"],
     },
     "protein_structure": {
@@ -64,7 +83,13 @@ ROUTE_CLASSES = {
         "resources": ["ClinicalTrials.gov", "WHO ICTRP", "EU Clinical Trials Register", "OpenFDA", "clinical registries", "MIMIC/eICU when lawfully provided"],
     },
     "clinical_imaging_signal": {
-        "keywords": ["image", "images", "imaging", "radiology", "ct", "mri", "x-ray", "xray", "pathology slide", "whole-slide", "wsi", "ecg", "eeg", "physionet", "tcia", "openneuro", "uk biobank"],
+        "keywords": [
+            "image", "images", "imaging", "radiology", "ct", "mri", "x-ray", "xray",
+            "pathology slide", "whole-slide", "wsi", "ecg", "eeg", "physionet", "tcia",
+            "openneuro", "uk biobank", "nnunet", "nnu-net", "nn-u-net", "monai", "torchio",
+            "simpleitk", "itk-snap", "3d slicer", "qupath", "cellprofiler", "fiji",
+            "imagej", "napari", "ilastik", "mne", "wfdb"
+        ],
         "resources": ["TCIA", "PhysioNet", "MIMIC-CXR when lawfully provided", "OpenNeuro", "UK Biobank when authorized"],
     },
     "regulatory_safety": {
@@ -76,45 +101,85 @@ ROUTE_CLASSES = {
         "resources": ["MGI", "FlyBase", "WormBase", "SGD", "ZFIN", "TAIR"],
     },
     "benchmark": {
-        "keywords": ["benchmark", "leaderboard", "challenge", "dream challenge", "baseline", "split", "test set", "external validation", "mlperf", "openml", "kaggle", "biomarker benchmark"],
+        "keywords": ["benchmark", "leaderboard", "challenge", "dream challenge", "baseline", "split", "test set", "external validation", "external generalization", "generalizes externally", "mlperf", "openml", "kaggle", "biomarker benchmark"],
         "resources": ["DREAM Challenges", "task-specific benchmark repositories", "OpenML where relevant", "Kaggle only with caution", "MLPerf where relevant"],
     },
     "bioinformatics_software": {
         "keywords": [
-            "fastqc", "multiqc", "cutadapt", "fastp", "trimmomatic", "trim galore", "picard", "qualimap",
+            "fastqc", "multiqc", "cutadapt", "fastp", "trimmomatic", "trim galore", "bbtools", "bbduk",
+            "seqkit", "seqtk", "picard", "qualimap",
             "blast", "last", "lastal", "bwa", "bowtie", "bowtie2", "hisat2", "star", "minimap2",
-            "samtools", "bedtools", "gatk", "bcftools", "freebayes", "deepvariant", "strelka", "mutect2",
-            "salmon", "kallisto", "rsem", "stringtie", "featurecounts", "deseq2", "edger", "limma", "sleuth",
-            "seurat", "scanpy", "scvi", "celltypist", "azimuth", "cell ranger", "starsolo", "alevin",
-            "space ranger", "squidpy", "giotto", "cell2location", "tangram", "stereoscope", "stlearn",
-            "macs2", "macs3", "deeptools", "homer", "meme", "fimo",
-            "prokka", "bakta", "busco", "quast", "checkm", "eggnog", "eggnog-mapper", "interproscan",
-            "qiime2", "dada2", "metaphlan", "humann", "kraken2", "bracken", "megahit", "spades",
+            "bbmap", "diamond", "mmseqs2", "graphmap",
+            "samtools", "bedtools", "bedops", "gatk", "haplotypecaller", "bcftools", "freebayes",
+            "deepvariant", "strelka", "strelka2", "mutect2", "varscan", "vardict", "manta", "delly",
+            "lumpy", "cnvkit", "control-freec", "facets", "purecn", "vep", "annovar", "snpeff",
+            "snpsift", "plink", "bolt-lmm", "saige", "regenie",
+            "salmon", "kallisto", "rsem", "stringtie", "featurecounts", "htseq-count", "deseq2",
+            "edger", "limma", "limma-voom", "sleuth", "tximport", "fgsea",
+            "seurat", "scanpy", "scvi", "scanvi", "scarches", "harmony", "liger", "bbknn",
+            "soupx", "scrublet", "doubletfinder", "celltypist", "singler", "azimuth", "scpred", "cell ranger",
+            "starsolo", "alevin", "alevin-fry", "kallisto bustools",
+            "space ranger", "squidpy", "giotto", "cell2location", "tangram", "stereoscope",
+            "spotlight", "bayspace", "bayesspace", "spagcn", "spatialde", "stlearn", "mofa", "mofa+", "wnn",
+            "macs2", "macs3", "deeptools", "homer", "meme", "fimo", "bismark", "methylkit",
+            "chromhmm", "diffbind", "chipseeker", "atacseqqc", "hint-atac", "tobias", "archr", "signac",
+            "prokka", "bakta", "busco", "quast", "checkm", "checkm2", "gtdb-tk", "eggnog",
+            "eggnog-mapper", "interproscan", "roary", "panaroo",
+            "qiime2", "dada2", "mothur", "vsearch", "metaphlan", "humann", "kraken2", "bracken",
+            "kaiju", "centrifuge", "sourmash", "mash", "picrust2", "phyloseq", "ancom-bc", "maaslin2",
+            "megahit", "metaspades", "spades",
             "flye", "canu", "raven", "polypolish", "pilon",
-            "maxquant", "fragpipe", "dia-nn", "skyline", "ms-dial", "xcms", "mzmine",
-            "alphafold", "colabfold", "rosettafold", "hh-suite", "hmmer", "modeller", "pymol", "chimerax",
-            "mafft", "muscle", "clustal omega", "iq-tree", "raxml", "fasttree", "orthofinder",
-            "wgcna", "mofa", "mofa+", "mixomics", "diablo",
-            "nnunet", "nnunetv2", "nn-u-net", "nnU-Net", "monai", "torchio", "simpleitk", "itk-snap", "3d slicer", "mne",
-            "snakemake", "nextflow", "cwl", "cromwell", "wdl", "galaxy", "docker", "singularity", "apptainer", "conda", "nf-core"
+            "maxquant", "fragpipe", "msfragger", "dia-nn", "skyline", "openms", "proteome discoverer",
+            "spectronaut", "perseus", "ms-dial", "xcms", "mzmine", "gnps", "metaboanalyst", "lipidsearch",
+            "alphafold", "alphafold db", "colabfold", "rosettafold", "esmfold", "hh-suite", "hmmer",
+            "modeller", "rosetta", "foldx", "pymol", "chimerax", "mol*", "autodock vina", "haddock",
+            "mafft", "muscle", "clustal omega", "iq-tree", "raxml", "fasttree", "beast",
+            "orthofinder", "orthomcl", "hyphy", "paml", "clonalframeml",
+            "wgcna", "mixomics", "diablo",
+            "nnunet", "nnunetv2", "nnu-net", "nn-u-net", "nnU-Net", "monai", "torchio", "simpleitk", "itk-snap",
+            "3d slicer", "qupath", "cellprofiler", "fiji", "imagej", "napari", "ilastik", "mne", "wfdb",
+            "snakemake", "nextflow", "cwl", "cromwell", "wdl", "galaxy", "docker", "singularity",
+            "apptainer", "conda", "mamba", "bioconda", "renv", "workflowr", "nf-core",
+            "bioconductor", "scikit-learn", "pytorch", "tensorflow", "xgboost", "lightgbm",
+            "tidymodels", "mlr3", "caret"
         ],
         "resources": [
-            "FastQC", "MultiQC", "cutadapt", "fastp", "Trimmomatic", "Trim Galore", "Picard", "Qualimap",
-            "BLAST", "LAST", "BWA", "Bowtie2", "HISAT2", "STAR", "minimap2", "SAMtools",
-            "BEDTools", "GATK", "bcftools", "FreeBayes", "DeepVariant", "Strelka2", "Mutect2",
-            "Salmon", "kallisto", "RSEM", "StringTie", "featureCounts", "DESeq2", "edgeR", "limma-voom", "sleuth",
-            "Cell Ranger", "STARsolo", "Alevin-fry", "Seurat", "Scanpy", "scVI", "CellTypist", "Azimuth",
-            "Space Ranger", "Squidpy", "Giotto", "cell2location", "Tangram", "Stereoscope", "stLearn",
-            "MACS2/MACS3", "deepTools", "HOMER", "MEME/FIMO",
-            "Prokka", "Bakta", "BUSCO", "QUAST", "CheckM", "eggNOG-mapper", "InterProScan",
-            "QIIME2", "DADA2", "MetaPhlAn", "HUMAnN", "Kraken2", "Bracken", "MEGAHIT", "SPAdes",
-            "Flye", "Canu", "Raven", "Polypolish", "Pilon",
-            "MaxQuant", "FragPipe", "DIA-NN", "Skyline", "MS-DIAL", "XCMS", "MZmine",
-            "AlphaFold", "ColabFold", "RoseTTAFold", "HH-suite", "HMMER", "MODELLER", "PyMOL", "ChimeraX",
-            "MAFFT", "MUSCLE", "Clustal Omega", "IQ-TREE", "RAxML", "FastTree", "OrthoFinder",
+            "FastQC", "MultiQC", "fastp", "cutadapt", "Trimmomatic", "Trim Galore", "BBTools/BBduk",
+            "seqkit", "seqtk", "Picard", "Qualimap",
+            "BLAST", "LAST/LASTAL", "minimap2", "BWA", "Bowtie2", "HISAT2", "STAR", "BBMap",
+            "DIAMOND", "MMseqs2", "GraphMap",
+            "SAMtools", "bcftools", "BEDTools", "BEDOPS", "GATK", "HaplotypeCaller", "Mutect2",
+            "FreeBayes", "DeepVariant", "Strelka2", "VarScan", "VarDict", "Manta", "Delly",
+            "LUMPY", "CNVkit", "Control-FREEC", "FACETS", "PureCN", "VEP", "ANNOVAR", "SnpEff",
+            "SnpSift", "PLINK", "BOLT-LMM", "SAIGE", "REGENIE",
+            "STAR", "HISAT2", "Salmon", "kallisto", "RSEM", "StringTie", "featureCounts",
+            "HTSeq-count", "DESeq2", "edgeR", "limma-voom", "sleuth", "tximport", "fgsea",
+            "Cell Ranger", "STARsolo", "Alevin-fry", "kallisto bustools", "Seurat", "Scanpy",
+            "scVI", "scANVI", "scArches", "Harmony", "LIGER", "BBKNN", "SoupX", "Scrublet",
+            "DoubletFinder", "CellTypist", "SingleR", "Azimuth", "scPred",
+            "Space Ranger", "Squidpy", "Giotto", "cell2location", "Tangram", "Stereoscope",
+            "SPOTlight", "BayesSpace", "SpaGCN", "SpatialDE", "stLearn", "MOFA/MOFA+", "WNN workflows",
+            "MACS2/MACS3", "deepTools", "HOMER", "MEME/FIMO", "Bismark", "methylKit",
+            "ChromHMM", "DiffBind", "ChIPseeker", "ATACseqQC", "HINT-ATAC", "TOBIAS", "ArchR", "Signac",
+            "Flye", "Canu", "Raven", "SPAdes", "MEGAHIT", "metaSPAdes", "QUAST", "BUSCO",
+            "CheckM/CheckM2", "GTDB-Tk", "Prokka", "Bakta", "eggNOG-mapper", "InterProScan",
+            "Roary", "Panaroo",
+            "QIIME2", "DADA2", "mothur", "VSEARCH", "MetaPhlAn", "HUMAnN", "Kraken2", "Bracken",
+            "Kaiju", "Centrifuge", "Sourmash", "Mash", "PICRUSt2", "phyloseq", "ANCOM-BC", "MaAsLin2",
+            "MaxQuant", "FragPipe", "MSFragger", "DIA-NN", "Skyline", "OpenMS", "Proteome Discoverer",
+            "Spectronaut", "Perseus",
+            "XCMS", "MZmine", "MS-DIAL", "OpenMS", "GNPS", "MetaboAnalyst", "LipidSearch",
+            "AlphaFold", "AlphaFold DB", "ColabFold", "RoseTTAFold", "ESMFold", "HH-suite", "HMMER",
+            "MODELLER", "Rosetta", "FoldX", "PyMOL", "ChimeraX", "Mol*", "AutoDock Vina", "HADDOCK",
+            "MAFFT", "MUSCLE", "Clustal Omega", "IQ-TREE", "RAxML", "FastTree", "BEAST",
+            "OrthoFinder", "OrthoMCL", "HyPhy", "PAML", "ClonalFrameML",
             "WGCNA", "MOFA/MOFA+", "mixOmics/DIABLO",
-            "nnU-Net", "MONAI", "TorchIO", "SimpleITK", "ITK-SNAP", "3D Slicer", "MNE",
-            "Snakemake", "Nextflow", "CWL", "WDL/Cromwell", "Galaxy", "Docker", "Singularity/Apptainer", "Conda", "nf-core"
+            "nnU-Net", "MONAI", "TorchIO", "SimpleITK", "ITK-SNAP", "3D Slicer", "QuPath",
+            "CellProfiler", "Fiji/ImageJ", "napari", "ilastik", "MNE", "WFDB tools",
+            "Snakemake", "Nextflow", "nf-core", "CWL", "WDL/Cromwell", "Galaxy", "Docker",
+            "Singularity/Apptainer", "Conda", "Mamba", "Bioconda", "renv", "workflowr",
+            "R/Bioconductor", "scikit-learn", "PyTorch", "TensorFlow", "XGBoost", "LightGBM",
+            "tidymodels", "mlr3", "caret"
         ],
     },
     "artifact": {
@@ -185,6 +250,10 @@ def split_list(value: str | None) -> list[str]:
 
 def keyword_matches(text: str, keyword: str) -> bool:
     keyword = keyword.lower()
+    compact_keyword = re.sub(r"[^a-z0-9]", "", keyword)
+    compact_text = re.sub(r"[^a-z0-9]", "", text)
+    if len(compact_keyword) >= 4 and compact_keyword in compact_text:
+        return True
     if len(keyword) <= 3 and keyword.replace("-", "").isalnum():
         return re.search(rf"(?<![a-z0-9]){re.escape(keyword)}(?![a-z0-9])", text) is not None
     if " " in keyword or "-" in keyword or "/" in keyword or "&" in keyword:

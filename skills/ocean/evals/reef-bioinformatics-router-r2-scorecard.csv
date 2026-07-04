@@ -3,10 +3,10 @@ R2-REEF-001,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,Tr
 R2-REEF-002,12,12,pass,bioinformatics_software,bioinformatics_software,,,True,True,differential expression proves mechanism
 R2-REEF-003,12,12,pass,bioinformatics_software;omics,bioinformatics_software;clinical;omics,,,True,True,cluster label proves causal response
 R2-REEF-004,12,12,pass,omics,cancer_genomics;omics,,,True,True,atlas similarity proves mechanism
-R2-REEF-005,12,12,pass,epigenomics_regulatory,epigenomics_regulatory;omics,,,True,True,motif/peak proves direct regulation
+R2-REEF-005,12,12,pass,epigenomics_regulatory,artifact;epigenomics_regulatory;omics,,,True,True,motif/peak proves direct regulation
 R2-REEF-006,12,12,pass,clinical;variant_genetics,cancer_genomics;clinical;variant_genetics,,,True,True,variant annotation proves treatment actionability
 R2-REEF-007,12,12,pass,cancer_genomics;pathway_gene_set,cancer_genomics;clinical;pathway_gene_set,,,True,True,retrospective association proves treatment guidance
-R2-REEF-008,12,12,pass,drug_target,drug_target,,,True,True,bioactivity/target link proves efficacy
+R2-REEF-008,12,12,pass,drug_target,drug_target;protein_structure,,,True,True,bioactivity/target link proves efficacy
 R2-REEF-009,12,12,pass,clinical,clinical,,,True,True,registry existence proves clinical benefit
 R2-REEF-010,12,12,pass,drug_target;regulatory_safety,drug_target;regulatory_safety,,,True,True,spontaneous adverse events prove comparative safety
 R2-REEF-011,11,12,pass,clinical;clinical_imaging_signal,clinical;clinical_imaging_signal,,imaging,True,True,benchmark dataset proves deployment readiness

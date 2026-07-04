@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-07-04T11:39:44",
+  "resource": "AlphaFold DB",
+  "uniprot": "PTEST1",
+  "inspected_files": [
+    "skills/ocean/evals/afdb-adapter-r1-mock-metadata.json",
+    "skills/ocean/evals/afdb-adapter-r1-mock-pae.json"
+  ],
+  "plddt_summary": {
+    "available": true,
+    "residue_count": 10,
+    "mean_plddt": 72.8,
+    "min_plddt": 35.0,
+    "max_plddt": 95.0,
+    "fraction_below_50": 0.3,
+    "fraction_above_90": 0.3,
+    "conclusion": "Mixed confidence; restrict claims to confident regions."
+  },
+  "pae_summary": {
+    "available": true,
+    "matrix_size": 5,
+    "mean_pae": 9.72,
+    "fraction_pairs_above_15": 0.48,
+    "conclusion": "High inter-residue uncertainty; avoid rigid whole-protein conclusions."
+  },
+  "cannot_support": [
+    "binding proof",
+    "experimental function",
+    "disease mechanism",
+    "drug efficacy",
+    "clinical relevance"
+  ]
+}

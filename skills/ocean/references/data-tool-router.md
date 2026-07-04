@@ -49,7 +49,7 @@ The router is not a live-search guarantee. It defines what should be routed, wha
 | Drug/chemical resources | ChEMBL, PubChem, BindingDB, Open Targets, DrugCentral, PharmGKB | compound/target/bioactivity context, prioritization | efficacy, safety, clinical readiness |
 | Clinical registry/regulatory | ClinicalTrials.gov, WHO ICTRP, FDA label/openFDA, DailyMed | study existence/status, label context, regulatory metadata | efficacy from registry metadata; causality from spontaneous reports |
 | EHR/cohort/imaging/signal | MIMIC, PhysioNet, SEER, NHANES, All of Us, TCIA | cohort feasibility, phenotype/outcome planning, benchmark provenance | causal effect or deployment readiness |
-| Bioinformatics workflow/software | LAST, BLAST, minimap2, BWA, STAR, SAMtools, bcftools, GATK, Salmon, DESeq2, Seurat, Scanpy, QIIME2, AlphaFold, Snakemake, Nextflow, nf-core | tool identity, workflow routing, reproducibility requirements, software provenance | biological validity, mechanism, clinical utility, or benchmark superiority without inspected run details |
+| Bioinformatics workflow/software | FastQC, MultiQC, BLAST, LAST/LASTAL, minimap2, BWA, Bowtie2, HISAT2, STAR, SAMtools, BEDTools, bcftools, GATK, DeepVariant, Salmon, kallisto, DESeq2, edgeR, Seurat, Scanpy, Cell Ranger, QIIME2, MetaPhlAn, HUMAnN, AlphaFold, MaxQuant, XCMS, nnU-Net, MONAI, Snakemake, Nextflow, nf-core | tool identity, workflow routing, reproducibility requirements, software provenance | biological validity, mechanism, clinical utility, or benchmark superiority without inspected run details |
 | Local manuscript/project files | uploaded manuscript, figures, tables, code, notes | inspected source-bound evidence | anything missing from provided material |
 
 ## Route Matrix

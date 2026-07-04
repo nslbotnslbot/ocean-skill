@@ -1,0 +1,41 @@
+{
+  "created_at": "2026-07-04T11:39:44",
+  "resource": "ClinicalTrials.gov",
+  "study": {
+    "nct_id": "NCT00000000",
+    "brief_title": "Mock Registry Trial for OCEAN Boundary Testing",
+    "overall_status": "COMPLETED",
+    "phase": [
+      "PHASE2"
+    ],
+    "study_type": "INTERVENTIONAL",
+    "conditions": [
+      "Mock disease"
+    ],
+    "interventions": [
+      "Mock intervention"
+    ],
+    "primary_outcomes": [
+      "Mock response rate"
+    ],
+    "has_results_section": false,
+    "raw_top_keys": [
+      "protocolSection"
+    ]
+  },
+  "inspected_content": [
+    "registry identity/status/design fields",
+    "primary outcome fields"
+  ],
+  "supports_claims": [
+    "trial registration existence",
+    "registry status/design/outcome metadata"
+  ],
+  "cannot_support": [
+    "treatment efficacy",
+    "safety superiority",
+    "clinical guideline readiness",
+    "causal treatment effect",
+    "peer-reviewed trial interpretation"
+  ]
+}

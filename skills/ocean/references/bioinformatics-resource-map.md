@@ -27,7 +27,7 @@ Resource presence is not evidence. A named database is only a candidate route un
 | Clinical imaging and physiological signals | TCIA, PhysioNet, MIMIC-CXR when lawful, OpenNeuro, UK Biobank imaging when authorized | imaging/signal benchmark provenance, modality and label routing | dataset existence is not deployability, clinical utility, or prospective validation |
 | Model organism databases | MGI, FlyBase, WormBase, SGD, ZFIN, TAIR | gene function and phenotype evidence in model organisms | organism evidence must be translated cautiously to human biology |
 | Benchmarks and challenges | DREAM Challenges, OpenML where relevant, Kaggle only with caution, task-specific benchmark repositories | benchmark context, challenge tasks, baseline comparison | leaderboard performance is not biological validity or clinical deployment readiness |
-| Bioinformatics software / workflows | BLAST, LAST, BWA, Bowtie2, HISAT2, STAR, minimap2, SAMtools, BEDTools, GATK, bcftools, Salmon, kallisto, featureCounts, DESeq2, edgeR, Seurat, Scanpy, Cell Ranger, Snakemake, Nextflow, Galaxy | workflow provenance, method routing, reproducibility checks, software-generated artifacts | software use does not prove correct parameters, data quality, reproducibility, or biological interpretation |
+| Bioinformatics software / workflows | FastQC, MultiQC, BLAST, LAST/LASTAL, minimap2, BWA, Bowtie2, HISAT2, STAR, SAMtools, BEDTools, GATK, bcftools, DeepVariant, Salmon, kallisto, featureCounts, DESeq2, edgeR, Seurat, Scanpy, Cell Ranger, QIIME2, MetaPhlAn, HUMAnN, AlphaFold, MaxQuant, XCMS, nnU-Net, MONAI, Snakemake, Nextflow, Galaxy | workflow provenance, method routing, reproducibility checks, software-generated artifacts | software use does not prove correct parameters, data quality, reproducibility, or biological interpretation |
 
 ## Minimum source-packet fields by family
 
@@ -110,6 +110,8 @@ Stop or downgrade if:
 | Phylogenetics / comparative genomics | MAFFT, MUSCLE, Clustal Omega, IQ-TREE, RAxML, FastTree, OrthoFinder | multiple alignment, tree, orthology route | tree topology depends on model, alignment quality, sampling, and support |
 | Multi-omics integration | WGCNA, MOFA/MOFA+, mixOmics/DIABLO, network enrichment workflows | correlation modules, latent factors, feature integration, hypothesis prioritization route | integration patterns are not causality and require modality-specific validation |
 | Workflow and reproducibility | Snakemake, Nextflow, CWL, WDL/Cromwell, Galaxy, Docker, Singularity/Apptainer, Conda, nf-core | pipeline provenance and reproducibility route | workflow existence is not successful execution or valid analysis |
+
+For a fuller tool list and per-family packet rules, read `bioinformatics-software-catalog.md`.
 
 ## LAST-specific note
 

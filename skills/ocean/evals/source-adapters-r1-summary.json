@@ -1,0 +1,15 @@
+{
+  "cases": 2,
+  "pass": 2,
+  "needs_review": 0,
+  "checks": {
+    "literature_packet_exists": true,
+    "literature_boundary_queried": true,
+    "literature_refuses_full_methods": true,
+    "literature_handoff_sounding": true,
+    "clinicaltrials_packet_exists": true,
+    "clinicaltrials_boundary_queried": true,
+    "clinicaltrials_refuses_efficacy": true,
+    "clinicaltrials_handoff_iceberg": true
+  }
+}
