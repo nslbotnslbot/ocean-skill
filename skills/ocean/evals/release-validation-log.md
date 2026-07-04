@@ -1785,3 +1785,57 @@ Regression checks after E2E R1:
 ### Evidence Boundary / 证据边界
 
 This run was deterministic and offline. It did not inspect real papers, manuscripts, private data, patient records, public APIs, external databases, model outputs, or bioinformatics software runs. Passing means OCEAN produced the expected module chain, route classes, artifact plan, and stop conditions. It does not mean the scientific claims are true.
+
+## 2026-07-04 - AlphaFold DB functional adapter R1
+
+Purpose: Start moving OCEAN from a workflow/evidence-boundary skill toward a science-skills-style executable tool layer while preserving OCEAN's claim-evidence boundaries.
+
+Implemented:
+
+- Added `references/alphafold-db-adapter.md`.
+- Added `scripts/afdb_source_packet.py` with:
+  - `fetch`: fetch public AlphaFold DB metadata, PAE, and mmCIF files for a UniProt accession.
+  - `analyze`: analyze local metadata/PAE/mmCIF files for pLDDT confidence and PAE uncertainty.
+  - `packet`: convert analysis output into an OCEAN source packet.
+- Added `scripts/run_afdb_adapter_eval.py`.
+- Added local mock AFDB-style eval inputs:
+  - `evals/afdb-adapter-r1-mock-metadata.json`
+  - `evals/afdb-adapter-r1-mock-pae.json`
+- Added generated eval artifacts:
+  - `evals/afdb-adapter-r1-analysis.json`
+  - `evals/afdb-adapter-r1-packet.json`
+  - `evals/afdb-adapter-r1-results.md`
+  - `evals/afdb-adapter-r1-summary.json`
+- Updated `SKILL.md` and `manifest.yaml` to expose the AlphaFold DB adapter.
+
+### AFDB adapter R1
+
+| Item | Result |
+|---|---:|
+| Cases | 1 |
+| Pass | 1 |
+| Needs review | 0 |
+
+Checks confirmed:
+
+- pLDDT values were inspected from local mock metadata.
+- PAE matrix was inspected from local mock PAE JSON.
+- The generated OCEAN packet used `boundary_status: packet_evidence`.
+- The packet handed off to Iceberg.
+- The packet explicitly refused to support binding proof, experimental function, disease mechanism, drug efficacy, or clinical relevance.
+
+Regression checks after AFDB adapter R1:
+
+| Check | Result |
+|---|---:|
+| AFDB adapter R1 | 1/1 pass |
+| OCEAN E2E module router R1 | 7/7 pass |
+| Reef router R2 | 21/21 pass |
+| Reef router R3 | 12/12 pass |
+| Source-packet boundary R2 | 6/6 pass |
+| Python compile | pass |
+| YAML parse | pass |
+
+### Evidence Boundary / 证据边界
+
+This run used local mock AlphaFold-DB-style metadata and PAE files only. It did not query AlphaFold DB, UniProt, RCSB PDB, or any external API. It did not run AlphaFold prediction. Passing means OCEAN can turn predicted-structure files into a bounded source packet; it does not mean the protein's function, binding, mechanism, druggability, disease relevance, or clinical relevance is proven.

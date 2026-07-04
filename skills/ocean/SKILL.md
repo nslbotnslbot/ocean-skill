@@ -37,6 +37,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/domain-lens.md` when the task needs medical, biological, biomedical AI, omics, clinical, drug, KG/database, manuscript, proposal, or collaboration-specific evidence standards, or when the input domain is unclear.
 - Read `references/data-tool-router.md` when the task needs public data-source selection, official database/API routing, source classes, access/privacy/licensing boundaries, or a data/tool packet before Reef, Iceberg, Anchor, or Compass.
 - Read `references/bioinformatics-resource-map.md` when the task needs bioinformatics, computational biology, omics, clinical-data, benchmark, or software/workflow routing, including tools such as LAST, BLAST, minimap2, STAR, SAMtools, DESeq2, Seurat, Snakemake, Nextflow, and nf-core.
+- Read `references/alphafold-db-adapter.md` when the user provides a UniProt accession or local AlphaFold DB files and asks for predicted-structure confidence, pLDDT, PAE/domain-flexibility, disorder risk, or whether predicted structure can support a biological claim.
 - Read `references/module-artifact-contract.md` when a module output should be stable, comparable, or carried downstream as a concrete artifact.
 - Read `references/module-handoff.md` when the task spans multiple OCEAN modules, starts from a paper/idea/proposal/sentence, or needs explicit handoff artifacts between modules.
 - Read `references/research-design-workflow.md` when the user wants to turn an idea, proposal, reviewer concern, dataset/resource seed, or collaboration question into a structured biomedical research workflow with design gates, validation gates, research routes, and decision memory.
@@ -58,6 +59,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/check_claim_table.py` after the claim CSV is filled to summarize weak or high-risk claims.
 - Use `scripts/make_review_skeleton.py` when the user wants a reusable markdown review skeleton.
 - Use `scripts/ocean_source_router.py` when the user wants an offline candidate route for biomedical resources, bioinformatics software, source packets, or incomplete source-packet audits. Treat its output as routing support, not as biological evidence.
+- Use `scripts/afdb_source_packet.py` for AlphaFold DB predicted-structure source packets. Treat outputs as bounded structural-confidence evidence only; do not upgrade them into binding, function, mechanism, druggability, or clinical claims.
 - Use `scripts/run_reef_api_adapter.py` only when the user explicitly wants a bounded public Reef API packet. Default to dry-run unless the user has approved live public API access and no private, sensitive, paid, or key-protected data will be submitted.
 
 ## Workflow
