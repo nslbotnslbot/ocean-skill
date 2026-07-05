@@ -1,0 +1,39 @@
+{
+  "schema_version": "ocean-cli-wrapper-r1",
+  "wrapper": "cli_subprocess_wrapper.py",
+  "mode": "probe",
+  "execution_status": "not_available_current_environment",
+  "software_record": {
+    "tool_name": "fastp",
+    "tool_slug": "fastp",
+    "tool_version": "",
+    "task_intent": "local software availability/version smoke",
+    "command_line": "fastp --version",
+    "parameters": {
+      "probe_args": "--version"
+    },
+    "reference_or_index": "not applicable for version/help probe",
+    "input_files": [],
+    "output_files": [],
+    "logs_or_qc": [],
+    "environment": "current local PATH environment",
+    "date": "2026-07-05",
+    "supports_claims": [],
+    "cannot_support": [
+      "biological mechanism",
+      "causal conclusion",
+      "clinical utility",
+      "publication readiness",
+      "reproducibility without rerun/log/environment checks"
+    ],
+    "boundary_status": "candidate_route",
+    "handoff": "Anchor",
+    "execution_status": "not_available_current_environment",
+    "returncode": null,
+    "resolved_path": "",
+    "stdout_excerpt": "",
+    "stderr_excerpt": "fastp was not found on PATH.",
+    "created_at": "2026-07-05T12:29:27"
+  },
+  "evidence_boundary": "Availability/probe evidence only; not a biological analysis."
+}

@@ -1,0 +1,25 @@
+layer,slug,tool,status,verdict,artifact
+lightweight_cli_subprocess,fastqc,FastQC,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/fastqc-cli.json
+lightweight_cli_subprocess,multiqc,MultiQC,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/multiqc-cli.json
+lightweight_cli_subprocess,cutadapt,cutadapt,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/cutadapt-cli.json
+lightweight_cli_subprocess,fastp,fastp,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/fastp-cli.json
+lightweight_cli_subprocess,samtools,samtools,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/samtools-cli.json
+lightweight_cli_subprocess,bcftools,bcftools,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/bcftools-cli.json
+lightweight_cli_subprocess,bedtools,BEDTools,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/bedtools-cli.json
+lightweight_cli_subprocess,blast,BLAST,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/blast-cli.json
+lightweight_cli_subprocess,mafft,MAFFT,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/mafft-cli.json
+lightweight_cli_subprocess,hmmer,HMMER,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/hmmer-cli.json
+lightweight_cli_subprocess,minimap2,minimap2,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/minimap2-cli.json
+r_bioconductor_rscript,deseq2,DESeq2,executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/deseq2-rscript.json
+r_bioconductor_rscript,limma_voom,limma,executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/limma_voom-rscript.json
+r_bioconductor_rscript,edger,edgeR,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/edger-rscript.json
+r_bioconductor_rscript,seurat,Seurat,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/seurat-rscript.json
+r_bioconductor_rscript,wgcna,WGCNA,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/wgcna-rscript.json
+r_bioconductor_rscript,dada2,DADA2,not_available_current_environment,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/dada2-rscript.json
+heavy_tool_launcher_plan,cell_ranger,Cell Ranger,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/cell_ranger-launcher-plan.json
+heavy_tool_launcher_plan,gatk,GATK,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/gatk-launcher-plan.json
+heavy_tool_launcher_plan,alphafold,AlphaFold,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/alphafold-launcher-plan.json
+heavy_tool_launcher_plan,maxquant,MaxQuant,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/maxquant-launcher-plan.json
+heavy_tool_launcher_plan,galaxy,Galaxy,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/galaxy-launcher-plan.json
+heavy_tool_launcher_plan,three_d_slicer,3D Slicer,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/three_d_slicer-launcher-plan.json
+heavy_tool_launcher_plan,chimerax,ChimeraX,planned_not_executed,pass,skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/chimerax-launcher-plan.json

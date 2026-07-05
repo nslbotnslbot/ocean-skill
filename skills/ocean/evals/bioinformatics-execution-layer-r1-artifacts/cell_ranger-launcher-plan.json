@@ -1,0 +1,50 @@
+{
+  "schema_version": "ocean-heavy-tool-launcher-r1",
+  "wrapper": "heavy_tool_launcher.py",
+  "tool_name": "Cell Ranger",
+  "tool_slug": "cell_ranger",
+  "execution_status": "planned_not_executed",
+  "run_mode": "launcher_plan",
+  "command_template": "cellranger count --id <run_id> --transcriptome <refdata> --fastqs <fastq_dir> --sample <sample>",
+  "container_or_environment": "to be supplied by user",
+  "required_assets": [
+    "10x reference transcriptome",
+    "FASTQ directory",
+    "sample sheet",
+    "Cell Ranger license/terms"
+  ],
+  "license_or_terms_note": "Check license, EULA, citation, and institutional terms before execution.",
+  "compute_note": "May require large references, GPU, HPC, or substantial local storage.",
+  "data_safety_note": "Do not submit PHI, patient data, or unpublished data to external services.",
+  "stop_conditions": [
+    "missing license or unavailable terms",
+    "missing reference database/index",
+    "missing GPU/HPC/container runtime",
+    "private patient data or unpublished data without explicit local handling plan",
+    "GUI-only workflow without exportable logs/run record"
+  ],
+  "required_run_evidence_before_packet": [
+    "exact command or GUI action log",
+    "tool version/build",
+    "container/image or environment export",
+    "reference database/index version and path",
+    "input manifest",
+    "output manifest",
+    "logs/QC",
+    "date and operator/context"
+  ],
+  "cannot_support": [
+    "biological mechanism",
+    "causal conclusion",
+    "clinical utility",
+    "publication readiness",
+    "reproducibility without rerun/log/environment checks",
+    "tool successfully ran",
+    "result quality",
+    "method benchmark superiority"
+  ],
+  "handoff": "Anchor",
+  "created_at": "2026-07-05T12:29:28",
+  "date": "2026-07-05",
+  "evidence_boundary": "Launcher plan only; this is not an executed software run or scientific result."
+}

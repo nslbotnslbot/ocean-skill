@@ -1,0 +1,10 @@
+{
+  "run_date": "2026-07-05",
+  "cases": 24,
+  "pass": 24,
+  "needs_review": 0,
+  "executed": 2,
+  "not_available_current_environment": 15,
+  "planned_not_executed": 7,
+  "boundary": "Execution-layer smoke only; not scientific validation."
+}

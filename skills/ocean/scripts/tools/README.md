@@ -20,7 +20,7 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `clinicaltrials/` | ClinicalTrials.gov registry source packets |
 | `../run_reef_api_adapter.py` | Executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB |
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
-| `common/` | Shared helpers for generic software source-packet creation and auditing |
+| `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
 
@@ -45,4 +45,4 @@ Most `bioinformatics/<tool>/` folders start as L0/L1 scaffolds. They provide a s
 - future wrappers;
 - future evals.
 
-They do not mean that OCEAN installs or runs that tool. Use `common/software_source_packet.py` to packetize inspected run metadata until a dedicated wrapper exists.
+They do not mean that OCEAN installs or runs that tool. Use `common/software_source_packet.py` to packetize inspected run metadata until a dedicated wrapper exists. Use `common/cli_subprocess_wrapper.py`, `common/rscript_wrapper.py`, or `common/heavy_tool_launcher.py` when a tool should follow the shared CLI, R/Bioconductor, or heavy-tool execution layer.

@@ -2268,3 +2268,54 @@ The first live gnomAD case used a variant seed that returned no record. This was
 ### Evidence Boundary / 证据边界
 
 These adapters query public API metadata only. Passing means OCEAN can construct and, when network is allowed, execute bounded public resource requests and write Reef packets. It does not prove biological mechanism, causality, clinical utility, treatment efficacy, diagnosis, publication readiness, or reproducibility. Do not submit private manuscript text, patient data, PHI, unpublished data, or local omics files to these public API adapters.
+
+## 2026-07-05 - Bioinformatics execution-layer wrapper R1
+
+### 中文上下文
+
+这轮把 OCEAN 的 bioinformatics tool library 从“每个工具有 scaffold / source-packet 模板”推进到“有共享执行层”。目标不是把所有外部工具都假装成一键可跑，而是把不同工具分成三类：轻量 CLI 可以真实 `subprocess.run([...])`；R/Bioconductor 通过 `Rscript` 检查 package 或运行用户提供的脚本；重型、授权、GUI、GPU 或大数据库工具只生成 launcher/run-plan 和证据清单，不能假装已经执行。
+
+### English Context
+
+This round moves the bioinformatics tool library from scaffold/source-packet templates toward shared execution layers. The goal is not to pretend that all external tools are one-click runnable. Instead, OCEAN now separates lightweight CLI subprocess tools, R/Bioconductor `Rscript` tools, and heavy/license/GUI/GPU/large-database tools that should produce launch plans rather than fake executions.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/common/cli_subprocess_wrapper.py`.
+- Added `scripts/tools/common/rscript_wrapper.py`.
+- Added `scripts/tools/common/heavy_tool_launcher.py`.
+- Added `scripts/tools/run_bioinformatics_execution_layer_eval.py`.
+- Added `references/bioinformatics-execution-layers.md`.
+- Added `evals/bioinformatics-execution-layer-r1-*` result files.
+- Updated `manifest.yaml`, `CHANGELOG.md`, README files, and evaluation docs.
+
+Tool classes covered in R1:
+
+- Lightweight CLI: FastQC, MultiQC, cutadapt, fastp, samtools, bcftools, BEDTools, BLAST, MAFFT, HMMER, minimap2.
+- R/Bioconductor: DESeq2, limma, edgeR, Seurat, WGCNA, DADA2.
+- Heavy launcher plan: Cell Ranger, GATK, AlphaFold, MaxQuant, Galaxy, 3D Slicer, ChimeraX.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Execution-layer eval cases | 24 |
+| Execution-layer eval pass | 24/24 |
+| Execution-layer eval needs_review | 0 |
+| Local CLI/R probes executed | 2 |
+| Local CLI/R unavailable records | 15 |
+| Heavy-tool launcher plans | 7 |
+| 115-tool smoke rerun | 3 executed / 112 unavailable |
+| Bioinformatics scaffold eval | 115/115 pass |
+| OCEAN contract check | 33/33 pass |
+| Wrapper compile | pass |
+
+### Error Notes
+
+The first execution-layer eval attempt failed before writing the FastQC artifact because `--probe-args --version` was parsed as an option rather than a value. The eval and reference example were corrected to use `--probe-args=--version`, and the eval now records wrapper failures explicitly if an artifact is missing.
+
+The lightweight CLI tools in this machine were not installed on PATH during this run, so they were recorded as `not_available_current_environment`. This is an environment/install boundary, not a tool failure. DESeq2 and limma were available through Rscript package-version checks. Heavy tools intentionally remained `planned_not_executed`.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means OCEAN can route software requests to the correct execution layer, record local availability or launcher-plan evidence, and stop safely when dependencies are missing. It does not mean any bioinformatics workflow was run, any reference database was downloaded, any clinical/biological dataset was processed, or any scientific claim was validated.

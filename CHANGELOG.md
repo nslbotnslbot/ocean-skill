@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added bioinformatics execution-layer wrappers: bounded local CLI subprocess probing, R/Bioconductor `Rscript` package/script handling, and non-executing launcher plans for heavy/license/GUI/GPU/large-database tools.
 - Added executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB, plus dry-run and bounded live evals with 11/11 pass.
 - Added science-skills-style `references/tool_usage.md` guides to all 115 bioinformatics tool folders, with use/avoid rules, required run evidence, stop conditions, and OCEAN handoff guidance.
 - Added Bioinformatics Real-Tool Smoke Eval R1, checking all 115 bioinformatics tool scaffolds against the current local environment with real CLI/version/help, Python import, R package, or OCEAN adapter smoke attempts.
