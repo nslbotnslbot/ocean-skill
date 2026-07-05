@@ -19,6 +19,7 @@ conditional_core:
     - references/clinicaltrials-adapter.md
     - references/api-database-adapters.md
     - references/bioinformatics-execution-layers.md
+    - references/bioinformatics-tool-router.md
     - references/source-packet-schema.md
     - references/tool-adapter-contract.md
   artifacts_or_project_memory:
@@ -63,6 +64,8 @@ scripts:
   bioinformatics_cli_subprocess_wrapper: scripts/tools/common/cli_subprocess_wrapper.py
   bioinformatics_rscript_wrapper: scripts/tools/common/rscript_wrapper.py
   bioinformatics_heavy_tool_launcher: scripts/tools/common/heavy_tool_launcher.py
+  bioinformatics_tool_router: scripts/tools/bioinformatics_tool_router.py
+  bioinformatics_tool_router_eval: scripts/tools/run_bioinformatics_tool_router_eval.py
   bioinformatics_tool_scaffold_generator: scripts/tools/generate_bioinformatics_tool_scaffold.py
   bioinformatics_tool_scaffold_eval: scripts/tools/run_bioinformatics_tool_scaffold_eval.py
   bioinformatics_real_tool_smoke_eval: scripts/tools/run_bioinformatics_real_tool_smoke_eval.py
@@ -83,6 +86,7 @@ evals:
   bioinformatics_tool_scaffold_r1: evals/bioinformatics-tool-scaffold-r1-summary.json
   bioinformatics_real_tool_smoke_r1: evals/bioinformatics-real-tool-smoke-r1-summary.json
   bioinformatics_execution_layer_r1: evals/bioinformatics-execution-layer-r1-summary.json
+  bioinformatics_tool_router_r1: evals/bioinformatics-tool-router-r1-summary.json
   api_database_adapter_r1_dry_run: evals/api-database-adapter-r1-dry-run-summary.json
   api_database_adapter_r1_live: evals/api-database-adapter-r1-live-summary.json
   source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json

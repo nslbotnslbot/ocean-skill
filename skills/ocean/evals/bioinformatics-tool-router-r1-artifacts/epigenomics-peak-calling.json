@@ -1,0 +1,345 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "epigenomics-peak-calling",
+  "intent": "epigenomic alignment, peak-calling, motif, and signal-track provenance plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "fastqc",
+      "tool_name": "FastQC",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name FastQC --tool-slug fastqc --command fastqc --probe-args=--version --output fastqc-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 2,
+      "tool_slug": "multiqc",
+      "tool_name": "MultiQC",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name MultiQC --tool-slug multiqc --command multiqc --probe-args=--version --output multiqc-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 3,
+      "tool_slug": "bowtie2",
+      "tool_name": "Bowtie2",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name Bowtie2 --tool-slug bowtie2 --command bowtie2 --probe-args=--version --output bowtie2-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 4,
+      "tool_slug": "samtools",
+      "tool_name": "SAMtools",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name SAMtools --tool-slug samtools --command samtools --probe-args=--version --output samtools-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 5,
+      "tool_slug": "bedtools",
+      "tool_name": "BEDTools",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name BEDTools --tool-slug bedtools --command bedtools --probe-args=--version --output bedtools-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 6,
+      "tool_slug": "macs2",
+      "tool_name": "MACS2",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name MACS2 --tool-slug macs2 --command macs2 --probe-args=--version --output macs2-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 7,
+      "tool_slug": "macs3",
+      "tool_name": "MACS3",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name MACS3 --tool-slug macs3 --command macs3 --probe-args=--version --output macs3-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 8,
+      "tool_slug": "homer",
+      "tool_name": "HOMER",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name HOMER --tool-slug homer --command findMotifsGenome.pl --probe-args=--version --output homer-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 9,
+      "tool_slug": "deeptools",
+      "tool_name": "deepTools",
+      "execution_layer": "python_package",
+      "wrapper": "scripts/tools/common/software_source_packet.py plus Python import/run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/software_source_packet.py template --tool-name deepTools --tool-slug deeptools --output deeptools-run-record.template.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "Python package version or import check",
+        "Python environment export"
+      ],
+      "stop_conditions": [
+        "Python package unavailable",
+        "no script/notebook/run record supplied",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 10,
+      "tool_slug": "fimo",
+      "tool_name": "FIMO",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name FIMO --tool-slug fimo --command fimo --probe-args=--version --output fimo-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 11,
+      "tool_slug": "meme",
+      "tool_name": "MEME",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name MEME --tool-slug meme --command meme --probe-args=--version --output meme-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Iceberg",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}

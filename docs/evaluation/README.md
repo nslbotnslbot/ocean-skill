@@ -42,6 +42,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/collaborative-workflow-r1-results.md`: cross-module workflow eval covering proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
 - `skills/ocean/evals/bioinformatics-real-tool-smoke-r1-results.md`: local availability/version smoke check for all 115 bioinformatics tool scaffolds in the current execution environment.
 - `skills/ocean/evals/bioinformatics-execution-layer-r1-results.md`: execution-layer check for lightweight CLI, R/Bioconductor, and heavy-tool launcher behavior.
+- `skills/ocean/evals/bioinformatics-tool-router-r1-results.md`: tool-router check for 115 execution profiles and common workflow plans.
 
 ## What Is Not Included
 
@@ -64,6 +65,8 @@ Seven-Module Coordination R1 adds a deterministic full-chain structural check ov
 Bioinformatics Real-Tool Smoke R1 checks whether the 115 scaffolded bioinformatics tools are actually callable in the current local environment. It is an availability/version/import smoke test, not an end-to-end biological analysis.
 
 Bioinformatics Execution Layer R1 checks the shared execution wrappers for three tool classes: lightweight CLI subprocess tools, R/Bioconductor tools through `Rscript`, and heavy/license/GUI/GPU/large-database tools through non-executing launcher plans. It records unavailable local dependencies instead of pretending tools ran.
+
+Bioinformatics Tool Router R1 checks whether all 115 tools receive an execution profile and whether common biomedical/biological workflows can be converted into ordered tool plans with evidence boundaries and stop conditions.
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
 

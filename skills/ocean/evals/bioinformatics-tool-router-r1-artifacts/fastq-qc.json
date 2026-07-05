@@ -1,0 +1,136 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "fastq-qc",
+  "intent": "raw FASTQ quality control and preprocessing evidence plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "fastqc",
+      "tool_name": "FastQC",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name FastQC --tool-slug fastqc --command fastqc --probe-args=--version --output fastqc-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 2,
+      "tool_slug": "fastp",
+      "tool_name": "fastp",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name fastp --tool-slug fastp --command fastp --probe-args=--version --output fastp-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 3,
+      "tool_slug": "cutadapt",
+      "tool_name": "cutadapt",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name cutadapt --tool-slug cutadapt --command cutadapt --probe-args=--version --output cutadapt-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 4,
+      "tool_slug": "multiqc",
+      "tool_name": "MultiQC",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name MultiQC --tool-slug multiqc --command multiqc --probe-args=--version --output multiqc-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Anchor",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}

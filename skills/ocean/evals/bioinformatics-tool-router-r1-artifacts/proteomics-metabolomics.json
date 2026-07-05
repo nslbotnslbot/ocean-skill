@@ -1,0 +1,241 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "proteomics-metabolomics",
+  "intent": "proteomics/metabolomics search, quantification, and feature-detection provenance plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "maxquant",
+      "tool_name": "MaxQuant",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name MaxQuant --tool-slug maxquant --command-template 'maxquant <user-supplied arguments>' --output maxquant-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 2,
+      "tool_slug": "fragpipe",
+      "tool_name": "FragPipe",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name FragPipe --tool-slug fragpipe --command-template 'fragpipe <user-supplied arguments>' --output fragpipe-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 3,
+      "tool_slug": "dia_nn",
+      "tool_name": "DIA-NN",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name DIA-NN --tool-slug dia_nn --command diann --probe-args=--version --output dia_nn-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 4,
+      "tool_slug": "skyline",
+      "tool_name": "Skyline",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Skyline --tool-slug skyline --command-template 'skyline <user-supplied arguments>' --output skyline-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 5,
+      "tool_slug": "ms_dial",
+      "tool_name": "MS-DIAL",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name MS-DIAL --tool-slug ms_dial --command-template 'ms-dial <user-supplied arguments>' --output ms_dial-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 6,
+      "tool_slug": "mzmine",
+      "tool_name": "MZmine",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name MZmine --tool-slug mzmine --command-template 'mzmine <user-supplied arguments>' --output mzmine-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 7,
+      "tool_slug": "xcms",
+      "tool_name": "XCMS",
+      "execution_layer": "r_bioconductor",
+      "wrapper": "scripts/tools/common/rscript_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/rscript_wrapper.py check-package --tool-name XCMS --tool-slug xcms --package xcms --output xcms-rscript-check.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "Rscript path",
+        "R package version",
+        "R session/environment notes"
+      ],
+      "stop_conditions": [
+        "Rscript not installed",
+        "R package unavailable",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Anchor",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}

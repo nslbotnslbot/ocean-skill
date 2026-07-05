@@ -1,0 +1,202 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "imaging-ai",
+  "intent": "medical/biological imaging annotation, segmentation, and ML workflow provenance plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "three_d_slicer",
+      "tool_name": "3D Slicer",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name '3D Slicer' --tool-slug three_d_slicer --command-template 'three-d-slicer <user-supplied arguments>' --output three_d_slicer-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 2,
+      "tool_slug": "itk_snap",
+      "tool_name": "ITK-SNAP",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name ITK-SNAP --tool-slug itk_snap --command-template 'itk-snap <user-supplied arguments>' --output itk_snap-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 3,
+      "tool_slug": "simpleitk",
+      "tool_name": "SimpleITK",
+      "execution_layer": "python_package",
+      "wrapper": "scripts/tools/common/software_source_packet.py plus Python import/run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/software_source_packet.py template --tool-name SimpleITK --tool-slug simpleitk --output simpleitk-run-record.template.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "Python package version or import check",
+        "Python environment export"
+      ],
+      "stop_conditions": [
+        "Python package unavailable",
+        "no script/notebook/run record supplied",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 4,
+      "tool_slug": "torchio",
+      "tool_name": "TorchIO",
+      "execution_layer": "python_package",
+      "wrapper": "scripts/tools/common/software_source_packet.py plus Python import/run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/software_source_packet.py template --tool-name TorchIO --tool-slug torchio --output torchio-run-record.template.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "Python package version or import check",
+        "Python environment export"
+      ],
+      "stop_conditions": [
+        "Python package unavailable",
+        "no script/notebook/run record supplied",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 5,
+      "tool_slug": "monai",
+      "tool_name": "MONAI",
+      "execution_layer": "python_package",
+      "wrapper": "scripts/tools/common/software_source_packet.py plus Python import/run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/software_source_packet.py template --tool-name MONAI --tool-slug monai --output monai-run-record.template.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "Python package version or import check",
+        "Python environment export"
+      ],
+      "stop_conditions": [
+        "Python package unavailable",
+        "no script/notebook/run record supplied",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 6,
+      "tool_slug": "nnu_net",
+      "tool_name": "nnU-Net",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name nnU-Net --tool-slug nnu_net --command-template 'nnu-net <user-supplied arguments>' --output nnu_net-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Anchor",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}

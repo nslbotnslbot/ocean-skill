@@ -1,0 +1,305 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "workflow-reproducibility",
+  "intent": "workflow, environment, and container reproducibility plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "conda",
+      "tool_name": "Conda",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Conda --tool-slug conda --command-template 'conda <user-supplied arguments>' --output conda-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 2,
+      "tool_slug": "docker",
+      "tool_name": "Docker",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Docker --tool-slug docker --command-template 'docker <user-supplied arguments>' --output docker-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 3,
+      "tool_slug": "singularity_apptainer",
+      "tool_name": "Singularity-Apptainer",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Singularity-Apptainer --tool-slug singularity_apptainer --command-template 'apptainer <user-supplied arguments>' --output singularity_apptainer-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 4,
+      "tool_slug": "snakemake",
+      "tool_name": "Snakemake",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Snakemake --tool-slug snakemake --command-template 'snakemake <user-supplied arguments>' --output snakemake-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 5,
+      "tool_slug": "nextflow",
+      "tool_name": "Nextflow",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Nextflow --tool-slug nextflow --command-template 'nextflow <user-supplied arguments>' --output nextflow-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 6,
+      "tool_slug": "nf_core",
+      "tool_name": "nf-core",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name nf-core --tool-slug nf_core --command-template 'nf-core <user-supplied arguments>' --output nf_core-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 7,
+      "tool_slug": "cwl",
+      "tool_name": "CWL",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name CWL --tool-slug cwl --command-template 'cwltool <user-supplied arguments>' --output cwl-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 8,
+      "tool_slug": "wdl_cromwell",
+      "tool_name": "WDL-Cromwell",
+      "execution_layer": "workflow_runtime",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name WDL-Cromwell --tool-slug wdl_cromwell --command-template 'cromwell <user-supplied arguments>' --output wdl_cromwell-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "workflow definition",
+        "container/environment lock",
+        "resume/cache state",
+        "executor/backend"
+      ],
+      "stop_conditions": [
+        "workflow engine unavailable",
+        "container/environment lock missing",
+        "no run manifest",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 9,
+      "tool_slug": "galaxy",
+      "tool_name": "Galaxy",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name Galaxy --tool-slug galaxy --command-template 'galaxy <user-supplied arguments>' --output galaxy-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Harbor",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}
