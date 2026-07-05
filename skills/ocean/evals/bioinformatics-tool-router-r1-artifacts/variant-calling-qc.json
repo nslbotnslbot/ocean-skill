@@ -1,0 +1,262 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "variant-calling-qc",
+  "intent": "variant calling, file-operation, and QC provenance plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "bwa",
+      "tool_name": "BWA",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name BWA --tool-slug bwa --command bwa --probe-args=--version --output bwa-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 2,
+      "tool_slug": "samtools",
+      "tool_name": "SAMtools",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name SAMtools --tool-slug samtools --command samtools --probe-args=--version --output samtools-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 3,
+      "tool_slug": "bcftools",
+      "tool_name": "bcftools",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name bcftools --tool-slug bcftools --command bcftools --probe-args=--version --output bcftools-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 4,
+      "tool_slug": "gatk",
+      "tool_name": "GATK",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name GATK --tool-slug gatk --command-template 'gatk <user-supplied arguments>' --output gatk-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 5,
+      "tool_slug": "freebayes",
+      "tool_name": "FreeBayes",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name FreeBayes --tool-slug freebayes --command freebayes --probe-args=--version --output freebayes-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 6,
+      "tool_slug": "strelka2",
+      "tool_name": "Strelka2",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name Strelka2 --tool-slug strelka2 --command configureStrelkaGermlineWorkflow.py --probe-args=--help --output strelka2-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 7,
+      "tool_slug": "deepvariant",
+      "tool_name": "DeepVariant",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name DeepVariant --tool-slug deepvariant --command-template 'deepvariant <user-supplied arguments>' --output deepvariant-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 8,
+      "tool_slug": "picard",
+      "tool_name": "Picard",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name Picard --tool-slug picard --command picard --probe-args=--version --output picard-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Anchor",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}

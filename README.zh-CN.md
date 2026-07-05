@@ -242,6 +242,8 @@ Bioinformatics Real-Tool Smoke R1 检查 115 个 scaffolded bioinformatics tools
 
 Bioinformatics Execution Layer R1 增加了三类共享 wrapper：轻量 CLI 工具、R/Bioconductor 工具，以及重型/授权/GUI/GPU/大数据库工具。缺失的本地软件会被记录为环境边界，而不是伪装成成功运行。
 
+Bioinformatics Tool Router R1 会把 115 个 scaffolded tools 分配到 execution layers，并为常见 biomedical / biological analysis tasks 生成 workflow plan，包括 FASTQ QC、RNA-seq、variant calling、single-cell、spatial、metagenomics、genome assembly、protein structure、epigenomics、proteomics/metabolomics、workflow reproducibility 和 imaging AI。
+
 每个 bioinformatics tool 文件夹现在也包含一个 science-skills 风格的 `references/tool_usage.md` guide。它们写清 use/avoid rules、真实本地运行前必须检查的证据、stop conditions 和 OCEAN handoff 路径，但不声称外部工具已经安装。
 
 Reef 现在也有可执行的 API/database adapters，覆盖 UniProt、PubMed、EuropePMC、ChEMBL、OpenTargets、STRING、Reactome、QuickGO、ClinVar、gnomAD 和 AlphaFold DB。这些 wrapper 可以 dry-run，也可以用 `--execute` 做 bounded live public API request，并输出带明确证据边界的 OCEAN packet。

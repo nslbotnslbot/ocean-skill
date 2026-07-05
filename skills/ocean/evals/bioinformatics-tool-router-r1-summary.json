@@ -1,0 +1,17 @@
+{
+  "run_date": "2026-07-05",
+  "cases": 133,
+  "pass": 133,
+  "needs_review": 0,
+  "tools_profiled": 115,
+  "workflows_planned": 12,
+  "by_execution_layer": {
+    "heavy_launcher_plan": 20,
+    "lightweight_cli": 60,
+    "python_package": 16,
+    "r_bioconductor": 10,
+    "source_packet_adapter": 1,
+    "workflow_runtime": 8
+  },
+  "boundary": "Router/profile/workflow-plan eval only; no external tool execution or scientific validation."
+}

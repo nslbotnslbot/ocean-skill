@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a bioinformatics tool router that profiles all 115 tools into execution layers and generates workflow plans for FASTQ QC, RNA-seq, variant calling, single-cell, spatial, metagenomics, genome assembly, protein structure, epigenomics, proteomics/metabolomics, workflow reproducibility, and imaging AI.
 - Added bioinformatics execution-layer wrappers: bounded local CLI subprocess probing, R/Bioconductor `Rscript` package/script handling, and non-executing launcher plans for heavy/license/GUI/GPU/large-database tools.
 - Added executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB, plus dry-run and bounded live evals with 11/11 pass.
 - Added science-skills-style `references/tool_usage.md` guides to all 115 bioinformatics tool folders, with use/avoid rules, required run evidence, stop conditions, and OCEAN handoff guidance.

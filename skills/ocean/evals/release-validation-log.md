@@ -2319,3 +2319,66 @@ The lightweight CLI tools in this machine were not installed on PATH during this
 ### Evidence Boundary / 证据边界
 
 Passing this eval means OCEAN can route software requests to the correct execution layer, record local availability or launcher-plan evidence, and stop safely when dependencies are missing. It does not mean any bioinformatics workflow was run, any reference database was downloaded, any clinical/biological dataset was processed, or any scientific claim was validated.
+
+## 2026-07-05 - Bioinformatics tool-router and workflow-plan R1
+
+### 中文上下文
+
+这轮在执行层 wrapper 之上继续补了一个 bioinformatics tool router。它解决的问题不是“某个工具能不能被本机调用”，而是“一个工具在 OCEAN 里属于哪种执行层、需要什么证据、遇到什么情况必须停止、以及一个常见 biomedical / biological workflow 应该怎样串联工具”。这让 115 个工具从静态 scaffold 更接近可使用的工具库。
+
+### English Context
+
+This round adds a bioinformatics tool router on top of the execution-layer wrappers. It does not ask only whether a tool is callable in the current machine. It classifies each tool into an execution layer, records required evidence and stop conditions, and creates workflow plans for common biomedical and biological analysis scenarios. This makes the 115-tool library more useful without pretending that external tools have run.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/bioinformatics_tool_router.py`.
+- Added `scripts/tools/run_bioinformatics_tool_router_eval.py`.
+- Added `references/bioinformatics-tool-router.md`.
+- Added `evals/bioinformatics-tool-router-r1-*` result files.
+- Updated `manifest.yaml`, `CHANGELOG.md`, README files, tool-adapter README, and evaluation docs.
+
+Workflow seeds covered in R1:
+
+- `fastq-qc`
+- `rna-seq-differential-expression`
+- `variant-calling-qc`
+- `single-cell-rna-seq`
+- `spatial-transcriptomics`
+- `metagenomics-microbiome`
+- `genome-assembly-annotation`
+- `protein-structure`
+- `epigenomics-peak-calling`
+- `proteomics-metabolomics`
+- `workflow-reproducibility`
+- `imaging-ai`
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Tool-router eval cases | 133 |
+| Tool-router eval pass | 133/133 |
+| Tool-router eval needs_review | 0 |
+| Tools profiled | 115 |
+| Workflows planned | 12 |
+| Lightweight CLI profiles | 60 |
+| R/Bioconductor profiles | 10 |
+| Python-package profiles | 16 |
+| Heavy launcher profiles | 20 |
+| Workflow-runtime profiles | 8 |
+| Source-packet adapter profiles | 1 |
+| Execution-layer regression | 24/24 pass |
+| Bioinformatics scaffold eval | 115/115 pass |
+| OCEAN contract check | 33/33 pass |
+| Router compile | pass |
+
+### Error Notes
+
+The first router run passed structurally, but the generated workflow Markdown only listed tools and wrappers. The router was then tightened to include concrete wrapper commands per workflow step. CLI probe arguments were also made tool-specific so tools such as BLAST and HMMER do not inherit a one-size-fits-all `--version` pattern.
+
+The execution-layer regression rerun updates generated artifact timestamps. These are availability/provenance artifacts only; the scientific boundary and pass counts remain unchanged.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means OCEAN can classify tools, generate execution profiles, and create workflow plans with evidence requirements and stop conditions. It does not mean the tools were installed, executed, benchmarked, or scientifically validated. Workflow plans are planning artifacts; scientific claims still require inspected run records, source packets, and downstream OCEAN review.

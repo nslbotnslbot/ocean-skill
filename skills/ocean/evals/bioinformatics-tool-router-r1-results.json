@@ -1,0 +1,933 @@
+[
+  {
+    "case_type": "profile",
+    "name": "alevin_fry",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "alphafold",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "alphafold_db",
+    "execution_layer": "source_packet_adapter",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "azimuth",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "bakta",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "bcftools",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "bedtools",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "blast",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "bowtie2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "bracken",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "busco",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "bwa",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "canu",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "cell2location",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "cell_ranger",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "celltypist",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "checkm",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "chimerax",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "clustal_omega",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "colabfold",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "conda",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "cutadapt",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "cwl",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "dada2",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "deeptools",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "deepvariant",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "deseq2",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "dia_nn",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "diablo",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "docker",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "edger",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "eggnog_mapper",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "fastp",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "fastqc",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "fasttree",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "featurecounts",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "fimo",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "flye",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "fragpipe",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "freebayes",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "galaxy",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "gatk",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "giotto",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "hh_suite",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "hisat2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "hmmer",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "homer",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "htslib",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "humann",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "interproscan",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "iq_tree",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "itk_snap",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "kallisto",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "kraken2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "last",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "limma_voom",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "macs2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "macs3",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "mafft",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "maxquant",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "megahit",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "meme",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "metaphlan",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "minimap2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "mixomics",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "modeller",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "mofa",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "mofaplus",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "monai",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "ms_dial",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "multiqc",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "muscle",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "mutect2",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "mzmine",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "nextflow",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "nf_core",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "nnu_net",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "orthofinder",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "picard",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "prokka",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "pymol",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "qiime2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "qualimap",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "quast",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "raven",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "raxml",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "rosettafold",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "rsem",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "salmon",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "samtools",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "scanpy",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "scvi",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "seurat",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "simpleitk",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "singularity_apptainer",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "skyline",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "sleuth",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "snakemake",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "space_ranger",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "spades",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "squidpy",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "star",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "starsolo",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "stereoscope",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "stlearn",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "strelka2",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "stringtie",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "tangram",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "three_d_slicer",
+    "execution_layer": "heavy_launcher_plan",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "torchio",
+    "execution_layer": "python_package",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "trim_galore",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "trimmomatic",
+    "execution_layer": "lightweight_cli",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "wdl_cromwell",
+    "execution_layer": "workflow_runtime",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "wgcna",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "profile",
+    "name": "xcms",
+    "execution_layer": "r_bioconductor",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "workflow",
+    "name": "fastq-qc",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"fastq-qc\",\n  \"steps\": 4,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "rna-seq-differential-expression",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"rna-seq-differential-expression\",\n  \"steps\": 8,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "variant-calling-qc",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"variant-calling-qc\",\n  \"steps\": 8,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "single-cell-rna-seq",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"single-cell-rna-seq\",\n  \"steps\": 8,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "spatial-transcriptomics",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"spatial-transcriptomics\",\n  \"steps\": 7,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "metagenomics-microbiome",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"metagenomics-microbiome\",\n  \"steps\": 8,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "genome-assembly-annotation",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"genome-assembly-annotation\",\n  \"steps\": 11,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "protein-structure",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"protein-structure\",\n  \"steps\": 9,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "epigenomics-peak-calling",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"epigenomics-peak-calling\",\n  \"steps\": 11,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "proteomics-metabolomics",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"proteomics-metabolomics\",\n  \"steps\": 7,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "workflow-reproducibility",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"workflow-reproducibility\",\n  \"steps\": 9,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "workflow",
+    "name": "imaging-ai",
+    "execution_layer": "mixed",
+    "verdict": "pass",
+    "notes": "{\n  \"workflow\": \"imaging-ai\",\n  \"steps\": 6,\n  \"missing\": []\n}\n"
+  },
+  {
+    "case_type": "layer_coverage",
+    "name": "has_lightweight_cli",
+    "execution_layer": "catalog",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "layer_coverage",
+    "name": "has_r_bioconductor",
+    "execution_layer": "catalog",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "layer_coverage",
+    "name": "has_heavy_launcher_plan",
+    "execution_layer": "catalog",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "layer_coverage",
+    "name": "has_python_package",
+    "execution_layer": "catalog",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "layer_coverage",
+    "name": "has_workflow_runtime",
+    "execution_layer": "catalog",
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_type": "layer_coverage",
+    "name": "has_source_packet_adapter",
+    "execution_layer": "catalog",
+    "verdict": "pass",
+    "notes": ""
+  }
+]

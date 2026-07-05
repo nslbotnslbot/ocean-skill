@@ -1,0 +1,194 @@
+case_type,name,execution_layer,verdict,notes
+profile,alevin_fry,lightweight_cli,pass,
+profile,alphafold,heavy_launcher_plan,pass,
+profile,alphafold_db,source_packet_adapter,pass,
+profile,azimuth,r_bioconductor,pass,
+profile,bakta,lightweight_cli,pass,
+profile,bcftools,lightweight_cli,pass,
+profile,bedtools,lightweight_cli,pass,
+profile,blast,lightweight_cli,pass,
+profile,bowtie2,lightweight_cli,pass,
+profile,bracken,lightweight_cli,pass,
+profile,busco,lightweight_cli,pass,
+profile,bwa,lightweight_cli,pass,
+profile,canu,lightweight_cli,pass,
+profile,cell2location,python_package,pass,
+profile,cell_ranger,heavy_launcher_plan,pass,
+profile,celltypist,python_package,pass,
+profile,checkm,lightweight_cli,pass,
+profile,chimerax,heavy_launcher_plan,pass,
+profile,clustal_omega,lightweight_cli,pass,
+profile,colabfold,heavy_launcher_plan,pass,
+profile,conda,workflow_runtime,pass,
+profile,cutadapt,lightweight_cli,pass,
+profile,cwl,workflow_runtime,pass,
+profile,dada2,r_bioconductor,pass,
+profile,deeptools,python_package,pass,
+profile,deepvariant,heavy_launcher_plan,pass,
+profile,deseq2,r_bioconductor,pass,
+profile,dia_nn,lightweight_cli,pass,
+profile,diablo,python_package,pass,
+profile,docker,workflow_runtime,pass,
+profile,edger,r_bioconductor,pass,
+profile,eggnog_mapper,lightweight_cli,pass,
+profile,fastp,lightweight_cli,pass,
+profile,fastqc,lightweight_cli,pass,
+profile,fasttree,lightweight_cli,pass,
+profile,featurecounts,lightweight_cli,pass,
+profile,fimo,lightweight_cli,pass,
+profile,flye,lightweight_cli,pass,
+profile,fragpipe,heavy_launcher_plan,pass,
+profile,freebayes,lightweight_cli,pass,
+profile,galaxy,heavy_launcher_plan,pass,
+profile,gatk,heavy_launcher_plan,pass,
+profile,giotto,python_package,pass,
+profile,hh_suite,lightweight_cli,pass,
+profile,hisat2,lightweight_cli,pass,
+profile,hmmer,lightweight_cli,pass,
+profile,homer,lightweight_cli,pass,
+profile,htslib,lightweight_cli,pass,
+profile,humann,lightweight_cli,pass,
+profile,interproscan,lightweight_cli,pass,
+profile,iq_tree,lightweight_cli,pass,
+profile,itk_snap,heavy_launcher_plan,pass,
+profile,kallisto,lightweight_cli,pass,
+profile,kraken2,lightweight_cli,pass,
+profile,last,lightweight_cli,pass,
+profile,limma_voom,r_bioconductor,pass,
+profile,macs2,lightweight_cli,pass,
+profile,macs3,lightweight_cli,pass,
+profile,mafft,lightweight_cli,pass,
+profile,maxquant,heavy_launcher_plan,pass,
+profile,megahit,lightweight_cli,pass,
+profile,meme,lightweight_cli,pass,
+profile,metaphlan,lightweight_cli,pass,
+profile,minimap2,lightweight_cli,pass,
+profile,mixomics,r_bioconductor,pass,
+profile,modeller,heavy_launcher_plan,pass,
+profile,mofa,python_package,pass,
+profile,mofaplus,python_package,pass,
+profile,monai,python_package,pass,
+profile,ms_dial,heavy_launcher_plan,pass,
+profile,multiqc,lightweight_cli,pass,
+profile,muscle,lightweight_cli,pass,
+profile,mutect2,heavy_launcher_plan,pass,
+profile,mzmine,heavy_launcher_plan,pass,
+profile,nextflow,workflow_runtime,pass,
+profile,nf_core,workflow_runtime,pass,
+profile,nnu_net,heavy_launcher_plan,pass,
+profile,orthofinder,lightweight_cli,pass,
+profile,picard,lightweight_cli,pass,
+profile,prokka,lightweight_cli,pass,
+profile,pymol,heavy_launcher_plan,pass,
+profile,qiime2,lightweight_cli,pass,
+profile,qualimap,lightweight_cli,pass,
+profile,quast,lightweight_cli,pass,
+profile,raven,lightweight_cli,pass,
+profile,raxml,lightweight_cli,pass,
+profile,rosettafold,heavy_launcher_plan,pass,
+profile,rsem,lightweight_cli,pass,
+profile,salmon,lightweight_cli,pass,
+profile,samtools,lightweight_cli,pass,
+profile,scanpy,python_package,pass,
+profile,scvi,python_package,pass,
+profile,seurat,r_bioconductor,pass,
+profile,simpleitk,python_package,pass,
+profile,singularity_apptainer,workflow_runtime,pass,
+profile,skyline,heavy_launcher_plan,pass,
+profile,sleuth,r_bioconductor,pass,
+profile,snakemake,workflow_runtime,pass,
+profile,space_ranger,heavy_launcher_plan,pass,
+profile,spades,lightweight_cli,pass,
+profile,squidpy,python_package,pass,
+profile,star,lightweight_cli,pass,
+profile,starsolo,lightweight_cli,pass,
+profile,stereoscope,python_package,pass,
+profile,stlearn,python_package,pass,
+profile,strelka2,lightweight_cli,pass,
+profile,stringtie,lightweight_cli,pass,
+profile,tangram,python_package,pass,
+profile,three_d_slicer,heavy_launcher_plan,pass,
+profile,torchio,python_package,pass,
+profile,trim_galore,lightweight_cli,pass,
+profile,trimmomatic,lightweight_cli,pass,
+profile,wdl_cromwell,workflow_runtime,pass,
+profile,wgcna,r_bioconductor,pass,
+profile,xcms,r_bioconductor,pass,
+workflow,fastq-qc,mixed,pass,"{
+  ""workflow"": ""fastq-qc"",
+  ""steps"": 4,
+  ""missing"": []
+}
+"
+workflow,rna-seq-differential-expression,mixed,pass,"{
+  ""workflow"": ""rna-seq-differential-expression"",
+  ""steps"": 8,
+  ""missing"": []
+}
+"
+workflow,variant-calling-qc,mixed,pass,"{
+  ""workflow"": ""variant-calling-qc"",
+  ""steps"": 8,
+  ""missing"": []
+}
+"
+workflow,single-cell-rna-seq,mixed,pass,"{
+  ""workflow"": ""single-cell-rna-seq"",
+  ""steps"": 8,
+  ""missing"": []
+}
+"
+workflow,spatial-transcriptomics,mixed,pass,"{
+  ""workflow"": ""spatial-transcriptomics"",
+  ""steps"": 7,
+  ""missing"": []
+}
+"
+workflow,metagenomics-microbiome,mixed,pass,"{
+  ""workflow"": ""metagenomics-microbiome"",
+  ""steps"": 8,
+  ""missing"": []
+}
+"
+workflow,genome-assembly-annotation,mixed,pass,"{
+  ""workflow"": ""genome-assembly-annotation"",
+  ""steps"": 11,
+  ""missing"": []
+}
+"
+workflow,protein-structure,mixed,pass,"{
+  ""workflow"": ""protein-structure"",
+  ""steps"": 9,
+  ""missing"": []
+}
+"
+workflow,epigenomics-peak-calling,mixed,pass,"{
+  ""workflow"": ""epigenomics-peak-calling"",
+  ""steps"": 11,
+  ""missing"": []
+}
+"
+workflow,proteomics-metabolomics,mixed,pass,"{
+  ""workflow"": ""proteomics-metabolomics"",
+  ""steps"": 7,
+  ""missing"": []
+}
+"
+workflow,workflow-reproducibility,mixed,pass,"{
+  ""workflow"": ""workflow-reproducibility"",
+  ""steps"": 9,
+  ""missing"": []
+}
+"
+workflow,imaging-ai,mixed,pass,"{
+  ""workflow"": ""imaging-ai"",
+  ""steps"": 6,
+  ""missing"": []
+}
+"
+layer_coverage,has_lightweight_cli,catalog,pass,
+layer_coverage,has_r_bioconductor,catalog,pass,
+layer_coverage,has_heavy_launcher_plan,catalog,pass,
+layer_coverage,has_python_package,catalog,pass,
+layer_coverage,has_workflow_runtime,catalog,pass,
+layer_coverage,has_source_packet_adapter,catalog,pass,

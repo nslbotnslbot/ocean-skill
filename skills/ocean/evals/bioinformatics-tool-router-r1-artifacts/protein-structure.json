@@ -1,0 +1,293 @@
+{
+  "schema_version": "ocean-bioinformatics-workflow-plan-r1",
+  "date": "2026-07-05",
+  "workflow": "protein-structure",
+  "intent": "protein structure prediction, structure search, and confidence-boundary plan",
+  "steps": [
+    {
+      "step": 1,
+      "tool_slug": "alphafold_db",
+      "tool_name": "AlphaFold DB",
+      "execution_layer": "source_packet_adapter",
+      "wrapper": "tool-specific source_packet.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/bioinformatics/alphafold_db/source_packet.py --help",
+      "required_evidence": [
+        "adapter input identifiers/files",
+        "adapter output packet",
+        "source-specific confidence/metadata fields"
+      ],
+      "stop_conditions": [
+        "adapter input missing",
+        "source file/API response missing",
+        "source-specific confidence fields missing"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 2,
+      "tool_slug": "alphafold",
+      "tool_name": "AlphaFold",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name AlphaFold --tool-slug alphafold --command-template 'alphafold <user-supplied arguments>' --output alphafold-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 3,
+      "tool_slug": "colabfold",
+      "tool_name": "ColabFold",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name ColabFold --tool-slug colabfold --command-template 'colabfold <user-supplied arguments>' --output colabfold-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 4,
+      "tool_slug": "rosettafold",
+      "tool_name": "RoseTTAFold",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name RoseTTAFold --tool-slug rosettafold --command-template 'rosettafold <user-supplied arguments>' --output rosettafold-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 5,
+      "tool_slug": "hh_suite",
+      "tool_name": "HH-suite",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name HH-suite --tool-slug hh_suite --command hhsearch --probe-args=--version --output hh_suite-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 6,
+      "tool_slug": "hmmer",
+      "tool_name": "HMMER",
+      "execution_layer": "lightweight_cli",
+      "wrapper": "scripts/tools/common/cli_subprocess_wrapper.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/cli_subprocess_wrapper.py probe --tool-name HMMER --tool-slug hmmer --command hmmsearch --probe-args=-h --output hmmer-probe.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "PATH-resolved executable",
+        "stdout/stderr excerpts",
+        "return code"
+      ],
+      "stop_conditions": [
+        "command not installed on PATH",
+        "probe/run returns no usable output",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Anchor"
+    },
+    {
+      "step": 7,
+      "tool_slug": "modeller",
+      "tool_name": "MODELLER",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name MODELLER --tool-slug modeller --command-template 'modeller <user-supplied arguments>' --output modeller-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 8,
+      "tool_slug": "pymol",
+      "tool_name": "PyMOL",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name PyMOL --tool-slug pymol --command-template 'pymol <user-supplied arguments>' --output pymol-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    },
+    {
+      "step": 9,
+      "tool_slug": "chimerax",
+      "tool_name": "ChimeraX",
+      "execution_layer": "heavy_launcher_plan",
+      "wrapper": "scripts/tools/common/heavy_tool_launcher.py",
+      "wrapper_command_shell": "python3 skills/ocean/scripts/tools/common/heavy_tool_launcher.py plan --tool-name ChimeraX --tool-slug chimerax --command-template 'chimerax <user-supplied arguments>' --output chimerax-launch-plan.json",
+      "required_evidence": [
+        "tool name and version",
+        "task intent",
+        "exact command or script path",
+        "parameters",
+        "input/output manifest",
+        "logs or QC artifacts",
+        "environment",
+        "date",
+        "license/terms status",
+        "reference database/index",
+        "compute requirements",
+        "launcher plan"
+      ],
+      "stop_conditions": [
+        "license/terms not confirmed",
+        "reference database/index missing",
+        "GPU/HPC/container runtime missing",
+        "GUI workflow has no exported log",
+        "missing tool version",
+        "missing input manifest",
+        "missing parameters",
+        "missing logs/QC"
+      ],
+      "handoff": "Compass"
+    }
+  ],
+  "missing_tool_slugs": [],
+  "final_handoff": "Iceberg",
+  "negative_space": [
+    "No tool execution has happened from this plan alone.",
+    "No reference database/index has been inspected unless a run record says so.",
+    "No biological mechanism, diagnosis, treatment effect, or benchmark superiority is supported by the plan alone."
+  ],
+  "evidence_boundary": "Workflow plan only; execute tools locally and inspect run records before making scientific claims."
+}
