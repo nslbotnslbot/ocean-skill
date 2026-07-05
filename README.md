@@ -240,6 +240,8 @@ Reef now includes a biological/clinical data-source routing catalog for genes, p
 
 Bioinformatics Real-Tool Smoke R1 checks all 115 scaffolded bioinformatics tools against the current local execution environment. In this local run, 3 tools/adapters executed at smoke level and 112 were not available on PATH, Python, or R in the current environment. This is an availability check, not an end-to-end biological analysis.
 
+Bioinformatics Execution Layer R1 adds shared wrappers for lightweight CLI tools, R/Bioconductor tools, and heavy/license/GUI/GPU/large-database tools. Missing local software is recorded as an environment boundary rather than a fake successful run.
+
 Each bioinformatics tool folder now also includes a science-skills-style `references/tool_usage.md` guide. These guides define use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff paths without claiming the external tool is installed.
 
 Reef now has executable API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB. These wrappers can run dry, or make bounded live public API requests with `--execute`, then write OCEAN packets with explicit evidence boundaries.

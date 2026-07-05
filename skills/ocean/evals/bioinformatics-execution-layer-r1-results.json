@@ -1,0 +1,242 @@
+[
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "FastQC",
+    "slug": "fastqc",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/fastqc-cli.json",
+    "returncode": 0,
+    "output_excerpt": "fastqc: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "MultiQC",
+    "slug": "multiqc",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/multiqc-cli.json",
+    "returncode": 0,
+    "output_excerpt": "multiqc: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "cutadapt",
+    "slug": "cutadapt",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/cutadapt-cli.json",
+    "returncode": 0,
+    "output_excerpt": "cutadapt: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "fastp",
+    "slug": "fastp",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/fastp-cli.json",
+    "returncode": 0,
+    "output_excerpt": "fastp: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "samtools",
+    "slug": "samtools",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/samtools-cli.json",
+    "returncode": 0,
+    "output_excerpt": "samtools: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "bcftools",
+    "slug": "bcftools",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/bcftools-cli.json",
+    "returncode": 0,
+    "output_excerpt": "bcftools: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "BEDTools",
+    "slug": "bedtools",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/bedtools-cli.json",
+    "returncode": 0,
+    "output_excerpt": "bedtools: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "BLAST",
+    "slug": "blast",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/blast-cli.json",
+    "returncode": 0,
+    "output_excerpt": "blast: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "MAFFT",
+    "slug": "mafft",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/mafft-cli.json",
+    "returncode": 0,
+    "output_excerpt": "mafft: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "HMMER",
+    "slug": "hmmer",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/hmmer-cli.json",
+    "returncode": 0,
+    "output_excerpt": "hmmer: not available in current environment\n"
+  },
+  {
+    "layer": "lightweight_cli_subprocess",
+    "tool": "minimap2",
+    "slug": "minimap2",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/minimap2-cli.json",
+    "returncode": 0,
+    "output_excerpt": "minimap2: not available in current environment\n"
+  },
+  {
+    "layer": "r_bioconductor_rscript",
+    "tool": "DESeq2",
+    "slug": "deseq2",
+    "status": "executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/deseq2-rscript.json",
+    "returncode": 0,
+    "output_excerpt": "deseq2: executed\n"
+  },
+  {
+    "layer": "r_bioconductor_rscript",
+    "tool": "limma",
+    "slug": "limma_voom",
+    "status": "executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/limma_voom-rscript.json",
+    "returncode": 0,
+    "output_excerpt": "limma_voom: executed\n"
+  },
+  {
+    "layer": "r_bioconductor_rscript",
+    "tool": "edgeR",
+    "slug": "edger",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/edger-rscript.json",
+    "returncode": 0,
+    "output_excerpt": "edger: not_available_current_environment\n"
+  },
+  {
+    "layer": "r_bioconductor_rscript",
+    "tool": "Seurat",
+    "slug": "seurat",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/seurat-rscript.json",
+    "returncode": 0,
+    "output_excerpt": "seurat: not_available_current_environment\n"
+  },
+  {
+    "layer": "r_bioconductor_rscript",
+    "tool": "WGCNA",
+    "slug": "wgcna",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/wgcna-rscript.json",
+    "returncode": 0,
+    "output_excerpt": "wgcna: not_available_current_environment\n"
+  },
+  {
+    "layer": "r_bioconductor_rscript",
+    "tool": "DADA2",
+    "slug": "dada2",
+    "status": "not_available_current_environment",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/dada2-rscript.json",
+    "returncode": 0,
+    "output_excerpt": "dada2: not_available_current_environment\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "Cell Ranger",
+    "slug": "cell_ranger",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/cell_ranger-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "cell_ranger: planned_not_executed\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "GATK",
+    "slug": "gatk",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/gatk-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "gatk: planned_not_executed\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "AlphaFold",
+    "slug": "alphafold",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/alphafold-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "alphafold: planned_not_executed\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "MaxQuant",
+    "slug": "maxquant",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/maxquant-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "maxquant: planned_not_executed\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "Galaxy",
+    "slug": "galaxy",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/galaxy-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "galaxy: planned_not_executed\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "3D Slicer",
+    "slug": "three_d_slicer",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/three_d_slicer-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "three_d_slicer: planned_not_executed\n"
+  },
+  {
+    "layer": "heavy_tool_launcher_plan",
+    "tool": "ChimeraX",
+    "slug": "chimerax",
+    "status": "planned_not_executed",
+    "verdict": "pass",
+    "artifact": "skills/ocean/evals/bioinformatics-execution-layer-r1-artifacts/chimerax-launcher-plan.json",
+    "returncode": 0,
+    "output_excerpt": "chimerax: planned_not_executed\n"
+  }
+]
