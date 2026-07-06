@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a Bioinformatics Capability Matrix R1 builder that joins the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results into JSON/CSV/Markdown planning artifacts for implementation priority and environment gaps.
 - Added a public-safe whole-wheat broth OCEAN case note documenting how all seven modules were used in a real fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow while keeping raw data and private manuscript material out of the repository.
 - Added a bioinformatics tool router that profiles all 115 tools into execution layers and generates workflow plans for FASTQ QC, RNA-seq, variant calling, single-cell, spatial, metagenomics, genome assembly, protein structure, epigenomics, proteomics/metabolomics, workflow reproducibility, and imaging AI.
 - Added bioinformatics execution-layer wrappers: bounded local CLI subprocess probing, R/Bioconductor `Rscript` package/script handling, and non-executing launcher plans for heavy/license/GUI/GPU/large-database tools.

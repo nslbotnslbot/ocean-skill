@@ -43,6 +43,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-real-tool-smoke-r1-results.md`: local availability/version smoke check for all 115 bioinformatics tool scaffolds in the current execution environment.
 - `skills/ocean/evals/bioinformatics-execution-layer-r1-results.md`: execution-layer check for lightweight CLI, R/Bioconductor, and heavy-tool launcher behavior.
 - `skills/ocean/evals/bioinformatics-tool-router-r1-results.md`: tool-router check for 115 execution profiles and common workflow plans.
+- `skills/ocean/evals/bioinformatics-capability-matrix-r1-results.md`: combined planning matrix joining the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results.
 
 ## What Is Not Included
 
@@ -67,6 +68,8 @@ Bioinformatics Real-Tool Smoke R1 checks whether the 115 scaffolded bioinformati
 Bioinformatics Execution Layer R1 checks the shared execution wrappers for three tool classes: lightweight CLI subprocess tools, R/Bioconductor tools through `Rscript`, and heavy/license/GUI/GPU/large-database tools through non-executing launcher plans. It records unavailable local dependencies instead of pretending tools ran.
 
 Bioinformatics Tool Router R1 checks whether all 115 tools receive an execution profile and whether common biomedical/biological workflows can be converted into ordered tool plans with evidence boundaries and stop conditions.
+
+Bioinformatics Capability Matrix R1 joins registry, API/source-packet contract, and real-tool smoke results into a single implementation-planning artifact. It separates source-packet adapters, source-packet scaffolds, locally executed smoke results, environment gaps, and high-priority practical wrapper candidates.
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
 

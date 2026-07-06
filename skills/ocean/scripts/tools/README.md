@@ -21,9 +21,22 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `../run_reef_api_adapter.py` | Executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB |
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
 | `bioinformatics_tool_router.py` | Route tools to execution layers and create workflow plans for common bioinformatics tasks |
+| `build_bioinformatics_capability_matrix.py` | Join the bioinformatics registry, API/source-packet contracts, and real-tool smoke results into a planning matrix |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
+
+## Capability matrix
+
+After running the scaffold and real-tool smoke evals, build a combined planning matrix:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+The matrix records scaffold/adapter coverage and local availability. It is not evidence that a tool has completed a biological analysis.
 
 ## Naming pattern
 

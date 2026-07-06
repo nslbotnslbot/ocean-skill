@@ -17,7 +17,7 @@
     "output_files": [],
     "logs_or_qc": [],
     "environment": "current local PATH environment",
-    "date": "2026-07-05",
+    "date": "2026-07-06",
     "supports_claims": [],
     "cannot_support": [
       "biological mechanism",
@@ -33,7 +33,7 @@
     "resolved_path": "",
     "stdout_excerpt": "",
     "stderr_excerpt": "hmmsearch was not found on PATH.",
-    "created_at": "2026-07-05T18:14:37"
+    "created_at": "2026-07-06T23:22:51"
   },
   "evidence_boundary": "Availability/probe evidence only; not a biological analysis."
 }
