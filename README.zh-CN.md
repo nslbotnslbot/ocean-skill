@@ -60,6 +60,8 @@ OCEAN 不是：
 
 OCEAN 也开始用于真实论文和投稿流程。公开安全版的应用案例和投稿状态追踪见 `docs/application-submission-tracker.md`。
 
+第一个公开安全版 case note 是[全麦菌汤项目](docs/case-studies/whole-wheat-broth-project.md)。它记录了七个 OCEAN 模块如何进入一个发酵、微生物组、代谢组、毒理支持和 manuscript planning 工作流，同时不公开原始数据或未公开稿件正文。
+
 ## 模块流程
 
 OCEAN 按顺序使用七个模块；这是一个外部审计序列，不是实验执行循环。每个模块应该完成不同的事件，并把一个具体产物交给下一步。更完整的公开说明见 `docs/module-map.md`。
@@ -166,6 +168,8 @@ assets/
 docs/
 ├── project-boundary.md
 ├── application-submission-tracker.md
+├── case-studies/
+│   └── whole-wheat-broth-project.md
 ├── module-map.md
 └── evaluation/
     ├── README.md

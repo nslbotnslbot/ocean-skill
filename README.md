@@ -60,6 +60,8 @@ Use this when you ask Codex to review:
 
 OCEAN is also being tracked in real manuscript and submission workflows. See `docs/application-submission-tracker.md` for the public-safe application and submission tracker.
 
+The first public-safe case note is the [whole-wheat broth project](docs/case-studies/whole-wheat-broth-project.md). It shows how all seven OCEAN modules were used in one fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow without publishing raw data or private manuscript text.
+
 ## Module flow
 
 OCEAN uses seven modules as an external audit sequence, not as an experiment-execution loop. Each module is meant to complete a different event and hand off a concrete artifact to the next step. See `docs/module-map.md` for the fuller public map.
@@ -166,6 +168,8 @@ assets/
 docs/
 ├── project-boundary.md
 ├── application-submission-tracker.md
+├── case-studies/
+│   └── whole-wheat-broth-project.md
 ├── module-map.md
 └── evaluation/
     ├── README.md
