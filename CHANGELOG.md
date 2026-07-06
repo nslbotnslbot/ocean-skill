@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a public-safe whole-wheat broth OCEAN case note documenting how all seven modules were used in a real fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow while keeping raw data and private manuscript material out of the repository.
 - Added a bioinformatics tool router that profiles all 115 tools into execution layers and generates workflow plans for FASTQ QC, RNA-seq, variant calling, single-cell, spatial, metagenomics, genome assembly, protein structure, epigenomics, proteomics/metabolomics, workflow reproducibility, and imaging AI.
 - Added bioinformatics execution-layer wrappers: bounded local CLI subprocess probing, R/Bioconductor `Rscript` package/script handling, and non-executing launcher plans for heavy/license/GUI/GPU/large-database tools.
 - Added executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB, plus dry-run and bounded live evals with 11/11 pass.
