@@ -44,6 +44,8 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-execution-layer-r1-results.md`: execution-layer check for lightweight CLI, R/Bioconductor, and heavy-tool launcher behavior.
 - `skills/ocean/evals/bioinformatics-tool-router-r1-results.md`: tool-router check for 115 execution profiles and common workflow plans.
 - `skills/ocean/evals/bioinformatics-capability-matrix-r1-results.md`: combined planning matrix joining the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results.
+- `skills/ocean/evals/bioinformatics-wrapper-readiness-r1-results.md`: high-priority wrapper readiness plans for install/container/smoke/source-packet implementation work.
+- `skills/ocean/evals/bioinformatics-wrapper-readiness-r1-eval-results.md`: structural eval for wrapper-readiness plan completeness and evidence-boundary safeguards.
 
 ## What Is Not Included
 
@@ -70,6 +72,10 @@ Bioinformatics Execution Layer R1 checks the shared execution wrappers for three
 Bioinformatics Tool Router R1 checks whether all 115 tools receive an execution profile and whether common biomedical/biological workflows can be converted into ordered tool plans with evidence boundaries and stop conditions.
 
 Bioinformatics Capability Matrix R1 joins registry, API/source-packet contract, and real-tool smoke results into a single implementation-planning artifact. It separates source-packet adapters, source-packet scaffolds, locally executed smoke results, environment gaps, and high-priority practical wrapper candidates.
+
+Bioinformatics Wrapper Readiness R1 turns the capability matrix into per-tool implementation plans for high-priority tools. It records candidate interface layers, smoke probes, install/container notes, minimal fixtures, required run evidence, stop conditions, and OCEAN handoffs. It does not install or execute the tools.
+
+Bioinformatics Wrapper Readiness Eval R1 checks that readiness plans remain structurally complete and evidence-bound. It verifies required fields, run-evidence markers, route verification language, smoke commands, stop conditions, stages, scores, and per-tool artifacts.
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
 

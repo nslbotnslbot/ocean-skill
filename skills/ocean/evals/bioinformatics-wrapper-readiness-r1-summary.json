@@ -1,0 +1,15 @@
+{
+  "run_date": "2026-07-07",
+  "priority_tools": 20,
+  "mean_readiness_score": 8.2,
+  "stage_counts": {
+    "stage_1_plan_ready_environment_missing": 18,
+    "stage_2_local_smoke_executed": 2
+  },
+  "interface_counts": {
+    "lightweight_cli_subprocess": 11,
+    "r_bioconductor_rscript": 5,
+    "workflow_reproducibility": 4
+  },
+  "evidence_boundary": "Wrapper readiness plans only; no installation, execution, benchmark, or biological validation."
+}

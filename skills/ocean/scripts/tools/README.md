@@ -22,6 +22,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
 | `bioinformatics_tool_router.py` | Route tools to execution layers and create workflow plans for common bioinformatics tasks |
 | `build_bioinformatics_capability_matrix.py` | Join the bioinformatics registry, API/source-packet contracts, and real-tool smoke results into a planning matrix |
+| `build_bioinformatics_wrapper_readiness_plan.py` | Turn high-priority matrix rows into install/container/smoke/source-packet readiness plans |
+| `run_bioinformatics_wrapper_readiness_eval.py` | Validate readiness-plan completeness and evidence-boundary safeguards |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
@@ -37,6 +39,25 @@ python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
 ```
 
 The matrix records scaffold/adapter coverage and local availability. It is not evidence that a tool has completed a biological analysis.
+
+## Wrapper readiness plans
+
+After the capability matrix exists, generate high-priority wrapper readiness plans:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Then validate the generated plans:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_readiness_eval.py \
+  --outdir skills/ocean/evals
+```
+
+Readiness plans define candidate interface layers, smoke probes, install/container notes, minimal fixtures, run-record evidence, stop conditions, and OCEAN handoffs. They are not installation instructions and must not be treated as proof that a tool can run locally.
 
 ## Naming pattern
 
