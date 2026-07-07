@@ -1,0 +1,61 @@
+{
+  "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+  "created_at": "2026-07-08T01:31:10",
+  "tool": {
+    "slug": "deseq2",
+    "name": "DESeq2",
+    "family": "differential_expression",
+    "maturity": "L0/L1 scaffold"
+  },
+  "current_ocean_state": {
+    "capability_tier": "source_packet_scaffold",
+    "local_smoke_status": "executed",
+    "best_interface": "r_package",
+    "entrypoint": "DESeq2",
+    "python_wrapper": "scripts/create_source_packet.py",
+    "real_run_required": true
+  },
+  "readiness_stage": "stage_2_local_smoke_executed",
+  "interface_layer": "r_bioconductor_rscript",
+  "smoke_command": [
+    "Rscript",
+    "-e",
+    "cat(as.character(utils::packageVersion('DESeq2')))"
+  ],
+  "candidate_install_routes": [
+    "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
+    "Candidate container route; verify image source, tag, and package versions before use."
+  ],
+  "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+  "minimal_fixture": "Small count matrix plus explicit design metadata and contrast definition.",
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "expected_outputs": [
+    "DE result table",
+    "sessionInfo output",
+    "design/contrast log"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "replicates, design matrix, batch handling, or multiple-testing control are missing"
+  ],
+  "source_packet_step": {
+    "wrapper": "scripts/create_source_packet.py",
+    "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+  },
+  "handoff": "Anchor",
+  "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+  "readiness_score_0_10": 10
+}

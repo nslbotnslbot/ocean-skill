@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build readiness plans for priority OCEAN bioinformatics wrappers.
+"""Build readiness plans for OCEAN bioinformatics wrappers.
 
 This script turns the capability matrix into implementation plans for the
-highest-priority bioinformatics tools. It does not install software, execute
-tools, download references, or validate biological claims.
+highest-priority or full bioinformatics tool registry. It does not install
+software, execute tools, download references, or validate biological claims.
 """
 
 from __future__ import annotations
@@ -15,6 +15,8 @@ import json
 from pathlib import Path
 import sys
 from typing import Any
+
+from run_bioinformatics_real_tool_smoke_eval import PYTHON_IMPORTS, R_PACKAGES, candidate_commands
 
 
 DEFAULT_MATRIX = "bioinformatics-capability-matrix-r1-results.json"
@@ -61,6 +63,79 @@ COMMON_STOP_CONDITIONS = [
     "private clinical data or unpublished data lack explicit local handling boundaries",
     "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
 ]
+
+FAMILY_FIXTURES = {
+    "alignment_file_operations": "Tiny public/test BAM/VCF/BED fixture plus explicit genome build and privacy boundary.",
+    "differential_expression": "Small count/expression matrix plus design metadata, contrast definition, and replicate boundary.",
+    "epigenomics_peak_calling": "Tiny public/test FASTQ/BAM/BED fixture plus reference genome/build and peak-calling parameter boundary.",
+    "genome_assembly_annotation": "Small public/test contig/read fixture plus database/reference provenance and annotation boundary.",
+    "imaging_signal_ml": "Small public/test image or metadata fixture; never expose private clinical images.",
+    "microbiome_metagenomics": "Tiny public/test FASTQ/feature-table fixture plus database/classifier provenance.",
+    "multi_omics_integration": "Small paired toy matrices with explicit sample matching, modality boundary, and batch/confounder notes.",
+    "phylogenetics_comparative_genomics": "Small public/test FASTA/alignment/tree fixture plus model/reference provenance.",
+    "proteomics_metabolomics": "Small public/test mzML/feature table/protein table fixture plus database/search-parameter provenance.",
+    "qc_preprocessing": "Tiny public/test FASTQ or inspected QC report manifest; never publish private reads.",
+    "rna_seq_quantification": "Small public/test FASTQ or count/quant table plus reference transcriptome/index provenance.",
+    "sequence_alignment": "Short public/test sequence plus tiny local database/reference with provenance.",
+    "single_cell_analysis": "Tiny public/test matrix/object or inspected object manifest; never expose private cell-level data.",
+    "spatial_transcriptomics": "Tiny public/test spatial object or count/image manifest with tissue-image privacy boundary.",
+    "spliced_rna_alignment": "Small public/test FASTQ plus genome/transcriptome index provenance.",
+    "structure_modeling": "Small public/test sequence/structure identifier plus model/database provenance.",
+    "variant_calling": "Tiny public/test BAM/VCF fixture plus reference genome/build and calling-parameter boundary.",
+    "workflow_reproducibility": "Tiny dry-run workflow with explicit config, input manifest, and pinned environment boundary.",
+}
+
+FAMILY_EXPECTED_OUTPUTS = {
+    "alignment_file_operations": ["processed alignment/interval/variant output", "index/stats where applicable", "command log"],
+    "differential_expression": ["result table", "design/contrast log", "session/environment metadata"],
+    "epigenomics_peak_calling": ["peak/QC output", "genome-build note", "command log"],
+    "genome_assembly_annotation": ["assembly/annotation output", "database provenance note", "command log"],
+    "imaging_signal_ml": ["segmentation/classification/measurement output", "model/version note", "execution log"],
+    "microbiome_metagenomics": ["feature/taxonomy/profile output", "database/classifier provenance note", "execution log"],
+    "multi_omics_integration": ["integrated embedding/factor/result table", "sample-matching note", "execution log"],
+    "phylogenetics_comparative_genomics": ["alignment/tree/comparative output", "model/provenance note", "command log"],
+    "proteomics_metabolomics": ["feature/protein/metabolite result table", "database/search-parameter note", "execution log"],
+    "qc_preprocessing": ["QC/trimmed output", "report file", "execution log"],
+    "rna_seq_quantification": ["quant/count output", "reference/index provenance note", "execution log"],
+    "sequence_alignment": ["alignment/search output", "database/reference provenance note", "command log"],
+    "single_cell_analysis": ["processed object/table", "QC/annotation summary", "session/environment log"],
+    "spatial_transcriptomics": ["processed spatial object/table", "image/tissue boundary note", "session/environment log"],
+    "spliced_rna_alignment": ["alignment/count output", "index/reference provenance note", "command log"],
+    "structure_modeling": ["model/structure/search output", "template/database provenance note", "execution log"],
+    "variant_calling": ["VCF/gVCF or filtered variant output", "reference/build provenance note", "command log"],
+    "workflow_reproducibility": ["dry-run/test log", "workflow config", "environment/container manifest"],
+}
+
+FAMILY_HANDOFFS = {
+    "workflow_reproducibility": "Harbor",
+    "differential_expression": "Anchor",
+    "single_cell_analysis": "Anchor",
+    "spatial_transcriptomics": "Anchor",
+    "variant_calling": "Anchor",
+    "imaging_signal_ml": "Anchor",
+    "structure_modeling": "Anchor",
+}
+
+FAMILY_EXTRA_STOP_CONDITIONS = {
+    "differential_expression": [
+        "replicates, design matrix, batch handling, or multiple-testing control are missing",
+    ],
+    "single_cell_analysis": [
+        "cell filtering, doublet handling, annotation provenance, or batch boundary is missing",
+    ],
+    "spatial_transcriptomics": [
+        "tissue-image privacy boundary, spot/cell mapping, or annotation provenance is missing",
+    ],
+    "variant_calling": [
+        "reference genome build, caller version, filtering thresholds, or validation status are missing",
+    ],
+    "structure_modeling": [
+        "template/database provenance, confidence metrics, or experimental-validation boundary is missing",
+    ],
+    "workflow_reproducibility": [
+        "workflow version, profile, container image, or input manifest is missing",
+    ],
+}
 
 
 def profile(
@@ -305,6 +380,79 @@ PROFILES: dict[str, dict[str, Any]] = {
 }
 
 
+def infer_interface_layer(row: dict[str, Any]) -> str:
+    slug = row["slug"]
+    if slug in R_PACKAGES:
+        return "r_bioconductor_or_rscript"
+    if slug in PYTHON_IMPORTS:
+        return "python_import_or_subprocess"
+    if row["family"] == "workflow_reproducibility":
+        return "workflow_or_runtime_subprocess"
+    if row["family"] in {"imaging_signal_ml", "structure_modeling"}:
+        return "heavy_cli_api_or_container_launcher"
+    return "lightweight_cli_subprocess"
+
+
+def infer_smoke_command(row: dict[str, Any]) -> list[str]:
+    slug = row["slug"]
+    if slug in R_PACKAGES:
+        package = R_PACKAGES[slug][0]
+        return ["Rscript", "-e", f"cat(as.character(utils::packageVersion('{package}')))"]
+    if slug in PYTHON_IMPORTS:
+        module = PYTHON_IMPORTS[slug][0]
+        return ["python3", "-c", f"import {module}; print(getattr({module}, '__version__', 'version_not_exposed'))"]
+    command = candidate_commands({"slug": slug, "name": row["name"]})[0]
+    if command in {"gatk", "picard", "trimmomatic", "galaxy", "fragpipe", "mzmine"}:
+        return [command, "--help"]
+    if command in {"apptainer", "singularity", "nextflow"}:
+        return [command, "--version"]
+    if command in {"hmmsearch", "hmmscan", "hhsearch", "hhblits"}:
+        return [command, "-h"]
+    return [command, "--version"]
+
+
+def infer_install_routes(row: dict[str, Any], interface_layer: str) -> list[str]:
+    name = row["name"]
+    routes = [
+        f"Candidate official installation route for {name}; verify current documentation, version, license, and platform requirements before use.",
+    ]
+    if interface_layer.startswith("r_"):
+        routes.append(
+            f"Candidate R/Bioconductor or R package route for {name}; verify R/Bioconductor compatibility and package version before use."
+        )
+    elif interface_layer.startswith("python_"):
+        routes.append(
+            f"Candidate Python/conda/pip route for {name}; verify package name, dependency versions, and import path before use."
+        )
+    elif row["family"] == "workflow_reproducibility":
+        routes.append(
+            f"Candidate workflow runtime/container route for {name}; verify workflow version, profile, image tags, and data mounts before use."
+        )
+    else:
+        routes.append(
+            f"Candidate conda/bioconda/container route for {name}; verify package/channel/image source, tag, and license before use."
+        )
+    return routes
+
+
+def inferred_profile(row: dict[str, Any]) -> dict[str, Any]:
+    family = row["family"]
+    interface_layer = infer_interface_layer(row)
+    return profile(
+        interface_layer,
+        infer_smoke_command(row),
+        infer_install_routes(row, interface_layer),
+        FAMILY_FIXTURES.get(
+            family,
+            "Small public/test fixture plus explicit input, reference, parameter, and privacy boundaries.",
+        ),
+        FAMILY_EXPECTED_OUTPUTS.get(family, ["tool output", "provenance note", "execution log"]),
+        handoff=FAMILY_HANDOFFS.get(family, "Anchor"),
+        container_note="Use a pinned environment/container only after verifying official source, license, version tag, and data-mount boundaries.",
+        extra_stop_conditions=FAMILY_EXTRA_STOP_CONDITIONS.get(family, []),
+    )
+
+
 def read_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -352,13 +500,7 @@ def make_plan(row: dict[str, Any]) -> dict[str, Any]:
     slug = row["slug"]
     base = PROFILES.get(slug)
     if base is None:
-        base = profile(
-            "unknown",
-            [],
-            ["No priority profile exists yet; inspect official tool documentation before adding install or execution claims."],
-            "No fixture specified yet.",
-            [],
-        )
+        base = inferred_profile(row)
     plan = {
         "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
         "created_at": dt.datetime.now().isoformat(timespec="seconds"),
@@ -396,29 +538,41 @@ def make_plan(row: dict[str, Any]) -> dict[str, Any]:
     return plan
 
 
+def render_command(command: list[str]) -> str:
+    rendered = []
+    for part in command:
+        if part.replace("_", "").replace("-", "").replace(".", "").replace("/", "").replace("=", "").replace(":", "").isalnum():
+            rendered.append(part)
+        else:
+            rendered.append('"' + part.replace("\\", "\\\\").replace('"', '\\"') + '"')
+    return " ".join(rendered)
+
+
 def make_markdown(plans: list[dict[str, Any]], summary: dict[str, Any]) -> str:
+    scope_label = "priority tools" if summary.get("scope") == "priority" else "all registered tools"
     lines = [
         "# OCEAN Bioinformatics Wrapper Readiness Plan R1",
         "",
         f"- Run date: {summary['run_date']}",
-        f"- Priority tools planned: {summary['priority_tools']}",
+        f"- Scope: {scope_label}",
+        f"- Tools planned: {summary['tools_planned']}",
         f"- Mean readiness score: {summary['mean_readiness_score']:.2f} / 10",
         f"- Local smoke already executed: {summary['stage_counts'].get('stage_2_local_smoke_executed', 0)}",
         f"- Environment-missing but plan-ready: {summary['stage_counts'].get('stage_1_plan_ready_environment_missing', 0)}",
         "",
         "## What This Adds",
         "",
-        "This R1 artifact turns the capability matrix into implementation plans for high-priority tools. Each plan records the intended interface layer, a bounded smoke probe, candidate install/container routes, the minimal fixture needed, required run evidence, stop conditions, and OCEAN handoff.",
+        f"This R1 artifact turns the capability matrix into implementation plans for {scope_label}. Each plan records the intended interface layer, a bounded smoke probe, candidate install/container routes, the minimal fixture needed, required run evidence, stop conditions, and OCEAN handoff.",
         "",
         "It does not install or run the tools. Candidate install routes must be verified against current official documentation before use.",
         "",
-        "## Priority Plan Table",
+        "## Plan Table",
         "",
         "| Tool | Family | Stage | Score | Interface | Smoke command | Handoff |",
         "|---|---|---|---:|---|---|---|",
     ]
     for plan in plans:
-        command = " ".join(plan["smoke_command"]) if plan["smoke_command"] else "profile needed"
+        command = render_command(plan["smoke_command"]) if plan["smoke_command"] else "profile needed"
         lines.append(
             f"| {plan['tool']['name']} | {plan['tool']['family']} | {plan['readiness_stage']} | {plan['readiness_score_0_10']} | {plan['interface_layer']} | `{command}` | {plan['handoff']} |"
         )
@@ -483,13 +637,13 @@ def write_csv(path: Path, plans: list[dict[str, Any]]) -> None:
                     "interface_layer": plan["interface_layer"],
                     "local_smoke_status": plan["current_ocean_state"]["local_smoke_status"],
                     "best_interface": plan["current_ocean_state"]["best_interface"],
-                    "smoke_command": " ".join(plan["smoke_command"]),
+                    "smoke_command": render_command(plan["smoke_command"]),
                     "handoff": plan["handoff"],
                 }
             )
 
 
-def summarize(plans: list[dict[str, Any]]) -> dict[str, Any]:
+def summarize(plans: list[dict[str, Any]], scope: str) -> dict[str, Any]:
     stage_counts: dict[str, int] = {}
     interface_counts: dict[str, int] = {}
     for plan in plans:
@@ -498,7 +652,9 @@ def summarize(plans: list[dict[str, Any]]) -> dict[str, Any]:
     mean_score = sum(plan["readiness_score_0_10"] for plan in plans) / len(plans) if plans else 0.0
     return {
         "run_date": dt.date.today().isoformat(),
-        "priority_tools": len(plans),
+        "scope": scope,
+        "tools_planned": len(plans),
+        "priority_tools": len(plans) if scope == "priority" else len([plan for plan in plans if plan["tool"]["slug"] in PRIORITY_SLUGS]),
         "mean_readiness_score": round(mean_score, 2),
         "stage_counts": dict(sorted(stage_counts.items())),
         "interface_counts": dict(sorted(interface_counts.items())),
@@ -512,16 +668,28 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--outdir", type=Path, required=True)
     parser.add_argument("--matrix", type=Path)
     parser.add_argument("--prefix", default=DEFAULT_OUT_PREFIX)
+    parser.add_argument("--scope", choices=["priority", "all"], default="priority")
     args = parser.parse_args(argv)
 
     matrix_path = args.matrix or args.outdir / DEFAULT_MATRIX
     matrix_by_slug = load_matrix(matrix_path)
-    missing = [slug for slug in PRIORITY_SLUGS if slug not in matrix_by_slug]
+    selected_slugs = (
+        PRIORITY_SLUGS
+        if args.scope == "priority"
+        else [
+            row["slug"]
+            for row in sorted(
+                matrix_by_slug.values(),
+                key=lambda item: (item.get("family", ""), item.get("name", "").lower(), item.get("slug", "")),
+            )
+        ]
+    )
+    missing = [slug for slug in selected_slugs if slug not in matrix_by_slug]
     if missing:
-        raise SystemExit("Missing priority slugs from matrix: " + ", ".join(missing))
+        raise SystemExit("Missing slugs from matrix: " + ", ".join(missing))
 
-    plans = [make_plan(matrix_by_slug[slug]) for slug in PRIORITY_SLUGS]
-    summary = summarize(plans)
+    plans = [make_plan(matrix_by_slug[slug]) for slug in selected_slugs]
+    summary = summarize(plans, args.scope)
     artifacts_dir = args.outdir / f"{args.prefix}-artifacts"
     artifacts_dir.mkdir(parents=True, exist_ok=True)
     for plan in plans:

@@ -22,8 +22,10 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
 | `bioinformatics_tool_router.py` | Route tools to execution layers and create workflow plans for common bioinformatics tasks |
 | `build_bioinformatics_capability_matrix.py` | Join the bioinformatics registry, API/source-packet contracts, and real-tool smoke results into a planning matrix |
-| `build_bioinformatics_wrapper_readiness_plan.py` | Turn high-priority matrix rows into install/container/smoke/source-packet readiness plans |
+| `build_bioinformatics_wrapper_readiness_plan.py` | Turn priority or full matrix rows into install/container/smoke/source-packet readiness plans |
 | `run_bioinformatics_wrapper_readiness_eval.py` | Validate readiness-plan completeness and evidence-boundary safeguards |
+| `build_bioinformatics_wrapper_backlog.py` | Convert all-tool readiness plans into an ordered implementation backlog |
+| `run_bioinformatics_wrapper_backlog_eval.py` | Validate backlog completeness, rank continuity, next actions, and evidence boundaries |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
@@ -50,6 +52,16 @@ python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.p
   --outdir skills/ocean/evals
 ```
 
+To cover every registered bioinformatics scaffold, run the same builder with all-tool scope and a separate prefix:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals \
+  --scope all \
+  --prefix bioinformatics-wrapper-readiness-all-r1
+```
+
 Then validate the generated plans:
 
 ```bash
@@ -57,7 +69,33 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_readiness_eval.py 
   --outdir skills/ocean/evals
 ```
 
+For the all-tool run, validate the matching prefix:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_readiness_eval.py \
+  --outdir skills/ocean/evals \
+  --prefix bioinformatics-wrapper-readiness-all-r1
+```
+
 Readiness plans define candidate interface layers, smoke probes, install/container notes, minimal fixtures, run-record evidence, stop conditions, and OCEAN handoffs. They are not installation instructions and must not be treated as proof that a tool can run locally.
+
+## Wrapper implementation backlog
+
+After generating the all-tool readiness plans, build an ordered engineering backlog:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_backlog.py \
+  --outdir skills/ocean/evals
+```
+
+Then validate the backlog artifact:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
+  --outdir skills/ocean/evals
+```
+
+The backlog groups work into immediate local packetization, priority environment setup, common CLI wrappers, Python/R package wrappers, workflow plans, and heavy-tool launcher plans. It is still an engineering-planning artifact, not proof that a tool ran or that a biological result is valid.
 
 ## Naming pattern
 

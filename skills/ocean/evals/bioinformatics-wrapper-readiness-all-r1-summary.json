@@ -1,0 +1,21 @@
+{
+  "run_date": "2026-07-08",
+  "scope": "all",
+  "tools_planned": 115,
+  "priority_tools": 20,
+  "mean_readiness_score": 8.05,
+  "stage_counts": {
+    "stage_1_plan_ready_environment_missing": 112,
+    "stage_2_local_smoke_executed": 3
+  },
+  "interface_counts": {
+    "heavy_cli_api_or_container_launcher": 11,
+    "lightweight_cli_subprocess": 69,
+    "python_import_or_subprocess": 16,
+    "r_bioconductor_or_rscript": 5,
+    "r_bioconductor_rscript": 5,
+    "workflow_or_runtime_subprocess": 5,
+    "workflow_reproducibility": 4
+  },
+  "evidence_boundary": "Wrapper readiness plans only; no installation, execution, benchmark, or biological validation."
+}

@@ -1,0 +1,8 @@
+{
+  "items_checked": 115,
+  "expected_items": 115,
+  "pass": 115,
+  "needs_review": 0,
+  "duplicate_slugs": [],
+  "evidence_boundary": "Backlog structure eval only; no software execution or scientific validation."
+}

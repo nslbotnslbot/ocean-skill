@@ -2382,3 +2382,67 @@ The execution-layer regression rerun updates generated artifact timestamps. Thes
 ### Evidence Boundary / 证据边界
 
 Passing this eval means OCEAN can classify tools, generate execution profiles, and create workflow plans with evidence requirements and stop conditions. It does not mean the tools were installed, executed, benchmarked, or scientifically validated. Workflow plans are planning artifacts; scientific claims still require inspected run records, source packets, and downstream OCEAN review.
+
+## 2026-07-08 - Bioinformatics wrapper-readiness all-tool R1
+
+### 中文上下文
+
+这轮把 bioinformatics wrapper readiness 从 20 个高优先级工具扩展到全部 115 个工具文件夹。目标不是假装所有工具已经安装或跑通，而是让每个工具都有可复查的 OCEAN readiness artifact：执行层、bounded smoke probe、候选安装/容器路线、最小 fixture、必须记录的 run evidence、stop condition、source-packet step 和模块 handoff。
+
+### English Context
+
+This round extends wrapper-readiness planning from the 20 priority tools to all 115 bioinformatics tool folders. The goal is not to claim that all tools are installed or executable. The goal is to give every registered tool a reviewable OCEAN readiness artifact covering execution layer, bounded smoke probe, candidate install/container routes, minimal fixture, required run evidence, stop conditions, source-packet step, and module handoff.
+
+### Scope / 影响范围
+
+- Updated `scripts/tools/build_bioinformatics_wrapper_readiness_plan.py` with `--scope all`.
+- Added generic profile inference for non-priority tools using existing CLI/Python/R smoke mappings and tool-family fixtures.
+- Added all-tool artifacts under `evals/bioinformatics-wrapper-readiness-all-r1-artifacts/`.
+- Added all-tool JSON/Markdown/CSV summary files with prefix `bioinformatics-wrapper-readiness-all-r1`.
+- Added implementation-backlog builder/eval outputs with prefix `bioinformatics-wrapper-implementation-backlog-r1`.
+- Updated tool README, bioinformatics README, evaluation README, and changelog.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| All registered tools planned | 115 |
+| Priority tools retained inside all-tool scope | 20 |
+| Wrapper readiness all-tool eval | 115/115 pass |
+| Needs review | 0 |
+| Mean readiness score | 8.05/10 |
+| Local smoke already executed | 3 |
+| Environment-missing but plan-ready | 112 |
+| Heavy CLI/API/container launcher plans | 11 |
+| Lightweight CLI subprocess plans | 69 |
+| Python import/subprocess plans | 16 |
+| R/Bioconductor or Rscript plans | 10 |
+| Workflow runtime/reproducibility plans | 9 |
+| Implementation backlog items | 115 |
+| Implementation backlog eval | 115/115 pass |
+| Backlog immediate local packetization | 3 |
+| Backlog priority environment setup | 18 |
+| Backlog common CLI wrappers | 58 |
+| Backlog Python/R package wrappers | 21 |
+| Backlog workflow plans | 5 |
+| Backlog heavy-tool launcher plans | 10 |
+| Bioinformatics scaffold regression | 115/115 pass |
+| Bioinformatics router regression | 133/133 pass |
+| Capability matrix regression | 115 tools / 3 executed / 112 unavailable |
+| OCEAN contract check | 33/33 pass |
+| Python compile | pass |
+| `git diff --check` | pass |
+| Manual frontmatter/openai.yaml check | pass |
+| Official quick_validate.py | blocked: PyYAML missing in both system and bundled Python |
+
+### Error Notes
+
+No structural eval failures were observed in this all-tool run. During review, Python `-c` and Rscript smoke commands were changed to use clearer command rendering in Markdown/CSV outputs while the JSON artifacts retain the unambiguous command arrays.
+
+The dominant limitation is unchanged from the real-tool smoke eval: 112 tools are not available in the current local environment. This is recorded as an environment/install boundary, not as proof that those tools fail scientifically.
+
+The official skill `quick_validate.py` script could not run because `PyYAML` was not available in either the system Python or the bundled Codex Python. A manual frontmatter/openai.yaml check passed, and the missing dependency is an environment validation blocker rather than an OCEAN file-format failure.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means every registered bioinformatics tool now has a bounded readiness plan and source-packet contract path. It does not mean the tools were installed, executed on real biological data, benchmarked, or scientifically validated. Any future biological claim still requires inspected run records, tool versions, parameters, input/output manifests, logs, reference/database provenance, and downstream OCEAN audit.
