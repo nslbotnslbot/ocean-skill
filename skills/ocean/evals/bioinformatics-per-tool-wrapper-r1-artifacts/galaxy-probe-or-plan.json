@@ -1,0 +1,74 @@
+{
+  "schema_version": "ocean-per-tool-launcher-plan-r1",
+  "wrapper": "per_tool_probe_or_plan.py",
+  "mode": "heavy_launcher_plan",
+  "execution_status": "planned_not_executed",
+  "software_record": {
+    "tool_name": "Galaxy",
+    "tool_slug": "galaxy",
+    "tool_version": "",
+    "task_intent": "Galaxy bounded availability probe or launcher/source-packet plan",
+    "command_line": "galaxy <user-supplied arguments>",
+    "parameters": {
+      "wrapper_mode": "heavy_launcher_plan",
+      "interface_layer": "heavy_launcher_plan"
+    },
+    "reference_or_index": "not applicable for availability probe or launcher plan",
+    "input_files": [],
+    "output_files": [],
+    "logs_or_qc": [],
+    "environment": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+    "date": "2026-07-08",
+    "supports_claims": [
+      "local availability or launcher-plan provenance only"
+    ],
+    "cannot_support": [
+      "biological mechanism",
+      "causal conclusion",
+      "clinical utility",
+      "publication readiness",
+      "reproducibility without rerun/log/environment checks"
+    ],
+    "boundary_status": "candidate_route",
+    "handoff": "Harbor",
+    "execution_status": "planned_not_executed",
+    "returncode": null,
+    "resolved_path": "",
+    "stdout_excerpt": "",
+    "stderr_excerpt": "",
+    "created_at": "2026-07-08T01:51:00"
+  },
+  "tool_name": "Galaxy",
+  "tool_slug": "galaxy",
+  "command_template": "galaxy <user-supplied arguments>",
+  "candidate_install_routes": [
+    "Candidate official installation route for Galaxy; verify current documentation, version, license, and platform requirements before use.",
+    "Candidate workflow runtime/container route for Galaxy; verify workflow version, profile, image tags, and data mounts before use."
+  ],
+  "minimal_fixture": "Tiny dry-run workflow with explicit config, input manifest, and pinned environment boundary.",
+  "expected_outputs": [
+    "dry-run/test log",
+    "workflow config",
+    "environment/container manifest"
+  ],
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "workflow version, profile, container image, or input manifest is missing"
+  ],
+  "handoff": "Harbor",
+  "evidence_boundary": "Launcher/source-packet plan only; not an executed software run or scientific result."
+}

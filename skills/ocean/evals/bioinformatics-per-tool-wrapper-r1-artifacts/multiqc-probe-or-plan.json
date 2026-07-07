@@ -1,0 +1,50 @@
+{
+  "schema_version": "ocean-per-tool-probe-r1",
+  "wrapper": "per_tool_probe_or_plan.py",
+  "mode": "cli_probe",
+  "execution_status": "not_available_current_environment",
+  "software_record": {
+    "tool_name": "MultiQC",
+    "tool_slug": "multiqc",
+    "tool_version": "",
+    "task_intent": "MultiQC bounded availability probe or launcher/source-packet plan",
+    "command_line": "multiqc --version",
+    "parameters": {
+      "wrapper_mode": "cli_probe",
+      "interface_layer": "lightweight_cli"
+    },
+    "reference_or_index": "not applicable for availability probe or launcher plan",
+    "input_files": [],
+    "output_files": [],
+    "logs_or_qc": [],
+    "environment": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+    "date": "2026-07-08",
+    "supports_claims": [],
+    "cannot_support": [
+      "biological mechanism",
+      "causal conclusion",
+      "clinical utility",
+      "publication readiness",
+      "reproducibility without rerun/log/environment checks"
+    ],
+    "boundary_status": "candidate_route",
+    "handoff": "Anchor",
+    "execution_status": "not_available_current_environment",
+    "returncode": null,
+    "resolved_path": "",
+    "stdout_excerpt": "",
+    "stderr_excerpt": "multiqc was not found on PATH.",
+    "created_at": "2026-07-08T01:51:01"
+  },
+  "candidate_install_routes": [
+    "Candidate Python/conda route; verify current package and version before use.",
+    "Candidate container route; verify image source, tag, and license before use."
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+  ],
+  "evidence_boundary": "CLI availability probe only; not a biological analysis."
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "ocean-bioinformatics-per-tool-wrapper-v1",
+  "tool_name": "cell2location",
+  "tool_slug": "cell2location",
+  "tool_family": "spatial_transcriptomics",
+  "execution_layer": "python_package",
+  "wrapper_mode": "python_import_check",
+  "entrypoint": "cell2location",
+  "command": [],
+  "probe_args": [],
+  "smoke_command": [
+    "python3",
+    "-c",
+    "import cell2location; print(getattr(cell2location, '__version__', 'version_not_exposed'))"
+  ],
+  "readiness_stage": "stage_1_plan_ready_environment_missing",
+  "local_smoke_status": "not_available_current_environment",
+  "candidate_install_routes": [
+    "Candidate official installation route for cell2location; verify current documentation, version, license, and platform requirements before use.",
+    "Candidate Python/conda/pip route for cell2location; verify package name, dependency versions, and import path before use."
+  ],
+  "minimal_fixture": "Tiny public/test spatial object or count/image manifest with tissue-image privacy boundary.",
+  "expected_outputs": [
+    "processed spatial object/table",
+    "image/tissue boundary note",
+    "session/environment log"
+  ],
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "tissue-image privacy boundary, spot/cell mapping, or annotation provenance is missing"
+  ],
+  "source_packet_wrapper": "scripts/create_source_packet.py",
+  "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
+  "task_intent": "cell2location bounded availability probe or launcher/source-packet plan",
+  "command_template": "cell2location <user-supplied arguments>",
+  "handoff": "Anchor",
+  "environment_note": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation.",
+  "python_module": "cell2location"
+}

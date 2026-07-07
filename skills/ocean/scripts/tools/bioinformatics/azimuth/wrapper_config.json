@@ -1,0 +1,54 @@
+{
+  "schema_version": "ocean-bioinformatics-per-tool-wrapper-v1",
+  "tool_name": "Azimuth",
+  "tool_slug": "azimuth",
+  "tool_family": "single_cell_analysis",
+  "execution_layer": "r_bioconductor",
+  "wrapper_mode": "r_package_check",
+  "entrypoint": "Azimuth",
+  "command": [],
+  "probe_args": [],
+  "smoke_command": [
+    "Rscript",
+    "-e",
+    "cat(as.character(utils::packageVersion('Azimuth')))"
+  ],
+  "readiness_stage": "stage_1_plan_ready_environment_missing",
+  "local_smoke_status": "not_available_current_environment",
+  "candidate_install_routes": [
+    "Candidate official installation route for Azimuth; verify current documentation, version, license, and platform requirements before use.",
+    "Candidate R/Bioconductor or R package route for Azimuth; verify R/Bioconductor compatibility and package version before use."
+  ],
+  "minimal_fixture": "Tiny public/test matrix/object or inspected object manifest; never expose private cell-level data.",
+  "expected_outputs": [
+    "processed object/table",
+    "QC/annotation summary",
+    "session/environment log"
+  ],
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "cell filtering, doublet handling, annotation provenance, or batch boundary is missing"
+  ],
+  "source_packet_wrapper": "scripts/create_source_packet.py",
+  "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
+  "task_intent": "Azimuth bounded availability probe or launcher/source-packet plan",
+  "command_template": "Azimuth <user-supplied arguments>",
+  "handoff": "Anchor",
+  "environment_note": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation.",
+  "r_package": "Azimuth"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "ocean-bioinformatics-per-tool-wrapper-v1",
+  "tool_name": "MAFFT",
+  "tool_slug": "mafft",
+  "tool_family": "phylogenetics_comparative_genomics",
+  "execution_layer": "lightweight_cli",
+  "wrapper_mode": "cli_probe",
+  "entrypoint": "mafft",
+  "command": [
+    "mafft"
+  ],
+  "probe_args": [
+    "--version"
+  ],
+  "smoke_command": [
+    "mafft",
+    "--version"
+  ],
+  "readiness_stage": "stage_1_plan_ready_environment_missing",
+  "local_smoke_status": "not_available_current_environment",
+  "candidate_install_routes": [
+    "Candidate conda/bioconda route; verify package/channel/version before use.",
+    "Candidate container route; verify image source, tag, and license before use."
+  ],
+  "minimal_fixture": "Small public/test FASTA alignment fixture.",
+  "expected_outputs": [
+    "aligned FASTA",
+    "command log"
+  ],
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+  ],
+  "source_packet_wrapper": "scripts/create_source_packet.py",
+  "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
+  "task_intent": "MAFFT bounded availability probe or launcher/source-packet plan",
+  "command_template": "mafft <user-supplied arguments>",
+  "handoff": "Anchor",
+  "environment_note": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation."
+}

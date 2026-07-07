@@ -1,0 +1,55 @@
+{
+  "schema_version": "ocean-bioinformatics-per-tool-wrapper-v1",
+  "tool_name": "DADA2",
+  "tool_slug": "dada2",
+  "tool_family": "microbiome_metagenomics",
+  "execution_layer": "r_bioconductor",
+  "wrapper_mode": "r_package_check",
+  "entrypoint": "dada2",
+  "command": [],
+  "probe_args": [],
+  "smoke_command": [
+    "Rscript",
+    "-e",
+    "cat(as.character(utils::packageVersion('dada2')))"
+  ],
+  "readiness_stage": "stage_1_plan_ready_environment_missing",
+  "local_smoke_status": "not_available_current_environment",
+  "candidate_install_routes": [
+    "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
+    "Candidate container route; verify image source, tag, and package versions before use."
+  ],
+  "minimal_fixture": "Small public/test amplicon FASTQ fixture or inspected local read manifest.",
+  "expected_outputs": [
+    "ASV table",
+    "taxonomy table if classifier/reference is supplied",
+    "filtering/error logs",
+    "sessionInfo output"
+  ],
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "primer/read orientation, filtering parameters, reference classifier, or contamination boundary is missing"
+  ],
+  "source_packet_wrapper": "scripts/create_source_packet.py",
+  "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
+  "task_intent": "DADA2 bounded availability probe or launcher/source-packet plan",
+  "command_template": "dada2 <user-supplied arguments>",
+  "handoff": "Anchor",
+  "environment_note": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation.",
+  "r_package": "dada2"
+}

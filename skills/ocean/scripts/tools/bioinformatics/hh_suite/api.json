@@ -20,6 +20,16 @@
         "--output",
         "outputs/hh_suite-source-packet.json"
       ]
+    },
+    {
+      "name": "probe-or-plan",
+      "description": "Run a bounded availability probe or create a launcher/source-packet plan for this tool.",
+      "argv": [
+        "python3",
+        "scripts/probe_or_plan.py",
+        "--output",
+        "outputs/hh_suite-probe-or-plan.json"
+      ]
     }
   ],
   "required_input_fields": [
@@ -57,5 +67,7 @@
     "real_run_record_required_before_evidence_packet": true,
     "install_or_container_plan_required_if_unavailable": true,
     "license_or_terms_check_required_when_applicable": true
-  }
+  },
+  "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
+  "wrapper_config": "wrapper_config.json"
 }

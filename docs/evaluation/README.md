@@ -50,6 +50,8 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-wrapper-readiness-all-r1-eval-results.md`: structural eval for the all-tool readiness-plan set.
 - `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-results.md`: ordered implementation backlog generated from the all-tool readiness plans.
 - `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-eval-results.md`: structural eval for backlog completeness, rank continuity, next actions, and evidence boundaries.
+- `skills/ocean/evals/bioinformatics-per-tool-wrapper-r1-results.md`: full execution check for the generated per-tool `probe_or_plan.py` entrypoints across all 115 tool folders.
+- `skills/ocean/evals/bioinformatics-tool-scaffold-r1-results.md`: scaffold completeness check, now including source-packet wrappers, per-tool probe/plan wrappers, wrapper configs, API commands, examples, and usage guides.
 
 ## What Is Not Included
 
@@ -84,6 +86,8 @@ Bioinformatics Wrapper Readiness Eval R1 checks that readiness plans remain stru
 Bioinformatics Wrapper Readiness All-Tool R1 extends the same readiness planning pattern from the 20 priority tools to all 115 registered bioinformatics tool folders. It is still a planning and source-packet contract artifact: 112 tools remain environment-missing in the current local smoke results, and the all-tool plans do not claim installation, execution, benchmarking, or scientific validation.
 
 Bioinformatics Wrapper Implementation Backlog R1 converts the all-tool readiness set into an ordered engineering queue. It groups tools into immediate local packetization, priority environment setup, common CLI wrappers, Python/R package wrappers, workflow plans, and heavy-tool launcher plans. It passed 115/115 structural checks, but remains an implementation-planning artifact rather than a scientific result.
+
+Bioinformatics Per-Tool Wrapper R1 executes every generated `scripts/probe_or_plan.py` entrypoint. It checks that all 115 tool folders now have callable code paths that produce bounded availability, import, or launcher-plan artifacts. The current environment produced 2 executed probes, 92 environment-missing records, and 21 planned-not-executed records; all 115 wrapper entrypoints passed structurally.
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
 
