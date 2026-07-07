@@ -6,7 +6,7 @@
 - Official documentation: https://clinicaltrials.gov/data-api/api
 - Endpoint family: https://clinicaltrials.gov/api/v2/
 - Executed: False
-- Query date UTC: 2026-07-07T17:34:51+00:00
+- Query date UTC: 2026-07-07T17:45:44+00:00
 - Query target: `{"query.term": "melanoma", "pageSize": 2}`
 
 ## 二、Query Log

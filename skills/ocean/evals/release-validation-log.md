@@ -2656,3 +2656,59 @@ No package-runner structural failures were observed in the first run. The local 
 ### Evidence Boundary / 证据边界
 
 Passing this eval means every registered Python/R package bioinformatics tool folder now has a bounded per-tool package runner that can probe package/module availability or record explicit user-supplied script provenance. It does not mean the packages are installed in every environment, that a script is scientifically correct, that private biological or clinical data were processed, that a workflow completed, that benchmark metrics are valid, or that any biological claim is supported. Scientific use still requires inspected scripts, input manifests, references/databases, exact parameters, versions, logs, outputs, and downstream OCEAN audit.
+
+## 2026-07-08 - Bioinformatics launcher / workflow runner R1
+
+### 中文上下文
+
+这轮补齐剩余的 29 个特殊执行层工具：20 个 heavy launcher 工具、8 个 workflow runtime 工具，以及 1 个 source-packet-adapter 工具。它们不应该被设计成“一键运行”，因为常常需要 license、GUI、GPU/HPC、large reference/database、container、workflow runtime 或受保护数据。因此新增的 `scripts/run_launcher.py` 以非执行 launcher/source-packet plan 为核心；workflow runtime 只额外允许 bounded availability probe。
+
+### English Context
+
+This round adds per-tool launcher/workflow runner entrypoints for the remaining heavy, workflow-runtime, and source-packet-adapter bioinformatics tools. The generated `scripts/run_launcher.py` files intentionally create non-executing plans for heavy tools and bounded runtime probes for workflow managers. This completes the third execution-layer family after CLI and Python/R package runners.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/common/per_tool_launcher_runner.py`.
+- Added `scripts/tools/generate_bioinformatics_launcher_runners.py`.
+- Added `scripts/tools/run_bioinformatics_launcher_runner_eval.py`.
+- Generated `scripts/run_launcher.py` for 29 heavy/workflow/source-adapter tool folders.
+- Updated those 29 tools' `wrapper_config.json` with `launcher_runner_wrapper` and `launcher_runner_boundary`.
+- Updated those 29 tools' `api.json` files with `launcher-plan`; workflow runtime tools also receive `runtime-probe` and `runtime-run-record`.
+- Updated those 29 tools' README files with a `Launcher / Workflow Runner Wrapper` section.
+- Updated public docs and README notes to describe the launcher/workflow runner layer.
+
+### Tool Coverage
+
+The 29 generated launcher runners cover heavy and workflow tools such as AlphaFold, AlphaFold DB, Cell Ranger, ChimeraX, ColabFold, DeepVariant, FragPipe, Galaxy, GATK, ITK-SNAP, MaxQuant, MODELLER, MS-DIAL, Mutect2, MZmine, nnU-Net, PyMOL, RoseTTAFold, Skyline, Space Ranger, 3D Slicer, Conda, CWL, Docker, Nextflow, nf-core, Singularity/Apptainer, Snakemake, and WDL/Cromwell.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Launcher/source/workflow tool folders detected | 29 |
+| Generated `scripts/run_launcher.py` entrypoints | 29 |
+| Launcher/workflow runner eval checks | 37/37 pass |
+| Non-executing launcher plans | 29 |
+| Workflow runtime probes | 8 |
+| Runtime probes available locally | 0 |
+| Runtime probes not available in current environment | 8 |
+| Needs review | 0 |
+| Bioinformatics code coverage eval | 115/115 pass |
+| CLI runner regression | 60/60 pass |
+| Python/R package runner regression | 26/26 pass |
+| Per-tool probe/plan wrapper regression | 115/115 pass |
+| Scaffold regression | 115/115 pass |
+| Bioinformatics tool router regression | 133/133 pass |
+| Database tool adapter dry-run regression | 13/13 pass |
+| OCEAN contract check | 33/33 pass |
+| Python compile | pass |
+| `git diff --check` | pass |
+
+### Error Notes
+
+No launcher-runner structural failures were observed in the first run. All workflow runtime probes recorded `not_available_current_environment`, meaning Conda, CWL/cwltool, Docker, Nextflow, nf-core, Apptainer, Snakemake, and Cromwell were not available in the current local PATH. This is an environment/runtime boundary rather than a workflow or scientific failure.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means every heavy, workflow-runtime, and source-packet-adapter bioinformatics tool folder now has a bounded per-tool launcher/workflow runner. Launcher plans are not execution. Runtime probes are not workflows. This does not mean tools were installed, references were downloaded, GUI/GPU/HPC/container jobs were launched, biological or clinical data were processed, benchmarks were run, or scientific claims were supported. Scientific use still requires inspected run records, references/databases, exact commands, parameters, logs, outputs, environment/container details, privacy/license review, and downstream OCEAN audit.

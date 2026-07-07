@@ -1,6 +1,6 @@
 {
   "packet_id": "osp-software-b7e874fd5197",
-  "created_at": "2026-07-08T02:34:34",
+  "created_at": "2026-07-08T02:45:24",
   "source_type": "bioinformatics_software_run",
   "resource": "DESeq2",
   "query": "DESeq2 bounded availability probe or launcher/source-packet plan",

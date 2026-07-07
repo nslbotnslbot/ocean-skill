@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added launcher/workflow runner wrappers for the remaining 29 bioinformatics heavy, workflow-runtime, and source-packet-adapter tools, with per-tool `scripts/run_launcher.py` entrypoints, API command wiring, README usage notes, and 37/37 launcher/runtime eval pass.
 - Added Python/R package runner wrappers for 26 bioinformatics package tools, with per-tool `scripts/run_package.py` entrypoints, API command wiring, README usage notes, bounded script provenance support, and 26/26 package runner eval pass.
 - Added lightweight CLI runner wrappers for 60 bioinformatics command-line tools, with per-tool `scripts/run_cli.py` entrypoints, API command wiring, README usage notes, bounded provenance recording, and 60/60 CLI runner eval pass in the current environment.
 - Added science-skills-style per-resource database tool folders for 13 Reef API/database adapters, with generated README/API/example/query wrappers plus 13/13 dry-run and 13/13 bounded live eval pass.

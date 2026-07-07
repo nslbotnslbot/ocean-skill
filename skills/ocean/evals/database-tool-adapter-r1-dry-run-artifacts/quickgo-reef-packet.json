@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "quickgo",
   "adapter_label": "QuickGO",
-  "created_utc": "2026-07-07T17:34:51+00:00",
+  "created_utc": "2026-07-07T17:45:45+00:00",
   "executed": false,
   "official_doc": "https://www.ebi.ac.uk/QuickGO/api/index.html",
   "endpoint_family": "https://www.ebi.ac.uk/QuickGO/services/",

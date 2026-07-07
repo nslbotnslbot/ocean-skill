@@ -32,7 +32,7 @@
     "resolved_path": "/Library/Developer/CommandLineTools/usr/bin/python3",
     "stdout_excerpt": "",
     "stderr_excerpt": "Traceback (most recent call last):\n  File \"<string>\", line 2, in <module>\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py\", line 127, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n  File \"<frozen importlib._bootstrap>\", line 1030, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1007, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 984, in _find_and_load_unlocked\nModuleNotFoundError: No module named 'stereoscope'\n",
-    "created_at": "2026-07-08T02:34:35"
+    "created_at": "2026-07-08T02:45:25"
   },
   "evidence_boundary": "Python package import/version probe only; not an analysis."
 }

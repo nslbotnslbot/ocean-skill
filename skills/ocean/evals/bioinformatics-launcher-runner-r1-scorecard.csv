@@ -1,0 +1,38 @@
+slug,name,family,execution_layer,mode,returncode,execution_status,verdict,issues,artifact
+alphafold,AlphaFold,structure_modeling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/alphafold-launcher-plan.json
+alphafold_db,AlphaFold DB,structure_modeling,source_packet_adapter,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/alphafold_db-launcher-plan.json
+cell_ranger,Cell Ranger,single_cell_analysis,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/cell_ranger-launcher-plan.json
+chimerax,ChimeraX,structure_modeling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/chimerax-launcher-plan.json
+colabfold,ColabFold,structure_modeling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/colabfold-launcher-plan.json
+conda,Conda,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/conda-launcher-plan.json
+conda,Conda,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/conda-runtime-probe.json
+cwl,CWL,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/cwl-launcher-plan.json
+cwl,CWL,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/cwl-runtime-probe.json
+deepvariant,DeepVariant,variant_calling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/deepvariant-launcher-plan.json
+docker,Docker,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/docker-launcher-plan.json
+docker,Docker,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/docker-runtime-probe.json
+fragpipe,FragPipe,proteomics_metabolomics,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/fragpipe-launcher-plan.json
+galaxy,Galaxy,workflow_reproducibility,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/galaxy-launcher-plan.json
+gatk,GATK,variant_calling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/gatk-launcher-plan.json
+itk_snap,ITK-SNAP,imaging_signal_ml,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/itk_snap-launcher-plan.json
+maxquant,MaxQuant,proteomics_metabolomics,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/maxquant-launcher-plan.json
+modeller,MODELLER,structure_modeling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/modeller-launcher-plan.json
+ms_dial,MS-DIAL,proteomics_metabolomics,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/ms_dial-launcher-plan.json
+mutect2,Mutect2,variant_calling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/mutect2-launcher-plan.json
+mzmine,MZmine,proteomics_metabolomics,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/mzmine-launcher-plan.json
+nextflow,Nextflow,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/nextflow-launcher-plan.json
+nextflow,Nextflow,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/nextflow-runtime-probe.json
+nf_core,nf-core,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/nf_core-launcher-plan.json
+nf_core,nf-core,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/nf_core-runtime-probe.json
+nnu_net,nnU-Net,imaging_signal_ml,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/nnu_net-launcher-plan.json
+pymol,PyMOL,structure_modeling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/pymol-launcher-plan.json
+rosettafold,RoseTTAFold,structure_modeling,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/rosettafold-launcher-plan.json
+singularity_apptainer,Singularity-Apptainer,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/singularity_apptainer-launcher-plan.json
+singularity_apptainer,Singularity-Apptainer,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/singularity_apptainer-runtime-probe.json
+skyline,Skyline,proteomics_metabolomics,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/skyline-launcher-plan.json
+snakemake,Snakemake,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/snakemake-launcher-plan.json
+snakemake,Snakemake,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/snakemake-runtime-probe.json
+space_ranger,Space Ranger,spatial_transcriptomics,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/space_ranger-launcher-plan.json
+three_d_slicer,3D Slicer,imaging_signal_ml,heavy_launcher_plan,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/three_d_slicer-launcher-plan.json
+wdl_cromwell,WDL-Cromwell,workflow_reproducibility,workflow_runtime,launcher-plan,0,planned_not_executed,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/wdl_cromwell-launcher-plan.json
+wdl_cromwell,WDL-Cromwell,workflow_reproducibility,workflow_runtime,runtime-probe,0,not_available_current_environment,pass,,skills/ocean/evals/bioinformatics-launcher-runner-r1-artifacts/wdl_cromwell-runtime-probe.json

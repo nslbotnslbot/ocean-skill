@@ -1,0 +1,22 @@
+{
+  "run_date": "2026-07-08",
+  "checks": 37,
+  "launcher_tools_checked": 29,
+  "runtime_probes_checked": 8,
+  "pass": 37,
+  "needs_review": 0,
+  "by_execution_status": {
+    "not_available_current_environment": 8,
+    "planned_not_executed": 29
+  },
+  "by_execution_layer": {
+    "heavy_launcher_plan": 20,
+    "source_packet_adapter": 1,
+    "workflow_runtime": 16
+  },
+  "by_mode": {
+    "launcher-plan": 29,
+    "runtime-probe": 8
+  },
+  "evidence_boundary": "Launcher/workflow runner eval only; launcher plans are non-executing and runtime probes do not run biological workflows."
+}

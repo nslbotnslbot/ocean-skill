@@ -30,6 +30,17 @@
         "--output",
         "outputs/rosettafold-probe-or-plan.json"
       ]
+    },
+    {
+      "name": "launcher-plan",
+      "description": "Create a bounded non-executing launcher/workflow/source-packet plan.",
+      "argv": [
+        "python3",
+        "scripts/run_launcher.py",
+        "plan",
+        "--output",
+        "outputs/rosettafold-launcher-plan.json"
+      ]
     }
   ],
   "required_input_fields": [
@@ -69,5 +80,6 @@
     "license_or_terms_check_required_when_applicable": true
   },
   "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
-  "wrapper_config": "wrapper_config.json"
+  "wrapper_config": "wrapper_config.json",
+  "launcher_runner_wrapper": "scripts/run_launcher.py"
 }

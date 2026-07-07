@@ -1,0 +1,59 @@
+{
+  "schema_version": "ocean-heavy-tool-launcher-r1",
+  "wrapper": "heavy_tool_launcher.py",
+  "tool_name": "RoseTTAFold",
+  "tool_slug": "rosettafold",
+  "execution_status": "planned_not_executed",
+  "run_mode": "heavy_launcher_plan",
+  "command_template": "rosettafold <user-supplied arguments>",
+  "container_or_environment": "current local workflow/container/launcher environment",
+  "required_assets": [
+    "minimal_fixture: Small public/test sequence/structure identifier plus model/database provenance.",
+    "expected_output: model/structure/search output",
+    "expected_output: template/database provenance note",
+    "expected_output: execution log",
+    "required_run_evidence: tool version and executable/package source",
+    "required_run_evidence: exact command line or workflow step",
+    "required_run_evidence: parameters and configuration files",
+    "required_run_evidence: reference/index/database name and version when applicable",
+    "required_run_evidence: input file manifest and sample metadata boundary",
+    "required_run_evidence: output file manifest",
+    "required_run_evidence: logs, warnings, QC metrics, and failure messages",
+    "required_run_evidence: environment/container/OS/hardware notes when relevant",
+    "required_run_evidence: run date"
+  ],
+  "license_or_terms_note": "Check license, EULA, citation, and institutional terms before execution.",
+  "compute_note": "May require large references, GPU, HPC, or substantial local storage.",
+  "data_safety_note": "Do not submit PHI, patient data, or unpublished data to external services.",
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "template/database provenance, confidence metrics, or experimental-validation boundary is missing"
+  ],
+  "required_run_evidence_before_packet": [
+    "exact command or GUI action log",
+    "tool version/build",
+    "container/image or environment export",
+    "reference database/index version and path",
+    "input manifest",
+    "output manifest",
+    "logs/QC",
+    "date and operator/context"
+  ],
+  "cannot_support": [
+    "biological mechanism",
+    "causal conclusion",
+    "clinical utility",
+    "publication readiness",
+    "reproducibility without rerun/log/environment checks",
+    "tool successfully ran",
+    "result quality",
+    "method benchmark superiority"
+  ],
+  "handoff": "Anchor",
+  "created_at": "2026-07-08T02:45:24",
+  "date": "2026-07-08",
+  "evidence_boundary": "Launcher plan only; this is not an executed software run or scientific result."
+}
