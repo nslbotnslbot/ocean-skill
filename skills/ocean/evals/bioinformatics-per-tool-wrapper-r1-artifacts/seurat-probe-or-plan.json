@@ -34,7 +34,7 @@
     "resolved_path": "/usr/local/bin/Rscript",
     "stdout_excerpt": "",
     "stderr_excerpt": "Error in utils::packageVersion(\"Seurat\") : \n  there is no package called ‘Seurat’\nCalls: cat -> <Anonymous>\nExecution halted\n",
-    "created_at": "2026-07-08T02:24:35"
+    "created_at": "2026-07-08T02:34:37"
   },
   "candidate_install_routes": [
     "Candidate R package route; verify R/package compatibility before use.",

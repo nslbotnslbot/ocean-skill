@@ -252,6 +252,8 @@ Bioinformatics Tool Router R1 会把 115 个 scaffolded tools 分配到 executio
 
 轻量 CLI 类 bioinformatics 工具现在也有生成好的 per-tool `scripts/run_cli.py` 入口。它们可以记录 bounded availability probe，或者记录用户明确提供参数的本地命令运行记录；如果软件没有安装，会保留 environment-missing boundary，而不是假装运行成功。
 
+Python/R package 类 bioinformatics 工具现在也有生成好的 per-tool `scripts/run_package.py` 入口。它们可以记录 Python import 或 R package-version probe，也可以记录用户明确提供脚本和参数的运行 provenance，但不会把 package 可用性当作生物学验证。
+
 Reef 现在也有可执行的 API/database adapters，覆盖 UniProt、PubMed、EuropePMC、ChEMBL、OpenTargets、STRING、Reactome、QuickGO、ClinVar、gnomAD 和 AlphaFold DB。这些 wrapper 可以 dry-run，也可以用 `--execute` 做 bounded live public API request，并输出带明确证据边界的 OCEAN packet。
 
 Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 proposal、trend、resource/API、claim downgrade、validation、reviewer-pressure-to-idea、benchmark fairness 和 Harbor handoff cases。

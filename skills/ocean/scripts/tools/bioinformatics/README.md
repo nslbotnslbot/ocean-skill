@@ -10,6 +10,8 @@ Each tool folder also includes `api.json`, `wrapper_config.json`, `scripts/creat
 
 Lightweight CLI tool folders additionally include `scripts/run_cli.py`, which can run a bounded local availability probe or record an explicit user-supplied command invocation as provenance. It does not choose inputs, download references, or validate biological conclusions.
 
+Python/R package tool folders additionally include `scripts/run_package.py`, which can run a bounded package availability/version probe or record an explicit user-supplied Python/R script invocation as provenance. It does not install packages, choose inputs, design the analysis, or validate biological conclusions.
+
 Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff guidance.
 
 Shared execution layers live in `../common/`:
@@ -120,3 +122,35 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
 ```
 
 The CLI runner eval checks entrypoint behavior and evidence-boundary recording. It is not a biological workflow test, and an unavailable command is recorded as an environment boundary rather than a scientific failure.
+
+## Python/R package runners
+
+For Python-package and R/Bioconductor tools, use the generated per-tool runner:
+
+```bash
+python3 scripts/run_package.py probe \
+  --output /path/to/<tool>-package-probe.json
+```
+
+For an explicit inspected script run:
+
+```bash
+python3 scripts/run_package.py run-script \
+  --script /path/to/inspected_script.py \
+  --args-json '["<user-supplied arguments>"]' \
+  --output /path/to/<tool>-package-run-record.json \
+  --packet-output /path/to/<tool>-package-run-source-packet.json
+```
+
+From the repository root, regenerate and evaluate the full Python/R package set with:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_package_runners.py \
+  --skill-dir skills/ocean
+
+python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+The package runner eval checks package/module availability and evidence-boundary recording. It is not a biological workflow test, script-quality review, differential-expression analysis, single-cell analysis, or clinical/biological claim validation.

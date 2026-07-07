@@ -6,7 +6,7 @@
 - Official documentation: https://string-db.org/help/api/
 - Endpoint family: https://string-db.org/api/
 - Executed: False
-- Query date UTC: 2026-07-07T17:24:54+00:00
+- Query date UTC: 2026-07-07T17:34:52+00:00
 - Query target: `{"identifiers": "TP53", "species": "9606", "limit": "2"}`
 
 ## 二、Query Log
