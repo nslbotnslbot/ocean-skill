@@ -6,7 +6,7 @@ These folders are scaffolds, not claims that the tools are installed or executab
 
 Each tool folder includes `examples/run-record.example.json`, a template for recording inspected tool runs before they are converted into OCEAN evidence packets.
 
-Each tool folder also includes `api.json` and `scripts/create_source_packet.py`. These define a stable local wrapper contract for turning inspected run metadata into source packets; they do not install or execute external tools.
+Each tool folder also includes `api.json`, `wrapper_config.json`, `scripts/create_source_packet.py`, and `scripts/probe_or_plan.py`. These define a stable local wrapper contract for bounded availability/plan probes and for turning inspected run metadata into source packets; they do not install or execute biological analyses.
 
 Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff guidance.
 
@@ -65,3 +65,25 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
 ```
 
 The backlog orders engineering work by current evidence and execution layer. It is useful for deciding which wrappers to implement next, but it is not installation, local execution, benchmarking, or biological validation.
+
+## Per-tool probe/plan wrappers
+
+Every tool folder has a generated `scripts/probe_or_plan.py` entrypoint backed by `wrapper_config.json`:
+
+```bash
+python3 scripts/probe_or_plan.py \
+  --output /path/to/<tool>-probe-or-plan.json
+```
+
+From the repository root, regenerate and evaluate the full set with:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_probe_wrappers.py \
+  --skill-dir skills/ocean
+
+python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+The wrapper records local availability/import/version evidence where safe, or creates a launcher/source-packet plan for heavy, GUI, license, GPU, workflow, or adapter-style tools. It is not a claim that the tool is installed, a workflow ran, or a biological conclusion is valid.

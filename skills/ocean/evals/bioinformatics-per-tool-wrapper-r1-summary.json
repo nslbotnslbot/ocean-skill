@@ -1,0 +1,32 @@
+{
+  "run_date": "2026-07-08",
+  "tools_checked": 115,
+  "pass": 115,
+  "needs_review": 0,
+  "by_execution_status": {
+    "executed": 2,
+    "not_available_current_environment": 92,
+    "planned_not_executed": 21
+  },
+  "by_family": {
+    "alignment_file_operations": 4,
+    "differential_expression": 4,
+    "epigenomics_peak_calling": 6,
+    "genome_assembly_annotation": 12,
+    "imaging_signal_ml": 6,
+    "microbiome_metagenomics": 6,
+    "multi_omics_integration": 5,
+    "phylogenetics_comparative_genomics": 7,
+    "proteomics_metabolomics": 7,
+    "qc_preprocessing": 8,
+    "rna_seq_quantification": 5,
+    "sequence_alignment": 5,
+    "single_cell_analysis": 8,
+    "spatial_transcriptomics": 7,
+    "spliced_rna_alignment": 2,
+    "structure_modeling": 9,
+    "variant_calling": 5,
+    "workflow_reproducibility": 9
+  },
+  "evidence_boundary": "Per-tool wrapper entrypoint eval only; no installation, biological analysis, benchmark, or scientific validation."
+}

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added generated per-tool bioinformatics probe/plan wrappers for all 115 tool folders, with `wrapper_config.json`, `scripts/probe_or_plan.py`, API command wiring, and 115/115 per-tool wrapper eval pass.
 - Added Bioinformatics Wrapper Implementation Backlog R1, converting all-tool readiness plans into a 115-item engineering queue with 115/115 structural eval pass.
 - Added Bioinformatics Wrapper Readiness All-Tool R1, extending readiness plans from the 20 priority tools to all 115 bioinformatics tool folders with 115/115 structural eval pass and explicit environment-missing boundaries.
 - Added Bioinformatics Wrapper Readiness R1 to convert high-priority capability-matrix rows into per-tool install/container/smoke/source-packet readiness plans with explicit evidence boundaries.

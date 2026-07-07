@@ -2446,3 +2446,48 @@ The official skill `quick_validate.py` script could not run because `PyYAML` was
 ### Evidence Boundary / 证据边界
 
 Passing this eval means every registered bioinformatics tool now has a bounded readiness plan and source-packet contract path. It does not mean the tools were installed, executed on real biological data, benchmarked, or scientifically validated. Any future biological claim still requires inspected run records, tool versions, parameters, input/output manifests, logs, reference/database provenance, and downstream OCEAN audit.
+
+## 2026-07-08 - Bioinformatics per-tool probe/plan wrapper R1
+
+### 中文上下文
+
+这轮继续推进“每个 bioinformatics tool 文件夹里补全代码”的目标。上一轮已经有 115 个 source-packet wrapper、readiness plan 和 implementation backlog；这一轮补上每个工具自己的可调用入口：`wrapper_config.json` 和 `scripts/probe_or_plan.py`。这样每个工具不只是有文档和 source-packet 模板，而是可以执行一个 bounded availability/import/version probe，或者在重型/授权/GUI/GPU/adapter 场景下产出 launcher/source-packet plan。
+
+### English Context
+
+This round moves from planning artifacts toward concrete per-tool code coverage. Every bioinformatics tool folder now has a generated `wrapper_config.json` and `scripts/probe_or_plan.py` entrypoint. The entrypoint records bounded availability/import/version evidence when safe, or emits a launcher/source-packet plan for heavy, licensed, GUI, GPU, workflow, or adapter-style tools.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/common/per_tool_probe_or_plan.py`.
+- Added `scripts/tools/generate_bioinformatics_probe_wrappers.py`.
+- Added `scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py`.
+- Generated `wrapper_config.json` for all 115 bioinformatics tool folders.
+- Generated `scripts/probe_or_plan.py` for all 115 bioinformatics tool folders.
+- Updated per-tool `api.json` files with a `probe-or-plan` command.
+- Updated per-tool README files with a Probe / Plan Wrapper section.
+- Tightened `run_bioinformatics_tool_scaffold_eval.py` so scaffold pass now requires the generated probe/plan wrapper and wrapper config.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Tool folders with `wrapper_config.json` | 115 |
+| Tool folders with `scripts/probe_or_plan.py` | 115 |
+| Per-tool wrapper entrypoint eval | 115/115 pass |
+| Per-tool wrapper artifacts written | 115 |
+| Executed availability/import probes | 2 |
+| Not available in current environment | 92 |
+| Planned-not-executed heavy/adapter/workflow records | 21 |
+| Tightened scaffold eval | 115/115 pass |
+| Python compile | pass |
+
+Executed probes in this local environment were DESeq2 and limma-voom through R package checks. Most command-line, Python-package, and workflow tools remain unavailable in the current environment and were recorded as environment boundaries rather than failures.
+
+### Error Notes
+
+The first per-tool wrapper eval run completed the wrapper calls but failed while writing the CSV scorecard because diagnostic stdout/stderr fields were not filtered to the declared CSV columns. The CSV writer was fixed and the eval was rerun successfully with 115/115 pass.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means every registered bioinformatics tool folder now has a callable OCEAN probe/plan code path and produces an evidence-bound artifact. It does not mean the external software is installed, that any biological/clinical dataset was processed, that a workflow completed, that a benchmark is valid, or that any scientific claim is supported. Scientific use still requires inspected run records, references/databases, logs, parameters, outputs, and downstream OCEAN audit.

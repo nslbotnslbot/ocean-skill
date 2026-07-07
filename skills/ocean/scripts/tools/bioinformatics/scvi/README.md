@@ -47,3 +47,14 @@ The wrapper converts provenance fields into an OCEAN software source packet. It 
 
 See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
 
+## Probe / Plan Wrapper
+
+Use `scripts/probe_or_plan.py` to run the bounded per-tool availability probe or to create a launcher/source-packet plan:
+
+```bash
+python3 scripts/probe_or_plan.py \
+  --output /path/to/scvi-probe-or-plan.json
+```
+
+This wrapper records availability or planning evidence only. It does not install the tool, download databases, run biological analyses, benchmark methods, or validate scientific claims.
+

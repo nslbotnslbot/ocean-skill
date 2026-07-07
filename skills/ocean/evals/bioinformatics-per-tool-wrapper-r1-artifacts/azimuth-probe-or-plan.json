@@ -1,0 +1,51 @@
+{
+  "schema_version": "ocean-per-tool-probe-r1",
+  "wrapper": "per_tool_probe_or_plan.py",
+  "mode": "r_package_check",
+  "execution_status": "not_available_current_environment",
+  "software_record": {
+    "tool_name": "Azimuth",
+    "tool_slug": "azimuth",
+    "tool_version": "",
+    "task_intent": "Azimuth bounded availability probe or launcher/source-packet plan",
+    "command_line": "/usr/local/bin/Rscript -e 'cat(as.character(utils::packageVersion('\"'\"'Azimuth'\"'\"')))'",
+    "parameters": {
+      "wrapper_mode": "r_package_check",
+      "interface_layer": "r_bioconductor"
+    },
+    "reference_or_index": "not applicable for availability probe or launcher plan",
+    "input_files": [],
+    "output_files": [],
+    "logs_or_qc": [],
+    "environment": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+    "date": "2026-07-08",
+    "supports_claims": [],
+    "cannot_support": [
+      "biological mechanism",
+      "causal conclusion",
+      "clinical utility",
+      "publication readiness",
+      "reproducibility without rerun/log/environment checks"
+    ],
+    "boundary_status": "candidate_route",
+    "handoff": "Anchor",
+    "execution_status": "not_available_current_environment",
+    "returncode": 1,
+    "resolved_path": "/usr/local/bin/Rscript",
+    "stdout_excerpt": "",
+    "stderr_excerpt": "Error in utils::packageVersion(\"Azimuth\") : \n  there is no package called ‘Azimuth’\nCalls: cat -> <Anonymous>\nExecution halted\n",
+    "created_at": "2026-07-08T01:50:59"
+  },
+  "candidate_install_routes": [
+    "Candidate official installation route for Azimuth; verify current documentation, version, license, and platform requirements before use.",
+    "Candidate R/Bioconductor or R package route for Azimuth; verify R/Bioconductor compatibility and package version before use."
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "cell filtering, doublet handling, annotation provenance, or batch boundary is missing"
+  ],
+  "evidence_boundary": "R package availability/version probe only; not a biological analysis."
+}

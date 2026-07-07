@@ -1,0 +1,56 @@
+{
+  "schema_version": "ocean-bioinformatics-per-tool-wrapper-v1",
+  "tool_name": "Singularity-Apptainer",
+  "tool_slug": "singularity_apptainer",
+  "tool_family": "workflow_reproducibility",
+  "execution_layer": "workflow_runtime",
+  "wrapper_mode": "cli_probe",
+  "entrypoint": "apptainer",
+  "command": [
+    "apptainer"
+  ],
+  "probe_args": [
+    "--version"
+  ],
+  "smoke_command": [
+    "apptainer",
+    "--version"
+  ],
+  "readiness_stage": "stage_1_plan_ready_environment_missing",
+  "local_smoke_status": "not_available_current_environment",
+  "candidate_install_routes": [
+    "System/HPC runtime installation route; verify institutional module/container policy before use.",
+    "Fallback command may be `singularity --version` when Apptainer is not present; verify runtime identity and version before use."
+  ],
+  "minimal_fixture": "Version probe plus SIF/image manifest only; do not run unknown images.",
+  "expected_outputs": [
+    "runtime version output",
+    "SIF/image digest/tag manifest",
+    "container command log when executed"
+  ],
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "image provenance, bind mounts, HPC policy, or data egress boundaries are unclear"
+  ],
+  "source_packet_wrapper": "scripts/create_source_packet.py",
+  "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
+  "task_intent": "Singularity-Apptainer bounded availability probe or launcher/source-packet plan",
+  "command_template": "apptainer <user-supplied arguments>",
+  "handoff": "Harbor",
+  "environment_note": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
+  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation."
+}

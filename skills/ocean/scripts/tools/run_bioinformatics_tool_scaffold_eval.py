@@ -59,6 +59,22 @@ REQUIRED_API_FIELDS = {
     "evidence_boundary",
 }
 
+REQUIRED_CONFIG_FIELDS = {
+    "schema_version",
+    "tool_name",
+    "tool_slug",
+    "tool_family",
+    "execution_layer",
+    "wrapper_mode",
+    "entrypoint",
+    "source_packet_wrapper",
+    "probe_or_plan_wrapper",
+    "required_run_evidence",
+    "stop_conditions",
+    "handoff",
+    "evidence_boundary",
+}
+
 REQUIRED_USAGE_MARKERS = {
     "## Use When",
     "## Do Not Use When",
@@ -95,15 +111,25 @@ def main(argv: list[str]) -> int:
         example = folder / "examples" / "run-record.example.json"
         api = folder / "api.json"
         wrapper = folder / "scripts" / "create_source_packet.py"
+        probe_or_plan = folder / "scripts" / "probe_or_plan.py"
+        wrapper_config = folder / "wrapper_config.json"
         usage = folder / "references" / "tool_usage.md"
         data = read_json(tool_json) if tool_json.exists() else {}
         example_data = read_json(example) if example.exists() else {}
         api_data = read_json(api) if api.exists() else {}
+        config_data = read_json(wrapper_config) if wrapper_config.exists() else {}
         usage_text = usage.read_text(encoding="utf-8") if usage.exists() else ""
         missing_fields = sorted(REQUIRED_FIELDS - set(data))
         missing_example_fields = sorted(REQUIRED_EXAMPLE_FIELDS - set(example_data))
         missing_api_fields = sorted(REQUIRED_API_FIELDS - set(api_data))
+        missing_config_fields = sorted(REQUIRED_CONFIG_FIELDS - set(config_data))
         missing_usage_markers = sorted(marker for marker in REQUIRED_USAGE_MARKERS if marker not in usage_text)
+        api_has_probe_command = any(command.get("name") == "probe-or-plan" for command in api_data.get("commands", []))
+        config_identity_ok = (
+            config_data.get("tool_slug") == item["slug"]
+            and config_data.get("tool_name") == item["name"]
+            and config_data.get("probe_or_plan_wrapper") == "scripts/probe_or_plan.py"
+        )
         verdict = (
             "pass"
             if folder.exists()
@@ -112,11 +138,16 @@ def main(argv: list[str]) -> int:
             and example.exists()
             and api.exists()
             and wrapper.exists()
+            and probe_or_plan.exists()
+            and wrapper_config.exists()
             and usage.exists()
             and not missing_fields
             and not missing_example_fields
             and not missing_api_fields
+            and not missing_config_fields
             and not missing_usage_markers
+            and api_has_probe_command
+            and config_identity_ok
             else "needs_review"
         )
         rows.append(
@@ -129,11 +160,16 @@ def main(argv: list[str]) -> int:
                 "example_exists": example.exists(),
                 "api_exists": api.exists(),
                 "python_wrapper_exists": wrapper.exists(),
+                "probe_or_plan_exists": probe_or_plan.exists(),
+                "wrapper_config_exists": wrapper_config.exists(),
                 "usage_reference_exists": usage.exists(),
                 "missing_fields": missing_fields,
                 "missing_example_fields": missing_example_fields,
                 "missing_api_fields": missing_api_fields,
+                "missing_config_fields": missing_config_fields,
                 "missing_usage_markers": missing_usage_markers,
+                "api_has_probe_command": api_has_probe_command,
+                "config_identity_ok": config_identity_ok,
                 "shared_helper": data.get("shared_helper"),
                 "verdict": verdict,
             }
@@ -157,16 +193,16 @@ def main(argv: list[str]) -> int:
                 f"- Pass: {summary['pass']}",
                 f"- Needs review: {summary['needs_review']}",
                 "",
-                "| Tool | Folder | tool.json | README | Example | API | Python | Usage guide | Verdict |",
-                "|---|---|---|---|---|---|---|---|---|",
+                "| Tool | Folder | tool.json | README | Example | API | Source packet Python | Probe/plan Python | Wrapper config | Usage guide | Verdict |",
+                "|---|---|---|---|---|---|---|---|---|---|---|",
                 *[
-                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['api_exists']} | {row['python_wrapper_exists']} | {row['usage_reference_exists']} | {row['verdict']} |"
+                    f"| {row['name']} | {row['folder_exists']} | {row['tool_json_exists']} | {row['readme_exists']} | {row['example_exists']} | {row['api_exists']} | {row['python_wrapper_exists']} | {row['probe_or_plan_exists']} | {row['wrapper_config_exists']} | {row['usage_reference_exists']} | {row['verdict']} |"
                     for row in rows
                 ],
                 "",
                 "## Evidence Boundary / 证据边界",
                 "",
-                "This eval checks scaffold, example-record, API-contract, Python-wrapper, and tool-usage reference completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
+                "This eval checks scaffold, example-record, API-contract, source-packet wrapper, probe/plan wrapper, wrapper-config, and tool-usage reference completeness only. It does not install, run, benchmark, or validate any bioinformatics software.",
             ]
         )
         + "\n",

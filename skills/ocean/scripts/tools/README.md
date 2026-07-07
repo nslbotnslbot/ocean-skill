@@ -26,6 +26,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `run_bioinformatics_wrapper_readiness_eval.py` | Validate readiness-plan completeness and evidence-boundary safeguards |
 | `build_bioinformatics_wrapper_backlog.py` | Convert all-tool readiness plans into an ordered implementation backlog |
 | `run_bioinformatics_wrapper_backlog_eval.py` | Validate backlog completeness, rank continuity, next actions, and evidence boundaries |
+| `generate_bioinformatics_probe_wrappers.py` | Generate per-tool `wrapper_config.json` and `scripts/probe_or_plan.py` entrypoints |
+| `run_bioinformatics_per_tool_wrapper_eval.py` | Execute generated per-tool probe/plan entrypoints and validate their artifacts |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
@@ -96,6 +98,25 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
 ```
 
 The backlog groups work into immediate local packetization, priority environment setup, common CLI wrappers, Python/R package wrappers, workflow plans, and heavy-tool launcher plans. It is still an engineering-planning artifact, not proof that a tool ran or that a biological result is valid.
+
+## Per-tool probe/plan wrappers
+
+Generate concrete per-tool wrapper entrypoints:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_probe_wrappers.py \
+  --skill-dir skills/ocean
+```
+
+Then execute the generated entrypoints in bounded probe/plan mode:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Each tool folder receives `wrapper_config.json` and `scripts/probe_or_plan.py`. The generated entrypoint either records a local availability/version/import probe or emits a launcher/source-packet plan. It does not install tools, download databases, run biological analyses, benchmark methods, or validate scientific claims.
 
 ## Naming pattern
 
