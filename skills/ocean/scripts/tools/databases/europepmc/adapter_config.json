@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "europepmc",
+  "slug": "europepmc",
+  "label": "Europe PMC",
+  "family": "literature_metadata",
+  "default_arguments": {
+    "query": "TP53",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "literature metadata, abstract-level discovery, DOI/PMID/PMCID provenance",
+  "cannot_support": "full methods/results quality or publication outcome unless inspected",
+  "handoff": "Sounding/Reef -> Current/Iceberg",
+  "terms_url": "https://europepmc.org/RestfulWebService"
+}

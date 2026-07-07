@@ -1,0 +1,13 @@
+{
+  "name": "AlphaFold DB",
+  "slug": "alphafold_db",
+  "adapter": "alphafold-db",
+  "family": "structure_modeling",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--accession` or `--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "experimental structure proof, binding, druggability, or function"
+  ],
+  "handoff": "Reef -> Iceberg/Anchor"
+}

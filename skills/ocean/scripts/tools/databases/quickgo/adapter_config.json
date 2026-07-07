@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "quickgo",
+  "slug": "quickgo",
+  "label": "QuickGO",
+  "family": "ontology",
+  "default_arguments": {
+    "query": "apoptosis",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "GO term metadata and annotation-resource provenance",
+  "cannot_support": "direct molecular mechanism, causality, or phenotype proof",
+  "handoff": "Reef -> Iceberg/Harbor",
+  "terms_url": "https://www.ebi.ac.uk/QuickGO/api/index.html"
+}

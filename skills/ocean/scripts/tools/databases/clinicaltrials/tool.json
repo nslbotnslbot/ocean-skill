@@ -1,0 +1,13 @@
+{
+  "name": "ClinicalTrials.gov",
+  "slug": "clinicaltrials",
+  "adapter": "clinicaltrials",
+  "family": "clinical_registry",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "treatment efficacy, safety superiority, or clinical guidance"
+  ],
+  "handoff": "Reef -> Iceberg/Anchor/Compass"
+}

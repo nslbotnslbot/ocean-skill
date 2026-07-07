@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: metagenomics-microbiome
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: microbiome/metagenomics QC, profiling, and compositional-analysis evidence plan
 - Final handoff: Iceberg
 

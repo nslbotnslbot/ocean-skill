@@ -1,0 +1,45 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "clinvar",
+  "adapter_label": "ClinVar via NCBI E-utilities",
+  "created_utc": "2026-07-07T17:08:18+00:00",
+  "executed": true,
+  "official_doc": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
+  "endpoint_family": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
+  "resource_role": "Public variant clinical-significance records and ClinVar metadata",
+  "query": {
+    "database": "clinvar",
+    "term": "BRCA1",
+    "retmax": 1
+  },
+  "query_url_or_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=clinvar&term=BRCA1&retmode=json&retmax=1",
+  "request_body": null,
+  "query_log": {
+    "status": "executed",
+    "records_inspected": 1,
+    "failure_or_limit": "",
+    "response": {
+      "status_code": 200,
+      "content_type": "application/json; charset=UTF-8",
+      "bytes": 297
+    }
+  },
+  "result_summary": {
+    "reported_count": "84925",
+    "returned_ids": [
+      "4857230"
+    ],
+    "query_translation": "BRCA1[All Fields]",
+    "inspected_fields": [
+      "esearchresult.count",
+      "esearchresult.idlist",
+      "esearchresult.querytranslation"
+    ]
+  },
+  "evidence_boundary": {
+    "can_support": "Traceable ClinVar record discovery and public metadata retrieval planning.",
+    "cannot_support": "Clinical diagnosis, treatment guidance, or variant pathogenicity without inspected record details and expert interpretation.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "opentargets",
+  "slug": "opentargets",
+  "label": "Open Targets",
+  "family": "drug_target",
+  "default_arguments": {
+    "ensembl_id": "ENSG00000141510",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--ensembl-id`",
+  "can_support": "target metadata and target-resource provenance",
+  "cannot_support": "mechanism, therapeutic efficacy, or clinical readiness from association scores",
+  "handoff": "Reef -> Iceberg/Compass",
+  "terms_url": "https://platform-docs.opentargets.org/data-access"
+}

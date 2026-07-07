@@ -1,6 +1,6 @@
 {
   "schema_version": "ocean-bioinformatics-workflow-plan-r1",
-  "date": "2026-07-05",
+  "date": "2026-07-08",
   "workflow": "fastq-qc",
   "intent": "raw FASTQ quality control and preprocessing evidence plan",
   "steps": [

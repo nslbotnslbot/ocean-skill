@@ -1,0 +1,28 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "clinicaltrials",
+  "adapter_label": "ClinicalTrials.gov",
+  "created_utc": "2026-07-07T17:10:44+00:00",
+  "executed": false,
+  "official_doc": "https://clinicaltrials.gov/data-api/api",
+  "endpoint_family": "https://clinicaltrials.gov/api/v2/",
+  "resource_role": "Clinical trial registry metadata",
+  "query": {
+    "query.term": "melanoma",
+    "pageSize": 2
+  },
+  "query_url_or_endpoint": "https://clinicaltrials.gov/api/v2/studies?query.term=melanoma&pageSize=2&format=json",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Study existence, registration status, design metadata, and posted registry fields.",
+    "cannot_support": "Treatment efficacy or clinical guidance unless results and publications are inspected.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

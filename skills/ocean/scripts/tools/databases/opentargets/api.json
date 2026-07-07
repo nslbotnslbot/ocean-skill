@@ -1,0 +1,52 @@
+{
+  "schema_version": "ocean-database-tool-api-v1",
+  "adapter": "opentargets",
+  "tool_name": "Open Targets",
+  "tool_slug": "opentargets",
+  "tool_family": "drug_target",
+  "interface_type": "reef_api_database_packet",
+  "python_wrapper": "scripts/query_packet.py",
+  "example_input": "examples/query.example.json",
+  "default_output": "outputs/opentargets-reef-packet.json",
+  "commands": [
+    {
+      "name": "query-packet",
+      "description": "Create a bounded dry-run Reef API/database packet.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--ensembl-id",
+        "ENSG00000141510",
+        "--retmax",
+        "2",
+        "--out",
+        "outputs/opentargets-reef-packet.json"
+      ]
+    },
+    {
+      "name": "query-packet-live",
+      "description": "Create a bounded live Reef API/database packet with explicit network execution.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--ensembl-id",
+        "ENSG00000141510",
+        "--retmax",
+        "2",
+        "--execute",
+        "--out",
+        "outputs/opentargets-reef-packet.json"
+      ]
+    }
+  ],
+  "output_contract": {
+    "ocean_module": "Reef",
+    "boundary_required": true,
+    "handoff": "Reef -> Iceberg/Compass"
+  },
+  "evidence_boundary": {
+    "can_support": "target metadata and target-resource provenance",
+    "cannot_support_alone": "mechanism, therapeutic efficacy, or clinical readiness from association scores",
+    "terms_url": "https://platform-docs.opentargets.org/data-access"
+  }
+}

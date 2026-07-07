@@ -1,0 +1,29 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "ncbi-eutils",
+  "adapter_label": "NCBI E-utilities",
+  "created_utc": "2026-07-07T17:06:25+00:00",
+  "executed": false,
+  "official_doc": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
+  "endpoint_family": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
+  "resource_role": "PubMed, Gene, GEO, SRA, Protein, PMC, and other Entrez metadata",
+  "query": {
+    "database": "gene",
+    "term": "TP53",
+    "retmax": 2
+  },
+  "query_url_or_endpoint": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=gene&term=TP53&retmode=json&retmax=2",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Traceable Entrez record search and public metadata retrieval planning.",
+    "cannot_support": "Full-paper evidence, mechanism, causality, clinical efficacy, or absence-of-evidence claims.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

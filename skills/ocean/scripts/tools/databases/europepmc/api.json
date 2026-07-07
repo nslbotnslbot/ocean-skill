@@ -1,0 +1,52 @@
+{
+  "schema_version": "ocean-database-tool-api-v1",
+  "adapter": "europepmc",
+  "tool_name": "Europe PMC",
+  "tool_slug": "europepmc",
+  "tool_family": "literature_metadata",
+  "interface_type": "reef_api_database_packet",
+  "python_wrapper": "scripts/query_packet.py",
+  "example_input": "examples/query.example.json",
+  "default_output": "outputs/europepmc-reef-packet.json",
+  "commands": [
+    {
+      "name": "query-packet",
+      "description": "Create a bounded dry-run Reef API/database packet.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--query",
+        "TP53",
+        "--retmax",
+        "2",
+        "--out",
+        "outputs/europepmc-reef-packet.json"
+      ]
+    },
+    {
+      "name": "query-packet-live",
+      "description": "Create a bounded live Reef API/database packet with explicit network execution.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--query",
+        "TP53",
+        "--retmax",
+        "2",
+        "--execute",
+        "--out",
+        "outputs/europepmc-reef-packet.json"
+      ]
+    }
+  ],
+  "output_contract": {
+    "ocean_module": "Reef",
+    "boundary_required": true,
+    "handoff": "Sounding/Reef -> Current/Iceberg"
+  },
+  "evidence_boundary": {
+    "can_support": "literature metadata, abstract-level discovery, DOI/PMID/PMCID provenance",
+    "cannot_support_alone": "full methods/results quality or publication outcome unless inspected",
+    "terms_url": "https://europepmc.org/RestfulWebService"
+  }
+}

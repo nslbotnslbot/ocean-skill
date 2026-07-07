@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-07-08",
+  "mode": "dry-run",
+  "cases": 13,
+  "pass": 13,
+  "needs_review": 0,
+  "adapters": [
+    "alphafold-db",
+    "chembl",
+    "clinicaltrials",
+    "clinvar",
+    "europepmc",
+    "gnomad",
+    "ncbi-eutils",
+    "opentargets",
+    "pubmed",
+    "quickgo",
+    "reactome",
+    "string",
+    "uniprot"
+  ],
+  "boundary": "Database tool packet creation only; not scientific validation."
+}

@@ -295,5 +295,61 @@
     "boundary_ok": true,
     "verdict": "pass",
     "notes": ""
+  },
+  {
+    "case_id": "API-R1-CLINICALTRIALS",
+    "adapter": "clinicaltrials",
+    "mode": "dry-run",
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "skills/ocean/scripts/run_reef_api_adapter.py",
+      "--adapter",
+      "clinicaltrials",
+      "--retmax",
+      "2",
+      "--timeout",
+      "20",
+      "--out",
+      "skills/ocean/evals/api-database-adapter-r1-dry-run-packets/clinicaltrials.json",
+      "--query",
+      "melanoma"
+    ],
+    "packet_path": "skills/ocean/evals/api-database-adapter-r1-dry-run-packets/clinicaltrials.json",
+    "returncode": 0,
+    "query_status": "dry-run",
+    "records_inspected": 0,
+    "expected_query_ok": true,
+    "boundary_ok": true,
+    "verdict": "pass",
+    "notes": ""
+  },
+  {
+    "case_id": "API-R1-NCBI-EUTILS",
+    "adapter": "ncbi-eutils",
+    "mode": "dry-run",
+    "command": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "skills/ocean/scripts/run_reef_api_adapter.py",
+      "--adapter",
+      "ncbi-eutils",
+      "--retmax",
+      "2",
+      "--timeout",
+      "20",
+      "--out",
+      "skills/ocean/evals/api-database-adapter-r1-dry-run-packets/ncbi-eutils.json",
+      "--database",
+      "gene",
+      "--query",
+      "TP53"
+    ],
+    "packet_path": "skills/ocean/evals/api-database-adapter-r1-dry-run-packets/ncbi-eutils.json",
+    "returncode": 0,
+    "query_status": "dry-run",
+    "records_inspected": 0,
+    "expected_query_ok": true,
+    "boundary_ok": true,
+    "verdict": "pass",
+    "notes": ""
   }
 ]

@@ -1,0 +1,18 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "reactome",
+  "slug": "reactome",
+  "label": "Reactome",
+  "family": "pathway",
+  "default_arguments": {
+    "query": "TP53",
+    "species_name": "Homo sapiens",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "pathway/resource discovery and pathway-context provenance",
+  "cannot_support": "pathway activity, causal disease mechanism, or treatment effect",
+  "handoff": "Reef -> Iceberg/Compass",
+  "terms_url": "https://reactome.org/license"
+}

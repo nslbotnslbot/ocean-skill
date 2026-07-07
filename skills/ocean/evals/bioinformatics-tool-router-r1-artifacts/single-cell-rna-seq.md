@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: single-cell-rna-seq
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: single-cell RNA-seq preprocessing, annotation, and latent-model provenance plan
 - Final handoff: Iceberg
 

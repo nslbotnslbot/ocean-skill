@@ -62,10 +62,22 @@ Supported starter adapters:
 | Adapter flag | Live behavior | Required input |
 |---|---|---|
 | `ncbi-eutils` | Entrez search packet over a selected database | `--query`, optional `--database` |
+| `pubmed` | PubMed search packet via NCBI E-utilities | `--query` |
+| `europepmc` | Europe PMC search packet | `--query` |
+| `chembl` | ChEMBL molecule search packet | `--query` |
+| `uniprot` | UniProt accession or search packet | `--accession` or `--query` |
 | `clinicaltrials` | ClinicalTrials.gov study search packet | `--query` |
 | `opentargets` | Open Targets target lookup packet | `--ensembl-id` |
+| `string` | STRING identifier mapping packet | `--identifier` or `--query`, explicit `--species` when relevant |
+| `reactome` | Reactome content-service search packet | `--query` |
+| `quickgo` | QuickGO ontology search packet | `--query` |
+| `clinvar` | ClinVar search packet via NCBI E-utilities | `--query` |
+| `gnomad` | gnomAD variant GraphQL packet | `--variant-id` |
+| `alphafold-db` | AlphaFold DB prediction metadata packet | `--accession` or `--query` |
 
 The runner output is a Reef resource packet, not a scientific conclusion. Hand it to Iceberg or Anchor before making claim-support or validation statements.
+
+These adapters are also exposed as tool-library folders under `scripts/tools/databases/<adapter_slug>/`. Each folder has `README.md`, `api.json`, `tool.json`, `adapter_config.json`, an example query, and `scripts/query_packet.py`, while still delegating execution to the shared runner above.
 
 ## Candidate Adapter Registry
 

@@ -1,0 +1,52 @@
+{
+  "schema_version": "ocean-database-tool-api-v1",
+  "adapter": "uniprot",
+  "tool_name": "UniProt",
+  "tool_slug": "uniprot",
+  "tool_family": "protein_annotation",
+  "interface_type": "reef_api_database_packet",
+  "python_wrapper": "scripts/query_packet.py",
+  "example_input": "examples/query.example.json",
+  "default_output": "outputs/uniprot-reef-packet.json",
+  "commands": [
+    {
+      "name": "query-packet",
+      "description": "Create a bounded dry-run Reef API/database packet.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--accession",
+        "P04637",
+        "--retmax",
+        "2",
+        "--out",
+        "outputs/uniprot-reef-packet.json"
+      ]
+    },
+    {
+      "name": "query-packet-live",
+      "description": "Create a bounded live Reef API/database packet with explicit network execution.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--accession",
+        "P04637",
+        "--retmax",
+        "2",
+        "--execute",
+        "--out",
+        "outputs/uniprot-reef-packet.json"
+      ]
+    }
+  ],
+  "output_contract": {
+    "ocean_module": "Reef",
+    "boundary_required": true,
+    "handoff": "Reef -> Iceberg/Anchor"
+  },
+  "evidence_boundary": {
+    "can_support": "protein accession, reviewed/unreviewed status, sequence/function annotation provenance",
+    "cannot_support_alone": "new function, mechanism, causality, or clinical utility without primary evidence",
+    "terms_url": "https://www.uniprot.org/help/license"
+  }
+}

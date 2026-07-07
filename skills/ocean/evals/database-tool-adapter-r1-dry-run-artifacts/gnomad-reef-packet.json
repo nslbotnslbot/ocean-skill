@@ -1,0 +1,34 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "gnomad",
+  "adapter_label": "gnomAD",
+  "created_utc": "2026-07-07T17:10:44+00:00",
+  "executed": false,
+  "official_doc": "https://gnomad.broadinstitute.org/help/api",
+  "endpoint_family": "https://gnomad.broadinstitute.org/api",
+  "resource_role": "Population variant frequency and constraint metadata",
+  "query": {
+    "variant_id": "11-5227002-T-A",
+    "dataset": "gnomad_r4"
+  },
+  "query_url_or_endpoint": "https://gnomad.broadinstitute.org/api",
+  "request_body": {
+    "query": "\n    query variant($variantId: String!, $dataset: DatasetId!) {\n      variant(variantId: $variantId, dataset: $dataset) {\n        variant_id\n        reference_genome\n        chrom\n        pos\n        ref\n        alt\n        exome { ac an af }\n        genome { ac an af }\n      }\n    }\n    ",
+    "variables": {
+      "variantId": "11-5227002-T-A",
+      "dataset": "gnomad_r4"
+    }
+  },
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Population-frequency or constraint-resource provenance for specified variants/genes.",
+    "cannot_support": "Pathogenicity, diagnosis, treatment, or clinical actionability from frequency alone.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

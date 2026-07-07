@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: spatial-transcriptomics
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: spatial transcriptomics alignment, annotation, deconvolution, and mapping plan
 - Final handoff: Iceberg
 

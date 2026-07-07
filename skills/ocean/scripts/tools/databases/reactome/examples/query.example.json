@@ -1,0 +1,6 @@
+{
+  "query": "TP53",
+  "species_name": "Homo sapiens",
+  "retmax": 2,
+  "timeout": 20
+}

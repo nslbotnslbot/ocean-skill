@@ -1,0 +1,29 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "quickgo",
+  "adapter_label": "QuickGO",
+  "created_utc": "2026-07-07T17:10:44+00:00",
+  "executed": false,
+  "official_doc": "https://www.ebi.ac.uk/QuickGO/api/index.html",
+  "endpoint_family": "https://www.ebi.ac.uk/QuickGO/services/",
+  "resource_role": "Gene Ontology term and annotation metadata",
+  "query": {
+    "query": "apoptosis",
+    "limit": "2",
+    "page": "1"
+  },
+  "query_url_or_endpoint": "https://www.ebi.ac.uk/QuickGO/services/ontology/go/search?query=apoptosis&limit=2&page=1",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Traceable GO term or annotation metadata discovery.",
+    "cannot_support": "Direct molecular mechanism, causality, or phenotype proof from annotation presence alone.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

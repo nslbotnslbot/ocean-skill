@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "clinicaltrials",
+  "slug": "clinicaltrials",
+  "label": "ClinicalTrials.gov",
+  "family": "clinical_registry",
+  "default_arguments": {
+    "query": "melanoma",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "trial registration, status, design, and registry-field provenance",
+  "cannot_support": "treatment efficacy, safety superiority, or clinical guidance",
+  "handoff": "Reef -> Iceberg/Anchor/Compass",
+  "terms_url": "https://clinicaltrials.gov/data-api/about-api"
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "clinvar",
+  "slug": "clinvar",
+  "label": "ClinVar",
+  "family": "variant_clinical_annotation",
+  "default_arguments": {
+    "query": "BRCA1",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "ClinVar record discovery and clinical-assertion metadata provenance",
+  "cannot_support": "diagnosis, treatment guidance, or pathogenicity without inspected details",
+  "handoff": "Reef -> Iceberg/Anchor",
+  "terms_url": "https://www.ncbi.nlm.nih.gov/clinvar/"
+}

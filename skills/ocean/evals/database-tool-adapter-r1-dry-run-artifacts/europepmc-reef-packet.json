@@ -1,0 +1,28 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "europepmc",
+  "adapter_label": "Europe PMC",
+  "created_utc": "2026-07-07T17:10:44+00:00",
+  "executed": false,
+  "official_doc": "https://europepmc.org/RestfulWebService",
+  "endpoint_family": "https://www.ebi.ac.uk/europepmc/webservices/rest/",
+  "resource_role": "Literature metadata, abstracts, preprints, and publication identifiers",
+  "query": {
+    "query": "TP53",
+    "pageSize": 2
+  },
+  "query_url_or_endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TP53&format=json&pageSize=2",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Traceable literature metadata and abstract-level source discovery.",
+    "cannot_support": "Full-paper methods/results quality, peer-review status, mechanism, or clinical efficacy unless source text is inspected.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

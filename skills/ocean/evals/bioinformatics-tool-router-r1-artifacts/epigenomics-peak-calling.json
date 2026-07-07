@@ -1,6 +1,6 @@
 {
   "schema_version": "ocean-bioinformatics-workflow-plan-r1",
-  "date": "2026-07-05",
+  "date": "2026-07-08",
   "workflow": "epigenomics-peak-calling",
   "intent": "epigenomic alignment, peak-calling, motif, and signal-track provenance plan",
   "steps": [

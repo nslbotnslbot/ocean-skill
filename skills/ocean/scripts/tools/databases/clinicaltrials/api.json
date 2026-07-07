@@ -1,0 +1,52 @@
+{
+  "schema_version": "ocean-database-tool-api-v1",
+  "adapter": "clinicaltrials",
+  "tool_name": "ClinicalTrials.gov",
+  "tool_slug": "clinicaltrials",
+  "tool_family": "clinical_registry",
+  "interface_type": "reef_api_database_packet",
+  "python_wrapper": "scripts/query_packet.py",
+  "example_input": "examples/query.example.json",
+  "default_output": "outputs/clinicaltrials-reef-packet.json",
+  "commands": [
+    {
+      "name": "query-packet",
+      "description": "Create a bounded dry-run Reef API/database packet.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--query",
+        "melanoma",
+        "--retmax",
+        "2",
+        "--out",
+        "outputs/clinicaltrials-reef-packet.json"
+      ]
+    },
+    {
+      "name": "query-packet-live",
+      "description": "Create a bounded live Reef API/database packet with explicit network execution.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--query",
+        "melanoma",
+        "--retmax",
+        "2",
+        "--execute",
+        "--out",
+        "outputs/clinicaltrials-reef-packet.json"
+      ]
+    }
+  ],
+  "output_contract": {
+    "ocean_module": "Reef",
+    "boundary_required": true,
+    "handoff": "Reef -> Iceberg/Anchor/Compass"
+  },
+  "evidence_boundary": {
+    "can_support": "trial registration, status, design, and registry-field provenance",
+    "cannot_support_alone": "treatment efficacy, safety superiority, or clinical guidance",
+    "terms_url": "https://clinicaltrials.gov/data-api/about-api"
+  }
+}

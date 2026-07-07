@@ -1,6 +1,6 @@
 {
   "schema_version": "ocean-bioinformatics-workflow-plan-r1",
-  "date": "2026-07-05",
+  "date": "2026-07-08",
   "workflow": "imaging-ai",
   "intent": "medical/biological imaging annotation, segmentation, and ML workflow provenance plan",
   "steps": [

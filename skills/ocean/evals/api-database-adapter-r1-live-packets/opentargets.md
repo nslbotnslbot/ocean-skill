@@ -6,7 +6,7 @@
 - Official documentation: https://platform-docs.opentargets.org/data-access/graphql-api
 - Endpoint family: https://api.platform.opentargets.org/api/v4/graphql
 - Executed: True
-- Query date UTC: 2026-07-04T15:41:58+00:00
+- Query date UTC: 2026-07-07T17:06:47+00:00
 - Query target: `{"ensembl_id": "ENSG00000141510"}`
 
 ## 二、Query Log

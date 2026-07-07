@@ -1,8 +1,8 @@
 {
-  "run_date": "2026-07-05",
+  "run_date": "2026-07-08",
   "mode": "live",
-  "cases": 11,
-  "pass": 11,
+  "cases": 13,
+  "pass": 13,
   "needs_review": 0,
   "adapters": [
     "uniprot",
@@ -15,7 +15,9 @@
     "quickgo",
     "clinvar",
     "gnomad",
-    "alphafold-db"
+    "alphafold-db",
+    "clinicaltrials",
+    "ncbi-eutils"
   ],
   "boundary": "API/database packet construction only; not scientific validation."
 }

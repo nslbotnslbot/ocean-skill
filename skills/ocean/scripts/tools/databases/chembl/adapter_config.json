@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "chembl",
+  "slug": "chembl",
+  "label": "ChEMBL",
+  "family": "drug_target",
+  "default_arguments": {
+    "query": "aspirin",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "compound/target/assay metadata and ChEMBL identifier provenance",
+  "cannot_support": "therapeutic efficacy, safety, mechanism, or clinical readiness",
+  "handoff": "Reef -> Iceberg/Compass",
+  "terms_url": "https://chembl.gitbook.io/chembl-interface-documentation/about"
+}

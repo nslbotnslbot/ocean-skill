@@ -1,0 +1,18 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "string",
+  "slug": "string",
+  "label": "STRING",
+  "family": "protein_interaction",
+  "default_arguments": {
+    "identifier": "TP53",
+    "species": 9606,
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--identifier` or `--query`, plus explicit `--species`",
+  "can_support": "identifier mapping and protein association-resource provenance",
+  "cannot_support": "direct physical binding, mechanism, causality, or disease relevance",
+  "handoff": "Reef -> Iceberg/Compass",
+  "terms_url": "https://string-db.org/cgi/access"
+}

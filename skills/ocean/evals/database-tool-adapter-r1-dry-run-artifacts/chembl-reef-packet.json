@@ -1,0 +1,28 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "chembl",
+  "adapter_label": "ChEMBL",
+  "created_utc": "2026-07-07T17:10:44+00:00",
+  "executed": false,
+  "official_doc": "https://chembl.gitbook.io/chembl-interface-documentation/web-services",
+  "endpoint_family": "https://www.ebi.ac.uk/chembl/api/data/",
+  "resource_role": "Bioactive molecules, targets, assays, and drug-like compound metadata",
+  "query": {
+    "pref_name__icontains": "aspirin",
+    "limit": 2
+  },
+  "query_url_or_endpoint": "https://www.ebi.ac.uk/chembl/api/data/molecule.json?pref_name__icontains=aspirin&limit=2&format=json",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Traceable molecule/target/assay metadata discovery.",
+    "cannot_support": "Efficacy, safety, clinical utility, or mechanism from database presence alone.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

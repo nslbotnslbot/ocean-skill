@@ -1,0 +1,13 @@
+{
+  "name": "NCBI E-utilities",
+  "slug": "ncbi_eutils",
+  "adapter": "ncbi-eutils",
+  "family": "entrez_metadata",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--database` and `--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "full evidence, mechanism, causality, or absence-of-evidence claims"
+  ],
+  "handoff": "Reef -> Sounding/Iceberg/Harbor"
+}

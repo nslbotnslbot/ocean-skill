@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: protein-structure
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: protein structure prediction, structure search, and confidence-boundary plan
 - Final handoff: Iceberg
 

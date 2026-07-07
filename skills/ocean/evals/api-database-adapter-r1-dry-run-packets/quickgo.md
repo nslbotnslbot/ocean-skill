@@ -6,7 +6,7 @@
 - Official documentation: https://www.ebi.ac.uk/QuickGO/api/index.html
 - Endpoint family: https://www.ebi.ac.uk/QuickGO/services/
 - Executed: False
-- Query date UTC: 2026-07-04T15:44:25+00:00
+- Query date UTC: 2026-07-07T17:06:25+00:00
 - Query target: `{"query": "apoptosis", "limit": "2", "page": "1"}`
 
 ## 二、Query Log
