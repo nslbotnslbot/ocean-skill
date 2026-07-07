@@ -8,6 +8,8 @@ Each tool folder includes `examples/run-record.example.json`, a template for rec
 
 Each tool folder also includes `api.json`, `wrapper_config.json`, `scripts/create_source_packet.py`, and `scripts/probe_or_plan.py`. These define a stable local wrapper contract for bounded availability/plan probes and for turning inspected run metadata into source packets; they do not install or execute biological analyses.
 
+Lightweight CLI tool folders additionally include `scripts/run_cli.py`, which can run a bounded local availability probe or record an explicit user-supplied command invocation as provenance. It does not choose inputs, download references, or validate biological conclusions.
+
 Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff guidance.
 
 Shared execution layers live in `../common/`:
@@ -87,3 +89,34 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
 ```
 
 The wrapper records local availability/import/version evidence where safe, or creates a launcher/source-packet plan for heavy, GUI, license, GPU, workflow, or adapter-style tools. It is not a claim that the tool is installed, a workflow ran, or a biological conclusion is valid.
+
+## Lightweight CLI runners
+
+For lightweight CLI tools, use the generated per-tool runner:
+
+```bash
+python3 scripts/run_cli.py probe \
+  --output /path/to/<tool>-cli-probe.json
+```
+
+For an explicit local command run, provide inspected arguments:
+
+```bash
+python3 scripts/run_cli.py run \
+  --args-json '["<user-supplied arguments>"]' \
+  --output /path/to/<tool>-cli-run-record.json \
+  --packet-output /path/to/<tool>-cli-run-source-packet.json
+```
+
+From the repository root, regenerate and evaluate the full lightweight CLI set with:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_cli_runners.py \
+  --skill-dir skills/ocean
+
+python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+The CLI runner eval checks entrypoint behavior and evidence-boundary recording. It is not a biological workflow test, and an unavailable command is recorded as an environment boundary rather than a scientific failure.

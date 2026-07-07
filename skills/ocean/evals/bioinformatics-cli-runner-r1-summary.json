@@ -1,0 +1,25 @@
+{
+  "run_date": "2026-07-08",
+  "tools_checked": 60,
+  "pass": 60,
+  "needs_review": 0,
+  "by_execution_status": {
+    "not_available_current_environment": 60
+  },
+  "by_family": {
+    "alignment_file_operations": 4,
+    "epigenomics_peak_calling": 5,
+    "genome_assembly_annotation": 12,
+    "microbiome_metagenomics": 5,
+    "phylogenetics_comparative_genomics": 7,
+    "proteomics_metabolomics": 1,
+    "qc_preprocessing": 8,
+    "rna_seq_quantification": 5,
+    "sequence_alignment": 5,
+    "single_cell_analysis": 2,
+    "spliced_rna_alignment": 2,
+    "structure_modeling": 2,
+    "variant_calling": 2
+  },
+  "evidence_boundary": "Lightweight CLI runner probe eval only; no installation, biological analysis, benchmark, or scientific validation."
+}

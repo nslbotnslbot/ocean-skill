@@ -58,3 +58,25 @@ python3 scripts/probe_or_plan.py \
 
 This wrapper records availability or planning evidence only. It does not install the tool, download databases, run biological analyses, benchmark methods, or validate scientific claims.
 
+## CLI Runner Wrapper
+
+For lightweight CLI tools, use `scripts/run_cli.py` to record bounded local CLI provenance.
+
+Probe only:
+
+```bash
+python3 scripts/run_cli.py probe \
+  --output /path/to/eggnog_mapper-cli-probe.json
+```
+
+Run with explicit user-supplied arguments:
+
+```bash
+python3 scripts/run_cli.py run \
+  --args-json '["<user-supplied arguments>"]' \
+  --output /path/to/eggnog_mapper-cli-run-record.json \
+  --packet-output /path/to/eggnog_mapper-cli-run-source-packet.json
+```
+
+This runner does not install software, choose private input files, download references, or validate scientific claims. It records command provenance for downstream OCEAN review.
+

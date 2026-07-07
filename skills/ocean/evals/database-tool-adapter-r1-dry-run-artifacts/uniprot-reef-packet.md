@@ -6,7 +6,7 @@
 - Official documentation: https://www.uniprot.org/help/api
 - Endpoint family: https://rest.uniprot.org/
 - Executed: False
-- Query date UTC: 2026-07-07T17:10:44+00:00
+- Query date UTC: 2026-07-07T17:24:54+00:00
 - Query target: `{"accession": "P04637"}`
 
 ## 二、Query Log

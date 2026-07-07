@@ -6,7 +6,7 @@
 - Official documentation: https://gnomad.broadinstitute.org/help/api
 - Endpoint family: https://gnomad.broadinstitute.org/api
 - Executed: False
-- Query date UTC: 2026-07-07T17:10:44+00:00
+- Query date UTC: 2026-07-07T17:24:54+00:00
 - Query target: `{"variant_id": "11-5227002-T-A", "dataset": "gnomad_r4"}`
 
 ## 二、Query Log

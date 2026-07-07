@@ -51,5 +51,7 @@
   "command_template": "kraken2 <user-supplied arguments>",
   "handoff": "Anchor",
   "environment_note": "current local PATH/Python/R environment unless a verified container or workflow runtime is supplied",
-  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation."
+  "evidence_boundary": "Per-tool wrapper config only; not installation, execution, benchmark, or biological validation.",
+  "cli_runner_wrapper": "scripts/run_cli.py",
+  "cli_runner_boundary": "Runs local command only when executable exists and user supplies explicit arguments; records provenance only."
 }

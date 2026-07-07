@@ -52,6 +52,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-eval-results.md`: structural eval for backlog completeness, rank continuity, next actions, and evidence boundaries.
 - `skills/ocean/evals/bioinformatics-per-tool-wrapper-r1-results.md`: full execution check for the generated per-tool `probe_or_plan.py` entrypoints across all 115 tool folders.
 - `skills/ocean/evals/bioinformatics-tool-scaffold-r1-results.md`: scaffold completeness check, now including source-packet wrappers, per-tool probe/plan wrappers, wrapper configs, API commands, examples, and usage guides.
+- `skills/ocean/evals/bioinformatics-cli-runner-r1-results.md`: bounded local CLI runner probe eval for the 60 lightweight command-line tool folders with per-tool `scripts/run_cli.py` entrypoints.
 - `skills/ocean/evals/database-tool-adapter-r1-dry-run-results.md`: per-resource database tool-folder eval for 13 Reef adapters without network calls.
 - `skills/ocean/evals/database-tool-adapter-r1-live-results.md`: bounded live public API eval for the same 13 database tool folders.
 
@@ -92,6 +93,8 @@ Bioinformatics Wrapper Implementation Backlog R1 converts the all-tool readiness
 Bioinformatics Per-Tool Wrapper R1 executes every generated `scripts/probe_or_plan.py` entrypoint. It checks that all 115 tool folders now have callable code paths that produce bounded availability, import, or launcher-plan artifacts. The current environment produced 2 executed probes, 92 environment-missing records, and 21 planned-not-executed records; all 115 wrapper entrypoints passed structurally.
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
+
+Bioinformatics Lightweight CLI Runner R1 adds per-tool `scripts/run_cli.py` entrypoints for 60 lightweight command-line tools. In the current local environment, all 60 probes correctly recorded `not_available_current_environment`; this is an environment boundary, not a biological analysis failure. The eval verifies that each runner writes bounded provenance artifacts and stops cleanly without pretending unavailable software ran.
 
 API/Database Adapter R1 adds executable Reef wrappers for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities. Dry-run eval checks packet construction without network calls; bounded live eval performs public API requests and passed 13/13 adapters.
 

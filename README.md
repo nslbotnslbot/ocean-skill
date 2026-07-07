@@ -250,6 +250,8 @@ Bioinformatics Tool Router R1 profiles all 115 scaffolded tools into execution l
 
 Each bioinformatics tool folder now also includes a science-skills-style `references/tool_usage.md` guide. These guides define use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff paths without claiming the external tool is installed.
 
+Lightweight CLI bioinformatics tools now have generated per-tool `scripts/run_cli.py` entrypoints. These can record bounded availability probes or explicit user-supplied command run records, while preserving environment-missing boundaries when software is not installed.
+
 Reef now has executable API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB. These wrappers can run dry, or make bounded live public API requests with `--execute`, then write OCEAN packets with explicit evidence boundaries.
 
 Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.

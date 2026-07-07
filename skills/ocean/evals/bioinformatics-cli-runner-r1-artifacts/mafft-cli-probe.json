@@ -1,0 +1,39 @@
+{
+  "schema_version": "ocean-cli-wrapper-r1",
+  "wrapper": "cli_subprocess_wrapper.py",
+  "mode": "probe",
+  "execution_status": "not_available_current_environment",
+  "software_record": {
+    "tool_name": "MAFFT",
+    "tool_slug": "mafft",
+    "tool_version": "",
+    "task_intent": "MAFFT bounded availability probe or launcher/source-packet plan",
+    "command_line": "mafft --version",
+    "parameters": {
+      "probe_args": "--version"
+    },
+    "reference_or_index": "not applicable for CLI probe",
+    "input_files": [],
+    "output_files": [],
+    "logs_or_qc": [],
+    "environment": "current local PATH environment",
+    "date": "2026-07-08",
+    "supports_claims": [],
+    "cannot_support": [
+      "biological mechanism",
+      "causal conclusion",
+      "clinical utility",
+      "publication readiness",
+      "reproducibility without rerun/log/environment checks"
+    ],
+    "boundary_status": "candidate_route",
+    "handoff": "Anchor",
+    "execution_status": "not_available_current_environment",
+    "returncode": null,
+    "resolved_path": "",
+    "stdout_excerpt": "",
+    "stderr_excerpt": "mafft was not found on PATH.",
+    "created_at": "2026-07-08T02:24:33"
+  },
+  "evidence_boundary": "Availability/probe evidence only; not a biological analysis."
+}

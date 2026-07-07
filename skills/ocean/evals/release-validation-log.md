@@ -2549,3 +2549,56 @@ Live mode only used small public queries and recorded Reef packets; it did not s
 ### Evidence Boundary / 证据边界
 
 Passing this eval means OCEAN can expose common public biomedical databases as bounded Reef tool adapters and produce traceable query packets. It does not mean the database records prove biological mechanism, clinical utility, treatment efficacy, pathogenicity, benchmark validity, or publication readiness. Any claim still needs inspected source packets, evidence hierarchy review, and downstream Iceberg/Anchor/Compass audit.
+
+## 2026-07-08 - Bioinformatics lightweight CLI runner R1
+
+### 中文上下文
+
+这轮继续把 bioinformatics tool folder 从“有 scaffold / 有 source-packet 模板 / 有 probe-or-plan 入口”推进到更接近 science-skills-style 的可运行工具层。针对 60 个 `lightweight_cli` 工具，新增每个工具自己的 `scripts/run_cli.py`。它不是安装器，也不是自动分析 workflow；它只做两件事：bounded availability/version/help probe，或者在用户明确提供参数时记录本地 CLI 运行 provenance。
+
+### English Context
+
+This round adds per-tool CLI runner entrypoints for lightweight command-line bioinformatics tools. The generated `scripts/run_cli.py` files delegate to the shared `common/cli_subprocess_wrapper.py`, so each tool can record bounded local command availability and explicit user-supplied run provenance without claiming installation, workflow completion, benchmarking, or biological validation.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/common/per_tool_cli_runner.py`.
+- Added `scripts/tools/generate_bioinformatics_cli_runners.py`.
+- Added `scripts/tools/run_bioinformatics_cli_runner_eval.py`.
+- Generated `scripts/run_cli.py` for 60 lightweight CLI tool folders.
+- Updated those 60 tools' `wrapper_config.json` with `cli_runner_wrapper` and `cli_runner_boundary`.
+- Updated those 60 tools' `api.json` files with `cli-probe` and `cli-run-record` commands.
+- Updated those 60 tools' README files with a `CLI Runner Wrapper` section.
+- Updated public docs and README notes to describe the lightweight CLI runner layer.
+
+### Tool Coverage
+
+The 60 generated lightweight CLI runners cover common tools across QC/preprocessing, alignment, assembly/annotation, variant calling, RNA-seq quantification, epigenomics, metagenomics, phylogenetics, proteomics, and structural-search style workflows. Examples include FastQC, MultiQC, cutadapt, fastp, samtools, bcftools, bedtools, BLAST, Bowtie2, BWA, HISAT2, STAR, minimap2, LAST, MAFFT, HMMER, Kallisto, Salmon, StringTie, MACS2/MACS3, Kraken2, MetaPhlAn, HUMAnN, SPAdes, Flye, Prokka, BUSCO, IQ-TREE, RAxML, OrthoFinder, and DIANN.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Lightweight CLI tool folders detected | 60 |
+| Generated `scripts/run_cli.py` entrypoints | 60 |
+| CLI runner eval | 60/60 pass |
+| Needs review | 0 |
+| Executed local CLI probes | 0 |
+| Not available in current environment | 60 |
+| Per-tool probe/plan wrapper regression | 115/115 pass |
+| Scaffold regression | 115/115 pass |
+| Bioinformatics tool router regression | 133/133 pass |
+| Database tool adapter dry-run regression | 13/13 pass |
+| OCEAN contract check | 33/33 pass |
+| Python compile | pass |
+| `git diff --check` | pass |
+
+### Error Notes
+
+The first CLI runner eval produced 0/60 pass because `--version` style probe arguments were passed through an internal argparse bridge as the next option instead of as a value to `--probe-args`. This was a wrapper bug, not a tool failure. The bridge was fixed to pass probe arguments with the `--probe-args=<value>` form, and the eval was rerun successfully with 60/60 pass.
+
+All 60 lightweight CLI probes recorded `not_available_current_environment` in this local environment. This is expected for the current machine and is intentionally recorded as an environment/install boundary. It does not mean the tools are scientifically invalid; it means OCEAN must not pretend they ran.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means every lightweight CLI bioinformatics tool folder now has a bounded per-tool CLI runner that can probe local availability or record explicit user-supplied command provenance. It does not mean the external tools are installed, that biological or clinical data were processed, that any workflow completed, that benchmark metrics are valid, or that any biological claim is supported. Scientific use still requires inspected input manifests, references/databases, exact command lines, versions, parameters, logs, outputs, and downstream OCEAN audit.

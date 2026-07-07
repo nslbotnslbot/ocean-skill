@@ -30,6 +30,34 @@
         "--output",
         "outputs/clustal_omega-probe-or-plan.json"
       ]
+    },
+    {
+      "name": "cli-probe",
+      "description": "Run the bounded per-tool CLI availability/version/help probe.",
+      "argv": [
+        "python3",
+        "scripts/run_cli.py",
+        "probe",
+        "--output",
+        "outputs/clustal_omega-cli-probe.json",
+        "--packet-output",
+        "outputs/clustal_omega-cli-probe-source-packet.json"
+      ]
+    },
+    {
+      "name": "cli-run-record",
+      "description": "Run user-supplied local CLI arguments and record bounded provenance. Replace the placeholder args with a real inspected command plan.",
+      "argv": [
+        "python3",
+        "scripts/run_cli.py",
+        "run",
+        "--args-json",
+        "[\"<user-supplied arguments>\"]",
+        "--output",
+        "outputs/clustal_omega-cli-run-record.json",
+        "--packet-output",
+        "outputs/clustal_omega-cli-run-source-packet.json"
+      ]
     }
   ],
   "required_input_fields": [
@@ -69,5 +97,6 @@
     "license_or_terms_check_required_when_applicable": true
   },
   "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
-  "wrapper_config": "wrapper_config.json"
+  "wrapper_config": "wrapper_config.json",
+  "cli_runner_wrapper": "scripts/run_cli.py"
 }
