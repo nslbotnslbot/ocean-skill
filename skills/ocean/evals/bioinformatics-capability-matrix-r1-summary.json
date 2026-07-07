@@ -1,0 +1,123 @@
+{
+  "run_date": "2026-07-06",
+  "tools": 115,
+  "local_smoke_status": {
+    "executed": 3,
+    "not_available_current_environment": 112
+  },
+  "capability_tier": {
+    "source_packet_adapter": 1,
+    "source_packet_scaffold": 114
+  },
+  "families": {
+    "alignment_file_operations": {
+      "tools": 4,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 4
+    },
+    "differential_expression": {
+      "tools": 4,
+      "executed": 2,
+      "adapters": 0,
+      "scaffolds": 4
+    },
+    "epigenomics_peak_calling": {
+      "tools": 6,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 6
+    },
+    "genome_assembly_annotation": {
+      "tools": 12,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 12
+    },
+    "imaging_signal_ml": {
+      "tools": 6,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 6
+    },
+    "microbiome_metagenomics": {
+      "tools": 6,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 6
+    },
+    "multi_omics_integration": {
+      "tools": 5,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 5
+    },
+    "phylogenetics_comparative_genomics": {
+      "tools": 7,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 7
+    },
+    "proteomics_metabolomics": {
+      "tools": 7,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 7
+    },
+    "qc_preprocessing": {
+      "tools": 8,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 8
+    },
+    "rna_seq_quantification": {
+      "tools": 5,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 5
+    },
+    "sequence_alignment": {
+      "tools": 5,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 5
+    },
+    "single_cell_analysis": {
+      "tools": 8,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 8
+    },
+    "spatial_transcriptomics": {
+      "tools": 7,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 7
+    },
+    "spliced_rna_alignment": {
+      "tools": 2,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 2
+    },
+    "structure_modeling": {
+      "tools": 9,
+      "executed": 1,
+      "adapters": 1,
+      "scaffolds": 8
+    },
+    "variant_calling": {
+      "tools": 5,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 5
+    },
+    "workflow_reproducibility": {
+      "tools": 9,
+      "executed": 0,
+      "adapters": 0,
+      "scaffolds": 9
+    }
+  },
+  "evidence_boundary": "Capability matrix joins registry/API/smoke metadata only; it does not prove tool execution capability beyond recorded smoke results."
+}

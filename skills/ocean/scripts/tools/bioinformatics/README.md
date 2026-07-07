@@ -17,3 +17,15 @@ Shared execution layers live in `../common/`:
 - `heavy_tool_launcher.py` for non-executing launcher plans for tools such as Cell Ranger, GATK, AlphaFold, MaxQuant, Galaxy, 3D Slicer, and ChimeraX.
 
 Tool folders: 115
+
+## Capability matrix
+
+Use the cross-tool capability matrix to summarize which folders are only scaffolds, which have source-packet adapters, and which tools are actually available in the current local environment:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+The matrix is a planning artifact. It must not be treated as biological validation, benchmark evidence, or proof that unavailable tools can run locally.
