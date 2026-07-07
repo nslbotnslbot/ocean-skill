@@ -6,7 +6,7 @@
 - Official documentation: https://chembl.gitbook.io/chembl-interface-documentation/web-services
 - Endpoint family: https://www.ebi.ac.uk/chembl/api/data/
 - Executed: False
-- Query date UTC: 2026-07-07T17:34:51+00:00
+- Query date UTC: 2026-07-07T17:45:44+00:00
 - Query target: `{"pref_name__icontains": "aspirin", "limit": 2}`
 
 ## 二、Query Log

@@ -33,6 +33,9 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `run_bioinformatics_cli_runner_eval.py` | Execute lightweight CLI runner probes and validate bounded provenance artifacts |
 | `generate_bioinformatics_package_runners.py` | Generate per-tool `scripts/run_package.py` entrypoints for Python/R package tools |
 | `run_bioinformatics_package_runner_eval.py` | Execute Python/R package runner probes and validate bounded provenance artifacts |
+| `generate_bioinformatics_launcher_runners.py` | Generate per-tool `scripts/run_launcher.py` entrypoints for heavy, workflow-runtime, and source-packet-adapter tools |
+| `run_bioinformatics_launcher_runner_eval.py` | Execute launcher-plan and workflow-runtime probe checks |
+| `run_bioinformatics_code_coverage_eval.py` | Verify all 115 bioinformatics tool folders have generic wrappers and execution-layer-specific runner/API commands |
 | `generate_database_adapter_scaffold.py` | Generate per-resource database adapter folders around the shared Reef API runner |
 | `run_database_tool_adapter_eval.py` | Execute database adapter folder entrypoints in dry-run or bounded live mode |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
@@ -162,6 +165,37 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
 ```
 
 Each Python/R package folder receives `scripts/run_package.py` plus `package-probe` and `package-run-record` API commands. The runner records package/module availability and can record explicit user-supplied Python/R script execution provenance. It does not install packages, choose private inputs, design analyses, validate scripts, complete workflows, benchmark methods, or validate biological claims.
+
+## Launcher and workflow runners
+
+For heavy, workflow-runtime, and source-packet-adapter tools, generate per-tool launcher entrypoints:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_launcher_runners.py \
+  --skill-dir skills/ocean
+```
+
+Then run the bounded launcher/workflow eval:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_launcher_runner_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Each relevant tool folder receives `scripts/run_launcher.py` and a `launcher-plan` API command. Workflow runtimes also receive `runtime-probe` and `runtime-run-record` commands. Launcher plans are intentionally non-executing; they record required assets, stop conditions, compute/privacy/license notes, and run evidence needed before any source packet can support downstream OCEAN review.
+
+## All-tool code coverage
+
+After generating CLI, package, and launcher runners, run the structural coverage check:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_code_coverage_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+This confirms that every bioinformatics tool folder has the generic source-packet/probe wrappers plus the execution-layer-specific runner and API commands. It is a code-surface check, not a local installation check or biological workflow validation.
 
 ## Database tool adapters
 

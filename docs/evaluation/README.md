@@ -54,6 +54,8 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-tool-scaffold-r1-results.md`: scaffold completeness check, now including source-packet wrappers, per-tool probe/plan wrappers, wrapper configs, API commands, examples, and usage guides.
 - `skills/ocean/evals/bioinformatics-cli-runner-r1-results.md`: bounded local CLI runner probe eval for the 60 lightweight command-line tool folders with per-tool `scripts/run_cli.py` entrypoints.
 - `skills/ocean/evals/bioinformatics-package-runner-r1-results.md`: bounded Python/R package runner probe eval for 26 package-based tool folders with per-tool `scripts/run_package.py` entrypoints.
+- `skills/ocean/evals/bioinformatics-launcher-runner-r1-results.md`: non-executing launcher-plan and workflow-runtime probe eval for the remaining 29 heavy, workflow-runtime, and source-packet-adapter tool folders with per-tool `scripts/run_launcher.py` entrypoints.
+- `skills/ocean/evals/bioinformatics-code-coverage-r1-results.md`: structural all-tool code-coverage eval confirming all 115 bioinformatics tool folders have their generic wrappers and execution-layer-specific runner/API commands.
 - `skills/ocean/evals/database-tool-adapter-r1-dry-run-results.md`: per-resource database tool-folder eval for 13 Reef adapters without network calls.
 - `skills/ocean/evals/database-tool-adapter-r1-live-results.md`: bounded live public API eval for the same 13 database tool folders.
 
@@ -98,6 +100,10 @@ Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_us
 Bioinformatics Lightweight CLI Runner R1 adds per-tool `scripts/run_cli.py` entrypoints for 60 lightweight command-line tools. In the current local environment, all 60 probes correctly recorded `not_available_current_environment`; this is an environment boundary, not a biological analysis failure. The eval verifies that each runner writes bounded provenance artifacts and stops cleanly without pretending unavailable software ran.
 
 Bioinformatics Python/R Package Runner R1 adds per-tool `scripts/run_package.py` entrypoints for 26 Python-package and R/Bioconductor tools. In the current local environment, DESeq2 and limma-voom package probes executed, while 24 package/module probes recorded `not_available_current_environment`. The eval verifies package-probe and source-packet behavior only; it does not validate scripts, workflows, biological analyses, or scientific claims.
+
+Bioinformatics Launcher / Workflow Runner R1 adds per-tool `scripts/run_launcher.py` entrypoints for 29 heavy, workflow-runtime, and source-packet-adapter tools. It creates 29 non-executing launcher/source-packet plans and probes 8 workflow runtimes. In the current local environment, all workflow runtime probes recorded `not_available_current_environment`; this is an environment boundary, not a workflow failure.
+
+Bioinformatics Code Coverage R1 checks the current all-tool code surface. It confirms 115/115 bioinformatics tool folders have generic source-packet/probe wrappers plus their execution-layer-specific runner/API commands: 60 CLI runners, 26 Python/R package runners, and 29 launcher/workflow/source-adapter runners.
 
 API/Database Adapter R1 adds executable Reef wrappers for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities. Dry-run eval checks packet construction without network calls; bounded live eval performs public API requests and passed 13/13 adapters.
 

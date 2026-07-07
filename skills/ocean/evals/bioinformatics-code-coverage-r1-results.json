@@ -1,0 +1,1599 @@
+[
+  {
+    "slug": "alevin_fry",
+    "tool_name": "Alevin-fry",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "alphafold",
+    "tool_name": "AlphaFold",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "alphafold_db",
+    "tool_name": "AlphaFold DB",
+    "execution_layer": "source_packet_adapter",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "azimuth",
+    "tool_name": "Azimuth",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "bakta",
+    "tool_name": "Bakta",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "bcftools",
+    "tool_name": "bcftools",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "bedtools",
+    "tool_name": "BEDTools",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "blast",
+    "tool_name": "BLAST",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "bowtie2",
+    "tool_name": "Bowtie2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "bracken",
+    "tool_name": "Bracken",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "busco",
+    "tool_name": "BUSCO",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "bwa",
+    "tool_name": "BWA",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "canu",
+    "tool_name": "Canu",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "cell2location",
+    "tool_name": "cell2location",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "cell_ranger",
+    "tool_name": "Cell Ranger",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "celltypist",
+    "tool_name": "CellTypist",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "checkm",
+    "tool_name": "CheckM",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "chimerax",
+    "tool_name": "ChimeraX",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "clustal_omega",
+    "tool_name": "Clustal Omega",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "colabfold",
+    "tool_name": "ColabFold",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "conda",
+    "tool_name": "Conda",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "cutadapt",
+    "tool_name": "cutadapt",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "cwl",
+    "tool_name": "CWL",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "dada2",
+    "tool_name": "DADA2",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "deeptools",
+    "tool_name": "deepTools",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "deepvariant",
+    "tool_name": "DeepVariant",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "deseq2",
+    "tool_name": "DESeq2",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "dia_nn",
+    "tool_name": "DIA-NN",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "diablo",
+    "tool_name": "DIABLO",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "docker",
+    "tool_name": "Docker",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "edger",
+    "tool_name": "edgeR",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "eggnog_mapper",
+    "tool_name": "eggNOG-mapper",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "fastp",
+    "tool_name": "fastp",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "fastqc",
+    "tool_name": "FastQC",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "fasttree",
+    "tool_name": "FastTree",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "featurecounts",
+    "tool_name": "featureCounts",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "fimo",
+    "tool_name": "FIMO",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "flye",
+    "tool_name": "Flye",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "fragpipe",
+    "tool_name": "FragPipe",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "freebayes",
+    "tool_name": "FreeBayes",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "galaxy",
+    "tool_name": "Galaxy",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "gatk",
+    "tool_name": "GATK",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "giotto",
+    "tool_name": "Giotto",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "hh_suite",
+    "tool_name": "HH-suite",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "hisat2",
+    "tool_name": "HISAT2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "hmmer",
+    "tool_name": "HMMER",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "homer",
+    "tool_name": "HOMER",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "htslib",
+    "tool_name": "HTSlib",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "humann",
+    "tool_name": "HUMAnN",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "interproscan",
+    "tool_name": "InterProScan",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "iq_tree",
+    "tool_name": "IQ-TREE",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "itk_snap",
+    "tool_name": "ITK-SNAP",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "kallisto",
+    "tool_name": "kallisto",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "kraken2",
+    "tool_name": "Kraken2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "last",
+    "tool_name": "LAST",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "limma_voom",
+    "tool_name": "limma-voom",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "macs2",
+    "tool_name": "MACS2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "macs3",
+    "tool_name": "MACS3",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "mafft",
+    "tool_name": "MAFFT",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "maxquant",
+    "tool_name": "MaxQuant",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "megahit",
+    "tool_name": "MEGAHIT",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "meme",
+    "tool_name": "MEME",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "metaphlan",
+    "tool_name": "MetaPhlAn",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "minimap2",
+    "tool_name": "minimap2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "mixomics",
+    "tool_name": "mixOmics",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "modeller",
+    "tool_name": "MODELLER",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "mofa",
+    "tool_name": "MOFA",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "mofaplus",
+    "tool_name": "MOFA+",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "monai",
+    "tool_name": "MONAI",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "ms_dial",
+    "tool_name": "MS-DIAL",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "multiqc",
+    "tool_name": "MultiQC",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "muscle",
+    "tool_name": "MUSCLE",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "mutect2",
+    "tool_name": "Mutect2",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "mzmine",
+    "tool_name": "MZmine",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "nextflow",
+    "tool_name": "Nextflow",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "nf_core",
+    "tool_name": "nf-core",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "nnu_net",
+    "tool_name": "nnU-Net",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "orthofinder",
+    "tool_name": "OrthoFinder",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "picard",
+    "tool_name": "Picard",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "prokka",
+    "tool_name": "Prokka",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "pymol",
+    "tool_name": "PyMOL",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "qiime2",
+    "tool_name": "QIIME2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "qualimap",
+    "tool_name": "Qualimap",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "quast",
+    "tool_name": "QUAST",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "raven",
+    "tool_name": "Raven",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "raxml",
+    "tool_name": "RAxML",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "rosettafold",
+    "tool_name": "RoseTTAFold",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "rsem",
+    "tool_name": "RSEM",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "salmon",
+    "tool_name": "Salmon",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "samtools",
+    "tool_name": "SAMtools",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "scanpy",
+    "tool_name": "Scanpy",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "scvi",
+    "tool_name": "scVI",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "seurat",
+    "tool_name": "Seurat",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "simpleitk",
+    "tool_name": "SimpleITK",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "singularity_apptainer",
+    "tool_name": "Singularity-Apptainer",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "skyline",
+    "tool_name": "Skyline",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "sleuth",
+    "tool_name": "sleuth",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "snakemake",
+    "tool_name": "Snakemake",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "space_ranger",
+    "tool_name": "Space Ranger",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "spades",
+    "tool_name": "SPAdes",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "squidpy",
+    "tool_name": "Squidpy",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "star",
+    "tool_name": "STAR",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "starsolo",
+    "tool_name": "STARsolo",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "stereoscope",
+    "tool_name": "Stereoscope",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "stlearn",
+    "tool_name": "stLearn",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "strelka2",
+    "tool_name": "Strelka2",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "stringtie",
+    "tool_name": "StringTie",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "tangram",
+    "tool_name": "Tangram",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "three_d_slicer",
+    "tool_name": "3D Slicer",
+    "execution_layer": "heavy_launcher_plan",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "torchio",
+    "tool_name": "TorchIO",
+    "execution_layer": "python_package",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "trim_galore",
+    "tool_name": "Trim Galore",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "trimmomatic",
+    "tool_name": "Trimmomatic",
+    "execution_layer": "lightweight_cli",
+    "layer_runner": "scripts/run_cli.py",
+    "api_commands": [
+      "cli-probe",
+      "cli-run-record",
+      "create-source-packet",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "wdl_cromwell",
+    "tool_name": "WDL-Cromwell",
+    "execution_layer": "workflow_runtime",
+    "layer_runner": "scripts/run_launcher.py",
+    "api_commands": [
+      "create-source-packet",
+      "launcher-plan",
+      "probe-or-plan",
+      "runtime-probe",
+      "runtime-run-record"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "wgcna",
+    "tool_name": "WGCNA",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "slug": "xcms",
+    "tool_name": "XCMS",
+    "execution_layer": "r_bioconductor",
+    "layer_runner": "scripts/run_package.py",
+    "api_commands": [
+      "create-source-packet",
+      "package-probe",
+      "package-run-record",
+      "probe-or-plan"
+    ],
+    "issues": [],
+    "verdict": "pass"
+  }
+]

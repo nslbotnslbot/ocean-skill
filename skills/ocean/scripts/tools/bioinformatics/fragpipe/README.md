@@ -58,3 +58,14 @@ python3 scripts/probe_or_plan.py \
 
 This wrapper records availability or planning evidence only. It does not install the tool, download databases, run biological analyses, benchmark methods, or validate scientific claims.
 
+## Launcher / Workflow Runner Wrapper
+
+Use `scripts/run_launcher.py` to create a bounded non-executing launch/source-packet plan:
+
+```bash
+python3 scripts/run_launcher.py plan \
+  --output /path/to/fragpipe-launcher-plan.json
+```
+
+This runner does not install software, download references, choose private input files, launch GUI/GPU/HPC jobs, complete workflows, benchmark methods, or validate scientific claims.
+

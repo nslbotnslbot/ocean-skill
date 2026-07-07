@@ -34,7 +34,7 @@
     "resolved_path": "",
     "stdout_excerpt": "",
     "stderr_excerpt": "multiqc was not found on PATH.",
-    "created_at": "2026-07-08T02:34:36"
+    "created_at": "2026-07-08T02:45:26"
   },
   "candidate_install_routes": [
     "Candidate Python/conda route; verify current package and version before use.",

@@ -12,6 +12,8 @@ Lightweight CLI tool folders additionally include `scripts/run_cli.py`, which ca
 
 Python/R package tool folders additionally include `scripts/run_package.py`, which can run a bounded package availability/version probe or record an explicit user-supplied Python/R script invocation as provenance. It does not install packages, choose inputs, design the analysis, or validate biological conclusions.
 
+Heavy, workflow-runtime, and source-packet-adapter tool folders additionally include `scripts/run_launcher.py`, which creates non-executing launch/source-packet plans and, for workflow runtimes, can probe local runtime availability. It does not launch GUI/GPU/HPC jobs, download references, run workflows, or validate biological conclusions.
+
 Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff guidance.
 
 Shared execution layers live in `../common/`:
@@ -154,3 +156,32 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
 ```
 
 The package runner eval checks package/module availability and evidence-boundary recording. It is not a biological workflow test, script-quality review, differential-expression analysis, single-cell analysis, or clinical/biological claim validation.
+
+## Launcher and workflow runners
+
+For heavy, workflow-runtime, or source-packet-adapter tools, use the generated per-tool runner:
+
+```bash
+python3 scripts/run_launcher.py plan \
+  --output /path/to/<tool>-launcher-plan.json
+```
+
+For workflow runtimes, a bounded runtime availability probe is also available:
+
+```bash
+python3 scripts/run_launcher.py probe-runtime \
+  --output /path/to/<tool>-runtime-probe.json
+```
+
+From the repository root, regenerate and evaluate the full launcher/workflow set with:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_launcher_runners.py \
+  --skill-dir skills/ocean
+
+python3 skills/ocean/scripts/tools/run_bioinformatics_launcher_runner_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Launcher plans are non-executing records. They are useful for heavy tools such as GATK, Cell Ranger, AlphaFold, MaxQuant, 3D Slicer, and Galaxy because those tools require verified environments, references, licenses, compute, logs, and data-safety boundaries before OCEAN can treat any output as source-packet evidence.
