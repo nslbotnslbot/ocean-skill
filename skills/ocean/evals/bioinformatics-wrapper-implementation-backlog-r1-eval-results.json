@@ -1,0 +1,922 @@
+[
+  {
+    "rank": 1,
+    "slug": "deseq2",
+    "name": "DESeq2",
+    "group": "immediate_local_packetization",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 2,
+    "slug": "limma_voom",
+    "name": "limma-voom",
+    "group": "immediate_local_packetization",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 3,
+    "slug": "alphafold_db",
+    "name": "AlphaFold DB",
+    "group": "immediate_local_packetization",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 4,
+    "slug": "bcftools",
+    "name": "bcftools",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 5,
+    "slug": "bedtools",
+    "name": "BEDTools",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 6,
+    "slug": "samtools",
+    "name": "SAMtools",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 7,
+    "slug": "edger",
+    "name": "edgeR",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 8,
+    "slug": "dada2",
+    "name": "DADA2",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 9,
+    "slug": "mafft",
+    "name": "MAFFT",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 10,
+    "slug": "cutadapt",
+    "name": "cutadapt",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 11,
+    "slug": "fastp",
+    "name": "fastp",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 12,
+    "slug": "fastqc",
+    "name": "FastQC",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 13,
+    "slug": "multiqc",
+    "name": "MultiQC",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 14,
+    "slug": "blast",
+    "name": "BLAST",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 15,
+    "slug": "minimap2",
+    "name": "minimap2",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 16,
+    "slug": "seurat",
+    "name": "Seurat",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 17,
+    "slug": "hmmer",
+    "name": "HMMER",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 18,
+    "slug": "docker",
+    "name": "Docker",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 19,
+    "slug": "nextflow",
+    "name": "Nextflow",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 20,
+    "slug": "singularity_apptainer",
+    "name": "Singularity-Apptainer",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 21,
+    "slug": "snakemake",
+    "name": "Snakemake",
+    "group": "priority_environment_setup",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 22,
+    "slug": "htslib",
+    "name": "HTSlib",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 23,
+    "slug": "fimo",
+    "name": "FIMO",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 24,
+    "slug": "homer",
+    "name": "HOMER",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 25,
+    "slug": "macs2",
+    "name": "MACS2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 26,
+    "slug": "macs3",
+    "name": "MACS3",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 27,
+    "slug": "meme",
+    "name": "MEME",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 28,
+    "slug": "bakta",
+    "name": "Bakta",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 29,
+    "slug": "busco",
+    "name": "BUSCO",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 30,
+    "slug": "canu",
+    "name": "Canu",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 31,
+    "slug": "checkm",
+    "name": "CheckM",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 32,
+    "slug": "eggnog_mapper",
+    "name": "eggNOG-mapper",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 33,
+    "slug": "flye",
+    "name": "Flye",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 34,
+    "slug": "interproscan",
+    "name": "InterProScan",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 35,
+    "slug": "megahit",
+    "name": "MEGAHIT",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 36,
+    "slug": "prokka",
+    "name": "Prokka",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 37,
+    "slug": "quast",
+    "name": "QUAST",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 38,
+    "slug": "raven",
+    "name": "Raven",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 39,
+    "slug": "spades",
+    "name": "SPAdes",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 40,
+    "slug": "bracken",
+    "name": "Bracken",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 41,
+    "slug": "humann",
+    "name": "HUMAnN",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 42,
+    "slug": "kraken2",
+    "name": "Kraken2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 43,
+    "slug": "metaphlan",
+    "name": "MetaPhlAn",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 44,
+    "slug": "qiime2",
+    "name": "QIIME2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 45,
+    "slug": "clustal_omega",
+    "name": "Clustal Omega",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 46,
+    "slug": "fasttree",
+    "name": "FastTree",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 47,
+    "slug": "iq_tree",
+    "name": "IQ-TREE",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 48,
+    "slug": "muscle",
+    "name": "MUSCLE",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 49,
+    "slug": "orthofinder",
+    "name": "OrthoFinder",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 50,
+    "slug": "raxml",
+    "name": "RAxML",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 51,
+    "slug": "dia_nn",
+    "name": "DIA-NN",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 52,
+    "slug": "fragpipe",
+    "name": "FragPipe",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 53,
+    "slug": "maxquant",
+    "name": "MaxQuant",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 54,
+    "slug": "ms_dial",
+    "name": "MS-DIAL",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 55,
+    "slug": "mzmine",
+    "name": "MZmine",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 56,
+    "slug": "skyline",
+    "name": "Skyline",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 57,
+    "slug": "picard",
+    "name": "Picard",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 58,
+    "slug": "qualimap",
+    "name": "Qualimap",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 59,
+    "slug": "trim_galore",
+    "name": "Trim Galore",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 60,
+    "slug": "trimmomatic",
+    "name": "Trimmomatic",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 61,
+    "slug": "featurecounts",
+    "name": "featureCounts",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 62,
+    "slug": "kallisto",
+    "name": "kallisto",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 63,
+    "slug": "rsem",
+    "name": "RSEM",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 64,
+    "slug": "salmon",
+    "name": "Salmon",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 65,
+    "slug": "stringtie",
+    "name": "StringTie",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 66,
+    "slug": "bowtie2",
+    "name": "Bowtie2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 67,
+    "slug": "bwa",
+    "name": "BWA",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 68,
+    "slug": "last",
+    "name": "LAST",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 69,
+    "slug": "alevin_fry",
+    "name": "Alevin-fry",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 70,
+    "slug": "cell_ranger",
+    "name": "Cell Ranger",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 71,
+    "slug": "starsolo",
+    "name": "STARsolo",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 72,
+    "slug": "space_ranger",
+    "name": "Space Ranger",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 73,
+    "slug": "hisat2",
+    "name": "HISAT2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 74,
+    "slug": "star",
+    "name": "STAR",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 75,
+    "slug": "deepvariant",
+    "name": "DeepVariant",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 76,
+    "slug": "freebayes",
+    "name": "FreeBayes",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 77,
+    "slug": "gatk",
+    "name": "GATK",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 78,
+    "slug": "mutect2",
+    "name": "Mutect2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 79,
+    "slug": "strelka2",
+    "name": "Strelka2",
+    "group": "common_cli_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 80,
+    "slug": "sleuth",
+    "name": "sleuth",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 81,
+    "slug": "deeptools",
+    "name": "deepTools",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 82,
+    "slug": "monai",
+    "name": "MONAI",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 83,
+    "slug": "simpleitk",
+    "name": "SimpleITK",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 84,
+    "slug": "torchio",
+    "name": "TorchIO",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 85,
+    "slug": "diablo",
+    "name": "DIABLO",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 86,
+    "slug": "mixomics",
+    "name": "mixOmics",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 87,
+    "slug": "mofa",
+    "name": "MOFA",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 88,
+    "slug": "mofaplus",
+    "name": "MOFA+",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 89,
+    "slug": "wgcna",
+    "name": "WGCNA",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 90,
+    "slug": "xcms",
+    "name": "XCMS",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 91,
+    "slug": "azimuth",
+    "name": "Azimuth",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 92,
+    "slug": "celltypist",
+    "name": "CellTypist",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 93,
+    "slug": "scanpy",
+    "name": "Scanpy",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 94,
+    "slug": "scvi",
+    "name": "scVI",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 95,
+    "slug": "cell2location",
+    "name": "cell2location",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 96,
+    "slug": "giotto",
+    "name": "Giotto",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 97,
+    "slug": "squidpy",
+    "name": "Squidpy",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 98,
+    "slug": "stereoscope",
+    "name": "Stereoscope",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 99,
+    "slug": "stlearn",
+    "name": "stLearn",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 100,
+    "slug": "tangram",
+    "name": "Tangram",
+    "group": "python_r_package_wrappers",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 101,
+    "slug": "conda",
+    "name": "Conda",
+    "group": "workflow_reproducibility_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 102,
+    "slug": "cwl",
+    "name": "CWL",
+    "group": "workflow_reproducibility_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 103,
+    "slug": "galaxy",
+    "name": "Galaxy",
+    "group": "workflow_reproducibility_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 104,
+    "slug": "nf_core",
+    "name": "nf-core",
+    "group": "workflow_reproducibility_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 105,
+    "slug": "wdl_cromwell",
+    "name": "WDL-Cromwell",
+    "group": "workflow_reproducibility_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 106,
+    "slug": "itk_snap",
+    "name": "ITK-SNAP",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 107,
+    "slug": "nnu_net",
+    "name": "nnU-Net",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 108,
+    "slug": "three_d_slicer",
+    "name": "3D Slicer",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 109,
+    "slug": "alphafold",
+    "name": "AlphaFold",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 110,
+    "slug": "chimerax",
+    "name": "ChimeraX",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 111,
+    "slug": "colabfold",
+    "name": "ColabFold",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 112,
+    "slug": "hh_suite",
+    "name": "HH-suite",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 113,
+    "slug": "modeller",
+    "name": "MODELLER",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 114,
+    "slug": "pymol",
+    "name": "PyMOL",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  },
+  {
+    "rank": 115,
+    "slug": "rosettafold",
+    "name": "RoseTTAFold",
+    "group": "heavy_tool_launcher_plans",
+    "issues": [],
+    "verdict": "pass"
+  }
+]

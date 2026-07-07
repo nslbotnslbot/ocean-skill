@@ -46,6 +46,10 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-capability-matrix-r1-results.md`: combined planning matrix joining the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results.
 - `skills/ocean/evals/bioinformatics-wrapper-readiness-r1-results.md`: high-priority wrapper readiness plans for install/container/smoke/source-packet implementation work.
 - `skills/ocean/evals/bioinformatics-wrapper-readiness-r1-eval-results.md`: structural eval for wrapper-readiness plan completeness and evidence-boundary safeguards.
+- `skills/ocean/evals/bioinformatics-wrapper-readiness-all-r1-results.md`: all-tool wrapper readiness plans covering 115 registered bioinformatics tool scaffolds.
+- `skills/ocean/evals/bioinformatics-wrapper-readiness-all-r1-eval-results.md`: structural eval for the all-tool readiness-plan set.
+- `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-results.md`: ordered implementation backlog generated from the all-tool readiness plans.
+- `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-eval-results.md`: structural eval for backlog completeness, rank continuity, next actions, and evidence boundaries.
 
 ## What Is Not Included
 
@@ -76,6 +80,10 @@ Bioinformatics Capability Matrix R1 joins registry, API/source-packet contract, 
 Bioinformatics Wrapper Readiness R1 turns the capability matrix into per-tool implementation plans for high-priority tools. It records candidate interface layers, smoke probes, install/container notes, minimal fixtures, required run evidence, stop conditions, and OCEAN handoffs. It does not install or execute the tools.
 
 Bioinformatics Wrapper Readiness Eval R1 checks that readiness plans remain structurally complete and evidence-bound. It verifies required fields, run-evidence markers, route verification language, smoke commands, stop conditions, stages, scores, and per-tool artifacts.
+
+Bioinformatics Wrapper Readiness All-Tool R1 extends the same readiness planning pattern from the 20 priority tools to all 115 registered bioinformatics tool folders. It is still a planning and source-packet contract artifact: 112 tools remain environment-missing in the current local smoke results, and the all-tool plans do not claim installation, execution, benchmarking, or scientific validation.
+
+Bioinformatics Wrapper Implementation Backlog R1 converts the all-tool readiness set into an ordered engineering queue. It groups tools into immediate local packetization, priority environment setup, common CLI wrappers, Python/R package wrappers, workflow plans, and heavy-tool launcher plans. It passed 115/115 structural checks, but remains an implementation-planning artifact rather than a scientific result.
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
 

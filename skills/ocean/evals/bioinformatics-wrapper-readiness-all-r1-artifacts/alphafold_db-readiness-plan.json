@@ -1,0 +1,60 @@
+{
+  "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+  "created_at": "2026-07-08T01:31:10",
+  "tool": {
+    "slug": "alphafold_db",
+    "name": "AlphaFold DB",
+    "family": "structure_modeling",
+    "maturity": "L2/L3 source-packet adapter"
+  },
+  "current_ocean_state": {
+    "capability_tier": "source_packet_adapter",
+    "local_smoke_status": "executed",
+    "best_interface": "ocean_local_adapter",
+    "entrypoint": "skills/ocean/scripts/tools/bioinformatics/alphafold_db/run_eval.py",
+    "python_wrapper": "scripts/create_source_packet.py",
+    "real_run_required": true
+  },
+  "readiness_stage": "stage_2_local_smoke_executed",
+  "interface_layer": "heavy_cli_api_or_container_launcher",
+  "smoke_command": [
+    "alphafold db",
+    "--version"
+  ],
+  "candidate_install_routes": [
+    "Candidate official installation route for AlphaFold DB; verify current documentation, version, license, and platform requirements before use.",
+    "Candidate conda/bioconda/container route for AlphaFold DB; verify package/channel/image source, tag, and license before use."
+  ],
+  "container_note": "Use a pinned environment/container only after verifying official source, license, version tag, and data-mount boundaries.",
+  "minimal_fixture": "Small public/test sequence/structure identifier plus model/database provenance.",
+  "required_run_evidence": [
+    "tool version and executable/package source",
+    "exact command line or workflow step",
+    "parameters and configuration files",
+    "reference/index/database name and version when applicable",
+    "input file manifest and sample metadata boundary",
+    "output file manifest",
+    "logs, warnings, QC metrics, and failure messages",
+    "environment/container/OS/hardware notes when relevant",
+    "run date"
+  ],
+  "expected_outputs": [
+    "model/structure/search output",
+    "template/database provenance note",
+    "execution log"
+  ],
+  "stop_conditions": [
+    "tool is unavailable in the current environment and no container/install plan is provided",
+    "version, command, reference/index, inputs, outputs, or logs are missing",
+    "private clinical data or unpublished data lack explicit local handling boundaries",
+    "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+    "template/database provenance, confidence metrics, or experimental-validation boundary is missing"
+  ],
+  "source_packet_step": {
+    "wrapper": "scripts/create_source_packet.py",
+    "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+  },
+  "handoff": "Anchor",
+  "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+  "readiness_score_0_10": 10
+}

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Added Bioinformatics Wrapper Implementation Backlog R1, converting all-tool readiness plans into a 115-item engineering queue with 115/115 structural eval pass.
+- Added Bioinformatics Wrapper Readiness All-Tool R1, extending readiness plans from the 20 priority tools to all 115 bioinformatics tool folders with 115/115 structural eval pass and explicit environment-missing boundaries.
 - Added Bioinformatics Wrapper Readiness R1 to convert high-priority capability-matrix rows into per-tool install/container/smoke/source-packet readiness plans with explicit evidence boundaries.
 - Added a Bioinformatics Capability Matrix R1 builder that joins the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results into JSON/CSV/Markdown planning artifacts for implementation priority and environment gaps.
 - Added a public-safe whole-wheat broth OCEAN case note documenting how all seven modules were used in a real fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow while keeping raw data and private manuscript material out of the repository.

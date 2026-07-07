@@ -40,4 +40,28 @@ python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.p
   --outdir skills/ocean/evals
 ```
 
+To generate bounded readiness plans for all 115 tool folders:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals \
+  --scope all \
+  --prefix bioinformatics-wrapper-readiness-all-r1
+```
+
 This produces per-tool readiness plans for practical wrapper work. Each plan records the intended execution layer, a bounded smoke probe, candidate install/container notes, required run evidence, and stop conditions. These plans do not install software or validate biological conclusions.
+
+## Implementation backlog
+
+After generating the all-tool readiness plans, build and validate the wrapper backlog:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_backlog.py \
+  --outdir skills/ocean/evals
+
+python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
+  --outdir skills/ocean/evals
+```
+
+The backlog orders engineering work by current evidence and execution layer. It is useful for deciding which wrappers to implement next, but it is not installation, local execution, benchmarking, or biological validation.
