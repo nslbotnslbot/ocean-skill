@@ -29,3 +29,15 @@ python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
 ```
 
 The matrix is a planning artifact. It must not be treated as biological validation, benchmark evidence, or proof that unavailable tools can run locally.
+
+## Wrapper readiness plans
+
+Once a capability matrix exists, build the next implementation plan for high-priority tools:
+
+```bash
+python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+This produces per-tool readiness plans for practical wrapper work. Each plan records the intended execution layer, a bounded smoke probe, candidate install/container notes, required run evidence, and stop conditions. These plans do not install software or validate biological conclusions.

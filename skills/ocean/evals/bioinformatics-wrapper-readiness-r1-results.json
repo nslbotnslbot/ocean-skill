@@ -1,0 +1,1194 @@
+[
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "fastqc",
+      "name": "FastQC",
+      "family": "qc_preprocessing",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "fastqc",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "One tiny FASTQ or inspected existing FASTQ manifest; never publish private read data.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "FastQC HTML report",
+      "FastQC zip output",
+      "stderr/stdout log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "multiqc",
+      "name": "MultiQC",
+      "family": "qc_preprocessing",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "multiqc",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate Python/conda route; verify current package and version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Directory containing one or more inspected QC report folders.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "MultiQC HTML report",
+      "multiqc_data directory",
+      "execution log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "cutadapt",
+      "name": "cutadapt",
+      "family": "qc_preprocessing",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "cutadapt",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate Python/conda route; verify current package and version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small FASTQ plus explicit adapter sequence or inspected trimming config.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "trimmed FASTQ",
+      "cutadapt report/log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "fastp",
+      "name": "fastp",
+      "family": "qc_preprocessing",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "fastp",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small paired or single-end FASTQ fixture with explicit read privacy boundary.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "trimmed FASTQ",
+      "JSON report",
+      "HTML report",
+      "stderr/stdout log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "samtools",
+      "name": "SAMtools",
+      "family": "alignment_file_operations",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "samtools",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small public/test BAM or inspected local BAM manifest with no private sequence release.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "indexed/sorted BAM or stats output",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "bcftools",
+      "name": "bcftools",
+      "family": "alignment_file_operations",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "bcftools",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small public/test VCF or inspected local VCF manifest.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "filtered/query VCF or stats output",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "bedtools",
+      "name": "BEDTools",
+      "family": "alignment_file_operations",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "bedtools",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Tiny public/test BED intervals with explicit genome-build boundary.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "intersect/coverage output",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "blast",
+      "name": "BLAST",
+      "family": "sequence_alignment",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "blastp",
+      "-version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate local database route; verify database provenance, date, and license before query."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Short public/test sequence and tiny local database or explicitly inspected database metadata.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "tabular BLAST output",
+      "database provenance note",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "database provenance is missing or remote database terms are unclear"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "mafft",
+      "name": "MAFFT",
+      "family": "phylogenetics_comparative_genomics",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "mafft",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small public/test FASTA alignment fixture.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "aligned FASTA",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "hmmer",
+      "name": "HMMER",
+      "family": "structure_modeling",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "hmmsearch",
+      "-h"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate profile/database route; verify HMM library provenance and date before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small public/test HMM profile plus FASTA target, or inspected HMM database metadata.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "hmmsearch/hmmscan tabular output",
+      "profile/database provenance note",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "HMM profile/database provenance is missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "minimap2",
+      "name": "minimap2",
+      "family": "sequence_alignment",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "lightweight_cli_subprocess",
+    "smoke_command": [
+      "minimap2",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate conda/bioconda route; verify package/channel/version before use.",
+      "Candidate container route; verify image source, tag, and license before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small public/test FASTA/FASTQ plus reference sequence with explicit reference boundary.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "PAF/SAM output",
+      "command log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "deseq2",
+      "name": "DESeq2",
+      "family": "differential_expression",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "executed",
+      "best_interface": "r_package",
+      "entrypoint": "DESeq2",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_2_local_smoke_executed",
+    "interface_layer": "r_bioconductor_rscript",
+    "smoke_command": [
+      "Rscript",
+      "-e",
+      "cat(as.character(utils::packageVersion('DESeq2')))"
+    ],
+    "candidate_install_routes": [
+      "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
+      "Candidate container route; verify image source, tag, and package versions before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small count matrix plus explicit design metadata and contrast definition.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "DE result table",
+      "sessionInfo output",
+      "design/contrast log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "replicates, design matrix, batch handling, or multiple-testing control are missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 10
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "edger",
+      "name": "edgeR",
+      "family": "differential_expression",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "r_package",
+      "entrypoint": "edgeR",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "r_bioconductor_rscript",
+    "smoke_command": [
+      "Rscript",
+      "-e",
+      "cat(as.character(utils::packageVersion('edgeR')))"
+    ],
+    "candidate_install_routes": [
+      "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
+      "Candidate container route; verify image source, tag, and package versions before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small count matrix plus explicit design metadata and contrast definition.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "DE result table",
+      "sessionInfo output",
+      "design/contrast log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "normalization, dispersion model, design matrix, or FDR handling are missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "limma_voom",
+      "name": "limma-voom",
+      "family": "differential_expression",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "executed",
+      "best_interface": "r_package",
+      "entrypoint": "limma",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_2_local_smoke_executed",
+    "interface_layer": "r_bioconductor_rscript",
+    "smoke_command": [
+      "Rscript",
+      "-e",
+      "cat(as.character(utils::packageVersion('limma')))"
+    ],
+    "candidate_install_routes": [
+      "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
+      "Candidate container route; verify image source, tag, and package versions before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small count/expression matrix plus explicit design metadata and contrast definition.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "DE result table",
+      "sessionInfo output",
+      "voom/design/contrast log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "voom/limma assumptions, design matrix, or FDR handling are missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 10
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "seurat",
+      "name": "Seurat",
+      "family": "single_cell_analysis",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "r_package",
+      "entrypoint": "Seurat",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "r_bioconductor_rscript",
+    "smoke_command": [
+      "Rscript",
+      "-e",
+      "cat(as.character(utils::packageVersion('Seurat')))"
+    ],
+    "candidate_install_routes": [
+      "Candidate R package route; verify R/package compatibility before use.",
+      "Candidate container route; verify image source, tag, and package versions before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Tiny public/test object or inspected object manifest; never expose private cell-level data.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "processed object metadata",
+      "QC summary",
+      "sessionInfo output",
+      "analysis log"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "batch, doublet, annotation, or cell filtering boundary is missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "dada2",
+      "name": "DADA2",
+      "family": "microbiome_metagenomics",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "r_package",
+      "entrypoint": "dada2",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "r_bioconductor_rscript",
+    "smoke_command": [
+      "Rscript",
+      "-e",
+      "cat(as.character(utils::packageVersion('dada2')))"
+    ],
+    "candidate_install_routes": [
+      "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
+      "Candidate container route; verify image source, tag, and package versions before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Small public/test amplicon FASTQ fixture or inspected local read manifest.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "ASV table",
+      "taxonomy table if classifier/reference is supplied",
+      "filtering/error logs",
+      "sessionInfo output"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "primer/read orientation, filtering parameters, reference classifier, or contamination boundary is missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Anchor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "snakemake",
+      "name": "Snakemake",
+      "family": "workflow_reproducibility",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "workflow_reproducibility",
+    "smoke_command": [
+      "snakemake",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "Candidate Python/conda route; verify current package and workflow compatibility before use.",
+      "Candidate containerized workflow route; verify images and profiles before use."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Tiny dry-run workflow with explicit Snakefile, config, and input manifest.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "dry-run DAG/log",
+      "workflow config",
+      "environment/container manifest"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "workflow lacks pinned environment, input manifest, or dry-run evidence"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Harbor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "nextflow",
+      "name": "Nextflow",
+      "family": "workflow_reproducibility",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "workflow_reproducibility",
+    "smoke_command": [
+      "nextflow",
+      "-version"
+    ],
+    "candidate_install_routes": [
+      "Candidate runtime route through official installer or package manager; verify Java/runtime compatibility.",
+      "Candidate nf-core/container route; verify workflow version, profiles, and image tags."
+    ],
+    "container_note": "Use a pinned container only after verifying source, license, and version tags.",
+    "minimal_fixture": "Tiny dry-run or test-profile workflow with explicit config and input manifest.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "dry-run/test log",
+      "workflow config",
+      "container/environment manifest"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "workflow version, profile, container image, or input manifest is missing"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Harbor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "docker",
+      "name": "Docker",
+      "family": "workflow_reproducibility",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "workflow_reproducibility",
+    "smoke_command": [
+      "docker",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "System/container-runtime installation route; verify platform permissions and security policy before use."
+    ],
+    "container_note": "Docker is the container runtime; verify image digest, permissions, and data mounts before execution.",
+    "minimal_fixture": "Version probe plus image manifest only; do not run unknown images.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "runtime version output",
+      "image digest/tag manifest",
+      "container command log when executed"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "image source, digest/tag, volume mounts, or data egress boundaries are unclear"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Harbor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  },
+  {
+    "schema_version": "ocean-bioinformatics-wrapper-readiness-r1",
+    "created_at": "2026-07-07T22:47:23",
+    "tool": {
+      "slug": "singularity_apptainer",
+      "name": "Singularity-Apptainer",
+      "family": "workflow_reproducibility",
+      "maturity": "L0/L1 scaffold"
+    },
+    "current_ocean_state": {
+      "capability_tier": "source_packet_scaffold",
+      "local_smoke_status": "not_available_current_environment",
+      "best_interface": "none_found",
+      "entrypoint": "",
+      "python_wrapper": "scripts/create_source_packet.py",
+      "real_run_required": true
+    },
+    "readiness_stage": "stage_1_plan_ready_environment_missing",
+    "interface_layer": "workflow_reproducibility",
+    "smoke_command": [
+      "apptainer",
+      "--version"
+    ],
+    "candidate_install_routes": [
+      "System/HPC runtime installation route; verify institutional module/container policy before use.",
+      "Fallback command may be `singularity --version` when Apptainer is not present; verify runtime identity and version before use."
+    ],
+    "container_note": "Apptainer/Singularity is the container runtime; verify image provenance and HPC policy before execution.",
+    "minimal_fixture": "Version probe plus SIF/image manifest only; do not run unknown images.",
+    "required_run_evidence": [
+      "tool version and executable/package source",
+      "exact command line or workflow step",
+      "parameters and configuration files",
+      "reference/index/database name and version when applicable",
+      "input file manifest and sample metadata boundary",
+      "output file manifest",
+      "logs, warnings, QC metrics, and failure messages",
+      "environment/container/OS/hardware notes when relevant",
+      "run date"
+    ],
+    "expected_outputs": [
+      "runtime version output",
+      "SIF/image digest/tag manifest",
+      "container command log when executed"
+    ],
+    "stop_conditions": [
+      "tool is unavailable in the current environment and no container/install plan is provided",
+      "version, command, reference/index, inputs, outputs, or logs are missing",
+      "private clinical data or unpublished data lack explicit local handling boundaries",
+      "the result is being used to claim mechanism, causality, clinical utility, or publication readiness without independent validation",
+      "image provenance, bind mounts, HPC policy, or data egress boundaries are unclear"
+    ],
+    "source_packet_step": {
+      "wrapper": "scripts/create_source_packet.py",
+      "required_before_packet": "Fill a real run-record JSON from inspected files/logs before creating an OCEAN software source packet."
+    },
+    "handoff": "Harbor",
+    "evidence_boundary": "Readiness plan only; not installation, execution, benchmark, or biological validation.",
+    "readiness_score_0_10": 8
+  }
+]
