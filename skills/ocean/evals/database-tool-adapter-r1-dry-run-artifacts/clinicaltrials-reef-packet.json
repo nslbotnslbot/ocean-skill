@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "clinicaltrials",
   "adapter_label": "ClinicalTrials.gov",
-  "created_utc": "2026-07-07T17:24:53+00:00",
+  "created_utc": "2026-07-07T17:34:51+00:00",
   "executed": false,
   "official_doc": "https://clinicaltrials.gov/data-api/api",
   "endpoint_family": "https://clinicaltrials.gov/api/v2/",

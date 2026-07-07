@@ -30,6 +30,36 @@
         "--output",
         "outputs/sleuth-probe-or-plan.json"
       ]
+    },
+    {
+      "name": "package-probe",
+      "description": "Run the bounded per-tool Python/R package availability/version probe.",
+      "argv": [
+        "python3",
+        "scripts/run_package.py",
+        "probe",
+        "--output",
+        "outputs/sleuth-package-probe.json",
+        "--packet-output",
+        "outputs/sleuth-package-probe-source-packet.json"
+      ]
+    },
+    {
+      "name": "package-run-record",
+      "description": "Run an explicit user-supplied Python/R script and record bounded provenance.",
+      "argv": [
+        "python3",
+        "scripts/run_package.py",
+        "run-script",
+        "--script",
+        "/path/to/inspected_script.R",
+        "--args-json",
+        "[\"<user-supplied arguments>\"]",
+        "--output",
+        "outputs/sleuth-package-run-record.json",
+        "--packet-output",
+        "outputs/sleuth-package-run-source-packet.json"
+      ]
     }
   ],
   "required_input_fields": [
@@ -69,5 +99,6 @@
     "license_or_terms_check_required_when_applicable": true
   },
   "probe_or_plan_wrapper": "scripts/probe_or_plan.py",
-  "wrapper_config": "wrapper_config.json"
+  "wrapper_config": "wrapper_config.json",
+  "package_runner_wrapper": "scripts/run_package.py"
 }

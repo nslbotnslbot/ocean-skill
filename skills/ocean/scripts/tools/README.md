@@ -31,6 +31,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `run_bioinformatics_per_tool_wrapper_eval.py` | Execute generated per-tool probe/plan entrypoints and validate their artifacts |
 | `generate_bioinformatics_cli_runners.py` | Generate per-tool `scripts/run_cli.py` entrypoints for lightweight CLI tools |
 | `run_bioinformatics_cli_runner_eval.py` | Execute lightweight CLI runner probes and validate bounded provenance artifacts |
+| `generate_bioinformatics_package_runners.py` | Generate per-tool `scripts/run_package.py` entrypoints for Python/R package tools |
+| `run_bioinformatics_package_runner_eval.py` | Execute Python/R package runner probes and validate bounded provenance artifacts |
 | `generate_database_adapter_scaffold.py` | Generate per-resource database adapter folders around the shared Reef API runner |
 | `run_database_tool_adapter_eval.py` | Execute database adapter folder entrypoints in dry-run or bounded live mode |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
@@ -141,6 +143,25 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
 ```
 
 Each lightweight CLI folder receives `scripts/run_cli.py` plus `cli-probe` and `cli-run-record` API commands. The runner delegates to `common/cli_subprocess_wrapper.py`, records executable availability and command provenance, and requires explicit user-supplied arguments for non-probe runs. It does not install tools, choose private inputs, download references, complete workflows, benchmark methods, or validate biological claims.
+
+## Python/R package runners
+
+For Python-package and R/Bioconductor tools, generate per-tool package runner entrypoints:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_package_runners.py \
+  --skill-dir skills/ocean
+```
+
+Then run the bounded package probe eval:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Each Python/R package folder receives `scripts/run_package.py` plus `package-probe` and `package-run-record` API commands. The runner records package/module availability and can record explicit user-supplied Python/R script execution provenance. It does not install packages, choose private inputs, design analyses, validate scripts, complete workflows, benchmark methods, or validate biological claims.
 
 ## Database tool adapters
 

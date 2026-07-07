@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "alphafold-db",
   "adapter_label": "AlphaFold DB",
-  "created_utc": "2026-07-07T17:24:53+00:00",
+  "created_utc": "2026-07-07T17:34:51+00:00",
   "executed": false,
   "official_doc": "https://alphafold.ebi.ac.uk/api-docs",
   "endpoint_family": "https://alphafold.ebi.ac.uk/api/prediction/",

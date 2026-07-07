@@ -58,3 +58,26 @@ python3 scripts/probe_or_plan.py \
 
 This wrapper records availability or planning evidence only. It does not install the tool, download databases, run biological analyses, benchmark methods, or validate scientific claims.
 
+## Package Runner Wrapper
+
+For Python/R package tools, use `scripts/run_package.py` to record bounded package availability and explicit script provenance.
+
+Probe only:
+
+```bash
+python3 scripts/run_package.py probe \
+  --output /path/to/monai-package-probe.json
+```
+
+Run an inspected local script:
+
+```bash
+python3 scripts/run_package.py run-script \
+  --script /path/to/inspected_script.py \
+  --args-json '["<user-supplied arguments>"]' \
+  --output /path/to/monai-package-run-record.json \
+  --packet-output /path/to/monai-package-run-source-packet.json
+```
+
+This runner does not install packages, choose private input files, design the analysis, validate the script, or support biological claims without downstream OCEAN audit.
+

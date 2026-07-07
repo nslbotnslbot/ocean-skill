@@ -1,0 +1,25 @@
+{
+  "run_date": "2026-07-08",
+  "tools_checked": 26,
+  "pass": 26,
+  "needs_review": 0,
+  "by_execution_status": {
+    "executed": 2,
+    "not_available_current_environment": 24
+  },
+  "by_execution_layer": {
+    "python_package": 16,
+    "r_bioconductor": 10
+  },
+  "by_family": {
+    "differential_expression": 4,
+    "epigenomics_peak_calling": 1,
+    "imaging_signal_ml": 3,
+    "microbiome_metagenomics": 1,
+    "multi_omics_integration": 5,
+    "proteomics_metabolomics": 1,
+    "single_cell_analysis": 5,
+    "spatial_transcriptomics": 6
+  },
+  "evidence_boundary": "Python/R package runner probe eval only; no installation, biological analysis, benchmark, or scientific validation."
+}

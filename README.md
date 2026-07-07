@@ -252,6 +252,8 @@ Each bioinformatics tool folder now also includes a science-skills-style `refere
 
 Lightweight CLI bioinformatics tools now have generated per-tool `scripts/run_cli.py` entrypoints. These can record bounded availability probes or explicit user-supplied command run records, while preserving environment-missing boundaries when software is not installed.
 
+Python/R package bioinformatics tools now have generated per-tool `scripts/run_package.py` entrypoints. These can record bounded Python import or R package-version probes and explicit user-supplied script run records, without treating package availability as biological validation.
+
 Reef now has executable API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB. These wrappers can run dry, or make bounded live public API requests with `--execute`, then write OCEAN packets with explicit evidence boundaries.
 
 Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.

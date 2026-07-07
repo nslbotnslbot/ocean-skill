@@ -34,7 +34,7 @@
     "resolved_path": "/Library/Developer/CommandLineTools/usr/bin/python3",
     "stdout_excerpt": "",
     "stderr_excerpt": "No module named 'scvi'",
-    "created_at": "2026-07-08T02:24:35"
+    "created_at": "2026-07-08T02:34:37"
   },
   "candidate_install_routes": [
     "Candidate official installation route for scVI; verify current documentation, version, license, and platform requirements before use.",

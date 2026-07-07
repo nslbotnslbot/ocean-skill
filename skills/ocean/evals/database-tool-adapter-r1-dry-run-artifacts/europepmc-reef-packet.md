@@ -6,7 +6,7 @@
 - Official documentation: https://europepmc.org/RestfulWebService
 - Endpoint family: https://www.ebi.ac.uk/europepmc/webservices/rest/
 - Executed: False
-- Query date UTC: 2026-07-07T17:24:53+00:00
+- Query date UTC: 2026-07-07T17:34:51+00:00
 - Query target: `{"query": "TP53", "pageSize": 2}`
 
 ## 二、Query Log

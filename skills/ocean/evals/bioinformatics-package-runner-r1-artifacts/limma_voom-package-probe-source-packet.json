@@ -1,0 +1,48 @@
+{
+  "packet_id": "osp-software-c06fdae9d13f",
+  "created_at": "2026-07-08T02:34:34",
+  "source_type": "bioinformatics_software_run",
+  "resource": "limma-voom",
+  "query": "limma-voom bounded availability probe or launcher/source-packet plan",
+  "filters": {
+    "adapter": "scripts/tools/common/rscript_wrapper.py",
+    "tool_slug": "limma_voom"
+  },
+  "date_accessed": "2026-07-08",
+  "identifiers": [],
+  "inspected_content": [
+    "tool identity",
+    "command line",
+    "parameters",
+    "reference/index",
+    "input/output file provenance",
+    "logs/QC/environment boundary"
+  ],
+  "supports_claims": [
+    "R/Bioconductor package availability or bounded Rscript execution metadata"
+  ],
+  "cannot_support": [
+    "biological mechanism",
+    "causal conclusion",
+    "clinical utility",
+    "publication readiness",
+    "reproducibility without rerun/log/environment checks"
+  ],
+  "software_record": {
+    "tool_name": "limma-voom",
+    "tool_version": "3.66.0",
+    "task_intent": "limma-voom bounded availability probe or launcher/source-packet plan",
+    "command_line": "/usr/local/bin/Rscript -e 'cat(as.character(utils::packageVersion('\"'\"'limma'\"'\"')))'",
+    "parameters": {},
+    "reference_or_index": "not applicable for package probe",
+    "input_files": [],
+    "output_files": [],
+    "logs_or_qc": [],
+    "environment": "current local Python/R environment",
+    "date": "2026-07-08"
+  },
+  "license_or_terms_note": "Check tool license, citation, and database/index terms before reuse.",
+  "boundary_status": "queried_evidence",
+  "handoff": "Anchor",
+  "execution_status": "executed"
+}

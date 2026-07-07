@@ -34,7 +34,7 @@
     "resolved_path": "",
     "stdout_excerpt": "",
     "stderr_excerpt": "nextflow was not found on PATH.",
-    "created_at": "2026-07-08T02:24:35"
+    "created_at": "2026-07-08T02:34:36"
   },
   "candidate_install_routes": [
     "Candidate runtime route through official installer or package manager; verify Java/runtime compatibility.",

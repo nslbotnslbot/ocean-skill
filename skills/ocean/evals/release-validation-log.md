@@ -2602,3 +2602,57 @@ All 60 lightweight CLI probes recorded `not_available_current_environment` in th
 ### Evidence Boundary / 证据边界
 
 Passing this eval means every lightweight CLI bioinformatics tool folder now has a bounded per-tool CLI runner that can probe local availability or record explicit user-supplied command provenance. It does not mean the external tools are installed, that biological or clinical data were processed, that any workflow completed, that benchmark metrics are valid, or that any biological claim is supported. Scientific use still requires inspected input manifests, references/databases, exact command lines, versions, parameters, logs, outputs, and downstream OCEAN audit.
+
+## 2026-07-08 - Bioinformatics Python/R package runner R1
+
+### 中文上下文
+
+这轮在 lightweight CLI runner 之后继续补 package 型工具。针对 16 个 Python package 工具和 10 个 R/Bioconductor 工具，新增每个工具自己的 `scripts/run_package.py`。这个入口用于 bounded package/module availability probe，也可以在用户明确提供脚本和参数时记录 Python/R script execution provenance。
+
+### English Context
+
+This round adds per-tool package runner entrypoints for Python-package and R/Bioconductor bioinformatics tools. The generated `scripts/run_package.py` files delegate to shared Python and R wrappers, preserving the same OCEAN evidence boundary: package availability and explicit script provenance only, not biological analysis or scientific validation.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/common/python_package_wrapper.py`.
+- Added `scripts/tools/common/per_tool_package_runner.py`.
+- Added `scripts/tools/generate_bioinformatics_package_runners.py`.
+- Added `scripts/tools/run_bioinformatics_package_runner_eval.py`.
+- Generated `scripts/run_package.py` for 26 Python/R package tool folders.
+- Updated those 26 tools' `wrapper_config.json` with `package_runner_wrapper` and `package_runner_boundary`.
+- Updated those 26 tools' `api.json` files with `package-probe` and `package-run-record` commands.
+- Updated those 26 tools' README files with a `Package Runner Wrapper` section.
+- Updated public docs and README notes to describe the Python/R package runner layer.
+
+### Tool Coverage
+
+The 26 generated package runners cover Python tools such as Scanpy, scVI, Squidpy, Tangram, TorchIO, MONAI, SimpleITK, cell2location, CellTypist, deepTools, MOFA/mofapy2, stLearn, Stereoscope, and R/Bioconductor tools such as DESeq2, limma, edgeR, Seurat, DADA2, WGCNA, XCMS, sleuth, Azimuth, and mixOmics.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Python/R package tool folders detected | 26 |
+| Generated `scripts/run_package.py` entrypoints | 26 |
+| Package runner eval | 26/26 pass |
+| Needs review | 0 |
+| Executed local package probes | 2 |
+| Not available in current environment | 24 |
+| Executed probes | DESeq2 1.50.2; limma 3.66.0 |
+| CLI runner regression | 60/60 pass |
+| Per-tool probe/plan wrapper regression | 115/115 pass |
+| Scaffold regression | 115/115 pass |
+| Bioinformatics tool router regression | 133/133 pass |
+| Database tool adapter dry-run regression | 13/13 pass |
+| OCEAN contract check | 33/33 pass |
+| Python compile | pass |
+| `git diff --check` | pass |
+
+### Error Notes
+
+No package-runner structural failures were observed in the first run. The local environment exposed DESeq2 and limma through Rscript. The other Python/R packages were recorded as `not_available_current_environment`, which is an environment/install boundary rather than a package-quality or scientific failure.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means every registered Python/R package bioinformatics tool folder now has a bounded per-tool package runner that can probe package/module availability or record explicit user-supplied script provenance. It does not mean the packages are installed in every environment, that a script is scientifically correct, that private biological or clinical data were processed, that a workflow completed, that benchmark metrics are valid, or that any biological claim is supported. Scientific use still requires inspected scripts, input manifests, references/databases, exact parameters, versions, logs, outputs, and downstream OCEAN audit.
