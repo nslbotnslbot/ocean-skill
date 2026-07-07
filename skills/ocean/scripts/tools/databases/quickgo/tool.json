@@ -1,0 +1,13 @@
+{
+  "name": "QuickGO",
+  "slug": "quickgo",
+  "adapter": "quickgo",
+  "family": "ontology",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "direct molecular mechanism, causality, or phenotype proof"
+  ],
+  "handoff": "Reef -> Iceberg/Harbor"
+}

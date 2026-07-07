@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: proteomics-metabolomics
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: proteomics/metabolomics search, quantification, and feature-detection provenance plan
 - Final handoff: Anchor
 

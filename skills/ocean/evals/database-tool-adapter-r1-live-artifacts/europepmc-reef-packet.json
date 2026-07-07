@@ -1,0 +1,58 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "europepmc",
+  "adapter_label": "Europe PMC",
+  "created_utc": "2026-07-07T17:08:19+00:00",
+  "executed": true,
+  "official_doc": "https://europepmc.org/RestfulWebService",
+  "endpoint_family": "https://www.ebi.ac.uk/europepmc/webservices/rest/",
+  "resource_role": "Literature metadata, abstracts, preprints, and publication identifiers",
+  "query": {
+    "query": "TP53",
+    "pageSize": 1
+  },
+  "query_url_or_endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=TP53&format=json&pageSize=1",
+  "request_body": null,
+  "query_log": {
+    "status": "executed",
+    "records_inspected": 1,
+    "failure_or_limit": "",
+    "response": {
+      "status_code": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "bytes": 1141
+    }
+  },
+  "result_summary": {
+    "hit_count": 154709,
+    "records": [
+      {
+        "id": "41980118",
+        "source": "MED",
+        "pmid": "41980118",
+        "doi": "10.1093/jjco/hyag056",
+        "title": "TP53 mutation landscape and patient survival in oral squamous cell carcinoma.",
+        "journalTitle": "Jpn J Clin Oncol",
+        "pubYear": "2026",
+        "authorString": "Ichikawa M, Kondo Y, Carreras J, Sasaki M, Nagase S, Hoshimoto Y, Tamura M, Uchibori M, Aoki T, Nakamura N, Masugi Y, Ota Y."
+      }
+    ],
+    "inspected_fields": [
+      "id",
+      "source",
+      "pmid",
+      "pmcid",
+      "doi",
+      "title",
+      "journalTitle",
+      "pubYear",
+      "authorString"
+    ]
+  },
+  "evidence_boundary": {
+    "can_support": "Traceable literature metadata and abstract-level source discovery.",
+    "cannot_support": "Full-paper methods/results quality, peer-review status, mechanism, or clinical efficacy unless source text is inspected.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

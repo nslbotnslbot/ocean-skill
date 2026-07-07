@@ -1,6 +1,6 @@
 {
   "schema_version": "ocean-bioinformatics-workflow-plan-r1",
-  "date": "2026-07-05",
+  "date": "2026-07-08",
   "workflow": "spatial-transcriptomics",
   "intent": "spatial transcriptomics alignment, annotation, deconvolution, and mapping plan",
   "steps": [

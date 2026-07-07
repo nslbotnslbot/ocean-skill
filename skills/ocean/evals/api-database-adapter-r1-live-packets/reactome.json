@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "reactome",
   "adapter_label": "Reactome",
-  "created_utc": "2026-07-04T15:42:00+00:00",
+  "created_utc": "2026-07-07T17:06:49+00:00",
   "executed": true,
   "official_doc": "https://reactome.org/dev/content-service",
   "endpoint_family": "https://reactome.org/ContentService/",

@@ -1,9 +1,9 @@
 # OCEAN API/Database Adapter Eval R1
 
-- Run date: 2026-07-05
+- Run date: 2026-07-08
 - Mode: live
-- Cases: 11
-- Pass: 11
+- Cases: 13
+- Pass: 13
 - Needs review: 0
 
 | Case | Adapter | Status | Records | Verdict | Notes |
@@ -19,6 +19,8 @@
 | API-R1-CLINVAR | clinvar | executed | 1 | pass |  |
 | API-R1-GNOMAD | gnomad | executed | 1 | pass |  |
 | API-R1-ALPHAFOLDDB | alphafold-db | executed | 1 | pass |  |
+| API-R1-CLINICALTRIALS | clinicaltrials | executed | 1 | pass |  |
+| API-R1-NCBI-EUTILS | ncbi-eutils | executed | 1 | pass |  |
 
 ## Evidence Boundary / 证据边界
 

@@ -1,0 +1,5 @@
+{
+  "query": "melanoma",
+  "retmax": 2,
+  "timeout": 20
+}

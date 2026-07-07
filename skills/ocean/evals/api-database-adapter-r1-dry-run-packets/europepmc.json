@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "europepmc",
   "adapter_label": "Europe PMC",
-  "created_utc": "2026-07-04T15:44:24+00:00",
+  "created_utc": "2026-07-07T17:06:25+00:00",
   "executed": false,
   "official_doc": "https://europepmc.org/RestfulWebService",
   "endpoint_family": "https://www.ebi.ac.uk/europepmc/webservices/rest/",

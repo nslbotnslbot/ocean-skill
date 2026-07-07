@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added science-skills-style per-resource database tool folders for 13 Reef API/database adapters, with generated README/API/example/query wrappers plus 13/13 dry-run and 13/13 bounded live eval pass.
 - Added generated per-tool bioinformatics probe/plan wrappers for all 115 tool folders, with `wrapper_config.json`, `scripts/probe_or_plan.py`, API command wiring, and 115/115 per-tool wrapper eval pass.
 - Added Bioinformatics Wrapper Implementation Backlog R1, converting all-tool readiness plans into a 115-item engineering queue with 115/115 structural eval pass.
 - Added Bioinformatics Wrapper Readiness All-Tool R1, extending readiness plans from the 20 priority tools to all 115 bioinformatics tool folders with 115/115 structural eval pass and explicit environment-missing boundaries.
@@ -10,7 +11,7 @@
 - Added a public-safe whole-wheat broth OCEAN case note documenting how all seven modules were used in a real fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow while keeping raw data and private manuscript material out of the repository.
 - Added a bioinformatics tool router that profiles all 115 tools into execution layers and generates workflow plans for FASTQ QC, RNA-seq, variant calling, single-cell, spatial, metagenomics, genome assembly, protein structure, epigenomics, proteomics/metabolomics, workflow reproducibility, and imaging AI.
 - Added bioinformatics execution-layer wrappers: bounded local CLI subprocess probing, R/Bioconductor `Rscript` package/script handling, and non-executing launcher plans for heavy/license/GUI/GPU/large-database tools.
-- Added executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB, plus dry-run and bounded live evals with 11/11 pass.
+- Added executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities, plus dry-run and bounded live evals with 13/13 pass.
 - Added science-skills-style `references/tool_usage.md` guides to all 115 bioinformatics tool folders, with use/avoid rules, required run evidence, stop conditions, and OCEAN handoff guidance.
 - Added Bioinformatics Real-Tool Smoke Eval R1, checking all 115 bioinformatics tool scaffolds against the current local environment with real CLI/version/help, Python import, R package, or OCEAN adapter smoke attempts.
 - Added OCEAN Seven-Module Coordination Eval R1 to test full Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor workflow continuity, artifact coverage, handoff tickets, unsupported-claim downgrades, and Harbor closure.

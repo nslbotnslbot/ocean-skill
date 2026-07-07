@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "clinvar",
   "adapter_label": "ClinVar via NCBI E-utilities",
-  "created_utc": "2026-07-04T15:42:04+00:00",
+  "created_utc": "2026-07-07T17:06:51+00:00",
   "executed": true,
   "official_doc": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
   "endpoint_family": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
@@ -25,9 +25,9 @@
     }
   },
   "result_summary": {
-    "reported_count": "84924",
+    "reported_count": "84925",
     "returned_ids": [
-      "4856951"
+      "4857230"
     ],
     "query_translation": "BRCA1[All Fields]",
     "inspected_fields": [

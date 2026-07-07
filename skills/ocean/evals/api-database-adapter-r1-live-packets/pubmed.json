@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "pubmed",
   "adapter_label": "PubMed via NCBI E-utilities",
-  "created_utc": "2026-07-04T15:41:55+00:00",
+  "created_utc": "2026-07-07T17:06:43+00:00",
   "executed": true,
   "official_doc": "https://www.ncbi.nlm.nih.gov/books/NBK25501/",
   "endpoint_family": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
@@ -25,9 +25,9 @@
     }
   },
   "result_summary": {
-    "reported_count": "39013",
+    "reported_count": "39030",
     "returned_ids": [
-      "42399741"
+      "42410294"
     ],
     "query_translation": "\"tp53 protein human\"[Supplementary Concept] OR \"tp53 protein human\"[All Fields] OR \"tp53\"[All Fields]",
     "inspected_fields": [

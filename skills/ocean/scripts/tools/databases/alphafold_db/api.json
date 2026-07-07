@@ -1,0 +1,52 @@
+{
+  "schema_version": "ocean-database-tool-api-v1",
+  "adapter": "alphafold-db",
+  "tool_name": "AlphaFold DB",
+  "tool_slug": "alphafold_db",
+  "tool_family": "structure_modeling",
+  "interface_type": "reef_api_database_packet",
+  "python_wrapper": "scripts/query_packet.py",
+  "example_input": "examples/query.example.json",
+  "default_output": "outputs/alphafold_db-reef-packet.json",
+  "commands": [
+    {
+      "name": "query-packet",
+      "description": "Create a bounded dry-run Reef API/database packet.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--accession",
+        "P04637",
+        "--retmax",
+        "2",
+        "--out",
+        "outputs/alphafold_db-reef-packet.json"
+      ]
+    },
+    {
+      "name": "query-packet-live",
+      "description": "Create a bounded live Reef API/database packet with explicit network execution.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--accession",
+        "P04637",
+        "--retmax",
+        "2",
+        "--execute",
+        "--out",
+        "outputs/alphafold_db-reef-packet.json"
+      ]
+    }
+  ],
+  "output_contract": {
+    "ocean_module": "Reef",
+    "boundary_required": true,
+    "handoff": "Reef -> Iceberg/Anchor"
+  },
+  "evidence_boundary": {
+    "can_support": "predicted-structure metadata provenance by UniProt accession",
+    "cannot_support_alone": "experimental structure proof, binding, druggability, or function",
+    "terms_url": "https://alphafold.ebi.ac.uk/api-docs"
+  }
+}

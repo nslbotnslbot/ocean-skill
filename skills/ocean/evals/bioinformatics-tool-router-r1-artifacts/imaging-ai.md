@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: imaging-ai
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: medical/biological imaging annotation, segmentation, and ML workflow provenance plan
 - Final handoff: Anchor
 

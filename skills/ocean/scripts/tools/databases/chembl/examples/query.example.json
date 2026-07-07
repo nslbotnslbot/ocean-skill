@@ -1,0 +1,5 @@
+{
+  "query": "aspirin",
+  "retmax": 2,
+  "timeout": 20
+}

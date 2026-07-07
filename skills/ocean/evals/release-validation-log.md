@@ -2491,3 +2491,61 @@ The first per-tool wrapper eval run completed the wrapper calls but failed while
 ### Evidence Boundary / 证据边界
 
 Passing this eval means every registered bioinformatics tool folder now has a callable OCEAN probe/plan code path and produces an evidence-bound artifact. It does not mean the external software is installed, that any biological/clinical dataset was processed, that a workflow completed, that a benchmark is valid, or that any scientific claim is supported. Scientific use still requires inspected run records, references/databases, logs, parameters, outputs, and downstream OCEAN audit.
+
+## 2026-07-08 - Database tool adapter R1
+
+### 中文上下文
+
+这轮把 Reef 的 API/database adapter 从单一共享脚本进一步整理成 science-skills-style 的 per-resource tool folders。目标不是把 OCEAN 绑定到某个数据库或 live API，而是让常见生物医学公共资源能以统一、可追踪、可验证的工具形式产出 Reef source/resource packet。
+
+### English Context
+
+This round exposes the existing Reef API/database runner as per-resource tool folders. Each folder has its own README, API contract, example query, adapter config, and `scripts/query_packet.py` entrypoint, while execution remains centralized in `scripts/run_reef_api_adapter.py`.
+
+### Scope / 影响范围
+
+- Added `scripts/tools/common/database_adapter_entrypoint.py`.
+- Added `scripts/tools/generate_database_adapter_scaffold.py`.
+- Added `scripts/tools/run_database_tool_adapter_eval.py`.
+- Generated 13 database adapter folders under `scripts/tools/databases/`.
+- Generated folder-level `README.md`, `api.json`, `tool.json`, `adapter_config.json`, `examples/query.example.json`, and `scripts/query_packet.py` for each adapter.
+- Updated `SKILL.md`, `scripts/tools/README.md`, `api-database-adapters.md`, `reef-api-adapters.md`, evaluation README, and changelog.
+
+### Adapter Coverage
+
+| Adapter | Resource role |
+|---|---|
+| `uniprot` | protein annotation / accession metadata |
+| `pubmed` | PubMed literature metadata |
+| `europepmc` | Europe PMC literature metadata |
+| `chembl` | compound / target / assay metadata |
+| `opentargets` | target metadata and target-resource provenance |
+| `string` | protein identifier mapping and association-resource provenance |
+| `reactome` | pathway/resource discovery |
+| `quickgo` | GO term and annotation-resource metadata |
+| `clinvar` | ClinVar public variant record discovery |
+| `gnomad` | population-frequency resource provenance |
+| `alphafold-db` | predicted-structure metadata provenance |
+| `clinicaltrials` | clinical registry status/design metadata |
+| `ncbi-eutils` | generic Entrez metadata routing |
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Database adapter folders generated | 13 |
+| Dry-run database tool adapter eval | 13/13 pass |
+| Bounded live database tool adapter eval | 13/13 pass after timeout rerun |
+| Dry-run needs_review | 0 |
+| Live needs_review | 0 |
+| Network mode | public API only, `retmax=1` for live eval |
+
+### Error Notes
+
+The first per-resource live run produced 12/13 pass because the ChEMBL request timed out with `The read operation timed out`. The shared API runner had already passed ChEMBL in the same session, so this was treated as an external API/network timeout rather than a source-packet contract failure. The per-resource live eval was rerun with a longer timeout and completed 13/13 pass.
+
+Live mode only used small public queries and recorded Reef packets; it did not submit private manuscripts, patient data, API keys, unpublished data, or local omics files.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means OCEAN can expose common public biomedical databases as bounded Reef tool adapters and produce traceable query packets. It does not mean the database records prove biological mechanism, clinical utility, treatment efficacy, pathogenicity, benchmark validity, or publication readiness. Any claim still needs inspected source packets, evidence hierarchy review, and downstream Iceberg/Anchor/Compass audit.

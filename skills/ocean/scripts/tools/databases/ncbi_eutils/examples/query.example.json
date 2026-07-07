@@ -1,0 +1,6 @@
+{
+  "database": "gene",
+  "query": "TP53",
+  "retmax": 2,
+  "timeout": 20
+}

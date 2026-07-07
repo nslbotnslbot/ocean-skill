@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "uniprot",
+  "slug": "uniprot",
+  "label": "UniProt",
+  "family": "protein_annotation",
+  "default_arguments": {
+    "accession": "P04637",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--accession` or `--query`",
+  "can_support": "protein accession, reviewed/unreviewed status, sequence/function annotation provenance",
+  "cannot_support": "new function, mechanism, causality, or clinical utility without primary evidence",
+  "handoff": "Reef -> Iceberg/Anchor",
+  "terms_url": "https://www.uniprot.org/help/license"
+}

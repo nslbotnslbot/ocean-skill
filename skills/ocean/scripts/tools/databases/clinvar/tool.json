@@ -1,0 +1,13 @@
+{
+  "name": "ClinVar",
+  "slug": "clinvar",
+  "adapter": "clinvar",
+  "family": "variant_clinical_annotation",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "diagnosis, treatment guidance, or pathogenicity without inspected details"
+  ],
+  "handoff": "Reef -> Iceberg/Anchor"
+}

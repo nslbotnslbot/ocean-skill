@@ -84,6 +84,18 @@ CASES = [
         "args": ["--accession", "P04637"],
         "expected_query_key": "uniprot_accession",
     },
+    {
+        "case_id": "API-R1-CLINICALTRIALS",
+        "adapter": "clinicaltrials",
+        "args": ["--query", "melanoma"],
+        "expected_query_key": "query.term",
+    },
+    {
+        "case_id": "API-R1-NCBI-EUTILS",
+        "adapter": "ncbi-eutils",
+        "args": ["--database", "gene", "--query", "TP53"],
+        "expected_query_key": "term",
+    },
 ]
 
 

@@ -6,7 +6,7 @@
 - Official documentation: https://www.ncbi.nlm.nih.gov/books/NBK25501/
 - Endpoint family: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
 - Executed: True
-- Query date UTC: 2026-07-04T15:41:55+00:00
+- Query date UTC: 2026-07-07T17:06:43+00:00
 - Query target: `{"database": "pubmed", "term": "TP53", "retmax": 1}`
 
 ## 二、Query Log
@@ -31,9 +31,9 @@
 
 ```json
 {
-  "reported_count": "39013",
+  "reported_count": "39030",
   "returned_ids": [
-    "42399741"
+    "42410294"
   ],
   "query_translation": "\"tp53 protein human\"[Supplementary Concept] OR \"tp53 protein human\"[All Fields] OR \"tp53\"[All Fields]",
   "inspected_fields": [

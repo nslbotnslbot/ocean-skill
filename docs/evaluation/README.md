@@ -52,6 +52,8 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-eval-results.md`: structural eval for backlog completeness, rank continuity, next actions, and evidence boundaries.
 - `skills/ocean/evals/bioinformatics-per-tool-wrapper-r1-results.md`: full execution check for the generated per-tool `probe_or_plan.py` entrypoints across all 115 tool folders.
 - `skills/ocean/evals/bioinformatics-tool-scaffold-r1-results.md`: scaffold completeness check, now including source-packet wrappers, per-tool probe/plan wrappers, wrapper configs, API commands, examples, and usage guides.
+- `skills/ocean/evals/database-tool-adapter-r1-dry-run-results.md`: per-resource database tool-folder eval for 13 Reef adapters without network calls.
+- `skills/ocean/evals/database-tool-adapter-r1-live-results.md`: bounded live public API eval for the same 13 database tool folders.
 
 ## What Is Not Included
 
@@ -91,7 +93,9 @@ Bioinformatics Per-Tool Wrapper R1 executes every generated `scripts/probe_or_pl
 
 Bioinformatics Tool Usage Guide R1 adds science-skills-style `references/tool_usage.md` files to every bioinformatics tool folder. The scaffold eval now verifies these usage guides alongside `tool.json`, README, example run records, API contracts, and Python wrappers.
 
-API/Database Adapter R1 adds executable Reef wrappers for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB. Dry-run eval checks packet construction without network calls; bounded live eval performs public API requests and passed 11/11 adapters.
+API/Database Adapter R1 adds executable Reef wrappers for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities. Dry-run eval checks packet construction without network calls; bounded live eval performs public API requests and passed 13/13 adapters.
+
+Database Tool Adapter R1 exposes those public resource adapters as per-resource tool folders under `scripts/tools/databases/`, adding ClinicalTrials.gov and generic NCBI E-utilities to the tool-library layer. Dry-run and bounded live evals both passed 13/13. These are Reef resource-packet adapters, not biological or clinical validation.
 
 Harbor-focused M3 R1 adds the first dedicated Harbor test. It focuses on decision memos, contribution boundaries, stale evidence reuse, stop-condition handoffs, public/private development memory, and MiniMax clean-output handling.
 

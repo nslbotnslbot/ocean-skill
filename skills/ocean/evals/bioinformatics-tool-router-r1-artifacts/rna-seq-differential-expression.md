@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: rna-seq-differential-expression
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: bulk RNA-seq QC, alignment/quantification, and differential-expression evidence plan
 - Final handoff: Iceberg
 

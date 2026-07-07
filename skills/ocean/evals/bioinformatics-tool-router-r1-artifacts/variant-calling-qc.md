@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: variant-calling-qc
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: variant calling, file-operation, and QC provenance plan
 - Final handoff: Anchor
 

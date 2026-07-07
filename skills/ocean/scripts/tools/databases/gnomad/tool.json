@@ -1,0 +1,13 @@
+{
+  "name": "gnomAD",
+  "slug": "gnomad",
+  "adapter": "gnomad",
+  "family": "population_genetics",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--variant-id`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "pathogenicity, diagnosis, treatment actionability, or mechanism"
+  ],
+  "handoff": "Reef -> Iceberg/Anchor"
+}

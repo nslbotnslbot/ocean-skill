@@ -1,0 +1,5 @@
+{
+  "query": "BRCA1",
+  "retmax": 2,
+  "timeout": 20
+}

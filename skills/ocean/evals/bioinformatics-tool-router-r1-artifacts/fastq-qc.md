@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: fastq-qc
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: raw FASTQ quality control and preprocessing evidence plan
 - Final handoff: Anchor
 

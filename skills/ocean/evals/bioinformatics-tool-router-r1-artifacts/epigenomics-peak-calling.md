@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: epigenomics-peak-calling
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: epigenomic alignment, peak-calling, motif, and signal-track provenance plan
 - Final handoff: Iceberg
 

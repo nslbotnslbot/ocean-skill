@@ -18,7 +18,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `bioinformatics/alphafold_db/` | AlphaFold DB predicted-structure confidence and PAE source packets |
 | `literature/` | PubMed, EuropePMC, or local literature metadata source packets |
 | `clinicaltrials/` | ClinicalTrials.gov registry source packets |
-| `../run_reef_api_adapter.py` | Executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB |
+| `databases/` | Per-resource Reef API/database tool folders for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities |
+| `../run_reef_api_adapter.py` | Executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities |
 | `bioinformatics/` | Per-tool scaffolds for bioinformatics software listed in OCEAN's resource map |
 | `bioinformatics_tool_router.py` | Route tools to execution layers and create workflow plans for common bioinformatics tasks |
 | `build_bioinformatics_capability_matrix.py` | Join the bioinformatics registry, API/source-packet contracts, and real-tool smoke results into a planning matrix |
@@ -28,6 +29,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `run_bioinformatics_wrapper_backlog_eval.py` | Validate backlog completeness, rank continuity, next actions, and evidence boundaries |
 | `generate_bioinformatics_probe_wrappers.py` | Generate per-tool `wrapper_config.json` and `scripts/probe_or_plan.py` entrypoints |
 | `run_bioinformatics_per_tool_wrapper_eval.py` | Execute generated per-tool probe/plan entrypoints and validate their artifacts |
+| `generate_database_adapter_scaffold.py` | Generate per-resource database adapter folders around the shared Reef API runner |
+| `run_database_tool_adapter_eval.py` | Execute database adapter folder entrypoints in dry-run or bounded live mode |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
 
 Shared or cross-tool eval runners may live directly under `scripts/tools/`.
@@ -117,6 +120,35 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
 ```
 
 Each tool folder receives `wrapper_config.json` and `scripts/probe_or_plan.py`. The generated entrypoint either records a local availability/version/import probe or emits a launcher/source-packet plan. It does not install tools, download databases, run biological analyses, benchmark methods, or validate scientific claims.
+
+## Database tool adapters
+
+Generate per-resource database adapter folders:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_database_adapter_scaffold.py \
+  --skill-dir skills/ocean
+```
+
+Validate the generated folders without network access:
+
+```bash
+python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Run bounded live public API checks only when public network access is appropriate:
+
+```bash
+python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals \
+  --execute-live \
+  --retmax 1
+```
+
+These database folders make public resources scriptable as OCEAN Reef packet adapters. They do not make OCEAN dependent on any live API and do not convert database metadata into biological, causal, or clinical proof.
 
 ## Naming pattern
 

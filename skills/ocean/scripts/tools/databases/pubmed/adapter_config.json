@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "pubmed",
+  "slug": "pubmed",
+  "label": "PubMed",
+  "family": "literature_metadata",
+  "default_arguments": {
+    "query": "TP53",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--query`",
+  "can_support": "PubMed record discovery and PMID/query provenance",
+  "cannot_support": "full-paper evidence, peer-review quality, mechanism, or clinical efficacy",
+  "handoff": "Sounding/Reef -> Current/Iceberg",
+  "terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/"
+}

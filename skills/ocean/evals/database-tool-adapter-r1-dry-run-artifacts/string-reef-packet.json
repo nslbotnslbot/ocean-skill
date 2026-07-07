@@ -1,0 +1,29 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "string",
+  "adapter_label": "STRING",
+  "created_utc": "2026-07-07T17:10:44+00:00",
+  "executed": false,
+  "official_doc": "https://string-db.org/help/api/",
+  "endpoint_family": "https://string-db.org/api/",
+  "resource_role": "Protein identifier mapping and protein-protein association metadata",
+  "query": {
+    "identifiers": "TP53",
+    "species": "9606",
+    "limit": "2"
+  },
+  "query_url_or_endpoint": "https://string-db.org/api/json/get_string_ids?identifiers=TP53&species=9606&limit=2",
+  "request_body": null,
+  "query_log": {
+    "status": "dry-run",
+    "records_inspected": 0,
+    "failure_or_limit": ""
+  },
+  "result_summary": {},
+  "evidence_boundary": {
+    "can_support": "Traceable STRING identifier mapping or association-resource provenance.",
+    "cannot_support": "Physical binding, direct mechanism, causality, or disease relevance from association scores alone.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

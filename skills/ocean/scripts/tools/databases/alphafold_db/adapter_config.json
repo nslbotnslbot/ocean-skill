@@ -1,0 +1,17 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "alphafold-db",
+  "slug": "alphafold_db",
+  "label": "AlphaFold DB",
+  "family": "structure_modeling",
+  "default_arguments": {
+    "accession": "P04637",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--accession` or `--query`",
+  "can_support": "predicted-structure metadata provenance by UniProt accession",
+  "cannot_support": "experimental structure proof, binding, druggability, or function",
+  "handoff": "Reef -> Iceberg/Anchor",
+  "terms_url": "https://alphafold.ebi.ac.uk/api-docs"
+}

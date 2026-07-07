@@ -1,0 +1,18 @@
+{
+  "schema_version": "ocean-database-adapter-config-v1",
+  "adapter": "ncbi-eutils",
+  "slug": "ncbi_eutils",
+  "label": "NCBI E-utilities",
+  "family": "entrez_metadata",
+  "default_arguments": {
+    "database": "gene",
+    "query": "TP53",
+    "retmax": 2,
+    "timeout": 20
+  },
+  "required_input": "`--database` and `--query`",
+  "can_support": "Entrez record discovery and public metadata retrieval planning",
+  "cannot_support": "full evidence, mechanism, causality, or absence-of-evidence claims",
+  "handoff": "Reef -> Sounding/Iceberg/Harbor",
+  "terms_url": "https://www.ncbi.nlm.nih.gov/books/NBK25501/"
+}

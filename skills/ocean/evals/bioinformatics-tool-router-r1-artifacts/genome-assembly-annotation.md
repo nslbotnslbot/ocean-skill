@@ -1,6 +1,6 @@
 # OCEAN Bioinformatics Workflow Plan: genome-assembly-annotation
 
-- Date: 2026-07-05
+- Date: 2026-07-08
 - Intent: genome assembly, assembly QC, and annotation provenance plan
 - Final handoff: Anchor
 

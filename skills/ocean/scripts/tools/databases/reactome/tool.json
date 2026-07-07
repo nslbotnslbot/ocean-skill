@@ -1,0 +1,13 @@
+{
+  "name": "Reactome",
+  "slug": "reactome",
+  "adapter": "reactome",
+  "family": "pathway",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "pathway activity, causal disease mechanism, or treatment effect"
+  ],
+  "handoff": "Reef -> Iceberg/Compass"
+}

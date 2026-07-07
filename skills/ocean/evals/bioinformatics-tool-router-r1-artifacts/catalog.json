@@ -1,6 +1,6 @@
 {
   "schema_version": "ocean-bioinformatics-tool-router-r1",
-  "date": "2026-07-05",
+  "date": "2026-07-08",
   "tools": 115,
   "by_execution_layer": {
     "heavy_launcher_plan": 20,

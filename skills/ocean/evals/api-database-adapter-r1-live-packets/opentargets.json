@@ -2,7 +2,7 @@
   "ocean_module": "Reef",
   "adapter": "opentargets",
   "adapter_label": "Open Targets Platform",
-  "created_utc": "2026-07-04T15:41:58+00:00",
+  "created_utc": "2026-07-07T17:06:47+00:00",
   "executed": true,
   "official_doc": "https://platform-docs.opentargets.org/data-access/graphql-api",
   "endpoint_family": "https://api.platform.opentargets.org/api/v4/graphql",

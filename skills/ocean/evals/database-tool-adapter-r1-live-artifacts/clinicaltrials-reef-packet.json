@@ -1,0 +1,44 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "clinicaltrials",
+  "adapter_label": "ClinicalTrials.gov",
+  "created_utc": "2026-07-07T17:08:18+00:00",
+  "executed": true,
+  "official_doc": "https://clinicaltrials.gov/data-api/api",
+  "endpoint_family": "https://clinicaltrials.gov/api/v2/",
+  "resource_role": "Clinical trial registry metadata",
+  "query": {
+    "query.term": "melanoma",
+    "pageSize": 1
+  },
+  "query_url_or_endpoint": "https://clinicaltrials.gov/api/v2/studies?query.term=melanoma&pageSize=1&format=json",
+  "request_body": null,
+  "query_log": {
+    "status": "executed",
+    "records_inspected": 1,
+    "failure_or_limit": "",
+    "response": {
+      "status_code": 200,
+      "content_type": "application/json",
+      "bytes": 5335
+    }
+  },
+  "result_summary": {
+    "returned_nct_ids": [
+      "NCT01191294"
+    ],
+    "overall_status_values_seen": [
+      "COMPLETED"
+    ],
+    "inspected_fields": [
+      "protocolSection.identificationModule.nctId",
+      "protocolSection.statusModule.overallStatus"
+    ]
+  },
+  "evidence_boundary": {
+    "can_support": "Study existence, registration status, design metadata, and posted registry fields.",
+    "cannot_support": "Treatment efficacy or clinical guidance unless results and publications are inspected.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

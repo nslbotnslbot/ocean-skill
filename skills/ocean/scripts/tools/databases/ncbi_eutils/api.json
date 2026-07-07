@@ -1,0 +1,56 @@
+{
+  "schema_version": "ocean-database-tool-api-v1",
+  "adapter": "ncbi-eutils",
+  "tool_name": "NCBI E-utilities",
+  "tool_slug": "ncbi_eutils",
+  "tool_family": "entrez_metadata",
+  "interface_type": "reef_api_database_packet",
+  "python_wrapper": "scripts/query_packet.py",
+  "example_input": "examples/query.example.json",
+  "default_output": "outputs/ncbi_eutils-reef-packet.json",
+  "commands": [
+    {
+      "name": "query-packet",
+      "description": "Create a bounded dry-run Reef API/database packet.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--database",
+        "gene",
+        "--query",
+        "TP53",
+        "--retmax",
+        "2",
+        "--out",
+        "outputs/ncbi_eutils-reef-packet.json"
+      ]
+    },
+    {
+      "name": "query-packet-live",
+      "description": "Create a bounded live Reef API/database packet with explicit network execution.",
+      "argv": [
+        "python3",
+        "scripts/query_packet.py",
+        "--database",
+        "gene",
+        "--query",
+        "TP53",
+        "--retmax",
+        "2",
+        "--execute",
+        "--out",
+        "outputs/ncbi_eutils-reef-packet.json"
+      ]
+    }
+  ],
+  "output_contract": {
+    "ocean_module": "Reef",
+    "boundary_required": true,
+    "handoff": "Reef -> Sounding/Iceberg/Harbor"
+  },
+  "evidence_boundary": {
+    "can_support": "Entrez record discovery and public metadata retrieval planning",
+    "cannot_support_alone": "full evidence, mechanism, causality, or absence-of-evidence claims",
+    "terms_url": "https://www.ncbi.nlm.nih.gov/books/NBK25501/"
+  }
+}

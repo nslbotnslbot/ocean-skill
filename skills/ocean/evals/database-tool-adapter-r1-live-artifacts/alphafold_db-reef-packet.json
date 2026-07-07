@@ -1,0 +1,53 @@
+{
+  "ocean_module": "Reef",
+  "adapter": "alphafold-db",
+  "adapter_label": "AlphaFold DB",
+  "created_utc": "2026-07-07T17:08:16+00:00",
+  "executed": true,
+  "official_doc": "https://alphafold.ebi.ac.uk/api-docs",
+  "endpoint_family": "https://alphafold.ebi.ac.uk/api/prediction/",
+  "resource_role": "Predicted protein structure metadata and confidence files by UniProt accession",
+  "query": {
+    "uniprot_accession": "P04637"
+  },
+  "query_url_or_endpoint": "https://alphafold.ebi.ac.uk/api/prediction/P04637",
+  "request_body": null,
+  "query_log": {
+    "status": "executed",
+    "records_inspected": 1,
+    "failure_or_limit": "",
+    "response": {
+      "status_code": 200,
+      "content_type": "application/json",
+      "bytes": 18911
+    }
+  },
+  "result_summary": {
+    "records": [
+      {
+        "entryId": "AF-P04637-F1",
+        "gene": "TP53",
+        "uniprotAccession": "P04637",
+        "uniprotId": "P53_HUMAN",
+        "organismScientificName": "Homo sapiens",
+        "modelCreatedDate": "2025-08-01T00:00:00Z",
+        "latestVersion": 6
+      }
+    ],
+    "inspected_fields": [
+      "entryId",
+      "gene",
+      "uniprotAccession",
+      "uniprotId",
+      "organismScientificName",
+      "modelCreatedDate",
+      "latestVersion"
+    ]
+  },
+  "evidence_boundary": {
+    "can_support": "Traceable predicted-structure metadata lookup by UniProt accession.",
+    "cannot_support": "Experimental structure proof, binding proof, mechanism, druggability, or functional rescue.",
+    "privacy_or_access": "Public metadata request only. Do not submit private manuscript text, patient data, PHI, or unpublished data.",
+    "handoff": "Use this packet as Reef resource evidence for Iceberg, Anchor, or Compass. Do not treat it as primary experimental validation."
+  }
+}

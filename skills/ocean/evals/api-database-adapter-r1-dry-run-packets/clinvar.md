@@ -6,7 +6,7 @@
 - Official documentation: https://www.ncbi.nlm.nih.gov/books/NBK25501/
 - Endpoint family: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
 - Executed: False
-- Query date UTC: 2026-07-04T15:44:25+00:00
+- Query date UTC: 2026-07-07T17:06:25+00:00
 - Query target: `{"database": "clinvar", "term": "BRCA1", "retmax": 2}`
 
 ## 二、Query Log

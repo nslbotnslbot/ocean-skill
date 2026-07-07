@@ -1,0 +1,13 @@
+{
+  "name": "ChEMBL",
+  "slug": "chembl",
+  "adapter": "chembl",
+  "family": "drug_target",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "therapeutic efficacy, safety, mechanism, or clinical readiness"
+  ],
+  "handoff": "Reef -> Iceberg/Compass"
+}

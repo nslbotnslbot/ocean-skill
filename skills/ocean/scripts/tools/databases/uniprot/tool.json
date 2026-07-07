@@ -1,0 +1,13 @@
+{
+  "name": "UniProt",
+  "slug": "uniprot",
+  "adapter": "uniprot",
+  "family": "protein_annotation",
+  "maturity": "L2 Reef API/database packet adapter",
+  "required_input": "`--accession` or `--query`",
+  "evidence_level": "public API/database metadata only after query packet is inspected",
+  "cannot_support_alone": [
+    "new function, mechanism, causality, or clinical utility without primary evidence"
+  ],
+  "handoff": "Reef -> Iceberg/Anchor"
+}

@@ -17,6 +17,27 @@ OCEAN includes bounded Reef adapters for public biomedical databases. These are 
 | `clinvar` | ClinVar via NCBI E-utilities | `--query` | ClinVar record discovery and identifier provenance | diagnosis, treatment, pathogenicity without inspected details |
 | `gnomad` | gnomAD GraphQL | `--variant-id` | population-frequency resource provenance | pathogenicity, diagnosis, actionability |
 | `alphafold-db` | AlphaFold DB | `--accession` or `--query` | predicted-structure metadata provenance | experimental structure proof, binding, druggability |
+| `clinicaltrials` | ClinicalTrials.gov | `--query` | registry status/design metadata provenance | treatment efficacy or clinical guidance |
+| `ncbi-eutils` | NCBI E-utilities | `--database` and `--query` | Entrez record discovery and public metadata routing | full evidence, mechanism, causality, absence-of-evidence claims |
+
+## Per-Resource Tool Folders
+
+The same adapters are also exposed as science-skills-style tool folders under:
+
+```text
+skills/ocean/scripts/tools/databases/<adapter_slug>/
+```
+
+Each folder includes:
+
+- `README.md`
+- `api.json`
+- `tool.json`
+- `adapter_config.json`
+- `examples/query.example.json`
+- `scripts/query_packet.py`
+
+The per-folder script delegates to `scripts/run_reef_api_adapter.py`, so adapter behavior stays centralized while each resource remains discoverable as a tool-library entry.
 
 ## Usage
 
@@ -48,10 +69,28 @@ python3 skills/ocean/scripts/run_api_database_adapter_eval.py \
   --outdir skills/ocean/evals
 ```
 
+Run the per-resource database tool-folder eval:
+
+```bash
+python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
 Live eval requires network access:
 
 ```bash
 python3 skills/ocean/scripts/run_api_database_adapter_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals \
+  --execute-live \
+  --retmax 1
+```
+
+Per-resource live eval:
+
+```bash
+python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
   --skill-dir skills/ocean \
   --outdir skills/ocean/evals \
   --execute-live \
