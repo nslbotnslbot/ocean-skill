@@ -67,7 +67,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/tools/clinicaltrials/source_packet.py` for ClinicalTrials.gov registry packets. Treat registry records as trial-registration/design evidence, not efficacy or safety proof.
 - Use `scripts/tools/databases/<adapter>/scripts/query_packet.py` when the user wants a resource-specific Reef API/database packet for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, or NCBI E-utilities. Default to dry-run unless live public API access is appropriate.
 - Use `scripts/tools/common/software_source_packet.py` for generic software-run source packets when a bioinformatics tool has inspected run metadata but no dedicated wrapper yet. Treat these packets as provenance evidence only.
-- Use `scripts/tools/bioinformatics/<tool>/` folders as scaffold locations for tool-specific wrappers, examples, and evals. A folder existing there does not mean the tool is installed or executable.
+- Use `scripts/tools/bioinformatics/<tool>/` folders as scaffold locations for tool-specific wrappers, examples, and evals. Lightweight CLI tools may include `scripts/run_cli.py` for bounded local command probes and explicit user-supplied run records. A folder existing there does not mean the tool is installed or executable.
 - Use `scripts/run_reef_api_adapter.py` only when the user explicitly wants a bounded public Reef API packet. Default to dry-run unless the user has approved live public API access and no private, sensitive, paid, or key-protected data will be submitted.
 
 ## Workflow

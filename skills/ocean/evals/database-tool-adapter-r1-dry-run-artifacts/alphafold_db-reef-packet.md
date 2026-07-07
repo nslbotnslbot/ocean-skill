@@ -6,7 +6,7 @@
 - Official documentation: https://alphafold.ebi.ac.uk/api-docs
 - Endpoint family: https://alphafold.ebi.ac.uk/api/prediction/
 - Executed: False
-- Query date UTC: 2026-07-07T17:10:44+00:00
+- Query date UTC: 2026-07-07T17:24:53+00:00
 - Query target: `{"uniprot_accession": "P04637"}`
 
 ## 二、Query Log

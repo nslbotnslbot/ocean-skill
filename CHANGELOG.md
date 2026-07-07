@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added lightweight CLI runner wrappers for 60 bioinformatics command-line tools, with per-tool `scripts/run_cli.py` entrypoints, API command wiring, README usage notes, bounded provenance recording, and 60/60 CLI runner eval pass in the current environment.
 - Added science-skills-style per-resource database tool folders for 13 Reef API/database adapters, with generated README/API/example/query wrappers plus 13/13 dry-run and 13/13 bounded live eval pass.
 - Added generated per-tool bioinformatics probe/plan wrappers for all 115 tool folders, with `wrapper_config.json`, `scripts/probe_or_plan.py`, API command wiring, and 115/115 per-tool wrapper eval pass.
 - Added Bioinformatics Wrapper Implementation Backlog R1, converting all-tool readiness plans into a 115-item engineering queue with 115/115 structural eval pass.

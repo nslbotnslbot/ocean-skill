@@ -6,7 +6,7 @@
 - Official documentation: https://www.ncbi.nlm.nih.gov/books/NBK25501/
 - Endpoint family: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/
 - Executed: False
-- Query date UTC: 2026-07-07T17:10:44+00:00
+- Query date UTC: 2026-07-07T17:24:54+00:00
 - Query target: `{"database": "gene", "term": "TP53", "retmax": 2}`
 
 ## 二、Query Log

@@ -29,6 +29,8 @@ Adapters do not decide scientific truth. OCEAN modules audit the resulting packe
 | `run_bioinformatics_wrapper_backlog_eval.py` | Validate backlog completeness, rank continuity, next actions, and evidence boundaries |
 | `generate_bioinformatics_probe_wrappers.py` | Generate per-tool `wrapper_config.json` and `scripts/probe_or_plan.py` entrypoints |
 | `run_bioinformatics_per_tool_wrapper_eval.py` | Execute generated per-tool probe/plan entrypoints and validate their artifacts |
+| `generate_bioinformatics_cli_runners.py` | Generate per-tool `scripts/run_cli.py` entrypoints for lightweight CLI tools |
+| `run_bioinformatics_cli_runner_eval.py` | Execute lightweight CLI runner probes and validate bounded provenance artifacts |
 | `generate_database_adapter_scaffold.py` | Generate per-resource database adapter folders around the shared Reef API runner |
 | `run_database_tool_adapter_eval.py` | Execute database adapter folder entrypoints in dry-run or bounded live mode |
 | `common/` | Shared helpers for generic software source-packet creation, CLI subprocess probes, Rscript checks, and heavy-tool launcher plans |
@@ -120,6 +122,25 @@ python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
 ```
 
 Each tool folder receives `wrapper_config.json` and `scripts/probe_or_plan.py`. The generated entrypoint either records a local availability/version/import probe or emits a launcher/source-packet plan. It does not install tools, download databases, run biological analyses, benchmark methods, or validate scientific claims.
+
+## Lightweight CLI runners
+
+For tools whose execution layer is `lightweight_cli`, generate per-tool runner entrypoints:
+
+```bash
+python3 skills/ocean/scripts/tools/generate_bioinformatics_cli_runners.py \
+  --skill-dir skills/ocean
+```
+
+Then run the bounded probe eval:
+
+```bash
+python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
+  --skill-dir skills/ocean \
+  --outdir skills/ocean/evals
+```
+
+Each lightweight CLI folder receives `scripts/run_cli.py` plus `cli-probe` and `cli-run-record` API commands. The runner delegates to `common/cli_subprocess_wrapper.py`, records executable availability and command provenance, and requires explicit user-supplied arguments for non-probe runs. It does not install tools, choose private inputs, download references, complete workflows, benchmark methods, or validate biological claims.
 
 ## Database tool adapters
 
