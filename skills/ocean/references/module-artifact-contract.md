@@ -29,7 +29,7 @@ Use this contract when OCEAN needs stable outputs across the seven modules. Each
 | Iceberg | Claim-Evidence Matrix | surface claim, evidence inspected, support verdict, hidden assumption, missing validation, safe rewrite | keep unsupported strong wording |
 | Anchor | Validation Plan | validation target, current evidence, minimum check, leakage/benchmark/reproducibility risks, feasibility boundary | imply planned validation has already succeeded |
 | Compass | Research Route Card | evidence driver, route options, experiment/design plan, decision gates, journal/collaboration strategy, stop condition | brainstorm free-floating ideas without evidence anchors |
-| Harbor | Decision Memory | final memo, evidence boundary ledger, contribution boundary record, next-action register, stale-evidence flags, reuse note | add new evidence or decide authorship/publication from missing records |
+| Harbor | Decision Memory / Project Start Card | final memo, evidence boundary ledger, contribution boundary record, next-action register, stale-evidence flags, reuse note, GitHub Sync Ticket when a new tracked project starts | add new evidence, publish private project material, auto-push without approval, or decide authorship/publication from missing records |
 
 ## Artifact Quality Gates
 
@@ -96,6 +96,22 @@ Compass Research Route Card
 ```markdown
 Harbor Decision Memory
 | Decision / record | Evidence basis | Date/context | Unresolved risk | Next action | Reuse warning |
+|---|---|---|---|---|---|
+```
+
+### Harbor Project Start Card
+
+```markdown
+Harbor Project Start Card
+| Project ID | Title | Domain lane | Project class | Status | Public-safe boundary | First module | GitHub sync |
+|---|---|---|---|---|---|---|---|
+```
+
+### GitHub Sync Ticket
+
+```markdown
+GitHub Sync Ticket
+| Target repository | Files to add/update | Suggested branch | Commit message | Remote push | Excluded material |
 |---|---|---|---|---|---|
 ```
 

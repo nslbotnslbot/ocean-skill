@@ -62,6 +62,20 @@ OCEAN is also being tracked in real manuscript and submission workflows. See `do
 
 The first public-safe case note is the [whole-wheat broth project](docs/case-studies/whole-wheat-broth-project.md). It shows how all seven OCEAN modules were used in one fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow without publishing raw data or private manuscript text.
 
+## Project-start records
+
+When a new OCEAN analysis becomes a traceable research project, Harbor can create a public-safe Project Start Card and GitHub Sync Ticket. This is meant to keep important research work from staying only in chat history. It does not publish raw data, private manuscripts, patient-level data, confidential review text, API keys, or unconfirmed submission outcomes.
+
+The project-start gate is documented in `skills/ocean/references/project-start-gate.md`. A local record can be generated with:
+
+```bash
+python3 skills/ocean/scripts/create_project_start_record.py \
+  --title "Example biomedical project" \
+  --domain "Biological research" \
+  --public-safe unclear \
+  --remote-push "needs approval"
+```
+
 ## Module flow
 
 OCEAN uses seven modules as an external audit sequence, not as an experiment-execution loop. Each module is meant to complete a different event and hand off a concrete artifact to the next step. See `docs/module-map.md` for the fuller public map.

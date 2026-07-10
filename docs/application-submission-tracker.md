@@ -12,6 +12,8 @@ This page tracks research projects that use **OCEAN: Orchestrated Claim-Evidence
 
 **Evidence boundary / 证据边界**: The existence of the two application cases below is based on user-provided project information. Exact OCEAN artifacts, submission dates, journal names, review outcomes, and manuscript decisions must be updated only after they are confirmed by the project owner.
 
+Before adding a new public case, use the Project Start Gate in `skills/ocean/references/project-start-gate.md` to create a public-safe Project Start Card and GitHub Sync Ticket. If public-safe status is unclear, keep the record local and mark the public tracker as `To be updated`.
+
 ## Status Vocabulary
 
 Use these labels consistently when updating the tracker.

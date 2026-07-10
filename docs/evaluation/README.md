@@ -29,6 +29,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/domain-router-big-experiment-r1-results.md`: deterministic 33-check result file for the Domain Router Big Experiment R1 structural run.
 - `skills/ocean/evals/domain-router-model-r1-cases.json`: model-eval case seeds for the central routing layer across seven modules.
 - `skills/ocean/evals/domain-router-model-r1-results.md`: M3-scored model run over the Domain Lens / Data Tool Router / Module Artifact Contract prompt.
+- `skills/ocean/evals/project-start-gate-r1-results.md`: Harbor Project Start Gate smoke test for Project Start Card, Harbor Seed, GitHub Sync Ticket, and public-safe persistence boundaries.
 - `skills/ocean/scripts/check_ocean_contracts.py`: deterministic structural check for required references, module artifact terms, and domain-router case coverage.
 - `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
 - `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
@@ -118,6 +119,8 @@ Research Design Workflow R1 tests whether OCEAN behaves as a research process wo
 Domain Router Big Experiment R1 is an offline structural experiment. It does not call external model APIs. It checks whether OCEAN's new central routing layer covers representative biomedical inputs across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, and stale Harbor reuse.
 
 Domain Router Model R1 is the first model-based run focused on the new central routing layer. It completed 49/49 usable outputs across seven enabled model/control lanes and surfaced one substantive data-router issue: an uninspected Open Targets endpoint/query invented in a Reef case.
+
+Project Start Gate R1 tests the Harbor persistence mechanism for new traceable OCEAN projects. It is a structural workflow test only: it checks project-card and GitHub-sync-ticket generation, not scientific validity, public-release readiness, or repository push behavior.
 
 See `docs/module-map.md` for the current module responsibility and validation-status map.
 

@@ -25,6 +25,7 @@ Detailed execution rules live in `skills/ocean/references/`:
 - `data-tool-router.md`: public data/resource/API source-class routing, data/tool packets, and access/privacy/licensing boundaries.
 - `module-artifact-contract.md`: required artifacts and quality gates for each OCEAN module.
 - `module-handoff.md`: explicit handoff tickets for full OCEAN workflows and multi-module routes.
+- `project-start-gate.md`: project-start trigger rules, Project Start Card, Harbor seed, and GitHub Sync Ticket for persistent project records.
 - `research-design-workflow.md`: design gates and research-route selection for idea, proposal, reviewer-pressure, resource, and collaboration workflow cases.
 - `current.md`: field movement and trend-boundary scans.
 - `reef.md`: resource, database, KG, benchmark, and provenance maps.
