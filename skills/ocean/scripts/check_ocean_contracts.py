@@ -15,6 +15,7 @@ REQUIRED_REFERENCES = [
     "module-artifact-contract.md",
     "output-contract.md",
     "module-handoff.md",
+    "project-start-gate.md",
     "sounding.md",
     "current.md",
     "reef.md",
@@ -33,7 +34,7 @@ MODULE_ARTIFACT_TERMS = {
     "Iceberg": ["Claim-Evidence Matrix", "support verdict", "Safe rewrite"],
     "Anchor": ["Validation Plan", "leakage", "reproducibility"],
     "Compass": ["Research Route Card", "evidence driver", "decision"],
-    "Harbor": ["Decision Memory", "contribution boundary", "reuse"],
+    "Harbor": ["Decision Memory", "Project Start Card", "GitHub Sync Ticket", "contribution boundary", "reuse"],
 }
 
 DOMAIN_CASE_KEYWORDS = {

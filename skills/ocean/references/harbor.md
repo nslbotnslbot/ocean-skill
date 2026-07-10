@@ -29,6 +29,7 @@ Read this file when the user asks to:
 
 - summarize or preserve an OCEAN run;
 - create a final audit report, decision memo, or project memory;
+- start a persistent OCEAN project record or decide whether a new analysis should be tracked;
 - record collaboration roles, contribution boundaries, or authorship-related notes;
 - prepare a reusable report from Sounding/Current/Reef/Iceberg/Anchor/Compass outputs;
 - compare what has changed since an earlier run.
@@ -44,6 +45,7 @@ Harbor can start from:
 - research strategy card;
 - collaboration notes;
 - user decision or next-action list.
+- a Project Start Card, Evidence Boundary Snapshot, Module Route, or GitHub Sync Ticket from `project-start-gate.md`.
 
 ## Safety Rules
 
@@ -54,20 +56,26 @@ Harbor can start from:
 - If prior outputs are stale, mark them as historical rather than current evidence.
 - Keep decisions separate from evidence. A decision can be recorded as a user/project choice, but it must not be treated as new scientific support.
 - For collaboration or authorship questions, record contribution evidence and boundary warnings; do not decide authorship from incomplete notes.
+- For GitHub sync, record only public-safe project metadata, module route, evidence boundary, and next-action summaries. Do not publish raw manuscripts, patient-level data, unpublished raw data, private peer review, journal correspondence, collaborator-only notes, or API keys.
+- Remote push requires user approval for that project/session or an explicit request to update GitHub. If approval is missing, create the sync ticket and stop at local records.
 
 ## Workflow
 
 1. **Collect artifacts**
    - List which module outputs are being preserved.
-2. **Normalize decisions**
+2. **Project start gate**
+   - If this is the first serious OCEAN run for a project, apply `project-start-gate.md` and create a Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket.
+3. **Normalize decisions**
    - Separate facts inspected, interpretations, decisions, recommendations, and open questions.
-3. **Preserve evidence boundary**
+4. **Preserve evidence boundary**
    - Record inspected/not inspected/cannot conclude/needed next.
-4. **Contribution boundary**
+5. **Contribution boundary**
    - Record advisory, analysis, writing, validation, data, wet-lab, or authorship-relevant tasks only if provided.
-5. **Next-action register**
+6. **Next-action register**
    - Convert gaps into owners, priority, effort, and evidence required.
-6. **Reuse warning**
+7. **GitHub sync ticket**
+   - If the project should be persisted in GitHub, record target files, public-safe summary, excluded material, suggested branch, commit message, and remote-push status.
+8. **Reuse warning**
    - State what must be rechecked before future reuse.
 
 ## Required Harbor Artifacts
@@ -84,6 +92,8 @@ Harbor outputs are considered complete only when they include these five artifac
    - Concrete next steps tied to evidence gaps, with owner/role, priority, and required evidence.
 5. **Reuse note**
    - What the memo can be reused for, what must be rechecked, and what it must not be used as evidence for.
+6. **GitHub sync ticket** when the work is a new tracked project or a public-safe application case
+   - Target repository/files, branch, commit message, public-safe summary, excluded material, and push approval state.
 
 If one artifact cannot be filled because evidence is missing, keep the heading and write the missing boundary rather than deleting it.
 
@@ -115,13 +125,24 @@ If one artifact cannot be filled because evidence is missing, keep the heading a
 | Action | Why needed | Owner/role | Priority | Evidence required |
 |---|---|---|---|---|
 
-六、Harbor边界
+六、GitHub sync ticket
+| Field | Value |
+|---|---|
+| Target repository |  |
+| Suggested branch |  |
+| Files to add/update |  |
+| Commit message |  |
+| Remote push | approved / needs approval / not allowed |
+| Public-safe summary |  |
+| Excluded material |  |
+
+七、Harbor边界
 - 已检查:
 - 未检查:
 - 不能判断:
 - 下一步需要:
 
-七、Reuse note
+八、Reuse note
 - This memo can be reused for:
 - Must be rechecked before reuse:
 - Do not reuse as evidence for:
@@ -135,6 +156,7 @@ Stop or mark incomplete when:
 - the user asks Harbor to decide authorship or publication outcome from insufficient notes;
 - prior conclusions lack evidence boundaries;
 - the requested report would require new scientific evidence that has not been inspected.
+- the requested GitHub update would expose private material or mix with unrelated dirty repository changes.
 
 ## Failure Modes
 
@@ -144,3 +166,4 @@ Stop or mark incomplete when:
 - Treating old outputs as current evidence without checking.
 - Promising authorship, acceptance, or collaboration outcomes.
 - Producing a generic summary without a decision memo, evidence ledger, contribution boundary, next-action register, and reuse note.
+- Auto-pushing private project details to GitHub without a public-safe boundary and user approval.

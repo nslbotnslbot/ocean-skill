@@ -2712,3 +2712,41 @@ No launcher-runner structural failures were observed in the first run. All workf
 ### Evidence Boundary / 证据边界
 
 Passing this eval means every heavy, workflow-runtime, and source-packet-adapter bioinformatics tool folder now has a bounded per-tool launcher/workflow runner. Launcher plans are not execution. Runtime probes are not workflows. This does not mean tools were installed, references were downloaded, GUI/GPU/HPC/container jobs were launched, biological or clinical data were processed, benchmarks were run, or scientific claims were supported. Scientific use still requires inspected run records, references/databases, exact commands, parameters, logs, outputs, environment/container details, privacy/license review, and downstream OCEAN audit.
+
+## 2026-07-10 - Harbor Project Start Gate R1
+
+### 中文上下文
+
+这轮新增一个 Harbor 层面的项目启动机制：当 OCEAN 判断一个新分析已经进入可追踪科研项目、manuscript audit、proposal route、validation workflow 或合作分析时，应先生成 Project Start Card、Evidence Boundary Snapshot、Module Route、Harbor Seed 和 GitHub Sync Ticket。目标是避免重要科研分析只停留在聊天记录里，同时防止私有材料被错误公开。
+
+### English Context
+
+This round adds a Harbor-level Project Start Gate. It decides when an OCEAN analysis should become a persistent project record and creates a public-safe GitHub Sync Ticket without turning OCEAN into a project release framework.
+
+### Scope / 影响范围
+
+- Added `references/project-start-gate.md`.
+- Wired the Project Start Gate into `SKILL.md`.
+- Extended `references/harbor.md` with Project Start Card and GitHub Sync Ticket behavior.
+- Extended `references/module-artifact-contract.md` with Harbor Project Start Card and GitHub Sync Ticket artifacts.
+- Added `scripts/create_project_start_record.py` for local project-start record generation.
+- Updated README, Chinese README, module map, application tracker, evaluation README, and contract checks.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Project-start smoke script | pass |
+| Generated files | 4 project files plus index |
+| GitHub Sync Ticket boundary | pass |
+| OCEAN contract check | 34/34 pass |
+| Python compile | pass after sandbox cache rerun |
+| `git diff --check` | pass |
+
+### Error Notes
+
+The first `py_compile` attempt failed because macOS Python tried to create bytecode cache files under `~/Library/Caches`, which is outside the sandbox write boundary. The same compile check passed after setting `PYTHONPYCACHEPREFIX=/private/tmp/ocean-project-sync-pycache`. This is a local sandbox/cache issue, not a script syntax or runtime error.
+
+### Evidence Boundary / 证据边界
+
+Passing this eval means OCEAN can structurally generate a project-start record and GitHub Sync Ticket. It does not mean the example project is scientifically valid, public-safe, submitted, reviewed, accepted, or published. Remote GitHub updates remain gated by public-safe boundaries, clean repository state, and user approval.

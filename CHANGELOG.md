@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a Harbor Project Start Gate for new traceable OCEAN research projects, with Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket rules plus a local record-generation script.
 - Added launcher/workflow runner wrappers for the remaining 29 bioinformatics heavy, workflow-runtime, and source-packet-adapter tools, with per-tool `scripts/run_launcher.py` entrypoints, API command wiring, README usage notes, and 37/37 launcher/runtime eval pass.
 - Added Python/R package runner wrappers for 26 bioinformatics package tools, with per-tool `scripts/run_package.py` entrypoints, API command wiring, README usage notes, bounded script provenance support, and 26/26 package runner eval pass.
 - Added lightweight CLI runner wrappers for 60 bioinformatics command-line tools, with per-tool `scripts/run_cli.py` entrypoints, API command wiring, README usage notes, bounded provenance recording, and 60/60 CLI runner eval pass in the current environment.
