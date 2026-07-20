@@ -1,49 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
   <title id="title">OCEAN logo</title>
-  <desc id="desc">A soft ocean-blue logo with a compass, wave, and iceberg symbol beside the OCEAN wordmark and full project name.</desc>
+  <desc id="desc">A crisp ocean-blue logo with a compass, wave, and iceberg symbol beside the OCEAN wordmark and two-line project name.</desc>
   <defs>
-    <linearGradient id="mark-bg" x1="52" y1="28" x2="208" y2="220" gradientUnits="userSpaceOnUse">
+    <linearGradient id="mark-bg" x1="55" y1="54" x2="230" y2="232" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#eef9fb"/>
-      <stop offset="0.48" stop-color="#b8e2ee"/>
-      <stop offset="1" stop-color="#5c9fbd"/>
+      <stop offset="0.55" stop-color="#c9eaf2"/>
+      <stop offset="1" stop-color="#87bfd1"/>
     </linearGradient>
-    <linearGradient id="mark-water" x1="44" y1="132" x2="216" y2="210" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#84cddd"/>
-      <stop offset="1" stop-color="#2f6f9d"/>
+    <linearGradient id="water" x1="58" y1="162" x2="228" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#83d2df"/>
+      <stop offset="1" stop-color="#357fa7"/>
     </linearGradient>
-    <linearGradient id="mark-ice" x1="116" y1="84" x2="154" y2="183" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ice" x1="121" y1="102" x2="176" y2="210" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.58" stop-color="#d9f0f6"/>
-      <stop offset="1" stop-color="#8fc6da"/>
+      <stop offset="0.55" stop-color="#d8f0f7"/>
+      <stop offset="1" stop-color="#8ec8dd"/>
     </linearGradient>
-    <filter id="logo-shadow" x="-12%" y="-16%" width="124%" height="132%">
-      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#4b7891" flood-opacity="0.16"/>
-    </filter>
   </defs>
 
-  <rect width="920" height="260" rx="42" fill="#fbfdfe"/>
+  <g>
+    <circle cx="150" cy="150" r="96" fill="url(#mark-bg)" stroke="#7dbbd1" stroke-width="5"/>
+    <circle cx="150" cy="150" r="78" fill="none" stroke="#f4fcff" stroke-width="7"/>
+    <circle cx="150" cy="150" r="49" fill="none" stroke="#dff3f8" stroke-width="6"/>
 
-  <g filter="url(#logo-shadow)">
-    <circle cx="130" cy="130" r="92" fill="url(#mark-bg)"/>
-    <circle cx="130" cy="130" r="82" fill="none" stroke="#f6fcff" stroke-width="7"/>
-    <circle cx="130" cy="130" r="50" fill="none" stroke="#e4f5fa" stroke-width="5" opacity="0.9"/>
+    <path d="M63 173c23-14 45-14 67-2 18 10 36 10 56 0 22-12 44-12 67 2" fill="none" stroke="#f2fdff" stroke-width="15" stroke-linecap="round"/>
+    <path d="M67 202c22-12 43-12 65-1 23 12 42 12 64 0 21-11 42-11 64 1" fill="none" stroke="#9edee9" stroke-width="11" stroke-linecap="round"/>
+    <path d="M61 188c26-10 48-9 70 2 18 10 36 10 57 0 21-10 43-10 66 2-16 33-54 55-103 55-50 0-89-22-105-56 5 0 10-1 15-3z" fill="url(#water)"/>
 
-    <path d="M44 150c21-15 43-16 64-4 18 10 36 10 56 0 21-11 42-10 62 4" fill="none" stroke="#e8fbff" stroke-width="15" stroke-linecap="round"/>
-    <path d="M48 178c20-13 41-13 61-2 22 12 42 12 63 0 20-11 40-11 60 2" fill="none" stroke="#a8e4ef" stroke-width="10" stroke-linecap="round"/>
-    <path d="M46 164c25-11 45-10 66 2 17 10 34 10 54 0 20-10 39-10 61 2-14 34-50 57-96 57-47 0-83-24-97-59 4 0 8-1 12-2z" fill="url(#mark-water)" opacity="0.7"/>
+    <path d="M150 66l15 66 58 18-58 18-15 66-15-66-58-18 58-18z" fill="#ffffff" stroke="#f2fbff" stroke-width="4"/>
+    <path d="M150 66l15 66 58 18-58 18z" fill="#69b6cf"/>
+    <path d="M150 234l-15-66-58-18 58-18z" fill="#2d719d"/>
+    <circle cx="150" cy="150" r="14" fill="#fbfdfe" stroke="#3f7f9f" stroke-width="6"/>
 
-    <path d="M130 52l13 58 50 20-50 20-13 58-13-58-50-20 50-20z" fill="#ffffff" opacity="0.82"/>
-    <path d="M130 52l13 58 50 20-50 20z" fill="#6fb7cf" opacity="0.86"/>
-    <path d="M130 208l-13-58-50-20 50-20z" fill="#346f99" opacity="0.78"/>
-    <circle cx="130" cy="130" r="13" fill="#fbfdfe" stroke="#4a85a6" stroke-width="5"/>
-
-    <path d="M103 181l27-70 33 70z" fill="url(#mark-ice)" stroke="#f7fdff" stroke-width="6" stroke-linejoin="round"/>
-    <path d="M130 111l-4 70h-23z" fill="#ffffff" opacity="0.65"/>
-    <path d="M130 111l33 70h-37z" fill="#9bd2e1" opacity="0.68"/>
+    <path d="M119 213l31-82 37 82z" fill="url(#ice)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M150 131l-5 82h-26z" fill="#ffffff"/>
+    <path d="M150 131l37 82h-42z" fill="#9bd3e3"/>
+    <path d="M133 177l13 36h-27z" fill="#6db6d0"/>
   </g>
 
   <g fill="#123c5a">
-    <text x="268" y="124" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="76" font-weight="750" letter-spacing="4">OCEAN</text>
-    <text x="272" y="169" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="28" font-weight="560" letter-spacing="0" fill="#35657d">Orchestrated Claim-Evidence Analysis Navigator</text>
+    <text x="292" y="123" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="78" font-weight="760" letter-spacing="4">OCEAN</text>
+    <text x="296" y="173" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="27" font-weight="580" letter-spacing="0" fill="#35657d">Orchestrated Claim-Evidence</text>
+    <text x="296" y="210" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="27" font-weight="580" letter-spacing="0" fill="#35657d">Analysis Navigator</text>
   </g>
 </svg>

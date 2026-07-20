@@ -2,7 +2,7 @@
 
 [中文版本](README.zh-CN.md)
 
-<img src="assets/ocean-logo.svg" alt="OCEAN logo" width="460" />
+<img src="assets/ocean-logo.svg" alt="OCEAN logo" width="520" />
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
