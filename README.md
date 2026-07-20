@@ -2,6 +2,8 @@
 
 [中文版本](README.zh-CN.md)
 
+<img src="assets/ocean-icon.svg" alt="OCEAN icon" width="96" />
+
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
 OCEAN is a lightweight Codex-compatible external audit layer and skill for biomedical research claim-evidence navigation across medical and biological research. It is AI-aware, but not AI-only: it can support biomedical AI studies, biological AI studies, manuscripts, databases, knowledge graphs, clinical prediction work, journal positioning, validation planning, and collaboration boundary analysis. It includes a central Domain Lens and Data/Tool Router so medical, biological, omics, clinical, drug, KG/database, proposal, and collaboration tasks use different evidence standards instead of one generic checklist.
