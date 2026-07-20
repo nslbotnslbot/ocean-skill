@@ -2,7 +2,7 @@
 
 [English README](README.md)
 
-<img src="assets/ocean-icon.svg" alt="OCEAN icon" width="96" />
+<img src="assets/ocean-logo.svg" alt="OCEAN logo" width="460" />
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
 
