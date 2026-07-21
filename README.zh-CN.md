@@ -195,134 +195,53 @@ python3 skills/ocean/scripts/check_claim_table.py \
 ## 仓库结构
 
 ```text
-.env.ocean.example
-README.zh-CN.md
-assets/
-└── ocean-polar-workflow.jpg
-docs/
-├── project-boundary.md
-├── application-submission-tracker.md
-├── case-studies/
-│   └── whole-wheat-broth-project.md
-├── module-map.md
-└── evaluation/
-    ├── README.md
-    ├── round-1-5-results.md
-    ├── sounding-adversarial-case-library.md
-    └── reference-materials/
-        ├── boundary-cases.md
-        └── public-sources.md
-skills/ocean/
-├── SKILL.md
-├── agents/openai.yaml
-├── evals/
-│   ├── anti-hallucination-cases.md
-│   ├── collaborative-workflow-r1-results.md
-│   ├── contamination-resistance-round5.md
-│   ├── full-ocean-workflow-cases.md
-│   ├── full-ocean-workflow-protocol.md
-│   ├── ocean-module-m1-results.md
-│   ├── ocean-module-m2-results.md
-│   ├── ocean-module-m2-needs-review-triage.md
-│   ├── forward-test-cases.md
-│   ├── public-source-protocol.md
-│   ├── real-article-adversarial-cases.md
-│   ├── reef-strict-eval-r1-cases.json
-│   ├── reef-strict-eval-r1-coverage.json
-│   ├── reef-strict-eval-r1-results.md
-│   ├── domain-router-big-experiment-r1-cases.json
-│   ├── domain-router-model-r1-cases.json
-│   ├── domain-router-model-r1-results.md
-│   ├── release-validation-log.md
-│   ├── sounding-multimodel-cases.json
-│   ├── sounding-multimodel-models.example.json
-│   ├── sounding-multimodel-r1-codex-slice-results.md
-│   ├── sounding-multimodel-strict-eval.md
-│   └── source-candidates.md
-├── references/
-│   ├── audit-lenses.md
-│   ├── anchor.md
-│   ├── claim-evidence-table.md
-│   ├── compass.md
-│   ├── current.md
-│   ├── data-tool-router.md
-│   ├── domain-lens.md
-│   ├── harbor.md
-│   ├── iceberg.md
-│   ├── module-handoff.md
-│   ├── module-artifact-contract.md
-│   ├── output-contract.md
-│   ├── reef-biological-data-sources.md
-│   ├── reef.md
-│   ├── reef-api-adapters.md
-│   ├── research-design-workflow.md
-│   ├── reviewer-lens.md
-│   ├── review-report.md
-│   └── sounding.md
-└── scripts/
-    ├── make_claim_table.py
-    ├── check_claim_table.py
-    ├── make_review_skeleton.py
-    ├── check_ocean_contracts.py
-    ├── run_reef_api_adapter.py
-    └── run_sounding_multimodel_eval.py
+skills/ocean/  可安装 skill、references、adapters 与工具 wrappers
+validation/    开发测试 cases、fixtures、scorecards 与回归记录
+docs/          公开架构、评估摘要与案例
+examples/      可安全复用的小型示例
+assets/        图标与 README 媒体
+outputs/       默认忽略的本地生成结果
+.github/       持续集成
 ```
+
+目录归属、canonical instruction source 和生成文件规则见 [`docs/repository-layout.md`](docs/repository-layout.md)。安装 `skills/ocean/` 时不再把 validation archive 一起复制到运行时 skill。
 
 ## 评估总结
 
-面向公开发布的 validation notes 位于 `docs/evaluation/`。简洁总结在 `docs/evaluation/round-1-5-results.md`，公开来源标识符在 `docs/evaluation/reference-materials/public-sources.md`。
+OCEAN 把详细验证证据放在可安装 skill 之外。主要测试层包括：
 
-目前最深入的 module-specific strict testing 仍然集中在 **Sounding**。R2 和 R3 测试的是 Sounding source-packet workflow，模型包括 Qwen、DeepSeek、Kimi、MiniMax、Gemini、Claude，以及一个 Perplexity retrieval control group。M1 增加了七个 module 的全覆盖测试，M2 对 98 个 M1 输出做了第一轮 heuristic scoring。Perplexity 被作为 retrieval-oriented control 处理，因为它的产品定位强调 answer/search grounding；它不是 OCEAN 的依赖。
+| 层级 | 范围 |
+|---|---|
+| 证据边界测试 | 缺失、矛盾、不可追踪和对抗性 claims |
+| 模块测试 | 七个模块的 artifact 质量与 handoff |
+| 多模型测试 | 不同模型提供方上的 workflow 稳定性 |
+| 工具与 adapter 测试 | dry-run/live API packet、本地可用性、provenance 与 stop condition |
+| 仓库回归 | skill 校验、JSON 解析、结构 contract 与 wrapper 边界测试 |
 
-Reef 现在包含 biological/clinical data-source routing catalog，覆盖基因、蛋白、变异、omics repository、cell atlas、cancer genomics portal、drug resource、clinical registry、regulatory/safety data、EHR/cohort resource、imaging/signal dataset、model organism 和 microbiome/pathogen resource。Reef-R1 增加了第一轮专门的 Reef strict eval，重点测试 resource provenance、API/database 证据边界、KG association overclaim、cell atlas planning boundary 和 clinical registry metadata boundary。
+历史上最深入的 strict testing 仍是 Sounding，后续测试已逐步覆盖完整工作流、domain/data routing、research design、Reef 和 Harbor。它们是开发验证，不是科学正确性的证明，也不是模型排行榜。
 
-Bioinformatics Real-Tool Smoke R1 检查 115 个 scaffolded bioinformatics tools 在当前本地执行环境中是否真的可调用。这轮本地运行中，3 个工具/adapter 达到 smoke 级执行，112 个在当前 PATH、Python 或 R 环境中不可用。这个结果是 availability check，不是 end-to-end biological analysis。
-
-Bioinformatics Execution Layer R1 增加了三类共享 wrapper：轻量 CLI 工具、R/Bioconductor 工具，以及重型/授权/GUI/GPU/大数据库工具。缺失的本地软件会被记录为环境边界，而不是伪装成成功运行。
-
-Bioinformatics Tool Router R1 会把 115 个 scaffolded tools 分配到 execution layers，并为常见 biomedical / biological analysis tasks 生成 workflow plan，包括 FASTQ QC、RNA-seq、variant calling、single-cell、spatial、metagenomics、genome assembly、protein structure、epigenomics、proteomics/metabolomics、workflow reproducibility 和 imaging AI。
-
-每个 bioinformatics tool 文件夹现在也包含一个 science-skills 风格的 `references/tool_usage.md` guide。它们写清 use/avoid rules、真实本地运行前必须检查的证据、stop conditions 和 OCEAN handoff 路径，但不声称外部工具已经安装。
-
-轻量 CLI 类 bioinformatics 工具现在也有生成好的 per-tool `scripts/run_cli.py` 入口。它们可以记录 bounded availability probe，或者记录用户明确提供参数的本地命令运行记录；如果软件没有安装，会保留 environment-missing boundary，而不是假装运行成功。
-
-Python/R package 类 bioinformatics 工具现在也有生成好的 per-tool `scripts/run_package.py` 入口。它们可以记录 Python import 或 R package-version probe，也可以记录用户明确提供脚本和参数的运行 provenance，但不会把 package 可用性当作生物学验证。
-
-Heavy、workflow-runtime 和 source-packet-adapter 类 bioinformatics 工具现在也有生成好的 per-tool `scripts/run_launcher.py` 入口。它们会生成 non-executing launch/source-packet plan；对于 workflow runtime，还可以做 bounded availability probe。
-
-Reef 现在也有可执行的 API/database adapters，覆盖 UniProt、PubMed、EuropePMC、ChEMBL、OpenTargets、STRING、Reactome、QuickGO、ClinVar、gnomAD 和 AlphaFold DB。这些 wrapper 可以 dry-run，也可以用 `--execute` 做 bounded live public API request，并输出带明确证据边界的 OCEAN packet。
-
-Collaborative Workflow R1 增加了跨 module workflow stress test，覆盖 proposal、trend、resource/API、claim downgrade、validation、reviewer-pressure-to-idea、benchmark fairness 和 Harbor handoff cases。
-
-仓库也包含 full-workflow protocol 和 case seeds，用于测试一篇论文、一个 idea、一段 proposal、一条 review comment 或一个 resource/KG seed 是否能通过七个 OCEAN module，并保持稳定的 handoff 和 evidence boundary。
-
-Seven-Module Coordination R1 增加了第一轮确定性全链路结构检查，覆盖 paper source packet、proposal 和 one-sentence idea 三类输入，测试 artifact coverage、handoff continuity、claim downgrade gate 和 Harbor closure。
-
-Research Design Workflow R1 测试 OCEAN 是否能把不确定的 idea、proposal、resource request、reviewer pressure 和 workflow decision 转成 design gates、validation gates、research routes 和 Harbor decision memory，同时不声称未经验证的成熟度。第一轮计分覆盖 6 条完成模型线、42 个 usable outputs；一条 Kimi lane 因 runtime blocked 单独记录。
-
-Domain Router Big Experiment R1 离线测试新的中心路由层。它检查 Domain Lens、Data/Tool Router 和 Module Artifact Contract 是否已经接入 skill 入口，并覆盖 medical AI、biological AI、omics、clinical research、drug/target hypothesis、KG/database resource、public-review pressure、collaboration boundary 和 stale Harbor reuse 等代表性生物医学输入。
-
-Domain Router Model R1 进一步用 Qwen、DeepSeek、Kimi fallback、MiniMax-M1、Gemini、Claude 和 Perplexity retrieval control 测试同一个中心层。该轮完成 49/49 usable outputs，M3 均分 17.86/20。最重要的 flagged issue 是 Reef/Open Targets case 中出现 endpoint invention trap，目前记录为 data-router 安全问题。
-
-更早的 anti-hallucination 和 contamination-resistance 测试覆盖了 OCEAN 的 evidence-boundary 行为和 claim downgrade 纪律。M1/M2 仍然应被理解为 coverage + heuristic screening，而不是最终科学正确性验证或模型排行榜。
-
-这些文件说明测试了什么、哪些通过了，同时不会复制 private materials、长篇论文段落或 hidden-answer logs。公开 evaluation materials 被设计为可复用的 source-boundary checks，不是内部研究轨迹记录，也不是 discovery claim。内部 release log 保留在 `skills/ocean/evals/release-validation-log.md`。
+公开索引见 [`docs/evaluation/README.md`](docs/evaluation/README.md)，archive policy 见 [`validation/README.md`](validation/README.md)，详细记录见 [`validation/release-validation-log.md`](validation/release-validation-log.md)。
 
 ## 开发检查
 
 发布前运行示例脚本：
 
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 skills/ocean/scripts/make_claim_table.py --out outputs/claim_table.csv
 python3 skills/ocean/scripts/check_claim_table.py examples/sample_claim_table.csv --out outputs/claim_table_summary.md
 python3 skills/ocean/scripts/make_claim_table.py --empty --out outputs/empty_claim_table.csv
 python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv --out outputs/empty_claim_table_summary.md
 python3 skills/ocean/scripts/run_reef_api_adapter.py --adapter ncbi-eutils --database pubmed --query "BRCA1 breast cancer" --retmax 5 --out outputs/reef_api_packet.json
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
-python3 skills/ocean/scripts/check_ocean_contracts.py
+python3 validation/scripts/check_json_files.py
+python3 validation/scripts/validate_skill.py
+python3 -m unittest discover -s validation/scripts -p 'test_*.py' -v
+python3 skills/ocean/scripts/check_ocean_contracts.py --out outputs/ocean-contract-check.md
+python3 skills/ocean/scripts/check_manuscript_revision_mode.py --out outputs/manuscript-revision-check.md
 ```
 
-发布前，请使用真实用户提供的、或公开且 source-traceable 的材料，运行 `skills/ocean/evals/forward-test-cases.md` 中的 manual forward tests。使用 `skills/ocean/evals/anti-hallucination-cases.md` 测试 incomplete、missing、contradictory 或 non-traceable evidence。使用 `skills/ocean/evals/public-source-protocol.md` 选择 DOI papers、bioRxiv/medRxiv preprints 和 public peer review reports；在 `skills/ocean/evals/source-candidates.md` 中追踪具体候选；使用 `skills/ocean/evals/sounding-multimodel-strict-eval.md` 进行 model-robustness checks；使用 `skills/ocean/evals/full-ocean-workflow-protocol.md` 进行七模块 workflow 检查；并在 `skills/ocean/evals/release-validation-log.md` 中总结 validation-check outcomes。
+发布前，请使用真实用户提供的、或公开且 source-traceable 的材料，运行 `validation/forward-test-cases.md` 中的 manual forward tests。使用 `validation/anti-hallucination-cases.md` 测试 incomplete、missing、contradictory 或 non-traceable evidence。使用 `validation/public-source-protocol.md` 选择 DOI papers、bioRxiv/medRxiv preprints 和 public peer review reports；在 `validation/source-candidates.md` 中追踪具体候选；使用 `validation/sounding-multimodel-strict-eval.md` 进行 model-robustness checks；使用 `validation/full-ocean-workflow-protocol.md` 进行七模块 workflow 检查；并在 `validation/release-validation-log.md` 中总结 validation-check outcomes。
 
 ## License
 

@@ -140,4 +140,4 @@ Run scripts only when they help structure the work. Do not run commands unnecess
 - Use `skills/ocean/references/claim-evidence-table.md` for claim table definitions.
 - Use `skills/ocean/references/reviewer-lens.md` for reviewer-style critique and likely-objection prediction.
 - Use `skills/ocean/references/review-report.md` for long-form review structure.
-- Use `skills/ocean/evals/forward-test-cases.md` only for manual pre-release testing.
+- Use `validation/forward-test-cases.md` only for manual pre-release testing.

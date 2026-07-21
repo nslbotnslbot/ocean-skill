@@ -195,134 +195,53 @@ For audits, OCEAN uses a fixed output contract: audit card, evidence boundary, c
 ## Repository layout
 
 ```text
-.env.ocean.example
-README.zh-CN.md
-assets/
-└── ocean-polar-workflow.jpg
-docs/
-├── project-boundary.md
-├── application-submission-tracker.md
-├── case-studies/
-│   └── whole-wheat-broth-project.md
-├── module-map.md
-└── evaluation/
-    ├── README.md
-    ├── round-1-5-results.md
-    ├── sounding-adversarial-case-library.md
-    └── reference-materials/
-        ├── boundary-cases.md
-        └── public-sources.md
-skills/ocean/
-├── SKILL.md
-├── agents/openai.yaml
-├── evals/
-│   ├── anti-hallucination-cases.md
-│   ├── collaborative-workflow-r1-results.md
-│   ├── contamination-resistance-round5.md
-│   ├── full-ocean-workflow-cases.md
-│   ├── full-ocean-workflow-protocol.md
-│   ├── ocean-module-m1-results.md
-│   ├── ocean-module-m2-results.md
-│   ├── ocean-module-m2-needs-review-triage.md
-│   ├── forward-test-cases.md
-│   ├── public-source-protocol.md
-│   ├── real-article-adversarial-cases.md
-│   ├── reef-strict-eval-r1-cases.json
-│   ├── reef-strict-eval-r1-coverage.json
-│   ├── reef-strict-eval-r1-results.md
-│   ├── domain-router-big-experiment-r1-cases.json
-│   ├── domain-router-model-r1-cases.json
-│   ├── domain-router-model-r1-results.md
-│   ├── release-validation-log.md
-│   ├── sounding-multimodel-cases.json
-│   ├── sounding-multimodel-models.example.json
-│   ├── sounding-multimodel-r1-codex-slice-results.md
-│   ├── sounding-multimodel-strict-eval.md
-│   └── source-candidates.md
-├── references/
-│   ├── audit-lenses.md
-│   ├── anchor.md
-│   ├── claim-evidence-table.md
-│   ├── compass.md
-│   ├── current.md
-│   ├── data-tool-router.md
-│   ├── domain-lens.md
-│   ├── harbor.md
-│   ├── iceberg.md
-│   ├── module-handoff.md
-│   ├── module-artifact-contract.md
-│   ├── output-contract.md
-│   ├── reef-biological-data-sources.md
-│   ├── reef.md
-│   ├── reef-api-adapters.md
-│   ├── research-design-workflow.md
-│   ├── reviewer-lens.md
-│   ├── review-report.md
-│   └── sounding.md
-└── scripts/
-    ├── make_claim_table.py
-    ├── check_claim_table.py
-    ├── make_review_skeleton.py
-    ├── check_ocean_contracts.py
-    ├── run_reef_api_adapter.py
-    └── run_sounding_multimodel_eval.py
+skills/ocean/  installable skill, references, adapters, and tool wrappers
+validation/    development cases, fixtures, scorecards, and regression records
+docs/          public architecture, evaluation summaries, and case studies
+examples/      small source-safe examples
+assets/        logos and README media
+outputs/       ignored local generated work
+.github/       continuous integration
 ```
+
+See [`docs/repository-layout.md`](docs/repository-layout.md) for ownership rules, canonical instruction sources, and generated-file policy. Installing `skills/ocean/` no longer copies the validation archive into the runtime skill.
 
 ## Evaluation summary
 
-Public-facing validation notes are in `docs/evaluation/`. The concise summary is `docs/evaluation/round-1-5-results.md`, and public source identifiers are in `docs/evaluation/reference-materials/public-sources.md`.
+OCEAN keeps detailed validation evidence outside the installable skill. The main test layers are:
 
-Current module-specific strict testing is still deepest for **Sounding**. R2 and R3 test the Sounding source-packet workflow across Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group. M1 adds all-module coverage, and M2 adds first-pass heuristic scoring over the 98 M1 outputs. Perplexity is treated as a retrieval-oriented control because it markets itself around answer/search grounding; it is not an OCEAN dependency.
+| Layer | Scope |
+|---|---|
+| Evidence-boundary evals | Missing, contradictory, non-traceable, and adversarial claims |
+| Module evals | Artifact quality and handoffs across all seven modules |
+| Multi-model evals | Workflow robustness across configured model providers |
+| Tool and adapter evals | Dry-run/live API packets, local availability, provenance, and stop conditions |
+| Repository regressions | Skill validation, JSON parsing, structural contracts, and wrapper boundary tests |
 
-Reef now includes a biological/clinical data-source routing catalog for genes, proteins, variants, omics repositories, cell atlases, cancer genomics portals, drug resources, clinical registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organisms, and microbiome/pathogen resources. Reef-R1 adds the first dedicated Reef strict eval, focused on resource provenance, API/database evidence boundaries, KG association overclaims, cell atlas planning boundaries, and clinical registry metadata boundaries.
+The deepest historical strict testing remains Sounding, with later rounds extending coverage to the full workflow, domain/data routing, research design, Reef, and Harbor. These are development checks, not proof of scientific correctness or a model leaderboard.
 
-Bioinformatics Real-Tool Smoke R1 checks all 115 scaffolded bioinformatics tools against the current local execution environment. In this local run, 3 tools/adapters executed at smoke level and 112 were not available on PATH, Python, or R in the current environment. This is an availability check, not an end-to-end biological analysis.
-
-Bioinformatics Execution Layer R1 adds shared wrappers for lightweight CLI tools, R/Bioconductor tools, and heavy/license/GUI/GPU/large-database tools. Missing local software is recorded as an environment boundary rather than a fake successful run.
-
-Bioinformatics Tool Router R1 profiles all 115 scaffolded tools into execution layers and creates workflow plans for common biomedical and biological analysis tasks, including FASTQ QC, RNA-seq, variant calling, single-cell, spatial, metagenomics, genome assembly, protein structure, epigenomics, proteomics/metabolomics, workflow reproducibility, and imaging AI.
-
-Each bioinformatics tool folder now also includes a science-skills-style `references/tool_usage.md` guide. These guides define use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff paths without claiming the external tool is installed.
-
-Lightweight CLI bioinformatics tools now have generated per-tool `scripts/run_cli.py` entrypoints. These can record bounded availability probes or explicit user-supplied command run records, while preserving environment-missing boundaries when software is not installed.
-
-Python/R package bioinformatics tools now have generated per-tool `scripts/run_package.py` entrypoints. These can record bounded Python import or R package-version probes and explicit user-supplied script run records, without treating package availability as biological validation.
-
-Heavy, workflow-runtime, and source-packet-adapter bioinformatics tools now have generated per-tool `scripts/run_launcher.py` entrypoints. These create non-executing launch/source-packet plans and, for workflow runtimes, bounded availability probes.
-
-Reef now has executable API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, and AlphaFold DB. These wrappers can run dry, or make bounded live public API requests with `--execute`, then write OCEAN packets with explicit evidence boundaries.
-
-Collaborative Workflow R1 adds a cross-module workflow stress test over proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
-
-Full-workflow protocol and case seeds are included to test whether one paper, one idea, one proposal, one review comment, or one resource/KG seed can move through the seven OCEAN modules with stable handoffs and evidence boundaries.
-
-Seven-Module Coordination R1 adds the first deterministic full-chain structural check over paper-source-packet, proposal, and one-sentence-idea seeds, testing artifact coverage, handoff continuity, downgrade gates, and Harbor closure.
-
-Research Design Workflow R1 tests whether OCEAN can turn uncertain ideas, proposals, resource requests, reviewer pressure, and workflow decisions into design gates, validation gates, research routes, and Harbor decision memory without claiming unsupported maturity. The first scored pass covered 42 usable outputs across six completed model lanes; one Kimi lane was runtime-blocked and is tracked separately.
-
-Domain Router Big Experiment R1 tests the new central routing layer offline. It checks that the Domain Lens, Data/Tool Router, and Module Artifact Contract are connected to the skill entrypoint and cover representative biomedical inputs across medical AI, biological AI, omics, clinical research, drug/target hypotheses, KG/database resources, public-review pressure, collaboration boundaries, and stale Harbor reuse.
-
-Domain Router Model R1 then tests the same central layer across Qwen, DeepSeek, Kimi fallback, MiniMax-M1, Gemini, Claude, and Perplexity retrieval control. The run completed 49/49 usable outputs with a 17.86/20 mean M3 score. The most important flagged issue was an endpoint-invention trap in a Reef/Open Targets case, which is now tracked as a data-router safety concern.
-
-The earlier anti-hallucination and contamination-resistance tests exercise OCEAN's evidence-boundary behavior and claim-downgrade discipline. M1/M2 should still be read as coverage plus heuristic screening, not final scientific correctness validation or a model leaderboard.
-
-These files show what was tested and what passed without copying private materials, long paper passages, or hidden-answer logs. The public evaluation materials are designed as reusable source-boundary checks, not as internal research trajectory records or discovery claims. The internal release log remains in `skills/ocean/evals/release-validation-log.md`.
+Start with [`docs/evaluation/README.md`](docs/evaluation/README.md) for the public index, [`validation/README.md`](validation/README.md) for archive policy, and [`validation/release-validation-log.md`](validation/release-validation-log.md) for the detailed record.
 
 ## Development checks
 
 Run the sample scripts before publishing:
 
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 skills/ocean/scripts/make_claim_table.py --out outputs/claim_table.csv
 python3 skills/ocean/scripts/check_claim_table.py examples/sample_claim_table.csv --out outputs/claim_table_summary.md
 python3 skills/ocean/scripts/make_claim_table.py --empty --out outputs/empty_claim_table.csv
 python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv --out outputs/empty_claim_table_summary.md
 python3 skills/ocean/scripts/run_reef_api_adapter.py --adapter ncbi-eutils --database pubmed --query "BRCA1 breast cancer" --retmax 5 --out outputs/reef_api_packet.json
 python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
-python3 skills/ocean/scripts/check_ocean_contracts.py
+python3 validation/scripts/check_json_files.py
+python3 validation/scripts/validate_skill.py
+python3 -m unittest discover -s validation/scripts -p 'test_*.py' -v
+python3 skills/ocean/scripts/check_ocean_contracts.py --out outputs/ocean-contract-check.md
+python3 skills/ocean/scripts/check_manuscript_revision_mode.py --out outputs/manuscript-revision-check.md
 ```
 
-Before release, run the manual forward tests in `skills/ocean/evals/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `skills/ocean/evals/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `skills/ocean/evals/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `skills/ocean/evals/source-candidates.md`, use `skills/ocean/evals/sounding-multimodel-strict-eval.md` for model-robustness checks, use `skills/ocean/evals/full-ocean-workflow-protocol.md` for seven-module workflow checks, and summarize validation-check outcomes in `skills/ocean/evals/release-validation-log.md`.
+Before release, run the manual forward tests in `validation/forward-test-cases.md` using real user-provided or public, source-traceable materials. Use `validation/anti-hallucination-cases.md` for incomplete, missing, contradictory, or non-traceable evidence tests. Use `validation/public-source-protocol.md` to select DOI papers, bioRxiv/medRxiv preprints, and public peer review reports, track concrete candidates in `validation/source-candidates.md`, use `validation/sounding-multimodel-strict-eval.md` for model-robustness checks, use `validation/full-ocean-workflow-protocol.md` for seven-module workflow checks, and summarize validation-check outcomes in `validation/release-validation-log.md`.
 
 ## License
 

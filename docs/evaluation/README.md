@@ -12,54 +12,54 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `sounding-adversarial-case-library.md`: personal-reference guide for using the Sounding article/error matrices as an evidence-boundary case library rather than as ordinary API test logs.
 - `reference-materials/public-sources.md`: public DOI, arXiv, bioRxiv, and public-review source identifiers used or prepared for evals.
 - `reference-materials/boundary-cases.md`: synthetic boundary-case categories used to test anti-hallucination behavior.
-- `skills/ocean/evals/sounding-multimodel-strict-eval.md`: protocol for model-robustness testing of the Sounding source-packet workflow.
-- `skills/ocean/evals/sounding-multimodel-r1-codex-slice-results.md`: first executed Codex/OpenAI slice of the Sounding multi-model strict eval.
-- `skills/ocean/evals/sounding-multimodel-r1-deepseek-gemini-results.md`: live API slice for DeepSeek and Gemini after local keys were configured.
-- `skills/ocean/evals/sounding-article-error-matrix-r2.md`: eight-article adversarial matrix with six error types per article.
-- `skills/ocean/evals/sounding-article-error-matrix-r3.md`: ten-article adversarial matrix focused on foundation-model and biomedical AI preprints.
-- `skills/ocean/evals/sounding-multimodel-r2-results.md`: coverage summary for the R2 multi-model execution, including the completed Gemini rerun after quota reset.
-- `skills/ocean/evals/sounding-multimodel-r3-results.md`: coverage summary for the R3 10-article x 6-error multi-model execution, including the completed Gemini rerun after the initial HTTP 429 stop.
+- `validation/sounding-multimodel-strict-eval.md`: protocol for model-robustness testing of the Sounding source-packet workflow.
+- `validation/sounding-multimodel-r1-codex-slice-results.md`: first executed Codex/OpenAI slice of the Sounding multi-model strict eval.
+- `validation/sounding-multimodel-r1-deepseek-gemini-results.md`: live API slice for DeepSeek and Gemini after local keys were configured.
+- `validation/sounding-article-error-matrix-r2.md`: eight-article adversarial matrix with six error types per article.
+- `validation/sounding-article-error-matrix-r3.md`: ten-article adversarial matrix focused on foundation-model and biomedical AI preprints.
+- `validation/sounding-multimodel-r2-results.md`: coverage summary for the R2 multi-model execution, including the completed Gemini rerun after quota reset.
+- `validation/sounding-multimodel-r3-results.md`: coverage summary for the R3 10-article x 6-error multi-model execution, including the completed Gemini rerun after the initial HTTP 429 stop.
 - `docs/module-map.md`: public module responsibility and validation-status map.
-- `skills/ocean/evals/full-ocean-workflow-protocol.md`: protocol for testing whether one paper, idea, proposal, review comment, or resource seed can move through the seven-module workflow.
-- `skills/ocean/evals/full-ocean-workflow-cases.md`: reusable full-workflow case seeds.
-- `skills/ocean/evals/ocean-seven-module-coordination-r1-results.md`: deterministic structural check for Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor coordination, handoff continuity, downgrade gates, and Harbor closure.
-- `skills/ocean/evals/research-design-workflow-r1-cases.json`: workflow-design case seeds for testing design gates, validation gates, research routes, and Harbor decision memory from uncertain biomedical research inputs.
-- `skills/ocean/evals/research-design-workflow-r1-results.md`: first Research Design Workflow R1 model run over six completed model lanes, with Kimi recorded as runtime blocked.
-- `skills/ocean/evals/domain-router-big-experiment-r1-cases.json`: offline routing case seeds for Domain Lens, Data/Tool Router, and Module Artifact Contract coverage.
-- `skills/ocean/evals/domain-router-big-experiment-r1-results.md`: deterministic 33-check result file for the Domain Router Big Experiment R1 structural run.
-- `skills/ocean/evals/domain-router-model-r1-cases.json`: model-eval case seeds for the central routing layer across seven modules.
-- `skills/ocean/evals/domain-router-model-r1-results.md`: M3-scored model run over the Domain Lens / Data Tool Router / Module Artifact Contract prompt.
-- `skills/ocean/evals/project-start-gate-r1-results.md`: Harbor Project Start Gate smoke test for Project Start Card, Harbor Seed, GitHub Sync Ticket, and public-safe persistence boundaries.
-- `skills/ocean/evals/manuscript-revision-mode-r1-results.md`: deterministic lifecycle-routing regression for separating finished-text revision from design/full-audit behavior and keeping critique outside paste-ready manuscript prose.
+- `validation/full-ocean-workflow-protocol.md`: protocol for testing whether one paper, idea, proposal, review comment, or resource seed can move through the seven-module workflow.
+- `validation/full-ocean-workflow-cases.md`: reusable full-workflow case seeds.
+- `validation/ocean-seven-module-coordination-r1-results.md`: deterministic structural check for Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor coordination, handoff continuity, downgrade gates, and Harbor closure.
+- `validation/research-design-workflow-r1-cases.json`: workflow-design case seeds for testing design gates, validation gates, research routes, and Harbor decision memory from uncertain biomedical research inputs.
+- `validation/research-design-workflow-r1-results.md`: first Research Design Workflow R1 model run over six completed model lanes, with Kimi recorded as runtime blocked.
+- `validation/domain-router-big-experiment-r1-cases.json`: offline routing case seeds for Domain Lens, Data/Tool Router, and Module Artifact Contract coverage.
+- `validation/domain-router-big-experiment-r1-results.md`: deterministic 33-check result file for the Domain Router Big Experiment R1 structural run.
+- `validation/domain-router-model-r1-cases.json`: model-eval case seeds for the central routing layer across seven modules.
+- `validation/domain-router-model-r1-results.md`: M3-scored model run over the Domain Lens / Data Tool Router / Module Artifact Contract prompt.
+- `validation/project-start-gate-r1-results.md`: Harbor Project Start Gate smoke test for Project Start Card, Harbor Seed, GitHub Sync Ticket, and public-safe persistence boundaries.
+- `validation/manuscript-revision-mode-r1-results.md`: deterministic lifecycle-routing regression for separating finished-text revision from design/full-audit behavior and keeping critique outside paste-ready manuscript prose.
 - `skills/ocean/scripts/check_ocean_contracts.py`: deterministic structural check for required references, module artifact terms, and domain-router case coverage.
-- `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
-- `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
-- `skills/ocean/evals/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
-- `skills/ocean/evals/ocean-module-m2-needs-review-triage.md`: manual triage guide for the 11 M2 `needs_review` rows.
-- `skills/ocean/evals/ocean-module-m3-rubric.md`: 20-point OCEAN-10 rubric for module/model comparison, including task framing, source traceability, negative space, and output consistency.
-- `skills/ocean/evals/ocean-module-m3-results.md`: first M3 screen over the existing 98 M1 all-module outputs.
-- `skills/ocean/evals/harbor-focused-m3-r1-results.md`: Harbor-focused M3 run over five project-memory/collaboration-boundary cases across seven model lanes.
-- `skills/ocean/evals/idea-scout-m3-r1-results.md`: Current/Compass M3 run for evidence-bounded idea generation from trends, reviewer pressure, and one-sentence idea seeds.
-- `skills/ocean/evals/reef-strict-eval-r1-results.md`: first Reef-focused strict eval over resource provenance, API/database boundaries, KG association, cell atlas planning, and clinical registry metadata cases.
-- `skills/ocean/evals/collaborative-workflow-r1-results.md`: cross-module workflow eval covering proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
-- `skills/ocean/evals/bioinformatics-real-tool-smoke-r1-results.md`: local availability/version smoke check for all 115 bioinformatics tool scaffolds in the current execution environment.
-- `skills/ocean/evals/bioinformatics-execution-layer-r1-results.md`: execution-layer check for lightweight CLI, R/Bioconductor, and heavy-tool launcher behavior.
-- `skills/ocean/evals/bioinformatics-tool-router-r1-results.md`: tool-router check for 115 execution profiles and common workflow plans.
-- `skills/ocean/evals/bioinformatics-capability-matrix-r1-results.md`: combined planning matrix joining the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results.
-- `skills/ocean/evals/bioinformatics-wrapper-readiness-r1-results.md`: high-priority wrapper readiness plans for install/container/smoke/source-packet implementation work.
-- `skills/ocean/evals/bioinformatics-wrapper-readiness-r1-eval-results.md`: structural eval for wrapper-readiness plan completeness and evidence-boundary safeguards.
-- `skills/ocean/evals/bioinformatics-wrapper-readiness-all-r1-results.md`: all-tool wrapper readiness plans covering 115 registered bioinformatics tool scaffolds.
-- `skills/ocean/evals/bioinformatics-wrapper-readiness-all-r1-eval-results.md`: structural eval for the all-tool readiness-plan set.
-- `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-results.md`: ordered implementation backlog generated from the all-tool readiness plans.
-- `skills/ocean/evals/bioinformatics-wrapper-implementation-backlog-r1-eval-results.md`: structural eval for backlog completeness, rank continuity, next actions, and evidence boundaries.
-- `skills/ocean/evals/bioinformatics-per-tool-wrapper-r1-results.md`: full execution check for the generated per-tool `probe_or_plan.py` entrypoints across all 115 tool folders.
-- `skills/ocean/evals/bioinformatics-tool-scaffold-r1-results.md`: scaffold completeness check, now including source-packet wrappers, per-tool probe/plan wrappers, wrapper configs, API commands, examples, and usage guides.
-- `skills/ocean/evals/bioinformatics-cli-runner-r1-results.md`: bounded local CLI runner probe eval for the 60 lightweight command-line tool folders with per-tool `scripts/run_cli.py` entrypoints.
-- `skills/ocean/evals/bioinformatics-package-runner-r1-results.md`: bounded Python/R package runner probe eval for 26 package-based tool folders with per-tool `scripts/run_package.py` entrypoints.
-- `skills/ocean/evals/bioinformatics-launcher-runner-r1-results.md`: non-executing launcher-plan and workflow-runtime probe eval for the remaining 29 heavy, workflow-runtime, and source-packet-adapter tool folders with per-tool `scripts/run_launcher.py` entrypoints.
-- `skills/ocean/evals/bioinformatics-code-coverage-r1-results.md`: structural all-tool code-coverage eval confirming all 115 bioinformatics tool folders have their generic wrappers and execution-layer-specific runner/API commands.
-- `skills/ocean/evals/database-tool-adapter-r1-dry-run-results.md`: per-resource database tool-folder eval for 13 Reef adapters without network calls.
-- `skills/ocean/evals/database-tool-adapter-r1-live-results.md`: bounded live public API eval for the same 13 database tool folders.
+- `validation/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
+- `validation/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.
+- `validation/ocean-module-m2-results.md`: first heuristic M2 scoring screen over the 98 M1 all-module outputs.
+- `validation/ocean-module-m2-needs-review-triage.md`: manual triage guide for the 11 M2 `needs_review` rows.
+- `validation/ocean-module-m3-rubric.md`: 20-point OCEAN-10 rubric for module/model comparison, including task framing, source traceability, negative space, and output consistency.
+- `validation/ocean-module-m3-results.md`: first M3 screen over the existing 98 M1 all-module outputs.
+- `validation/harbor-focused-m3-r1-results.md`: Harbor-focused M3 run over five project-memory/collaboration-boundary cases across seven model lanes.
+- `validation/idea-scout-m3-r1-results.md`: Current/Compass M3 run for evidence-bounded idea generation from trends, reviewer pressure, and one-sentence idea seeds.
+- `validation/reef-strict-eval-r1-results.md`: first Reef-focused strict eval over resource provenance, API/database boundaries, KG association, cell atlas planning, and clinical registry metadata cases.
+- `validation/collaborative-workflow-r1-results.md`: cross-module workflow eval covering proposal, trend, resource/API, claim downgrade, validation, reviewer-pressure-to-idea, benchmark fairness, and Harbor handoff cases.
+- `validation/bioinformatics-real-tool-smoke-r1-results.md`: local availability/version smoke check for all 115 bioinformatics tool scaffolds in the current execution environment.
+- `validation/bioinformatics-execution-layer-r1-results.md`: execution-layer check for lightweight CLI, R/Bioconductor, and heavy-tool launcher behavior.
+- `validation/bioinformatics-tool-router-r1-results.md`: tool-router check for 115 execution profiles and common workflow plans.
+- `validation/bioinformatics-capability-matrix-r1-results.md`: combined planning matrix joining the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results.
+- `validation/bioinformatics-wrapper-readiness-r1-results.md`: high-priority wrapper readiness plans for install/container/smoke/source-packet implementation work.
+- `validation/bioinformatics-wrapper-readiness-r1-eval-results.md`: structural eval for wrapper-readiness plan completeness and evidence-boundary safeguards.
+- `validation/bioinformatics-wrapper-readiness-all-r1-results.md`: all-tool wrapper readiness plans covering 115 registered bioinformatics tool scaffolds.
+- `validation/bioinformatics-wrapper-readiness-all-r1-eval-results.md`: structural eval for the all-tool readiness-plan set.
+- `validation/bioinformatics-wrapper-implementation-backlog-r1-results.md`: ordered implementation backlog generated from the all-tool readiness plans.
+- `validation/bioinformatics-wrapper-implementation-backlog-r1-eval-results.md`: structural eval for backlog completeness, rank continuity, next actions, and evidence boundaries.
+- `validation/bioinformatics-per-tool-wrapper-r1-results.md`: full execution check for the generated per-tool `probe_or_plan.py` entrypoints across all 115 tool folders.
+- `validation/bioinformatics-tool-scaffold-r1-results.md`: scaffold completeness check, now including source-packet wrappers, per-tool probe/plan wrappers, wrapper configs, API commands, examples, and usage guides.
+- `validation/bioinformatics-cli-runner-r1-results.md`: bounded local CLI runner probe eval for the 60 lightweight command-line tool folders with per-tool `scripts/run_cli.py` entrypoints.
+- `validation/bioinformatics-package-runner-r1-results.md`: bounded Python/R package runner probe eval for 26 package-based tool folders with per-tool `scripts/run_package.py` entrypoints.
+- `validation/bioinformatics-launcher-runner-r1-results.md`: non-executing launcher-plan and workflow-runtime probe eval for the remaining 29 heavy, workflow-runtime, and source-packet-adapter tool folders with per-tool `scripts/run_launcher.py` entrypoints.
+- `validation/bioinformatics-code-coverage-r1-results.md`: structural all-tool code-coverage eval confirming all 115 bioinformatics tool folders have their generic wrappers and execution-layer-specific runner/API commands.
+- `validation/database-tool-adapter-r1-dry-run-results.md`: per-resource database tool-folder eval for 13 Reef adapters without network calls.
+- `validation/database-tool-adapter-r1-live-results.md`: bounded live public API eval for the same 13 database tool folders.
 
 ## What Is Not Included
 
@@ -146,4 +146,4 @@ The key pass condition is behavioral:
 - avoid invented data, sample sizes, metrics, validations, reviewer comments, author roles, or clinical conclusions;
 - separate model prediction, association, database evidence, text-mining evidence, mechanism, causality, and clinical utility.
 
-For the full internal validation log, see `skills/ocean/evals/release-validation-log.md`.
+For the full internal validation log, see `validation/release-validation-log.md`.

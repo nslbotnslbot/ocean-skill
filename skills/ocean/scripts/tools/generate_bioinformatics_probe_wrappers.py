@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
 
 def load_readiness(skill_dir: Path) -> dict[str, dict[str, Any]]:
-    artifacts_dir = skill_dir / "evals" / f"{READINESS_PREFIX}-artifacts"
+    artifacts_dir = skill_dir.resolve().parents[1] / "validation" / f"{READINESS_PREFIX}-artifacts"
     rows = {}
     if not artifacts_dir.exists():
         return rows

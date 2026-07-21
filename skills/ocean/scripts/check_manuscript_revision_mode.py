@@ -139,12 +139,12 @@ def main() -> int:
     parser.add_argument(
         "--cases",
         type=Path,
-        default=repo_root / "skills" / "ocean" / "evals" / "manuscript-revision-mode-r1-cases.json",
+        default=repo_root / "validation" / "manuscript-revision-mode-r1-cases.json",
     )
     parser.add_argument(
         "--out",
         type=Path,
-        default=repo_root / "skills" / "ocean" / "evals" / "manuscript-revision-mode-r1-results.md",
+        default=repo_root / "validation" / "manuscript-revision-mode-r1-results.md",
     )
     args = parser.parse_args()
 

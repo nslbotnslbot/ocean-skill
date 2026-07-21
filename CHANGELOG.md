@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Moved the 729-file development validation archive from `skills/ocean/evals/` to root-level `validation/`, separating installable runtime instructions from cases, fixtures, scorecards, and historical result artifacts.
+- Added repository zoning documentation, GitHub Actions CI, development dependency pinning, JSON/skill validators, and software evidence-boundary regression tests.
+- Fixed CLI availability probes so nonzero exit codes are no longer accepted as successful execution evidence, and downgraded incomplete software records to `candidate_route` with no supported claims.
 - Added a manuscript lifecycle gate with distinct Design/Audit, Manuscript Revision, Pre-submission Stress Test, and Reviewer Response modes; finished-text revision now returns clean replacement prose with audit notes and author queries isolated outside the manuscript.
 - Added Manuscript Revision Mode R1 public-safe routing cases and deterministic contract checks based on real editing failure patterns without publishing private manuscript text.
 - Added a Harbor Project Start Gate for new traceable OCEAN research projects, with Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket rules plus a local record-generation script.

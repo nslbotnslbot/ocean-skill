@@ -350,9 +350,9 @@ def build_results_markdown(
     artifacts: dict[str, str] | None = None,
 ) -> str:
     artifacts = artifacts or {
-        "rubric": "skills/ocean/evals/ocean-module-m3-rubric.md",
-        "scorecard": "skills/ocean/evals/ocean-module-m3-scorecard.csv",
-        "summary": "skills/ocean/evals/ocean-module-m3-summary.json",
+        "rubric": "validation/ocean-module-m3-rubric.md",
+        "scorecard": "validation/ocean-module-m3-scorecard.csv",
+        "summary": "validation/ocean-module-m3-summary.json",
         "script": "skills/ocean/scripts/score_ocean_module_m3.py",
     }
     maturity_counts = {
@@ -452,7 +452,7 @@ def run(args: argparse.Namespace) -> int:
     model_summary = summarize_group(rows, "model_id")
     summary = {
         "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
-        "rubric": "skills/ocean/evals/ocean-module-m3-rubric.md",
+        "rubric": "validation/ocean-module-m3-rubric.md",
         "coverage_input": str(args.coverage.relative_to(repo_root) if args.coverage.is_relative_to(repo_root) else args.coverage),
         "scorecard": str(args.scorecard.relative_to(repo_root) if args.scorecard.is_relative_to(repo_root) else args.scorecard),
         "scored_outputs": len(rows),
@@ -463,7 +463,7 @@ def run(args: argparse.Namespace) -> int:
     }
     m2.write_text(args.summary, json.dumps(summary, ensure_ascii=False, indent=2))
     artifacts = {
-        "rubric": "skills/ocean/evals/ocean-module-m3-rubric.md",
+        "rubric": "validation/ocean-module-m3-rubric.md",
         "scorecard": str(args.scorecard.relative_to(repo_root) if args.scorecard.is_relative_to(repo_root) else args.scorecard),
         "summary": str(args.summary.relative_to(repo_root) if args.summary.is_relative_to(repo_root) else args.summary),
         "script": "skills/ocean/scripts/score_ocean_module_m3.py",
@@ -478,11 +478,11 @@ def run(args: argparse.Namespace) -> int:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     repo_root = Path(__file__).resolve().parents[3]
     parser = argparse.ArgumentParser(description="Score OCEAN outputs with the M3 OCEAN-10 rubric.")
-    parser.add_argument("--cases", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-eval-cases.json")
-    parser.add_argument("--coverage", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m1-coverage.json")
-    parser.add_argument("--scorecard", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m3-scorecard.csv")
-    parser.add_argument("--summary", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m3-summary.json")
-    parser.add_argument("--results", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m3-results.md")
+    parser.add_argument("--cases", type=Path, default=repo_root / "validation/ocean-module-eval-cases.json")
+    parser.add_argument("--coverage", type=Path, default=repo_root / "validation/ocean-module-m1-coverage.json")
+    parser.add_argument("--scorecard", type=Path, default=repo_root / "validation/ocean-module-m3-scorecard.csv")
+    parser.add_argument("--summary", type=Path, default=repo_root / "validation/ocean-module-m3-summary.json")
+    parser.add_argument("--results", type=Path, default=repo_root / "validation/ocean-module-m3-results.md")
     return parser.parse_args(argv)
 
 

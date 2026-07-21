@@ -18,6 +18,7 @@ import subprocess
 import sys
 from typing import Any
 
+from probe_status import classify_probe_status
 from software_source_packet import DEFAULT_CANNOT_SUPPORT, make_packet, write_json
 
 
@@ -67,10 +68,11 @@ def make_run_record(
     parameters = read_json_arg(getattr(args, "parameters_json", ""), {})
     if getattr(args, "probe_args", ""):
         parameters.setdefault("probe_args", args.probe_args)
+    version_output = (stdout + "\n" + stderr).strip()
     return {
         "tool_name": args.tool_name,
         "tool_slug": args.tool_slug,
-        "tool_version": stdout.splitlines()[0][:200] if status == "executed" and stdout.strip() else "",
+        "tool_version": version_output.splitlines()[0][:200] if status == "executed" and version_output else "",
         "task_intent": args.task_intent,
         "command_line": " ".join(shlex.quote(item) for item in command),
         "parameters": parameters,
@@ -135,7 +137,7 @@ def command_probe(args: argparse.Namespace) -> int:
         return 0
 
     code, stdout, stderr = run_bounded(command, args.timeout)
-    status = "executed" if code in {0, 1, 2} and (stdout.strip() or stderr.strip()) else "found_but_probe_failed"
+    status = classify_probe_status(code, stdout, stderr)
     record = make_run_record(
         args=args,
         command=command,

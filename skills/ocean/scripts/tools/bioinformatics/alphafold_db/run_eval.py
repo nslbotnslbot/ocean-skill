@@ -21,8 +21,9 @@ def main(argv: list[str]) -> int:
     args = parser.parse_args(argv)
 
     script = args.skill_dir / "scripts" / "tools" / "bioinformatics" / "alphafold_db" / "source_packet.py"
-    metadata = args.skill_dir / "evals" / "afdb-adapter-r1-mock-metadata.json"
-    pae = args.skill_dir / "evals" / "afdb-adapter-r1-mock-pae.json"
+    validation_dir = args.skill_dir.resolve().parents[1] / "validation"
+    metadata = validation_dir / "afdb-adapter-r1-mock-metadata.json"
+    pae = validation_dir / "afdb-adapter-r1-mock-pae.json"
     analysis = args.outdir / "afdb-adapter-r1-analysis.json"
     packet = args.outdir / "afdb-adapter-r1-packet.json"
     args.outdir.mkdir(parents=True, exist_ok=True)

@@ -27,5 +27,5 @@ These boundary cases check whether OCEAN:
 For full evaluator prompts and checks, see:
 
 ```text
-skills/ocean/evals/anti-hallucination-cases.md
+validation/anti-hallucination-cases.md
 ```

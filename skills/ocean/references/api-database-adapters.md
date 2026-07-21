@@ -66,7 +66,7 @@ Run the adapter eval:
 ```bash
 python3 skills/ocean/scripts/run_api_database_adapter_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Run the per-resource database tool-folder eval:
@@ -74,7 +74,7 @@ Run the per-resource database tool-folder eval:
 ```bash
 python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Live eval requires network access:
@@ -82,7 +82,7 @@ Live eval requires network access:
 ```bash
 python3 skills/ocean/scripts/run_api_database_adapter_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals \
+  --outdir validation \
   --execute-live \
   --retmax 1
 ```
@@ -92,7 +92,7 @@ Per-resource live eval:
 ```bash
 python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals \
+  --outdir validation \
   --execute-live \
   --retmax 1
 ```

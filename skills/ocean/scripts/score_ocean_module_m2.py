@@ -378,7 +378,7 @@ def build_results_markdown(rows: list[dict], module_summary: list[dict], model_s
         "## Module Summary\n\n" + markdown_table(module_summary, ["module", "n", "mean_score", "strong", "developing", "needs_review", "critical_flags"]),
         "## Model Summary\n\n" + markdown_table(model_summary, ["model_id", "n", "mean_score", "strong", "developing", "needs_review", "critical_flags"]),
         "## Lowest-scoring Rows For Manual Review\n\n" + markdown_table(weak_rows, ["model_id", "case_id", "module", "total_score", "maturity", "flags"]),
-        "## Artifacts\n\n- Rubric: `skills/ocean/evals/ocean-module-m2-rubric.md`\n- Scorecard CSV: `skills/ocean/evals/ocean-module-m2-scorecard.csv`\n- Summary JSON: `skills/ocean/evals/ocean-module-m2-summary.json`\n- Scoring script: `skills/ocean/scripts/score_ocean_module_m2.py`",
+        "## Artifacts\n\n- Rubric: `validation/ocean-module-m2-rubric.md`\n- Scorecard CSV: `validation/ocean-module-m2-scorecard.csv`\n- Summary JSON: `validation/ocean-module-m2-summary.json`\n- Scoring script: `skills/ocean/scripts/score_ocean_module_m2.py`",
     ]) + "\n"
 
 
@@ -451,7 +451,7 @@ def run(args: argparse.Namespace) -> int:
     model_summary = summarize_group(rows, "model_id")
     summary = {
         "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
-        "rubric": "skills/ocean/evals/ocean-module-m2-rubric.md",
+        "rubric": "validation/ocean-module-m2-rubric.md",
         "coverage_input": str(args.coverage.relative_to(repo_root) if args.coverage.is_relative_to(repo_root) else args.coverage),
         "scorecard": str(args.scorecard.relative_to(repo_root) if args.scorecard.is_relative_to(repo_root) else args.scorecard),
         "scored_outputs": len(rows),
@@ -471,11 +471,11 @@ def run(args: argparse.Namespace) -> int:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     repo_root = Path(__file__).resolve().parents[3]
     parser = argparse.ArgumentParser(description="Score OCEAN M1 outputs with the M2 rubric.")
-    parser.add_argument("--cases", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-eval-cases.json")
-    parser.add_argument("--coverage", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m1-coverage.json")
-    parser.add_argument("--scorecard", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m2-scorecard.csv")
-    parser.add_argument("--summary", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m2-summary.json")
-    parser.add_argument("--results", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-m2-results.md")
+    parser.add_argument("--cases", type=Path, default=repo_root / "validation/ocean-module-eval-cases.json")
+    parser.add_argument("--coverage", type=Path, default=repo_root / "validation/ocean-module-m1-coverage.json")
+    parser.add_argument("--scorecard", type=Path, default=repo_root / "validation/ocean-module-m2-scorecard.csv")
+    parser.add_argument("--summary", type=Path, default=repo_root / "validation/ocean-module-m2-summary.json")
+    parser.add_argument("--results", type=Path, default=repo_root / "validation/ocean-module-m2-results.md")
     return parser.parse_args(argv)
 
 

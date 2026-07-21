@@ -31,7 +31,7 @@ Use the cross-tool capability matrix to summarize which folders are only scaffol
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The matrix is a planning artifact. It must not be treated as biological validation, benchmark evidence, or proof that unavailable tools can run locally.
@@ -43,7 +43,7 @@ Once a capability matrix exists, build the next implementation plan for high-pri
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 To generate bounded readiness plans for all 115 tool folders:
@@ -51,7 +51,7 @@ To generate bounded readiness plans for all 115 tool folders:
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals \
+  --outdir validation \
   --scope all \
   --prefix bioinformatics-wrapper-readiness-all-r1
 ```
@@ -64,10 +64,10 @@ After generating the all-tool readiness plans, build and validate the wrapper ba
 
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_backlog.py \
-  --outdir skills/ocean/evals
+  --outdir validation
 
 python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The backlog orders engineering work by current evidence and execution layer. It is useful for deciding which wrappers to implement next, but it is not installation, local execution, benchmarking, or biological validation.
@@ -89,7 +89,7 @@ python3 skills/ocean/scripts/tools/generate_bioinformatics_probe_wrappers.py \
 
 python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The wrapper records local availability/import/version evidence where safe, or creates a launcher/source-packet plan for heavy, GUI, license, GPU, workflow, or adapter-style tools. It is not a claim that the tool is installed, a workflow ran, or a biological conclusion is valid.
@@ -120,7 +120,7 @@ python3 skills/ocean/scripts/tools/generate_bioinformatics_cli_runners.py \
 
 python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The CLI runner eval checks entrypoint behavior and evidence-boundary recording. It is not a biological workflow test, and an unavailable command is recorded as an environment boundary rather than a scientific failure.
@@ -152,7 +152,7 @@ python3 skills/ocean/scripts/tools/generate_bioinformatics_package_runners.py \
 
 python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The package runner eval checks package/module availability and evidence-boundary recording. It is not a biological workflow test, script-quality review, differential-expression analysis, single-cell analysis, or clinical/biological claim validation.
@@ -181,7 +181,7 @@ python3 skills/ocean/scripts/tools/generate_bioinformatics_launcher_runners.py \
 
 python3 skills/ocean/scripts/tools/run_bioinformatics_launcher_runner_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Launcher plans are non-executing records. They are useful for heavy tools such as GATK, Cell Ranger, AlphaFold, MaxQuant, 3D Slicer, and Galaxy because those tools require verified environments, references, licenses, compute, logs, and data-safety boundaries before OCEAN can treat any output as source-packet evidence.

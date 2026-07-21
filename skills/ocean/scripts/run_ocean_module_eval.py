@@ -261,8 +261,8 @@ def run(args: argparse.Namespace) -> int:
 def parse_args(argv: list[str]) -> argparse.Namespace:
     repo_root = Path(__file__).resolve().parents[3]
     parser = argparse.ArgumentParser(description="Run OCEAN all-module strict eval.")
-    parser.add_argument("--cases", type=Path, default=repo_root / "skills/ocean/evals/ocean-module-eval-cases.json")
-    parser.add_argument("--models", type=Path, default=repo_root / "skills/ocean/evals/sounding-multimodel-models.example.json")
+    parser.add_argument("--cases", type=Path, default=repo_root / "validation/ocean-module-eval-cases.json")
+    parser.add_argument("--models", type=Path, default=repo_root / "validation/sounding-multimodel-models.example.json")
     parser.add_argument("--output-dir", type=Path, default=repo_root / "outputs/ocean-module-eval-m1")
     parser.add_argument("--env-file", type=Path, default=repo_root / ".env.ocean.local")
     parser.add_argument("--timeout", type=int, default=420)

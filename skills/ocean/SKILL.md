@@ -61,7 +61,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.
 - Read `references/reviewer-lens.md` when the user asks for reviewer-style critique, pre-submission risk prediction, likely objections, response preparation, or journal-tier stress testing.
 - Read `references/review-report.md` when the user needs a structured long-form review report or collaboration/journal-positioning memo.
-- Use `evals/forward-test-cases.md` only for manual pre-release testing of this skill. Do not treat eval prompts as scientific evidence.
+- Repository development validation lives in the root-level `validation/` directory and is not required at runtime. Never treat validation prompts or expected outcomes as scientific evidence.
 - Use `scripts/make_claim_table.py` to create a claim-audit CSV template when a file-based claim inventory would help.
 - Use `scripts/check_claim_table.py` after the claim CSV is filled to summarize weak or high-risk claims.
 - Use `scripts/make_review_skeleton.py` when the user wants a reusable markdown review skeleton.
