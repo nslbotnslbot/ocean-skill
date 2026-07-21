@@ -67,6 +67,17 @@ If a PDF, manuscript, or result file is not readable, state what could and could
 
 Do not invent data, sample sizes, journal requirements, experimental results, or author contributions.
 
+## Public project progress
+
+The canonical public project-progress area is `projects/`.
+
+- Give each real OCEAN project its own folder and use `projects/PROJECT_TEMPLATE.md`.
+- Keep OCEAN phase, external project stage, and public status as separate fields.
+- Update a milestone only from an inspected record, a public/official source, or explicit project-owner confirmation.
+- Append a dated progress entry and identify the next public gate; never silently overwrite history.
+- Do not publish private manuscripts, patient-level or row-level controlled data, credentials, private paths, journal correspondence, or unconfirmed outcomes.
+- A repository maintenance entry must say that it does not change scientific or submission status.
+
 ## Audit checklist
 
 For every scientific manuscript/project, check:

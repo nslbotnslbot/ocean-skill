@@ -69,11 +69,11 @@ OCEAN now separates manuscript work by lifecycle instead of treating every manus
 
 A generic request to revise a finished paragraph defaults to **Manuscript Revision**. OCEAN may use Iceberg as a silent safety check, but module labels, reviewer criticism, deletion commands, risk tables, scores, and new placeholders must not appear in paste-ready manuscript prose. See [`skills/ocean/references/manuscript-revision-mode.md`](skills/ocean/references/manuscript-revision-mode.md).
 
-## Real workflow tracker
+## Real project progress
 
-OCEAN is also being tracked in real manuscript and submission workflows. See `docs/application-submission-tracker.md` for the public-safe application and submission tracker.
+OCEAN is also tracked in real manuscript and research workflows through the canonical [`projects/`](projects/README.md) progress hub. Each project has its own public-safe status, evidence basis, OCEAN module record, dated progress log, next gate, and confidentiality boundary.
 
-The first public-safe case note is the [whole-wheat broth project](docs/case-studies/whole-wheat-broth-project.md). It shows how all seven OCEAN modules were used in one fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow without publishing raw data or private manuscript text.
+Current records cover the [whole-wheat fermented broth study](projects/whole-wheat-fermented-broth/README.md) and [Delirium AI ICU prediction transportability](projects/delirium-ai/README.md). Project tracking does not prove scientific validity, submission, acceptance, or clinical readiness.
 
 ## Project-start records
 
@@ -86,6 +86,7 @@ python3 skills/ocean/scripts/create_project_start_record.py \
   --title "Example biomedical project" \
   --domain "Biological research" \
   --public-safe unclear \
+  --outdir outputs/project-records \
   --remote-push "needs approval"
 ```
 
@@ -198,6 +199,7 @@ For audits, OCEAN uses a fixed output contract: audit card, evidence boundary, c
 skills/ocean/  installable skill, references, adapters, and tool wrappers
 validation/    development cases, fixtures, scorecards, and regression records
 docs/          public architecture, evaluation summaries, and case studies
+projects/      public-safe progress records for real OCEAN research projects
 examples/      small source-safe examples
 assets/        logos and README media
 outputs/       ignored local generated work

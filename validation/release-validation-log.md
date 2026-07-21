@@ -2829,7 +2829,7 @@ This round separates the installable runtime skill from repository-development v
 | Per-tool wrapper regression | 115/115 pass; 5 executed probes, 89 environment-missing, 21 planned-not-executed |
 | Python compile | pass with temporary bytecode cache |
 | `git diff --check` | pass |
-| GitHub Actions run | pending push/PR |
+| GitHub Actions run | pass on PR #37 after fixing the explicit `requirements-dev.txt` cache path |
 
 ### Error Notes
 
@@ -2837,4 +2837,50 @@ The default and bundled Python environments did not include PyYAML. The declared
 
 ### Evidence Boundary / 证据边界
 
-Passing this cleanup regression means repository paths resolve, public JSON/YAML parses, structural contracts remain intact, and the two reproduced software-boundary false positives are blocked. It does not prove scientific correctness, external-tool installation, live API availability, model compliance, or GitHub Actions status. The 230 duplicate generated runner entrypoints and remote branch inventory remain compatibility-sensitive follow-up work rather than silently deleted files.
+Passing this cleanup regression means repository paths resolve, public JSON/YAML parses, structural contracts remain intact, and the two reproduced software-boundary false positives are blocked. It does not prove scientific correctness, external-tool installation, live API availability, or model compliance. The 230 duplicate generated runner entrypoints and remote branch inventory remain compatibility-sensitive follow-up work rather than silently deleted files.
+
+## 2026-07-21 - Public Project Progress Hub R1
+
+### 中文上下文
+
+本轮为真实使用 OCEAN 的科研项目建立统一公开进度区。此前全麦菌汤案例和应用 tracker 分散在 `docs/`，Delirium AI 只有一条待确认记录，容易让项目状态、OCEAN 使用阶段和投稿状态混在一起。现在每个项目拥有独立目录、可校验 frontmatter、模块记录、时间线、下一道公开门槛和保密边界。
+
+### English Context
+
+This round creates a canonical public-safe progress hub for real OCEAN projects. It separates OCEAN workflow phase from external research/publication stage and prevents repository maintenance events from being misread as scientific or submission milestones.
+
+### Scope / 影响范围
+
+- Added `projects/README.md` as the canonical project index and status vocabulary.
+- Added `projects/PROJECT_TEMPLATE.md` for future records.
+- Moved the existing whole-wheat fermented broth case into `projects/whole-wheat-fermented-broth/README.md` with history preserved and added a dated progress log.
+- Added `projects/delirium-ai/README.md` from inspected public-release-package metadata and boundary documents, without copying controlled records or unpublished manuscript text.
+- Kept `docs/application-submission-tracker.md` as a compatibility redirect so historical links do not become dead links.
+- Updated README navigation, repository layout, Harbor, Project Start Gate, and the project-record generator.
+- Added `validation/scripts/check_project_records.py` and a generator regression test; wired project validation into GitHub Actions.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Canonical project records | 2 |
+| Unique project IDs | 2/2 |
+| Required frontmatter and section contract | pass |
+| Public-path/credential-pattern boundary scan | pass |
+| Project-record generator regressions | 3/3 pass, including public-write guard and automatic ID/index behavior |
+| All repository unit tests | 6/6 pass |
+| JSON parse | 1083/1083 pass |
+| Skill/frontmatter/YAML validation | pass |
+| OCEAN structural contract | 41/41 pass |
+| Manuscript lifecycle contract | 17/17 pass |
+| Python compile | pass |
+| Old public project-path references | none |
+| `git diff --check` | pass |
+
+### Delirium AI Evidence Basis
+
+The public record was derived only from project-level local release materials: repository and manuscript READMEs, the repository release checklist, data-boundary documentation, analysis-to-code/source-data organization, a local final-lock summary, and the pending-license notice. Patient-level data, prediction rows, identifiers, credentials, model objects, private author correspondence, and official journal status were not inspected or published in OCEAN.
+
+### Evidence Boundary / 证据边界
+
+This validation proves that OCEAN has a consistent, machine-checked place to record public-safe project progress and that the two initial records satisfy that structural contract. It does not independently validate either study, prove a biological mechanism, establish clinical deployability, or confirm submission, review, acceptance, or publication. The dates in repository-maintenance entries do not change scientific status.

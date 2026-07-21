@@ -69,11 +69,11 @@ OCEAN 现在会先判断稿件处于什么阶段，不再把每一次 manuscript
 
 对已经写完的段落，如果用户只是说“修改一下”或“润色”，默认进入 **Manuscript Revision**。OCEAN 可以在后台用 Iceberg 做安全检查，但 module 标签、审稿式批判、删除命令、风险表、评分和新建占位符都不能进入可粘贴正文。完整规则见 [`skills/ocean/references/manuscript-revision-mode.md`](skills/ocean/references/manuscript-revision-mode.md)。
 
-## 真实流程追踪
+## 真实项目进度
 
-OCEAN 也开始用于真实论文和投稿流程。公开安全版的应用案例和投稿状态追踪见 `docs/application-submission-tracker.md`。
+OCEAN 通过根目录 [`projects/`](projects/README.md) 持续记录真实论文和科研项目。每个项目都有独立的公开状态、证据来源、模块记录、带日期的进度日志、下一道门槛和保密边界。
 
-第一个公开安全版 case note 是[全麦菌汤项目](docs/case-studies/whole-wheat-broth-project.md)。它记录了七个 OCEAN 模块如何进入一个发酵、微生物组、代谢组、毒理支持和 manuscript planning 工作流，同时不公开原始数据或未公开稿件正文。
+当前包括[全麦发酵菌汤项目](projects/whole-wheat-fermented-broth/README.md)和 [Delirium AI ICU 预测可迁移性项目](projects/delirium-ai/README.md)。项目记录不等于科学有效性、投稿、接收或临床可用性的证明。
 
 ## 项目启动记录
 
@@ -86,6 +86,7 @@ python3 skills/ocean/scripts/create_project_start_record.py \
   --title "Example biomedical project" \
   --domain "Biological research" \
   --public-safe unclear \
+  --outdir outputs/project-records \
   --remote-push "needs approval"
 ```
 
@@ -198,6 +199,7 @@ python3 skills/ocean/scripts/check_claim_table.py \
 skills/ocean/  可安装 skill、references、adapters 与工具 wrappers
 validation/    开发测试 cases、fixtures、scorecards 与回归记录
 docs/          公开架构、评估摘要与案例
+projects/      使用 OCEAN 的真实项目公开安全进度记录
 examples/      可安全复用的小型示例
 assets/        图标与 README 媒体
 outputs/       默认忽略的本地生成结果

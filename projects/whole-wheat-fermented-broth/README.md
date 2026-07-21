@@ -1,10 +1,40 @@
-# Whole-Wheat Broth Project: OCEAN Seven-Module Case Note
+---
+project_id: OCEAN-PROJ-001
+title: Whole-Wheat Fermented Broth Study
+domain: biological-research
+ocean_phase: pre-submission-audit
+project_stage: manuscript-preparation
+public_status: active
+last_verified: 2026-07-06
+evidence_basis: owner-confirmed-public-safe-record
+---
+
+# Whole-Wheat Fermented Broth Study: OCEAN Seven-Module Record
 
 This is a public-safe Harbor case note for a real whole-wheat broth / probiotic-fermented whole-wheat medicinal diet project that used OCEAN during manuscript planning, evidence calibration, figure routing, and claim-boundary review.
 
 中文说明：这不是论文结果正文，也不是投稿状态证明。它只记录 OCEAN 在这个真实项目里如何使用七个模块，以及哪些结论被保留为直接证据、探索性解释或待验证假设。
 
-## Source Basis
+## Public Snapshot
+
+| Field | Verified public-safe value |
+|---|---|
+| Project ID | OCEAN-PROJ-001 |
+| Domain | Biological research; fermentation, microbiome, metabolomics, diet, and toxicology support |
+| OCEAN phase | Pre-submission audit |
+| Project stage | Manuscript preparation |
+| Last verified project record | 2026-07-06 |
+| Submission status | Not publicly confirmed |
+
+## Progress Log
+
+| Date | Verified change | Evidence boundary | Next gate |
+|---|---|---|---|
+| 2026-07-06 | The first public-safe seven-module case record was published. | The record documents OCEAN workflow use, not biological mechanism proof or journal status. | Confirm a later manuscript or submission milestone before changing the project stage. |
+| 2026-07-21 | The case note was updated to separate manuscript line editing from full audit behavior. | This was an OCEAN workflow correction, not a new scientific result. | Keep clean manuscript text separate from audit notes in future revisions. |
+| 2026-07-21 | The record moved into the canonical `projects/` progress hub. | Repository organization does not change scientific or submission status. | Add a new dated entry only from an inspected record or owner-confirmed milestone. |
+
+## Evidence Basis
 
 This note was reconstructed from local project records and the Codex project thread for the whole-wheat broth study.
 
@@ -32,7 +62,7 @@ The main boundary decisions were:
 - fermentation-liquid metabolomics and mouse fecal 16S were not merged into fake individual-level sample-wise correlations;
 - manuscript and figure decisions were recorded as project workflow decisions, not as acceptance or peer-review outcomes.
 
-## OCEAN Seven-Module Use
+## OCEAN Module Record
 
 | OCEAN module | What it did in this project | Boundary kept |
 |---|---|---|
@@ -131,6 +161,14 @@ This project became an OCEAN application case because it exercised all seven mod
 - Harbor memory for future revision or submission work.
 
 The public lesson is not that OCEAN proves the whole-wheat broth mechanism. The lesson is that OCEAN can help keep a complex multi-omics manuscript workflow evidence-bound, auditable, and harder to overclaim.
+
+## Next Public Gate
+
+The next status change requires owner confirmation of a manuscript, preprint, submission, review, revision, acceptance, or publication milestone. A public identifier may be added only when it is genuinely public and traceable.
+
+## Confidentiality Boundary
+
+Do not publish unpublished manuscript text, raw data, exact private source tables, collaborator-only decisions, reviewer comments, journal correspondence, or unconfirmed submission outcomes. The project record may summarize workflow decisions only at a public-safe level.
 
 ## Workflow Lesson: Audit Is Not Line Editing
 

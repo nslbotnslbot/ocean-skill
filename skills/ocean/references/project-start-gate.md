@@ -46,7 +46,7 @@ If only one or two trigger signals are present, ask whether to create a tracked 
 |---|---|---|
 | New tracked project | First serious OCEAN run for a project | Create Project Start Card, Harbor seed, and GitHub Sync Ticket |
 | Continuation project | Follow-up on an existing OCEAN project | Update Harbor memo or add dated process entry |
-| Public-safe application case | Project owner has approved public-safe tracking | Update public tracker or case note with confirmed facts only |
+| Public-safe application case | Project owner has approved public-safe tracking | Update the matching `projects/<slug>/README.md` record with confirmed facts only |
 | Private-local project | Useful research record but not public-safe | Keep local/project-private record; do not push public details |
 | Temporary analysis | Not enough evidence or user does not want persistence | Answer normally; no project record |
 
@@ -68,12 +68,15 @@ When the gate opens, create these artifacts before or alongside the first substa
 ## GitHub Sync Rules
 
 - Public GitHub records must be public-safe summaries, not raw scientific evidence.
+- The canonical public progress index is `projects/README.md`; each tracked public project has one `projects/<slug>/README.md` record created from `projects/PROJECT_TEMPLATE.md`.
+- Keep `ocean_phase`, external `project_stage`, and `public_status` separate so an OCEAN audit cannot be mistaken for journal progress.
+- Append a dated Progress Log entry for each verified change; repository maintenance must explicitly state that it does not change scientific or submission status.
 - Never commit API keys, patient-level data, unpublished raw data, private manuscript text, private peer review, journal correspondence, collaborator-only notes, or unconfirmed submission outcomes.
 - When a repository is available and the user has requested GitHub updating, OCEAN should prepare commit-ready files and a sync ticket.
 - Remote push should happen only when the user has approved the GitHub update for that project/session or the task explicitly asks to push/update GitHub.
 - If push is not allowed, output the GitHub Sync Ticket and stop at local files.
 - If the project is private-local, write local records only and mark `remote_push: not_allowed`.
-- If public status is not confirmed, use `To be updated` or `OCEAN planning`; do not infer submission, review, revision, acceptance, or publication status.
+- If public status is not confirmed, use `awaiting-owner-confirmation` and `to-be-confirmed`; do not infer submission, review, revision, acceptance, or publication status.
 
 ## Output Template
 

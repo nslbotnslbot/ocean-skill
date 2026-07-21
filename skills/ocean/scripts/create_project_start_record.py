@@ -58,10 +58,35 @@ def module_route_table(modules: list[str]) -> str:
     return "\n".join(rows)
 
 
-def build_project_card(args: argparse.Namespace, project_id: str, slug: str, modules: list[str]) -> str:
-    return f"""# OCEAN Project Start Card
+def next_project_id(outdir: Path) -> str:
+    numbers: list[int] = []
+    for path in outdir.glob("*/README.md"):
+        match = re.search(r"^project_id:\s*OCEAN-PROJ-(\d{3})\s*$", path.read_text(encoding="utf-8"), re.MULTILINE)
+        if match:
+            numbers.append(int(match.group(1)))
+    return f"OCEAN-PROJ-{max(numbers, default=0) + 1:03d}"
 
-| Field | Value |
+
+def build_project_card(args: argparse.Namespace, project_id: str, slug: str, modules: list[str]) -> str:
+    title_yaml = json.dumps(args.title, ensure_ascii=False)
+    domain_yaml = json.dumps(args.domain, ensure_ascii=False)
+    evidence_basis_yaml = json.dumps(args.evidence_basis, ensure_ascii=False)
+    return f"""---
+project_id: {project_id}
+title: {title_yaml}
+domain: {domain_yaml}
+ocean_phase: {args.ocean_phase}
+project_stage: {args.project_stage}
+public_status: {args.public_status}
+last_verified: {args.start_date}
+evidence_basis: {evidence_basis_yaml}
+---
+
+# {args.title}
+
+## Public Snapshot
+
+| Field | Verified public-safe value |
 |---|---|
 | Project ID | {project_id} |
 | Project title | {args.title} |
@@ -70,7 +95,9 @@ def build_project_card(args: argparse.Namespace, project_id: str, slug: str, mod
 | Domain lane | {args.domain} |
 | Starting module | {modules[0] if modules else "To be updated"} |
 | Expected module route | {" -> ".join(modules) if modules else "To be updated"} |
-| Status | {args.status} |
+| OCEAN phase | {args.ocean_phase} |
+| Project stage | {args.project_stage} |
+| Public status | {args.public_status} |
 | Public-safe? | {args.public_safe} |
 | Record slug | {slug} |
 
@@ -78,7 +105,7 @@ def build_project_card(args: argparse.Namespace, project_id: str, slug: str, mod
 
 {args.summary or "To be updated."}
 
-## Evidence Boundary Snapshot
+## Evidence Basis
 
 ### Inspected
 
@@ -100,9 +127,25 @@ def build_project_card(args: argparse.Namespace, project_id: str, slug: str, mod
 
 {markdown_list(args.excluded_material)}
 
-## Module Route
+## OCEAN Module Record
+
+The following route is planned at project start. A module must not be marked complete until its artifact is inspected.
 
 {module_route_table(modules)}
+
+## Progress Log
+
+| Date | Verified change | Evidence boundary | Next gate |
+|---|---|---|---|
+| {args.start_date} | Public-safe OCEAN project record created. | Project registration does not establish scientific validity or submission status. | {args.next_evidence_needed or "Confirm the first inspected artifact and project-owner-approved public milestone."} |
+
+## Next Public Gate
+
+{args.next_evidence_needed or "Confirm the first inspected artifact and project-owner-approved public milestone."}
+
+## Confidentiality Boundary
+
+{markdown_list(args.excluded_material)}
 
 ## Harbor Seed
 
@@ -120,7 +163,9 @@ def build_harbor_seed(args: argparse.Namespace, project_id: str, modules: list[s
 
 - Project ID: {project_id}
 - Current decision: {args.current_decision}
-- Current status: {args.status}
+- OCEAN phase: {args.ocean_phase}
+- Project stage: {args.project_stage}
+- Public status: {args.public_status}
 - What can be claimed now: The project has entered OCEAN tracking only if the evidence boundary above is preserved.
 - What must remain hypothesis: Any scientific, clinical, mechanism, validation, authorship, or publication claim not directly supported by inspected evidence.
 
@@ -153,7 +198,7 @@ def build_harbor_seed(args: argparse.Namespace, project_id: str, modules: list[s
 
 def build_sync_ticket(args: argparse.Namespace, project_id: str, slug: str, project_dir: Path) -> str:
     files = [
-        project_dir / "project-card.md",
+        project_dir / "README.md",
         project_dir / "harbor-seed.md",
         project_dir / "github-sync-ticket.md",
         project_dir / "project-state.json",
@@ -188,7 +233,9 @@ def build_state(args: argparse.Namespace, project_id: str, slug: str, modules: l
         "start_date": args.start_date,
         "project_class": args.project_class,
         "domain": args.domain,
-        "status": args.status,
+        "ocean_phase": args.ocean_phase,
+        "project_stage": args.project_stage,
+        "public_status": args.public_status,
         "public_safe": args.public_safe,
         "modules": modules,
         "remote_push": args.remote_push,
@@ -203,24 +250,41 @@ def build_state(args: argparse.Namespace, project_id: str, slug: str, modules: l
     }
 
 
-def update_index(index_path: Path, project_id: str, title: str, slug: str, status: str) -> None:
+def update_index(
+    index_path: Path,
+    project_id: str,
+    title: str,
+    slug: str,
+    domain: str,
+    ocean_phase: str,
+    project_stage: str,
+    verified_date: str,
+) -> None:
     index_path.parent.mkdir(parents=True, exist_ok=True)
-    row = f"| {project_id} | [{title}]({slug}/project-card.md) | {status} | To be updated | |\n"
+    row = (
+        f"| {project_id} | {title} | {domain} | {ocean_phase} | {project_stage} | "
+        f"{verified_date} | [Project record]({slug}/README.md) |\n"
+    )
     if not index_path.exists():
         index_path.write_text(
-            "# OCEAN Project Records\n\n"
-            "Public-safe or local project-start records created by the Harbor Project Start Gate.\n\n"
-            "| Project ID | Project | Status | Last update | Notes |\n"
-            "|---|---|---|---|---|\n"
+            "# OCEAN Project Progress Hub\n\n"
+            "Public-safe project records created by the Harbor Project Start Gate.\n\n"
+            "| Project ID | Project | Domain | OCEAN phase | Project stage | Last verified | Record |\n"
+            "|---|---|---|---|---|---|---|\n"
             + row,
             encoding="utf-8",
         )
         return
 
     current = index_path.read_text(encoding="utf-8")
-    if project_id in current or f"]({slug}/project-card.md)" in current:
+    if project_id in current or f"]({slug}/README.md)" in current:
         return
-    index_path.write_text(current.rstrip() + "\n" + row, encoding="utf-8")
+    marker = "\n## Two Independent Statuses"
+    if marker in current:
+        current = current.replace(marker, "\n" + row + marker, 1)
+    else:
+        current = current.rstrip() + "\n" + row
+    index_path.write_text(current, encoding="utf-8")
 
 
 def parse_args() -> argparse.Namespace:
@@ -229,7 +293,22 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--project-id", default="")
     parser.add_argument("--domain", default="To be classified")
     parser.add_argument("--project-class", default="New tracked project")
-    parser.add_argument("--status", default="OCEAN planning")
+    parser.add_argument(
+        "--ocean-phase",
+        choices=["planning", "evidence-audit", "validation-planning", "manuscript-support", "pre-submission-audit", "reviewer-response", "archived"],
+        default="planning",
+    )
+    parser.add_argument(
+        "--project-stage",
+        choices=["idea", "analysis", "manuscript-preparation", "repository-release-preparation", "submitted", "under-review", "revision", "accepted", "published", "paused", "to-be-confirmed"],
+        default="idea",
+    )
+    parser.add_argument(
+        "--public-status",
+        choices=["active", "paused", "completed", "archived", "awaiting-owner-confirmation"],
+        default="awaiting-owner-confirmation",
+    )
+    parser.add_argument("--evidence-basis", default="owner-confirmation-needed")
     parser.add_argument("--public-safe", choices=["yes", "no", "unclear"], default="unclear")
     parser.add_argument("--modules", default=",".join(DEFAULT_MODULE_ROUTE))
     parser.add_argument("--summary", default="")
@@ -250,7 +329,7 @@ def parse_args() -> argparse.Namespace:
         default="needs approval",
     )
     parser.add_argument("--start-date", default=date.today().isoformat())
-    parser.add_argument("--outdir", type=Path, default=Path("docs/project-records"))
+    parser.add_argument("--outdir", type=Path, default=Path("outputs/project-records"))
     parser.add_argument("--no-index", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     return parser.parse_args()
@@ -258,14 +337,23 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+    repo_root = Path(__file__).resolve().parents[3]
+    canonical_public_dir = (repo_root / "projects").resolve()
+    if args.outdir.resolve() == canonical_public_dir and args.public_safe != "yes":
+        raise SystemExit(
+            "Refusing to write an unconfirmed record into projects/: "
+            "set --public-safe yes after owner approval, or use outputs/project-records/."
+        )
+    if args.remote_push == "approved" and args.public_safe != "yes":
+        raise SystemExit("Remote push requires --public-safe yes.")
     slug = slugify(args.title)
-    project_id = args.project_id or f"OCEAN-PROJ-{args.start_date.replace('-', '')}-{slug}"
+    project_id = args.project_id or next_project_id(args.outdir)
     modules = split_csv(args.modules)
     project_dir = args.outdir / slug
     state = build_state(args, project_id, slug, modules)
 
     outputs = {
-        "project-card.md": build_project_card(args, project_id, slug, modules),
+        "README.md": build_project_card(args, project_id, slug, modules),
         "harbor-seed.md": build_harbor_seed(args, project_id, modules),
         "github-sync-ticket.md": build_sync_ticket(args, project_id, slug, project_dir),
         "project-state.json": json.dumps(state, ensure_ascii=False, indent=2) + "\n",
@@ -276,7 +364,16 @@ def main() -> int:
         for filename, text in outputs.items():
             (project_dir / filename).write_text(text, encoding="utf-8")
         if not args.no_index:
-            update_index(args.outdir / "index.md", project_id, args.title, slug, args.status)
+            update_index(
+                args.outdir / "README.md",
+                project_id,
+                args.title,
+                slug,
+                args.domain,
+                args.ocean_phase,
+                args.project_stage,
+                args.start_date,
+            )
 
     print(json.dumps({
         "project_id": project_id,
