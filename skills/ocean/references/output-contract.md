@@ -1,6 +1,6 @@
 # OCEAN Output Contract
 
-Use this contract to keep OCEAN responses consistent. The user may request a different format, but otherwise choose one of the three fixed output modes below.
+Use this contract to keep OCEAN responses consistent. The user may request a different format, but otherwise choose the Manuscript Revision contract or one of the three fixed audit depths below.
 
 ## Input Intake
 
@@ -8,7 +8,8 @@ Before answering, classify the request and evidence state.
 
 | Field | Options / content |
 |---|---|
-| Request mode | full OCEAN workflow; research design workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Request mode | manuscript revision; pre-submission stress test; reviewer response; full OCEAN workflow; research design workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
+| Lifecycle mode | Design / Audit; Manuscript Revision; Pre-submission Stress Test; Reviewer Response; not applicable |
 | Domain lens | medical AI / clinical prediction; biological AI / AI-for-biology; clinical research; molecular/cellular biology; omics/single-cell/spatial; drug/target/therapeutic hypothesis; KG/database/resource; manuscript/review/proposal; collaboration/authorship boundary; unknown |
 | Data/tool route | none needed; literature identity; public review/assessment; biological annotation; omics/atlas; variant/genetics; cancer/cohort; drug/chemical; clinical registry/regulatory; EHR/cohort/imaging/signal; local files |
 | Evidence state | sufficient; partial; minimal; non-traceable; contradictory |
@@ -17,7 +18,24 @@ Before answering, classify the request and evidence state.
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
-For domain-specific biomedical evidence standards, use `references/domain-lens.md`. For public data, official resources, registries, source classes, API planning, privacy, access, or licensing boundaries, use `references/data-tool-router.md`. For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets and `references/module-artifact-contract.md` to preserve stable artifacts. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
+For manuscript text or reviewer/editor feedback, use `references/manuscript-revision-mode.md` before choosing an audit depth. For domain-specific biomedical evidence standards, use `references/domain-lens.md`. For public data, official resources, registries, source classes, API planning, privacy, access, or licensing boundaries, use `references/data-tool-router.md`. For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets and `references/module-artifact-contract.md` to preserve stable artifacts. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
+
+## Manuscript Revision Mode
+
+Use this mode when finished manuscript text is supplied for revision, polishing, shortening, translation, or wording improvement and the user did not request a full audit. This mode overrides Quick, Standard, and Deep audit formatting.
+
+```markdown
+一、修订正文（可直接替换）
+<clean manuscript prose only>
+
+二、修改说明（不进入正文）
+- <brief explanation of material edits or evidence-safe downgrades>
+
+三、作者确认项（仅必要时）
+- <missing fact, method, citation, value, or placement decision>
+```
+
+Omit sections two or three when they add no value. The clean revision must not contain OCEAN module labels, verdict labels, audit tables, reviewer criticism, editing commands, scores, Handoff Tickets, or newly invented editorial placeholders. Use a separate clean-text block for each manuscript location when revising multiple non-contiguous passages.
 
 ## Verdict Labels
 
@@ -59,7 +77,7 @@ Use for narrow questions or when the user asks for a short answer.
 
 ## Standard Mode
 
-Use by default for project, manuscript, claim-audit, collaboration, and journal-positioning requests. Keep the headings in this order. If a section is not relevant, write "不适用" with a short reason rather than deleting the section.
+Use by default for project audit, manuscript audit, claim-audit, collaboration, and journal-positioning requests. Do not use it for ordinary finished-text revision. Keep the headings in this order. If a section is not relevant, write "不适用" with a short reason rather than deleting the section.
 
 ```markdown
 一、OCEAN审计卡
@@ -113,7 +131,7 @@ Use by default for project, manuscript, claim-audit, collaboration, and journal-
 
 ## Deep Mode
 
-Use for full manuscript review, reviewer-style critique, public peer review extraction, or when the user asks for a detailed report. Start with the Standard Mode sections, then add:
+Use for explicit full manuscript review, reviewer-style critique, public peer review extraction, or when the user asks for a detailed audit report. Do not infer Deep Mode from a generic request to revise manuscript wording. Start with the Standard Mode sections, then add:
 
 ```markdown
 十、Reviewer-style major concerns
@@ -243,3 +261,4 @@ Use these rows in this order unless the user asks for a different rubric:
 - Do not treat search-result snippets as full-paper evidence.
 - Do not treat peer review reports, assessments, or reviewer comments as facts, novelty proof, mechanism proof, publication guarantees, or clinical validation.
 - If only a title, abstract, DOI, or memory fragment is available, say so in the Evidence state and downgrade the output.
+- In Manuscript Revision mode, never place evidence-boundary labels, module labels, reviewer language, editing commands, scores, or new editorial placeholders inside the clean replacement text.

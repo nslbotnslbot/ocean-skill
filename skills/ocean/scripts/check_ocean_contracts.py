@@ -14,6 +14,7 @@ REQUIRED_REFERENCES = [
     "data-tool-router.md",
     "module-artifact-contract.md",
     "output-contract.md",
+    "manuscript-revision-mode.md",
     "module-handoff.md",
     "project-start-gate.md",
     "sounding.md",
@@ -35,6 +36,33 @@ MODULE_ARTIFACT_TERMS = {
     "Anchor": ["Validation Plan", "leakage", "reproducibility"],
     "Compass": ["Research Route Card", "evidence driver", "decision"],
     "Harbor": ["Decision Memory", "Project Start Card", "GitHub Sync Ticket", "contribution boundary", "reuse"],
+}
+
+MANUSCRIPT_REVISION_CONTRACTS = {
+    "revision_reference": (
+        "references/manuscript-revision-mode.md",
+        ["Manuscript Revision", "修订正文（可直接替换）", "Channel Isolation"],
+    ),
+    "skill_entrypoint": (
+        "SKILL.md",
+        ["manuscript-revision-mode.md", "clean replacement text"],
+    ),
+    "output_contract": (
+        "references/output-contract.md",
+        ["Manuscript Revision Mode", "修改说明（不进入正文）"],
+    ),
+    "routing_protocol": (
+        "static/core/routing-protocol.md",
+        ["Manuscript lifecycle gate", "standard seven-module chain"],
+    ),
+    "iceberg_isolation": (
+        "references/iceberg.md",
+        ["claim audit internal", "paste-ready paragraph"],
+    ),
+    "manifest_always_load": (
+        "manifest.yaml",
+        ["references/manuscript-revision-mode.md"],
+    ),
 }
 
 DOMAIN_CASE_KEYWORDS = {
@@ -92,6 +120,21 @@ def check_artifact_contract(skill_dir: Path) -> list[dict]:
             "check": "module_artifact_contract",
             "target": module,
             "status": "pass" if not missing else "fail",
+            "missing_terms": missing,
+        })
+    return rows
+
+
+def check_manuscript_revision_contract(skill_dir: Path) -> list[dict]:
+    rows = []
+    for name, (relative_path, terms) in MANUSCRIPT_REVISION_CONTRACTS.items():
+        path = skill_dir / relative_path
+        text = read_text(path) if path.exists() else ""
+        missing = [term for term in terms if term.lower() not in text.lower()]
+        rows.append({
+            "check": "manuscript_revision_contract",
+            "target": name,
+            "status": "pass" if path.exists() and not missing else "fail",
             "missing_terms": missing,
         })
     return rows
@@ -162,6 +205,7 @@ def main() -> int:
     rows: list[dict] = []
     rows.extend(check_required_references(args.skill_dir))
     rows.extend(check_artifact_contract(args.skill_dir))
+    rows.extend(check_manuscript_revision_contract(args.skill_dir))
     rows.extend(check_case_routing(args.cases))
 
     write_markdown(rows, args.out)

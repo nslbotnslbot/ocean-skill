@@ -7,6 +7,7 @@ always_load:
   - static/core/evidence-boundary.md
   - static/core/routing-protocol.md
   - references/output-contract.md
+  - references/manuscript-revision-mode.md
 
 conditional_core:
   retrieval_or_database:

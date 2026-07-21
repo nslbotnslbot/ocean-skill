@@ -64,6 +64,7 @@ Iceberg can start from:
 - Do not treat abstract-level wording as full-paper evidence.
 - Downgrade strong claims when key evidence is missing.
 - Separate "supports a weaker claim" from "supports the original claim".
+- In Manuscript Revision mode, keep the claim audit internal and isolate clean replacement prose from module labels, verdicts, reviewer language, editing commands, and author queries.
 
 ## Workflow
 
@@ -82,6 +83,8 @@ Iceberg can start from:
    - To Anchor when validation or reproducibility is needed.
    - To Compass when claim gaps imply research plans or idea opportunities.
    - To Harbor when final report memory is needed.
+
+For finished-text revision, replace the visible artifact below with the Manuscript Revision contract in `references/manuscript-revision-mode.md`. The Claim-Evidence Matrix may inform the edit but must not be mixed into the paste-ready paragraph.
 
 ## Output Artifact
 

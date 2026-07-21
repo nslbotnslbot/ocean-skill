@@ -18,6 +18,7 @@ Use this contract when OCEAN needs stable outputs across the seven modules. Each
 - Preserve identifiers, inspected source types, missing evidence, and stop conditions.
 - Do not invent missing sources, data, endpoints, sample sizes, metrics, validations, reviewer comments, author roles, or publication outcomes.
 - If a module is skipped, record why.
+- In Manuscript Revision mode, module artifacts are internal editorial checks. The user-facing artifact is clean replacement text plus separate notes; never merge module labels, verdicts, risk language, commands, or author queries into manuscript prose.
 
 ## Required Module Artifacts
 
@@ -40,6 +41,8 @@ Score an artifact as usable only if it passes all five gates:
 3. **Calibration gate**: downgrades unsupported causal, clinical, mechanism, validation, novelty, publication, or authorship claims.
 4. **Artifact gate**: produces the expected module artifact fields.
 5. **Handoff gate**: names the next OCEAN module or a stop condition with an input packet.
+
+For Manuscript Revision mode, replace the visible artifact and handoff gates with a **channel-isolation gate**: clean manuscript text contains no audit metadata, while any scientific downgrade rationale or author query is placed in the editorial sidecar.
 
 ## Compact Artifact Templates
 

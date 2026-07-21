@@ -56,6 +56,19 @@ Use this when you ask Codex to review:
 - paper positioning and journal strategy
 - reviewer-style critique and pre-submission stress testing
 
+## Manuscript lifecycle modes
+
+OCEAN now separates manuscript work by lifecycle instead of treating every manuscript request as a full audit:
+
+| Mode | Use it for | Default output |
+|---|---|---|
+| **Design / Audit** | ideas, proposals, experiment design, early drafts, or explicit weakness finding | Relevant module artifacts; full-chain critique only when genuinely needed |
+| **Manuscript Revision** | finished passages that need polishing, shortening, translation, or evidence-safe wording changes | Clean replacement text first; editorial notes and author queries remain separate |
+| **Pre-submission Stress Test** | explicit reviewer simulation or full submission-readiness audit | Audit report plus separately isolated safe rewrites |
+| **Reviewer Response** | reviewer/editor comments and manuscript revision | Separate response-letter text, revised manuscript text, and author-only notes |
+
+A generic request to revise a finished paragraph defaults to **Manuscript Revision**. OCEAN may use Iceberg as a silent safety check, but module labels, reviewer criticism, deletion commands, risk tables, scores, and new placeholders must not appear in paste-ready manuscript prose. See [`skills/ocean/references/manuscript-revision-mode.md`](skills/ocean/references/manuscript-revision-mode.md).
+
 ## Real workflow tracker
 
 OCEAN is also being tracked in real manuscript and submission workflows. See `docs/application-submission-tracker.md` for the public-safe application and submission tracker.
@@ -133,6 +146,13 @@ Focus on scientific value, reliability, key risks, missing validation, collabora
 Use the standard OCEAN output format unless I ask for a quick or deep report.
 ```
 
+For wording-only revision of an already drafted passage:
+
+```text
+Use $ocean in Manuscript Revision mode. Return clean replacement text first.
+Keep audit notes and author queries outside the manuscript text.
+```
+
 For an empty review report skeleton:
 
 ```bash
@@ -170,7 +190,7 @@ The analysis must be direct, critical, and evidence-bound. Do not overstate nove
 - system demonstration vs scientific discovery
 - light advice vs authorship-level contribution
 
-By default, OCEAN uses a fixed output contract: audit card, evidence boundary, claim-evidence matrix, risk register, missing evidence/analysis, collaboration boundary, journal positioning, next actions, and scores. Use quick mode only for narrow questions and deep mode for full manuscript or reviewer-style reports.
+For audits, OCEAN uses a fixed output contract: audit card, evidence boundary, claim-evidence matrix, risk register, missing evidence/analysis, collaboration boundary, journal positioning, next actions, and scores. Finished-text editing instead uses the Manuscript Revision contract: clean replacement text, separate change notes, and author queries only when necessary. Use deep mode only for an explicit full manuscript or reviewer-style audit.
 
 ## Repository layout
 
