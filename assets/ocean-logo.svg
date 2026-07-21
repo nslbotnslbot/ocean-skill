@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 300" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+  <title id="title">OCEAN logo</title>
+  <desc id="desc">A crisp ocean-blue logo with a compass, wave, and iceberg symbol beside the OCEAN wordmark and two-line project name.</desc>
+  <defs>
+    <linearGradient id="mark-bg" x1="55" y1="54" x2="230" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef9fb"/>
+      <stop offset="0.55" stop-color="#c9eaf2"/>
+      <stop offset="1" stop-color="#87bfd1"/>
+    </linearGradient>
+    <linearGradient id="water" x1="58" y1="162" x2="228" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#83d2df"/>
+      <stop offset="1" stop-color="#357fa7"/>
+    </linearGradient>
+    <linearGradient id="ice" x1="121" y1="102" x2="176" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#d8f0f7"/>
+      <stop offset="1" stop-color="#8ec8dd"/>
+    </linearGradient>
+  </defs>
+
+  <g>
+    <circle cx="150" cy="150" r="96" fill="url(#mark-bg)" stroke="#7dbbd1" stroke-width="5"/>
+    <circle cx="150" cy="150" r="78" fill="none" stroke="#f4fcff" stroke-width="7"/>
+    <circle cx="150" cy="150" r="49" fill="none" stroke="#dff3f8" stroke-width="6"/>
+
+    <path d="M63 173c23-14 45-14 67-2 18 10 36 10 56 0 22-12 44-12 67 2" fill="none" stroke="#f2fdff" stroke-width="15" stroke-linecap="round"/>
+    <path d="M67 202c22-12 43-12 65-1 23 12 42 12 64 0 21-11 42-11 64 1" fill="none" stroke="#9edee9" stroke-width="11" stroke-linecap="round"/>
+    <path d="M61 188c26-10 48-9 70 2 18 10 36 10 57 0 21-10 43-10 66 2-16 33-54 55-103 55-50 0-89-22-105-56 5 0 10-1 15-3z" fill="url(#water)"/>
+
+    <path d="M150 66l15 66 58 18-58 18-15 66-15-66-58-18 58-18z" fill="#ffffff" stroke="#f2fbff" stroke-width="4"/>
+    <path d="M150 66l15 66 58 18-58 18z" fill="#69b6cf"/>
+    <path d="M150 234l-15-66-58-18 58-18z" fill="#2d719d"/>
+    <circle cx="150" cy="150" r="14" fill="#fbfdfe" stroke="#3f7f9f" stroke-width="6"/>
+
+    <path d="M119 213l31-82 37 82z" fill="url(#ice)" stroke="#ffffff" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M150 131l-5 82h-26z" fill="#ffffff"/>
+    <path d="M150 131l37 82h-42z" fill="#9bd3e3"/>
+    <path d="M133 177l13 36h-27z" fill="#6db6d0"/>
+  </g>
+
+  <g fill="#123c5a">
+    <text x="292" y="123" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="78" font-weight="760" letter-spacing="4">OCEAN</text>
+    <text x="296" y="173" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="27" font-weight="580" letter-spacing="0" fill="#35657d">Orchestrated Claim-Evidence</text>
+    <text x="296" y="210" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="27" font-weight="580" letter-spacing="0" fill="#35657d">Analysis Navigator</text>
+  </g>
+</svg>
