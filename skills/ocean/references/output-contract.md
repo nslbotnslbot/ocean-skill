@@ -231,7 +231,7 @@ Use this rubric when comparing module outputs or model lanes. It is a behavioral
 | Biomedical/biological usefulness | Gives concrete, domain-appropriate, evidence-bounded next steps for medical or biological research. |
 | Output consistency | Keeps stable headings/sections and contains no user-facing `<think>` or private reasoning. |
 
-For eval details, use `evals/ocean-module-m3-rubric.md`. Preserve M2 results as historical 12-point screening records.
+For repository-development eval details, use `validation/ocean-module-m3-rubric.md`. Preserve M2 results as historical 12-point screening records.
 
 ## Scoring Table Rows
 

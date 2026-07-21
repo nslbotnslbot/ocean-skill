@@ -193,7 +193,7 @@ def main() -> int:
     parser.add_argument(
         "--cases",
         type=Path,
-        default=repo_root / "skills" / "ocean" / "evals" / "domain-router-big-experiment-r1-cases.json",
+        default=repo_root / "validation" / "domain-router-big-experiment-r1-cases.json",
     )
     parser.add_argument(
         "--out",

@@ -27,6 +27,11 @@ import subprocess
 import sys
 from typing import Any
 
+COMMON_DIR = Path(__file__).resolve().parent / "common"
+sys.path.insert(0, str(COMMON_DIR))
+
+from probe_status import classify_probe_status  # noqa: E402
+
 
 CLI_ALIASES = {
     "alevin_fry": ["alevin-fry"],
@@ -200,6 +205,7 @@ def try_cli(tool: dict[str, Any], timeout: int) -> dict[str, Any] | None:
         resolved = shutil.which(candidate)
         if not resolved:
             continue
+        nonzero_probe: dict[str, Any] | None = None
         probes = [
             [resolved, "--version"],
             [resolved, "-version"],
@@ -209,7 +215,8 @@ def try_cli(tool: dict[str, Any], timeout: int) -> dict[str, Any] | None:
         ]
         for probe in probes:
             code, output = run_command(probe, timeout)
-            if code in {0, 1, 2} and output.strip():
+            status = classify_probe_status(code, output)
+            if status == "executed":
                 return {
                     "interface": "cli",
                     "status": "executed",
@@ -219,6 +226,18 @@ def try_cli(tool: dict[str, Any], timeout: int) -> dict[str, Any] | None:
                     "returncode": code,
                     "output_excerpt": output,
                 }
+            if status == "found_but_probe_nonzero" and nonzero_probe is None:
+                nonzero_probe = {
+                    "interface": "cli",
+                    "status": "found_but_probe_nonzero",
+                    "entrypoint": candidate,
+                    "resolved_path": resolved,
+                    "command": probe,
+                    "returncode": code,
+                    "output_excerpt": output,
+                }
+        if nonzero_probe:
+            return nonzero_probe
         return {
             "interface": "cli",
             "status": "found_but_probe_failed",

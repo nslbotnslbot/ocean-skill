@@ -49,7 +49,7 @@ After running the scaffold and real-tool smoke evals, build a combined planning 
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The matrix records scaffold/adapter coverage and local availability. It is not evidence that a tool has completed a biological analysis.
@@ -61,7 +61,7 @@ After the capability matrix exists, generate high-priority wrapper readiness pla
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 To cover every registered bioinformatics scaffold, run the same builder with all-tool scope and a separate prefix:
@@ -69,7 +69,7 @@ To cover every registered bioinformatics scaffold, run the same builder with all
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals \
+  --outdir validation \
   --scope all \
   --prefix bioinformatics-wrapper-readiness-all-r1
 ```
@@ -78,14 +78,14 @@ Then validate the generated plans:
 
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_readiness_eval.py \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 For the all-tool run, validate the matching prefix:
 
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_readiness_eval.py \
-  --outdir skills/ocean/evals \
+  --outdir validation \
   --prefix bioinformatics-wrapper-readiness-all-r1
 ```
 
@@ -97,14 +97,14 @@ After generating the all-tool readiness plans, build an ordered engineering back
 
 ```bash
 python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_backlog.py \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Then validate the backlog artifact:
 
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 The backlog groups work into immediate local packetization, priority environment setup, common CLI wrappers, Python/R package wrappers, workflow plans, and heavy-tool launcher plans. It is still an engineering-planning artifact, not proof that a tool ran or that a biological result is valid.
@@ -123,7 +123,7 @@ Then execute the generated entrypoints in bounded probe/plan mode:
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Each tool folder receives `wrapper_config.json` and `scripts/probe_or_plan.py`. The generated entrypoint either records a local availability/version/import probe or emits a launcher/source-packet plan. It does not install tools, download databases, run biological analyses, benchmark methods, or validate scientific claims.
@@ -142,7 +142,7 @@ Then run the bounded probe eval:
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Each lightweight CLI folder receives `scripts/run_cli.py` plus `cli-probe` and `cli-run-record` API commands. The runner delegates to `common/cli_subprocess_wrapper.py`, records executable availability and command provenance, and requires explicit user-supplied arguments for non-probe runs. It does not install tools, choose private inputs, download references, complete workflows, benchmark methods, or validate biological claims.
@@ -161,7 +161,7 @@ Then run the bounded package probe eval:
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Each Python/R package folder receives `scripts/run_package.py` plus `package-probe` and `package-run-record` API commands. The runner records package/module availability and can record explicit user-supplied Python/R script execution provenance. It does not install packages, choose private inputs, design analyses, validate scripts, complete workflows, benchmark methods, or validate biological claims.
@@ -180,7 +180,7 @@ Then run the bounded launcher/workflow eval:
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_launcher_runner_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Each relevant tool folder receives `scripts/run_launcher.py` and a `launcher-plan` API command. Workflow runtimes also receive `runtime-probe` and `runtime-run-record` commands. Launcher plans are intentionally non-executing; they record required assets, stop conditions, compute/privacy/license notes, and run evidence needed before any source packet can support downstream OCEAN review.
@@ -192,7 +192,7 @@ After generating CLI, package, and launcher runners, run the structural coverage
 ```bash
 python3 skills/ocean/scripts/tools/run_bioinformatics_code_coverage_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 This confirms that every bioinformatics tool folder has the generic source-packet/probe wrappers plus the execution-layer-specific runner and API commands. It is a code-surface check, not a local installation check or biological workflow validation.
@@ -211,7 +211,7 @@ Validate the generated folders without network access:
 ```bash
 python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals
+  --outdir validation
 ```
 
 Run bounded live public API checks only when public network access is appropriate:
@@ -219,7 +219,7 @@ Run bounded live public API checks only when public network access is appropriat
 ```bash
 python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
   --skill-dir skills/ocean \
-  --outdir skills/ocean/evals \
+  --outdir validation \
   --execute-live \
   --retmax 1
 ```

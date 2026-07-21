@@ -2790,3 +2790,51 @@ The first two official `quick_validate.py` attempts failed because the available
 ### Evidence Boundary / 证据边界
 
 Passing R1 means the public skill contains the lifecycle gate, the deterministic router selects the expected mode for the 10 public-safe cases, and clean-text isolation terms are wired across the inspected contracts. It does not prove that every provider model will comply under all prompts, that any manuscript claim is scientifically correct, or that private manuscript text was included in this public regression. A fresh-session model-based forward test remains the next behavioral validation layer.
+
+## 2026-07-21 - Repository Cleanup and Evidence-Boundary Regression R1
+
+### 中文上下文
+
+本轮把运行时 skill、公开文档和开发验证档案分区。原先 `skills/ocean/evals/` 中 729 个 cases、fixtures、scorecards 和历史结果会随 skill 一起安装，也让 GitHub 首页难以辨认运行代码与测试证据。它们已完整迁移到仓库根目录 `validation/`，不删除历史结果。
+
+同时修复两个证据边界错误：CLI version/help probe 不再把退出码 1/2 的错误输出认作成功执行；缺少 provenance 字段的软件模板不再生成 `queried_evidence` 或默认支持结论。
+
+### English Context
+
+This round separates the installable runtime skill from repository-development validation evidence. It also adds regression coverage for command-probe and software source-packet boundaries before introducing broader generated-code consolidation.
+
+### Scope / 影响范围
+
+- Moved 729 tracked validation files from `skills/ocean/evals/` to root-level `validation/` with history preserved.
+- Added `docs/repository-layout.md`, `validation/README.md`, `requirements-dev.txt`, and GitHub Actions CI.
+- Reduced each public README from 329 to 247 lines by replacing the embedded archive inventory with region and evaluation indexes.
+- Marked `SKILL.md` plus `references/` as canonical runtime instructions; `manifest.yaml` is now explicitly metadata rather than an automatic loader.
+- Retained `static/` as a compatibility snapshot and prohibited new behavior there pending a separately tested migration.
+- Added shared probe-status classification and three software evidence-boundary regression tests.
+- Updated evaluation-script defaults and adapter fixtures to the new root-level validation path.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| JSON parse | 1083/1083 pass |
+| Skill/frontmatter/YAML validation | pass with PyYAML 6.0.3 in temporary dev path |
+| Software evidence-boundary unit tests | 3/3 pass |
+| OCEAN structural contract | 41/41 pass |
+| Manuscript lifecycle contract | 17/17 pass |
+| Literature + ClinicalTrials offline adapter eval | 2/2 pass |
+| AlphaFold DB offline adapter eval | 1/1 pass |
+| Sounding multi-model dry-run | pass; all disabled example lanes correctly recorded as blocked |
+| Bioinformatics real-tool smoke | 115 checked; 6 executed availability probes/adapters, 109 unavailable, 0 probe failures |
+| Per-tool wrapper regression | 115/115 pass; 5 executed probes, 89 environment-missing, 21 planned-not-executed |
+| Python compile | pass with temporary bytecode cache |
+| `git diff --check` | pass |
+| GitHub Actions run | pending push/PR |
+
+### Error Notes
+
+The default and bundled Python environments did not include PyYAML. The declared development dependency was installed into `/private/tmp/ocean-dev-deps`; validation then passed. The first local compile attempt hit the macOS sandbox cache boundary and passed after setting `PYTHONPYCACHEPREFIX=/private/tmp/ocean-pycache`. The first Sounding dry-run command used the unsupported flag `--outdir`; rerunning with the documented `--output-dir` flag passed. These were local environment/operator issues, not OCEAN contract failures.
+
+### Evidence Boundary / 证据边界
+
+Passing this cleanup regression means repository paths resolve, public JSON/YAML parses, structural contracts remain intact, and the two reproduced software-boundary false positives are blocked. It does not prove scientific correctness, external-tool installation, live API availability, model compliance, or GitHub Actions status. The 230 duplicate generated runner entrypoints and remote branch inventory remain compatibility-sensitive follow-up work rather than silently deleted files.

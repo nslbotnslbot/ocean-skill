@@ -75,8 +75,11 @@ def normalize_list(value: Any) -> list[str]:
 def audit_record(record: dict[str, Any]) -> tuple[list[str], list[str]]:
     missing = [field for field in REQUIRED_FIELDS if not record.get(field)]
     warnings = []
-    if record.get("boundary_status") not in {None, "queried_evidence", "packet_evidence"}:
-        warnings.append("software packets should use queried_evidence or packet_evidence only after files/logs are inspected")
+    boundary_status = record.get("boundary_status")
+    if boundary_status in {"queried_evidence", "packet_evidence"} and missing:
+        warnings.append("queried_evidence or packet_evidence requires complete provenance fields")
+    elif boundary_status not in {None, "candidate_route", "queried_evidence", "packet_evidence"}:
+        warnings.append("unknown software evidence boundary status")
     if record.get("supports_claims") and any("mechanism" in str(item).lower() for item in normalize_list(record.get("supports_claims"))):
         warnings.append("software output should not directly support mechanism claims")
     return missing, warnings
@@ -87,14 +90,32 @@ def make_packet(record: dict[str, Any]) -> dict[str, Any]:
     tool_name = str(record.get("tool_name") or "unknown tool")
     command_line = str(record.get("command_line") or "")
     cannot_support = normalize_list(record.get("cannot_support")) or DEFAULT_CANNOT_SUPPORT
-    inspected_content = [
-        "tool identity",
-        "command line",
-        "parameters",
-        "reference/index",
-        "input/output file provenance",
-        "logs/QC/environment boundary",
-    ]
+    missing, warnings = audit_record(record)
+    inspected_fields = {
+        "tool_name": "tool identity",
+        "tool_version": "tool version",
+        "task_intent": "task intent",
+        "command_line": "command line",
+        "parameters": "parameters",
+        "reference_or_index": "reference/index",
+        "input_files": "input file provenance",
+        "output_files": "output file provenance",
+        "logs_or_qc": "logs/QC",
+        "environment": "environment boundary",
+        "date": "execution date",
+    }
+    inspected_content = [label for field, label in inspected_fields.items() if record.get(field)]
+    complete = not missing
+    requested_boundary = record.get("boundary_status")
+    if complete and requested_boundary in {"queried_evidence", "packet_evidence"}:
+        boundary_status = requested_boundary
+    elif complete and requested_boundary is None:
+        boundary_status = "queried_evidence"
+    else:
+        boundary_status = "candidate_route"
+    supports_claims = normalize_list(record.get("supports_claims")) if complete else []
+    if complete and not supports_claims:
+        supports_claims = ["software run identity and provenance"]
     return {
         "packet_id": record.get("packet_id") or packet_id(tool_name, date, command_line),
         "created_at": record.get("created_at") or now_iso(),
@@ -108,14 +129,17 @@ def make_packet(record: dict[str, Any]) -> dict[str, Any]:
         "date_accessed": date,
         "identifiers": normalize_list(record.get("identifiers")),
         "inspected_content": inspected_content,
-        "supports_claims": normalize_list(record.get("supports_claims")) or [
-            "software run identity and provenance if all required fields are present"
-        ],
+        "supports_claims": supports_claims,
         "cannot_support": cannot_support,
         "software_record": {field: record.get(field) for field in REQUIRED_FIELDS},
         "license_or_terms_note": record.get("license_or_terms_note") or "Check tool license, citation, and database/index terms before reuse.",
-        "boundary_status": record.get("boundary_status") or "queried_evidence",
+        "boundary_status": boundary_status,
         "handoff": record.get("handoff") or "Anchor",
+        "provenance_audit": {
+            "missing": missing,
+            "warnings": warnings,
+            "verdict": "pass" if complete else "needs_review",
+        },
     }
 
 
@@ -135,7 +159,7 @@ def command_template(args: argparse.Namespace) -> int:
         "date": today(),
         "supports_claims": [],
         "cannot_support": DEFAULT_CANNOT_SUPPORT,
-        "boundary_status": "queried_evidence",
+        "boundary_status": "candidate_route",
         "handoff": "Anchor",
     }
     write_json(args.output, template)
@@ -159,13 +183,8 @@ def command_audit(args: argparse.Namespace) -> int:
 
 def command_packet(args: argparse.Namespace) -> int:
     record = read_json(args.input)
-    missing, warnings = audit_record(record)
+    missing, _ = audit_record(record)
     packet = make_packet(record)
-    packet["provenance_audit"] = {
-        "missing": missing,
-        "warnings": warnings,
-        "verdict": "pass" if not missing else "needs_review",
-    }
     write_json(args.output, packet)
     print(json.dumps(packet, ensure_ascii=False, indent=2))
     return 0 if not missing else 1
@@ -197,4 +216,3 @@ def main(argv: list[str]) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main(sys.argv[1:]))
-

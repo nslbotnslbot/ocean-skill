@@ -592,12 +592,12 @@ def _parse_args(argv: list[str], repo_root: Path) -> argparse.Namespace:
     parser.add_argument(
         "--cases",
         type=Path,
-        default=repo_root / "skills/ocean/evals/sounding-multimodel-cases.json",
+        default=repo_root / "validation/sounding-multimodel-cases.json",
     )
     parser.add_argument(
         "--models",
         type=Path,
-        default=repo_root / "skills/ocean/evals/sounding-multimodel-models.example.json",
+        default=repo_root / "validation/sounding-multimodel-models.example.json",
     )
     parser.add_argument(
         "--output-dir",

@@ -1,17 +1,26 @@
+schema_version: ocean-manifest-v1
 name: ocean
 display_name: OCEAN
 purpose: Claim-evidence navigation and research decision layer for biomedical and biological workflows.
+role: repository metadata inventory
+runtime_entrypoint: SKILL.md
+note: SKILL.md and references/ are the canonical Codex runtime instructions. This manifest is not an automatic loader.
 
-always_load:
-  - static/core/stance.md
-  - static/core/evidence-boundary.md
-  - static/core/routing-protocol.md
+canonical_references:
   - references/output-contract.md
   - references/manuscript-revision-mode.md
 
-conditional_core:
-  retrieval_or_database:
+compatibility_snapshots:
+  note: static/ is retained for current contract compatibility; do not add new behavior there.
+  files:
+    - static/core/stance.md
+    - static/core/evidence-boundary.md
+    - static/core/routing-protocol.md
     - static/core/retrieval-separation-gate.md
+    - static/core/artifact-ledger.md
+
+conditional_references:
+  retrieval_or_database:
     - references/data-tool-router.md
     - references/bioinformatics-resource-map.md
     - references/bioinformatics-software-catalog.md
@@ -24,32 +33,31 @@ conditional_core:
     - references/source-packet-schema.md
     - references/tool-adapter-contract.md
   artifacts_or_project_memory:
-    - static/core/artifact-ledger.md
     - references/claim-to-artifact-matrix.md
   reproducibility_or_validation:
     - references/reproducibility-gates.md
 
 modules:
   Sounding:
-    file: static/modules/sounding.md
+    file: references/sounding.md
     artifact: Source packet, Evidence Radar Map, Negative Space, Handoff Ticket
   Current:
-    file: static/modules/current.md
+    file: references/current.md
     artifact: Trend Map, Direction-flow Boundary, Consensus-vs-Hype Notes
   Reef:
-    file: static/modules/reef.md
+    file: references/reef.md
     artifact: Resource Provenance Map, Evidence Hierarchy, API/Database Boundary, Source Packet Audit
   Iceberg:
-    file: static/modules/iceberg.md
+    file: references/iceberg.md
     artifact: Surface Claim, Support Level, Hidden Risk, Downgraded Safe Claim
   Anchor:
-    file: static/modules/anchor.md
+    file: references/anchor.md
     artifact: Validation Checklist, Reproducibility Plan, External-check Boundary
   Compass:
-    file: static/modules/compass.md
+    file: references/compass.md
     artifact: Evidence-based Idea Card, Experiment Plan, Strategy Route
   Harbor:
-    file: static/modules/harbor.md
+    file: references/harbor.md
     artifact: Decision Memo, Evidence Boundary Ledger, Contribution Boundary Record
 
 scripts:
@@ -76,19 +84,20 @@ scripts:
   e2e_module_eval: scripts/run_ocean_e2e_eval.py
   seven_module_coordination_eval: scripts/run_ocean_coordination_eval.py
 
-evals:
-  alphafold_db_adapter_r1: evals/afdb-adapter-r1-mock-metadata.json
-  literature_adapter_r1: evals/literature-adapter-r1-mock-record.json
-  clinicaltrials_adapter_r1: evals/clinicaltrials-adapter-r1-mock-study.json
-  ocean_e2e_module_router_r1: evals/ocean-e2e-module-router-r1-cases.json
-  reef_bioinformatics_router_r2: evals/reef-bioinformatics-router-r2-cases.json
-  reef_bioinformatics_router_r3: evals/reef-bioinformatics-router-r3-cases.json
-  reef_bioinformatics_router_r4: evals/reef-bioinformatics-router-r4-cases.json
-  bioinformatics_tool_scaffold_r1: evals/bioinformatics-tool-scaffold-r1-summary.json
-  bioinformatics_real_tool_smoke_r1: evals/bioinformatics-real-tool-smoke-r1-summary.json
-  bioinformatics_execution_layer_r1: evals/bioinformatics-execution-layer-r1-summary.json
-  bioinformatics_tool_router_r1: evals/bioinformatics-tool-router-r1-summary.json
-  api_database_adapter_r1_dry_run: evals/api-database-adapter-r1-dry-run-summary.json
-  api_database_adapter_r1_live: evals/api-database-adapter-r1-live-summary.json
-  source_packet_boundary_r2: evals/source-packet-boundary-r2-cases.json
-  ocean_seven_module_coordination_r1: evals/ocean-seven-module-coordination-r1-cases.json
+validation_inventory:
+  root: ../../validation
+  alphafold_db_adapter_r1: ../../validation/afdb-adapter-r1-mock-metadata.json
+  literature_adapter_r1: ../../validation/literature-adapter-r1-mock-record.json
+  clinicaltrials_adapter_r1: ../../validation/clinicaltrials-adapter-r1-mock-study.json
+  ocean_e2e_module_router_r1: ../../validation/ocean-e2e-module-router-r1-cases.json
+  reef_bioinformatics_router_r2: ../../validation/reef-bioinformatics-router-r2-cases.json
+  reef_bioinformatics_router_r3: ../../validation/reef-bioinformatics-router-r3-cases.json
+  reef_bioinformatics_router_r4: ../../validation/reef-bioinformatics-router-r4-cases.json
+  bioinformatics_tool_scaffold_r1: ../../validation/bioinformatics-tool-scaffold-r1-summary.json
+  bioinformatics_real_tool_smoke_r1: ../../validation/bioinformatics-real-tool-smoke-r1-summary.json
+  bioinformatics_execution_layer_r1: ../../validation/bioinformatics-execution-layer-r1-summary.json
+  bioinformatics_tool_router_r1: ../../validation/bioinformatics-tool-router-r1-summary.json
+  api_database_adapter_r1_dry_run: ../../validation/api-database-adapter-r1-dry-run-summary.json
+  api_database_adapter_r1_live: ../../validation/api-database-adapter-r1-live-summary.json
+  source_packet_boundary_r2: ../../validation/source-packet-boundary-r2-cases.json
+  ocean_seven_module_coordination_r1: ../../validation/ocean-seven-module-coordination-r1-cases.json

@@ -20,6 +20,7 @@ import subprocess
 import sys
 from typing import Any
 
+from probe_status import classify_probe_status
 from software_source_packet import DEFAULT_CANNOT_SUPPORT, make_packet, write_json
 
 
@@ -139,7 +140,7 @@ def cli_probe(config: dict[str, Any], args: argparse.Namespace) -> int:
         return 0
     code, stdout, stderr = run_bounded(full_command, args.timeout)
     output = (stdout + "\n" + stderr).strip()
-    status = "executed" if code in {0, 1, 2} and output else "found_but_probe_failed"
+    status = classify_probe_status(code, output)
     version = output.splitlines()[0][:200] if status == "executed" and output else ""
     record = base_record(
         config=config,

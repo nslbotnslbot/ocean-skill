@@ -21,8 +21,10 @@ def run(cmd: list[str]) -> None:
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description="Run offline OCEAN source adapter evals.")
     parser.add_argument("--skill-dir", type=Path, required=True)
+    parser.add_argument("--fixtures-dir", type=Path)
     parser.add_argument("--outdir", type=Path, required=True)
     args = parser.parse_args(argv)
+    fixtures_dir = args.fixtures_dir or args.skill_dir.resolve().parents[1] / "validation"
 
     args.outdir.mkdir(parents=True, exist_ok=True)
     lit_script = args.skill_dir / "scripts" / "tools" / "literature" / "source_packet.py"
@@ -38,7 +40,7 @@ def main(argv: list[str]) -> int:
         str(lit_script),
         "analyze",
         "--input",
-        str(args.skill_dir / "evals" / "literature-adapter-r1-mock-record.json"),
+        str(fixtures_dir / "literature-adapter-r1-mock-record.json"),
         "--resource",
         "mock literature record",
         "--query",
@@ -53,7 +55,7 @@ def main(argv: list[str]) -> int:
         str(ct_script),
         "analyze",
         "--input",
-        str(args.skill_dir / "evals" / "clinicaltrials-adapter-r1-mock-study.json"),
+        str(fixtures_dir / "clinicaltrials-adapter-r1-mock-study.json"),
         "--output",
         str(ct_analysis),
     ])
