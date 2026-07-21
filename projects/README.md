@@ -5,7 +5,7 @@ Public-safe progress pages for real research projects using OCEAN.
 | Project | Current stage | Updated | Page |
 |---|---|---:|---|
 | Whole-Wheat Fermented Broth Study | Manuscript preparation | 2026-07-06 | [View](whole-wheat-fermented-broth/README.md) |
-| Delirium AI: ICU Prediction Transportability | Repository release preparation | 2026-07-20 | [View](delirium-ai/README.md) |
+| Delirium AI: ICU Prediction Transportability | medRxiv screening | 2026-07-21 | [View](delirium-ai/README.md) |
 
 Each page answers four questions:
 
