@@ -58,13 +58,14 @@ class ProjectStartRecordTests(unittest.TestCase):
             record = outdir / "example-clinical-project" / "README.md"
             self.assertTrue(record.exists())
             text = record.read_text(encoding="utf-8")
-            frontmatter = text.split("---", 2)[1]
-            data = yaml.safe_load(frontmatter)
+            metadata = text.split("<!-- ocean-project\n", 1)[1].split("\n-->", 1)[0]
+            data = yaml.safe_load(metadata)
             self.assertEqual(data["project_id"], "OCEAN-PROJ-999")
             self.assertEqual(data["ocean_phase"], "evidence-audit")
             self.assertEqual(data["project_stage"], "analysis")
-            self.assertIn("## Progress Log", text)
-            self.assertIn("## Confidentiality Boundary", text)
+            self.assertIn("## Progress", text)
+            self.assertIn("## Public Boundary", text)
+            self.assertLessEqual(len(text.splitlines()), 60)
             self.assertNotIn("/Users/", text)
 
     def test_unconfirmed_record_cannot_target_public_projects(self) -> None:
@@ -105,10 +106,12 @@ class ProjectStartRecordTests(unittest.TestCase):
                     text=True,
                 )
             index = (outdir / "README.md").read_text(encoding="utf-8")
-            self.assertIn("OCEAN-PROJ-001", index)
-            self.assertIn("OCEAN-PROJ-002", index)
             self.assertIn("first-public-project/README.md", index)
             self.assertIn("second-public-project/README.md", index)
+            first = (outdir / "first-public-project" / "README.md").read_text(encoding="utf-8")
+            second = (outdir / "second-public-project" / "README.md").read_text(encoding="utf-8")
+            self.assertIn("project_id: OCEAN-PROJ-001", first)
+            self.assertIn("project_id: OCEAN-PROJ-002", second)
 
 
 if __name__ == "__main__":

@@ -2884,3 +2884,34 @@ The public record was derived only from project-level local release materials: r
 ### Evidence Boundary / 证据边界
 
 This validation proves that OCEAN has a consistent, machine-checked place to record public-safe project progress and that the two initial records satisfy that structural contract. It does not independently validate either study, prove a biological mechanism, establish clinical deployability, or confirm submission, review, acceptance, or publication. The dates in repository-maintenance entries do not change scientific status.
+
+## 2026-07-21 - Public Project Pages Simplification R2
+
+### 中文上下文
+
+R1 项目页保留了过多审计字段和七模块细节，不利于快速查看真实进度。本轮将公开项目页收敛为四个固定区域：Status、Progress、Next、Public Boundary。机器元数据改为隐藏注释；详细全麦七模块案例移回 `docs/case-studies/`。
+
+### English Context
+
+This round turns project records into scan-friendly progress pages rather than audit reports. Detailed evidence remains available in documentation and validation records without dominating each project's landing page.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Project index | 19 lines |
+| Delirium AI page | 33 lines |
+| Whole-wheat project page | 35 lines |
+| Project template | 30 lines |
+| Required visible sections | 4 per project |
+| Maximum page-length gate | 60 lines |
+| Maximum Progress entries | 5 |
+| Project records | 2/2 pass |
+| Generator regressions | 3/3 pass |
+| All repository unit tests | 6/6 pass |
+| Python compile | pass |
+| `git diff --check` | pass |
+
+### Evidence Boundary / 证据边界
+
+This simplification changes presentation and update ergonomics only. It does not remove the detailed case history, alter either project's scientific evidence, or change manuscript, submission, review, or publication status.
