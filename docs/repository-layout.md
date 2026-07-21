@@ -7,6 +7,7 @@ OCEAN separates the installable skill from development evidence and public docum
 | `skills/ocean/` | Installable runtime skill, references, adapters, and bounded tool wrappers | Required for skill releases |
 | `validation/` | Cases, protocols, fixtures, scorecards, generated eval artifacts, and regression scripts | Public-safe development evidence only |
 | `docs/` | User-facing architecture, evaluation summaries, and case studies | No private research strategy or hidden answer keys |
+| `projects/` | Public-safe progress records for real OCEAN research projects | Verified milestones and explicit confidentiality boundaries only |
 | `examples/` | Small reusable examples | Source-traceable and redistribution-safe |
 | `assets/` | Logos and README media | Optimized public assets only |
 | `outputs/` | Local generated work | Ignored except `.gitkeep` |

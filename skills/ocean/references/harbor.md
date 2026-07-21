@@ -94,6 +94,7 @@ Harbor outputs are considered complete only when they include these five artifac
    - What the memo can be reused for, what must be rechecked, and what it must not be used as evidence for.
 6. **GitHub sync ticket** when the work is a new tracked project or a public-safe application case
    - Target repository/files, branch, commit message, public-safe summary, excluded material, and push approval state.
+   - For public OCEAN projects, target the canonical `projects/<slug>/README.md` record and append a dated progress entry rather than creating a second tracker.
 
 If one artifact cannot be filled because evidence is missing, keep the heading and write the missing boundary rather than deleting it.
 

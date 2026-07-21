@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a canonical `projects/` progress hub with schema-checked public-safe records for the whole-wheat fermented broth and Delirium AI projects, plus a reusable project template and legacy tracker redirect.
 - Moved the 729-file development validation archive from `skills/ocean/evals/` to root-level `validation/`, separating installable runtime instructions from cases, fixtures, scorecards, and historical result artifacts.
 - Added repository zoning documentation, GitHub Actions CI, development dependency pinning, JSON/skill validators, and software evidence-boundary regression tests.
 - Fixed CLI availability probes so nonzero exit codes are no longer accepted as successful execution evidence, and downgraded incomplete software records to `candidate_route` with no supported claims.
