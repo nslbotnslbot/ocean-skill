@@ -132,6 +132,21 @@ This project became an OCEAN application case because it exercised all seven mod
 
 The public lesson is not that OCEAN proves the whole-wheat broth mechanism. The lesson is that OCEAN can help keep a complex multi-omics manuscript workflow evidence-bound, auditable, and harder to overclaim.
 
+## Workflow Lesson: Audit Is Not Line Editing
+
+A later manuscript-revision pass exposed an important usability boundary. The seven-module critique was useful while the evidence structure, analysis route, claim strength, and manuscript story were still being designed. It was not an appropriate default for sentence-level editing after the manuscript text had already been drafted.
+
+The failure pattern was channel mixing: module labels, deletion or supplementation instructions, evidence limitations, and author-only decisions could appear beside proposed replacement prose and become easy to paste into the manuscript itself.
+
+OCEAN now separates this work by lifecycle:
+
+- **Design / Audit** keeps the relevant critical modules visible while experiments, analyses, and claims are still being shaped.
+- **Manuscript Revision** returns clean replacement prose first and keeps audit notes or author queries outside the manuscript.
+- **Pre-submission Stress Test** can reopen adversarial multi-module critique, but safe rewrites remain isolated from the audit report.
+- **Reviewer Response** separates response-letter language, revised manuscript text, and author-only decisions.
+
+This change preserves critical claim checking without turning a finished manuscript paragraph into an audit worksheet.
+
 ## What Is Not Published Here
 
 This repository does not publish:

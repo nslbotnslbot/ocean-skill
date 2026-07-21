@@ -30,6 +30,7 @@ For the broader public positioning boundary, see [`../project-boundary.md`](../p
 - `skills/ocean/evals/domain-router-model-r1-cases.json`: model-eval case seeds for the central routing layer across seven modules.
 - `skills/ocean/evals/domain-router-model-r1-results.md`: M3-scored model run over the Domain Lens / Data Tool Router / Module Artifact Contract prompt.
 - `skills/ocean/evals/project-start-gate-r1-results.md`: Harbor Project Start Gate smoke test for Project Start Card, Harbor Seed, GitHub Sync Ticket, and public-safe persistence boundaries.
+- `skills/ocean/evals/manuscript-revision-mode-r1-results.md`: deterministic lifecycle-routing regression for separating finished-text revision from design/full-audit behavior and keeping critique outside paste-ready manuscript prose.
 - `skills/ocean/scripts/check_ocean_contracts.py`: deterministic structural check for required references, module artifact terms, and domain-router case coverage.
 - `skills/ocean/evals/ocean-module-m1-results.md`: first all-module coverage eval across Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor.
 - `skills/ocean/evals/ocean-module-m2-rubric.md`: 12-point scoring rubric for first-pass content-quality screening.

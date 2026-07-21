@@ -1,7 +1,7 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to classify domain-specific evidence standards, scan evidence, build source packets, route biomedical data/tools, audit claims, check leakage/validation/benchmark fairness/reproducibility, review manuscripts, inspect biomedical AI or biological AI studies, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for summary-only reading or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to classify domain-specific evidence standards, scan evidence, build source packets, route biomedical data/tools, audit claims, revise finished manuscripts without mixing audit notes into prose, check leakage/validation/benchmark fairness/reproducibility, inspect biomedical AI or biological AI studies, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for summary-only reading or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
@@ -18,6 +18,8 @@ Position OCEAN as a source-packet-based external audit layer. Do not present it 
 - Separate hypothesis, association, database annotation, text-mining co-occurrence, model prediction, and causal mechanism.
 - Keep OCEAN's public framing distinct from internal AI-for-science execution workflows: do not make evidence ledgers, paired non-claims, endpoint ladders, release gates, or single-project trajectory accounting the central contribution.
 - Prefer direct, critical wording over vague encouragement.
+- Classify the manuscript lifecycle before activating modules. A drafted passage plus a generic request to revise or polish defaults to Manuscript Revision mode, not a full seven-module audit.
+- Keep clean manuscript replacement text separate from audit findings, reviewer language, module labels, instructions, placeholders, and author-only notes.
 
 ## Module Order
 
@@ -34,6 +36,7 @@ Use the OCEAN module order when the task spans multiple steps:
 ## Resource Routing
 
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
+- Read `references/manuscript-revision-mode.md` whenever the input is manuscript text, a proposed replacement, a title/abstract/legend, or reviewer/editor feedback. Use it to select Design/Audit, Manuscript Revision, Pre-submission Stress Test, or Reviewer Response before selecting modules.
 - Read `references/domain-lens.md` when the task needs medical, biological, biomedical AI, omics, clinical, drug, KG/database, manuscript, proposal, or collaboration-specific evidence standards, or when the input domain is unclear.
 - Read `references/data-tool-router.md` when the task needs public data-source selection, official database/API routing, source classes, access/privacy/licensing boundaries, or a data/tool packet before Reef, Iceberg, Anchor, or Compass.
 - Read `references/bioinformatics-resource-map.md` when the task needs bioinformatics, computational biology, omics, clinical-data, benchmark, or software/workflow routing, including tools such as LAST, BLAST, minimap2, STAR, SAMtools, DESeq2, Seurat, Snakemake, Nextflow, and nf-core.
@@ -73,21 +76,22 @@ Use the OCEAN module order when the task spans multiple steps:
 
 ## Workflow
 
-1. Select the output mode from `references/output-contract.md`: quick for narrow questions, standard by default, deep for full manuscript/reviewer-style reports.
-2. Classify the domain with `references/domain-lens.md` when domain-specific evidence standards matter. Record the primary domain, research object, evidence needed, highest safe claim level, active module, and stop condition.
-3. Apply `references/project-start-gate.md` when the work has become a traceable research project rather than a temporary answer. If the gate opens, create a Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket before downstream conclusions. Do not push public records unless the user has approved GitHub updating for that project/session.
-4. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence.
-5. Route data and tools with `references/data-tool-router.md` when the task involves public resources, official APIs, registries, benchmarks, cohorts, omics repositories, KGs, or sensitive access boundaries.
-6. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
-7. If the task spans modules, read `references/module-handoff.md` and preserve a Handoff Ticket whenever moving from one module to another. Use `references/module-artifact-contract.md` to keep module artifacts stable.
-8. Classify the request mode and evidence state: full OCEAN workflow, research design workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
-9. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
-10. Extract central claims. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. Use `references/claim-evidence-table.md` and `references/output-contract.md` for the table schema.
-11. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
-12. Apply the reviewer lens when useful: identify the most likely major criticisms, what evidence would neutralize them, and which claims should be downgraded before submission.
-13. Judge publication positioning realistically. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
-14. Judge collaboration contribution as light, medium, deep, or authorship-level. Clarify which tasks are advisory and which could justify co-authorship.
-15. Output in the selected fixed mode. Keep section order stable; write "不适用" with a reason instead of deleting standard sections.
+1. If manuscript text or reviewer/editor feedback is present, select the lifecycle mode from `references/manuscript-revision-mode.md` before activating modules. The explicit user request wins; otherwise drafted text plus a revision request defaults to Manuscript Revision.
+2. Select the output mode from `references/output-contract.md`: Manuscript Revision contract for finished-text editing, quick for narrow audit questions, standard by default for audits, and deep for explicit full-manuscript/reviewer-style reports.
+3. Classify the domain with `references/domain-lens.md` when domain-specific evidence standards matter. Record the primary domain, research object, evidence needed, highest safe claim level, active module, and stop condition.
+4. Apply `references/project-start-gate.md` when the work has become a traceable research project rather than a temporary answer. If the gate opens, create a Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket before downstream conclusions. Do not push public records unless the user has approved GitHub updating for that project/session.
+5. Establish the evidence boundary: list the files, passages, figures, tables, results, notes, or search sources inspected; mark missing or unreadable evidence. In Manuscript Revision mode, keep this boundary in the editorial sidecar rather than the clean replacement text.
+6. Route data and tools with `references/data-tool-router.md` when the task involves public resources, official APIs, registries, benchmarks, cohorts, omics repositories, KGs, or sensitive access boundaries.
+7. If the task requires discovery, use Sounding first. Read `references/sounding.md`, define the search question, record source/search boundaries, triage source tiers, build source packets, map negative space, and create handoff tickets before making downstream claims.
+8. If the task spans modules, read `references/module-handoff.md` and preserve a Handoff Ticket whenever moving from one module to another. Use `references/module-artifact-contract.md` to keep module artifacts stable. Manuscript Revision mode normally uses a silent bounded Iceberg check rather than visible full-chain handoffs.
+9. Classify the request mode and evidence state: manuscript revision, pre-submission stress test, reviewer response, full OCEAN workflow, research design workflow, Sounding evidence scan, Current trend scan, Reef resource provenance, Iceberg claim audit, Anchor validation plan, Compass research planning, Harbor decision memo, manuscript/project review, reviewer-risk review, journal positioning, collaboration/authorship boundary, anti-hallucination boundary check, or idea extraction from reviews.
+10. Classify the work as one or more of: methodology article, resource/database article, system/platform article, application validation article, scientific discovery article, review/perspective/commentary, or collaboration/pre-submission advisory case.
+11. Extract central claims when the selected mode requires an audit. For each major claim, record the evidence source, evidence type, support verdict, causal strength, missing validation, and overstatement risk. In Manuscript Revision mode, use this only as an internal edit check and do not expose the table unless asked.
+12. Audit reliability using the relevant lenses in `references/audit-lenses.md`: data clarity, label definition, leakage, validation, benchmark fairness, ablation, calibration/decision utility, database evidence hierarchy, AI-agent reproducibility, and biomedical causal caution.
+13. Apply the reviewer lens only when explicitly useful: identify likely criticisms, what evidence would neutralize them, and which claims should be downgraded. Never insert reviewer wording into clean manuscript text.
+14. Judge publication positioning realistically when requested. Explain the stretch tier, realistic tier, backup tier, likely reviewer objections, and what would be needed to move up one tier.
+15. Judge collaboration contribution as light, medium, deep, or authorship-level when requested. Clarify which tasks are advisory and which could justify co-authorship.
+16. Output in the selected fixed mode. In Manuscript Revision mode, return clean replacement text first and isolate editorial notes; in audit modes, keep section order stable and write "不适用" with a reason instead of deleting standard sections.
 
 ## Default Output Contract
 
@@ -96,6 +100,7 @@ Use `references/output-contract.md` unless the user requests another format.
 - **Quick mode** for narrow questions: conclusion, evidence boundary, key claim handling, next steps.
 - **Standard mode** by default: audit card, evidence boundary, claim-evidence matrix, risks, missing evidence, contribution boundary, journal positioning, next actions, and 0-10 scores.
 - **Deep mode** for full reports: standard mode plus reviewer concerns, claim rewrites, and decision memo.
+- **Manuscript Revision mode** for finished-text editing: clean replacement text, separate change notes, and author queries only when necessary. Do not show audit tables or module handoffs unless requested.
 
 Do not vary headings casually. Consistency is part of the skill.
 

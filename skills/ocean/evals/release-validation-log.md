@@ -2750,3 +2750,43 @@ The first `py_compile` attempt failed because macOS Python tried to create bytec
 ### Evidence Boundary / 证据边界
 
 Passing this eval means OCEAN can structurally generate a project-start record and GitHub Sync Ticket. It does not mean the example project is scientifically valid, public-safe, submitted, reviewed, accepted, or published. Remote GitHub updates remain gated by public-safe boundaries, clean repository state, and user approval.
+
+## 2026-07-21 - Manuscript Revision Mode R1
+
+### 中文上下文
+
+这轮来自真实稿件修改体验：七模块批判适合实验设计、证据审计和投稿前压力测试，但不应成为已经完成正文的逐段修改默认值。此前的失败模式不是 Iceberg/Reef 等判断本身错误，而是输出通道混合，导致 module 标签、删除/补充建议、证据限制或作者确认事项靠近可替换正文，存在被直接粘贴进 manuscript 的风险。
+
+本轮没有公开未发表正文。公开回归 case 只保留输入形状、生命周期触发词、预期模式、所需输出通道和 clean-text 禁用项。
+
+### English Context
+
+This round adds lifecycle-aware manuscript routing after a real editing workflow exposed channel mixing between useful audit findings and paste-ready manuscript prose. Full-module critique remains available for design/audit and explicit pre-submission stress tests. Finished-text revision now defaults to a clean replacement channel with separate editorial notes and author queries.
+
+### Scope / 影响范围
+
+- Added `references/manuscript-revision-mode.md` with four lifecycle modes.
+- Wired lifecycle routing into `SKILL.md`, `manifest.yaml`, static routing, the output contract, module handoff, module artifacts, and Iceberg.
+- Updated `agents/openai.yaml` so finished-text revision no longer defaults to a standard audit report.
+- Added public README documentation in English and Chinese.
+- Added 10 public-safe lifecycle-routing cases and a deterministic regression checker.
+- Added a public-safe workflow lesson to the whole-wheat broth case note without publishing private manuscript text.
+
+### Validation
+
+| Check | Result |
+|---|---:|
+| Manuscript lifecycle/contract regression | 17/17 pass |
+| Lifecycle routing cases | 10/10 pass |
+| OCEAN contract check | 41/41 pass |
+| Official `quick_validate.py` | pass: `Skill is valid!` |
+| Python compile | pass |
+| `git diff --check` | pass |
+
+### Error Notes
+
+The first two official `quick_validate.py` attempts failed because the available default and bundled Python environments did not include PyYAML. PyYAML 6.0.3 was installed only into `/private/tmp/ocean-pyyaml`, and the same validator then passed. This was a temporary validation-environment dependency issue, not a skill frontmatter or OCEAN contract failure.
+
+### Evidence Boundary / 证据边界
+
+Passing R1 means the public skill contains the lifecycle gate, the deterministic router selects the expected mode for the 10 public-safe cases, and clean-text isolation terms are wired across the inspected contracts. It does not prove that every provider model will comply under all prompts, that any manuscript claim is scientifically correct, or that private manuscript text was included in this public regression. A fresh-session model-based forward test remains the next behavioral validation layer.

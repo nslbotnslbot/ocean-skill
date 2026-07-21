@@ -4,6 +4,8 @@ Use this reference when more than one OCEAN module is active or when a task shou
 
 The goal is to make each module produce a concrete artifact instead of a loose paragraph.
 
+Before routing a manuscript, use `manuscript-revision-mode.md`. A finished passage supplied for wording revision normally stops after a silent bounded Iceberg check; it does not enter the standard full route unless the user explicitly requests an audit or stress test.
+
 ## Contents
 
 - Handoff Object
@@ -50,6 +52,8 @@ Use this order for full OCEAN cases:
 
 Skipping is allowed only when the evidence boundary makes a module irrelevant or impossible. Record skipped modules and the reason.
 
+The standard route applies to Design / Audit and explicit end-to-end work. It is not the default route for Manuscript Revision. In Pre-submission Stress Test mode, visible module artifacts are allowed, but clean replacement text remains a separate artifact.
+
 For research design workflows, use `research-design-workflow.md` to add design gates before selecting a Compass route. The handoff should preserve which gates passed, which need work, and which require a stop condition.
 
 ## Domain and Data Router Placement
@@ -85,6 +89,8 @@ OCEAN can start from different input sizes:
 | One database/KG seed | Reef | Establish provenance before any claim audit |
 | One clinical/therapeutic request | Domain Lens, Sounding, Reef | Establish clinical evidence standard before any utility or therapy statement |
 | One data/API/tool request | Data/Tool Router, Reef | Plan official source class, identifier, access, privacy, and stop boundary before live access |
+| Finished manuscript passage plus revision/polish request | Iceberg, silent bounded check | Return clean replacement text; keep critique and author queries in separate sidecar channels |
+| Finished manuscript plus explicit full audit/stress test | Iceberg or full relevant route | Keep audit artifacts visible but separate every proposed replacement from reviewer/audit language |
 
 ## Stop Conditions
 

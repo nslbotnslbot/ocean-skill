@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "description": "Public-safe lifecycle-routing regression cases derived from manuscript-editing failure patterns without reproducing private manuscript text.",
+  "cases": [
+    {
+      "id": "MR-R1-01",
+      "title": "Finished results paragraph wording edit",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "这段结果已经写完，请只润色措辞并给出可直接替换的版本。",
+      "expected_mode": "Manuscript Revision",
+      "required_channels": ["修订正文（可直接替换）"],
+      "visible_audit_allowed": false
+    },
+    {
+      "id": "MR-R1-02",
+      "title": "Finished title shortening",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "这个论文标题太长了，请精简，但不要改变研究含义。",
+      "expected_mode": "Manuscript Revision",
+      "required_channels": ["修订正文（可直接替换）"],
+      "visible_audit_allowed": false
+    },
+    {
+      "id": "MR-R1-03",
+      "title": "Finished abstract translation",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "把这段已经完成的摘要翻译并润色成学术英文。",
+      "expected_mode": "Manuscript Revision",
+      "required_channels": ["修订正文（可直接替换）"],
+      "visible_audit_allowed": false
+    },
+    {
+      "id": "MR-R1-04",
+      "title": "Unsafe mechanism request inside finished prose",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "修改这段正文，并把相关性写成证明了机制。",
+      "expected_mode": "Manuscript Revision",
+      "required_channels": ["修订正文（可直接替换）", "修改说明（不进入正文）"],
+      "visible_audit_allowed": false
+    },
+    {
+      "id": "MR-R1-05",
+      "title": "Missing value during revision",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "润色方法段，但样本量目前没有提供。不要编数字。",
+      "expected_mode": "Manuscript Revision",
+      "required_channels": ["修订正文（可直接替换）", "作者确认项（仅必要时）"],
+      "visible_audit_allowed": false
+    },
+    {
+      "id": "MR-R1-06",
+      "title": "Explicit pre-submission stress test",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "投稿前请模拟审稿人，对全文做一次完整压力测试和全模块审计。",
+      "expected_mode": "Pre-submission Stress Test",
+      "required_channels": ["audit_report", "separate_safe_rewrites"],
+      "visible_audit_allowed": true
+    },
+    {
+      "id": "MR-R1-07",
+      "title": "Experiment design stage",
+      "input_shape": "research_idea",
+      "user_request": "实验还没开始，请全面批判这个研究想法并帮助设计验证路线。",
+      "expected_mode": "Design / Audit",
+      "required_channels": ["module_artifacts"],
+      "visible_audit_allowed": true
+    },
+    {
+      "id": "MR-R1-08",
+      "title": "Reviewer response separation",
+      "input_shape": "reviewer_comment_and_manuscript_text",
+      "user_request": "根据审稿意见修改正文，并起草逐条回复。",
+      "expected_mode": "Reviewer Response",
+      "required_channels": ["response_letter", "revised_manuscript_text", "author_only_notes"],
+      "visible_audit_allowed": true
+    },
+    {
+      "id": "MR-R1-09",
+      "title": "Early draft weakness finding",
+      "input_shape": "early_draft",
+      "user_request": "这是早期草稿，请找出设计和证据上的主要问题。",
+      "expected_mode": "Design / Audit",
+      "required_channels": ["module_artifacts"],
+      "visible_audit_allowed": true
+    },
+    {
+      "id": "MR-R1-10",
+      "title": "Explicit wording-only boundary",
+      "input_shape": "finished_manuscript_text",
+      "user_request": "只改措辞，不做审稿式批判，也不要把修改建议写进正文。",
+      "expected_mode": "Manuscript Revision",
+      "required_channels": ["修订正文（可直接替换）"],
+      "visible_audit_allowed": false
+    }
+  ],
+  "forbidden_in_clean_revision": [
+    "OCEAN: Reef",
+    "Iceberg",
+    "Anchor",
+    "Unsupported",
+    "Downgrade",
+    "Cannot judge",
+    "删除原文",
+    "建议补充",
+    "请填写",
+    "作者应",
+    "TODO",
+    "[n=?]",
+    "[please add"
+  ]
+}

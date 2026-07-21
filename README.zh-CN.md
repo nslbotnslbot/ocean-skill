@@ -56,6 +56,19 @@ OCEAN 不是：
 - 论文定位与期刊策略
 - reviewer 风格批判和投稿前压力测试
 
+## 稿件生命周期模式
+
+OCEAN 现在会先判断稿件处于什么阶段，不再把每一次 manuscript 请求都当成全模块审计：
+
+| 模式 | 适用场景 | 默认输出 |
+|---|---|---|
+| **Design / Audit** | idea、proposal、实验设计、早期草稿，或明确要求找问题 | 使用必要模块；只有真正的端到端任务才运行全链批判 |
+| **Manuscript Revision** | 已经写完的段落需要润色、精简、翻译或证据安全的措辞修改 | 先给可直接替换的干净正文；修改说明和作者确认项分开 |
+| **Pre-submission Stress Test** | 明确要求模拟审稿人或做完整投稿前审计 | 审计报告和 safe rewrite 分离输出 |
+| **Reviewer Response** | 处理审稿人/编辑意见并修改正文 | 逐条回复、修订正文、作者内部说明三个通道分开 |
+
+对已经写完的段落，如果用户只是说“修改一下”或“润色”，默认进入 **Manuscript Revision**。OCEAN 可以在后台用 Iceberg 做安全检查，但 module 标签、审稿式批判、删除命令、风险表、评分和新建占位符都不能进入可粘贴正文。完整规则见 [`skills/ocean/references/manuscript-revision-mode.md`](skills/ocean/references/manuscript-revision-mode.md)。
+
 ## 真实流程追踪
 
 OCEAN 也开始用于真实论文和投稿流程。公开安全版的应用案例和投稿状态追踪见 `docs/application-submission-tracker.md`。
@@ -133,6 +146,13 @@ Focus on scientific value, reliability, key risks, missing validation, collabora
 Use the standard OCEAN output format unless I ask for a quick or deep report.
 ```
 
+如果只是修改已经完成的正文措辞：
+
+```text
+使用 $ocean 的 Manuscript Revision 模式。先返回可直接替换的干净正文；
+审计说明和作者确认项不要写进正文。
+```
+
 生成空的 review report skeleton：
 
 ```bash
@@ -170,7 +190,7 @@ python3 skills/ocean/scripts/check_claim_table.py \
 - system demonstration vs scientific discovery
 - light advice vs authorship-level contribution
 
-默认情况下，OCEAN 使用固定 output contract：audit card、evidence boundary、claim-evidence matrix、risk register、missing evidence/analysis、collaboration boundary、journal positioning、next actions 和 scores。只有在窄问题中使用 quick mode；完整 manuscript 或 reviewer-style report 使用 deep mode。
+审计任务默认使用固定 output contract：audit card、evidence boundary、claim-evidence matrix、risk register、missing evidence/analysis、collaboration boundary、journal positioning、next actions 和 scores。已经完成的正文修改改用 Manuscript Revision contract：干净修订正文、分离的修改说明，以及仅在必要时出现的作者确认项。只有明确要求完整 manuscript audit 或 reviewer-style audit 时才使用 deep mode。
 
 ## 仓库结构
 
