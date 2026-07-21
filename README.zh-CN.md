@@ -2,9 +2,7 @@
 
 [English README](README.md)
 
-<img src="assets/ocean-logo.svg" alt="OCEAN logo" width="520" />
-
-![OCEAN polar workflow infographic](assets/ocean-polar-workflow.jpg)
+![OCEAN polar workflow infographic](assets/ocean-polar-workflow-logo-v4.png)
 
 OCEAN 是一个轻量级、兼容 Codex 的外部审计层和 skill，用于医学研究与生物学研究中的 claim-evidence 导航和 research design workflow。它关注 biomedical research，理解 AI 研究场景，但不只服务于 AI 论文：也可以支持生物医学 AI、生物学 AI、manuscript、数据库、知识图谱、临床预测、验证规划、期刊定位和协作边界分析。现在它加入了一个中心化的 Domain Lens 和 Data/Tool Router，让 medical、biological、omics、clinical、drug、KG/database、proposal 和 collaboration 任务走不同证据标准，而不是套用同一个泛用 checklist。
 

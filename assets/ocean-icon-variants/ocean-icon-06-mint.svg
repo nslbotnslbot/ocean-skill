@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 300 300" role="img" aria-labelledby="title desc" shape-rendering="geometricPrecision">
+  <title id="title">OCEAN icon - Glacier Mint</title>
+  <desc id="desc">The OCEAN evidence-navigation icon in the Glacier Mint palette.</desc>
+  <defs>
+    <linearGradient id="mark-bg" x1="55" y1="54" x2="230" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F2FAF8"/>
+      <stop offset="0.55" stop-color="#DAF2EA"/>
+      <stop offset="1" stop-color="#AAE0D0"/>
+    </linearGradient>
+    <linearGradient id="water" x1="58" y1="162" x2="228" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#81D2B9"/>
+      <stop offset="1" stop-color="#348E76"/>
+    </linearGradient>
+    <linearGradient id="ice" x1="121" y1="102" x2="176" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.55" stop-color="#E0F4EE"/>
+      <stop offset="1" stop-color="#AAE0D0"/>
+    </linearGradient>
+  </defs>
+  <circle cx="150" cy="150" r="96" fill="url(#mark-bg)" stroke="#60BBA0" stroke-width="5"/>
+  <circle cx="150" cy="150" r="78" fill="none" stroke="#F6FCFA" stroke-width="7"/>
+  <circle cx="150" cy="150" r="49" fill="none" stroke="#E1F4EE" stroke-width="6"/>
+  <path d="M63 173c23-14 45-14 67-2 18 10 36 10 56 0 22-12 44-12 67 2" fill="none" stroke="#F3FBF8" stroke-width="15" stroke-linecap="round"/>
+  <path d="M67 202c22-12 43-12 65-1 23 12 42 12 64 0 21-11 42-11 64 1" fill="none" stroke="#B0E2D3" stroke-width="11" stroke-linecap="round"/>
+  <path d="M61 188c26-10 48-9 70 2 18 10 36 10 57 0 21-10 43-10 66 2-16 33-54 55-103 55-50 0-89-22-105-56 5 0 10-1 15-3z" fill="url(#water)"/>
+  <path d="M150 66l15 66 58 18-58 18-15 66-15-66-58-18 58-18z" fill="#FFFFFF" stroke="#F3FBF8" stroke-width="4"/>
+  <path d="M150 66l15 66 58 18-58 18z" fill="#7BCFB6"/>
+  <path d="M150 234l-15-66-58-18 58-18z" fill="#348E76"/>
+  <circle cx="150" cy="150" r="14" fill="#F9FDFC" stroke="#509E89" stroke-width="6"/>
+  <path d="M119 213l31-82 37 82z" fill="url(#ice)" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M150 131l-5 82h-26z" fill="#FFFFFF"/>
+  <path d="M150 131l37 82h-42z" fill="#98DAC6"/>
+  <path d="M133 177l13 36h-27z" fill="#75CDB3"/>
+</svg>
