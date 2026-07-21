@@ -71,7 +71,7 @@ A generic request to revise a finished paragraph defaults to **Manuscript Revisi
 
 ## Real project progress
 
-OCEAN is also tracked in real manuscript and research workflows through the canonical [`projects/`](projects/README.md) progress hub. Each project has its own public-safe status, evidence basis, OCEAN module record, dated progress log, next gate, and confidentiality boundary.
+OCEAN is also tracked in real manuscript and research workflows through the concise [`projects/`](projects/README.md) progress hub. Each page shows only current status, recent progress, the next step, and the public boundary; detailed audits stay in `docs/` or `validation/`.
 
 Current records cover the [whole-wheat fermented broth study](projects/whole-wheat-fermented-broth/README.md) and [Delirium AI ICU prediction transportability](projects/delirium-ai/README.md). Project tracking does not prove scientific validity, submission, acceptance, or clinical readiness.
 

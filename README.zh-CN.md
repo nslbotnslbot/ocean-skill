@@ -71,7 +71,7 @@ OCEAN 现在会先判断稿件处于什么阶段，不再把每一次 manuscript
 
 ## 真实项目进度
 
-OCEAN 通过根目录 [`projects/`](projects/README.md) 持续记录真实论文和科研项目。每个项目都有独立的公开状态、证据来源、模块记录、带日期的进度日志、下一道门槛和保密边界。
+OCEAN 通过根目录 [`projects/`](projects/README.md) 持续记录真实论文和科研项目。每个页面只保留当前状态、近期进展、下一步和公开边界；详细审计放在 `docs/` 或 `validation/`，不再堆进项目首页。
 
 当前包括[全麦发酵菌汤项目](projects/whole-wheat-fermented-broth/README.md)和 [Delirium AI ICU 预测可迁移性项目](projects/delirium-ai/README.md)。项目记录不等于科学有效性、投稿、接收或临床可用性的证明。
 

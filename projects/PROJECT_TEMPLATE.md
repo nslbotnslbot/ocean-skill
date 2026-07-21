@@ -1,44 +1,30 @@
----
+<!-- ocean-project
 project_id: OCEAN-PROJ-XXX
-title: Replace with a public-safe project title
-domain: biological-research
 ocean_phase: planning
 project_stage: idea
 public_status: awaiting-owner-confirmation
 last_verified: 2000-01-01
-evidence_basis: replace-with-inspected-or-owner-confirmed-source
----
+evidence_basis: owner-confirmation-needed
+-->
 
 # Public-Safe Project Title
 
-## Public Snapshot
+One sentence describing the project and how OCEAN is being used.
 
-| Field | Verified public-safe value |
-|---|---|
-| Project ID | OCEAN-PROJ-XXX |
-| Domain | Replace |
-| OCEAN phase | Planning |
-| Project stage | Idea |
-| Last verified | YYYY-MM-DD |
+## Status
 
-## Evidence Basis
+- **Current stage:** Idea
+- **OCEAN use:** Planning
+- **Updated:** YYYY-MM-DD
 
-List what was inspected or owner-confirmed. Keep uninspected material in a separate list.
+## Progress
 
-## OCEAN Module Record
+- YYYY-MM-DD: Verified public-safe milestone.
 
-Record only modules supported by project evidence. Mark planned work as planned, not completed.
+## Next
 
-## Progress Log
+- One concrete next gate.
 
-| Date | Verified change | Evidence boundary | Next gate |
-|---|---|---|---|
-| YYYY-MM-DD | Replace | Replace | Replace |
+## Public Boundary
 
-## Next Public Gate
-
-State the evidence or owner confirmation required before changing the public status.
-
-## Confidentiality Boundary
-
-State what must remain private or controlled.
+State what remains private, controlled, uninspected, or unconfirmed.

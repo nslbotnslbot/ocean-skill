@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate public-safe OCEAN project progress records."""
+"""Validate concise public-safe OCEAN project progress pages."""
 
 from __future__ import annotations
 
@@ -15,22 +15,14 @@ PROJECTS = ROOT / "projects"
 INDEX = PROJECTS / "README.md"
 REQUIRED_FIELDS = {
     "project_id",
-    "title",
-    "domain",
     "ocean_phase",
     "project_stage",
     "public_status",
     "last_verified",
     "evidence_basis",
 }
-REQUIRED_HEADINGS = {
-    "## Public Snapshot",
-    "## Evidence Basis",
-    "## OCEAN Module Record",
-    "## Progress Log",
-    "## Next Public Gate",
-    "## Confidentiality Boundary",
-}
+REQUIRED_HEADINGS = {"## Status", "## Progress", "## Next", "## Public Boundary"}
+MAX_RECORD_LINES = 60
 ALLOWED_OCEAN_PHASES = {
     "planning",
     "evidence-audit",
@@ -68,15 +60,18 @@ FORBIDDEN_PUBLIC_TEXT = {
 }
 
 
-def parse_frontmatter(path: Path) -> tuple[dict, str]:
+def parse_record(path: Path) -> tuple[dict, str, str]:
     text = path.read_text(encoding="utf-8")
-    match = re.match(r"\A---\n(.*?)\n---\n", text, flags=re.DOTALL)
-    if not match:
-        raise ValueError("missing YAML frontmatter")
-    data = yaml.safe_load(match.group(1))
+    metadata_match = re.match(r"\A<!-- ocean-project\n(.*?)\n-->\n", text, flags=re.DOTALL)
+    if not metadata_match:
+        raise ValueError("missing hidden ocean-project metadata")
+    data = yaml.safe_load(metadata_match.group(1))
     if not isinstance(data, dict):
-        raise ValueError("frontmatter must be a mapping")
-    return data, text
+        raise ValueError("project metadata must be a mapping")
+    title_match = re.search(r"^# (.+)$", text, flags=re.MULTILINE)
+    if not title_match:
+        raise ValueError("missing project title")
+    return data, text, title_match.group(1).strip()
 
 
 def main() -> int:
@@ -91,14 +86,14 @@ def main() -> int:
     for path in records:
         rel = path.relative_to(ROOT)
         try:
-            data, text = parse_frontmatter(path)
+            data, text, title = parse_record(path)
         except (OSError, ValueError, yaml.YAMLError) as exc:
             errors.append(f"{rel}: {exc}")
             continue
 
         missing = REQUIRED_FIELDS - data.keys()
         if missing:
-            errors.append(f"{rel}: missing fields {sorted(missing)}")
+            errors.append(f"{rel}: missing metadata fields {sorted(missing)}")
 
         project_id = str(data.get("project_id", ""))
         if not re.fullmatch(r"OCEAN-PROJ-\d{3}", project_id):
@@ -122,30 +117,34 @@ def main() -> int:
         except ValueError:
             errors.append(f"{rel}: last_verified must be ISO YYYY-MM-DD")
 
-        for heading in sorted(REQUIRED_HEADINGS):
-            if heading not in text:
-                errors.append(f"{rel}: missing heading {heading!r}")
+        headings = set(re.findall(r"^## .+$", text, flags=re.MULTILINE))
+        for heading in sorted(REQUIRED_HEADINGS - headings):
+            errors.append(f"{rel}: missing heading {heading!r}")
+        for heading in sorted(headings - REQUIRED_HEADINGS):
+            errors.append(f"{rel}: unexpected project-page heading {heading!r}")
+        if len(text.splitlines()) > MAX_RECORD_LINES:
+            errors.append(f"{rel}: exceeds {MAX_RECORD_LINES} lines")
 
-        for needle, label in FORBIDDEN_PUBLIC_TEXT.items():
-            if needle in text:
-                errors.append(f"{rel}: contains {label}: {needle!r}")
+        progress = text.split("## Progress", 1)[-1].split("\n## ", 1)[0]
+        progress_items = [line for line in progress.splitlines() if line.startswith("- ")]
+        if not progress_items:
+            errors.append(f"{rel}: Progress must contain at least one bullet")
+        if len(progress_items) > 5:
+            errors.append(f"{rel}: Progress must contain at most five bullets")
+
+        updated_line = f"**Updated:** {raw_date}"
+        if updated_line not in text:
+            errors.append(f"{rel}: visible Updated date does not match metadata")
 
         index_link = f"({path.parent.name}/README.md)"
-        if index_link not in index_text:
-            errors.append(f"{rel}: missing from projects/README.md index")
-        index_row = next(
-            (line for line in index_text.splitlines() if line.startswith(f"| {project_id} |")),
-            "",
-        )
+        index_row = next((line for line in index_text.splitlines() if index_link in line), "")
         if not index_row:
-            errors.append(f"{rel}: project ID missing from projects/README.md index")
+            errors.append(f"{rel}: missing from projects/README.md index")
         else:
-            if str(data.get("title", "")) not in index_row:
-                errors.append(f"{rel}: index title does not match frontmatter")
+            if title not in index_row:
+                errors.append(f"{rel}: index title does not match page title")
             if str(raw_date) not in index_row:
-                errors.append(f"{rel}: index last-verified date does not match frontmatter")
-        if str(raw_date) not in text.split("## Progress Log", 1)[-1]:
-            errors.append(f"{rel}: last_verified date missing from Progress Log")
+                errors.append(f"{rel}: index date does not match metadata")
 
     for path in sorted(PROJECTS.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in {".md", ".json", ".yaml", ".yml"}:
@@ -162,7 +161,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print(f"Project records valid: {len(records)} records, {len(seen_ids)} unique IDs")
+    print(f"Project records valid: {len(records)} concise pages, {len(seen_ids)} unique IDs")
     return 0
 
 
