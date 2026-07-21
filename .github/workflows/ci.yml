@@ -1,0 +1,37 @@
+name: OCEAN repository checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPYCACHEPREFIX: /tmp/ocean-pycache
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install development dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Compile Python sources
+        run: python -m compileall -q skills validation/scripts
+      - name: Validate JSON and skill package
+        run: |
+          python validation/scripts/check_json_files.py
+          python validation/scripts/validate_skill.py
+      - name: Run evidence-boundary regressions
+        run: python -m unittest discover -s validation/scripts -p 'test_*.py' -v
+      - name: Run OCEAN structural contracts
+        run: |
+          python skills/ocean/scripts/check_ocean_contracts.py --out /tmp/ocean-contract-check.md
+          python skills/ocean/scripts/check_manuscript_revision_mode.py --out /tmp/manuscript-revision-check.md
+      - name: Check patch whitespace
+        run: git diff --check
