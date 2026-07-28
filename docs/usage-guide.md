@@ -4,7 +4,7 @@
 
 OCEAN is a model-neutral biomedical research workflow for navigating claims,
 evidence, study design, manuscript revision, and concise project records. You
-do not need to learn its seven internal modules before using it.
+do not need to learn its seven modules before using it.
 
 The shortest rule is:
 
@@ -71,7 +71,7 @@ OCEAN has five user-facing modes:
 | **Revise** | improve finished manuscript text | clean replacement text; notes kept separate |
 | **Track** | preserve a concise project or submission record | Status, Progress, Next, Public Boundary |
 
-OCEAN selects the minimum internal modules needed. It should not run all seven
+OCEAN selects the minimum modules needed. It should not run all seven
 modules merely to display the framework.
 
 You may name the mode explicitly:
@@ -270,6 +270,33 @@ adapters and bioinformatics wrappers are optional routes.
   relevant files have been inspected.
 - Never commit API keys or private `.env` files.
 
+Use the unified bioinformatics router from the repository root:
+
+```bash
+# List or search covered tools.
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools --search rna
+
+# Inspect one tool without claiming that it is installed.
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py profile --tool deseq2
+
+# List or build bounded workflow plans.
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-workflows
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  workflow \
+  --workflow rna-seq-differential-expression \
+  --output outputs/rna-seq-plan.json
+
+# Probe a CLI/package/runtime, or create a non-executing heavy-tool plan.
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check \
+  --tool deseq2 \
+  --output outputs/deseq2-check.json
+```
+
+The check output states whether the tool was found, not found, or only planned.
+It does not run a full biological analysis.
+
 ## 9. Project tracking and GitHub safety
 
 Use Track only when the work has become a real, traceable project. Keep the
@@ -291,7 +318,7 @@ user approval.
 
 ### Do I need to know the seven modules?
 
-No. Modes are the user interface; modules are the internal scientific engine.
+No. Modes are the user interface; modules provide the scientific workflow.
 Ask for a module-by-module explanation only when it helps you inspect the
 workflow.
 
@@ -310,7 +337,8 @@ reviewer report.
 
 No. Coverage in the resource map means OCEAN can route or packetize the tool.
 Execution depends on installation, runtime, databases, licenses, compute, and
-input files.
+input files. Use the unified router's `check` command to inspect the current
+environment before planning an analysis.
 
 ### What if `$ocean` is not recognized?
 
@@ -321,4 +349,3 @@ session. Reinstall from `main` if the folder is incomplete.
 
 No. It may assess biomedical evidence and clinical-study claims, but it must not
 replace medical judgment or provide unsupported diagnosis or treatment advice.
-

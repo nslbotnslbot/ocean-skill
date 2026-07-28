@@ -8,7 +8,7 @@ internally.
 
 ## Mode Router
 
-| Mode | User intent | Default visible output | Typical internal route |
+| Mode | User intent | Default visible output | Typical module route |
 |---|---|---|---|
 | **Explore** | Understand a paper, DOI, idea, field, or source landscape | OCEAN Decision Card plus a clear evidence-bounded explanation | Sounding; add Current or Reef only when needed |
 | **Design** | Turn an idea, proposal, dataset, or reviewer concern into a study | Research route, decisive controls, main risks, next experiment | Compass + Anchor; add Sounding, Reef, or Iceberg as needed |

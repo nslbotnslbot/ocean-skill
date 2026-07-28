@@ -14,15 +14,14 @@ OCEAN is supporting manuscript preparation and evidence-bound interpretation acr
 ## Status
 
 - **Current stage:** Manuscript preparation
-- **OCEAN use:** Seven-module pre-submission audit
+- **OCEAN use:** Evidence organization and manuscript support
 - **Updated:** 2026-07-06
 - **Submission status:** Not publicly confirmed
 
 ## Progress
 
-- Multi-omics evidence layers and main-versus-supplement figure routes were organized.
-- Unsupported causal, toxicity, and unmatched cross-system correlation claims were downgraded.
-- Manuscript line editing is now kept separate from reviewer-style audit notes.
+- Multi-omics evidence and manuscript materials were organized.
+- Manuscript editing is kept separate from audit notes.
 
 ## Next
 
@@ -31,5 +30,3 @@ OCEAN is supporting manuscript preparation and evidence-bound interpretation acr
 ## Public Boundary
 
 Raw data, unpublished manuscript text, private source tables, collaborator decisions, reviewer comments, and journal correspondence remain outside this repository.
-
-Detailed workflow note: [OCEAN seven-module case study](../../docs/case-studies/whole-wheat-broth-project.md).

@@ -260,6 +260,33 @@ OCEAN 核心工作流不依赖特定模型，也不强制使用付费 API。数�
 - 只有真实运行并检查相关文件后，工具输出才可能成为 provenance 或分析证据。
 - 不要把 API key 或私有 `.env` 文件提交到 GitHub。
 
+在仓库根目录使用统一 bioinformatics router：
+
+```bash
+# 列出或搜索已覆盖工具。
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools --search rna
+
+# 查看工具 profile，但不声称已经安装。
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py profile --tool deseq2
+
+# 列出或生成受证据边界约束的 workflow plan。
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-workflows
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  workflow \
+  --workflow rna-seq-differential-expression \
+  --output outputs/rna-seq-plan.json
+
+# 检查 CLI/package/runtime，或为重型工具创建不执行的 plan。
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check \
+  --tool deseq2 \
+  --output outputs/deseq2-check.json
+```
+
+check 结果会明确写出工具已找到、未找到，或只是生成了 plan；它不会自动运行
+完整的生物学分析。
+
 ## 9. 项目记录与 GitHub 安全
 
 只有当工作已经变成真实、可追踪的项目时才使用 Track。公开页面保持四部分：
@@ -278,7 +305,7 @@ OCEAN 可以先准备本地更新，但公开 push 到 GitHub 必须获得用户
 
 ### 我需要记住七个模块吗？
 
-不需要。五种模式是用户界面，七个模块是内部科学引擎。只有当你希望检查
+不需要。五种模式是用户界面，七个模块提供科学工作流。只有当你希望检查
 OCEAN 的工作路径时，才需要要求逐模块解释。
 
 ### OCEAN 可以从一句话开始吗？
@@ -294,7 +321,8 @@ OCEAN 的工作路径时，才需要要求逐模块解释。
 ### OCEAN 能执行资源表里的全部生物信息工具吗？
 
 不能直接这样理解。资源表中的覆盖意味着 OCEAN 能够路由或生成 source packet。
-能否执行还取决于安装、runtime、数据库、license、计算资源和输入文件。
+能否执行还取决于安装、runtime、数据库、license、计算资源和输入文件。规划分析前，
+可以先用统一 router 的 `check` 命令检查当前环境。
 
 ### `$ocean` 没有被识别怎么办？
 
@@ -305,4 +333,3 @@ OCEAN 的工作路径时，才需要要求逐模块解释。
 
 不会。它可以评估生物医学证据和临床研究 claim，但不能替代医学判断，也不能
 给出无证据的诊断或治疗建议。
-

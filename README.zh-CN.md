@@ -4,9 +4,9 @@
 
 ![OCEAN polar workflow infographic](assets/ocean-polar-workflow-logo-v4.png)
 
-OCEAN 是一个轻量级、兼容 Codex 的外部审计层和 skill，用于医学研究与生物学研究中的 claim-evidence 导航和 research design workflow。它关注 biomedical research，理解 AI 研究场景，但不只服务于 AI 论文：也可以支持生物医学 AI、生物学 AI、manuscript、数据库、知识图谱、临床预测、验证规划、期刊定位和协作边界分析。现在它加入了一个中心化的 Domain Lens 和 Data/Tool Router，让 medical、biological、omics、clinical、drug、KG/database、proposal 和 collaboration 任务走不同证据标准，而不是套用同一个泛用 checklist。
+OCEAN 是一个轻量级、兼容 Codex 的 biomedical claim-evidence skill，用于医学研究与生物学研究。它可以支持生物医学 AI、生物学 AI、manuscript、数据库、知识图谱、临床预测、验证规划、期刊定位和协作边界分析。Domain Lens 和 Data/Tool Router 会为 medical、biological、omics、clinical、drug、KG/database、proposal 和 collaboration 任务选择合适的证据标准。
 
-OCEAN 是一个独立的开源工作流项目。它的证据发现模块命名为 **Sounding**：这是一个 source-packet 工作流，用于扫描文献、证据边界和可追踪的 review 材料。OCEAN 审计的是已有来源能支持什么、不能支持什么；它不管理某个研究项目的内部执行或发布流程。
+它的证据发现模块命名为 **Sounding**：这是一个 source-packet 工作流，用于扫描文献、证据边界和可追踪的 review 材料。
 
 **表面简单，底层严谨；当工作成为项目时，过程可以追踪。**
 
@@ -14,7 +14,8 @@ OCEAN 是一个独立的开源工作流项目。它的证据发现模块命名�
 
 ## 这是什么
 
-这个 package 设计用于在 Codex 中个人使用，也可以作为一个小型 GitHub 仓库发布。
+这个仓库面向希望在 Codex 中使用可安装、受证据边界约束的生物医学科研工作流的
+研究者和团队。
 
 它提供两个入口：
 
@@ -23,9 +24,7 @@ OCEAN 是一个独立的开源工作流项目。它的证据发现模块命名�
 
 ## 边界、范围和非目标
 
-OCEAN 应该被描述为一个 **基于 source packet 的 claim-evidence 外部审计层**。它的核心对象是 source packet、evidence gate、claim audit card、safe rewrite、negative space、reviewer-risk ticket 和 validation plan。
-
-更完整的公开定位说明见 [`docs/project-boundary.md`](docs/project-boundary.md)。
+OCEAN 是一个 **基于 source packet 的 claim-evidence 科研工作流**。它的核心对象是 source packet、evidence gate、claim audit card、safe rewrite、negative space、reviewer-risk ticket 和 validation plan。
 
 OCEAN 的定位是：**biomedical first, AI-aware, evidence-boundary centered**。
 
@@ -37,12 +36,8 @@ OCEAN 的定位是：**biomedical first, AI-aware, evidence-boundary centered**�
 OCEAN 不是：
 
 - autonomous AI scientist；
-- 执行实验或生成发现的系统；
-- 内部 evidence ledger 或项目发布工作流；
-- human-supervised execution-package-to-release-gate 系统；
-- 面向单一研究项目的 discovery endpoint spectrum。
-
-公开介绍 OCEAN 时，优先使用 **external claim-evidence auditing**、**evidence-type gating**、**source-packet construction**、**safe claim rewriting** 和 **public adversarial case matrices**。不要把 evidence ledger、paired non-claim、endpoint ladder 或 release gate 写成中心贡献。
+- 实验、领域专家或临床判断的替代品；
+- 虚构证据或无依据临床建议的来源。
 
 ## 60 秒开始使用
 
@@ -83,7 +78,7 @@ OCEAN 现在会先判断稿件处于什么阶段，不再把每一次 manuscript
 
 ## 真实项目进度
 
-OCEAN 通过根目录 [`projects/`](projects/README.md) 持续记录真实论文和科研项目。每个页面只保留当前状态、近期进展、下一步和公开边界；详细审计放在 `docs/` 或 `validation/`，不再堆进项目首页。
+OCEAN 通过根目录 [`projects/`](projects/README.md) 持续记录真实论文和科研项目。每个页面只保留当前状态、近期进展、下一步和公开边界。原始分析、未公开稿件和内部工作记录不会放进公开仓库。
 
 当前包括[全麦发酵菌汤项目](projects/whole-wheat-fermented-broth/README.md)和 [Delirium AI ICU 预测可迁移性项目](projects/delirium-ai/README.md)。项目记录不等于科学有效性、投稿、接收或临床可用性的证明。
 
@@ -104,17 +99,17 @@ python3 skills/ocean/scripts/create_project_start_record.py \
 
 ## 模块流程
 
-OCEAN 把七个模块保留为内部科学引擎。默认只选择最少且必要的路线，并隐藏模块名称。只有真正需要端到端处理时，模块才组成外部审计序列，而不是实验执行循环。每个模块完成不同事件并交付具体产物。更完整的公开说明见 `docs/module-map.md`。
+OCEAN 默认只选择最少且必要的模块，并隐藏模块名称。需要端到端处理时，每个模块完成不同事件并交付具体产物。更完整的说明见 `docs/module-map.md`。
 
-| 顺序 | Module | 完成的事件 | 典型产物 | 当前验证状态 |
-|---:|---|---|---|---|
-| 1 | **Sounding** | 证据发现和 source boundary 建立 | Source packet、Evidence Radar Map、Negative Space、Handoff Ticket | 已完成 strict multi-model eval |
-| 2 | **Current** | 领域趋势和方向流动分析 | Trend map、近期流动、机会/风险说明 | M1 已覆盖；M2 已筛查 |
-| 3 | **Reef** | 生物医学资源、临床数据、KG、数据库证据组织 | Resource provenance map、data-source routing、database/KG evidence table | M1 已覆盖；M2 已筛查 |
-| 4 | **Iceberg** | 审核表面 claim 下面的证据支撑 | Claim-evidence matrix、降级/改写建议 | M1 已覆盖；M2 已筛查 |
-| 5 | **Anchor** | 验证、复现、leakage、benchmark、reproducibility 规划 | Validation checklist、benchmark/leakage plan、复现风险 | M1 已覆盖；M2 已筛查 |
-| 6 | **Compass** | 研究计划和策略决策 | Idea card、实验计划、期刊/合作策略 | M1 已覆盖；M2 已筛查 |
-| 7 | **Harbor** | 审计报告沉淀和协作边界记忆 | Final audit report、decision note、贡献边界记录 | M1 已覆盖；M2 已筛查 |
+| 顺序 | Module | 完成的事件 | 典型产物 |
+|---:|---|---|---|
+| 1 | **Sounding** | 证据发现和 source boundary 建立 | Source packet、Evidence Radar Map、Negative Space、Handoff Ticket |
+| 2 | **Current** | 领域趋势和方向流动分析 | Trend map、近期流动、机会/风险说明 |
+| 3 | **Reef** | 生物医学资源、临床数据、KG、数据库证据组织 | Resource provenance map、data-source routing、database/KG evidence table |
+| 4 | **Iceberg** | 审核表面 claim 下面的证据支撑 | Claim-evidence matrix、降级/改写建议 |
+| 5 | **Anchor** | 验证、复现、leakage、benchmark、reproducibility 规划 | Validation checklist、benchmark/leakage plan、复现风险 |
+| 6 | **Compass** | 研究计划和策略决策 | Idea card、实验计划、期刊/合作策略 |
+| 7 | **Harbor** | 报告沉淀和协作边界记忆 | Final report、decision note、贡献边界记录 |
 
 ## 快速开始
 
@@ -189,6 +184,18 @@ python3 skills/ocean/scripts/check_claim_table.py \
   --out outputs/claim_table_summary.md
 ```
 
+查找并安全检查一个已覆盖的 bioinformatics 工具：
+
+```bash
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py profile --tool last
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check --tool last --output outputs/last-check.json
+```
+
+数据库 adapter、workflow template、执行层和证据边界见
+[中文工具总览](skills/ocean/scripts/README.zh-CN.md)。
+
 ## 输出原则
 
 默认输出语言：中文。
@@ -214,8 +221,8 @@ Status、Progress、Next 和 Public Boundary。
 
 ```text
 skills/ocean/  可安装 skill、references、adapters 与工具 wrappers
-validation/    开发测试 cases、fixtures、scorecards 与回归记录
-docs/          公开架构、评估摘要与案例
+tests/         少量确定性的 CI 检查和 fixtures
+docs/          公开架构与使用指南
 projects/      使用 OCEAN 的真实项目公开安全进度记录
 examples/      可安全复用的小型示例
 assets/        图标与 README 媒体
@@ -223,44 +230,23 @@ outputs/       默认忽略的本地生成结果
 .github/       持续集成
 ```
 
-目录归属、canonical instruction source 和生成文件规则见 [`docs/repository-layout.md`](docs/repository-layout.md)。安装 `skills/ocean/` 时不再把 validation archive 一起复制到运行时 skill。
+简洁的目录归属见 [`docs/repository-layout.md`](docs/repository-layout.md)。生成的报告、模型输出、scorecard、本地 availability probe 和实验日志只保存在被忽略的 `outputs/`，不进入 GitHub。
 
-## 评估总结
+## 质量检查
 
-OCEAN 把详细验证证据放在可安装 skill 之外。主要测试层包括：
-
-| 层级 | 范围 |
-|---|---|
-| 证据边界测试 | 缺失、矛盾、不可追踪和对抗性 claims |
-| 模块测试 | 七个模块的 artifact 质量与 handoff |
-| 多模型测试 | 不同模型提供方上的 workflow 稳定性 |
-| 工具与 adapter 测试 | dry-run/live API packet、本地可用性、provenance 与 stop condition |
-| 仓库回归 | skill 校验、JSON 解析、结构 contract 与 wrapper 边界测试 |
-
-历史上最深入的 strict testing 仍是 Sounding，后续测试已逐步覆盖完整工作流、domain/data routing、research design、Reef 和 Harbor。它们是开发验证，不是科学正确性的证明，也不是模型排行榜。
-
-公开索引见 [`docs/evaluation/README.md`](docs/evaluation/README.md)，archive policy 见 [`validation/README.md`](validation/README.md)，详细记录见 [`validation/release-validation-log.md`](validation/release-validation-log.md)。
-
-## 开发检查
-
-发布前运行示例脚本：
+公开仓库只保留保护可安装 skill 所必需的确定性检查：
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
-python3 skills/ocean/scripts/make_claim_table.py --out outputs/claim_table.csv
-python3 skills/ocean/scripts/check_claim_table.py examples/sample_claim_table.csv --out outputs/claim_table_summary.md
-python3 skills/ocean/scripts/make_claim_table.py --empty --out outputs/empty_claim_table.csv
-python3 skills/ocean/scripts/check_claim_table.py outputs/empty_claim_table.csv --out outputs/empty_claim_table_summary.md
-python3 skills/ocean/scripts/run_reef_api_adapter.py --adapter ncbi-eutils --database pubmed --query "BRCA1 breast cancer" --retmax 5 --out outputs/reef_api_packet.json
-python3 skills/ocean/scripts/run_sounding_multimodel_eval.py --dry-run
-python3 validation/scripts/check_json_files.py
-python3 validation/scripts/validate_skill.py
-python3 -m unittest discover -s validation/scripts -p 'test_*.py' -v
+python3 tests/check_json_files.py
+python3 tests/validate_skill.py
+python3 tests/check_project_records.py
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 python3 skills/ocean/scripts/check_ocean_contracts.py --out outputs/ocean-contract-check.md
 python3 skills/ocean/scripts/check_manuscript_revision_mode.py --out outputs/manuscript-revision-check.md
 ```
 
-发布前，请使用真实用户提供的、或公开且 source-traceable 的材料，运行 `validation/forward-test-cases.md` 中的 manual forward tests。使用 `validation/anti-hallucination-cases.md` 测试 incomplete、missing、contradictory 或 non-traceable evidence。使用 `validation/public-source-protocol.md` 选择 DOI papers、bioRxiv/medRxiv preprints 和 public peer review reports；在 `validation/source-candidates.md` 中追踪具体候选；使用 `validation/sounding-multimodel-strict-eval.md` 进行 model-robustness checks；使用 `validation/full-ocean-workflow-protocol.md` 进行七模块 workflow 检查；并在 `validation/release-validation-log.md` 中总结 validation-check outcomes。
+这些检查保护 package 结构、项目记录边界、工具索引覆盖、稿件通道隔离和 OCEAN 核心 contract。它们是回归测试，不是科学性能 claim，也不是模型排行榜。
 
 ## License
 

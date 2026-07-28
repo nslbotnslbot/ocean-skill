@@ -2,82 +2,27 @@
 
 ## Unreleased
 
-- Added bilingual parent-level tool indexes under `skills/ocean/scripts/`, documenting all 115 bioinformatics tool folders, 13 public database adapters, source adapters, execution layers, commands, and the distinction between covered, locally available, and actually executed tools.
-- Added a user-first interaction layer with five plain-language modes (Explore, Design, Audit, Revise, and Track), minimum-module routing, a concise default OCEAN Decision Card, and detailed English/Chinese usage guides derived from recent real workflows.
-- Simplified public project pages to four scan-friendly sections and moved the detailed whole-wheat seven-module audit back under `docs/case-studies/`.
-- Added a canonical `projects/` progress hub with schema-checked public-safe records for the whole-wheat fermented broth and Delirium AI projects, plus a reusable project template and legacy tracker redirect.
-- Moved the 729-file development validation archive from `skills/ocean/evals/` to root-level `validation/`, separating installable runtime instructions from cases, fixtures, scorecards, and historical result artifacts.
-- Added repository zoning documentation, GitHub Actions CI, development dependency pinning, JSON/skill validators, and software evidence-boundary regression tests.
-- Fixed CLI availability probes so nonzero exit codes are no longer accepted as successful execution evidence, and downgraded incomplete software records to `candidate_route` with no supported claims.
-- Added a manuscript lifecycle gate with distinct Design/Audit, Manuscript Revision, Pre-submission Stress Test, and Reviewer Response modes; finished-text revision now returns clean replacement prose with audit notes and author queries isolated outside the manuscript.
-- Added Manuscript Revision Mode R1 public-safe routing cases and deterministic contract checks based on real editing failure patterns without publishing private manuscript text.
-- Added a Harbor Project Start Gate for new traceable OCEAN research projects, with Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket rules plus a local record-generation script.
-- Added launcher/workflow runner wrappers for the remaining 29 bioinformatics heavy, workflow-runtime, and source-packet-adapter tools, with per-tool `scripts/run_launcher.py` entrypoints, API command wiring, README usage notes, and 37/37 launcher/runtime eval pass.
-- Added Python/R package runner wrappers for 26 bioinformatics package tools, with per-tool `scripts/run_package.py` entrypoints, API command wiring, README usage notes, bounded script provenance support, and 26/26 package runner eval pass.
-- Added lightweight CLI runner wrappers for 60 bioinformatics command-line tools, with per-tool `scripts/run_cli.py` entrypoints, API command wiring, README usage notes, bounded provenance recording, and 60/60 CLI runner eval pass in the current environment.
-- Added science-skills-style per-resource database tool folders for 13 Reef API/database adapters, with generated README/API/example/query wrappers plus 13/13 dry-run and 13/13 bounded live eval pass.
-- Added generated per-tool bioinformatics probe/plan wrappers for all 115 tool folders, with `wrapper_config.json`, `scripts/probe_or_plan.py`, API command wiring, and 115/115 per-tool wrapper eval pass.
-- Added Bioinformatics Wrapper Implementation Backlog R1, converting all-tool readiness plans into a 115-item engineering queue with 115/115 structural eval pass.
-- Added Bioinformatics Wrapper Readiness All-Tool R1, extending readiness plans from the 20 priority tools to all 115 bioinformatics tool folders with 115/115 structural eval pass and explicit environment-missing boundaries.
-- Added Bioinformatics Wrapper Readiness R1 to convert high-priority capability-matrix rows into per-tool install/container/smoke/source-packet readiness plans with explicit evidence boundaries.
-- Added a Bioinformatics Capability Matrix R1 builder that joins the 115-tool registry, per-tool API/source-packet contracts, and real-tool smoke results into JSON/CSV/Markdown planning artifacts for implementation priority and environment gaps.
-- Added a public-safe whole-wheat broth OCEAN case note documenting how all seven modules were used in a real fermentation, microbiome, metabolomics, toxicology-support, and manuscript-planning workflow while keeping raw data and private manuscript material out of the repository.
-- Added a bioinformatics tool router that profiles all 115 tools into execution layers and generates workflow plans for FASTQ QC, RNA-seq, variant calling, single-cell, spatial, metagenomics, genome assembly, protein structure, epigenomics, proteomics/metabolomics, workflow reproducibility, and imaging AI.
-- Added bioinformatics execution-layer wrappers: bounded local CLI subprocess probing, R/Bioconductor `Rscript` package/script handling, and non-executing launcher plans for heavy/license/GUI/GPU/large-database tools.
-- Added executable Reef API/database adapters for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, and NCBI E-utilities, plus dry-run and bounded live evals with 13/13 pass.
-- Added science-skills-style `references/tool_usage.md` guides to all 115 bioinformatics tool folders, with use/avoid rules, required run evidence, stop conditions, and OCEAN handoff guidance.
-- Added Bioinformatics Real-Tool Smoke Eval R1, checking all 115 bioinformatics tool scaffolds against the current local environment with real CLI/version/help, Python import, R package, or OCEAN adapter smoke attempts.
-- Added OCEAN Seven-Module Coordination Eval R1 to test full Sounding -> Current -> Reef -> Iceberg -> Anchor -> Compass -> Harbor workflow continuity, artifact coverage, handoff tickets, unsupported-claim downgrades, and Harbor closure.
-- Added per-tool `api.json` contracts and `scripts/create_source_packet.py` Python wrappers to all bioinformatics tool folders, following a science-skills-style scriptable layout while preserving OCEAN's source-packet evidence boundary.
-- Added `examples/run-record.example.json` templates to all bioinformatics tool folders and extended the scaffold eval to validate example-record completeness.
-- Moved the AlphaFold DB source-packet adapter under `skills/ocean/scripts/tools/bioinformatics/alphafold_db/` so bioinformatics-specific adapters live with the bioinformatics tool folders.
-- Added per-tool bioinformatics scaffold folders under `skills/ocean/scripts/tools/bioinformatics/` plus a generic software source-packet helper and scaffold completeness eval.
-- Reorganized tool-specific source-packet scripts under `skills/ocean/scripts/tools/` with per-resource folders for AlphaFold DB, literature, and ClinicalTrials.gov adapters.
-- Added a bioinformatics software catalog and expanded Reef/Data Tool routing across common QC, alignment, variant, RNA-seq, single-cell, spatial, epigenomics, assembly, microbiome, proteomics, metabolomics, structure, imaging/signal, workflow, and ML software families; added Reef router R4 with 20/20 pass.
-- Added a public project-boundary memo and README non-goals that position OCEAN as a source-packet-based external claim-evidence audit layer, not an autonomous AI scientist, experiment-execution system, internal evidence ledger, or publication-release workflow.
-- Added a central Domain Lens reference for medical AI, biological AI, clinical research, molecular/cellular biology, omics/single-cell/spatial, drug/target hypotheses, KG/database/resource, manuscript/proposal, and collaboration/authorship evidence standards.
-- Added a Data/Tool Router reference for source classes, official resource routing, data/tool packets, API boundaries, privacy/access/licensing rules, and cross-module handoffs.
-- Added a Module Artifact Contract so Sounding, Current, Reef, Iceberg, Anchor, Compass, and Harbor each produce stable artifacts with boundary, traceability, calibration, artifact, and handoff gates.
-- Added Domain Router Big Experiment R1 case seeds and an offline `check_ocean_contracts.py` structural check for new central-routing coverage.
-- Updated the all-module eval prompt to explicitly test Domain Lens, Data/Tool Router, and Module Artifact Contract behavior.
-- Added Domain Router Model R1 with 49/49 usable outputs across seven enabled model/control lanes, 17.86/20 mean M3 score, and a recorded Reef endpoint-invention trap.
-- Added a Research Design Workflow reference with OCEAN design-loop gates, module responsibilities, research-route output, and stop conditions for idea/proposal/reviewer/resource/collaboration workflow cases.
-- Added Research Design Workflow R1 case seeds to test whether OCEAN behaves as a biomedical research process workflow rather than a summary or database aggregation tool.
-- Ran Research Design Workflow R1 over six completed model lanes with 42 usable outputs, 18.38/20 mean OCEAN-10 score, 0 critical rows, 0 public reasoning leaks, and Kimi recorded as runtime blocked.
-- Added a bounded Reef public API packet runner with dry-run defaults and starter adapters for NCBI E-utilities, ClinicalTrials.gov, and Open Targets.
-- Added a Reef biological/clinical data-source catalog covering literature IDs, gene/protein/variant resources, omics repositories, single-cell/spatial atlases, cancer genomics portals, drug resources, clinical registries, regulatory/safety data, EHR/cohort resources, imaging/signal datasets, model organisms, and microbiome/pathogen resources.
-- Updated Reef routing so biological/clinical source selection is separated from optional live API adapter planning and remains bounded by identifier, access, privacy, licensing, and evidence-level rules.
-- Added OCEAN Module Strict Eval M3 with the 20-point OCEAN-10 rubric for task framing, evidence boundary, source traceability, claim calibration, no invention, negative space, artifact quality, handoff, research usefulness, and output consistency.
-- Added the first M3 scorecard/results over the existing 98 all-module M1 outputs.
-- Added clean-output handling to the all-module eval runner: raw provider output remains preserved, while `output.clean.md` and `reasoning_leak.json` support public-format scoring and MiniMax-style `<think>` monitoring.
-- Added provider-specific `extra_body` support for OpenAI-compatible eval requests and split MiniMax into a `minimax-m3-clean` lane with `thinking.disabled` plus a `minimax-reasoning-control` lane with `reasoning_split`.
-- Added Sounding runner clean-output artifacts so Sounding and all-module evals both preserve raw output while scoring public cleaned output.
-- Hardened Harbor's artifact contract around decision memos, evidence boundary ledgers, contribution boundary records, next-action registers, and reuse notes.
-- Added Harbor-focused M3 R1 with 35/35 usable outputs across seven model lanes, 0 public reasoning leaks, and a follow-up finding that Harbor artifact requirements need to be more explicit.
-- Tightened all-module eval prompts so future runs include active-module artifact requirements, including Harbor's decision memo, evidence boundary ledger, contribution boundary record, next-action register, and reuse note.
-- Added Idea Scout M3 R1 for Current/Compass evidence-bounded idea generation, with 28/28 usable outputs across seven model lanes and 0 public reasoning leaks.
-- Added full OCEAN workflow protocol/case seeds for paper, idea, proposal, review-comment, and resource/KG inputs.
-- Added module handoff rules so multi-module runs preserve explicit evidence packets, unresolved risks, and stop conditions.
-- Added optional Reef API adapter registry for official biomedical databases, registries, and resource tools without making OCEAN dependent on any API.
-- Added manual triage notes for the 11 M2 `needs_review` rows.
-- Added Reef Strict Eval R1 with 35/35 usable outputs across seven enabled model lanes and manual triage of three needs-review rows.
-- Tightened Reef/API and eval-output instructions to avoid uninspected endpoint invention and `<think>`/private-reasoning blocks.
-- Added Collaborative Workflow R1 with 70/70 usable outputs across seven enabled model lanes, covering cross-module proposal-to-validation-to-Harbor behavior.
-- Identified that prompt-level `<think>` suppression is insufficient for MiniMax-M1 and that Perplexity retrieval control should be separated from packet-only non-retrieval module scoring.
-- Added standalone module reference files for Current, Reef, Iceberg, Anchor, Compass, and Harbor, and wired them into OCEAN resource routing.
-- Added OCEAN Module Strict Eval M2 scoring: a 12-point heuristic rubric, scorecard CSV, summary JSON, results note, and scorer script for 98 M1 all-module outputs.
-- Added OCEAN Module Strict Eval M1 covering all seven modules with 14 cases across enabled model lanes; merged coverage reached 98/98 usable outputs after targeted timeout reruns.
-- Clarified OCEAN's public scope as biomedical research across medical and biological research, with medical AI and biological AI as priority use cases.
-- Added a public module responsibility and validation-status map in `docs/module-map.md`.
-- Clarified in README and evaluation docs that Sounding remains the most heavily tested module while M1/M2 now add first all-module coverage and heuristic scoring; final source-grounded content review is still needed.
-- Updated public evaluation notes for Sounding R3, including Gemini's completed 60/60 rerun after the initial HTTP 429 stop.
-- Clarified the Sounding model-comparison set: Qwen, DeepSeek, Kimi, MiniMax, Gemini, Claude, and a Perplexity retrieval control group.
-- Added Perplexity retrieval-control smoke support with raw response and source-packet capture.
-- Added DeepSeek and Gemini live API slice results for Sounding Multi-Model Strict Eval R1.
-- Renamed the OCEAN literature/evidence discovery module to **Sounding** across public docs, skill routing, references, eval protocols, runner names, and README artwork.
-- Kept public OCEAN module naming centered on **Sounding** while treating Perplexity only as a retrieval control group.
-- Updated Sounding multi-model strict eval filenames and runner paths to use the `sounding-multimodel-*` naming pattern.
+- Simplified the public repository by removing generated development artifacts
+  and obsolete internal-facing documents.
+- Moved the small deterministic CI suite to `tests/`.
+- Added user-facing Explore, Design, Audit, Revise, and Track modes with
+  minimum-module routing and a concise Decision Card.
+- Added detailed English and Chinese usage guides.
+- Added bilingual tool indexes covering bioinformatics wrappers, public
+  database adapters, source adapters, and execution boundaries.
+- Added one portable bioinformatics router for tool search, profiles, workflow
+  plans, and bounded environment checks.
+- Removed machine-specific tool availability fields, duplicate runtime
+  snapshots, and development-only generator/evaluation scripts.
+- Added manuscript revision channel isolation so audit language stays outside
+  paste-ready prose.
+- Added concise, owner-approved project milestone pages.
 
-## v0.1.0
+## 0.1.0
 
-- Initial public OCEAN skill release with claim-evidence auditing, fixed output contract, evidence-boundary rules, validation logs, sample scripts, and installation instructions.
+- Initial public OCEAN skill release.
+- Introduced the seven-module biomedical claim-evidence workflow.
+- Added source-packet, claim-audit, validation-planning, and research-routing
+  contracts.
+- Added bounded literature, registry, database, and bioinformatics tool
+  adapters.

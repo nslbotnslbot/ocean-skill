@@ -33,7 +33,7 @@ Read this file when:
 
 ## Domain Fingerprint
 
-Before making a verdict, fill this internal routing fingerprint:
+Before making a verdict, fill this routing fingerprint:
 
 ```markdown
 Domain Lens Fingerprint

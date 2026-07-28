@@ -13,8 +13,6 @@
     "-e",
     "cat(as.character(utils::packageVersion('limma')))"
   ],
-  "readiness_stage": "stage_2_local_smoke_executed",
-  "local_smoke_status": "executed",
   "candidate_install_routes": [
     "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
     "Candidate container route; verify image source, tag, and package versions before use."

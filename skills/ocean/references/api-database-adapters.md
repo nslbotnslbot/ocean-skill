@@ -22,7 +22,7 @@ OCEAN includes bounded Reef adapters for public biomedical databases. These are 
 
 ## Per-Resource Tool Folders
 
-The same adapters are also exposed as science-skills-style tool folders under:
+The same adapters are also exposed as resource-specific tool folders under:
 
 ```text
 skills/ocean/scripts/tools/databases/<adapter_slug>/
@@ -59,42 +59,6 @@ python3 skills/ocean/scripts/run_reef_api_adapter.py \
   --execute \
   --retmax 1 \
   --out outputs/alphafold-db-packet.json
-```
-
-Run the adapter eval:
-
-```bash
-python3 skills/ocean/scripts/run_api_database_adapter_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-Run the per-resource database tool-folder eval:
-
-```bash
-python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-Live eval requires network access:
-
-```bash
-python3 skills/ocean/scripts/run_api_database_adapter_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation \
-  --execute-live \
-  --retmax 1
-```
-
-Per-resource live eval:
-
-```bash
-python3 skills/ocean/scripts/tools/run_database_tool_adapter_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation \
-  --execute-live \
-  --retmax 1
 ```
 
 ## Evidence Boundary

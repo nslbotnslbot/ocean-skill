@@ -3,7 +3,7 @@
 [English version](README.md)
 
 这个目录包含 OCEAN 的可执行辅助脚本、source-packet adapter、生物信息学工具
-wrapper、公共数据库 adapter 和验证 runner。工具实现主要位于
+wrapper 和公共数据库 adapter。工具实现主要位于
 [`tools/`](tools/README.md)。
 
 ## 正确理解工具状态
@@ -29,7 +29,7 @@ source packet 用来记录 provenance 和局限，不能单独验证生物学、
 | 文献 source adapter | 1 | [`tools/literature/`](tools/literature/) |
 | ClinicalTrials.gov source adapter | 1 | [`tools/clinicaltrials/`](tools/clinicaltrials/) |
 | 共享执行与 packet helper | 10+ | [`tools/common/`](tools/common/README.md) |
-| 路由、生成和验证脚本 | 仓库工具 | 当前目录和 [`tools/`](tools/README.md) |
+| 路由和 wrapper 管理脚本 | 仓库工具 | 当前目录和 [`tools/`](tools/README.md) |
 
 ## 公共数据库 adapter
 
@@ -54,7 +54,7 @@ source packet 用来记录 provenance 和局限，不能单独验证生物学、
 
 每个 adapter 文件夹包含：
 
-- `tool.json`：scope、maturity 和 evidence boundary；
+- `tool.json`：scope 和 evidence boundary；
 - `api.json`：稳定的命令 contract；
 - `examples/query.example.json`：示例输入；
 - `scripts/query_packet.py`：dry-run 或受约束的 live entry point。
@@ -155,26 +155,35 @@ python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
   --output outputs/bioinformatics-workflows.json
 ```
 
+列出全部已覆盖工具，或按名称/类别搜索：
+
+```bash
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  list-tools \
+  --search alignment
+```
+
 检查一个工具的路由 profile：
 
 ```bash
 python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
   profile \
-  --skill-dir skills/ocean \
-  --tool last \
-  --output outputs/last-tool-profile.json
+  --tool last
 ```
 
-生成结构性 capability matrix：
+运行受约束的 availability check，或为重型工具生成不执行的计划：
 
 ```bash
-python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
-  --skill-dir skills/ocean \
-  --outdir validation
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check \
+  --tool last \
+  --output outputs/last-check.json
 ```
 
-这个 matrix 记录 wrapper coverage 和当前环境中观察到的 availability，不是
-生物学 benchmark，也不能证明全部工具已经运行。
+对于 CLI 和 package 工具，`check` 检查当前环境；对于重型工具，只创建
+plan，不启动任务。结果不能证明科学分析有效。
 
 ## OCEAN 应该怎样使用工具输出
 

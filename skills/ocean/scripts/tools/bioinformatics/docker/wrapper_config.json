@@ -16,8 +16,6 @@
     "docker",
     "--version"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "System/container-runtime installation route; verify platform permissions and security policy before use."
   ],

@@ -16,8 +16,6 @@
     "hmmsearch",
     "-h"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "Candidate conda/bioconda route; verify package/channel/version before use.",
     "Candidate profile/database route; verify HMM library provenance and date before use."

@@ -13,8 +13,6 @@
     "-e",
     "cat(as.character(utils::packageVersion('dada2')))"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "Candidate Bioconductor route through BiocManager; verify R/Bioconductor compatibility before use.",
     "Candidate container route; verify image source, tag, and package versions before use."

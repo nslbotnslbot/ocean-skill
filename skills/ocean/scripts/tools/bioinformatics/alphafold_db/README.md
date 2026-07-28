@@ -5,9 +5,7 @@ OCEAN source-packet adapter for AlphaFold DB predicted-structure evidence.
 ## Scope
 
 - Family: `structure_modeling`
-- Current maturity: `L2/L3 source-packet adapter`
 - Main script: `source_packet.py`
-- Eval script: `run_eval.py`
 
 ## What This Adapter Does
 
@@ -58,7 +56,7 @@ python3 scripts/create_source_packet.py \
 
 The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `AlphaFold DB`.
 
-## Science-skills-style usage guide
+## Tool usage guide
 
 See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
 

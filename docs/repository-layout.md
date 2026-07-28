@@ -1,28 +1,48 @@
 # Repository Layout
 
-OCEAN separates the installable skill from development evidence and public documentation.
+OCEAN keeps the public repository small enough to understand from the first
+screen.
 
-| Region | Ownership | Publish policy |
-|---|---|---|
-| `skills/ocean/` | Installable runtime skill, references, adapters, and bounded tool wrappers | Required for skill releases |
-| `validation/` | Cases, protocols, fixtures, scorecards, generated eval artifacts, and regression scripts | Public-safe development evidence only |
-| `docs/` | User-facing architecture, evaluation summaries, and case studies | No private research strategy or hidden answer keys |
-| `projects/` | Public-safe progress records for real OCEAN research projects | Verified milestones and explicit confidentiality boundaries only |
-| `examples/` | Small reusable examples | Source-traceable and redistribution-safe |
-| `assets/` | Logos and README media | Optimized public assets only |
-| `outputs/` | Local generated work | Ignored except `.gitkeep` |
-| `.github/` | CI and repository automation | Deterministic checks only |
+| Region | Purpose |
+|---|---|
+| `skills/ocean/` | Installable skill, runtime references, adapters, and bounded tool wrappers |
+| `docs/` | Public architecture and bilingual usage guides |
+| `projects/` | Concise, owner-approved public project milestones |
+| `tests/` | Small deterministic CI checks and non-sensitive fixtures |
+| `examples/` | Reusable source-safe examples |
+| `assets/` | Logos and README media |
+| `outputs/` | Ignored local reports, experiments, logs, scorecards, and generated packets |
+| `.github/` | Continuous integration |
 
-## Canonical instruction sources
+## Public boundary
 
-`skills/ocean/SKILL.md` is the runtime entrypoint. Files under `skills/ocean/references/` are the canonical module and contract instructions. `skills/ocean/manifest.yaml` is a human-readable inventory; Codex does not auto-load it.
+The repository should contain reusable product behavior, not internal working
+history.
 
-The `skills/ocean/static/` tree is retained temporarily for compatibility with existing structural checks. Do not add new behavior there. New or changed behavior belongs in `SKILL.md` and `references/` until the compatibility tree is removed in a separately tested cleanup.
+Keep out of GitHub:
 
-## Generated tool wrappers
+- raw model responses and provider-by-provider run logs;
+- generated evaluation artifacts and manual working notes;
+- local availability probes and generated tool artifacts;
+- private development and decision materials;
+- unpublished manuscript text, reviewer correspondence, and collaborator notes;
+- patient-level or controlled data;
+- API keys, local paths, credentials, and private environment files.
 
-The bioinformatics tool catalog contains many generated per-tool entrypoints. Shared behavior belongs in `skills/ocean/scripts/tools/common/`; per-tool files should contain configuration or a thin dispatcher only. Consolidating duplicate dispatchers is planned as a compatibility-sensitive follow-up, because existing public command paths must not disappear without migration aliases and tests.
+The installable behavior is defined by `skills/ocean/SKILL.md` and
+`skills/ocean/references/`. Generated work belongs in `outputs/`, which is
+ignored by Git.
 
-## Validation policy
+## Tests
 
-Keep historical validation records reproducible and append-only where practical. New generated result sets should live under a named subdirectory rather than expanding the validation root. Never commit secrets, local model configuration, private manuscripts, patient-level data, or licensed full text.
+`tests/` contains only the compact checks needed to keep the public package
+usable:
+
+- JSON and skill-package validation;
+- concise public project-record validation;
+- software evidence-boundary regressions;
+- bilingual tool-index coverage;
+- small routing and manuscript-channel fixtures.
+
+Passing these tests means the repository contract is intact. It does not prove
+scientific correctness, model superiority, or clinical validity.

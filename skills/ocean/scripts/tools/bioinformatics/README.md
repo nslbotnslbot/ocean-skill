@@ -1,187 +1,116 @@
-# Bioinformatics Tool Scaffolds
+# Bioinformatics Tool Wrappers
 
-This directory contains one folder per bioinformatics tool listed in OCEAN's bioinformatics resource map.
+[All OCEAN tools](../../README.md) |
+[中文工具总览](../../README.zh-CN.md)
 
-These folders are scaffolds, not claims that the tools are installed or executable in OCEAN. Use `../common/software_source_packet.py` for generic source-packet creation until a tool has a dedicated wrapper.
+This directory contains 115 tool-specific folders covering common
+bioinformatics, computational biology, omics, imaging, and workflow tasks.
 
-Each tool folder includes `examples/run-record.example.json`, a template for recording inspected tool runs before they are converted into OCEAN evidence packets.
+The complete grouped list is in the parent [tool index](../../README.md).
 
-Each tool folder also includes `api.json`, `wrapper_config.json`, `scripts/create_source_packet.py`, and `scripts/probe_or_plan.py`. These define a stable local wrapper contract for bounded availability/plan probes and for turning inspected run metadata into source packets; they do not install or execute biological analyses.
+## Per-tool contract
 
-Lightweight CLI tool folders additionally include `scripts/run_cli.py`, which can run a bounded local availability probe or record an explicit user-supplied command invocation as provenance. It does not choose inputs, download references, or validate biological conclusions.
+Each tool folder contains:
 
-Python/R package tool folders additionally include `scripts/run_package.py`, which can run a bounded package availability/version probe or record an explicit user-supplied Python/R script invocation as provenance. It does not install packages, choose inputs, design the analysis, or validate biological conclusions.
+- `tool.json`: scientific family and evidence boundary;
+- `api.json`: stable command descriptions;
+- `wrapper_config.json`: execution-layer routing;
+- `examples/run-record.example.json`: provenance template;
+- `references/tool_usage.md`: use, avoid, stop, and handoff rules;
+- `scripts/create_source_packet.py`: convert an inspected run record;
+- `scripts/probe_or_plan.py`: bounded availability probe or execution plan;
+- an execution-layer runner when appropriate.
 
-Heavy, workflow-runtime, and source-packet-adapter tool folders additionally include `scripts/run_launcher.py`, which creates non-executing launch/source-packet plans and, for workflow runtimes, can probe local runtime availability. It does not launch GUI/GPU/HPC jobs, download references, run workflows, or validate biological conclusions.
+## Execution layers
 
-Each tool folder includes `references/tool_usage.md`, a science-skills-style operation guide with use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff guidance.
+| Layer | Behavior |
+|---|---|
+| `lightweight_cli` | Probe a local command or record explicit user-supplied arguments |
+| `python_package` | Probe a Python import or record an inspected Python script |
+| `r_bioconductor` | Probe an R package or record an inspected R script |
+| `heavy_launcher_plan` | Create a non-executing environment and evidence plan |
+| `workflow_runtime` | Probe a workflow runtime or record an explicit invocation |
+| `source_packet_adapter` | Inspect bounded source files and create a packet |
 
-Shared execution layers live in `../common/`:
+These wrappers do not install software, download databases, choose private
+inputs, design an analysis, or validate scientific conclusions.
 
-- `cli_subprocess_wrapper.py` for lightweight local CLI tools such as FastQC, MultiQC, cutadapt, fastp, samtools, bcftools, bedtools, BLAST, MAFFT, HMMER, and minimap2.
-- `rscript_wrapper.py` for R/Bioconductor tools such as DESeq2, limma, edgeR, Seurat, WGCNA, and DADA2.
-- `heavy_tool_launcher.py` for non-executing launcher plans for tools such as Cell Ranger, GATK, AlphaFold, MaxQuant, Galaxy, 3D Slicer, and ChimeraX.
+## One entry point
 
-Tool folders: 115
-
-## Capability matrix
-
-Use the cross-tool capability matrix to summarize which folders are only scaffolds, which have source-packet adapters, and which tools are actually available in the current local environment:
-
-```bash
-python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-The matrix is a planning artifact. It must not be treated as biological validation, benchmark evidence, or proof that unavailable tools can run locally.
-
-## Wrapper readiness plans
-
-Once a capability matrix exists, build the next implementation plan for high-priority tools:
-
-```bash
-python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-To generate bounded readiness plans for all 115 tool folders:
+From the repository root, use the router instead of browsing 115 folders:
 
 ```bash
-python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_readiness_plan.py \
-  --skill-dir skills/ocean \
-  --outdir validation \
-  --scope all \
-  --prefix bioinformatics-wrapper-readiness-all-r1
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools --search rna
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py profile --tool deseq2
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-workflows
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  workflow \
+  --workflow rna-seq-differential-expression \
+  --output outputs/rna-seq-plan.json
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check \
+  --tool deseq2 \
+  --output outputs/deseq2-check.json
 ```
 
-This produces per-tool readiness plans for practical wrapper work. Each plan records the intended execution layer, a bounded smoke probe, candidate install/container notes, required run evidence, and stop conditions. These plans do not install software or validate biological conclusions.
+`check` records current availability for CLI/package/workflow tools and creates
+a non-executing plan for heavy tools. It never installs software or processes a
+private dataset automatically.
 
-## Implementation backlog
+## Probe a tool
 
-After generating the all-tool readiness plans, build and validate the wrapper backlog:
-
-```bash
-python3 skills/ocean/scripts/tools/build_bioinformatics_wrapper_backlog.py \
-  --outdir validation
-
-python3 skills/ocean/scripts/tools/run_bioinformatics_wrapper_backlog_eval.py \
-  --outdir validation
-```
-
-The backlog orders engineering work by current evidence and execution layer. It is useful for deciding which wrappers to implement next, but it is not installation, local execution, benchmarking, or biological validation.
-
-## Per-tool probe/plan wrappers
-
-Every tool folder has a generated `scripts/probe_or_plan.py` entrypoint backed by `wrapper_config.json`:
+From a tool folder:
 
 ```bash
 python3 scripts/probe_or_plan.py \
-  --output /path/to/<tool>-probe-or-plan.json
+  --output outputs/tool-probe-or-plan.json
 ```
 
-From the repository root, regenerate and evaluate the full set with:
-
-```bash
-python3 skills/ocean/scripts/tools/generate_bioinformatics_probe_wrappers.py \
-  --skill-dir skills/ocean
-
-python3 skills/ocean/scripts/tools/run_bioinformatics_per_tool_wrapper_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-The wrapper records local availability/import/version evidence where safe, or creates a launcher/source-packet plan for heavy, GUI, license, GPU, workflow, or adapter-style tools. It is not a claim that the tool is installed, a workflow ran, or a biological conclusion is valid.
-
-## Lightweight CLI runners
-
-For lightweight CLI tools, use the generated per-tool runner:
+For a lightweight CLI:
 
 ```bash
 python3 scripts/run_cli.py probe \
-  --output /path/to/<tool>-cli-probe.json
+  --output outputs/tool-cli-probe.json
 ```
 
-For an explicit local command run, provide inspected arguments:
-
-```bash
-python3 scripts/run_cli.py run \
-  --args-json '["<user-supplied arguments>"]' \
-  --output /path/to/<tool>-cli-run-record.json \
-  --packet-output /path/to/<tool>-cli-run-source-packet.json
-```
-
-From the repository root, regenerate and evaluate the full lightweight CLI set with:
-
-```bash
-python3 skills/ocean/scripts/tools/generate_bioinformatics_cli_runners.py \
-  --skill-dir skills/ocean
-
-python3 skills/ocean/scripts/tools/run_bioinformatics_cli_runner_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-The CLI runner eval checks entrypoint behavior and evidence-boundary recording. It is not a biological workflow test, and an unavailable command is recorded as an environment boundary rather than a scientific failure.
-
-## Python/R package runners
-
-For Python-package and R/Bioconductor tools, use the generated per-tool runner:
+For a Python or R package:
 
 ```bash
 python3 scripts/run_package.py probe \
-  --output /path/to/<tool>-package-probe.json
+  --output outputs/tool-package-probe.json
 ```
 
-For an explicit inspected script run:
-
-```bash
-python3 scripts/run_package.py run-script \
-  --script /path/to/inspected_script.py \
-  --args-json '["<user-supplied arguments>"]' \
-  --output /path/to/<tool>-package-run-record.json \
-  --packet-output /path/to/<tool>-package-run-source-packet.json
-```
-
-From the repository root, regenerate and evaluate the full Python/R package set with:
-
-```bash
-python3 skills/ocean/scripts/tools/generate_bioinformatics_package_runners.py \
-  --skill-dir skills/ocean
-
-python3 skills/ocean/scripts/tools/run_bioinformatics_package_runner_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
-
-The package runner eval checks package/module availability and evidence-boundary recording. It is not a biological workflow test, script-quality review, differential-expression analysis, single-cell analysis, or clinical/biological claim validation.
-
-## Launcher and workflow runners
-
-For heavy, workflow-runtime, or source-packet-adapter tools, use the generated per-tool runner:
+For a heavy tool or workflow:
 
 ```bash
 python3 scripts/run_launcher.py plan \
-  --output /path/to/<tool>-launcher-plan.json
+  --output outputs/tool-launcher-plan.json
 ```
 
-For workflow runtimes, a bounded runtime availability probe is also available:
+The exact runner depends on `wrapper_config.json`. A missing runner usually
+means that execution layer is not appropriate for that tool.
 
-```bash
-python3 scripts/run_launcher.py probe-runtime \
-  --output /path/to/<tool>-runtime-probe.json
-```
+## Record an actual run
 
-From the repository root, regenerate and evaluate the full launcher/workflow set with:
+Only use a run command when inputs and arguments are explicitly supplied and
+approved. Preserve:
 
-```bash
-python3 skills/ocean/scripts/tools/generate_bioinformatics_launcher_runners.py \
-  --skill-dir skills/ocean
+- tool name and version;
+- exact command or script;
+- parameters;
+- input and output manifests;
+- reference database or index;
+- logs and QC;
+- environment and date;
+- return code and relevant stdout/stderr.
 
-python3 skills/ocean/scripts/tools/run_bioinformatics_launcher_runner_eval.py \
-  --skill-dir skills/ocean \
-  --outdir validation
-```
+Then create a source packet and route it through Reef for provenance, Iceberg
+for claim support, or Anchor for validation and reproducibility.
 
-Launcher plans are non-executing records. They are useful for heavy tools such as GATK, Cell Ranger, AlphaFold, MaxQuant, 3D Slicer, and Galaxy because those tools require verified environments, references, licenses, compute, logs, and data-safety boundaries before OCEAN can treat any output as source-packet evidence.
+## Safety
+
+A successful command does not establish mechanism, causality, clinical
+benefit, or publication readiness. Generated files belong in ignored
+`outputs/`; never commit private data, credentials, local paths, or raw
+execution logs.
