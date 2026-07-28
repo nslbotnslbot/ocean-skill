@@ -10,6 +10,7 @@ import re
 
 
 REQUIRED_REFERENCES = [
+    "usage-modes.md",
     "domain-lens.md",
     "data-tool-router.md",
     "module-artifact-contract.md",
@@ -62,6 +63,25 @@ MANUSCRIPT_REVISION_CONTRACTS = {
     "manifest_always_load": (
         "manifest.yaml",
         ["references/manuscript-revision-mode.md"],
+    ),
+}
+
+USER_MODE_CONTRACTS = {
+    "usage_modes_reference": (
+        "references/usage-modes.md",
+        ["Explore", "Design", "Audit", "Revise", "Track", "minimum necessary modules"],
+    ),
+    "skill_user_first_entrypoint": (
+        "SKILL.md",
+        ["references/usage-modes.md", "OCEAN Decision Card", "minimum necessary modules"],
+    ),
+    "decision_card_contract": (
+        "references/output-contract.md",
+        ["User-facing mode", "OCEAN Decision Card", "目前不能判断", "主要风险"],
+    ),
+    "manifest_canonical_reference": (
+        "manifest.yaml",
+        ["references/usage-modes.md"],
     ),
 }
 
@@ -140,6 +160,21 @@ def check_manuscript_revision_contract(skill_dir: Path) -> list[dict]:
     return rows
 
 
+def check_user_mode_contract(skill_dir: Path) -> list[dict]:
+    rows = []
+    for name, (relative_path, terms) in USER_MODE_CONTRACTS.items():
+        path = skill_dir / relative_path
+        text = read_text(path) if path.exists() else ""
+        missing = [term for term in terms if term.lower() not in text.lower()]
+        rows.append({
+            "check": "user_mode_contract",
+            "target": name,
+            "status": "pass" if path.exists() and not missing else "fail",
+            "missing_terms": missing,
+        })
+    return rows
+
+
 def check_case_routing(cases_path: Path) -> list[dict]:
     cases = json.loads(read_text(cases_path)).get("cases", [])
     rows = []
@@ -206,6 +241,7 @@ def main() -> int:
     rows.extend(check_required_references(args.skill_dir))
     rows.extend(check_artifact_contract(args.skill_dir))
     rows.extend(check_manuscript_revision_contract(args.skill_dir))
+    rows.extend(check_user_mode_contract(args.skill_dir))
     rows.extend(check_case_routing(args.cases))
 
     write_markdown(rows, args.out)

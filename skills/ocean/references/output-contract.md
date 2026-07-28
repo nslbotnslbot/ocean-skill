@@ -1,6 +1,6 @@
 # OCEAN Output Contract
 
-Use this contract to keep OCEAN responses consistent. The user may request a different format, but otherwise choose the Manuscript Revision contract or one of the three fixed audit depths below.
+Use this contract to keep OCEAN responses consistent. First choose the user-facing mode from `usage-modes.md`, then choose the smallest useful output depth. The user may request a different format.
 
 ## Input Intake
 
@@ -8,6 +8,7 @@ Before answering, classify the request and evidence state.
 
 | Field | Options / content |
 |---|---|
+| User-facing mode | Explore; Design; Audit; Revise; Track |
 | Request mode | manuscript revision; pre-submission stress test; reviewer response; full OCEAN workflow; research design workflow; Sounding evidence scan; Current trend scan; Reef resource provenance; Iceberg claim audit; Anchor validation plan; Compass research planning; Harbor decision memo; manuscript/project review; reviewer-risk review; journal positioning; collaboration/authorship boundary; anti-hallucination boundary check; idea extraction from reviews |
 | Lifecycle mode | Design / Audit; Manuscript Revision; Pre-submission Stress Test; Reviewer Response; not applicable |
 | Domain lens | medical AI / clinical prediction; biological AI / AI-for-biology; clinical research; molecular/cellular biology; omics/single-cell/spatial; drug/target/therapeutic hypothesis; KG/database/resource; manuscript/review/proposal; collaboration/authorship boundary; unknown |
@@ -18,7 +19,7 @@ Before answering, classify the request and evidence state.
 
 If key evidence is missing, proceed with a boundary-limited answer unless the user explicitly asks to wait. Do not invent missing details.
 
-For manuscript text or reviewer/editor feedback, use `references/manuscript-revision-mode.md` before choosing an audit depth. For domain-specific biomedical evidence standards, use `references/domain-lens.md`. For public data, official resources, registries, source classes, API planning, privacy, access, or licensing boundaries, use `references/data-tool-router.md`. For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets and `references/module-artifact-contract.md` to preserve stable artifacts. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
+Use `references/usage-modes.md` before selecting modules. For manuscript text or reviewer/editor feedback, use `references/manuscript-revision-mode.md` before choosing an audit depth. For domain-specific biomedical evidence standards, use `references/domain-lens.md`. For public data, official resources, registries, source classes, API planning, privacy, access, or licensing boundaries, use `references/data-tool-router.md`. For full OCEAN workflows or any answer spanning multiple modules, use `references/module-handoff.md` to preserve explicit handoff tickets and `references/module-artifact-contract.md` to preserve stable artifacts. For research design workflows, use `references/research-design-workflow.md` to preserve design gates and decision logic. For Reef work involving biological or clinical data-source selection, use `references/reef-biological-data-sources.md` after `references/reef.md`. For Reef work involving public APIs, official databases, or live resource adapters, use `references/reef-api-adapters.md` after `references/reef.md`.
 
 ## Manuscript Revision Mode
 
@@ -49,35 +50,34 @@ Use one primary label for each major claim:
 - **Cannot judge**: required source or data is missing.
 - **Needs source**: no traceable source was provided.
 
-## Quick Mode
+## Quick Mode: OCEAN Decision Card
 
-Use for narrow questions or when the user asks for a short answer.
+Use by default for ordinary first-turn questions, journal-club explanations, narrow evidence questions, early ideas, and when the user asks for a short answer. Do not show module names, scores, journal tiers, or large matrices unless requested.
 
 ```markdown
-一、OCEAN结论
-- Verdict:
-- Confidence:
-- One-line reason:
+## 结论
+<direct answer in one short paragraph>
 
-二、证据边界
-- 已检查:
-- 未检查:
-- 不能判断:
-- 需要补充:
+## 依据
+- <the strongest inspected evidence>
+- <the reasoning that links it to the conclusion>
 
-三、最关键的claim处理
-| Claim | Verdict | Why | Safe rewrite / next step |
-|---|---|---|---|
+## 目前不能判断
+- <missing, uninspected, contradictory, or non-traceable evidence>
 
-四、下一步
-1.
-2.
-3.
+## 主要风险
+- <the single most important overclaim, design, interpretation, or execution risk>
+
+## 下一步
+1. <the highest-value next action>
+2. <optional second action>
 ```
+
+For a learning or journal-club request, replace technical audit language with a clear explanation while keeping the same evidence boundary. For a Track request, use `Status / Progress / Next / Public Boundary`. For Revise, use the Manuscript Revision contract instead.
 
 ## Standard Mode
 
-Use by default for project audit, manuscript audit, claim-audit, collaboration, and journal-positioning requests. Do not use it for ordinary finished-text revision. Keep the headings in this order. If a section is not relevant, write "不适用" with a short reason rather than deleting the section.
+Use for explicit multi-claim project or manuscript audits, research plans, collaboration analysis, and journal-positioning requests. Do not use it merely because OCEAN has seven modules, and do not use it for ordinary finished-text revision. Keep the headings in this order. If a section is not relevant, write "不适用" with a short reason rather than deleting the section.
 
 ```markdown
 一、OCEAN审计卡
