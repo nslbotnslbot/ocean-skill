@@ -12,8 +12,6 @@
     "alphafold db",
     "--version"
   ],
-  "readiness_stage": "stage_2_local_smoke_executed",
-  "local_smoke_status": "executed",
   "candidate_install_routes": [
     "Candidate official installation route for AlphaFold DB; verify current documentation, version, license, and platform requirements before use.",
     "Candidate conda/bioconda/container route for AlphaFold DB; verify package/channel/image source, tag, and license before use."

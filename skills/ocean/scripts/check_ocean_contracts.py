@@ -52,10 +52,6 @@ MANUSCRIPT_REVISION_CONTRACTS = {
         "references/output-contract.md",
         ["Manuscript Revision Mode", "修改说明（不进入正文）"],
     ),
-    "routing_protocol": (
-        "static/core/routing-protocol.md",
-        ["Manuscript lifecycle gate", "standard seven-module chain"],
-    ),
     "iceberg_isolation": (
         "references/iceberg.md",
         ["claim audit internal", "paste-ready paragraph"],
@@ -228,7 +224,7 @@ def main() -> int:
     parser.add_argument(
         "--cases",
         type=Path,
-        default=repo_root / "validation" / "domain-router-big-experiment-r1-cases.json",
+        default=repo_root / "tests" / "fixtures" / "domain-router-cases.json",
     )
     parser.add_argument(
         "--out",

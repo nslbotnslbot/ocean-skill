@@ -1,16 +1,15 @@
 # WGCNA
 
-OCEAN tool scaffold for `WGCNA`.
+OCEAN wrapper contract for `WGCNA`.
 
 ## Scope
 
 - Family: `multi_omics_integration`
-- Current maturity: `L0/L1 scaffold`
 - Shared helper: `../../common/software_source_packet.py`
 
 ## Evidence Boundary
 
-This folder does not mean OCEAN can run `WGCNA` automatically. It defines where tool-specific wrapper code, examples, and source-packet tests should live.
+This folder defines bounded wrapper code, examples, and source-packet rules for `WGCNA`. Local availability must be checked before use.
 
 Before `WGCNA` output can be used as evidence, provide:
 
@@ -43,7 +42,7 @@ python3 scripts/create_source_packet.py \
 
 The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `WGCNA`.
 
-## Science-skills-style usage guide
+## Tool usage guide
 
 See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
 

@@ -3,7 +3,7 @@
 [中文工具说明](README.zh-CN.md)
 
 This directory contains OCEAN's executable helpers, source-packet adapters,
-bioinformatics tool wrappers, public database adapters, and validation runners.
+bioinformatics tool wrappers, and public database adapters.
 The tool implementation lives under [`tools/`](tools/README.md).
 
 ## Read the status correctly
@@ -29,7 +29,7 @@ itself validate a biological, causal, mechanistic, or clinical claim.
 | Literature source adapter | 1 | [`tools/literature/`](tools/literature/) |
 | ClinicalTrials.gov source adapter | 1 | [`tools/clinicaltrials/`](tools/clinicaltrials/) |
 | Shared execution and packet helpers | 10+ | [`tools/common/`](tools/common/README.md) |
-| Routing, generation, and validation scripts | repository utilities | this directory and [`tools/`](tools/README.md) |
+| Routing and wrapper-management scripts | repository utilities | this directory and [`tools/`](tools/README.md) |
 
 ## Public database adapters
 
@@ -54,7 +54,7 @@ network execution is explicitly enabled.
 
 Every adapter folder contains:
 
-- `tool.json`: scope, maturity, and evidence boundary;
+- `tool.json`: scope and evidence boundary;
 - `api.json`: stable command contract;
 - `examples/query.example.json`: example input;
 - `scripts/query_packet.py`: dry-run or bounded live entry point.
@@ -156,26 +156,36 @@ python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
   --output outputs/bioinformatics-workflows.json
 ```
 
+List all covered tools, or search by name/family:
+
+```bash
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  list-tools \
+  --search alignment
+```
+
 Inspect one tool's routing profile:
 
 ```bash
 python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
   profile \
-  --skill-dir skills/ocean \
-  --tool last \
-  --output outputs/last-tool-profile.json
+  --tool last
 ```
 
-Build the structural capability matrix:
+Run a bounded availability check or create a non-executing plan:
 
 ```bash
-python3 skills/ocean/scripts/tools/build_bioinformatics_capability_matrix.py \
-  --skill-dir skills/ocean \
-  --outdir validation
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check \
+  --tool last \
+  --output outputs/last-check.json
 ```
 
-This matrix reports wrapper coverage and observed local availability. It is not
-a biological benchmark or proof that all tools ran.
+For CLI and package tools, `check` probes the current environment. For heavy
+tools it creates a plan without launching a job. The result never proves that a
+scientific analysis was valid.
 
 ## How OCEAN should use tool output
 

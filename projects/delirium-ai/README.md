@@ -14,14 +14,13 @@ OCEAN supported model-risk review, evidence calibration, cross-database validati
 ## Status
 
 - **Current stage:** medRxiv screening
-- **OCEAN use:** Post-submission monitoring
+- **OCEAN use:** Evidence review, manuscript support, and status tracking
 - **Updated:** 2026-07-21
 - **Submission status:** Submitted to medRxiv; awaiting platform approval
 
 ## Progress
 
-- Early model review identified and corrected risks involving unknown-label handling, patient-sequence construction, threshold evaluation, and reproducibility.
-- Cross-database transportability, calibration, frozen-policy workload, manuscript, supplement, and public-release materials were audited and prepared.
+- Cross-database validation and manuscript evidence boundaries were organized.
 - 2026-07-19: The manuscript was submitted to medRxiv and is awaiting platform screening.
 
 ## Next

@@ -14,6 +14,7 @@ Each page answers four questions:
 3. What happens next?
 4. What must remain private or unconfirmed?
 
-Detailed audits belong in `docs/` or `validation/`, not in project progress pages.
+Detailed audits, raw analyses, and private working notes remain local and are
+not published in this repository.
 
 New records can start from [`PROJECT_TEMPLATE.md`](PROJECT_TEMPLATE.md). Only owner-approved public-safe records may be added here; unclear or private records belong in ignored local `outputs/project-records/`.

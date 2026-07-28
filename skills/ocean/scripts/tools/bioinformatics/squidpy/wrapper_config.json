@@ -13,8 +13,6 @@
     "-c",
     "import squidpy; print(getattr(squidpy, '__version__', 'version_not_exposed'))"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "Candidate official installation route for Squidpy; verify current documentation, version, license, and platform requirements before use.",
     "Candidate Python/conda/pip route for Squidpy; verify package name, dependency versions, and import path before use."

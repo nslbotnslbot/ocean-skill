@@ -3,7 +3,6 @@
   "tool_name": "nnU-Net",
   "tool_slug": "nnu_net",
   "tool_family": "imaging_signal_ml",
-  "maturity": "L0/L1 scaffold",
   "interface_type": "provenance_to_source_packet",
   "python_wrapper": "scripts/create_source_packet.py",
   "example_input": "examples/run-record.example.json",
@@ -63,14 +62,15 @@
     "handoff": "Anchor"
   },
   "evidence_boundary": {
-    "does_not_run_external_tool": true,
     "cannot_support_alone": [
       "biological mechanism",
       "causal conclusion",
       "clinical utility",
       "publication readiness",
       "reproducibility without rerun/log/environment checks"
-    ]
+    ],
+    "source_packet_wrapper_does_not_run_external_tool": true,
+    "external_execution_requires_explicit_run_command": true
   },
   "usage_reference": "references/tool_usage.md",
   "execution_contract": {

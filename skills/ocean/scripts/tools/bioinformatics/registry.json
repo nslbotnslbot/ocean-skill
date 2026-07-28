@@ -3,7 +3,6 @@
     "name": "Alevin-fry",
     "slug": "alevin_fry",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -31,7 +30,6 @@
     "name": "AlphaFold",
     "slug": "alphafold",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -59,10 +57,8 @@
     "name": "AlphaFold DB",
     "slug": "alphafold_db",
     "family": "structure_modeling",
-    "maturity": "L2/L3 source-packet adapter",
     "shared_helper": "../../common/software_source_packet.py",
     "main_script": "source_packet.py",
-    "eval_script": "run_eval.py",
     "evidence_level": "predicted-structure database evidence after local AFDB-style files are inspected",
     "required_packet_fields": [
       "UniProt accession",
@@ -87,7 +83,6 @@
     "name": "Azimuth",
     "slug": "azimuth",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -115,7 +110,6 @@
     "name": "Bakta",
     "slug": "bakta",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -143,7 +137,6 @@
     "name": "bcftools",
     "slug": "bcftools",
     "family": "alignment_file_operations",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -171,7 +164,6 @@
     "name": "BEDTools",
     "slug": "bedtools",
     "family": "alignment_file_operations",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -199,7 +191,6 @@
     "name": "BLAST",
     "slug": "blast",
     "family": "sequence_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -227,7 +218,6 @@
     "name": "Bowtie2",
     "slug": "bowtie2",
     "family": "sequence_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -255,7 +245,6 @@
     "name": "Bracken",
     "slug": "bracken",
     "family": "microbiome_metagenomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -283,7 +272,6 @@
     "name": "BUSCO",
     "slug": "busco",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -311,7 +299,6 @@
     "name": "BWA",
     "slug": "bwa",
     "family": "sequence_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -339,7 +326,6 @@
     "name": "Canu",
     "slug": "canu",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -367,7 +353,6 @@
     "name": "cell2location",
     "slug": "cell2location",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -395,7 +380,6 @@
     "name": "Cell Ranger",
     "slug": "cell_ranger",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -423,7 +407,6 @@
     "name": "CellTypist",
     "slug": "celltypist",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -451,7 +434,6 @@
     "name": "CheckM",
     "slug": "checkm",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -479,7 +461,6 @@
     "name": "ChimeraX",
     "slug": "chimerax",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -507,7 +488,6 @@
     "name": "Clustal Omega",
     "slug": "clustal_omega",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -535,7 +515,6 @@
     "name": "ColabFold",
     "slug": "colabfold",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -563,7 +542,6 @@
     "name": "Conda",
     "slug": "conda",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -591,7 +569,6 @@
     "name": "cutadapt",
     "slug": "cutadapt",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -619,7 +596,6 @@
     "name": "CWL",
     "slug": "cwl",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -647,7 +623,6 @@
     "name": "DADA2",
     "slug": "dada2",
     "family": "microbiome_metagenomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -675,7 +650,6 @@
     "name": "deepTools",
     "slug": "deeptools",
     "family": "epigenomics_peak_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -703,7 +677,6 @@
     "name": "DeepVariant",
     "slug": "deepvariant",
     "family": "variant_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -731,7 +704,6 @@
     "name": "DESeq2",
     "slug": "deseq2",
     "family": "differential_expression",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -759,7 +731,6 @@
     "name": "DIA-NN",
     "slug": "dia_nn",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -787,7 +758,6 @@
     "name": "DIABLO",
     "slug": "diablo",
     "family": "multi_omics_integration",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -815,7 +785,6 @@
     "name": "Docker",
     "slug": "docker",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -843,7 +812,6 @@
     "name": "edgeR",
     "slug": "edger",
     "family": "differential_expression",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -871,7 +839,6 @@
     "name": "eggNOG-mapper",
     "slug": "eggnog_mapper",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -899,7 +866,6 @@
     "name": "fastp",
     "slug": "fastp",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -927,7 +893,6 @@
     "name": "FastQC",
     "slug": "fastqc",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -955,7 +920,6 @@
     "name": "FastTree",
     "slug": "fasttree",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -983,7 +947,6 @@
     "name": "featureCounts",
     "slug": "featurecounts",
     "family": "rna_seq_quantification",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1011,7 +974,6 @@
     "name": "FIMO",
     "slug": "fimo",
     "family": "epigenomics_peak_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1039,7 +1001,6 @@
     "name": "Flye",
     "slug": "flye",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1067,7 +1028,6 @@
     "name": "FragPipe",
     "slug": "fragpipe",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1095,7 +1055,6 @@
     "name": "FreeBayes",
     "slug": "freebayes",
     "family": "variant_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1123,7 +1082,6 @@
     "name": "Galaxy",
     "slug": "galaxy",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1151,7 +1109,6 @@
     "name": "GATK",
     "slug": "gatk",
     "family": "variant_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1179,7 +1136,6 @@
     "name": "Giotto",
     "slug": "giotto",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1207,7 +1163,6 @@
     "name": "HH-suite",
     "slug": "hh_suite",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1235,7 +1190,6 @@
     "name": "HISAT2",
     "slug": "hisat2",
     "family": "spliced_rna_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1263,7 +1217,6 @@
     "name": "HMMER",
     "slug": "hmmer",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1291,7 +1244,6 @@
     "name": "HOMER",
     "slug": "homer",
     "family": "epigenomics_peak_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1319,7 +1271,6 @@
     "name": "HTSlib",
     "slug": "htslib",
     "family": "alignment_file_operations",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1347,7 +1298,6 @@
     "name": "HUMAnN",
     "slug": "humann",
     "family": "microbiome_metagenomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1375,7 +1325,6 @@
     "name": "InterProScan",
     "slug": "interproscan",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1403,7 +1352,6 @@
     "name": "IQ-TREE",
     "slug": "iq_tree",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1431,7 +1379,6 @@
     "name": "ITK-SNAP",
     "slug": "itk_snap",
     "family": "imaging_signal_ml",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1459,7 +1406,6 @@
     "name": "kallisto",
     "slug": "kallisto",
     "family": "rna_seq_quantification",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1487,7 +1433,6 @@
     "name": "Kraken2",
     "slug": "kraken2",
     "family": "microbiome_metagenomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1515,7 +1460,6 @@
     "name": "LAST",
     "slug": "last",
     "family": "sequence_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1543,7 +1487,6 @@
     "name": "limma-voom",
     "slug": "limma_voom",
     "family": "differential_expression",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1571,7 +1514,6 @@
     "name": "MACS2",
     "slug": "macs2",
     "family": "epigenomics_peak_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1599,7 +1541,6 @@
     "name": "MACS3",
     "slug": "macs3",
     "family": "epigenomics_peak_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1627,7 +1568,6 @@
     "name": "MAFFT",
     "slug": "mafft",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1655,7 +1595,6 @@
     "name": "MaxQuant",
     "slug": "maxquant",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1683,7 +1622,6 @@
     "name": "MEGAHIT",
     "slug": "megahit",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1711,7 +1649,6 @@
     "name": "MEME",
     "slug": "meme",
     "family": "epigenomics_peak_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1739,7 +1676,6 @@
     "name": "MetaPhlAn",
     "slug": "metaphlan",
     "family": "microbiome_metagenomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1767,7 +1703,6 @@
     "name": "minimap2",
     "slug": "minimap2",
     "family": "sequence_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1795,7 +1730,6 @@
     "name": "mixOmics",
     "slug": "mixomics",
     "family": "multi_omics_integration",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1823,7 +1757,6 @@
     "name": "MODELLER",
     "slug": "modeller",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1851,7 +1784,6 @@
     "name": "MOFA",
     "slug": "mofa",
     "family": "multi_omics_integration",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1879,7 +1811,6 @@
     "name": "MOFA+",
     "slug": "mofaplus",
     "family": "multi_omics_integration",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1907,7 +1838,6 @@
     "name": "MONAI",
     "slug": "monai",
     "family": "imaging_signal_ml",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1935,7 +1865,6 @@
     "name": "MS-DIAL",
     "slug": "ms_dial",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1963,7 +1892,6 @@
     "name": "MultiQC",
     "slug": "multiqc",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -1991,7 +1919,6 @@
     "name": "MUSCLE",
     "slug": "muscle",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2019,7 +1946,6 @@
     "name": "Mutect2",
     "slug": "mutect2",
     "family": "variant_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2047,7 +1973,6 @@
     "name": "MZmine",
     "slug": "mzmine",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2075,7 +2000,6 @@
     "name": "Nextflow",
     "slug": "nextflow",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2103,7 +2027,6 @@
     "name": "nf-core",
     "slug": "nf_core",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2131,7 +2054,6 @@
     "name": "nnU-Net",
     "slug": "nnu_net",
     "family": "imaging_signal_ml",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2159,7 +2081,6 @@
     "name": "OrthoFinder",
     "slug": "orthofinder",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2187,7 +2108,6 @@
     "name": "Picard",
     "slug": "picard",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2215,7 +2135,6 @@
     "name": "Prokka",
     "slug": "prokka",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2243,7 +2162,6 @@
     "name": "PyMOL",
     "slug": "pymol",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2271,7 +2189,6 @@
     "name": "QIIME2",
     "slug": "qiime2",
     "family": "microbiome_metagenomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2299,7 +2216,6 @@
     "name": "Qualimap",
     "slug": "qualimap",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2327,7 +2243,6 @@
     "name": "QUAST",
     "slug": "quast",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2355,7 +2270,6 @@
     "name": "Raven",
     "slug": "raven",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2383,7 +2297,6 @@
     "name": "RAxML",
     "slug": "raxml",
     "family": "phylogenetics_comparative_genomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2411,7 +2324,6 @@
     "name": "RoseTTAFold",
     "slug": "rosettafold",
     "family": "structure_modeling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2439,7 +2351,6 @@
     "name": "RSEM",
     "slug": "rsem",
     "family": "rna_seq_quantification",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2467,7 +2378,6 @@
     "name": "Salmon",
     "slug": "salmon",
     "family": "rna_seq_quantification",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2495,7 +2405,6 @@
     "name": "SAMtools",
     "slug": "samtools",
     "family": "alignment_file_operations",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2523,7 +2432,6 @@
     "name": "Scanpy",
     "slug": "scanpy",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2551,7 +2459,6 @@
     "name": "scVI",
     "slug": "scvi",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2579,7 +2486,6 @@
     "name": "Seurat",
     "slug": "seurat",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2607,7 +2513,6 @@
     "name": "SimpleITK",
     "slug": "simpleitk",
     "family": "imaging_signal_ml",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2635,7 +2540,6 @@
     "name": "Singularity-Apptainer",
     "slug": "singularity_apptainer",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2663,7 +2567,6 @@
     "name": "Skyline",
     "slug": "skyline",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2691,7 +2594,6 @@
     "name": "sleuth",
     "slug": "sleuth",
     "family": "differential_expression",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2719,7 +2621,6 @@
     "name": "Snakemake",
     "slug": "snakemake",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2747,7 +2648,6 @@
     "name": "Space Ranger",
     "slug": "space_ranger",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2775,7 +2675,6 @@
     "name": "SPAdes",
     "slug": "spades",
     "family": "genome_assembly_annotation",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2803,7 +2702,6 @@
     "name": "Squidpy",
     "slug": "squidpy",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2831,7 +2729,6 @@
     "name": "STAR",
     "slug": "star",
     "family": "spliced_rna_alignment",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2859,7 +2756,6 @@
     "name": "STARsolo",
     "slug": "starsolo",
     "family": "single_cell_analysis",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2887,7 +2783,6 @@
     "name": "Stereoscope",
     "slug": "stereoscope",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2915,7 +2810,6 @@
     "name": "stLearn",
     "slug": "stlearn",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2943,7 +2837,6 @@
     "name": "Strelka2",
     "slug": "strelka2",
     "family": "variant_calling",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2971,7 +2864,6 @@
     "name": "StringTie",
     "slug": "stringtie",
     "family": "rna_seq_quantification",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -2999,7 +2891,6 @@
     "name": "Tangram",
     "slug": "tangram",
     "family": "spatial_transcriptomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3027,7 +2918,6 @@
     "name": "3D Slicer",
     "slug": "three_d_slicer",
     "family": "imaging_signal_ml",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3055,7 +2945,6 @@
     "name": "TorchIO",
     "slug": "torchio",
     "family": "imaging_signal_ml",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3083,7 +2972,6 @@
     "name": "Trim Galore",
     "slug": "trim_galore",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3111,7 +2999,6 @@
     "name": "Trimmomatic",
     "slug": "trimmomatic",
     "family": "qc_preprocessing",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3139,7 +3026,6 @@
     "name": "WDL-Cromwell",
     "slug": "wdl_cromwell",
     "family": "workflow_reproducibility",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3167,7 +3053,6 @@
     "name": "WGCNA",
     "slug": "wgcna",
     "family": "multi_omics_integration",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [
@@ -3195,7 +3080,6 @@
     "name": "XCMS",
     "slug": "xcms",
     "family": "proteomics_metabolomics",
-    "maturity": "L0/L1 scaffold",
     "shared_helper": "../../common/software_source_packet.py",
     "evidence_level": "candidate software route until run metadata is inspected",
     "required_packet_fields": [

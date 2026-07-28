@@ -16,8 +16,6 @@
     "multiqc",
     "--version"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "Candidate Python/conda route; verify current package and version before use.",
     "Candidate container route; verify image source, tag, and license before use."

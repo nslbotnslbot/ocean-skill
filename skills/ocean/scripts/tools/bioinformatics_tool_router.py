@@ -8,153 +8,12 @@ import datetime as dt
 import json
 from pathlib import Path
 import shlex
+import subprocess
 import sys
 from typing import Any
 
 
-CLI_ENTRYPOINTS = {
-    "alevin_fry": ["alevin-fry"],
-    "bakta": ["bakta"],
-    "bcftools": ["bcftools"],
-    "bedtools": ["bedtools"],
-    "blast": ["blastp", "blastn", "blastx"],
-    "bowtie2": ["bowtie2"],
-    "bracken": ["bracken"],
-    "busco": ["busco"],
-    "bwa": ["bwa"],
-    "canu": ["canu"],
-    "checkm": ["checkm"],
-    "clustal_omega": ["clustalo"],
-    "cutadapt": ["cutadapt"],
-    "deeptools": ["bamCoverage", "plotHeatmap"],
-    "dia_nn": ["diann"],
-    "eggnog_mapper": ["emapper.py", "emapper"],
-    "fastp": ["fastp"],
-    "fastqc": ["fastqc"],
-    "fasttree": ["FastTree", "fasttree"],
-    "featurecounts": ["featureCounts"],
-    "fimo": ["fimo"],
-    "flye": ["flye"],
-    "freebayes": ["freebayes"],
-    "hh_suite": ["hhsearch", "hhblits", "hhmake"],
-    "hisat2": ["hisat2"],
-    "hmmer": ["hmmsearch", "hmmscan", "hmmbuild"],
-    "homer": ["findMotifsGenome.pl", "homer"],
-    "htslib": ["bgzip", "tabix"],
-    "humann": ["humann"],
-    "interproscan": ["interproscan.sh", "interproscan"],
-    "iq_tree": ["iqtree2", "iqtree"],
-    "kallisto": ["kallisto"],
-    "kraken2": ["kraken2"],
-    "last": ["lastal", "lastdb"],
-    "macs2": ["macs2"],
-    "macs3": ["macs3"],
-    "mafft": ["mafft"],
-    "megahit": ["megahit"],
-    "meme": ["meme"],
-    "metaphlan": ["metaphlan"],
-    "minimap2": ["minimap2"],
-    "multiqc": ["multiqc"],
-    "muscle": ["muscle"],
-    "orthofinder": ["orthofinder"],
-    "picard": ["picard"],
-    "prokka": ["prokka"],
-    "qiime2": ["qiime"],
-    "qualimap": ["qualimap"],
-    "quast": ["quast.py", "quast"],
-    "raven": ["raven"],
-    "raxml": ["raxml-ng", "raxmlHPC"],
-    "rsem": ["rsem-calculate-expression"],
-    "salmon": ["salmon"],
-    "samtools": ["samtools"],
-    "spades": ["spades.py", "spades"],
-    "star": ["STAR"],
-    "starsolo": ["STAR"],
-    "strelka2": ["configureStrelkaGermlineWorkflow.py", "configureStrelkaSomaticWorkflow.py"],
-    "stringtie": ["stringtie"],
-    "trim_galore": ["trim_galore"],
-    "trimmomatic": ["trimmomatic"],
-}
-
-CLI_PROBE_ARGS = {
-    "blast": "-version",
-    "hmmmer": "-h",
-    "hmmer": "-h",
-    "last": "-h",
-    "quast": "--version",
-    "spades": "--version",
-    "strelka2": "--help",
-}
-
-R_PACKAGES = {
-    "azimuth": ["Azimuth"],
-    "dada2": ["dada2"],
-    "deseq2": ["DESeq2"],
-    "edger": ["edgeR"],
-    "limma_voom": ["limma"],
-    "mixomics": ["mixOmics"],
-    "seurat": ["Seurat"],
-    "sleuth": ["sleuth"],
-    "wgcna": ["WGCNA"],
-    "xcms": ["xcms"],
-}
-
-PYTHON_PACKAGES = {
-    "cell2location": ["cell2location"],
-    "celltypist": ["celltypist"],
-    "deeptools": ["deeptools"],
-    "diablo": ["mixomics"],
-    "giotto": ["giotto"],
-    "monai": ["monai"],
-    "mofa": ["mofapy2"],
-    "mofaplus": ["mofapy2"],
-    "scanpy": ["scanpy"],
-    "scvi": ["scvi"],
-    "simpleitk": ["SimpleITK"],
-    "squidpy": ["squidpy"],
-    "stereoscope": ["stereoscope"],
-    "stlearn": ["stlearn"],
-    "tangram": ["tangram"],
-    "torchio": ["torchio"],
-}
-
-HEAVY_TOOLS = {
-    "alphafold",
-    "cell_ranger",
-    "chimerax",
-    "colabfold",
-    "deepvariant",
-    "fragpipe",
-    "galaxy",
-    "gatk",
-    "itk_snap",
-    "maxquant",
-    "modeller",
-    "ms_dial",
-    "mutect2",
-    "mzmine",
-    "nnu_net",
-    "pymol",
-    "rosettafold",
-    "skyline",
-    "space_ranger",
-    "three_d_slicer",
-}
-
-WORKFLOW_TOOLS = {
-    "conda": ["conda"],
-    "cwl": ["cwltool"],
-    "docker": ["docker"],
-    "nextflow": ["nextflow"],
-    "nf_core": ["nf-core"],
-    "singularity_apptainer": ["apptainer", "singularity"],
-    "snakemake": ["snakemake"],
-    "wdl_cromwell": ["cromwell"],
-}
-
-SOURCE_PACKET_ADAPTERS = {
-    "alphafold_db": "scripts/tools/bioinformatics/alphafold_db/source_packet.py",
-}
+DEFAULT_SKILL_DIR = Path(__file__).resolve().parents[2]
 
 WORKFLOWS = {
     "fastq-qc": {
@@ -257,6 +116,17 @@ def registry_path(skill_dir: Path) -> Path:
     return skill_dir / "scripts" / "tools" / "bioinformatics" / "registry.json"
 
 
+def tool_dir(skill_dir: Path, slug: str) -> Path:
+    return skill_dir / "scripts" / "tools" / "bioinformatics" / slug
+
+
+def load_wrapper_config(skill_dir: Path, slug: str) -> dict[str, Any]:
+    path = tool_dir(skill_dir, slug) / "wrapper_config.json"
+    if not path.exists():
+        raise SystemExit(f"Missing wrapper config for '{slug}': {path}")
+    return read_json(path)
+
+
 def load_registry(skill_dir: Path) -> list[dict[str, Any]]:
     return read_json(registry_path(skill_dir))
 
@@ -269,45 +139,15 @@ def family_tags(family: str) -> list[str]:
     return [part for part in family.replace("-", "_").split("_") if part]
 
 
-def primary_entrypoint(slug: str) -> str:
-    for table in (CLI_ENTRYPOINTS, R_PACKAGES, PYTHON_PACKAGES, WORKFLOW_TOOLS):
-        values = table.get(slug)
-        if values:
-            return values[0]
-    return slug.replace("_", "-")
-
-
-def cli_probe_args(slug: str) -> str:
-    return CLI_PROBE_ARGS.get(slug, "--version")
-
-
-def classify_tool(slug: str, family: str) -> str:
-    if slug in SOURCE_PACKET_ADAPTERS:
-        return "source_packet_adapter"
-    if slug in HEAVY_TOOLS:
-        return "heavy_launcher_plan"
-    if slug in WORKFLOW_TOOLS:
-        return "workflow_runtime"
-    if slug in R_PACKAGES:
-        return "r_bioconductor"
-    if slug in PYTHON_PACKAGES:
-        return "python_package"
-    if slug in CLI_ENTRYPOINTS:
-        return "lightweight_cli"
-    if family == "workflow_reproducibility":
-        return "workflow_runtime"
-    return "run_record_only"
-
-
 def wrapper_for_layer(layer: str) -> str:
     return {
         "source_packet_adapter": "tool-specific source_packet.py",
-        "lightweight_cli": "scripts/tools/common/cli_subprocess_wrapper.py",
-        "r_bioconductor": "scripts/tools/common/rscript_wrapper.py",
-        "python_package": "scripts/tools/common/software_source_packet.py plus Python import/run record",
-        "workflow_runtime": "scripts/tools/common/heavy_tool_launcher.py or workflow run record",
-        "heavy_launcher_plan": "scripts/tools/common/heavy_tool_launcher.py",
-        "run_record_only": "scripts/tools/common/software_source_packet.py",
+        "lightweight_cli": "tool-specific scripts/run_cli.py",
+        "r_bioconductor": "tool-specific scripts/run_package.py",
+        "python_package": "tool-specific scripts/run_package.py",
+        "workflow_runtime": "tool-specific scripts/run_launcher.py",
+        "heavy_launcher_plan": "tool-specific scripts/run_launcher.py",
+        "run_record_only": "tool-specific scripts/probe_or_plan.py",
     }[layer]
 
 
@@ -365,66 +205,51 @@ def stop_conditions(layer: str) -> list[str]:
     return common
 
 
-def wrapper_command(slug: str, tool: dict[str, Any], layer: str, skill_dir: Path) -> list[str]:
-    name = tool["name"]
+def wrapper_command(
+    slug: str,
+    layer: str,
+    skill_dir: Path,
+) -> list[str]:
+    directory = tool_dir(skill_dir, slug)
     if layer == "source_packet_adapter":
-        adapter = SOURCE_PACKET_ADAPTERS[slug]
-        return ["python3", str(skill_dir / adapter), "--help"]
+        return ["python3", str(directory / "source_packet.py"), "--help"]
     if layer == "lightweight_cli":
-        entry = primary_entrypoint(slug)
         return [
             "python3",
-            str(skill_dir / "scripts/tools/common/cli_subprocess_wrapper.py"),
+            str(directory / "scripts" / "run_cli.py"),
             "probe",
-            "--tool-name",
-            name,
-            "--tool-slug",
-            slug,
-            "--command",
-            entry,
-            f"--probe-args={cli_probe_args(slug)}",
             "--output",
-            f"{slug}-probe.json",
+            f"outputs/{slug}-probe.json",
         ]
-    if layer == "r_bioconductor":
-        package = primary_entrypoint(slug)
+    if layer in {"r_bioconductor", "python_package"}:
         return [
             "python3",
-            str(skill_dir / "scripts/tools/common/rscript_wrapper.py"),
-            "check-package",
-            "--tool-name",
-            name,
-            "--tool-slug",
-            slug,
-            "--package",
-            package,
+            str(directory / "scripts" / "run_package.py"),
+            "probe",
             "--output",
-            f"{slug}-rscript-check.json",
+            f"outputs/{slug}-package-probe.json",
         ]
-    if layer in {"heavy_launcher_plan", "workflow_runtime"}:
+    if layer == "workflow_runtime":
         return [
             "python3",
-            str(skill_dir / "scripts/tools/common/heavy_tool_launcher.py"),
+            str(directory / "scripts" / "run_launcher.py"),
+            "probe-runtime",
+            "--output",
+            f"outputs/{slug}-runtime-probe.json",
+        ]
+    if layer == "heavy_launcher_plan":
+        return [
+            "python3",
+            str(directory / "scripts" / "run_launcher.py"),
             "plan",
-            "--tool-name",
-            name,
-            "--tool-slug",
-            slug,
-            "--command-template",
-            f"{primary_entrypoint(slug)} <user-supplied arguments>",
             "--output",
-            f"{slug}-launch-plan.json",
+            f"outputs/{slug}-launcher-plan.json",
         ]
     return [
         "python3",
-        str(skill_dir / "scripts/tools/common/software_source_packet.py"),
-        "template",
-        "--tool-name",
-        name,
-        "--tool-slug",
-        slug,
+        str(directory / "scripts" / "probe_or_plan.py"),
         "--output",
-        f"{slug}-run-record.template.json",
+        f"outputs/{slug}-check.json",
     ]
 
 
@@ -434,21 +259,26 @@ def shell_join(command: list[str]) -> str:
 
 def build_profile(tool: dict[str, Any], skill_dir: Path) -> dict[str, Any]:
     slug = tool["slug"]
-    layer = classify_tool(slug, tool["family"])
-    command = wrapper_command(slug, tool, layer, skill_dir)
+    config = load_wrapper_config(skill_dir, slug)
+    layer = config.get("execution_layer")
+    if not layer:
+        raise SystemExit(f"Missing execution_layer in wrapper config for '{slug}'")
+    command = wrapper_command(slug, layer, skill_dir)
+    entrypoint = config.get("entrypoint") or slug.replace("_", "-")
     return {
         "tool_name": tool["name"],
         "tool_slug": slug,
         "family": tool["family"],
         "task_tags": family_tags(tool["family"]),
         "execution_layer": layer,
-        "primary_entrypoint": primary_entrypoint(slug),
+        "primary_entrypoint": entrypoint,
         "wrapper": wrapper_for_layer(layer),
         "wrapper_command": command,
         "wrapper_command_shell": shell_join(command),
-        "required_evidence": required_evidence(layer),
-        "stop_conditions": stop_conditions(layer),
-        "handoff": "Anchor" if layer in {"lightweight_cli", "r_bioconductor", "python_package", "workflow_runtime"} else "Compass",
+        "required_evidence": config.get("required_run_evidence") or required_evidence(layer),
+        "stop_conditions": config.get("stop_conditions") or stop_conditions(layer),
+        "handoff": config.get("handoff", "Anchor"),
+        "availability": "unknown_until_checked",
         "source_packet_rule": "Only create a source packet after inspecting run metadata or source-specific adapter outputs.",
         "cannot_support_alone": tool.get("cannot_support_alone", []),
         "evidence_boundary": "Execution profile only; not proof that the tool is installed, executed, valid, benchmarked, or biologically correct.",
@@ -556,24 +386,28 @@ def command_profile(args: argparse.Namespace) -> int:
     if not tool:
         raise SystemExit(f"Unknown tool slug: {args.tool}")
     profile = build_profile(tool, args.skill_dir)
-    write_json(args.output, profile)
+    if args.output:
+        write_json(args.output, profile)
     print(json.dumps(profile, ensure_ascii=False, indent=2))
     return 0
 
 
 def command_catalog(args: argparse.Namespace) -> int:
     catalog = export_catalog(args.skill_dir)
-    write_json(args.output, catalog)
+    if args.output:
+        write_json(args.output, catalog)
     print(json.dumps({"tools": catalog["tools"], "by_execution_layer": catalog["by_execution_layer"]}, ensure_ascii=False, indent=2))
     return 0
 
 
 def command_workflow(args: argparse.Namespace) -> int:
     plan = build_workflow(args.skill_dir, args.workflow)
-    write_json(args.output, plan)
+    if args.output:
+        write_json(args.output, plan)
     if args.markdown_output:
+        args.markdown_output.parent.mkdir(parents=True, exist_ok=True)
         args.markdown_output.write_text(make_workflow_markdown(plan), encoding="utf-8")
-    print(json.dumps({"workflow": args.workflow, "steps": len(plan["steps"]), "missing": plan["missing_tool_slugs"]}, ensure_ascii=False, indent=2))
+    print(json.dumps(plan, ensure_ascii=False, indent=2))
     return 0 if not plan["missing_tool_slugs"] else 1
 
 
@@ -586,36 +420,128 @@ def command_list_workflows(args: argparse.Namespace) -> int:
         }
         for name, spec in WORKFLOWS.items()
     }
-    write_json(args.output, data)
+    if args.output:
+        write_json(args.output, data)
     print(json.dumps(data, ensure_ascii=False, indent=2))
     return 0
+
+
+def command_list_tools(args: argparse.Namespace) -> int:
+    profiles = [
+        build_profile(tool, args.skill_dir)
+        for tool in load_registry(args.skill_dir)
+    ]
+    if args.family:
+        profiles = [item for item in profiles if item["family"] == args.family]
+    if args.layer:
+        profiles = [item for item in profiles if item["execution_layer"] == args.layer]
+    if args.search:
+        needle = args.search.casefold()
+        profiles = [
+            item
+            for item in profiles
+            if needle in item["tool_name"].casefold()
+            or needle in item["tool_slug"].casefold()
+            or needle in item["family"].casefold()
+        ]
+    payload = {
+        "count": len(profiles),
+        "tools": [
+            {
+                "slug": item["tool_slug"],
+                "name": item["tool_name"],
+                "family": item["family"],
+                "execution_layer": item["execution_layer"],
+                "availability": item["availability"],
+            }
+            for item in profiles
+        ],
+    }
+    if args.output:
+        write_json(args.output, payload)
+    if args.format == "json":
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print("slug\tname\tfamily\texecution_layer\tavailability")
+        for item in payload["tools"]:
+            print(
+                "\t".join(
+                    [
+                        item["slug"],
+                        item["name"],
+                        item["family"],
+                        item["execution_layer"],
+                        item["availability"],
+                    ]
+                )
+            )
+    return 0
+
+
+def command_check(args: argparse.Namespace) -> int:
+    index = tool_index(args.skill_dir)
+    if args.tool not in index:
+        raise SystemExit(f"Unknown tool slug: {args.tool}")
+    script = tool_dir(args.skill_dir, args.tool) / "scripts" / "probe_or_plan.py"
+    if not script.exists():
+        raise SystemExit(f"Missing check entrypoint for '{args.tool}': {script}")
+    output = args.output or Path("outputs") / f"{args.tool}-check.json"
+    command = [
+        sys.executable,
+        str(script),
+        "--output",
+        str(output),
+        "--timeout",
+        str(args.timeout),
+    ]
+    if args.packet_output:
+        command.extend(["--packet-output", str(args.packet_output)])
+    print(f"Running: {shell_join(command)}", flush=True)
+    return subprocess.run(command, check=False).returncode
 
 
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(description="Route OCEAN bioinformatics tools to execution layers and workflow plans.")
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    profile = sub.add_parser("profile")
-    profile.add_argument("--skill-dir", type=Path, required=True)
+    list_tools = sub.add_parser("list-tools", help="List covered tools without claiming local availability.")
+    list_tools.add_argument("--skill-dir", type=Path, default=DEFAULT_SKILL_DIR)
+    list_tools.add_argument("--family")
+    list_tools.add_argument("--layer")
+    list_tools.add_argument("--search")
+    list_tools.add_argument("--format", choices=["text", "json"], default="text")
+    list_tools.add_argument("--output", type=Path)
+    list_tools.set_defaults(func=command_list_tools)
+
+    profile = sub.add_parser("profile", help="Show one tool's execution layer and evidence contract.")
+    profile.add_argument("--skill-dir", type=Path, default=DEFAULT_SKILL_DIR)
     profile.add_argument("--tool", required=True)
-    profile.add_argument("--output", type=Path, required=True)
+    profile.add_argument("--output", type=Path)
     profile.set_defaults(func=command_profile)
 
-    catalog = sub.add_parser("catalog")
-    catalog.add_argument("--skill-dir", type=Path, required=True)
-    catalog.add_argument("--output", type=Path, required=True)
+    catalog = sub.add_parser("catalog", help="Export the complete tool catalog.")
+    catalog.add_argument("--skill-dir", type=Path, default=DEFAULT_SKILL_DIR)
+    catalog.add_argument("--output", type=Path)
     catalog.set_defaults(func=command_catalog)
 
-    workflow = sub.add_parser("workflow")
-    workflow.add_argument("--skill-dir", type=Path, required=True)
-    workflow.add_argument("--workflow", required=True)
-    workflow.add_argument("--output", type=Path, required=True)
+    workflow = sub.add_parser("workflow", help="Build a bounded workflow plan.")
+    workflow.add_argument("--skill-dir", type=Path, default=DEFAULT_SKILL_DIR)
+    workflow.add_argument("--workflow", choices=sorted(WORKFLOWS), required=True)
+    workflow.add_argument("--output", type=Path)
     workflow.add_argument("--markdown-output", type=Path)
     workflow.set_defaults(func=command_workflow)
 
-    list_workflows = sub.add_parser("list-workflows")
-    list_workflows.add_argument("--output", type=Path, required=True)
+    list_workflows = sub.add_parser("list-workflows", help="List available workflow templates.")
+    list_workflows.add_argument("--output", type=Path)
     list_workflows.set_defaults(func=command_list_workflows)
+
+    check = sub.add_parser("check", help="Run a bounded availability probe or create a non-executing plan.")
+    check.add_argument("--skill-dir", type=Path, default=DEFAULT_SKILL_DIR)
+    check.add_argument("--tool", required=True)
+    check.add_argument("--output", type=Path)
+    check.add_argument("--packet-output", type=Path)
+    check.add_argument("--timeout", type=int, default=20)
+    check.set_defaults(func=command_check)
 
     args = parser.parse_args(argv)
     return args.func(args)

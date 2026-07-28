@@ -1,6 +1,6 @@
 # QIIME2 Usage Guide
 
-This is an OCEAN tool-use guide inspired by science-skills-style wrappers. It is not a standalone Codex skill and it does not mean `QIIME2` is installed locally.
+This OCEAN guide defines bounded use, required run evidence, and stop conditions for `QIIME2`. It is not a standalone Codex skill and does not mean the tool is installed locally.
 
 ## Use When
 

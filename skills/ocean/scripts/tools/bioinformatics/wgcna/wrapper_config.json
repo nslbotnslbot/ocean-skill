@@ -13,8 +13,6 @@
     "-e",
     "cat(as.character(utils::packageVersion('WGCNA')))"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "Candidate official installation route for WGCNA; verify current documentation, version, license, and platform requirements before use.",
     "Candidate R/Bioconductor or R package route for WGCNA; verify R/Bioconductor compatibility and package version before use."

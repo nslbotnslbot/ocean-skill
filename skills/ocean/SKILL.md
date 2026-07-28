@@ -8,15 +8,12 @@ description: >-
 
 Use OCEAN to judge whether biomedical research claims are supported by available evidence across medical and biological research. The goal is not to praise or summarize the work. The goal is to identify the real contribution, evidence gaps, overclaims, publication positioning, and the user's realistic contribution boundary.
 
-Position OCEAN as a source-packet-based external audit layer. Do not present it as an autonomous AI scientist, an experiment-execution system, an internal evidence ledger, a human-supervised execution-package workflow, or a project release framework. Prefer the terms source packet, evidence gate, claim audit card, safe rewrite, negative space, handoff ticket, reviewer-risk ticket, and validation plan.
-
 ## Operating Rules
 
 - Respond in Chinese by default unless the user requests another language.
 - Use only evidence present in the workspace, provided by the user, or explicitly obtained with available tools. Do not invent data, sample sizes, validation results, author roles, journal requirements, or experimental outcomes.
 - State what was inspected, what was not inspected, and what cannot be concluded when evidence is incomplete.
 - Separate hypothesis, association, database annotation, text-mining co-occurrence, model prediction, and causal mechanism.
-- Keep OCEAN's public framing distinct from internal AI-for-science execution workflows: do not make evidence ledgers, paired non-claims, endpoint ladders, release gates, or single-project trajectory accounting the central contribution.
 - Prefer direct, critical wording over vague encouragement.
 - Classify the manuscript lifecycle before activating modules. A drafted passage plus a generic request to revise or polish defaults to Manuscript Revision mode, not a full seven-module audit.
 - Keep clean manuscript replacement text separate from audit findings, reviewer language, module labels, instructions, placeholders, and author-only notes.
@@ -28,7 +25,7 @@ Position OCEAN as a source-packet-based external audit layer. Do not present it 
 
 Users should not need to understand the seven module names before using OCEAN.
 
-| Mode | Use it for | Typical internal route | Default visible result |
+| Mode | Use it for | Typical module route | Default visible result |
 |---|---|---|---|
 | **Explore** | papers, DOI/PDF reading, literature questions, journal clubs, field movement, early ideas | Sounding; add Current or Reef only when needed | Decision Card plus an evidence-bounded explanation |
 | **Design** | proposals, experiments, validation plans, computational pipelines, research routes | Compass + Anchor; add Sounding, Reef, or Iceberg as needed | Research route, decisive controls, risks, next experiment |
@@ -36,7 +33,7 @@ Users should not need to understand the seven module names before using OCEAN.
 | **Revise** | polishing, shortening, translating, or safely rewriting finished text | Silent bounded Iceberg check; Manuscript Revision contract | Clean replacement text first, notes kept separate |
 | **Track** | concise project status, submission state, decisions, next gate, public boundary | Harbor | Status, progress, next step, public boundary |
 
-Modes describe what the user wants. Modules remain the internal scientific engine. A mode may use one module or several, but never run all seven merely to demonstrate the framework.
+Modes describe what the user wants. A mode may use one module or several, but never run all seven merely to demonstrate the framework.
 
 ## Module Order
 
@@ -52,7 +49,7 @@ Use the OCEAN module order when the task spans multiple steps:
 
 ## Resource Routing
 
-- Read `references/usage-modes.md` first for any substantive request. Use it to select Explore, Design, Audit, Revise, or Track, choose the minimum internal module route, and decide whether module names should remain hidden.
+- Read `references/usage-modes.md` first for any substantive request. Use it to select Explore, Design, Audit, Revise, or Track, choose the minimum module route, and decide whether module names should remain hidden.
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
 - Read `references/manuscript-revision-mode.md` whenever the input is manuscript text, a proposed replacement, a title/abstract/legend, or reviewer/editor feedback. Use it to select Design/Audit, Manuscript Revision, Pre-submission Stress Test, or Reviewer Response before selecting modules.
 - Read `references/domain-lens.md` when the task needs medical, biological, biomedical AI, omics, clinical, drug, KG/database, manuscript, proposal, or collaboration-specific evidence standards, or when the input domain is unclear.
@@ -79,7 +76,9 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.
 - Read `references/reviewer-lens.md` when the user asks for reviewer-style critique, pre-submission risk prediction, likely objections, response preparation, or journal-tier stress testing.
 - Read `references/review-report.md` when the user needs a structured long-form review report or collaboration/journal-positioning memo.
-- Repository development validation lives in the root-level `validation/` directory and is not required at runtime. Never treat validation prompts or expected outcomes as scientific evidence.
+- Repository regression checks live in the root-level `tests/` directory and
+  are not required at runtime. Never treat test fixtures or expected outcomes
+  as scientific evidence.
 - Use `scripts/make_claim_table.py` to create a claim-audit CSV template when a file-based claim inventory would help.
 - Use `scripts/check_claim_table.py` after the claim CSV is filled to summarize weak or high-risk claims.
 - Use `scripts/make_review_skeleton.py` when the user wants a reusable markdown review skeleton.
@@ -89,13 +88,13 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/tools/clinicaltrials/source_packet.py` for ClinicalTrials.gov registry packets. Treat registry records as trial-registration/design evidence, not efficacy or safety proof.
 - Use `scripts/tools/databases/<adapter>/scripts/query_packet.py` when the user wants a resource-specific Reef API/database packet for UniProt, PubMed, EuropePMC, ChEMBL, OpenTargets, STRING, Reactome, QuickGO, ClinVar, gnomAD, AlphaFold DB, ClinicalTrials.gov, or NCBI E-utilities. Default to dry-run unless live public API access is appropriate.
 - Use `scripts/tools/common/software_source_packet.py` for generic software-run source packets when a bioinformatics tool has inspected run metadata but no dedicated wrapper yet. Treat these packets as provenance evidence only.
-- Use `scripts/tools/bioinformatics/<tool>/` folders as scaffold locations for tool-specific wrappers, examples, and evals. Lightweight CLI tools may include `scripts/run_cli.py` for bounded local command probes and explicit user-supplied run records. Python/R package tools may include `scripts/run_package.py` for bounded package probes and explicit user-supplied script records. Heavy, workflow-runtime, or source-packet-adapter tools may include `scripts/run_launcher.py` for non-executing launch plans and bounded workflow-runtime probes. A folder existing there does not mean the tool is installed or executable.
+- Use `scripts/tools/bioinformatics/<tool>/` folders for tool-specific wrappers, examples, and checks. Lightweight CLI tools may include `scripts/run_cli.py` for bounded local command probes and explicit user-supplied run records. Python/R package tools may include `scripts/run_package.py` for bounded package probes and explicit user-supplied script records. Heavy, workflow-runtime, or source-packet-adapter tools may include `scripts/run_launcher.py` for non-executing launch plans and bounded workflow-runtime probes. A folder existing there does not mean the tool is installed or executable.
 - Use `scripts/run_reef_api_adapter.py` only when the user explicitly wants a bounded public Reef API packet. Default to dry-run unless the user has approved live public API access and no private, sensitive, paid, or key-protected data will be submitted.
 
 ## Workflow
 
 1. Read `references/usage-modes.md` and classify the user-facing mode: Explore, Design, Audit, Revise, or Track. The explicit user request wins.
-2. Choose the minimum necessary internal module route. Keep module names hidden unless they improve understanding or the user requests a module-by-module explanation.
+2. Choose the minimum necessary module route. Keep module names hidden unless they improve understanding or the user requests a module-by-module explanation.
 3. If manuscript text or reviewer/editor feedback is present, select the lifecycle subtype from `references/manuscript-revision-mode.md`. Drafted text plus a generic revision request defaults to Revise / Manuscript Revision, not Audit.
 4. Select the output depth from `references/output-contract.md`: Quick Decision Card for ordinary first-turn and narrow tasks, Standard for explicit multi-claim audits or research plans, Deep only for explicit full reports, and the Manuscript Revision contract for finished-text editing.
 5. Classify the domain with `references/domain-lens.md` when domain-specific evidence standards matter. Record the research object, evidence needed, highest safe claim level, active module, and stop condition.

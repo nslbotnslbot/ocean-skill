@@ -1,16 +1,15 @@
 # 3D Slicer
 
-OCEAN tool scaffold for `3D Slicer`.
+OCEAN wrapper contract for `3D Slicer`.
 
 ## Scope
 
 - Family: `imaging_signal_ml`
-- Current maturity: `L0/L1 scaffold`
 - Shared helper: `../../common/software_source_packet.py`
 
 ## Evidence Boundary
 
-This folder does not mean OCEAN can run `3D Slicer` automatically. It defines where tool-specific wrapper code, examples, and source-packet tests should live.
+This folder defines bounded wrapper code, examples, and source-packet rules for `3D Slicer`. Local availability must be checked before use.
 
 Before `3D Slicer` output can be used as evidence, provide:
 
@@ -43,7 +42,7 @@ python3 scripts/create_source_packet.py \
 
 The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `3D Slicer`.
 
-## Science-skills-style usage guide
+## Tool usage guide
 
 See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
 

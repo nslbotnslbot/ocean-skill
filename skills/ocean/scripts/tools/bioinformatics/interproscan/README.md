@@ -1,16 +1,15 @@
 # InterProScan
 
-OCEAN tool scaffold for `InterProScan`.
+OCEAN wrapper contract for `InterProScan`.
 
 ## Scope
 
 - Family: `genome_assembly_annotation`
-- Current maturity: `L0/L1 scaffold`
 - Shared helper: `../../common/software_source_packet.py`
 
 ## Evidence Boundary
 
-This folder does not mean OCEAN can run `InterProScan` automatically. It defines where tool-specific wrapper code, examples, and source-packet tests should live.
+This folder defines bounded wrapper code, examples, and source-packet rules for `InterProScan`. Local availability must be checked before use.
 
 Before `InterProScan` output can be used as evidence, provide:
 
@@ -43,7 +42,7 @@ python3 scripts/create_source_packet.py \
 
 The wrapper converts provenance fields into an OCEAN software source packet. It does not install or execute `InterProScan`.
 
-## Science-skills-style usage guide
+## Tool usage guide
 
 See `references/tool_usage.md` for the tool-specific use/avoid rules, required local execution evidence, stop conditions, and OCEAN handoff path.
 

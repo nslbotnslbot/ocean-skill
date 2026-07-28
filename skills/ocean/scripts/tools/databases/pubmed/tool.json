@@ -3,7 +3,6 @@
   "slug": "pubmed",
   "adapter": "pubmed",
   "family": "literature_metadata",
-  "maturity": "L2 Reef API/database packet adapter",
   "required_input": "`--query`",
   "evidence_level": "public API/database metadata only after query packet is inspected",
   "cannot_support_alone": [

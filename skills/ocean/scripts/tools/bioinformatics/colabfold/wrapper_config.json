@@ -12,8 +12,6 @@
     "colabfold_batch",
     "--version"
   ],
-  "readiness_stage": "stage_1_plan_ready_environment_missing",
-  "local_smoke_status": "not_available_current_environment",
   "candidate_install_routes": [
     "Candidate official installation route for ColabFold; verify current documentation, version, license, and platform requirements before use.",
     "Candidate conda/bioconda/container route for ColabFold; verify package/channel/image source, tag, and license before use."

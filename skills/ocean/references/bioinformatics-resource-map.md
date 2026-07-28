@@ -113,7 +113,7 @@ Stop or downgrade if:
 
 For a fuller tool list and per-family packet rules, read `bioinformatics-software-catalog.md`.
 
-Each tool listed in the software families now has a scaffold folder under `scripts/tools/bioinformatics/<tool_slug>/`. These folders define where tool-specific wrappers, examples, evals, and source-packet metadata should live. Folder presence is still only a scaffold; it does not mean the tool is installed, executable, or validated.
+Each tool listed in the software families has a folder under `scripts/tools/bioinformatics/<tool_slug>/`. These folders define where tool-specific wrappers, examples, checks, and source-packet metadata live. Folder presence does not mean the tool is installed, executable, or scientifically validated.
 
 ## LAST-specific note
 

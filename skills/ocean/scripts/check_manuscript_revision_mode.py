@@ -47,8 +47,8 @@ def contract_checks(skill_dir: Path) -> list[dict]:
             ["Manuscript Revision Mode", "修订正文（可直接替换）", "ordinary finished-text revision"],
         ),
         "routing_protocol": (
-            skill_dir / "static" / "core" / "routing-protocol.md",
-            ["Manuscript lifecycle gate", "silent bounded Iceberg check", "must not trigger the standard seven-module chain"],
+            skill_dir / "references" / "module-handoff.md",
+            ["manuscript-revision-mode.md", "silent bounded Iceberg check", "does not enter the standard full route"],
         ),
         "iceberg_isolation": (
             skill_dir / "references" / "iceberg.md",
@@ -139,12 +139,12 @@ def main() -> int:
     parser.add_argument(
         "--cases",
         type=Path,
-        default=repo_root / "validation" / "manuscript-revision-mode-r1-cases.json",
+        default=repo_root / "tests" / "fixtures" / "manuscript-revision-cases.json",
     )
     parser.add_argument(
         "--out",
         type=Path,
-        default=repo_root / "validation" / "manuscript-revision-mode-r1-results.md",
+        default=repo_root / "outputs" / "manuscript-revision-check.md",
     )
     args = parser.parse_args()
 

@@ -3,7 +3,6 @@
   "slug": "string",
   "adapter": "string",
   "family": "protein_interaction",
-  "maturity": "L2 Reef API/database packet adapter",
   "required_input": "`--identifier` or `--query`, plus explicit `--species`",
   "evidence_level": "public API/database metadata only after query packet is inspected",
   "cannot_support_alone": [

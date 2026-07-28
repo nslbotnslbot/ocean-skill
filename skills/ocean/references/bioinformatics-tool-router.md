@@ -1,53 +1,58 @@
 # Bioinformatics Tool Router
 
-Use this reference when a user asks which bioinformatics tools to use, how a tool should be executed, or how to turn a biological/medical research workflow into OCEAN source-packet evidence.
+Use this reference when a user asks which bioinformatics tool or workflow fits
+a medical or biological research task.
 
-The router is implemented in `scripts/tools/bioinformatics_tool_router.py`. It does not execute external tools. It classifies tools, proposes wrapper commands, records required evidence, and creates workflow plans.
+The public entry point is:
 
-## What the router adds
+`scripts/tools/bioinformatics_tool_router.py`
 
-- Tool profile: execution layer, primary entrypoint, wrapper, required evidence, stop conditions, and handoff.
-- Tool catalog: one profile for every scaffolded bioinformatics tool.
-- Workflow plan: ordered tool list for common biomedical and biological analysis workflows.
-- Boundary discipline: every plan states what it cannot prove.
+It reads each tool's `wrapper_config.json` and exposes five user-facing
+operations:
+
+- `list-tools`: list or search the 115 covered tools;
+- `profile`: show one tool's layer, evidence requirements, stop conditions,
+  and wrapper command;
+- `list-workflows`: list common workflow templates;
+- `workflow`: create a bounded multi-tool plan;
+- `check`: probe current availability or create a non-executing plan.
 
 ## Commands
 
-Profile one tool:
+Run these from the repository root:
 
 ```bash
-python3 scripts/tools/bioinformatics_tool_router.py profile \
-  --skill-dir . \
-  --tool fastqc \
-  --output fastqc-profile.json
-```
-
-Export all 115 profiles:
-
-```bash
-python3 scripts/tools/bioinformatics_tool_router.py catalog \
-  --skill-dir . \
-  --output bioinformatics-tool-catalog.json
-```
-
-Plan a workflow:
-
-```bash
-python3 scripts/tools/bioinformatics_tool_router.py workflow \
-  --skill-dir . \
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  list-tools --search rna
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  profile --tool fastqc
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-workflows
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  workflow \
   --workflow rna-seq-differential-expression \
-  --output rna-seq-plan.json \
-  --markdown-output rna-seq-plan.md
+  --output outputs/rna-seq-plan.json
+python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
+  check \
+  --tool fastqc \
+  --output outputs/fastqc-check.json
 ```
 
-List workflows:
+## What `check` Means
 
-```bash
-python3 scripts/tools/bioinformatics_tool_router.py list-workflows \
-  --output workflows.json
-```
+| Tool layer | `check` behavior |
+|---|---|
+| Lightweight CLI | Run the configured version/help probe |
+| Python package | Check whether the configured module can be imported |
+| R/Bioconductor | Check `Rscript` and the configured package version |
+| Workflow runtime | Probe the configured runtime command |
+| Heavy/license/GUI/GPU tool | Create a plan without launching the tool |
+| Source-packet adapter | Create an adapter-input plan |
 
-## Supported workflow seeds
+`check` never installs software, downloads a reference database, selects
+private inputs, or runs a complete biological analysis.
+
+## Workflow Seeds
 
 - `fastq-qc`
 - `rna-seq-differential-expression`
@@ -62,23 +67,14 @@ python3 scripts/tools/bioinformatics_tool_router.py list-workflows \
 - `workflow-reproducibility`
 - `imaging-ai`
 
-## Execution-layer meaning
-
-- `source_packet_adapter`: tool-specific adapter can inspect local/source metadata and create an OCEAN packet.
-- `lightweight_cli`: use bounded local CLI subprocess probes/runs.
-- `r_bioconductor`: use bounded `Rscript` package/script checks.
-- `python_package`: record Python package/import/script provenance before source-packet creation.
-- `workflow_runtime`: record workflow engine/container/run manifest before claims.
-- `heavy_launcher_plan`: create launcher plan only; do not pretend the tool ran.
-- `run_record_only`: use the generic software source-packet helper after a user supplies inspected run metadata.
-
 ## Evidence Boundary
 
-Router output is planning evidence. It can support statements such as "this tool belongs in this workflow" or "this run requires these records before evidence use." It cannot support mechanism, causality, clinical utility, benchmark superiority, or publication readiness.
+A profile or workflow plan supports routing only. An availability probe supports
+only the statement that a command/package/runtime was or was not observed in
+the current environment. Neither one establishes biological validity,
+mechanism, causality, clinical utility, benchmark superiority, or publication
+readiness.
 
-Handoff:
-
-- Send selected tool profiles to Reef as a resource/provenance map.
-- Send execution records to Anchor for reproducibility review.
-- Send unsupported claim pressure to Iceberg for downgrade.
-- Send missing tools, missing databases, license blocks, and run debts to Harbor.
+Use a real run record before creating a source packet. Send provenance and
+resource selection to Reef, claim pressure to Iceberg, and reproducibility or
+validation questions to Anchor.
