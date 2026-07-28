@@ -7,6 +7,7 @@ runtime_entrypoint: SKILL.md
 note: SKILL.md and references/ are the canonical Codex runtime instructions. This manifest is not an automatic loader.
 
 canonical_references:
+  - references/usage-modes.md
   - references/output-contract.md
   - references/manuscript-revision-mode.md
 

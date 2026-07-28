@@ -8,6 +8,10 @@ OCEAN 是一个轻量级、兼容 Codex 的外部审计层和 skill，用于医�
 
 OCEAN 是一个独立的开源工作流项目。它的证据发现模块命名为 **Sounding**：这是一个 source-packet 工作流，用于扫描文献、证据边界和可追踪的 review 材料。OCEAN 审计的是已有来源能支持什么、不能支持什么；它不管理某个研究项目的内部执行或发布流程。
 
+**表面简单，底层严谨；当工作成为项目时，过程可以追踪。**
+
+[中文详细使用指南](docs/usage-guide.zh-CN.md) | [English usage guide](docs/usage-guide.md)
+
 ## 这是什么
 
 这个 package 设计用于在 Codex 中个人使用，也可以作为一个小型 GitHub 仓库发布。
@@ -40,21 +44,29 @@ OCEAN 不是：
 
 公开介绍 OCEAN 时，优先使用 **external claim-evidence auditing**、**evidence-type gating**、**source-packet construction**、**safe claim rewriting** 和 **public adversarial case matrices**。不要把 evidence ledger、paired non-claim、endpoint ladder 或 release gate 写成中心贡献。
 
-## 适用场景
+## 60 秒开始使用
 
-当你让 Codex 审查以下内容时，可以使用 OCEAN：
+使用者只需选择想完成的目标；OCEAN 会在内部选择最少且必要的模块。
 
-- manuscript
-- preprint
-- system paper
-- AI-agent / AI-for-Science 项目
-- 生物医学 AI 研究
-- 生物信息学研究
-- database / knowledge graph / CTD 风格的证据系统
-- 临床预测模型
-- 合作贡献边界
-- 论文定位与期刊策略
-- reviewer 风格批判和投稿前压力测试
+| 模式 | 让 OCEAN 完成 | 默认可见结果 |
+|---|---|---|
+| **Explore** | 理解论文、idea、来源或领域 | 清楚解释，并说明证据边界 |
+| **Design** | 把 idea、proposal 或缺口变成可行研究 | 研究路线、决定性对照、下一项实验 |
+| **Audit** | 检查 claim、方法、验证或投稿准备度 | claim verdict、风险、缺失证据和修复方案 |
+| **Revise** | 修改已经写好的正文 | 先给干净替换文本；说明与正文分离 |
+| **Track** | 保存简洁项目或投稿状态 | Status、Progress、Next、Public Boundary |
+
+```text
+使用 $ocean 为组会解读这个 DOI。
+使用 $ocean 的 Design 模式，把这一句话 idea 变成可行研究。
+使用 $ocean 的 Audit 模式，检查这篇稿件的 claim 和验证。
+使用 $ocean 的 Revise 模式，先返回可直接替换的干净正文。
+使用 $ocean 的 Track 模式，记录这个已经确认的投稿更新。
+```
+
+不需要记住七个 module 名称。安装、提示词模板、输出深度、来源处理、
+工具与 GitHub 安全规则见[中文详细使用指南](docs/usage-guide.zh-CN.md)；
+也可以阅读 [English guide](docs/usage-guide.md)。
 
 ## 稿件生命周期模式
 
@@ -92,7 +104,7 @@ python3 skills/ocean/scripts/create_project_start_record.py \
 
 ## 模块流程
 
-OCEAN 按顺序使用七个模块；这是一个外部审计序列，不是实验执行循环。每个模块应该完成不同的事件，并把一个具体产物交给下一步。更完整的公开说明见 `docs/module-map.md`。
+OCEAN 把七个模块保留为内部科学引擎。默认只选择最少且必要的路线，并隐藏模块名称。只有真正需要端到端处理时，模块才组成外部审计序列，而不是实验执行循环。每个模块完成不同事件并交付具体产物。更完整的公开说明见 `docs/module-map.md`。
 
 | 顺序 | Module | 完成的事件 | 典型产物 | 当前验证状态 |
 |---:|---|---|---|---|
@@ -120,8 +132,8 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
 然后重启 Codex，或打开新的 Codex session，并测试识别：
 
 ```text
-Use $ocean to audit this abstract-only claim.
-State inspected / not inspected / cannot conclude / needed next.
+使用 $ocean 探索这个只有摘要的 claim。
+先给简短 Decision Card，并说明目前不能得出什么结论。
 ```
 
 如果只是临时测试安装，测试后可以删除：
@@ -141,10 +153,9 @@ cp -R skills/ocean ~/.codex/skills/
 然后向 Codex 提问：
 
 ```text
-Use $ocean to evaluate the uploaded manuscript.
-Please output in Chinese.
-Focus on scientific value, reliability, key risks, missing validation, collaboration contribution boundary, and journal positioning.
-Use the standard OCEAN output format unless I ask for a quick or deep report.
+使用 $ocean 的 Audit 模式评估上传的 manuscript。
+请用中文输出，关注科学价值、可靠性、主要风险、缺失验证、
+合作贡献边界和期刊定位。因为这是明确的多部分审计，请使用 Standard 输出。
 ```
 
 如果只是修改已经完成的正文措辞：
@@ -182,7 +193,12 @@ python3 skills/ocean/scripts/check_claim_table.py \
 
 默认输出语言：中文。
 
-分析必须直接、批判，并且受证据边界约束。不要夸大 novelty 或 validity。始终区分：
+普通首轮问题和范围较窄的问题默认先给简短 Decision Card：结论、依据、
+目前不能判断、主要风险和下一步。只有明确要求或任务确实需要时才使用
+Standard / Deep 审计。Manuscript Revision 先给干净替换正文；Track 只保留
+Status、Progress、Next 和 Public Boundary。
+
+所有模式都必须受证据边界约束。不要夸大 novelty 或 validity。始终区分：
 
 - hypothesis vs evidence
 - association vs causality
@@ -191,7 +207,8 @@ python3 skills/ocean/scripts/check_claim_table.py \
 - system demonstration vs scientific discovery
 - light advice vs authorship-level contribution
 
-审计任务默认使用固定 output contract：audit card、evidence boundary、claim-evidence matrix、risk register、missing evidence/analysis、collaboration boundary、journal positioning、next actions 和 scores。已经完成的正文修改改用 Manuscript Revision contract：干净修订正文、分离的修改说明，以及仅在必要时出现的作者确认项。只有明确要求完整 manuscript audit 或 reviewer-style audit 时才使用 deep mode。
+明确要求审计时，OCEAN 可以使用完整 claim-evidence contract。评分、期刊定位、
+署名分析和七模块叙述，只有用户要求或确实有决策价值时才出现。
 
 ## 仓库结构
 

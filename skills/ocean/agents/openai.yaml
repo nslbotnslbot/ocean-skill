@@ -1,4 +1,4 @@
 interface:
   display_name: "OCEAN"
   short_description: "Navigate evidence, revise manuscripts, and audit claims"
-  default_prompt: "Use $ocean in Chinese. First classify the manuscript lifecycle. For finished-text revision, return clean replacement prose first and keep audit notes, reviewer language, module labels, and author queries outside the manuscript. For explicit audit or research-design work, use the appropriate OCEAN evidence-boundary and module contracts."
+  default_prompt: "Use $ocean in Chinese. First choose Explore, Design, Audit, Revise, or Track, then use the minimum necessary modules. For ordinary questions, lead with a short Decision Card and keep module names hidden. For finished-text revision, return clean replacement prose first and keep audit notes outside the manuscript."

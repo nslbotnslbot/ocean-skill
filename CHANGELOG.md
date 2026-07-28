@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a user-first interaction layer with five plain-language modes (Explore, Design, Audit, Revise, and Track), minimum-module routing, a concise default OCEAN Decision Card, and detailed English/Chinese usage guides derived from recent real workflows.
 - Simplified public project pages to four scan-friendly sections and moved the detailed whole-wheat seven-module audit back under `docs/case-studies/`.
 - Added a canonical `projects/` progress hub with schema-checked public-safe records for the whole-wheat fermented broth and Delirium AI projects, plus a reusable project template and legacy tracker redirect.
 - Moved the 729-file development validation archive from `skills/ocean/evals/` to root-level `validation/`, separating installable runtime instructions from cases, fixtures, scorecards, and historical result artifacts.
