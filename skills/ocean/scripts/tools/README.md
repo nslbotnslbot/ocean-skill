@@ -1,5 +1,8 @@
 # OCEAN Tool Adapters
 
+[Parent tool and script index](../README.md) |
+[中文工具总览](../README.zh-CN.md)
+
 This directory contains tool-specific source-packet adapters.
 
 Each tool adapter should stay narrow:
