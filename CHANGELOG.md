@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added bilingual parent-level tool indexes under `skills/ocean/scripts/`, documenting all 115 bioinformatics tool folders, 13 public database adapters, source adapters, execution layers, commands, and the distinction between covered, locally available, and actually executed tools.
 - Added a user-first interaction layer with five plain-language modes (Explore, Design, Audit, Revise, and Track), minimum-module routing, a concise default OCEAN Decision Card, and detailed English/Chinese usage guides derived from recent real workflows.
 - Simplified public project pages to four scan-friendly sections and moved the detailed whole-wheat seven-module audit back under `docs/case-studies/`.
 - Added a canonical `projects/` progress hub with schema-checked public-safe records for the whole-wheat fermented broth and Delirium AI projects, plus a reusable project template and legacy tracker redirect.
