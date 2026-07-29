@@ -29,7 +29,6 @@ KNOWN_ARTIFACTS = {
     "ocean-paper-bundle-v1": ("paper_bundle", "paper_id"),
     "ocean-claim-card-v1": ("claim_card", "claim_id"),
     "ocean-validation-card-v1": ("validation_card", "validation_id"),
-    "ocean-adjudication-record-v1": ("adjudication_record", "record_id"),
 }
 
 
@@ -96,7 +95,6 @@ def main(argv: list[str] | None = None) -> int:
             "paper_bundle",
             "claim_card",
             "validation_card",
-            "adjudication_record",
             "external_artifact",
         ],
     )

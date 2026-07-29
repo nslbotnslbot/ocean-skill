@@ -166,32 +166,22 @@ python3 skills/ocean/scripts/ocean.py bridge envelope \
 An envelope preserves identity and provenance; it does not certify the embedded
 science.
 
-## 7. Evaluate without overstating results
+## 7. Verify the software
 
-OCEAN-Bench currently includes 30 formal contract cases:
+Repository tests check schemas, command routing, evidence boundaries, and the
+three reference workflows:
 
 ```bash
-python3 skills/ocean/scripts/ocean.py benchmark run \
-  --cases skills/ocean/evals/cases/golden_contract_cases.json \
-  --output outputs/formal-contract-report.json
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-The cases contain no real patient records, experiments, or scientific
-measurements and set `scientific_evidence: false`. They verify logic and
-regression behavior only.
-
-Research-level performance claims require at least 100 traceable cases, repeated
-multi-model runs, pre-specified ablations, token/time/cost records, two blinded
-experts per case, disagreement resolution, and external validation. The case
-intake and leaderboard commands enforce these gates; they do not manufacture
-missing evidence.
-
-See [`BENCHMARK.md`](../skills/ocean/evals/BENCHMARK.md) and the
-[human review protocol](../skills/ocean/evals/human_review/PROTOCOL.md).
+A passing software test means the implemented contract behaved as expected. It
+does not establish that a scientific claim is true or that OCEAN outperforms a
+model, researcher, or laboratory workflow.
 
 ## Public repository boundary
 
-Commit stable schemas, scripts, fixtures that are safe to redistribute, public
-protocols, and concise examples. Keep API keys, private manuscripts,
-patient-level data, raw model outputs, local paths, internal review transcripts,
-and exploratory logs outside the public repository.
+Commit stable schemas, scripts, redistributable test fixtures, documentation,
+and concise examples. Keep API keys, private manuscripts, patient-level data,
+raw model outputs, local paths, internal review materials, and exploratory logs
+outside the public repository.

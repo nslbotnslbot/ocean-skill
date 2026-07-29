@@ -69,7 +69,7 @@ OCEAN has five user-facing modes:
 | **Design** | turn an idea or gap into a feasible study | research route, decisive controls, next experiment |
 | **Audit** | test claims, methods, validation, or submission readiness | claim verdicts, risks, missing evidence, fixes |
 | **Revise** | improve finished manuscript text | clean replacement text; notes kept separate |
-| **Track** | preserve a concise project or submission record | Status, Progress, Next, Public Boundary |
+| **Track** | preserve a confirmed project or submission update | current status, latest milestone, next step |
 
 OCEAN selects the minimum modules needed. It should not run all seven
 modules merely to display the framework.
@@ -175,7 +175,7 @@ Do not claim that an experiment or analysis was completed unless I provide it.
 ```text
 Use $ocean in Track mode.
 Confirmed status: submitted to medRxiv and awaiting screening.
-Update only Status, Progress, Next, and Public Boundary.
+Record only the current status, latest confirmed milestone, and next step.
 Do not describe it as posted, under review, accepted, or published.
 Ask before any public GitHub update.
 ```
@@ -299,13 +299,8 @@ It does not run a full biological analysis.
 
 ## 9. Project tracking and GitHub safety
 
-Use Track only when the work has become a real, traceable project. Keep the
-public page concise:
-
-1. Status
-2. Progress
-3. Next
-4. Public Boundary
+Use Track only for a real project or submission update. Keep public records
+short: current status, latest confirmed milestone, and next step.
 
 Do not publish raw data, patient-level information, confidential manuscripts,
 private reviewer reports, API keys, unconfirmed submission outcomes, or claims

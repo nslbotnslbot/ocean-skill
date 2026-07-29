@@ -20,9 +20,7 @@ control_plane:
     - schemas/claim_card.schema.json
     - schemas/validation_card.schema.json
     - schemas/evidence_node.schema.json
-    - schemas/adjudication_record.schema.json
     - schemas/artifact_envelope.schema.json
-  benchmark: evals/BENCHMARK.md
 
 conditional_references:
   domain_or_claim_standard:
@@ -78,7 +76,6 @@ scripts:
   evidence_independence: scripts/detectors/evidence_independence.py
   evidence_diff: scripts/detectors/evidence_diff.py
   artifact_envelope: scripts/bridges/artifact_envelope.py
-  long_horizon_evaluation: evals/runners/score_long_horizon.py
   source_router: scripts/ocean_source_router.py
   alphafold_db_adapter: scripts/tools/bioinformatics/alphafold_db/source_packet.py
   literature_source_adapter: scripts/tools/literature/source_packet.py

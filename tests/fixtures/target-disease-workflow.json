@@ -1,6 +1,6 @@
 {
-  "fixture_type": "formal contract demo; not scientific evidence",
-  "task_id": "FORMAL-TARGET-DISEASE-DEMO",
+  "fixture_type": "software regression fixture; not scientific evidence",
+  "task_id": "TEST-TARGET-DISEASE-DEMO",
   "target_id": "UNSPECIFIED_TARGET",
   "disease_id": "UNSPECIFIED_DISEASE",
   "source_packets": [
@@ -8,14 +8,14 @@
       "packet_id": "packet-association",
       "source": {
         "source_type": "target_disease_association",
-        "source_id": "FORMAL_ASSOCIATION_SOURCE"
+        "source_id": "TEST_ASSOCIATION_SOURCE"
       }
     },
     {
       "packet_id": "packet-literature",
       "source": {
         "source_type": "primary_literature",
-        "source_id": "FORMAL_PRIMARY_SOURCE"
+        "source_id": "TEST_PRIMARY_SOURCE"
       }
     }
   ],
@@ -47,7 +47,7 @@
       "claim_text": "The unspecified target has a validated disease mechanism.",
       "claim_type": "mechanism",
       "evidence_classes": ["database association", "primary literature"],
-      "source_locators": ["record:FORMAL_PRIMARY_SOURCE"]
+      "source_locators": ["record:TEST_PRIMARY_SOURCE"]
     }
   ]
 }

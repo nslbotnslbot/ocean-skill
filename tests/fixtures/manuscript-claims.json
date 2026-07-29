@@ -1,9 +1,9 @@
 {
-  "fixture_type": "formal contract demo; not scientific evidence",
+  "fixture_type": "software regression fixture; not scientific evidence",
   "paper_bundle": "/tmp/replace-with-generated-paper-bundle.json",
   "claims": [
     {
-      "claim_id": "FORMAL-CLAIM-1",
+      "claim_id": "TEST-CLAIM-1",
       "claim_text": "The evaluated workflow demonstrates clinical utility.",
       "claim_type": "clinical_utility",
       "evidence_classes": ["retrospective internal validation"],
@@ -13,12 +13,12 @@
   "split_manifest": {
     "splits": {
       "train": {
-        "patient_ids": ["FORMAL-PATIENT-A", "FORMAL-PATIENT-B"],
-        "site_ids": ["FORMAL-SITE-1"]
+        "patient_ids": ["TEST-PATIENT-A", "TEST-PATIENT-B"],
+        "site_ids": ["TEST-SITE-1"]
       },
       "test": {
-        "patient_ids": ["FORMAL-PATIENT-B", "FORMAL-PATIENT-C"],
-        "site_ids": ["FORMAL-SITE-1"]
+        "patient_ids": ["TEST-PATIENT-B", "TEST-PATIENT-C"],
+        "site_ids": ["TEST-SITE-1"]
       }
     }
   }

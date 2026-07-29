@@ -1,12 +1,15 @@
-# OCEAN Projects
+# OCEAN Application Examples
 
-Confirmed public milestones from research projects using OCEAN.
+Two concise examples show how OCEAN has been used in active biomedical
+research:
 
-| Project | Current stage | Updated | Page |
-|---|---|---:|---|
-| Whole-Wheat Fermented Broth Study | Manuscript preparation | 2026-07-06 | [View](whole-wheat-fermented-broth/README.md) |
-| Delirium AI: ICU Prediction Transportability | medRxiv screening | 2026-07-21 | [View](delirium-ai/README.md) |
+- [Whole-Wheat Fermented Broth Study](whole-wheat-fermented-broth/README.md):
+  evidence organization and manuscript revision across microbiome,
+  metabolomics, fermentation, and toxicology-support analyses.
+- [Delirium AI: ICU Prediction Transportability](delirium-ai/README.md):
+  model-risk review, claim calibration, cross-database validation, and
+  manuscript support.
 
-Each page shows the current stage, recent progress, and next milestone. Research
-data and working files are not stored here. New records can start from
-[`PROJECT_TEMPLATE.md`](PROJECT_TEMPLATE.md).
+Only brief, owner-confirmed public information is included. Research data,
+working manuscripts, correspondence, and private analysis records are not
+stored in this repository.

@@ -12,7 +12,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "skills/ocean/scripts/ocean.py"
-EVALS = ROOT / "skills/ocean/evals"
+FIXTURES = ROOT / "tests/fixtures"
 
 
 def run_cli(

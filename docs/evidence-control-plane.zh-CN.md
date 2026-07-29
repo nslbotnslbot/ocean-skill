@@ -157,28 +157,19 @@ python3 skills/ocean/scripts/ocean.py bridge envelope \
 
 Envelope 保存身份和 provenance，但不会认证其中的科学结论。
 
-## 7. 在不夸大结果的前提下评测
+## 7. 验证软件
 
-OCEAN-Bench 当前包含 30 个 formal contract cases：
+仓库测试用于检查 schema、命令路由、证据边界和三个参考工作流：
 
 ```bash
-python3 skills/ocean/scripts/ocean.py benchmark run \
-  --cases skills/ocean/evals/cases/golden_contract_cases.json \
-  --output outputs/formal-contract-report.json
+python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 
-这些 case 不包含真实患者、实验或科学测量，并明确设置
-`scientific_evidence: false`；它们只验证逻辑 contract 与 regression。
-
-形成科研级性能结论至少需要 100 个可追踪 case、多模型重复运行、预注册的
-ablation、token/time/cost 记录、每个 case 两名盲评专家、分歧处理和外部验证。
-Case-intake 与 leaderboard 命令负责检查这些门槛，不会伪造缺失证据。
-
-详细规则见 [`BENCHMARK.md`](../skills/ocean/evals/BENCHMARK.md) 和
-[人工评审协议](../skills/ocean/evals/human_review/PROTOCOL.md)。
+测试通过只表示已实现的软件 contract 按预期运行，不代表某项科学结论为真，
+也不代表 OCEAN 优于某个模型、研究者或实验室流程。
 
 ## 公开仓库边界
 
-公开仓库只保存稳定 schema、脚本、可合法再分发的 fixture、公开 protocol 和
-简洁示例。API key、private manuscript、patient-level data、raw model output、
-本地绝对路径、内部审核对话和探索性日志都不应进入 GitHub。
+公开仓库只保存稳定 schema、脚本、可合法再分发的测试 fixture、文档和简洁示例。
+API key、private manuscript、patient-level data、raw model output、本地绝对路径、
+内部审核材料和探索性日志都不应进入 GitHub。

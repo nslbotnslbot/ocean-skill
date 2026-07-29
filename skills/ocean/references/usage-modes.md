@@ -14,7 +14,7 @@ internally.
 | **Design** | Turn an idea, proposal, dataset, or reviewer concern into a study | Research route, decisive controls, main risks, next experiment | Compass + Anchor; add Sounding, Reef, or Iceberg as needed |
 | **Audit** | Test claims, methods, validation, reproducibility, or submission readiness | Claim verdicts, evidence gaps, priority fixes | Iceberg + Anchor; add source/resource modules as needed |
 | **Revise** | Polish, shorten, translate, or safely rewrite finished text | Clean replacement text first; notes and author queries separate | Silent bounded Iceberg check plus Manuscript Revision contract |
-| **Track** | Record concise project status, decisions, next gate, or public boundary | Status, Progress, Next, Public Boundary | Harbor |
+| **Track** | Record confirmed project or submission status | Current status, latest milestone, next step | Harbor |
 
 The explicit user request wins. Do not force a request into Audit merely
 because the input is scientific.
@@ -86,15 +86,13 @@ If the user asks both for critique and revision, separate the channels:
 Choose Track when the user asks to:
 
 - record project status, submission state, decisions, or the next gate;
-- create or update a concise project page;
-- preserve a public-safe project memory.
+- create or update a concise public project note.
 
 Use only:
 
-1. Status
-2. Progress
-3. Next
-4. Public Boundary
+1. Current status
+2. Latest confirmed milestone
+3. Next step
 
 Distinguish submitted, awaiting screening, posted, under review, revised,
 accepted, and published. Never infer a stronger state. Public GitHub updates
@@ -136,7 +134,7 @@ Never run all seven modules merely to demonstrate OCEAN.
 - **Deep**: explicit full manuscript review, reviewer simulation, or detailed
   public report.
 - **Manuscript Revision**: finished-text editing, regardless of audit depth.
-- **Track Card**: project status using the four Track headings.
+- **Track Card**: current status, latest confirmed milestone, and next step.
 
 ## Boundary Rules Across All Modes
 
@@ -163,4 +161,4 @@ Never run all seven modules merely to demonstrate OCEAN.
 | "Does this result prove a mechanism?" | Audit | Direct claim downgrade and the missing decisive evidence |
 | "How should I test this idea?" | Design | Minimal research route and decisive controls |
 | "Polish this Results paragraph." | Revise | Clean replacement text first; critique kept out |
-| "Update the project after medRxiv submission." | Track | Precise status, progress, next step, public boundary |
+| "Update the project after medRxiv submission." | Track | Precise status, latest milestone, and next step |

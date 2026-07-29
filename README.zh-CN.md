@@ -46,7 +46,7 @@ OCEAN 不是：
 | **Design** | 把 idea、proposal 或缺口变成可行研究 | 研究路线、决定性对照、下一项实验 |
 | **Audit** | 检查 claim、方法、验证或投稿准备度 | claim verdict、风险、缺失证据和修复方案 |
 | **Revise** | 修改已经写好的正文 | 先给干净替换文本；说明与正文分离 |
-| **Track** | 保存简洁项目或投稿状态 | Status、Progress、Next、Public Boundary |
+| **Track** | 保存已确认的项目或投稿更新 | 当前状态、最近里程碑、下一步 |
 
 ```text
 使用 $ocean 为组会解读这个 DOI。
@@ -143,8 +143,8 @@ python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py profile --tool 
 
 普通首轮问题和范围较窄的问题默认先给简短 Decision Card：结论、依据、
 目前不能判断、主要风险和下一步。只有明确要求或任务确实需要时才使用
-Standard / Deep 审计。Manuscript Revision 先给干净替换正文；Track 只保留
-Status、Progress、Next 和 Public Boundary。
+Standard / Deep 审计。Manuscript Revision 先给干净替换正文；Track 只记录
+已经确认的状态、最近里程碑和下一步。
 
 所有模式都必须受证据边界约束。不要夸大 novelty 或 validity。始终区分：
 

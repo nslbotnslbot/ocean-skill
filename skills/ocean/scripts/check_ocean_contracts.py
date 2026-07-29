@@ -17,7 +17,6 @@ REQUIRED_REFERENCES = [
     "output-contract.md",
     "manuscript-revision-mode.md",
     "module-handoff.md",
-    "project-start-gate.md",
     "sounding.md",
     "current.md",
     "reef.md",
@@ -36,7 +35,7 @@ MODULE_ARTIFACT_TERMS = {
     "Iceberg": ["Claim-Evidence Matrix", "support verdict", "Safe rewrite"],
     "Anchor": ["Validation Plan", "leakage", "reproducibility"],
     "Compass": ["Research Route Card", "evidence driver", "decision"],
-    "Harbor": ["Decision Memory", "Project Start Card", "GitHub Sync Ticket", "contribution boundary", "reuse"],
+    "Harbor": ["Decision Memory", "contribution boundary", "reuse"],
 }
 
 MANUSCRIPT_REVISION_CONTRACTS = {
