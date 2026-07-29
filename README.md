@@ -14,13 +14,9 @@ Its evidence-discovery module is named **Sounding**: a source-packet workflow fo
 
 ## What this is
 
-This repository is designed for researchers and teams who want an installable,
-evidence-bound biomedical workflow inside Codex.
-
-It provides two entry points:
-
-1. `AGENTS.md` at the repository root, so Codex can automatically read project-level instructions.
-2. `skills/ocean/SKILL.md`, so the same workflow can be used as a portable skill folder if your Codex interface supports Skills.
+This repository provides the installable skill at
+[`skills/ocean/`](skills/ocean/) together with concise user guides, reusable
+tool adapters, and public project examples.
 
 ## Boundary, scope, and non-goals
 
@@ -64,39 +60,9 @@ You do not need to know the seven module names. See the
 [Chinese guide](docs/usage-guide.zh-CN.md) for installation, prompt templates,
 output depth, source handling, tools, and GitHub safety.
 
-## Manuscript lifecycle modes
-
-OCEAN now separates manuscript work by lifecycle instead of treating every manuscript request as a full audit:
-
-| Mode | Use it for | Default output |
-|---|---|---|
-| **Design / Audit** | ideas, proposals, experiment design, early drafts, or explicit weakness finding | Relevant module artifacts; full-chain critique only when genuinely needed |
-| **Manuscript Revision** | finished passages that need polishing, shortening, translation, or evidence-safe wording changes | Clean replacement text first; editorial notes and author queries remain separate |
-| **Pre-submission Stress Test** | explicit reviewer simulation or full submission-readiness audit | Audit report plus separately isolated safe rewrites |
-| **Reviewer Response** | reviewer/editor comments and manuscript revision | Separate response-letter text, revised manuscript text, and author-only notes |
-
-A generic request to revise a finished paragraph defaults to **Manuscript Revision**. OCEAN may use Iceberg as a silent safety check, but module labels, reviewer criticism, deletion commands, risk tables, scores, and new placeholders must not appear in paste-ready manuscript prose. See [`skills/ocean/references/manuscript-revision-mode.md`](skills/ocean/references/manuscript-revision-mode.md).
-
-## Real project progress
-
-OCEAN is also tracked in real manuscript and research workflows through the concise [`projects/`](projects/README.md) progress hub. Each page shows only current status, recent progress, the next step, and the public boundary. Raw analyses, private manuscripts, and internal working records stay outside the public repository.
-
-Current records cover the [whole-wheat fermented broth study](projects/whole-wheat-fermented-broth/README.md) and [Delirium AI ICU prediction transportability](projects/delirium-ai/README.md). Project tracking does not prove scientific validity, submission, acceptance, or clinical readiness.
-
-## Project-start records
-
-When a new OCEAN analysis becomes a traceable research project, Harbor can create a public-safe Project Start Card and GitHub Sync Ticket. This is meant to keep important research work from staying only in chat history. It does not publish raw data, private manuscripts, patient-level data, confidential review text, API keys, or unconfirmed submission outcomes.
-
-The project-start gate is documented in `skills/ocean/references/project-start-gate.md`. A local record can be generated with:
-
-```bash
-python3 skills/ocean/scripts/create_project_start_record.py \
-  --title "Example biomedical project" \
-  --domain "Biological research" \
-  --public-safe unclear \
-  --outdir outputs/project-records \
-  --remote-push "needs approval"
-```
+For finished manuscript text, **Revise** returns clean replacement prose first
+and keeps scientific concerns or author questions separate. Full lifecycle
+rules are in the [usage guide](docs/usage-guide.md).
 
 ## Module flow
 
@@ -162,37 +128,11 @@ Use $ocean in Manuscript Revision mode. Return clean replacement text first.
 Keep audit notes and author queries outside the manuscript text.
 ```
 
-For an empty review report skeleton:
-
-```bash
-python3 skills/ocean/scripts/make_review_skeleton.py \
-  --title "My AI for Science Project" \
-  --project-type "AI-agent system / biomedical evidence audit" \
-  --out outputs/review_skeleton.md
-```
-
-For a claim table template:
-
-```bash
-python3 skills/ocean/scripts/make_claim_table.py \
-  --out outputs/claim_table.csv
-```
-
-After filling the CSV, validate and summarize it:
-
-```bash
-python3 skills/ocean/scripts/check_claim_table.py \
-  outputs/claim_table.csv \
-  --out outputs/claim_table_summary.md
-```
-
-To find and safely check a covered bioinformatics tool:
+To browse the biomedical tool catalog:
 
 ```bash
 python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py list-tools
 python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py profile --tool last
-python3 skills/ocean/scripts/tools/bioinformatics_tool_router.py \
-  check --tool last --output outputs/last-check.json
 ```
 
 See the [bilingual tool index](skills/ocean/scripts/README.md) for database
@@ -215,36 +155,19 @@ Every mode remains evidence-bound. Do not overstate novelty or validity. Always 
 
 For explicit audits, OCEAN can use the full claim-evidence contract. Scores, journal positioning, authorship analysis, and seven-module narratives are omitted unless requested or materially useful.
 
-## Repository layout
+## Project examples
 
-```text
-skills/ocean/  installable skill, references, adapters, and tool wrappers
-tests/         small deterministic CI checks and fixtures
-docs/          public architecture and usage guides
-projects/      public-safe progress records for real OCEAN research projects
-examples/      small source-safe examples
-assets/        logos and README media
-outputs/       ignored local generated work
-.github/       continuous integration
-```
+The concise [`projects/`](projects/README.md) hub shows how OCEAN is being used
+in the whole-wheat fermented broth study and the Delirium AI ICU prediction
+project. Only confirmed public milestones are shown.
 
-See [`docs/repository-layout.md`](docs/repository-layout.md) for the concise ownership map. Generated reports, model outputs, scorecards, local availability probes, and experimental logs belong in ignored `outputs/`, not in GitHub.
+## Repository map
 
-## Quality checks
-
-The public repository keeps only deterministic checks required to protect the installable skill:
-
-```bash
-python3 -m pip install -r requirements-dev.txt
-python3 tests/check_json_files.py
-python3 tests/validate_skill.py
-python3 tests/check_project_records.py
-python3 -m unittest discover -s tests -p 'test_*.py' -v
-python3 skills/ocean/scripts/check_ocean_contracts.py --out outputs/ocean-contract-check.md
-python3 skills/ocean/scripts/check_manuscript_revision_mode.py --out outputs/manuscript-revision-check.md
-```
-
-These checks protect package structure, project-record boundaries, tool-index coverage, manuscript channel isolation, and core OCEAN contracts. They are regression tests, not scientific-performance claims or a model leaderboard.
+- [`skills/ocean/`](skills/ocean/): installable skill, references, adapters, and tool wrappers
+- [`docs/`](docs/): English and Chinese usage guides
+- [`projects/`](projects/): concise public project examples
+- [`examples/`](examples/): reusable starter files
+- [`assets/`](assets/): OCEAN artwork and icons
 
 ## License
 

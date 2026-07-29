@@ -39,7 +39,6 @@ def public_contract_files() -> list[Path]:
         ROOT / "README.md",
         ROOT / "README.zh-CN.md",
         ROOT / "CHANGELOG.md",
-        ROOT / "AGENTS.md",
         ROOT / "skills/ocean/SKILL.md",
         ROOT / "skills/ocean/manifest.yaml",
     ]
@@ -100,7 +99,7 @@ class PublicRepositoryBoundaryTests(unittest.TestCase):
 
     def test_generated_output_directories_are_ignored(self) -> None:
         gitignore = (ROOT / ".gitignore").read_text(encoding="utf-8")
-        self.assertIn("/outputs/*", gitignore)
+        self.assertIn("/outputs/", gitignore)
         self.assertIn("**/outputs/", gitignore)
 
     def test_public_docs_use_ocean_language(self) -> None:

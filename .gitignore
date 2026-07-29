@@ -7,6 +7,4 @@ __pycache__/
 !.env.ocean.example
 .private/
 **/outputs/
-!/outputs/
-/outputs/*
-!/outputs/.gitkeep
+/outputs/
