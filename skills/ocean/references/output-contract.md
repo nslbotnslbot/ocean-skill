@@ -73,7 +73,7 @@ Use by default for ordinary first-turn questions, journal-club explanations, nar
 2. <optional second action>
 ```
 
-For a learning or journal-club request, replace technical audit language with a clear explanation while keeping the same evidence boundary. For a Track request, use `Status / Progress / Next / Public Boundary`. For Revise, use the Manuscript Revision contract instead.
+For a learning or journal-club request, replace technical audit language with a clear explanation while keeping the same evidence boundary. For a Track request, report only the current status, latest confirmed milestone, and next step. For Revise, use the Manuscript Revision contract instead.
 
 ## Standard Mode
 

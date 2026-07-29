@@ -29,7 +29,6 @@
         "paper_bundle",
         "claim_card",
         "validation_card",
-        "adjudication_record",
         "external_artifact"
       ]
     },

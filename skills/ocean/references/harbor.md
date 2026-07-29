@@ -45,7 +45,6 @@ Harbor can start from:
 - research strategy card;
 - collaboration notes;
 - user decision or next-action list.
-- a Project Start Card, Evidence Boundary Snapshot, Module Route, or GitHub Sync Ticket from `project-start-gate.md`.
 
 ## Safety Rules
 
@@ -56,26 +55,26 @@ Harbor can start from:
 - If prior outputs are stale, mark them as historical rather than current evidence.
 - Keep decisions separate from evidence. A decision can be recorded as a user/project choice, but it must not be treated as new scientific support.
 - For collaboration or authorship questions, record contribution evidence and boundary warnings; do not decide authorship from incomplete notes.
-- For GitHub sync, record only public-safe project metadata, module route, evidence boundary, and next-action summaries. Do not publish raw manuscripts, patient-level data, unpublished raw data, private peer review, journal correspondence, collaborator-only notes, or API keys.
-- Remote push requires user approval for that project/session or an explicit request to update GitHub. If approval is missing, create the sync ticket and stop at local records.
+- For a public project note, include only confirmed status and a concise
+  description of how OCEAN was used. Do not publish raw manuscripts,
+  patient-level data, unpublished raw data, private peer review, journal
+  correspondence, collaborator-only notes, or API keys.
+- Remote push requires user approval for that project/session or an explicit
+  request to update GitHub.
 
 ## Workflow
 
 1. **Collect artifacts**
    - List which module outputs are being preserved.
-2. **Project start gate**
-   - If this is the first serious OCEAN run for a project, apply `project-start-gate.md` and create a Project Start Card, Evidence Boundary Snapshot, Module Route, Harbor Seed, and GitHub Sync Ticket.
-3. **Normalize decisions**
+2. **Normalize decisions**
    - Separate facts inspected, interpretations, decisions, recommendations, and open questions.
-4. **Preserve evidence boundary**
+3. **Preserve evidence boundary**
    - Record inspected/not inspected/cannot conclude/needed next.
-5. **Contribution boundary**
+4. **Contribution boundary**
    - Record advisory, analysis, writing, validation, data, wet-lab, or authorship-relevant tasks only if provided.
-6. **Next-action register**
+5. **Next-action register**
    - Convert gaps into owners, priority, effort, and evidence required.
-7. **GitHub sync ticket**
-   - If the project should be persisted in GitHub, record target files, public-safe summary, excluded material, suggested branch, commit message, and remote-push status.
-8. **Reuse warning**
+6. **Reuse warning**
    - State what must be rechecked before future reuse.
 
 ## Required Harbor Artifacts
@@ -92,10 +91,6 @@ Harbor outputs are considered complete only when they include these five artifac
    - Concrete next steps tied to evidence gaps, with owner/role, priority, and required evidence.
 5. **Reuse note**
    - What the memo can be reused for, what must be rechecked, and what it must not be used as evidence for.
-6. **GitHub sync ticket** when the work is a new tracked project or a public-safe application case
-   - Target repository/files, branch, commit message, public-safe summary, excluded material, and push approval state.
-   - For public OCEAN projects, target the canonical `projects/<slug>/README.md` record and append a dated progress entry rather than creating a second tracker.
-
 If one artifact cannot be filled because evidence is missing, keep the heading and write the missing boundary rather than deleting it.
 
 ## Output Artifact

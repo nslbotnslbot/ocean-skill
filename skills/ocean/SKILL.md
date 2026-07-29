@@ -31,7 +31,7 @@ Users should not need to understand the seven module names before using OCEAN.
 | **Design** | proposals, experiments, validation plans, computational pipelines, research routes | Compass + Anchor; add Sounding, Reef, or Iceberg as needed | Research route, decisive controls, risks, next experiment |
 | **Audit** | explicit critique, claim checking, model/method review, pre-submission stress testing | Iceberg + Anchor; add source/resource modules as needed | Claim verdicts, evidence gaps, fixes |
 | **Revise** | polishing, shortening, translating, or safely rewriting finished text | Silent bounded Iceberg check; Manuscript Revision contract | Clean replacement text first, notes kept separate |
-| **Track** | concise project status, submission state, decisions, next gate, public boundary | Harbor | Status, progress, next step, public boundary |
+| **Track** | confirmed project or submission status | Harbor | current status, latest milestone, next step |
 
 Modes describe what the user wants. A mode may use one module or several, but never run all seven merely to demonstrate the framework.
 
@@ -61,7 +61,6 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/clinicaltrials-adapter.md` when the user asks to inspect ClinicalTrials.gov records, NCT IDs, trial registration status, trial design, posted-results boundaries, or clinical efficacy claims based on registry records.
 - Read `references/module-artifact-contract.md` when a module output should be stable, comparable, or carried downstream as a concrete artifact.
 - Read `references/module-handoff.md` when the task spans multiple OCEAN modules, starts from a paper/idea/proposal/sentence, or needs explicit handoff artifacts between modules.
-- Read `references/project-start-gate.md` when a new research project, manuscript audit, proposal route, validation workflow, or collaboration analysis is starting and should become a persistent Harbor/GitHub-traceable record.
 - Read `references/research-design-workflow.md` when the user wants to turn an idea, proposal, reviewer concern, dataset/resource seed, or collaboration question into a structured biomedical research workflow with design gates, validation gates, research routes, and decision memory.
 - Read `references/sounding.md` when the user asks to scan literature or evidence, find sources for a claim, gather DOI/preprint/public review materials, build a source packet, or prepare evidence before claim audit, trend analysis, KG/resource organization, validation planning, or idea generation.
 - Read `references/current.md` when the user asks about field trends, recent progress, direction flow, related work movement, or whether a paper/idea is timely, crowded, incremental, or novel.
@@ -78,7 +77,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/review-report.md` when the user needs a structured long-form review report or collaboration/journal-positioning memo.
 - Use `scripts/ocean.py` when the task needs machine-readable provenance,
   checksum-preserving artifacts, repeatable workflow execution, a Harbor ledger,
-  or benchmark tooling. Start with `python3 scripts/ocean.py --help`.
+  or evidence-control tooling. Start with `python3 scripts/ocean.py --help`.
 - Use `scripts/runtime/source_packet.py` and
   `scripts/runtime/run_manifest.py` for versioned SourcePacket v2 and
   RunManifest contracts. A schema-valid artifact is not automatically
@@ -93,9 +92,6 @@ Use the OCEAN module order when the task spans multiple steps:
 - Use `scripts/runtime/harbor_ledger.py` for long-horizon project decisions.
   The checksum chain detects record tampering but does not prove an event or
   scientific claim is true.
-- Use `evals/` only for evaluation. Formal fixtures set
-  `scientific_evidence: false`; do not describe them as model performance,
-  expert validation, or scientific findings.
 - Repository regression checks live in the root-level `tests/` directory and
   are not required at runtime. Never treat test fixtures or expected outcomes
   as scientific evidence.
@@ -124,7 +120,8 @@ Use the OCEAN module order when the task spans multiple steps:
 9. If multiple modules are genuinely needed, preserve handoff evidence and unresolved risks with `references/module-handoff.md` and `references/module-artifact-contract.md`.
 10. Extract and audit central claims only when the selected mode needs it. Separate hypothesis, association, prediction, mechanism, and clinical benefit.
 11. Apply reliability and reviewer lenses only to the extent needed for the task. Never insert reviewer language or module labels into clean manuscript prose.
-12. Apply `references/project-start-gate.md` only when the work has become a traceable project. Track pages must remain concise, and public GitHub updates require user approval.
+12. For Track mode, record only confirmed status, the latest milestone, and the
+    next step. Public GitHub updates require user approval.
 13. Output the selected contract. Do not add scoring, journal positioning, authorship analysis, or a seven-module narrative unless requested or materially useful.
 
 ## Machine-Readable Control Plane
@@ -136,8 +133,8 @@ For reproducible tasks, preserve this sequence:
 3. preserve execution details in a RunManifest;
 4. wrap cross-tool artifacts in an Artifact Envelope when interoperating;
 5. append decisions, failures, no-hit results, and conflicts to a Harbor ledger;
-6. require human review before upgrading a claim or publishing benchmark
-   performance.
+6. require human review before upgrading a claim or using an output for a
+   high-stakes scientific or clinical decision.
 
 The command router is `scripts/ocean.py`. It is additive to the conversational
 skill and does not turn OCEAN into an autonomous scientist.

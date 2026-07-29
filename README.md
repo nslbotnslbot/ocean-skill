@@ -47,7 +47,7 @@ Users choose the outcome they need; OCEAN chooses the minimum required modules.
 | **Design** | turn an idea, proposal, or gap into a feasible study | research route, decisive controls, next experiment |
 | **Audit** | test claims, methods, validation, or submission readiness | claim verdicts, risks, missing evidence, fixes |
 | **Revise** | improve finished manuscript text | clean replacement text; notes kept separate |
-| **Track** | preserve concise project or submission status | Status, Progress, Next, Public Boundary |
+| **Track** | preserve a confirmed project or submission update | current status, latest milestone, next step |
 
 ```text
 Use $ocean to explore this DOI for a journal club.
@@ -144,7 +144,7 @@ adapters, workflow templates, execution layers, and evidence boundaries.
 
 Default output language: Chinese.
 
-For ordinary first-turn and narrow questions, OCEAN begins with a short Decision Card: conclusion, basis, what cannot currently be judged, the main risk, and the next action. Standard and Deep audits are used only when explicitly requested or genuinely needed. Manuscript Revision returns clean replacement prose first. Track uses only Status, Progress, Next, and Public Boundary.
+For ordinary first-turn and narrow questions, OCEAN begins with a short Decision Card: conclusion, basis, what cannot currently be judged, the main risk, and the next action. Standard and Deep audits are used only when explicitly requested or genuinely needed. Manuscript Revision returns clean replacement prose first. Track records only confirmed status, the latest milestone, and the next step.
 
 Every mode remains evidence-bound. Do not overstate novelty or validity. Always distinguish:
 

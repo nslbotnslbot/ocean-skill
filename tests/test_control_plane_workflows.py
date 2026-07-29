@@ -8,7 +8,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from control_plane_test_utils import EVALS, ROOT, read_json, run_cli, write_json
+from control_plane_test_utils import FIXTURES, ROOT, read_json, run_cli, write_json
 
 
 class ControlPlaneWorkflowTests(unittest.TestCase):
@@ -22,14 +22,14 @@ class ControlPlaneWorkflowTests(unittest.TestCase):
         self.assertEqual(len(payload["outputs"][0]["sha256"]), 64)
         run_cli("manifest", "validate", "--input", manifest)
 
-    def test_variant_workflow_blocks_formal_overclaim(self) -> None:
+    def test_variant_workflow_blocks_overclaim(self) -> None:
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "variant.json"
             run_cli(
                 "workflow",
                 "variant",
                 "--input",
-                EVALS / "fixtures/variant_workflow.formal.json",
+                FIXTURES / "variant-workflow.json",
                 "--output",
                 output,
             )
@@ -49,7 +49,7 @@ class ControlPlaneWorkflowTests(unittest.TestCase):
                 "workflow",
                 "target-disease",
                 "--input",
-                EVALS / "fixtures/target_disease_workflow.formal.json",
+                FIXTURES / "target-disease-workflow.json",
                 "--output",
                 output,
             )
@@ -77,7 +77,7 @@ class ControlPlaneWorkflowTests(unittest.TestCase):
                 bundle,
             )
             payload = copy.deepcopy(
-                read_json(EVALS / "fixtures/manuscript_claims.formal.json")
+                read_json(FIXTURES / "manuscript-claims.json")
             )
             payload["paper_bundle"] = str(bundle)
             write_json(input_path, payload)

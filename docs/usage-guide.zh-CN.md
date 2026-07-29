@@ -67,7 +67,7 @@ OCEAN 对使用者提供五种模式：
 | **Design** | 把 idea 或缺口变成可行研究 | 研究路线、决定性对照、下一项实验 |
 | **Audit** | 检查 claim、方法、验证或投稿准备度 | claim verdict、风险、缺失证据和修复方案 |
 | **Revise** | 修改已经写好的正文 | 先给干净替换文本；说明与正文分离 |
-| **Track** | 保存简洁项目或投稿记录 | Status、Progress、Next、Public Boundary |
+| **Track** | 保存已确认的项目或投稿更新 | 当前状态、最近里程碑、下一步 |
 
 OCEAN 会在内部选择最少且必要的模块，不会为了展示框架而每次运行全部七个模块。
 
@@ -169,7 +169,7 @@ OCEAN 会在内部选择最少且必要的模块，不会为了展示框架而�
 ```text
 使用 $ocean 的 Track 模式。
 已确认状态：已经提交 medRxiv，正在等待平台筛查。
-只更新 Status、Progress、Next 和 Public Boundary。
+只记录当前状态、最近确认的里程碑和下一步。
 不要写成已经 posted、under review、accepted 或 published。
 任何公开 GitHub 更新之前都要先询问我。
 ```
@@ -289,12 +289,8 @@ check 结果会明确写出工具已找到、未找到，或只是生成了 plan
 
 ## 9. 项目记录与 GitHub 安全
 
-只有当工作已经变成真实、可追踪的项目时才使用 Track。公开页面保持四部分：
-
-1. Status
-2. Progress
-3. Next
-4. Public Boundary
+只有面对真实的项目或投稿更新时才使用 Track。公开记录保持简短：当前状态、
+最近确认的里程碑和下一步。
 
 不要公开原始数据、患者级信息、保密稿件、私有审稿报告、API key、未经确认的
 投稿状态，或超过已检查证据的 claim。

@@ -18,6 +18,9 @@ FORBIDDEN_PATHS = (
     "docs/application-submission-tracker.md",
     "docs/project-boundary.md",
     "skills/ocean/static",
+    "skills/ocean/evals",
+    "skills/ocean/references/project-start-gate.md",
+    "skills/ocean/scripts/create_project_start_record.py",
 )
 
 FORBIDDEN_REFERENCES = (
@@ -27,6 +30,8 @@ FORBIDDEN_REFERENCES = (
     "docs/case-studies/",
     "docs/application-submission-tracker.md",
     "docs/project-boundary.md",
+    "skills/ocean/evals/",
+    "project-start-gate.md",
     "/Users/",
     "codex://threads/",
 )

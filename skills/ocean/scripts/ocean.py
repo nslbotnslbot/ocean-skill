@@ -59,16 +59,6 @@ GROUPED = {
         "envelope": SCRIPT_ROOT / "bridges/artifact_envelope.py",
         "distill": SCRIPT_ROOT / "bridges/harbor_to_skill_distiller.py",
     },
-    "benchmark": {
-        "run": SCRIPT_ROOT.parent / "evals/runners/run_benchmark.py",
-        "baseline": SCRIPT_ROOT.parent / "evals/baselines/optimistic_baseline.py",
-        "compare": SCRIPT_ROOT.parent / "evals/runners/compare_conditions.py",
-        "aggregate": SCRIPT_ROOT.parent / "evals/runners/aggregate_runs.py",
-        "ablation": SCRIPT_ROOT.parent / "evals/runners/analyze_ablations.py",
-        "case-intake": SCRIPT_ROOT.parent / "evals/runners/validate_case_intake.py",
-        "leaderboard": SCRIPT_ROOT.parent / "evals/runners/build_leaderboard.py",
-        "long-horizon": SCRIPT_ROOT.parent / "evals/runners/score_long_horizon.py",
-    },
 }
 
 
@@ -92,7 +82,6 @@ def usage() -> str:
             "  ocean.py source-packet create --help",
             "  ocean.py paper prepare --help",
             "  ocean.py workflow variant --help",
-            "  ocean.py benchmark run --help",
         ]
     )
     return "\n".join(lines)

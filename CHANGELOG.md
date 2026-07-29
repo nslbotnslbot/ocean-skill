@@ -15,8 +15,6 @@
   availability, and evidence-diff checks.
 - Added a unified evidence-control CLI, safe environment doctor, domain lenses,
   and checksum-linked Harbor ledger.
-- Added a formal 30-case contract benchmark, repeated-run and ablation
-  aggregation, expert-review gates, and a guarded leaderboard builder.
 
 ## 0.1.0
 
