@@ -11,7 +11,22 @@ canonical_references:
   - references/output-contract.md
   - references/manuscript-revision-mode.md
 
+control_plane:
+  cli: scripts/ocean.py
+  schemas:
+    - schemas/source_packet_v2.schema.json
+    - schemas/run_manifest.schema.json
+    - schemas/paper_bundle.schema.json
+    - schemas/claim_card.schema.json
+    - schemas/validation_card.schema.json
+    - schemas/evidence_node.schema.json
+    - schemas/adjudication_record.schema.json
+    - schemas/artifact_envelope.schema.json
+  benchmark: evals/BENCHMARK.md
+
 conditional_references:
+  domain_or_claim_standard:
+    - references/domain-lens.md
   retrieval_or_database:
     - references/data-tool-router.md
     - references/bioinformatics-resource-map.md
@@ -53,6 +68,17 @@ modules:
     artifact: Decision Memo, Evidence Boundary Ledger, Contribution Boundary Record
 
 scripts:
+  unified_cli: scripts/ocean.py
+  doctor: scripts/runtime/ocean_doctor.py
+  source_packet_v2: scripts/runtime/source_packet.py
+  run_manifest: scripts/runtime/run_manifest.py
+  harbor_ledger: scripts/runtime/harbor_ledger.py
+  domain_lens: scripts/runtime/domain_lens.py
+  paper_ingest: scripts/ingest/prepare_paper.py
+  evidence_independence: scripts/detectors/evidence_independence.py
+  evidence_diff: scripts/detectors/evidence_diff.py
+  artifact_envelope: scripts/bridges/artifact_envelope.py
+  long_horizon_evaluation: evals/runners/score_long_horizon.py
   source_router: scripts/ocean_source_router.py
   alphafold_db_adapter: scripts/tools/bioinformatics/alphafold_db/source_packet.py
   literature_source_adapter: scripts/tools/literature/source_packet.py

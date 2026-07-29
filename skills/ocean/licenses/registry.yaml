@@ -1,0 +1,48 @@
+{
+  "schema_version": "ocean-license-registry-v1",
+  "resources": [
+    {
+      "resource_id": "ncbi-eutils",
+      "name": "NCBI E-utilities",
+      "access": "public API; API key recommended for higher request rates",
+      "terms_url": "https://www.ncbi.nlm.nih.gov/home/about/policies/",
+      "acknowledgement_required": false
+    },
+    {
+      "resource_id": "clinicaltrials-gov",
+      "name": "ClinicalTrials.gov API",
+      "access": "public API",
+      "terms_url": "https://clinicaltrials.gov/about-site/terms-conditions",
+      "acknowledgement_required": false
+    },
+    {
+      "resource_id": "chembl",
+      "name": "ChEMBL",
+      "access": "public API with source-specific licensing",
+      "terms_url": "https://www.ebi.ac.uk/chembl/",
+      "acknowledgement_required": false
+    },
+    {
+      "resource_id": "alphafold-db",
+      "name": "AlphaFold Protein Structure Database",
+      "access": "public resource; underlying entries and predicted structures retain source terms",
+      "terms_url": "https://alphafold.ebi.ac.uk/",
+      "acknowledgement_required": false
+    },
+    {
+      "resource_id": "cell-ranger",
+      "name": "Cell Ranger",
+      "access": "vendor software; user must inspect current terms before installation or use",
+      "terms_url": "https://www.10xgenomics.com/support/software/cell-ranger",
+      "acknowledgement_required": true
+    },
+    {
+      "resource_id": "gatk",
+      "name": "GATK",
+      "access": "software and reference resources may have separate terms",
+      "terms_url": "https://gatk.broadinstitute.org/",
+      "acknowledgement_required": true
+    }
+  ],
+  "evidence_boundary": "This registry is a notification aid, not legal advice. Users must inspect current upstream terms before access, redistribution, or publication."
+}

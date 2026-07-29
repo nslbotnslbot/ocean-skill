@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/run_manifest.schema.json",
+  "title": "OCEAN RunManifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "task_intent",
+    "created_at",
+    "status",
+    "command",
+    "software",
+    "parameters",
+    "inputs",
+    "outputs",
+    "environment",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-run-manifest-v1"},
+    "run_id": {"type": "string"},
+    "task_intent": {"type": "string"},
+    "created_at": {"type": "string"},
+    "status": {
+      "enum": [
+        "planned",
+        "executed",
+        "failed",
+        "partial",
+        "not_available"
+      ]
+    },
+    "command": {"type": "array", "items": {"type": "string"}},
+    "software": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string"},
+        "version": {"type": "string"}
+      }
+    },
+    "parameters": {"type": "object"},
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "exists"],
+        "properties": {
+          "path": {"type": "string"},
+          "exists": {"type": "boolean"},
+          "sha256": {"type": "string"},
+          "size_bytes": {"type": "integer"}
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "exists"],
+        "properties": {
+          "path": {"type": "string"},
+          "exists": {"type": "boolean"},
+          "sha256": {"type": "string"},
+          "size_bytes": {"type": "integer"}
+        }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": ["python", "platform"],
+      "properties": {
+        "python": {"type": "string"},
+        "platform": {"type": "string"},
+        "working_directory": {"type": "string"},
+        "container": {"type": "string"},
+        "environment_lock": {"type": "string"}
+      }
+    },
+    "logs": {"type": "array", "items": {"type": "string"}},
+    "evidence_boundary": {
+      "type": "object",
+      "required": ["inspected", "not_inspected", "cannot_conclude", "next_required"]
+    }
+  },
+  "additionalProperties": true
+}

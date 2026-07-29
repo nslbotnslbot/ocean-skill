@@ -10,7 +10,9 @@ OCEAN 是一个轻量级、兼容 Codex 的 biomedical claim-evidence skill，�
 
 **表面简单，底层严谨；当工作成为项目时，过程可以追踪。**
 
-[中文详细使用指南](docs/usage-guide.zh-CN.md) | [English usage guide](docs/usage-guide.md)
+[中文详细使用指南](docs/usage-guide.zh-CN.md) |
+[证据控制层 CLI](docs/evidence-control-plane.zh-CN.md) |
+[English usage guide](docs/usage-guide.md)
 
 ## 这是什么
 
@@ -164,7 +166,7 @@ Delirium AI ICU 预测项目中的使用情况，只呈现已经确认的公开�
 ## 仓库导航
 
 - [`skills/ocean/`](skills/ocean/)：可安装 skill、references、adapters 与工具 wrappers
-- [`docs/`](docs/)：中英文详细使用指南
+- [`docs/`](docs/)：中英文使用指南与可执行证据控制层 CLI
 - [`projects/`](projects/)：简洁的公开项目示例
 - [`examples/`](examples/)：可复用的入门文件
 - [`assets/`](assets/)：OCEAN 插图与图标

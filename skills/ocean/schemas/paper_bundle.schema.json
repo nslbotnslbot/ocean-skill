@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/paper_bundle.schema.json",
+  "title": "OCEAN PaperBundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "paper_id",
+    "source",
+    "file_checksum",
+    "locator_mode",
+    "sections",
+    "blocks",
+    "figures",
+    "tables",
+    "supplements",
+    "unresolved_regions",
+    "extraction",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-paper-bundle-v1"},
+    "paper_id": {"type": "string"},
+    "source": {
+      "type": "object",
+      "required": ["path", "title", "media_type"],
+      "properties": {
+        "path": {"type": "string"},
+        "title": {"type": "string"},
+        "media_type": {"type": "string"}
+      }
+    },
+    "file_checksum": {"type": "string"},
+    "locator_mode": {
+      "enum": ["page-grounded", "structure-grounded", "source-limited"]
+    },
+    "sections": {"type": "array", "items": {"type": "object"}},
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["block_id", "text", "locators", "text_checksum"],
+        "properties": {
+          "block_id": {"type": "string"},
+          "text": {"type": "string"},
+          "locators": {"type": "array", "items": {"type": "string"}},
+          "text_checksum": {"type": "string"}
+        }
+      }
+    },
+    "figures": {"type": "array", "items": {"type": "object"}},
+    "tables": {"type": "array", "items": {"type": "object"}},
+    "supplements": {"type": "array", "items": {"type": "object"}},
+    "unresolved_regions": {"type": "array", "items": {"type": "string"}},
+    "extraction": {
+      "type": "object",
+      "required": ["method", "created_at", "page_count"],
+      "properties": {
+        "method": {"type": "string"},
+        "created_at": {"type": "string"},
+        "page_count": {"type": "integer"}
+      }
+    },
+    "evidence_boundary": {
+      "type": "object",
+      "required": ["inspected", "not_inspected", "cannot_conclude", "next_required"]
+    }
+  },
+  "additionalProperties": true
+}

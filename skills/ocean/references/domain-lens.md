@@ -64,6 +64,19 @@ Use "unknown" rather than guessing when a field is not provided.
 | Manuscript / review / proposal | manuscript draft, abstract, reviewer comment, research plan, grant-like idea | provided sections, source packet, claim-evidence matrix, missing materials, feasibility route | polished narrative becomes evidence | Sounding, Iceberg, Compass, Harbor |
 | Collaboration / authorship boundary | project notes, contribution proposal, advisory request, collaboration plan | concrete tasks, delivered artifacts, decision dates, evidence of intellectual/experimental contribution | light advice becomes authorship claim | Compass, Harbor |
 
+OCEAN remains biomedical-first. For explicitly cross-domain tasks, the
+machine-readable Domain Lens also provides cautious routing for materials,
+chemistry, and engineering. These routes require composition/process/test
+conditions, analytical identity, operating envelope, uncertainty, and
+independent replication as appropriate. They do not convert OCEAN into a
+general-purpose domain expert.
+
+```bash
+python3 scripts/ocean.py domain-lens \
+  --input path/to/domain-task.json \
+  --output outputs/domain-lens.json
+```
+
 ## Evidence Standards
 
 Use the strictest relevant standard when a task spans domains.

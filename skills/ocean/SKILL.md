@@ -76,6 +76,26 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/claim-evidence-table.md` when extracting, rewriting, or scoring claims.
 - Read `references/reviewer-lens.md` when the user asks for reviewer-style critique, pre-submission risk prediction, likely objections, response preparation, or journal-tier stress testing.
 - Read `references/review-report.md` when the user needs a structured long-form review report or collaboration/journal-positioning memo.
+- Use `scripts/ocean.py` when the task needs machine-readable provenance,
+  checksum-preserving artifacts, repeatable workflow execution, a Harbor ledger,
+  or benchmark tooling. Start with `python3 scripts/ocean.py --help`.
+- Use `scripts/runtime/source_packet.py` and
+  `scripts/runtime/run_manifest.py` for versioned SourcePacket v2 and
+  RunManifest contracts. A schema-valid artifact is not automatically
+  scientific evidence.
+- Use `scripts/ingest/prepare_paper.py` before page- or structure-grounded
+  manuscript auditing. Preserve unresolved regions and never infer figure or
+  table content that was not extracted.
+- Use `scripts/detectors/evidence_independence.py` and
+  `scripts/detectors/evidence_diff.py` to detect declared circularity and
+  evidence changes. An `independent` result applies only to represented
+  provenance.
+- Use `scripts/runtime/harbor_ledger.py` for long-horizon project decisions.
+  The checksum chain detects record tampering but does not prove an event or
+  scientific claim is true.
+- Use `evals/` only for evaluation. Formal fixtures set
+  `scientific_evidence: false`; do not describe them as model performance,
+  expert validation, or scientific findings.
 - Repository regression checks live in the root-level `tests/` directory and
   are not required at runtime. Never treat test fixtures or expected outcomes
   as scientific evidence.
@@ -106,6 +126,21 @@ Use the OCEAN module order when the task spans multiple steps:
 11. Apply reliability and reviewer lenses only to the extent needed for the task. Never insert reviewer language or module labels into clean manuscript prose.
 12. Apply `references/project-start-gate.md` only when the work has become a traceable project. Track pages must remain concise, and public GitHub updates require user approval.
 13. Output the selected contract. Do not add scoring, journal positioning, authorship analysis, or a seven-module narrative unless requested or materially useful.
+
+## Machine-Readable Control Plane
+
+For reproducible tasks, preserve this sequence:
+
+1. identify or ingest sources as SourcePacket v2 or PaperBundle;
+2. run the minimum applicable detector, audit, or task workflow;
+3. preserve execution details in a RunManifest;
+4. wrap cross-tool artifacts in an Artifact Envelope when interoperating;
+5. append decisions, failures, no-hit results, and conflicts to a Harbor ledger;
+6. require human review before upgrading a claim or publishing benchmark
+   performance.
+
+The command router is `scripts/ocean.py`. It is additive to the conversational
+skill and does not turn OCEAN into an autonomous scientist.
 
 ## Default Output Contract
 

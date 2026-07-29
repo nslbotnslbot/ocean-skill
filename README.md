@@ -10,7 +10,9 @@ Its evidence-discovery module is named **Sounding**: a source-packet workflow fo
 
 **Simple at the surface, rigorous underneath, and traceable when the work becomes a project.**
 
-[Detailed usage guide](docs/usage-guide.md) | [中文使用指南](docs/usage-guide.zh-CN.md)
+[Detailed usage guide](docs/usage-guide.md) |
+[Evidence-control CLI](docs/evidence-control-plane.md) |
+[中文使用指南](docs/usage-guide.zh-CN.md)
 
 ## What this is
 
@@ -164,7 +166,7 @@ project. Only confirmed public milestones are shown.
 ## Repository map
 
 - [`skills/ocean/`](skills/ocean/): installable skill, references, adapters, and tool wrappers
-- [`docs/`](docs/): English and Chinese usage guides
+- [`docs/`](docs/): usage guides and the executable evidence-control CLI
 - [`projects/`](projects/): concise public project examples
 - [`examples/`](examples/): reusable starter files
 - [`assets/`](assets/): OCEAN artwork and icons

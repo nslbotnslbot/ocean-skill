@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/artifact_envelope.schema.json",
+  "title": "OCEAN Scientific Artifact Envelope",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "envelope_id",
+    "artifact_type",
+    "artifact_schema_version",
+    "artifact_id",
+    "producer",
+    "created_at",
+    "content_checksum",
+    "artifact",
+    "source_refs",
+    "run_ref",
+    "access",
+    "license",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-artifact-envelope-v1"},
+    "envelope_id": {"type": "string"},
+    "artifact_type": {
+      "enum": [
+        "source_packet",
+        "run_manifest",
+        "paper_bundle",
+        "claim_card",
+        "validation_card",
+        "adjudication_record",
+        "external_artifact"
+      ]
+    },
+    "artifact_schema_version": {"type": "string"},
+    "artifact_id": {"type": "string"},
+    "producer": {
+      "type": "object",
+      "required": ["name", "version"]
+    },
+    "created_at": {"type": "string"},
+    "content_checksum": {"type": "string"},
+    "artifact": {"type": "object"},
+    "source_refs": {"type": "array", "items": {"type": "string"}},
+    "run_ref": {"type": "string"},
+    "access": {
+      "enum": ["public", "controlled", "private", "local", "unknown"]
+    },
+    "license": {"type": "string"},
+    "evidence_boundary": {
+      "type": "object",
+      "required": ["inspected", "not_inspected", "cannot_conclude", "next_required"]
+    }
+  },
+  "additionalProperties": true
+}
