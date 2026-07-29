@@ -2,21 +2,11 @@
 
 ## Unreleased
 
-- Simplified the public repository by removing generated development artifacts
-  and obsolete internal-facing documents.
-- Moved the small deterministic CI suite to `tests/`.
-- Added user-facing Explore, Design, Audit, Revise, and Track modes with
-  minimum-module routing and a concise Decision Card.
-- Added detailed English and Chinese usage guides.
-- Added bilingual tool indexes covering bioinformatics wrappers, public
-  database adapters, source adapters, and execution boundaries.
-- Added one portable bioinformatics router for tool search, profiles, workflow
-  plans, and bounded environment checks.
-- Removed machine-specific tool availability fields, duplicate runtime
-  snapshots, and development-only generator/evaluation scripts.
-- Added manuscript revision channel isolation so audit language stays outside
-  paste-ready prose.
-- Added concise, owner-approved project milestone pages.
+- Added Explore, Design, Audit, Revise, and Track modes.
+- Added English and Chinese usage guides.
+- Added a searchable bioinformatics tool catalog and public database adapters.
+- Added clean manuscript revision output with notes kept separate.
+- Added concise examples from active OCEAN research projects.
 
 ## 0.1.0
 
