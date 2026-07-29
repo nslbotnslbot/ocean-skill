@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/claim_card.schema.json",
+  "title": "OCEAN ClaimCard",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "claim_id",
+    "claim_text",
+    "claim_type",
+    "support_level",
+    "current_evidence",
+    "source_locators",
+    "maximum_safe_claim",
+    "missing_evidence",
+    "stop_conditions",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-claim-card-v1"},
+    "claim_id": {"type": "string"},
+    "claim_text": {"type": "string"},
+    "claim_type": {
+      "enum": [
+        "mechanism",
+        "causal",
+        "clinical_utility",
+        "diagnostic",
+        "prognostic",
+        "association",
+        "database_relation",
+        "technical_performance",
+        "reproducibility",
+        "novelty",
+        "descriptive",
+        "unknown"
+      ]
+    },
+    "support_level": {
+      "enum": [
+        "supported",
+        "partially_supported",
+        "unsupported",
+        "contradicted",
+        "unknown"
+      ]
+    },
+    "current_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_class", "source_id"],
+        "properties": {
+          "evidence_class": {"type": "string"},
+          "source_id": {"type": "string"},
+          "independence": {"type": "string"}
+        }
+      }
+    },
+    "source_locators": {"type": "array", "items": {"type": "string"}},
+    "maximum_safe_claim": {"type": "string"},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "stop_conditions": {"type": "array", "items": {"type": "string"}},
+    "evidence_boundary": {
+      "type": "object",
+      "required": ["inspected", "not_inspected", "cannot_conclude", "next_required"]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,17 @@
+[project]
+name = "ocean-skill"
+version = "0.2.0"
+description = "Evidence-control infrastructure for OCEAN biomedical research workflows"
+requires-python = ">=3.9"
+dependencies = [
+  "pypdf>=5,<7"
+]
+
+[dependency-groups]
+dev = [
+  "PyYAML>=6,<7",
+  "jsonschema>=4,<5"
+]
+
+[tool.uv]
+package = false

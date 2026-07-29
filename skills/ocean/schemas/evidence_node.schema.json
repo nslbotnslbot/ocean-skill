@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/evidence_node.schema.json",
+  "title": "OCEAN EvidenceNode",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "node_id",
+    "node_type",
+    "label",
+    "source_family",
+    "metadata"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-evidence-node-v1"},
+    "node_id": {"type": "string"},
+    "node_type": {
+      "enum": [
+        "paper",
+        "dataset",
+        "cohort",
+        "database",
+        "model",
+        "software_run",
+        "benchmark",
+        "claim",
+        "registry",
+        "experiment"
+      ]
+    },
+    "label": {"type": "string"},
+    "source_family": {"type": "string"},
+    "version": {"type": "string"},
+    "checksum": {"type": "string"},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": true
+}

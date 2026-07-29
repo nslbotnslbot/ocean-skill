@@ -1,0 +1,11 @@
+{
+  "schema_version": "ocean-third-party-sources-v1",
+  "policy": [
+    "OCEAN source code is MIT-licensed unless a file states otherwise.",
+    "Database records, papers, software outputs, model weights, and reference data keep their upstream terms.",
+    "Bridges transform user-provided metadata; they do not copy third-party implementation code.",
+    "A source packet records provenance but does not grant redistribution rights."
+  ],
+  "sources": [],
+  "evidence_boundary": "An empty sources list means no third-party code has been vendored in this control-plane implementation; it does not classify every external resource a user may query."
+}

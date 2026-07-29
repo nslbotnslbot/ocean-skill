@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/benchmark_case.schema.json",
+  "title": "OCEAN-Bench Case",
+  "type": "object",
+  "required": [
+    "case_id",
+    "category",
+    "input",
+    "expected",
+    "provenance",
+    "scientific_evidence"
+  ],
+  "properties": {
+    "case_id": {"type": "string"},
+    "category": {
+      "enum": [
+        "claim_support",
+        "claim_downgrade",
+        "citation_entailment",
+        "evidence_independence",
+        "leakage_detection",
+        "validation_planning",
+        "reproducibility",
+        "negative_evidence",
+        "long_horizon_consistency",
+        "evidence_diff"
+      ]
+    },
+    "input": {"type": "object"},
+    "expected": {"type": "object"},
+    "provenance": {"type": "object"},
+    "scientific_evidence": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

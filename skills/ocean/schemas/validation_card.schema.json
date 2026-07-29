@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/nslbotnslbot/ocean-skill/schemas/validation_card.schema.json",
+  "title": "OCEAN ValidationCard",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "validation_id",
+    "claim_id",
+    "claim_type",
+    "current_evidence_classes",
+    "required_evidence_classes",
+    "independence_requirement",
+    "decisive_controls",
+    "pass_criteria",
+    "missing_evidence",
+    "maximum_safe_claim",
+    "stop_conditions",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-validation-card-v1"},
+    "validation_id": {"type": "string"},
+    "claim_id": {"type": "string"},
+    "claim_type": {"type": "string"},
+    "current_evidence_classes": {"type": "array", "items": {"type": "string"}},
+    "required_evidence_classes": {"type": "array", "items": {"type": "string"}},
+    "independence_requirement": {"type": "string"},
+    "decisive_controls": {"type": "array", "items": {"type": "string"}},
+    "pass_criteria": {"type": "array", "items": {"type": "string"}},
+    "missing_evidence": {"type": "array", "items": {"type": "string"}},
+    "maximum_safe_claim": {"type": "string"},
+    "stop_conditions": {"type": "array", "items": {"type": "string"}},
+    "evidence_boundary": {
+      "type": "object",
+      "required": ["inspected", "not_inspected", "cannot_conclude", "next_required"]
+    }
+  },
+  "additionalProperties": true
+}

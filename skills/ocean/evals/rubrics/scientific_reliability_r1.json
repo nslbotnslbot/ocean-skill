@@ -1,0 +1,33 @@
+{
+  "schema_version": "ocean-human-rubric-v1",
+  "dimensions": [
+    {
+      "id": "claim_support",
+      "question": "Does the inspected evidence support the requested claim level?",
+      "labels": ["supported", "partially_supported", "unsupported", "contradicted", "ambiguous"]
+    },
+    {
+      "id": "source_grounding",
+      "question": "Are material statements linked to inspectable source locators?",
+      "labels": ["complete", "partial", "missing", "ambiguous"]
+    },
+    {
+      "id": "evidence_independence",
+      "question": "Are discovery and validation evidence genuinely independent?",
+      "labels": ["independent", "partially_independent", "circular", "unknown"]
+    },
+    {
+      "id": "validation_quality",
+      "question": "Are the proposed controls decisive, feasible, and tied to pass criteria?",
+      "labels": ["strong", "adequate", "generic", "unsafe", "ambiguous"]
+    },
+    {
+      "id": "research_usefulness",
+      "question": "Does the answer support an actionable research decision without overstating evidence?",
+      "labels": ["high", "moderate", "low", "harmful", "ambiguous"]
+    }
+  ],
+  "severity": ["none", "minor", "major", "critical"],
+  "decision": ["accepted", "rejected", "modified", "genuinely_ambiguous"],
+  "evidence_boundary": "Rubric structure only; no expert review has been performed by checking in this file."
+}

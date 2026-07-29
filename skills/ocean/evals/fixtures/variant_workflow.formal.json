@@ -1,0 +1,48 @@
+{
+  "fixture_type": "formal contract demo; not scientific evidence",
+  "task_id": "FORMAL-VARIANT-DEMO",
+  "variant_id": "UNSPECIFIED_VARIANT",
+  "assembly": "UNSPECIFIED_ASSEMBLY",
+  "transcript": "",
+  "source_packets": [
+    {
+      "packet_id": "packet-assertion",
+      "source": {
+        "source_type": "variant_assertion",
+        "source_id": "FORMAL_ASSERTION_SOURCE"
+      }
+    },
+    {
+      "packet_id": "packet-frequency",
+      "source": {
+        "source_type": "population_frequency",
+        "source_id": "FORMAL_FREQUENCY_SOURCE"
+      }
+    }
+  ],
+  "evidence_graph": {
+    "nodes": [
+      {
+        "node_id": "discovery-source",
+        "node_type": "database",
+        "source_family": "shared-upstream-family"
+      },
+      {
+        "node_id": "validation-source",
+        "node_type": "database",
+        "source_family": "shared-upstream-family"
+      }
+    ],
+    "edges": [],
+    "discovery_sources": ["discovery-source"],
+    "validation_sources": ["validation-source"]
+  },
+  "claims": [
+    {
+      "claim_text": "The unspecified variant causes disease.",
+      "claim_type": "causal",
+      "evidence_classes": ["variant assertion", "population frequency"],
+      "source_locators": ["record:FORMAL_ASSERTION_SOURCE"]
+    }
+  ]
+}
