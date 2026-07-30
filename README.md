@@ -12,7 +12,7 @@ Its evidence-discovery module is named **Sounding**: a source-packet workflow fo
 
 [Detailed usage guide](docs/usage-guide.md) |
 [Evidence-control CLI](docs/evidence-control-plane.md) |
-[Availability audit validation](docs/evaluation/availability-evidence-cards-v1.md) |
+[Availability audit validation](docs/availability-evidence-cards-v1.md) |
 [中文使用指南](docs/usage-guide.zh-CN.md)
 
 ## What this is
@@ -172,7 +172,7 @@ The public contract is in
 machine-readable schema is in
 [`availability_evidence_card.schema.json`](skills/ocean/schemas/availability_evidence_card.schema.json),
 and the bounded 70-paper validation snapshot is in
-[`docs/evaluation/availability-evidence-cards-v1.md`](docs/evaluation/availability-evidence-cards-v1.md).
+[`docs/availability-evidence-cards-v1.md`](docs/availability-evidence-cards-v1.md).
 
 ## Project examples
 
