@@ -1,7 +1,7 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to explore papers or ideas, explain research for learning or journal clubs, design studies, audit claims, revise finished manuscripts without mixing audit notes into prose, track concise project status, classify domain-specific evidence standards, build source packets, route biomedical data/tools, check leakage/validation/benchmark fairness/reproducibility, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for unsupported clinical advice or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to explore papers or ideas, explain research for learning or journal clubs, design studies, audit claims, audit data/code/model availability, revise finished manuscripts without mixing audit notes into prose, track concise project status, classify domain-specific evidence standards, build source packets, route biomedical data/tools, check leakage/validation/benchmark fairness/reproducibility, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for unsupported clinical advice or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
@@ -54,6 +54,7 @@ Use the OCEAN module order when the task spans multiple steps:
 - Read `references/manuscript-revision-mode.md` whenever the input is manuscript text, a proposed replacement, a title/abstract/legend, or reviewer/editor feedback. Use it to select Design/Audit, Manuscript Revision, Pre-submission Stress Test, or Reviewer Response before selecting modules.
 - Read `references/domain-lens.md` when the task needs medical, biological, biomedical AI, omics, clinical, drug, KG/database, manuscript, proposal, or collaboration-specific evidence standards, or when the input domain is unclear.
 - Read `references/data-tool-router.md` when the task needs public data-source selection, official database/API routing, source classes, access/privacy/licensing boundaries, or a data/tool packet before Reef, Iceberg, Anchor, or Compass.
+- Read `references/availability-audit.md` when the user asks whether data, code, repositories, accessions, source data, model weights, prompts/configuration, environments, or versions are ready to share, reproduce, or submit. Keep every resource string unverified until a separate authorized lookup and never turn a no-hit state into an absence claim.
 - Read `references/bioinformatics-resource-map.md` when the task needs bioinformatics, computational biology, omics, clinical-data, benchmark, or software/workflow routing, including tools such as LAST, BLAST, minimap2, STAR, SAMtools, DESeq2, Seurat, Snakemake, Nextflow, and nf-core.
 - Read `references/bioinformatics-software-catalog.md` when the user asks which bioinformatics tools OCEAN covers, how a software/tool output should be packetized, or how tools such as LAST, GATK, Seurat, Scanpy, QIIME2, AlphaFold, MaxQuant, XCMS, nnU-Net, MONAI, Snakemake, or Nextflow should be routed without overclaiming.
 - Read `references/alphafold-db-adapter.md` when the user provides a UniProt accession or local AlphaFold DB files and asks for predicted-structure confidence, pLDDT, PAE/domain-flexibility, disorder risk, or whether predicted structure can support a biological claim.
@@ -116,13 +117,14 @@ Use the OCEAN module order when the task spans multiple steps:
 5. Classify the domain with `references/domain-lens.md` when domain-specific evidence standards matter. Record the research object, evidence needed, highest safe claim level, active module, and stop condition.
 6. Establish the evidence boundary: list what was inspected, not inspected, and cannot be concluded. In Revise mode, keep this boundary outside the clean replacement text.
 7. Route public data, databases, software, and APIs with `references/data-tool-router.md` when needed. A candidate route, API response, or software record is not automatically scientific evidence.
-8. If discovery is needed, use Sounding before downstream claims. Build source packets and negative space without turning search results into verified conclusions.
-9. If multiple modules are genuinely needed, preserve handoff evidence and unresolved risks with `references/module-handoff.md` and `references/module-artifact-contract.md`.
-10. Extract and audit central claims only when the selected mode needs it. Separate hypothesis, association, prediction, mechanism, and clinical benefit.
-11. Apply reliability and reviewer lenses only to the extent needed for the task. Never insert reviewer language or module labels into clean manuscript prose.
-12. For Track mode, record only confirmed status, the latest milestone, and the
+8. If the task concerns data/code/model release or reproducibility packaging, read `references/availability-audit.md`, preserve `not_verified` resource candidates, and keep FAIR, accessibility, ownership, license-compatibility, and scientific-validity judgments outside the structural card.
+9. If discovery is needed, use Sounding before downstream claims. Build source packets and negative space without turning search results into verified conclusions.
+10. If multiple modules are genuinely needed, preserve handoff evidence and unresolved risks with `references/module-handoff.md` and `references/module-artifact-contract.md`.
+11. Extract and audit central claims only when the selected mode needs it. Separate hypothesis, association, prediction, mechanism, and clinical benefit.
+12. Apply reliability and reviewer lenses only to the extent needed for the task. Never insert reviewer language or module labels into clean manuscript prose.
+13. For Track mode, record only confirmed status, the latest milestone, and the
     next step. Public GitHub updates require user approval.
-13. Output the selected contract. Do not add scoring, journal positioning, authorship analysis, or a seven-module narrative unless requested or materially useful.
+14. Output the selected contract. Do not add scoring, journal positioning, authorship analysis, or a seven-module narrative unless requested or materially useful.
 
 ## Machine-Readable Control Plane
 

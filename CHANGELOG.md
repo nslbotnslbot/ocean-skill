@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added a fail-closed 14-dimension Availability Evidence Card contract, machine-readable schema, bilingual README entry points, and a public 70-paper validation snapshot with byte-exact rerun evidence. Repository strings remain unverified, no-hit states remain unknown rather than absent, and FAIR/accessibility/license claims remain outside the structural card.
 - Added Explore, Design, Audit, Revise, and Track modes.
 - Added English and Chinese usage guides.
 - Added a searchable bioinformatics tool catalog and public database adapters.

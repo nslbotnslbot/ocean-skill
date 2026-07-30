@@ -1,0 +1,499 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/nslbotnslbot/ocean-skill/main/skills/ocean/schemas/availability_evidence_card.schema.json",
+  "title": "OCEAN Availability Evidence Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "case_id",
+    "paper_id",
+    "paper_bundle",
+    "inspection",
+    "dimensions",
+    "resource_candidates",
+    "resource_candidate_count",
+    "retained_resource_candidate_count",
+    "placeholder_candidates",
+    "placeholder_candidate_count",
+    "retained_placeholder_candidate_count",
+    "not_explicitly_located_dimension_count",
+    "author_input_needed",
+    "stop_conditions",
+    "overall_state",
+    "availability_verified",
+    "fair_compliance_verified",
+    "repository_identity_verified",
+    "license_compatibility_verified",
+    "expert_review_required",
+    "scientific_evidence",
+    "evidence_boundary",
+    "deterministic_payload_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "ocean-availability-evidence-card-v1"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "paper_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "paper_bundle": {
+      "$ref": "#/$defs/paperBundle"
+    },
+    "inspection": {
+      "$ref": "#/$defs/inspection"
+    },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "data_availability_statement",
+        "code_availability_statement",
+        "data_repository",
+        "persistent_identifier_or_accession",
+        "controlled_access",
+        "request_based_access",
+        "third_party_restriction",
+        "metadata_or_data_dictionary",
+        "license_terms",
+        "source_data",
+        "model_weights",
+        "prompt_or_configuration",
+        "reproducibility_environment",
+        "version_or_commit"
+      ],
+      "properties": {
+        "data_availability_statement": {
+          "$ref": "#/$defs/dimension"
+        },
+        "code_availability_statement": {
+          "$ref": "#/$defs/dimension"
+        },
+        "data_repository": {
+          "$ref": "#/$defs/dimension"
+        },
+        "persistent_identifier_or_accession": {
+          "$ref": "#/$defs/dimension"
+        },
+        "controlled_access": {
+          "$ref": "#/$defs/dimension"
+        },
+        "request_based_access": {
+          "$ref": "#/$defs/dimension"
+        },
+        "third_party_restriction": {
+          "$ref": "#/$defs/dimension"
+        },
+        "metadata_or_data_dictionary": {
+          "$ref": "#/$defs/dimension"
+        },
+        "license_terms": {
+          "$ref": "#/$defs/dimension"
+        },
+        "source_data": {
+          "$ref": "#/$defs/dimension"
+        },
+        "model_weights": {
+          "$ref": "#/$defs/dimension"
+        },
+        "prompt_or_configuration": {
+          "$ref": "#/$defs/dimension"
+        },
+        "reproducibility_environment": {
+          "$ref": "#/$defs/dimension"
+        },
+        "version_or_commit": {
+          "$ref": "#/$defs/dimension"
+        }
+      }
+    },
+    "resource_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resourceCandidate"
+      }
+    },
+    "resource_candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "retained_resource_candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "placeholder_candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/placeholderCandidate"
+      }
+    },
+    "placeholder_candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "retained_placeholder_candidate_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "not_explicitly_located_dimension_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 14
+    },
+    "author_input_needed": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "stop_conditions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "overall_state": {
+      "const": "availability_signals_only"
+    },
+    "availability_verified": {
+      "const": false
+    },
+    "fair_compliance_verified": {
+      "const": false
+    },
+    "repository_identity_verified": {
+      "const": false
+    },
+    "license_compatibility_verified": {
+      "const": false
+    },
+    "expert_review_required": {
+      "const": true
+    },
+    "scientific_evidence": {
+      "const": false
+    },
+    "evidence_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "deterministic_payload_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "$defs": {
+    "paperBundle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "source_xml_path",
+        "source_xml_sha256",
+        "locator_mode",
+        "license"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_xml_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_xml_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "locator_mode": {
+          "const": "structure-grounded"
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "inspection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inspected_section_count",
+        "inspected_paragraph_count",
+        "unique_text_count",
+        "duplicate_locator_count",
+        "availability_section_ids",
+        "availability_section_titles",
+        "excluded_reference_section_count",
+        "unresolved_regions"
+      ],
+      "properties": {
+        "inspected_section_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "inspected_paragraph_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unique_text_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicate_locator_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "availability_section_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "availability_section_titles": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "excluded_reference_section_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unresolved_regions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dimension_id",
+        "status",
+        "signal_count",
+        "retained_evidence_count",
+        "evidence",
+        "cannot_conclude",
+        "author_input_needed",
+        "human_review_required"
+      ],
+      "properties": {
+        "dimension_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "explicit_textual_signal",
+            "not_explicitly_located"
+          ]
+        },
+        "signal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retained_evidence_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "cannot_conclude": {
+          "type": "string",
+          "minLength": 1
+        },
+        "author_input_needed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "human_review_required": {
+          "const": true
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "locators",
+        "section_ids",
+        "section_titles",
+        "text_checksum",
+        "matched_patterns",
+        "excerpt"
+      ],
+      "properties": {
+        "locators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "section_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "section_titles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "text_checksum": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "matched_patterns": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "excerpt": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "resourceCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_type",
+        "value",
+        "normalized_value",
+        "locators",
+        "text_checksum",
+        "excerpt",
+        "verification_state"
+      ],
+      "properties": {
+        "candidate_type": {
+          "type": "string",
+          "enum": [
+            "url",
+            "doi",
+            "accession",
+            "named_repository"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "text_checksum": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "excerpt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_state": {
+          "const": "not_verified"
+        }
+      }
+    },
+    "placeholderCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "locators",
+        "text_checksum",
+        "excerpt",
+        "verification_state"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locators": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "text_checksum": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "excerpt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verification_state": {
+          "const": "requires_author_resolution"
+        }
+      }
+    }
+  }
+}

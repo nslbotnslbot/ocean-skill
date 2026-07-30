@@ -12,6 +12,7 @@ OCEAN 是一个轻量级、兼容 Codex 的 biomedical claim-evidence skill，�
 
 [中文详细使用指南](docs/usage-guide.zh-CN.md) |
 [证据控制层 CLI](docs/evidence-control-plane.zh-CN.md) |
+[Availability 审计验证](docs/availability-evidence-cards-v1.md) |
 [English usage guide](docs/usage-guide.md)
 
 ## 这是什么
@@ -157,6 +158,22 @@ Standard / Deep 审计。Manuscript Revision 先给干净替换正文；Track �
 
 明确要求审计时，OCEAN 可以使用完整 claim-evidence contract。评分、期刊定位、
 署名分析和七模块叙述，只有用户要求或确实有决策价值时才出现。
+
+### 数据、代码与模型可用性
+
+OCEAN 现在可以生成固定 14 维的 Availability Evidence Card，检查 data、
+code、repository、identifier、access condition、metadata、license、source
+data、model weight、prompt/configuration、environment 和 version 信号。
+URL、DOI、accession 和 repository name 在单独授权核验前始终只是
+`not_verified` 候选；没有命中只表示 `not_explicitly_located`，不能写成
+“全文中不存在”。
+
+公开工作流见
+[`availability-audit.md`](skills/ocean/references/availability-audit.md)，
+机器可读 schema 见
+[`availability_evidence_card.schema.json`](skills/ocean/schemas/availability_evidence_card.schema.json)，
+70 篇真实论文的有边界验证摘要见
+[`docs/availability-evidence-cards-v1.md`](docs/availability-evidence-cards-v1.md)。
 
 ## 项目示例
 
