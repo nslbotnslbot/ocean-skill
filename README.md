@@ -12,6 +12,7 @@ Its evidence-discovery module is named **Sounding**: a source-packet workflow fo
 
 [Detailed usage guide](docs/usage-guide.md) |
 [Evidence-control CLI](docs/evidence-control-plane.md) |
+[Availability audit validation](docs/evaluation/availability-evidence-cards-v1.md) |
 [中文使用指南](docs/usage-guide.zh-CN.md)
 
 ## What this is
@@ -156,6 +157,22 @@ Every mode remains evidence-bound. Do not overstate novelty or validity. Always 
 - light advice vs authorship-level contribution
 
 For explicit audits, OCEAN can use the full claim-evidence contract. Scores, journal positioning, authorship analysis, and seven-module narratives are omitted unless requested or materially useful.
+
+### Data, code, and model availability
+
+OCEAN can now produce a fixed 14-dimension Availability Evidence Card for
+data, code, repositories, identifiers, access conditions, metadata, licenses,
+source data, model weights, prompts/configuration, environments, and versions.
+It treats URLs, DOIs, accessions, and repository names as unverified candidates
+until a separate authorized check is performed. A no-hit result means only
+`not_explicitly_located`, never that the artifact is absent.
+
+The public contract is in
+[`availability-audit.md`](skills/ocean/references/availability-audit.md), the
+machine-readable schema is in
+[`availability_evidence_card.schema.json`](skills/ocean/schemas/availability_evidence_card.schema.json),
+and the bounded 70-paper validation snapshot is in
+[`docs/evaluation/availability-evidence-cards-v1.md`](docs/evaluation/availability-evidence-cards-v1.md).
 
 ## Project examples
 
