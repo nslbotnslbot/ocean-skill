@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://example.invalid/ocean/availability_evidence_card.schema.json",
+  "$id": "https://raw.githubusercontent.com/nslbotnslbot/ocean-skill/main/skills/ocean/schemas/availability_evidence_card.schema.json",
   "title": "OCEAN Availability Evidence Card",
   "type": "object",
   "additionalProperties": false,
