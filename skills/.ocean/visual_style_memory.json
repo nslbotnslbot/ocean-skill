@@ -1,0 +1,120 @@
+{
+  "schema_version": "ocean-visual-style-memory-v1",
+  "default_profile_id": "ocean-glacier-lite",
+  "profiles": {
+    "ocean-glacier-lite": {
+      "profile_id": "ocean-glacier-lite",
+      "name": "OCEAN Glacier Lite",
+      "palette": [
+        "#0b2a4f",
+        "#6d8ea8",
+        "#9fb5ca",
+        "#e3edf6",
+        "#f5a623"
+      ],
+      "typography": "sans-serif, medium weight titles, tighter paragraph spacing",
+      "lines": "1.5px, low chart clutter, subtle grid (0.30 alpha)",
+      "legend": "outside-right, compact, one-line labels",
+      "annotation": "short labels; avoid dense callouts",
+      "background": "white or very light slate",
+      "intended_use": "trend maps, direction maps, scorecards, summary visuals"
+    },
+    "ocean-editorial-review": {
+      "profile_id": "ocean-editorial-review",
+      "name": "OCEAN Editorial Review",
+      "palette": [
+        "#1b2a44",
+        "#3d5a80",
+        "#98c1d9",
+        "#ee6c4d",
+        "#293241"
+      ],
+      "typography": "strong heading contrast, concise axis labels",
+      "lines": "1.4px with high contrast labels",
+      "legend": "above-right when density is low, otherwise bottom compact",
+      "annotation": "include one-line rationale only",
+      "background": "off-white or white",
+      "intended_use": "decision cards, review visuals, comparison outputs"
+    },
+    "ocean-plain": {
+      "profile_id": "ocean-plain",
+      "name": "OCEAN Plain",
+      "palette": [
+        "#1f2937",
+        "#4b5563",
+        "#9ca3af",
+        "#d1d5db",
+        "#111827"
+      ],
+      "typography": "neutral, high readability, minimal decoration",
+      "lines": "thin, sparse",
+      "legend": "stable bottom row",
+      "annotation": "minimal but explicit",
+      "background": "white",
+      "intended_use": "clinical and biological dense data to small charts"
+    },
+    "ocean-biomed-accent": {
+      "profile_id": "ocean-biomed-accent",
+      "name": "OCEAN Biomed Accent",
+      "palette": [
+        "#082f49",
+        "#0ea5e9",
+        "#14b8a6",
+        "#f59e0b",
+        "#f97316"
+      ],
+      "typography": "clean sans-serif, explicit labels, medium-high contrast",
+      "lines": "1.3px, light major grid and visible minor grid",
+      "legend": "top-right or right side, compact rows",
+      "annotation": "short explanatory notes, one sentence max",
+      "background": "white",
+      "intended_use": "biomed benchmark comparisons, pathway maps, mechanism summaries"
+    }
+  },
+  "artifact_type_defaults": {
+    "trend-map": "ocean-glacier-lite",
+    "scorecard": "ocean-editorial-review",
+    "heatmap": "ocean-plain",
+    "correlation-matrix": "ocean-plain",
+    "radar": "ocean-editorial-review",
+    "network": "ocean-biomed-accent",
+    "roc": "ocean-editorial-review",
+    "pr-curve": "ocean-editorial-review",
+    "volcano": "ocean-plain",
+    "bar": "ocean-glacier-lite",
+    "violin": "ocean-plain",
+    "scatter": "ocean-glacier-lite",
+    "boxplot": "ocean-plain",
+    "forest": "ocean-editorial-review",
+    "funnel": "ocean-editorial-review",
+    "confusion-matrix": "ocean-editorial-review",
+    "time-series": "ocean-glacier-lite",
+    "pathway": "ocean-biomed-accent",
+    "sensitivity": "ocean-biomed-accent",
+    "sankey": "ocean-biomed-accent",
+    "upset": "ocean-plain",
+    "table": "ocean-plain",
+    "histogram": "ocean-plain",
+    "density": "ocean-plain",
+    "pie": "ocean-plain",
+    "waterfall": "ocean-editorial-review",
+    "qq": "ocean-plain",
+    "embedding": "ocean-plain",
+    "sunburst": "ocean-biomed-accent",
+    "alluvial": "ocean-biomed-accent",
+    "survival": "ocean-editorial-review",
+    "dotplot": "ocean-glacier-lite",
+    "area": "ocean-glacier-lite"
+  },
+  "project_memory": [],
+  "module_memory": [],
+  "artifact_memory": [],
+  "learning": {
+    "project_affinity": {},
+    "module_affinity": {},
+    "artifact_type_affinity": {},
+    "aspect_feedback": {},
+    "updated_at_utc": "2026-08-03T13:38:02+00:00"
+  },
+  "history": []
+}

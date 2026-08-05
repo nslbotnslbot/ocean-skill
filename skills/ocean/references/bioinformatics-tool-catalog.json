@@ -1,0 +1,1369 @@
+{
+  "schema_version": "ocean-bioinformatics-tool-catalog-v1",
+  "generated_on": "2026-08-03",
+  "count": 75,
+  "tools": [
+    {
+      "tool_id": "blast",
+      "display_name": "BLAST",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "blastp",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "last",
+      "display_name": "LAST",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "lastal",
+          "-v"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "bwa",
+      "display_name": "BWA",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "bwa"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "bowtie2",
+      "display_name": "Bowtie2",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "bowtie2",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "hisat2",
+      "display_name": "HISAT2",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "hisat2",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "star",
+      "display_name": "STAR",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "STAR",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "minimap2",
+      "display_name": "minimap2",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "minimap2",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "samtools",
+      "display_name": "SAMtools",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "samtools",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "bedtools",
+      "display_name": "BEDTools",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "bedtools",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "gatk",
+      "display_name": "GATK",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "gatk",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "bcftools",
+      "display_name": "bcftools",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "bcftools",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "freebayes",
+      "display_name": "FreeBayes",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "freebayes"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "deepvariant",
+      "display_name": "DeepVariant",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "deepvariant"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "strelka2",
+      "display_name": "Strelka2",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "strelka2"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "mutect2",
+      "display_name": "Mutect2",
+      "family": "alignment_quality",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "gatk",
+          "Mutect2",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "salmon",
+      "display_name": "Salmon",
+      "family": "expression",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "salmon",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "kallisto",
+      "display_name": "kallisto",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "kallisto",
+          "version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "rsem",
+      "display_name": "RSEM",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "rsem-calculate-expression",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "stringtie",
+      "display_name": "StringTie",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "stringtie",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "featurecounts",
+      "display_name": "featureCounts",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "featureCounts",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "deseq2",
+      "display_name": "DESeq2",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "DESeq2",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(DESeq2))); cat(as.character(packageVersion('DESeq2')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "edger",
+      "display_name": "edgeR",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "edgeR",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(edgeR))); cat(as.character(packageVersion('edgeR')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "limma_voom",
+      "display_name": "limma-voom",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "limma",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(limma))); cat(as.character(packageVersion('limma')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "sleuth",
+      "display_name": "sleuth",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "cell_ranger",
+      "display_name": "Cell Ranger",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "cellranger",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "starsolo",
+      "display_name": "STARsolo",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "STAR",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "alevin_fry",
+      "display_name": "Alevin-fry",
+      "family": "sequence",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "alevin-fry",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "seurat",
+      "display_name": "Seurat",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "Seurat",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(Seurat))); cat(as.character(packageVersion('Seurat')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "scanpy",
+      "display_name": "Scanpy",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "scanpy",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(scanpy))); cat(as.character(packageVersion('scanpy')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "scvi",
+      "display_name": "scVI",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "scvi-tools",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(scvi-tools))); cat(as.character(packageVersion('scvi-tools')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "celltypist",
+      "display_name": "CellTypist",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "CellTypist",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(CellTypist))); cat(as.character(packageVersion('CellTypist')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "azimuth",
+      "display_name": "Azimuth",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "Azimuth",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(Azimuth))); cat(as.character(packageVersion('Azimuth')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "macs2_macs3",
+      "display_name": "MACS2/MACS3",
+      "family": "epigenetics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "deeptools",
+      "display_name": "deepTools",
+      "family": "epigenetics",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "plotCoverage",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "homer",
+      "display_name": "HOMER",
+      "family": "epigenetics",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "analyzeRepeats",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "meme_fimo",
+      "display_name": "MEME/FIMO",
+      "family": "epigenetics",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "fimo",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "qiime2",
+      "display_name": "QIIME2",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "dada2",
+      "display_name": "DADA2",
+      "family": "single_cell",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "r_package",
+        "package": "dada2",
+        "command": [
+          "Rscript",
+          "-e",
+          "suppressWarnings(suppressPackageStartupMessages(library(dada2))); cat(as.character(packageVersion('dada2')), '\\n')"
+        ]
+      }
+    },
+    {
+      "tool_id": "metaphlan",
+      "display_name": "MetaPhlAn",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "metaphlan",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "humann",
+      "display_name": "HUMAnN",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "humann",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "kraken2",
+      "display_name": "Kraken2",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "kraken2",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "bracken",
+      "display_name": "Bracken",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "bracken",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "megahit",
+      "display_name": "MEGAHIT",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "megahit",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "spades",
+      "display_name": "SPAdes",
+      "family": "microbiome",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "spades.py",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "maxquant",
+      "display_name": "MaxQuant",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "fragpipe",
+      "display_name": "FragPipe",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "dia_nn",
+      "display_name": "DIA-NN",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "skyline",
+      "display_name": "Skyline",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "ms_dial",
+      "display_name": "MS-DIAL",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "xcms",
+      "display_name": "XCMS",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "mzmine",
+      "display_name": "MZmine",
+      "family": "proteomics",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "alphafold",
+      "display_name": "AlphaFold",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "colabfold",
+      "display_name": "ColabFold",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "rosettafold",
+      "display_name": "RoseTTAFold",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "hh_suite",
+      "display_name": "HH-suite",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "hmmer",
+      "display_name": "HMMER",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "r_wrapper",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "modeller",
+      "display_name": "MODELLER",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "pymol",
+      "display_name": "PyMOL",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "chimerax",
+      "display_name": "ChimeraX",
+      "family": "structure",
+      "coverage_state": "covered",
+      "implementation_state": "heavy_tool_template",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": ""
+    },
+    {
+      "tool_id": "mafft",
+      "display_name": "MAFFT",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "mafft",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "muscle",
+      "display_name": "MUSCLE",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "muscle",
+          "-version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "clustal_omega",
+      "display_name": "Clustal Omega",
+      "family": "rna",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "clustalo",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "iq_tree",
+      "display_name": "IQ-TREE",
+      "family": "phylo",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "iqtree",
+          "-h"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "raxml",
+      "display_name": "RAxML",
+      "family": "phylo",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "raxmlHPC",
+          "-h"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "fasttree",
+      "display_name": "FastTree",
+      "family": "phylo",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "FastTree",
+          "-help"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "orthofinder",
+      "display_name": "OrthoFinder",
+      "family": "phylo",
+      "coverage_state": "covered",
+      "implementation_state": "cli_launcher",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "orthofinder",
+          "-h"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "snakemake",
+      "display_name": "Snakemake",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "snakemake",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "nextflow",
+      "display_name": "Nextflow",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "golden",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "nextflow",
+          "-version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "cwl",
+      "display_name": "CWL",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "cwltool",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "wdl_cromwell",
+      "display_name": "WDL/Cromwell",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "cromwell",
+          "server"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "galaxy",
+      "display_name": "Galaxy",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "planemo",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "docker",
+      "display_name": "Docker",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "docker",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "singularity_apptainer",
+      "display_name": "Singularity/Apptainer",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "apptainer",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "conda",
+      "display_name": "Conda",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "conda",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    },
+    {
+      "tool_id": "nf_core",
+      "display_name": "nf-core",
+      "family": "workflow",
+      "coverage_state": "covered",
+      "implementation_state": "workflow_container",
+      "runtime_state": "not_tested",
+      "verification_state": "not_verified",
+      "scientific_validation_state": "not_validated",
+      "readiness_priority": "standard",
+      "notes": "",
+      "readiness_probe": {
+        "type": "command",
+        "command": [
+          "nf-core",
+          "--version"
+        ],
+        "timeout_seconds": 8
+      }
+    }
+  ]
+}
