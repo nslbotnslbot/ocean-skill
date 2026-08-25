@@ -131,6 +131,20 @@ OCEAN 会在内部选择最少且必要的模块，不会为了展示框架而�
 或 clinical utility。使用 Standard 输出。
 ```
 
+### 条件式研究包红队预审
+
+```text
+使用 $ocean 的 Audit 模式，审查这个研究包：
+<可追溯的稿件/proposal/project packet>。
+聚焦已记录的证据瓶颈与最小验证路径。
+仅当材料能说明 study aim、核心 claim 或计划、data/cohort 边界、验证设计，并至少
+包含一个 SourcePacket 或 locator 时使用；否则请返回 Cannot decide 与最小缺失材料。
+输出必须包含：最大证据瓶颈、研究有效性判定、最小补充验证清单、
+Go / Rework / Stop / Cannot decide、reviewer-risk ticket、合作与贡献边界。
+这些是有边界的审查辅助，不是发表、临床、伦理或署名决定。
+请使用 `skills/ocean/references/research-red-team-template.md` 里的固定格式。
+```
+
 ### 修改已经写好的正文
 
 ```text

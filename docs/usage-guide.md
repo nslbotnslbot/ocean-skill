@@ -136,6 +136,22 @@ reproducibility, and whether association/prediction is overstated as mechanism
 or clinical utility. Use Standard output.
 ```
 
+### Conditional red-team package review
+
+```text
+Use $ocean in Audit mode for this study package:
+<traceable manuscript/proposal/project packet>.
+Run a red-team review focused on documented evidence bottlenecks and minimum validation.
+Use this only if the package identifies the study aim, central claims or plan,
+data/cohort boundary, validation design, and at least one source packet or
+locator. Otherwise return Cannot decide and the smallest missing input.
+Output should include Fatal Evidence Bottleneck, Study-validity verdict, Minimum
+Validation Package, Go / Rework / Stop / Cannot decide, Reviewer-risk ticket,
+and collaboration boundary.
+These are bounded review aids, not publication, clinical, ethics, or authorship decisions.
+Use the compact template in skills/ocean/references/research-red-team-template.md.
+```
+
 ### Revise finished manuscript text
 
 ```text

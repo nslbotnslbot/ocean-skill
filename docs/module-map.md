@@ -1,8 +1,17 @@
 # OCEAN Module Map
 
-OCEAN is scoped to biomedical research: medical research and biological research, with special attention to medical AI and biological AI workflows. The modules are ordered so that each one completes a distinct evidence-review event and produces a handoff artifact.
+OCEAN is scoped to biomedical research: medical research and biological research, with special attention to medical AI and biological AI workflows. The modules are conversational reference contracts: each defines a distinct evidence-review event and a handoff artifact. They are not seven separately automated scientific-analysis programs; machine-readable execution is limited to the listed evidence-control CLI commands and reference workflows.
 
 For research design tasks, the seven modules form a design loop: domain lens -> evidence boundary -> source/resource packet -> claim calibration -> validation gate -> research route -> decision memory.
+
+For explicit package-level biomedical AI, clinical-prediction, and KG/database
+Design/Audit requests, OCEAN can use a conditional **research-package
+red-team** route. It runs only after its traceability and input-completeness
+gate passes; ordinary claims, Explore, Revise, and Track retain their normal
+routes. See [`docs/research-red-team.md`](research-red-team.md).
+
+For a concrete output layout in package-level red-team sessions, follow
+[`references/research-red-team-template.md`](../skills/ocean/references/research-red-team-template.md).
 
 ## Module Responsibilities
 

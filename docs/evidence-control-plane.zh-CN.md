@@ -2,9 +2,9 @@
 
 [English version](evidence-control-plane.md)
 
-OCEAN 的对话 skill 负责判断科研 claim 在现有证据下最多能安全地说到什么程度；
-证据控制层 CLI 则把这个判断过程落实为可追踪的文件、工具运行、任务工作流和
-长期项目记录。
+OCEAN 的对话 skill 用于引导科研 claim 在现有证据下最多能安全地说到什么程度；
+证据控制层 CLI 则把声明的 provenance 与部分控制检查落实为可追踪的文件、工具运行、
+任务工作流和长期项目记录。
 
 它是控制层，不是科研结果生成器。命令成功只表示 OCEAN contract 被正确执行，
 不代表生物学、临床、材料或工程结论已经成立。
@@ -118,6 +118,27 @@ python3 skills/ocean/scripts/ocean.py audit statistics-unit --help
 
 这些检查只基于已经提供的 metadata 与 locator，不会悄悄读取缺失全文、猜测
 未报告的样本结构，也不会自动编写 accession 或 DOI。
+
+对于结构化的研究包红队请求，下面的门禁会检查声明的 Design/Audit 研究包是否具有
+可追溯的 study framing、claim 或计划、data/cohort、validation 与 source-packet 输入：
+
+```bash
+python3 skills/ocean/scripts/ocean.py red-team-gate \
+  --input path/to/research-package.json \
+  --output outputs/research-package-gate.json
+```
+
+在完整的文件化审查后，以下结构检查要求每项固定结论要么引用已声明的 source-packet
+locator，要么显式标为未知并说明下一条所需输入；它不评估所引材料的科学内容：
+
+```bash
+python3 skills/ocean/scripts/ocean.py red-team-review-check \
+  --input path/to/research-red-team-review.json \
+  --output outputs/research-red-team-review-check.json
+```
+
+结果只能是 `not_requested`、`not_applicable`、`cannot_decide` 或
+`ready_for_human_red_team`；它不会决定 Go / Rework / Stop，也不判断科学有效性。
 
 ## 5. 保存长期项目决定
 

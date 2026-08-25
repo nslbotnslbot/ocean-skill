@@ -75,6 +75,21 @@ Use by default for ordinary first-turn questions, journal-club explanations, nar
 
 For a learning or journal-club request, replace technical audit language with a clear explanation while keeping the same evidence boundary. For a Track request, report only the current status, latest confirmed milestone, and next step. For Revise, use the Manuscript Revision contract instead.
 
+## Conditional Research-Package Red-Team
+
+This is not Quick Mode. Use it only after the entry gate in
+`research-red-team.md` passes: an explicit Design or Audit request, a
+traceable biomedical AI/clinical-prediction/database/KG package, and a request
+for Go / Rework / Stop-style minimum-validation triage.
+
+For incomplete or non-traceable material, return a compact **Cannot decide**
+boundary and the minimum missing inputs. Do not infer a fatal bottleneck or a
+publication prediction. For a qualified package, use
+[`research-red-team-template.md`](research-red-team-template.md) as the
+specialized contract; its Go / Rework / Stop / Cannot decide label is bounded
+by inspected evidence and is not a publication, clinical, ethics, or authorship
+decision.
+
 ## Standard Mode
 
 Use for explicit multi-claim project or manuscript audits, research plans, collaboration analysis, and journal-positioning requests. Do not use it merely because OCEAN has seven modules, and do not use it for ordinary finished-text revision. Keep the headings in this order. If a section is not relevant, write "不适用" with a short reason rather than deleting the section.

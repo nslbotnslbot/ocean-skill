@@ -18,6 +18,8 @@ DIRECT = {
     "manifest": SCRIPT_ROOT / "runtime/run_manifest.py",
     "ledger": SCRIPT_ROOT / "runtime/harbor_ledger.py",
     "domain-lens": SCRIPT_ROOT / "runtime/domain_lens.py",
+    "red-team-gate": SCRIPT_ROOT / "runtime/research_package_gate.py",
+    "red-team-review-check": SCRIPT_ROOT / "runtime/research_red_team_review_check.py",
 }
 
 GROUPED = {

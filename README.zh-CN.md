@@ -31,6 +31,10 @@ OCEAN 的定位是：**biomedical first, AI-aware, evidence-boundary centered**�
 - 当前优先场景：medical AI research、biological AI research、生物信息学、临床预测、知识图谱、数据库、public review 信号、manuscript 和研究规划。
 - 不适合：只做普通论文总结、无证据的临床建议、虚构数据，或没有生物医学证据问题的泛科学讨论。
 
+机器可读的 Domain Lens 也为明确提出的 materials、chemistry 与 engineering
+任务提供保守路由；这只是证据控制脚手架，不代表 OCEAN 的核心范围扩展到生物医学
+之外，也不代表它在这些领域具备专家能力。
+
 OCEAN 不是：
 
 - autonomous AI scientist；
@@ -67,7 +71,9 @@ OCEAN 不是：
 
 ## 模块流程
 
-OCEAN 默认只选择最少且必要的模块，并隐藏模块名称。需要端到端处理时，每个模块完成不同事件并交付具体产物。更完整的说明见 `docs/module-map.md`。
+OCEAN 默认只选择最少且必要的模块，并隐藏模块名称。端到端对话工作流中，每个模块
+都有文档化的产物与交接契约；只有已列出的控制层 CLI 命令和参考工作流会生成机器可读
+artifact，模块名称本身不代表自动执行。更完整的说明见 `docs/module-map.md`。
 
 | 顺序 | Module | 完成的事件 | 典型产物 |
 |---:|---|---|---|
@@ -78,6 +84,21 @@ OCEAN 默认只选择最少且必要的模块，并隐藏模块名称。需要�
 | 5 | **Anchor** | 验证、复现、leakage、benchmark、reproducibility 规划 | Validation checklist、benchmark/leakage plan、复现风险 |
 | 6 | **Compass** | 研究计划和策略决策 | Idea card、实验计划、期刊/合作策略 |
 | 7 | **Harbor** | 报告沉淀和协作边界记忆 | Final report、decision note、贡献边界记录 |
+
+## 可选的研究包红队
+
+只有用户在 **Design** 或 **Audit** 中明确要求决策，并提供可追溯的 biomedical AI、
+clinical prediction、database 或 knowledge-graph 研究包时，OCEAN 才可启用研究包红队。
+它不是普通 Audit、Explore、Revise 或 Track 的默认路径。
+
+研究包至少要能说明 study aim、核心 claim 或研究计划、data/cohort 边界、验证设计，
+以及至少一个可追溯 SourcePacket 或 locator。否则 OCEAN 只能返回 **Cannot decide**
+和最小补充材料。合格的审查可以给出最大证据瓶颈、研究有效性边界、最小补充验证包、
+Go / Rework / Stop / Cannot decide、reviewer-risk ticket 与合作投入边界；它们只是有
+边界的审查辅助，不是发表、临床、伦理或署名决定。
+
+中文说明见 [`docs/research-red-team.zh-CN.md`](docs/research-red-team.zh-CN.md)，运行时规范见
+[`skills/ocean/references/research-red-team.md`](skills/ocean/references/research-red-team.md)。
 
 ## 快速开始
 
@@ -161,18 +182,18 @@ Standard / Deep 审计。Manuscript Revision 先给干净替换正文；Track �
 
 ### 数据、代码与模型可用性
 
-OCEAN 现在可以生成固定 14 维的 Availability Evidence Card，检查 data、
-code、repository、identifier、access condition、metadata、license、source
-data、model weight、prompt/configuration、environment 和 version 信号。
-URL、DOI、accession 和 repository name 在单独授权核验前始终只是
-`not_verified` 候选；没有命中只表示 `not_explicitly_located`，不能写成
-“全文中不存在”。
+OCEAN 当前提供有证据边界的 availability-audit contract，以及一个拟议中的固定
+14 维 Availability Evidence Card schema。已发布 CLI 只检查用户声明的 asset metadata
+和未解决 placeholder；它**尚不能**从论文生成 14 维 card，也不会核验 repository、
+identifier、license、FAIR 合规、可访问性或可复现性。URL、DOI、accession 和
+repository name 在单独授权核验前始终只是 `not_verified` 候选；没有命中只表示
+`not_explicitly_located`，不能写成“全文中不存在”。
 
 公开工作流见
 [`availability-audit.md`](skills/ocean/references/availability-audit.md)，
 机器可读 schema 见
 [`availability_evidence_card.schema.json`](skills/ocean/schemas/availability_evidence_card.schema.json)，
-70 篇真实论文的有边界验证摘要见
+当前实现状态与后续评测 protocol 见
 [`docs/availability-evidence-cards-v1.md`](docs/availability-evidence-cards-v1.md)。
 
 ## 项目示例

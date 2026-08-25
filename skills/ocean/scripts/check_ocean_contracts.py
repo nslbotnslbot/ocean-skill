@@ -16,6 +16,8 @@ REQUIRED_REFERENCES = [
     "module-artifact-contract.md",
     "output-contract.md",
     "manuscript-revision-mode.md",
+    "research-red-team.md",
+    "research-red-team-template.md",
     "module-handoff.md",
     "sounding.md",
     "current.md",
