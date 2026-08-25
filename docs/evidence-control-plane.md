@@ -2,9 +2,9 @@
 
 [中文版本](evidence-control-plane.zh-CN.md)
 
-OCEAN's conversational skill decides what a research claim may safely say. The
-evidence-control CLI makes that decision process traceable across files, tool
-runs, task workflows, and long-running projects.
+OCEAN's conversational skill guides what a research claim may safely say. The
+evidence-control CLI makes declared provenance and selected control checks
+traceable across files, tool runs, task workflows, and long-running projects.
 
 It is a control layer, not a scientific result generator. A successful command
 means that an OCEAN contract was executed, not that a biological, clinical, or
@@ -123,6 +123,30 @@ python3 skills/ocean/scripts/ocean.py audit statistics-unit --help
 These checks are bounded by supplied metadata and locators. They do not silently
 read missing full text, infer unreported sample structure, or fill repository
 accessions and DOIs.
+
+For a structured research-package red-team request, the gate checks whether a
+declared Design/Audit package has traceable framing, claims or plan,
+data/cohort, validation, and source-packet inputs:
+
+```bash
+python3 skills/ocean/scripts/ocean.py red-team-gate \
+  --input path/to/research-package.json \
+  --output outputs/research-package-gate.json
+```
+
+After a full file-based review, this structural checker requires every fixed
+conclusion to cite a declared source-packet locator or state an explicit unknown
+and the next required input. It does not evaluate the cited scientific content:
+
+```bash
+python3 skills/ocean/scripts/ocean.py red-team-review-check \
+  --input path/to/research-red-team-review.json \
+  --output outputs/research-red-team-review-check.json
+```
+
+Its result is `not_requested`, `not_applicable`, `cannot_decide`, or
+`ready_for_human_red_team`. It never decides Go / Rework / Stop or scientific
+validity.
 
 ## 5. Preserve long-running decisions
 

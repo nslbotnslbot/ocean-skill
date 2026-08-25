@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/nslbotnslbot/ocean-skill/main/skills/ocean/schemas/research_red_team_review.schema.json",
+  "title": "OCEAN Research Red-Team Review Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "package_gate_id",
+    "package_gate_status",
+    "source_packet_ids",
+    "conclusions"
+  ],
+  "properties": {
+    "schema_version": {"const": "ocean-research-red-team-review-v1"},
+    "package_gate_id": {"type": "string", "minLength": 1},
+    "package_gate_status": {"const": "ready_for_human_red_team"},
+    "source_packet_ids": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "conclusions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/conclusion"}
+    }
+  },
+  "$defs": {
+    "conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "conclusion_id",
+        "kind",
+        "statement",
+        "evidence_state",
+        "evidence",
+        "next_required"
+      ],
+      "properties": {
+        "conclusion_id": {"type": "string", "minLength": 1},
+        "kind": {
+          "type": "string",
+          "enum": [
+            "bottleneck",
+            "validity_verdict",
+            "minimum_validation",
+            "decision",
+            "reviewer_risk",
+            "collaboration_boundary"
+          ]
+        },
+        "statement": {"type": "string", "minLength": 1},
+        "decision": {
+          "type": "string",
+          "enum": ["Go", "Rework", "Stop", "Cannot decide"]
+        },
+        "evidence_state": {
+          "type": "string",
+          "enum": ["located", "explicit_unknown"]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/evidence"}
+        },
+        "next_required": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packet_id", "locator"],
+      "properties": {
+        "packet_id": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

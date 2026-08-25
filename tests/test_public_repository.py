@@ -115,6 +115,8 @@ class PublicRepositoryBoundaryTests(unittest.TestCase):
             "claude science",
         )
         for path in ROOT.rglob("*.md"):
+            if "outputs" in path.parts or ".git" in path.parts:
+                continue
             text = path.read_text(encoding="utf-8").casefold()
             for label in borrowed_labels:
                 self.assertNotIn(

@@ -120,8 +120,11 @@ Return:
 5. **Unresolved Release Placeholders**.
 6. **Submission-Ready Actions** ordered by blocking priority.
 
-When a machine-readable artifact is useful, use
-`../schemas/availability_evidence_card.schema.json`. The schema deliberately
-fixes availability verification, FAIR compliance, repository identity,
-license compatibility, and scientific-evidence claims to false until separate
-authorized checks and expert review occur.
+The repository currently provides
+`../schemas/availability_evidence_card.schema.json` as a protocol schema, not
+as a shipped card generator. Do not claim that the CLI produced this 14-
+dimension artifact unless a separately implemented generator and its run
+records are supplied. The schema deliberately fixes availability verification,
+FAIR compliance, repository identity, license compatibility, and scientific-
+evidence claims to false until separate authorized checks and expert review
+occur.

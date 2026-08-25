@@ -1,81 +1,53 @@
-# Availability Evidence Cards v1
+# Availability Evidence Cards v1: Protocol Preview
 
-## Public validation snapshot
+## Current implementation status
 
-OCEAN's first Availability Evidence Card evaluation used 70 real Europe PMC
-CC BY JATS papers represented as checksum-bound PaperBundles. The experiment
-was offline and excluded reference sections and their descendants.
+The repository contains a fail-closed schema and an evidence-boundary contract
+for a proposed 14-dimension Availability Evidence Card. It does **not** yet
+ship a card generator that turns papers, JATS XML, or PaperBundles into that
+schema. The current `audit data-availability` CLI checks only user-declared
+asset metadata and unresolved placeholders.
 
-The workflow inspected:
+Therefore OCEAN does not currently claim that it can generate a 14-dimension
+card, resolve repositories or identifiers, verify accessibility or licenses,
+assess FAIR compliance, establish reproducibility, or report a completed
+corpus-level evaluation.
 
-- 70/70 PaperBundles;
-- 1,850 non-reference sections;
-- 3,893 paragraph locators;
-- 3,841 unique paragraph texts after exact-checksum grouping;
-- 52 duplicate locators retained across grouped text.
+## Proposed card boundary
 
-It produced one fixed 14-dimension card per paper. A separate clean rerun
-reproduced all 70 card files and the aggregate summary byte-for-byte.
+The future card will inspect these dimensions independently:
 
-## Bounded trace coverage
+1. data availability statement;
+2. code availability statement;
+3. data repository;
+4. persistent identifier or accession;
+5. controlled access;
+6. request-based access;
+7. third-party restriction;
+8. metadata or data dictionary;
+9. license terms;
+10. source data;
+11. model weights;
+12. prompt or configuration;
+13. reproducibility environment; and
+14. version or commit.
 
-| Signal class | Cards with an explicit textual signal |
-|---|---:|
-| Data availability statement | 17/70 |
-| Code availability statement | 5/70 |
-| Data repository | 33/70 |
-| Persistent identifier or accession | 30/70 |
-| Controlled access | 1/70 |
-| Request-based access | 4/70 |
-| Third-party restriction | 0/70 |
-| Metadata or data dictionary | 2/70 |
-| License terms | 1/70 |
-| Source data | 10/70 |
-| Model weights | 2/70 |
-| Prompt or configuration | 1/70 |
-| Reproducibility environment | 5/70 |
-| Version or commit | 24/70 |
+For each dimension, the only structural states will be
+`explicit_textual_signal` and `not_explicitly_located`. Neither is a quality,
+availability, FAIR, or scientific-validity verdict. URLs, DOIs, repository
+names, and accessions must remain `not_verified` until an authorized lookup.
 
-The run located 474 resource candidates and retained 470 under the fixed
-per-card review cap. It did not resolve any candidate.
+## Required release evidence before stronger claims
 
-## Corrections made before freezing
+Before this page can report a reproducible evaluation, a release must include:
 
-Two development probes exposed false-positive traps:
+- a deterministic card generator with schema and checksum regression tests;
+- a versioned corpus manifest that records source, license, selection rule,
+  access date, and content checksums;
+- runner configuration, per-run manifest, and aggregate-summary procedure;
+- an explicit statement of which material was inspected and excluded;
+- locked expert positive and negative examples for all 14 dimensions; and
+- reported error rates, abstention behavior, and cross-domain review results.
 
-1. generic `to be added` wording in ordinary methods text was initially
-   mistaken for a release placeholder;
-2. a statement that checkpoints were used for inference was initially
-   mistaken for checkpoint availability.
-
-The frozen rules require release-field context for placeholders and explicit
-availability, release, provision, or deposition wording for model artifacts.
-Common request-based wording such as `available from the corresponding author
-on reasonable request` is handled separately.
-
-## What the result means
-
-The evaluation establishes deterministic structural extraction and traceable
-unknown states under the frozen corpus, configuration, and implementation.
-
-It does **not** establish:
-
-- that a URL, DOI, accession, repository, code release, model artifact, or
-  environment exists or resolves;
-- that artifacts are complete, usable, immutable, or sufficient to reproduce
-  the paper;
-- FAIR compliance, accessibility, ownership, consent, or license
-  compatibility;
-- detector precision, recall, cross-domain validity, or expert utility;
-- scientific validity.
-
-All cards require expert review. A missing signal means only
-`not_explicitly_located`, never that the full paper or supplement omitted the
-artifact.
-
-## Next validation
-
-The next release gate is expert evaluation on locked positive and negative
-examples for all 14 dimensions, followed by an independently authorized
-resource-resolution layer. Until then, this is a public research-software
-preview, not a validated FAIR or reproducibility checker.
+Until then, this is a public protocol preview, not a validated FAIR,
+availability, or reproducibility checker.

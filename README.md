@@ -32,6 +32,11 @@ OCEAN is **biomedical first, AI-aware, and evidence-boundary centered**.
 - Priority use cases today: medical AI research, biological AI research, bioinformatics, clinical prediction, knowledge graphs, databases, public review signals, manuscripts, and research planning.
 - Out of scope: summary-only paper reading, unsupported clinical advice, invented data, or broad general-science claims without a biomedical evidence question.
 
+The machine-readable Domain Lens also has conservative routing rules for
+explicit materials, chemistry, and engineering requests. Those rules are
+evidence-control scaffolding, not an expansion of OCEAN's core scope or a claim
+of domain-expert coverage outside biomedicine.
+
 OCEAN is not:
 
 - an autonomous AI scientist;
@@ -69,7 +74,7 @@ rules are in the [usage guide](docs/usage-guide.md).
 
 ## Module flow
 
-OCEAN selects only the modules needed for the request and hides module names by default. For end-to-end work, each module completes a distinct event and hands off a concrete artifact. See `docs/module-map.md` for the fuller map.
+OCEAN selects only the modules needed for the request and hides module names by default. For end-to-end conversational work, each module has a documented artifact and handoff contract. The evidence-control CLI creates machine-readable artifacts only for its listed commands and reference workflows; module names alone do not imply automated execution. See `docs/module-map.md` for the fuller map.
 
 | Order | Module | Event it completes | Typical output |
 |---:|---|---|---|
@@ -80,6 +85,26 @@ OCEAN selects only the modules needed for the request and hides module names by 
 | 5 | **Anchor** | Validation, replication, leakage, benchmark, and reproducibility planning | Validation checklist, benchmark/leakage plan, reproducibility risks |
 | 6 | **Compass** | Research planning and strategic decision-making | Idea card, experiment plan, journal/collaboration strategy |
 | 7 | **Harbor** | Report preservation and collaboration boundary memory | Final report, decision note, contribution boundary record |
+
+## Optional research-package red-team
+
+For an explicit **Design** or **Audit** request about a traceable biomedical AI,
+clinical-prediction, database, or knowledge-graph research package, OCEAN can
+run a specialized package red-team. It is not the default for ordinary Audit,
+Explore, Revise, or Track.
+
+The package must identify its study aim, central claims or plan, data/cohort
+boundary, validation design, and at least one traceable source packet or
+locator. Otherwise OCEAN returns **Cannot decide** and the minimum missing
+material. A qualified review can provide a Fatal Evidence Bottleneck,
+study-validity boundary, Minimum Validation Package, Go / Rework / Stop /
+Cannot decide, reviewer-risk ticket, and collaboration-input boundary. These
+are review aids, not publication, clinical, ethics, or authorship decisions.
+
+See [`docs/research-red-team.md`](docs/research-red-team.md) for the public
+overview and
+[`skills/ocean/references/research-red-team.md`](skills/ocean/references/research-red-team.md)
+for the canonical runtime contract.
 
 ## Quick start
 
@@ -160,18 +185,20 @@ For explicit audits, OCEAN can use the full claim-evidence contract. Scores, jou
 
 ### Data, code, and model availability
 
-OCEAN can now produce a fixed 14-dimension Availability Evidence Card for
-data, code, repositories, identifiers, access conditions, metadata, licenses,
-source data, model weights, prompts/configuration, environments, and versions.
-It treats URLs, DOIs, accessions, and repository names as unverified candidates
-until a separate authorized check is performed. A no-hit result means only
+OCEAN currently provides an evidence-bound availability-audit contract and a
+schema for a proposed 14-dimension Availability Evidence Card. The shipped CLI
+checks user-declared asset metadata and unresolved placeholders; it does **not**
+yet generate the 14-dimension card from papers or verify repositories,
+identifiers, licenses, FAIR compliance, accessibility, or reproducibility.
+URLs, DOIs, accessions, and repository names remain unverified candidates until
+a separate authorized check is performed. A no-hit result means only
 `not_explicitly_located`, never that the artifact is absent.
 
 The public contract is in
 [`availability-audit.md`](skills/ocean/references/availability-audit.md), the
 machine-readable schema is in
 [`availability_evidence_card.schema.json`](skills/ocean/schemas/availability_evidence_card.schema.json),
-and the bounded 70-paper validation snapshot is in
+and the current implementation status and evaluation protocol are in
 [`docs/availability-evidence-cards-v1.md`](docs/availability-evidence-cards-v1.md).
 
 ## Project examples

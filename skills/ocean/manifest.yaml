@@ -21,6 +21,8 @@ control_plane:
     - schemas/validation_card.schema.json
     - schemas/evidence_node.schema.json
     - schemas/artifact_envelope.schema.json
+    - schemas/research_package.schema.json
+    - schemas/research_red_team_review.schema.json
 
 conditional_references:
   domain_or_claim_standard:
@@ -41,6 +43,10 @@ conditional_references:
     - references/claim-to-artifact-matrix.md
   reproducibility_or_validation:
     - references/reproducibility-gates.md
+    - references/research-design-workflow.md
+  package_level_red_team:
+    - references/research-red-team.md
+    - references/research-red-team-template.md
 
 modules:
   Sounding:
@@ -72,6 +78,8 @@ scripts:
   run_manifest: scripts/runtime/run_manifest.py
   harbor_ledger: scripts/runtime/harbor_ledger.py
   domain_lens: scripts/runtime/domain_lens.py
+  research_package_gate: scripts/runtime/research_package_gate.py
+  research_red_team_review_check: scripts/runtime/research_red_team_review_check.py
   paper_ingest: scripts/ingest/prepare_paper.py
   evidence_independence: scripts/detectors/evidence_independence.py
   evidence_diff: scripts/detectors/evidence_diff.py

@@ -1,7 +1,7 @@
 ---
 name: ocean
 description: >-
-  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to explore papers or ideas, explain research for learning or journal clubs, design studies, audit claims, audit data/code/model availability, revise finished manuscripts without mixing audit notes into prose, track concise project status, classify domain-specific evidence standards, build source packets, route biomedical data/tools, check leakage/validation/benchmark fairness/reproducibility, evaluate database/KG evidence, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for unsupported clinical advice or inventing missing data.
+  OCEAN: Orchestrated Claim-Evidence Analysis Navigator for biomedical research claim-evidence navigation across medical and biological research. Use it to explore papers or ideas, explain research for learning or journal clubs, design studies, audit supplied claims and method descriptions, audit declared data/code/model availability, revise finished manuscripts without mixing audit notes into prose, track concise project status, classify domain-specific evidence standards, build source packets, route biomedical data/tools, inspect declared leakage/validation/benchmark/reproducibility risks, evaluate database/KG evidence boundaries, plan validation, judge journal positioning, or clarify collaboration contribution boundaries. Do not use for unsupported clinical advice or inventing missing data.
 ---
 
 # OCEAN: Orchestrated Claim-Evidence Analysis Navigator
@@ -51,6 +51,7 @@ Use the OCEAN module order when the task spans multiple steps:
 
 - Read `references/usage-modes.md` first for any substantive request. Use it to select Explore, Design, Audit, Revise, or Track, choose the minimum module route, and decide whether module names should remain hidden.
 - Read `references/output-contract.md` for any substantive OCEAN answer unless the user explicitly requests a free-form response. Use it to choose quick, standard, or deep output mode and keep headings/tables consistent.
+- Read `references/research-red-team.md` and `references/research-red-team-template.md` only when an explicit **Design** or **Audit** request concerns a traceable biomedical AI, clinical-prediction, database, or knowledge-graph research package and asks for Go / Rework / Stop-style triage. Otherwise keep the selected normal mode. If the package gate is incomplete, return `Cannot decide` with the minimum missing material instead of guessing a decision.
 - Read `references/manuscript-revision-mode.md` whenever the input is manuscript text, a proposed replacement, a title/abstract/legend, or reviewer/editor feedback. Use it to select Design/Audit, Manuscript Revision, Pre-submission Stress Test, or Reviewer Response before selecting modules.
 - Read `references/domain-lens.md` when the task needs medical, biological, biomedical AI, omics, clinical, drug, KG/database, manuscript, proposal, or collaboration-specific evidence standards, or when the input domain is unclear.
 - Read `references/data-tool-router.md` when the task needs public data-source selection, official database/API routing, source classes, access/privacy/licensing boundaries, or a data/tool packet before Reef, Iceberg, Anchor, or Compass.
@@ -113,18 +114,19 @@ Use the OCEAN module order when the task spans multiple steps:
 1. Read `references/usage-modes.md` and classify the user-facing mode: Explore, Design, Audit, Revise, or Track. The explicit user request wins.
 2. Choose the minimum necessary module route. Keep module names hidden unless they improve understanding or the user requests a module-by-module explanation.
 3. If manuscript text or reviewer/editor feedback is present, select the lifecycle subtype from `references/manuscript-revision-mode.md`. Drafted text plus a generic revision request defaults to Revise / Manuscript Revision, not Audit.
-4. Select the output depth from `references/output-contract.md`: Quick Decision Card for ordinary first-turn and narrow tasks, Standard for explicit multi-claim audits or research plans, Deep only for explicit full reports, and the Manuscript Revision contract for finished-text editing.
+4. Select the output depth from `references/output-contract.md`: Quick Decision Card for ordinary first-turn and narrow tasks, Standard for explicit multi-claim audits or research plans, Deep only for explicit full reports, and the Manuscript Revision contract for finished-text editing. Pair with `references/research-red-team.md` and its template only after the conditional package-level entry gate passes; use `Cannot decide` when the package is incomplete.
 5. Classify the domain with `references/domain-lens.md` when domain-specific evidence standards matter. Record the research object, evidence needed, highest safe claim level, active module, and stop condition.
 6. Establish the evidence boundary: list what was inspected, not inspected, and cannot be concluded. In Revise mode, keep this boundary outside the clean replacement text.
 7. Route public data, databases, software, and APIs with `references/data-tool-router.md` when needed. A candidate route, API response, or software record is not automatically scientific evidence.
 8. If the task concerns data/code/model release or reproducibility packaging, read `references/availability-audit.md`, preserve `not_verified` resource candidates, and keep FAIR, accessibility, ownership, license-compatibility, and scientific-validity judgments outside the structural card.
-9. If discovery is needed, use Sounding before downstream claims. Build source packets and negative space without turning search results into verified conclusions.
-10. If multiple modules are genuinely needed, preserve handoff evidence and unresolved risks with `references/module-handoff.md` and `references/module-artifact-contract.md`.
-11. Extract and audit central claims only when the selected mode needs it. Separate hypothesis, association, prediction, mechanism, and clinical benefit.
-12. Apply reliability and reviewer lenses only to the extent needed for the task. Never insert reviewer language or module labels into clean manuscript prose.
-13. For Track mode, record only confirmed status, the latest milestone, and the
+9. For a file-based package-level red-team request, use `scripts/ocean.py red-team-gate` to check the declared Design/Audit scope, component locators, and source-packet structure. Its `ready_for_human_red_team` result permits review but does not emit Go / Rework / Stop or prove scientific validity. After a full structured review, `scripts/ocean.py red-team-review-check` can verify that every required conclusion is linked to a declared source-packet locator or marked as an explicit unknown with the next required input; it does not verify the scientific content of those links.
+10. If discovery is needed, use Sounding before downstream claims. Build source packets and negative space without turning search results into verified conclusions.
+11. If multiple modules are genuinely needed, preserve handoff evidence and unresolved risks with `references/module-handoff.md` and `references/module-artifact-contract.md`.
+12. Extract and audit central claims only when the selected mode needs it. Separate hypothesis, association, prediction, mechanism, and clinical benefit.
+13. Apply reliability and reviewer lenses only to the extent needed for the task. Never insert reviewer language or module labels into clean manuscript prose.
+14. For Track mode, record only confirmed status, the latest milestone, and the
     next step. Public GitHub updates require user approval.
-14. Output the selected contract. Do not add scoring, journal positioning, authorship analysis, or a seven-module narrative unless requested or materially useful.
+15. Output the selected contract. Do not add scoring, journal positioning, authorship analysis, or a seven-module narrative unless requested or materially useful.
 
 ## Machine-Readable Control Plane
 

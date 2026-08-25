@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/nslbotnslbot/ocean-skill/main/skills/ocean/schemas/research_package.schema.json",
+  "title": "OCEAN Research Package Gate Input",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_mode",
+    "red_team_requested",
+    "domain",
+    "components",
+    "source_packets"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "ocean-research-package-v1"
+    },
+    "request_mode": {
+      "type": "string",
+      "enum": ["Explore", "Design", "Audit", "Revise", "Track"]
+    },
+    "red_team_requested": {
+      "type": "boolean"
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "biomedical_ai",
+        "clinical_prediction",
+        "knowledge_graph",
+        "database",
+        "other"
+      ]
+    },
+    "components": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "study_framing",
+        "claims_or_study_plan",
+        "data_or_cohort",
+        "validation_design"
+      ],
+      "properties": {
+        "study_framing": {"$ref": "#/$defs/component"},
+        "claims_or_study_plan": {"$ref": "#/$defs/component"},
+        "data_or_cohort": {"$ref": "#/$defs/component"},
+        "validation_design": {"$ref": "#/$defs/component"}
+      }
+    },
+    "source_packets": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/sourcePacket"}
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "locators"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["inspected", "partial", "missing", "not_applicable"]
+        },
+        "locators": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "sourcePacket": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packet_id", "evidence_state", "locators"],
+      "properties": {
+        "packet_id": {"type": "string", "minLength": 1},
+        "evidence_state": {
+          "type": "string",
+          "enum": ["inspected", "queried_evidence", "candidate", "unavailable"]
+        },
+        "locators": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}
