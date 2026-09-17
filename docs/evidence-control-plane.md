@@ -26,8 +26,9 @@ Schemas live in [`skills/ocean/schemas/`](../skills/ocean/schemas/).
 ## Requirements
 
 Most control-plane commands use only the Python standard library. PDF extraction
-can optionally use `pypdf` or the local `pdftotext` executable. Development
-checks use PyYAML.
+can optionally use `pypdf` or the local `pdftotext` executable. Repository-only
+development checks use PyYAML and `jsonschema`; the installed OCEAN runtime does
+not require either package.
 
 ```bash
 uv sync --dev
@@ -192,10 +193,17 @@ science.
 
 ## 7. Verify the software
 
-Repository tests check schemas, command routing, evidence boundaries, and the
-three reference workflows:
+Repository checks parse every tracked JSON document, validate every schema
+against JSON Schema Draft 2020-12, and validate only explicitly mapped
+instances and test fixtures against their intended schemas. Unmapped tool
+configuration JSON is syntax-checked but is not represented as having passed a
+domain schema. The remaining tests cover command routing, evidence boundaries,
+and the three reference workflows:
 
 ```bash
+python3 tests/check_json_files.py
+python3 tests/check_json_schemas.py
+python3 tests/validate_skill.py
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 

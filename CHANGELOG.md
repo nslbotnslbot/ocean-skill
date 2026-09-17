@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Added development and CI checks for JSON Schema Draft 2020-12 validity and
+  explicit schema-to-instance fixtures, while keeping the installed OCEAN
+  runtime free of a `jsonschema` dependency. Unmapped JSON files continue to
+  receive syntax validation only.
 - Added a fail-closed Availability Evidence Card schema and protocol preview. The current CLI audits declared asset metadata and placeholders; it does not yet generate the 14-dimension card or claim a completed corpus evaluation. Repository strings remain unverified, no-hit states remain unknown rather than absent, and FAIR/accessibility/license claims remain outside the structural card.
 - Added a conditional research-package red-team contract for explicit, traceable biomedical AI, clinical-prediction, database, and KG Design/Audit requests. Its package gate can return `Cannot decide` for incomplete material and never turns Go/Rework/Stop into a publication or clinical decision.
 - Added Explore, Design, Audit, Revise, and Track modes.

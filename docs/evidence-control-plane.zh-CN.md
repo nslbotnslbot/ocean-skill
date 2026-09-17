@@ -25,7 +25,8 @@ Schema 位于 [`skills/ocean/schemas/`](../skills/ocean/schemas/)。
 ## 环境
 
 大多数控制层命令只使用 Python 标准库。PDF 提取可以选择使用 `pypdf` 或本地
-`pdftotext`；开发检查使用 PyYAML。
+`pdftotext`；仅仓库开发检查使用 PyYAML 和 `jsonschema`，安装态 OCEAN runtime
+不需要这两个包。
 
 ```bash
 uv sync --dev
@@ -180,9 +181,15 @@ Envelope 保存身份和 provenance，但不会认证其中的科学结论。
 
 ## 7. 验证软件
 
-仓库测试用于检查 schema、命令路由、证据边界和三个参考工作流：
+仓库检查会解析所有已跟踪的 JSON 文档，按照 JSON Schema Draft 2020-12
+检查全部 schema，并只把明确映射的实例和测试 fixture 交给各自预期的 schema
+验证。未映射的工具配置 JSON 只做语法检查，不会被表述为已经通过某个领域
+schema。其余测试覆盖命令路由、证据边界和三个参考工作流：
 
 ```bash
+python3 tests/check_json_files.py
+python3 tests/check_json_schemas.py
+python3 tests/validate_skill.py
 python3 -m unittest discover -s tests -p 'test_*.py' -v
 ```
 

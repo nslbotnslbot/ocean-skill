@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate every tracked-style JSON file in the repository tree."""
+"""Parse every tracked-style JSON file in the repository tree."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def main() -> int:
     if failures:
         print("\n".join(failures))
         return 1
-    print(f"JSON validation passed: {checked} files")
+    print(f"JSON syntax validation passed: {checked} files")
     return 0
 
 
